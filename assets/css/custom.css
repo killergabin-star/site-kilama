@@ -1,0 +1,1415 @@
+/* ============================================
+   KILAMA SITE — Mazzucato-Inspired Design System
+   Navy accent (#003366) · Poppins + Inter · Flat design
+   ============================================ */
+
+/* ── CSS Custom Properties ── */
+:root {
+  --navy: #003366;
+  --navy-light: #1a5276;
+  --navy-dark: #001a33;
+  --gold: #c9a84c;
+  --dark: #2a2a2e;
+  --text-primary: #333333;
+  --text-secondary: #7c7c7c;
+  --bg-white: #ffffff;
+  --bg-light: #f7f9fc;
+  --bg-medium: #f0f2f5;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', 'Open Sans', system-ui, sans-serif;
+}
+
+/* ============================================
+   0. MAZZUCATO SIGNATURE: ZERO BORDER-RADIUS
+   No rounded corners ANYWHERE on the site.
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* ============================================
+   1. GLOBAL TYPOGRAPHY
+   Mazzucato: Poppins headings, Open Sans body
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-white);
+}
+
+body, .page-wrapper {
+  background-color: var(--bg-white) !important;
+}
+
+.dark body, .dark .page-wrapper {
+  background-color: #0d1117 !important;
+}
+
+body, p, li, span, td, th, dd, dt {
+  font-family: var(--font-body) !important;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+}
+
+h2 {
+  font-weight: 700 !important;
+  font-size: 1.625rem !important;
+  line-height: 1.3 !important;
+  color: var(--navy);
+}
+
+.dark h2 {
+  color: #79b8ff;
+}
+
+h3 {
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+}
+
+/* Body text — Mazzucato: 16px, 400, 28px line-height */
+.prose, .prose p, .prose li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+.dark .prose, .dark .prose p, .dark .prose li {
+  color: #e0e0e0;
+}
+
+/* ============================================
+   2. HEADER / NAVIGATION
+   Mazzucato: white bg, border-bottom, Poppins nav
+   Height ~80px, clean and institutional
+   ============================================ */
+
+/* FIX #4: Header — FIXED position like Mazzucato
+   Always visible, overlays content. Transparent on homepage hero,
+   opaque white when scrolled past hero or on inner pages. */
+#site-header.header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg-white) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* When scrolled past hero on any page, add subtle shadow */
+#site-header.header.header-scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* TRANSPARENT HEADER ON HOMEPAGE — Mazzucato pattern
+   JS toggles .header-over-hero class based on scroll position.
+   When over hero: transparent bg + white text.
+   When scrolled past: normal opaque header. */
+
+/* Push page content down to compensate for fixed header (80px) */
+.page-body,
+body > .page-wrapper > main,
+.page-header + .page-body {
+  padding-top: 80px;
+}
+
+/* On homepage with hero, hero itself absorbs the offset */
+.has-hero .page-body,
+.has-hero body > .page-wrapper > main {
+  padding-top: 0;
+}
+
+/* Pull hero up under fixed header */
+.has-hero .blox-hero {
+  margin-top: 0 !important;
+  padding-top: 80px !important;
+}
+
+/* Header when over hero (JS-controlled) */
+.header-over-hero #site-header.header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
+}
+
+.header-over-hero .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.3s ease !important;
+}
+
+.header-over-hero .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.header-over-hero .navbar-brand {
+  color: #ffffff !important;
+  transition: color 0.3s ease !important;
+}
+
+.header-over-hero #site-header button,
+.header-over-hero #site-header svg {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.3s ease !important;
+}
+
+.header-over-hero #site-header .dropdown-toggle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Dark mode header — also fixed */
+.dark #site-header.header {
+  background: #1a1a2e !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark #site-header.header.header-scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Navbar container */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80px !important;
+  align-items: center;
+}
+
+/* Logo / brand — Mazzucato-style typographic logo
+   "ERIC" light + "KILAMA" bold navy (like "MARIANA" + "MAZZUCATO" in coral) */
+.navbar-brand {
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 1.35rem !important;
+  color: var(--navy) !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+/* JS replaces text with two lines: first-name light, last-name bold */
+.navbar-brand .brand-first {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.navbar-brand .brand-last {
+  display: block;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+}
+
+.dark .navbar-brand .brand-first {
+  color: #c0c0c0;
+}
+
+.dark .navbar-brand .brand-last {
+  color: #79b8ff;
+}
+
+/* When header is over hero, brand is white */
+.header-over-hero .navbar-brand .brand-first {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.header-over-hero .navbar-brand .brand-last {
+  color: #ffffff !important;
+}
+
+.dark .navbar-brand {
+  color: #ffffff !important;
+}
+
+/* Social icons in header */
+.header-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
+}
+
+.header-social-icons a {
+  color: var(--text-secondary) !important;
+  transition: color 0.2s ease !important;
+  display: flex;
+  align-items: center;
+}
+
+.header-social-icons a:hover {
+  color: var(--navy) !important;
+}
+
+.header-over-hero .header-social-icons a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.header-over-hero .header-social-icons a:hover {
+  color: #ffffff !important;
+}
+
+.dark .header-social-icons a {
+  color: #9ca3af !important;
+}
+
+.dark .header-social-icons a:hover {
+  color: #79b8ff !important;
+}
+
+/* Top-level nav links — Mazzucato: Nunito Sans 18px 800 */
+.nav-link {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  font-size: 1.0625rem !important;
+  color: var(--text-primary) !important;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease !important;
+}
+
+.nav-link:hover {
+  color: var(--navy) !important;
+}
+
+.dark .nav-link {
+  color: #e0e0e0 !important;
+}
+
+.dark .nav-link:hover {
+  color: #79b8ff !important;
+}
+
+/* Active nav item — navy accent */
+.nav-link.active {
+  color: var(--navy) !important;
+}
+
+.dark .nav-link.active {
+  color: #79b8ff !important;
+}
+
+/* ============================================
+   3. DROPDOWN MENUS
+   Mazzucato: clean, floating, well-spaced
+   ============================================ */
+
+/* FIX #3: Dark dropdown menus — Mazzucato uses #343434 dark bg, white text
+   This creates the signature "premium" dropdown feel */
+.nav-dropdown-list {
+  background: #343434 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  padding: 0.75rem 0 !important;
+  min-width: 220px !important;
+  border: none !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease !important;
+  transform: translateY(4px);
+}
+
+/* Dark mode dropdown — same dark treatment (already dark, just slightly different shade) */
+.dark .nav-dropdown-list {
+  background: #2a2a2e !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (min-width: 1024px) {
+  .nav-dropdown:hover > .nav-dropdown-list {
+    transform: translateY(0) !important;
+  }
+}
+
+.nav-dropdown-item {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Dropdown links — white text on dark bg (Mazzucato pattern) */
+.nav-dropdown-link {
+  font-family: var(--font-body) !important;
+  font-weight: 500 !important;
+  font-size: 0.925rem !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 0.5rem 1.5rem !important;
+  transition: color 0.15s ease, background-color 0.15s ease !important;
+  display: block;
+}
+
+.nav-dropdown-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .nav-dropdown-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.dark .nav-dropdown-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .nav-dropdown-item:hover {
+  background-color: transparent !important;
+}
+
+/* Dropdown section headers (Par thème / Par type) — adapted for dark dropdown bg */
+.nav-dropdown-link[href="#par-theme"],
+.nav-dropdown-link[href="#par-type"] {
+  font-family: var(--font-heading) !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45) !important;
+  pointer-events: none;
+  cursor: default;
+  padding: 0.6rem 1.5rem 0.25rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 0.25rem;
+}
+
+.nav-dropdown-item:first-child .nav-dropdown-link[href="#par-theme"] {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0.25rem !important;
+}
+
+.dark .nav-dropdown-link[href="#par-theme"],
+.dark .nav-dropdown-link[href="#par-type"] {
+  color: rgba(255, 255, 255, 0.4) !important;
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown-link[href="#par-theme"]:hover,
+.nav-dropdown-link[href="#par-type"]:hover {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.dark .nav-dropdown-link[href="#par-theme"]:hover,
+.dark .nav-dropdown-link[href="#par-type"]:hover {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Dropdown positioning — centered under parent */
+.nav-dropdown {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .nav-dropdown-list {
+    position: absolute !important;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    z-index: 50 !important;
+  }
+  .nav-dropdown:hover > .nav-dropdown-list {
+    transform: translateX(-50%) translateY(0) !important;
+  }
+}
+
+/* ============================================
+   4. HERO SECTION
+   Mazzucato: full-width, tall, bold title left-aligned
+   Kilama: animated navy gradient (already good), taller
+   ============================================ */
+
+/* Hero wrapper — Mazzucato: ~700px, not 100vh */
+.blox-hero {
+  min-height: auto !important;
+  max-height: 700px !important;
+}
+
+/* Hero section — animated navy gradient, controlled height
+   FIX #2: Capped at ~700px (Mazzucato is ~680px, not full-screen) */
+#hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #001a33 0%, #003366 35%, #0a1628 70%, #002244 100%) !important;
+  background-size: 300% 300% !important;
+  animation: heroGradient 12s ease infinite;
+  min-height: 0;
+  max-height: 700px !important;
+}
+
+@keyframes heroGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle radial glow */
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 50%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(0, 102, 204, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hero content above overlays */
+#hero > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* FIX #1: Hero text LEFT-ALIGNED like Mazzucato (text at 6% left)
+   FIX #2 complement: vertical padding reduced for ~700px total */
+#hero .mx-auto.max-w-2xl {
+  max-width: 1200px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 4.5rem 6% !important;
+}
+
+#hero .text-center {
+  text-align: left !important;
+}
+
+#hero .flex.items-center.justify-center {
+  justify-content: flex-start !important;
+}
+
+#hero p.mx-auto {
+  margin-left: 0 !important;
+}
+
+/* Hero title — Poppins, Mazzucato 40px 700 */
+#hero h1 {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em;
+  color: #ffffff !important;
+  max-width: 600px;
+}
+
+/* Hero subtitle — Inter, lighter, left-aligned */
+#hero p {
+  font-family: var(--font-body) !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  opacity: 0.85;
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Hero CTA buttons — Mazzucato style */
+#hero a[class*="btn"],
+#hero a[class*="primary"] {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  transition: all 0.25s ease !important;
+}
+
+#hero a[class*="btn"]:hover,
+#hero a[class*="primary"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   5. SECTION RHYTHM
+   Mazzucato: alternating backgrounds, 5px accent bars,
+   generous vertical padding (88px), max-width centered
+   ============================================ */
+
+/* Section spacing — generous Mazzucato-style */
+section.hbb-section, .hbb-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  /* Ensure sections NEVER overlap the fixed header (z-index: 1000) */
+  z-index: 1 !important;
+}
+
+/* Page body — below the fixed header */
+.page-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Alternating section backgrounds — handled in section 18 below */
+
+/* MAZZUCATO SIGNATURE: Asymmetric gradient dividers at section tops
+   Original: linear-gradient(90deg, #f66 15%, [bg] 0) — 5px height
+   Kilama: navy accent instead of coral red */
+.blox-stats::before,
+.blox-features::before,
+.blox-collection::before,
+.blox-cta-card::before,
+.blox-markdown::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--navy) 15%, transparent 15%);
+}
+
+.dark .blox-stats::before,
+.dark .blox-features::before,
+.dark .blox-collection::before,
+.dark .blox-cta-card::before,
+.dark .blox-markdown::before {
+  background: linear-gradient(90deg, #79b8ff 15%, transparent 15%);
+}
+
+/* Section accent bar — 5px navy line at top (Mazzucato uses #f66) */
+.hb-section-heading h2 {
+  position: relative;
+  padding-bottom: 0.75rem;
+  font-family: var(--font-heading) !important;
+  color: var(--navy) !important;
+}
+
+.dark .hb-section-heading h2 {
+  color: #79b8ff !important;
+}
+
+.hb-section-heading h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 4px;
+  background: var(--navy);
+  border-radius: 2px;
+}
+
+.dark .hb-section-heading h2::after {
+  background: #79b8ff;
+}
+
+/* Section titles rendered as <div> by Hugo Blox (collection, markdown blocks) */
+.mb-6.text-3xl.font-bold,
+.hbb-section .mb-6.text-3xl {
+  font-family: var(--font-heading) !important;
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+.dark .mb-6.text-3xl.font-bold,
+.dark .hbb-section .mb-6.text-3xl {
+  color: #79b8ff !important;
+}
+
+/* Also target the features block h2 which uses .mb-4.text-4xl */
+.mb-4.text-4xl {
+  font-family: var(--font-heading) !important;
+  color: var(--navy) !important;
+}
+
+.dark .mb-4.text-4xl {
+  color: #79b8ff !important;
+}
+
+/* Content max-width — centered like Mazzucato */
+.max-w-screen-xl,
+.max-w-7xl {
+  max-width: 1200px !important;
+}
+
+/* ============================================
+   6. STATS SECTION
+   Mazzucato: clean flat cards, accent number color
+   No heavy shadows, minimal borders
+   ============================================ */
+
+/* Stats cards — flatter, Mazzucato-inspired */
+.blox-stats .group {
+  background: var(--bg-white) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-top: 4px solid var(--navy) !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.blox-stats .group:hover {
+  box-shadow: none !important;
+  border-top-color: var(--navy-light) !important;
+  transform: none !important;
+}
+
+.dark .blox-stats .group {
+  background: #1e293b !important;
+  border-top-color: #79b8ff !important;
+}
+
+/* Stats numbers — navy accent like Mazzucato's red */
+.blox-stats h3,
+.blox-stats .counter {
+  font-family: var(--font-heading) !important;
+  color: var(--navy) !important;
+  font-weight: 800 !important;
+}
+
+.dark .blox-stats h3,
+.dark .blox-stats .counter {
+  color: #79b8ff !important;
+}
+
+/* Stats description */
+.blox-stats p {
+  font-family: var(--font-body) !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+/* Remove gradient overlays on stats */
+.blox-stats .absolute.inset-0 {
+  display: none !important;
+}
+
+/* Remove hover glow effects */
+.blox-stats .group:hover .absolute {
+  opacity: 0 !important;
+}
+
+/* ============================================
+   7. FEATURES / EXPERTISE SECTION
+   Mazzucato: clean grid, accent icons, readable text
+   ============================================ */
+
+.blox-features h2,
+.blox-features .mb-4 {
+  font-family: var(--font-heading) !important;
+}
+
+/* Feature items — clean, no heavy effects */
+.blox-features .grid > div {
+  transition: transform 0.25s ease !important;
+  border-left: 3px solid transparent;
+  padding-left: 1rem;
+}
+
+.blox-features .grid > div:hover {
+  transform: translateX(4px);
+  border-left-color: var(--navy);
+}
+
+.dark .blox-features .grid > div:hover {
+  border-left-color: #79b8ff;
+}
+
+/* Feature titles */
+.blox-features .mb-2,
+.blox-features h3 {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+.dark .blox-features .mb-2,
+.dark .blox-features h3 {
+  color: #ffffff !important;
+}
+
+/* FIX #1: Feature descriptions — same weight as body text
+   Mazzucato uses readable body text, not faded placeholders */
+.blox-features .text-gray-500,
+.blox-features p,
+.blox-features .text-muted-foreground {
+  color: var(--text-primary) !important;
+  opacity: 0.85 !important;
+}
+
+.dark .blox-features .text-gray-500,
+.dark .blox-features p,
+.dark .blox-features .text-muted-foreground {
+  color: #d0d0d0 !important;
+  opacity: 1 !important;
+}
+
+/* Feature icons — navy accent */
+.blox-features .flex.justify-center svg,
+.blox-features [class*="bg-primary"] {
+  color: var(--navy) !important;
+}
+
+/* ============================================
+   8. COLLECTION / ARTICLES
+   Mazzucato: clean list, hover accent, readable
+   ============================================ */
+
+/* Article cards — subtle hover, no heavy shadows */
+article, .group {
+  transition: transform 0.2s ease !important;
+}
+
+article:hover, .group:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Article titles — Poppins */
+article h3, article h2 {
+  font-family: var(--font-heading) !important;
+}
+
+/* Links — navy accent, Mazzucato hover */
+article a:hover h3,
+article a:hover h2 {
+  color: var(--navy) !important;
+}
+
+.dark article a:hover h3,
+.dark article a:hover h2 {
+  color: #79b8ff !important;
+}
+
+/* ============================================
+   9. CTA CARD
+   Mazzucato: dark bg section with accent elements
+   ============================================ */
+
+.blox-cta-card .rounded-3xl {
+  border-radius: 0 !important;
+  background: var(--navy) !important;
+}
+
+.blox-cta-card h2 {
+  font-family: var(--font-heading) !important;
+  color: #ffffff !important;
+}
+
+.blox-cta-card p {
+  font-family: var(--font-body) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ============================================
+   10. FOOTER
+   Mazzucato: dark bg (#333), white text, clean minimal
+   ============================================ */
+
+/* Footer wrapper — dark background Mazzucato-style */
+.page-footer {
+  background: #333333 !important;
+  color: #ffffff !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Footer inner — override Tailwind mt-24 and text-slate-700 */
+.page-footer footer,
+.page-footer > footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 2.5rem 1.5rem 2rem !important;
+  color: #ffffff !important;
+  background: #333333 !important;
+}
+
+.page-footer footer *,
+.page-footer * {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.page-footer a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.2s ease;
+}
+
+.page-footer a:hover {
+  color: #ffffff !important;
+}
+
+.page-footer .font-bold {
+  color: #ffffff !important;
+}
+
+/* Hide "Powered by Hugo Blox" for cleaner Mazzucato look */
+.page-footer .powered-by.text-center.text-sm {
+  opacity: 0.3;
+  font-size: 0.7rem !important;
+}
+
+.page-footer .powered-by.text-center.text-sm a {
+  opacity: 0.5;
+}
+
+/* ============================================
+   11. THEME CARD GRID (Research/Policy pages)
+   Mazzucato: image grid with overlay labels
+   ============================================ */
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 640px) {
+  .theme-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.theme-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.theme-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.theme-card:hover img {
+  transform: scale(1.05);
+}
+
+.theme-card .card-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+.theme-card .card-title {
+  font-family: var(--font-heading) !important;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.theme-card .card-subtitle {
+  font-family: var(--font-body) !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.themes-section-title {
+  font-family: var(--font-heading) !important;
+  text-align: center;
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  color: var(--navy);
+}
+
+.dark .themes-section-title {
+  color: #79b8ff;
+}
+
+.themes-wrapper {
+  background: var(--bg-light);
+  padding: 3rem 0;
+  margin: 2rem 0;
+  border-radius: 0;
+}
+
+.dark .themes-wrapper {
+  background: #1e293b;
+}
+
+/* ============================================
+   12. MICRO-INTERACTIONS
+   Mazzucato: subtle, not flashy. 0.25s transitions.
+   ============================================ */
+
+/* Smooth global transitions */
+a, button {
+  transition: color 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Heading link underline reveal */
+h2 a, h3 a {
+  position: relative;
+  text-decoration: none !important;
+}
+
+h2 a::after, h3 a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--navy);
+  transition: width 0.3s ease;
+}
+
+h2 a:hover::after, h3 a:hover::after {
+  width: 100%;
+}
+
+.dark h2 a::after, .dark h3 a::after {
+  background-color: #79b8ff;
+}
+
+/* ============================================
+   13. PAGE HEADERS
+   .page-header wraps the nav on ALL pages.
+   Keep it transparent. Style sub-page titles separately.
+   ============================================ */
+
+.page-header {
+  background: transparent !important;
+}
+
+/* Sub-page title styling (h1 on non-landing pages) */
+.page-body h1:first-of-type {
+  font-family: var(--font-heading) !important;
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+}
+
+/* ============================================
+   14. RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .prose { font-size: 1rem; }
+  section { padding-left: 1rem; padding-right: 1rem; }
+
+  .blox-hero {
+    min-height: 50vh !important;
+  }
+
+  #hero {
+    min-height: 50vh;
+  }
+
+  #hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  section.hbb-section, .hbb-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* ============================================
+   15. HB DEV BADGE — HIDE
+   ============================================ */
+
+#hbx-dev-hud-root {
+  display: none !important;
+}
+
+/* ============================================
+   16. DROP SHADOWS ON IMAGES
+   Mazzucato: filter: drop-shadow(-25px 10px 15px rgba(0,0,0,.3))
+   ============================================ */
+
+/* Mazzucato exact: drop-shadow(-25px 10px 15px rgba(0,0,0,.3)) */
+article img,
+.blox-collection img,
+.blox-markdown img,
+.page-body img {
+  filter: drop-shadow(-25px 10px 15px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+article img:hover,
+.blox-collection img:hover {
+  filter: drop-shadow(-25px 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* No shadow on icons/svgs */
+.blox-features svg,
+.blox-stats svg {
+  filter: none !important;
+}
+
+/* ============================================
+   17. DARK MODE REFINEMENTS
+   ============================================ */
+
+/* Page body dark mode */
+.dark .page-body {
+  background: #0d1117 !important;
+}
+
+/* Dark section alternation */
+.dark .home-section-bg {
+  background-color: #0d1117;
+}
+
+/* Dark page header — transparent like light mode, nav handles its own bg */
+.dark .page-header {
+  background: transparent !important;
+}
+
+.dark .page-header h1 {
+  color: #79b8ff !important;
+}
+
+/* Dark footer */
+.dark .page-footer {
+  background: #161b22 !important;
+  border-top-color: rgba(121, 184, 255, 0.2);
+}
+
+.dark .page-footer footer {
+  background: #161b22 !important;
+}
+
+/* ============================================
+   18. STRONGER ALTERNATING BACKGROUNDS
+   Make the bg contrast more visible (Mazzucato uses #f2f2f2)
+   ============================================ */
+
+.blox-stats .home-section-bg,
+.blox-collection .home-section-bg {
+  background-color: #f2f2f2 !important;
+}
+
+.dark .blox-stats .home-section-bg,
+.dark .blox-collection .home-section-bg {
+  background-color: #161b22 !important;
+}
+
+/* ============================================
+   19. PRINT
+   ============================================ */
+
+@media print {
+  nav, footer { display: none; }
+  section { padding: 1rem 0 !important; }
+}
+
+/* ============================================
+   20. HERO ROLES — "Chercheur · Stratège · Conseiller"
+   Mazzucato: "Academic Advisor Communicator" at hero bottom
+   ============================================ */
+
+.hero-roles {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-roles .role {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-roles .role-accent {
+  color: #e8524f;
+}
+
+/* ============================================
+   21. DARK SHOWCASE — Publications image-cards
+   Mazzucato: dark bg (#343434), image cards, 3-col grid
+   ============================================ */
+
+.dark-showcase {
+  background: #343434;
+  padding: 4rem 2rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Override the parent section bg */
+#publications-phares .home-section-bg {
+  background: transparent !important;
+}
+
+#publications-phares {
+  padding: 0 !important;
+}
+
+/* Fix Hugo Blox container chain for full-width dark section */
+#publications-phares .max-w-prose,
+#publications-phares [class*="max-w-prose"] {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+#publications-phares .prose {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+#publications-phares .flex {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.showcase-title {
+  font-family: var(--font-heading) !important;
+  color: #ffffff !important;
+  font-size: 1.625rem !important;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.showcase-card {
+  display: block;
+  overflow: hidden;
+  text-decoration: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #2a2a2e;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-card-img {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.showcase-card-icon {
+  font-size: 3rem;
+  opacity: 0.6;
+}
+
+.showcase-card-body {
+  padding: 1.25rem;
+}
+
+.showcase-card-date {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e8524f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-card h3 {
+  font-family: var(--font-heading) !important;
+  color: #ffffff !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.showcase-card p {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Accent bar on the dark section */
+.dark-showcase::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #e8524f 15%, transparent 15%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ============================================
+   22. TWO-COLUMN LAYOUT + QUOTE BLOCK
+   Mazzucato: text left, italic quote right
+   ============================================ */
+
+.two-col-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .two-col-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.two-col-role {
+  font-family: var(--font-heading) !important;
+  color: #e8524f !important;
+  font-size: 1.625rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem;
+}
+
+.dark .two-col-role {
+  color: #79b8ff !important;
+}
+
+.two-col-left p {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.dark .two-col-left p {
+  color: #e0e0e0;
+}
+
+/* CTA button — Mazzucato: dark bg, sharp corners */
+.mazz-btn {
+  display: inline-block;
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #ffffff !important;
+  background: var(--navy);
+  padding: 0.9rem 2rem;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.mazz-btn:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+}
+
+.dark .mazz-btn {
+  background: #79b8ff;
+  color: #0d1117 !important;
+}
+
+/* Quote block — Mazzucato: large italic with quote marks */
+.mazz-quote {
+  position: relative;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: none !important;
+}
+
+.mazz-quote .quote-mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: #e8524f;
+  opacity: 0.25;
+  display: block;
+}
+
+.dark .mazz-quote .quote-mark {
+  color: #e8524f;
+  opacity: 0.35;
+}
+
+.mazz-quote .quote-mark-end {
+  text-align: right;
+  margin-top: -1rem;
+}
+
+.mazz-quote p {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-style: italic;
+  font-size: 1.5rem !important;
+  line-height: 1.5 !important;
+  color: #666 !important;
+  margin: -1rem 0 0.75rem 0;
+  font-weight: 300;
+}
+
+.dark .mazz-quote p {
+  color: #b0b0b0 !important;
+}
+
+.mazz-quote cite {
+  font-family: var(--font-heading) !important;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8524f;
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.dark .mazz-quote cite {
+  color: #79b8ff;
+}

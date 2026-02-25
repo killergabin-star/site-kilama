@@ -1,0 +1,283 @@
+title: Eric Gabin Kilama
+baseURL: 'https://erickilama.com/'
+copyright: '&copy; {year} Eric Gabin Kilama'
+
+############################
+## MODULES
+############################
+module:
+  imports:
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+
+############################
+## LANGUAGE
+############################
+defaultContentLanguage: fr
+hasCJKLanguage: false
+
+languages:
+  fr:
+    languageName: Français
+    weight: 1
+    params:
+      description: "Site personnel d'Eric Gabin Kilama — Macroéconomiste-Stratège"
+    menu:
+      main:
+        # ── À propos ▼ (premier onglet) ──
+        - name: "À propos"
+          url: '/about/'
+          weight: 10
+        - name: "Bio & CV"
+          parent: "À propos"
+          url: '/about/'
+          weight: 1
+        - name: Contact
+          parent: "À propos"
+          url: '/contact/'
+          weight: 2
+        # ── Research ▼ ──
+        - name: Research
+          url: '/research/'
+          weight: 20
+        # En-tête section thèmes
+        - name: "Par thème"
+          identifier: r-header-theme
+          parent: Research
+          url: '#par-theme'
+          weight: 1
+        - name: "Géoéconomie & Risques"
+          identifier: r-geoeconomie
+          parent: Research
+          url: '/research/geoeconomie/'
+          weight: 2
+        - name: "Institutions & Éco. politique"
+          identifier: r-institutions
+          parent: Research
+          url: '/research/institutions/'
+          weight: 3
+        - name: "Financement du développement"
+          identifier: r-developpement
+          parent: Research
+          url: '/research/developpement/'
+          weight: 4
+        - name: "Méthodes & Ressources"
+          identifier: r-methodes
+          parent: Research
+          url: '/research/methodes/'
+          weight: 5
+        # En-tête section types
+        - name: "Par type"
+          identifier: r-header-type
+          parent: Research
+          url: '#par-type'
+          weight: 6
+        - name: "Publiées"
+          parent: Research
+          url: '/research/published/'
+          weight: 7
+        - name: "Working Papers"
+          parent: Research
+          url: '/research/working-papers/'
+          weight: 8
+        - name: "Work in Progress"
+          parent: Research
+          url: '/research/work-in-progress/'
+          weight: 9
+        - name: "Datasets"
+          parent: Research
+          url: '/research/datasets/'
+          weight: 10
+        # ── Policy ▼ ──
+        - name: Policy
+          url: '/policy/'
+          weight: 30
+        - name: "Géoéconomie & Risques"
+          identifier: p-geoeconomie
+          parent: Policy
+          url: '/policy/geoeconomie/'
+          weight: 1
+        - name: "Financement du développement"
+          identifier: p-developpement
+          parent: Policy
+          url: '/policy/developpement/'
+          weight: 2
+        - name: "Énergie & Climat"
+          identifier: p-energie
+          parent: Policy
+          url: '/policy/energie-climat/'
+          weight: 3
+        - name: "Institutions & Gouvernance"
+          identifier: p-institutions
+          parent: Policy
+          url: '/policy/institutions/'
+          weight: 4
+        # ── Foresight ──
+        - name: Foresight
+          url: '/foresight/'
+          weight: 40
+        # ── Enseignements ──
+        - name: Enseignements
+          url: '/teaching/'
+          weight: 50
+  en:
+    languageName: English
+    weight: 2
+    params:
+      description: "Eric Gabin Kilama — Macroeconomist & Strategic Adviser"
+    menu:
+      main:
+        - name: About
+          url: '/about/'
+          weight: 10
+        - name: "Bio & CV"
+          parent: About
+          url: '/about/'
+          weight: 1
+        - name: Contact
+          parent: About
+          url: '/contact/'
+          weight: 2
+        - name: Research
+          url: '/research/'
+          weight: 20
+        - name: "By theme"
+          identifier: r-header-theme-en
+          parent: Research
+          url: '#par-theme'
+          weight: 1
+        - name: "Geoeconomics & Risks"
+          identifier: r-geoeconomie-en
+          parent: Research
+          url: '/research/geoeconomie/'
+          weight: 2
+        - name: "Institutions & Political Economy"
+          identifier: r-institutions-en
+          parent: Research
+          url: '/research/institutions/'
+          weight: 3
+        - name: "Development Finance"
+          identifier: r-developpement-en
+          parent: Research
+          url: '/research/developpement/'
+          weight: 4
+        - name: "Methods & Resources"
+          identifier: r-methodes-en
+          parent: Research
+          url: '/research/methodes/'
+          weight: 5
+        - name: "By type"
+          identifier: r-header-type-en
+          parent: Research
+          url: '#par-type'
+          weight: 6
+        - name: "Published"
+          parent: Research
+          url: '/research/published/'
+          weight: 7
+        - name: "Working Papers"
+          parent: Research
+          url: '/research/working-papers/'
+          weight: 8
+        - name: "Work in Progress"
+          parent: Research
+          url: '/research/work-in-progress/'
+          weight: 9
+        - name: "Datasets"
+          parent: Research
+          url: '/research/datasets/'
+          weight: 10
+        - name: Policy
+          url: '/policy/'
+          weight: 30
+        - name: "Geoeconomics & Risks"
+          identifier: p-geoeconomie-en
+          parent: Policy
+          url: '/policy/geoeconomie/'
+          weight: 1
+        - name: "Development Finance"
+          identifier: p-developpement-en
+          parent: Policy
+          url: '/policy/developpement/'
+          weight: 2
+        - name: "Energy & Climate"
+          identifier: p-energie-en
+          parent: Policy
+          url: '/policy/energie-climat/'
+          weight: 3
+        - name: "Institutions & Governance"
+          identifier: p-institutions-en
+          parent: Policy
+          url: '/policy/institutions/'
+          weight: 4
+        - name: Foresight
+          url: '/foresight/'
+          weight: 40
+        - name: Teaching
+          url: '/teaching/'
+          weight: 50
+
+############################
+## PARAMS
+############################
+params:
+  marketing:
+    seo:
+      site_type: Person
+      local_business_type: ''
+      org_name: ''
+      description: "Eric Gabin Kilama — Macroéconomiste, Conseiller stratégique, Chercheur"
+      twitter: ''
+  appearance:
+    theme_day: kilama
+    theme_night: kilama
+    font: native
+    font_size: M
+  features:
+    math:
+      enable: false
+  header:
+    navbar:
+      enable: true
+      align: c
+      show_logo: true
+      show_language: true
+      show_day_night: true
+      show_search: false
+  footer:
+    copyright:
+      notice: '&copy; {year} Eric Gabin Kilama. Tous droits réservés.'
+
+############################
+## MARKUP
+############################
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    lineNos: false
+
+############################
+## MEDIA TYPES
+############################
+mediaTypes:
+  application/manifest+json:
+    suffixes:
+      - webmanifest
+
+outputFormats:
+  WebAppManifest:
+    mediaType: application/manifest+json
+    rel: manifest
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - WebAppManifest
+
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types

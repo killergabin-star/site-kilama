@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d4f3c"/>
+      <stop offset="100%" style="stop-color:#1a7a5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Growth chart pattern -->
+  <!-- Grid lines -->
+  <line x1="150" y1="400" x2="650" y2="400" stroke="#6ee7b7" stroke-width="0.5" opacity="0.15"/>
+  <line x1="150" y1="340" x2="650" y2="340" stroke="#6ee7b7" stroke-width="0.5" opacity="0.1"/>
+  <line x1="150" y1="280" x2="650" y2="280" stroke="#6ee7b7" stroke-width="0.5" opacity="0.1"/>
+  <line x1="150" y1="220" x2="650" y2="220" stroke="#6ee7b7" stroke-width="0.5" opacity="0.1"/>
+  <line x1="150" y1="160" x2="650" y2="160" stroke="#6ee7b7" stroke-width="0.5" opacity="0.1"/>
+  <!-- Rising curve -->
+  <path d="M 150 380 Q 250 370 320 340 Q 400 300 450 240 Q 500 180 550 150 Q 600 130 650 110"
+        fill="none" stroke="#6ee7b7" stroke-width="2" opacity="0.35"/>
+  <!-- Area under curve -->
+  <path d="M 150 380 Q 250 370 320 340 Q 400 300 450 240 Q 500 180 550 150 Q 600 130 650 110 L 650 400 L 150 400 Z"
+        fill="#6ee7b7" opacity="0.06"/>
+  <!-- Bars (development indicators) -->
+  <rect x="200" y="320" width="30" height="80" fill="#6ee7b7" opacity="0.12" rx="3"/>
+  <rect x="260" y="290" width="30" height="110" fill="#6ee7b7" opacity="0.1" rx="3"/>
+  <rect x="320" y="260" width="30" height="140" fill="#6ee7b7" opacity="0.08" rx="3"/>
+  <rect x="380" y="230" width="30" height="170" fill="#6ee7b7" opacity="0.1" rx="3"/>
+  <rect x="440" y="200" width="30" height="200" fill="#6ee7b7" opacity="0.08" rx="3"/>
+  <rect x="500" y="170" width="30" height="230" fill="#6ee7b7" opacity="0.1" rx="3"/>
+  <rect x="560" y="140" width="30" height="260" fill="#6ee7b7" opacity="0.08" rx="3"/>
+  <!-- Decorative circles -->
+  <circle cx="320" cy="120" r="25" fill="none" stroke="#6ee7b7" stroke-width="0.8" opacity="0.15"/>
+  <circle cx="320" cy="120" r="15" fill="none" stroke="#6ee7b7" stroke-width="0.5" opacity="0.1"/>
+  <circle cx="180" cy="160" r="3" fill="#6ee7b7" opacity="0.2"/>
+  <circle cx="620" cy="100" r="3" fill="#6ee7b7" opacity="0.25"/>
+</svg>

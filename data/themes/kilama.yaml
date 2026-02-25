@@ -1,0 +1,26 @@
+# Custom theme — Bleu institutionnel Eric Kilama
+name: kilama
+
+light:
+  primary: "#003366"
+  menu_primary: "#003366"
+  menu_text: "#fff"
+  menu_text_active: "#003366"
+  menu_title: "#003366"
+  background: "#ffffff"
+  home_section_odd: "#ffffff"
+  home_section_even: "#f7f9fc"
+  link: "#003366"
+  link_hover: "#1a5276"
+
+dark:
+  primary: "#4a9eff"
+  menu_primary: "#1a1a2e"
+  menu_text: "#e0e0e0"
+  menu_text_active: "#4a9eff"
+  menu_title: "#4a9eff"
+  background: "#0d1117"
+  home_section_odd: "#0d1117"
+  home_section_even: "#161b22"
+  link: "#4a9eff"
+  link_hover: "#79b8ff"
