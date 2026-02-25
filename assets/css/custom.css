@@ -1,23 +1,24 @@
 /* ============================================
-   KILAMA SITE — Mazzucato-Inspired Design System
-   Navy accent (#003366) · Poppins + Inter · Flat design
+   KILAMA SITE — McKinsey-Inspired Design System
+   Navy (#051c2c) · Inter + Playfair Display · Clean & authoritative
    ============================================ */
 
 /* ── CSS Custom Properties ── */
 :root {
-  --navy: #003366;
-  --navy-light: #1a5276;
-  --navy-dark: #001a33;
-  --gold: #c9a84c;
-  --dark: #2a2a2e;
+  --navy: #051c2c;
+  --navy-light: #0a3049;
+  --navy-dark: #020e16;
+  --accent: #00a9f4;
+  --accent-hover: #0091d5;
+  --dark: #051c2c;
   --text-primary: #333333;
-  --text-secondary: #7c7c7c;
+  --text-secondary: #6e6e6e;
   --bg-white: #ffffff;
-  --bg-light: #f7f9fc;
-  --bg-medium: #f0f2f5;
+  --bg-light: #f5f5f5;
+  --bg-medium: #eeeeee;
   --border-light: rgba(0, 0, 0, 0.08);
-  --font-heading: 'Poppins', system-ui, sans-serif;
-  --font-body: 'Inter', 'Open Sans', system-ui, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', 'Helvetica Neue', Calibri, Helvetica, Roboto, sans-serif;
 }
 
 /* ============================================
@@ -33,7 +34,7 @@
 
 /* ============================================
    1. GLOBAL TYPOGRAPHY
-   Mazzucato: Poppins headings, Open Sans body
+   McKinsey: Inter body (wt 300), Playfair Display headlines
    ============================================ */
 
 html {
@@ -51,22 +52,23 @@ body, .page-wrapper {
 
 body, p, li, span, td, th, dd, dt {
   font-family: var(--font-body) !important;
-  line-height: 1.75;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading) !important;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-weight: 800 !important;
+  font-weight: 700 !important;
   line-height: 1.15 !important;
 }
 
 h2 {
-  font-weight: 700 !important;
-  font-size: 1.625rem !important;
+  font-weight: 600 !important;
+  font-size: 1.75rem !important;
   line-height: 1.3 !important;
   color: var(--navy);
 }
@@ -76,14 +78,16 @@ h2 {
 }
 
 h3 {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   font-size: 1.25rem !important;
+  font-family: var(--font-body) !important;
 }
 
-/* Body text — Mazzucato: 16px, 400, 28px line-height */
+/* Body text — McKinsey: 16px, 300, clean line-height */
 .prose, .prose p, .prose li {
   font-size: 1rem;
-  line-height: 1.75;
+  font-weight: 300;
+  line-height: 1.7;
   color: var(--text-primary);
 }
 
@@ -93,143 +97,330 @@ h3 {
 
 /* ============================================
    2. HEADER / NAVIGATION
-   Mazzucato: white bg, border-bottom, Poppins nav
-   Height ~80px, clean and institutional
+   McKinsey: dark navy header, Inter wt 300, mega-menu dropdowns
+   Height ~70px, authoritative and clean
    ============================================ */
 
-/* FIX #4: Header — FIXED position like Mazzucato
-   Always visible, overlays content. Transparent on homepage hero,
-   opaque white when scrolled past hero or on inner pages. */
+/* Header — FIXED dark navy bar like McKinsey */
 #site-header.header {
   position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--bg-white) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background: var(--navy) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transition: background 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* When scrolled past hero on any page, add subtle shadow */
 #site-header.header.header-scrolled {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* TRANSPARENT HEADER ON HOMEPAGE — Mazzucato pattern
-   JS toggles .header-over-hero class based on scroll position.
-   When over hero: transparent bg + white text.
-   When scrolled past: normal opaque header. */
-
-/* Push page content down to compensate for fixed header (80px) */
+/* Push page content down for fixed header */
 .page-body,
 body > .page-wrapper > main,
 .page-header + .page-body {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
-/* On homepage with hero, hero itself absorbs the offset */
 .has-hero .page-body,
 .has-hero body > .page-wrapper > main {
   padding-top: 0;
 }
 
-/* Pull hero up under fixed header */
 .has-hero .blox-hero {
   margin-top: 0 !important;
-  padding-top: 80px !important;
+  padding-top: 70px !important;
 }
 
-/* Header when over hero (JS-controlled) */
+/* Header over hero — transparent, no change needed since header is already dark */
 .header-over-hero #site-header.header {
   background: transparent !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
 }
 
+/* All nav text is white on dark header */
+.nav-link,
 .header-over-hero .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  transition: color 0.3s ease !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.2s ease !important;
 }
 
+.nav-link:hover,
 .header-over-hero .nav-link:hover {
-  color: #ffffff !important;
+  color: var(--accent) !important;
 }
 
+.navbar-brand,
 .header-over-hero .navbar-brand {
   color: #ffffff !important;
   transition: color 0.3s ease !important;
 }
 
+#site-header button,
+#site-header svg,
 .header-over-hero #site-header button,
 .header-over-hero #site-header svg {
-  color: rgba(255, 255, 255, 0.9) !important;
-  transition: color 0.3s ease !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.2s ease !important;
 }
 
-.header-over-hero #site-header .dropdown-toggle {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Dark mode header — also fixed */
+/* Dark mode header */
 .dark #site-header.header {
-  background: #1a1a2e !important;
-  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  background: #0a0f18 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 .dark #site-header.header.header-scrolled {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Navbar container */
 .navbar {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  min-height: 80px !important;
+  min-height: 70px !important;
   align-items: center;
+  padding: 0 2rem !important;
 }
 
-/* Logo / brand — Mazzucato-style typographic logo
-   "ERIC" light + "KILAMA" bold navy (like "MARIANA" + "MAZZUCATO" in coral) */
+/* ── Missing Tailwind v4 utilities ──
+   Hugo Blox HTML uses Tailwind classes but the JIT build
+   doesn't generate them. Full patch: base + responsive. */
+
+/* — Base utilities (non-responsive) — */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.flex-col { flex-direction: column; }
+.inline-flex { display: inline-flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-start { justify-content: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-items-center { justify-items: center; }
+.justify-items-start { justify-items: start; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-6 { gap: 1.5rem; }
+.gap-x-6 { column-gap: 1.5rem; }
+.space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+.w-4 { width: 1rem; }
+.w-5 { width: 1.25rem; }
+.w-6 { width: 1.5rem; }
+.w-7 { width: 1.75rem; }
+.w-10 { width: 2.5rem; }
+.w-full { width: 100%; }
+.h-4 { height: 1rem; }
+.h-5 { height: 1.25rem; }
+.h-6 { height: 1.5rem; }
+.h-7 { height: 1.75rem; }
+.h-10 { height: 2.5rem; }
+.h-full { height: 100%; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-3xl { max-width: 48rem; }
+.max-w-7xl { max-width: 80rem; }
+.max-w-prose { max-width: 65ch; }
+.max-w-screen-md { max-width: 768px; }
+.max-w-screen-lg { max-width: 1024px; }
+.max-w-screen-xl { max-width: 1280px; }
+.max-h-64 { max-height: 16rem; }
+.mx-auto { margin-inline: auto; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.ml-auto { margin-left: auto; }
+.m-0 { margin: 0; }
+.p-6 { padding: 1.5rem; }
+.px-3 { padding-inline: 0.75rem; }
+.px-4 { padding-inline: 1rem; }
+.px-6 { padding-inline: 1.5rem; }
+.px-8 { padding-inline: 2rem; }
+.py-2 { padding-block: 0.5rem; }
+.py-4 { padding-block: 1rem; }
+.py-6 { padding-block: 1.5rem; }
+.py-8 { padding-block: 2rem; }
+.py-12 { padding-block: 3rem; }
+.pb-6 { padding-bottom: 1.5rem; }
+.pt-14 { padding-top: 3.5rem; }
+.pl-2 { padding-left: 0.5rem; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+.leading-6 { line-height: 1.5rem; }
+.leading-8 { line-height: 2rem; }
+.leading-relaxed { line-height: 1.625; }
+.tracking-tight { letter-spacing: -0.025em; }
+.text-white { color: #fff; }
+.text-gray-600 { color: #4b5563; }
+.text-gray-900 { color: #111827; }
+.bg-white { background-color: #fff; }
+.bg-zinc-50 { background-color: #fafafa; }
+.rounded-full { border-radius: 9999px !important; }
+
+/* Avatar photo: show top of head (raise crop upward) */
+img.avatar {
+  object-position: center 15% !important;
+}
+.rounded-md { border-radius: 0.375rem; }
+.overflow-hidden { overflow: hidden; }
+.cursor-pointer { cursor: pointer; }
+.select-none { user-select: none; }
+.fill-current { fill: currentColor; }
+.transition { transition: all 0.15s ease; }
+.duration-300 { transition-duration: 300ms; }
+.duration-500 { transition-duration: 500ms; }
+.inset-0 { inset: 0; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.order-0 { order: 0; }
+.order-3 { order: 3; }
+.col-span-1 { grid-column: span 1 / span 1; }
+.border { border-width: 1px; border-style: solid; }
+.border-current { border-color: currentColor; }
+.border-gray-100 { border-color: #f3f4f6; }
+.border-gray-300 { border-color: #d1d5db; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-grow { flex-grow: 1; }
+
+/* — sm: 640px — */
+@media (min-width: 640px) {
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:mt-20 { margin-top: 5rem; }
+  .sm\:px-6 { padding-inline: 1.5rem; }
+  .sm\:py-16 { padding-block: 4rem; }
+  .sm\:py-48 { padding-block: 12rem; }
+  .sm\:text-5xl { font-size: 3rem; line-height: 1; }
+  .sm\:text-6xl { font-size: 3.75rem; line-height: 1; }
+  .sm\:text-base { font-size: 1rem; line-height: 1.5rem; }
+  .sm\:-inset-x-6 { left: -1.5rem; right: -1.5rem; }
+  .sm\:rounded-2xl { border-radius: 1rem; }
+}
+
+/* — md: 768px — */
+@media (min-width: 768px) {
+  .md\:grid { display: grid; }
+  .md\:block { display: block; }
+  .md\:hidden { display: none; }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:col-span-3 { grid-column: span 3 / span 3; }
+  .md\:gap-12 { gap: 3rem; }
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0; }
+  .md\:order-2 { order: 2; }
+  .md\:items-baseline { align-items: baseline; }
+  .md\:px-0 { padding-inline: 0; }
+}
+
+/* — lg: 1024px — */
+@media (min-width: 1024px) {
+  /* Nav menu */
+  #nav-menu {
+    display: flex !important;
+    order: 1 !important;
+    width: auto !important;
+    padding-bottom: 0 !important;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  label[for="nav-toggle"] { display: none !important; }
+
+  /* Responsive utilities */
+  .lg\:flex { display: flex; }
+  .lg\:hidden { display: none; }
+  .lg\:order-1 { order: 1; }
+  .lg\:w-auto { width: auto; }
+  .lg\:w-6 { width: 1.5rem; }
+  .lg\:w-12 { width: 3rem; }
+  .lg\:h-6 { height: 1.5rem; }
+  .lg\:h-12 { height: 3rem; }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:gap-8 { gap: 2rem; }
+  .lg\:space-x-2 > :not([hidden]) ~ :not([hidden]) { margin-inline-start: 0.5rem; }
+  .lg\:pb-0 { padding-bottom: 0; }
+  .lg\:pb-8 { padding-bottom: 2rem; }
+  .lg\:px-6 { padding-inline: 1.5rem; }
+  .lg\:px-8 { padding-inline: 2rem; }
+  .lg\:py-20 { padding-block: 5rem; }
+  .lg\:py-56 { padding-block: 14rem; }
+  .lg\:mb-16 { margin-bottom: 4rem; }
+  .lg\:ml-0 { margin-left: 0; }
+  .lg\:text-6xl { font-size: 3.75rem; line-height: 1; }
+  .lg\:prose-xl { font-size: 1.25rem; line-height: 1.8; }
+
+  /* Dropdown hover (group-hover) */
+  .group:hover > .lg\:group-hover\:visible { visibility: visible; }
+  .group:hover > .lg\:group-hover\:opacity-100 { opacity: 1; }
+}
+
+/* — xl: 1280px — */
+@media (min-width: 1280px) {
+  .xl\:space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-inline-start: 2rem; }
+  .xl\:px-5 { padding-inline: 1.25rem; }
+  .xl\:text-7xl { font-size: 4.5rem; line-height: 1; }
+}
+
+/* Logo / brand — McKinsey: clean white, serif */
 .navbar-brand {
   font-family: var(--font-heading) !important;
-  font-weight: 800 !important;
-  font-size: 1.35rem !important;
-  color: var(--navy) !important;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  color: #ffffff !important;
+  letter-spacing: 0.02em;
+  text-transform: none;
   line-height: 1.1;
 }
 
-/* JS replaces text with two lines: first-name light, last-name bold */
 .navbar-brand .brand-first {
   display: block;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.12em;
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body) !important;
+  text-transform: uppercase;
 }
 
 .navbar-brand .brand-last {
   display: block;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 0.06em;
-  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  font-family: var(--font-heading) !important;
 }
 
 .dark .navbar-brand .brand-first {
-  color: #c0c0c0;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .dark .navbar-brand .brand-last {
-  color: #79b8ff;
+  color: #ffffff;
 }
 
-/* When header is over hero, brand is white */
 .header-over-hero .navbar-brand .brand-first {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .header-over-hero .navbar-brand .brand-last {
@@ -240,7 +431,7 @@ body > .page-wrapper > main,
   color: #ffffff !important;
 }
 
-/* Social icons in header */
+/* Social icons in header — white on dark */
 .header-social-icons {
   display: flex;
   align-items: center;
@@ -249,91 +440,110 @@ body > .page-wrapper > main,
 }
 
 .header-social-icons a {
-  color: var(--text-secondary) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   transition: color 0.2s ease !important;
   display: flex;
   align-items: center;
 }
 
 .header-social-icons a:hover {
-  color: var(--navy) !important;
+  color: var(--accent) !important;
 }
 
 .header-over-hero .header-social-icons a {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .header-over-hero .header-social-icons a:hover {
-  color: #ffffff !important;
+  color: var(--accent) !important;
 }
 
 .dark .header-social-icons a {
-  color: #9ca3af !important;
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .dark .header-social-icons a:hover {
-  color: #79b8ff !important;
+  color: var(--accent) !important;
 }
 
-/* Top-level nav links — Mazzucato: Nunito Sans 18px 800 */
+/* Top-level nav links — McKinsey: Inter 16px wt 300 */
 .nav-link {
-  font-family: var(--font-heading) !important;
-  font-weight: 700 !important;
-  font-size: 1.0625rem !important;
-  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 300 !important;
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   letter-spacing: 0.01em;
   transition: color 0.2s ease !important;
+  position: relative;
+  padding-bottom: 4px !important;
+}
+
+/* McKinsey blue indicator bar on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link:hover {
-  color: var(--navy) !important;
+  color: var(--accent) !important;
 }
 
 .dark .nav-link {
-  color: #e0e0e0 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .dark .nav-link:hover {
-  color: #79b8ff !important;
+  color: var(--accent) !important;
 }
 
-/* Active nav item — navy accent */
 .nav-link.active {
-  color: var(--navy) !important;
+  color: var(--accent) !important;
 }
 
 .dark .nav-link.active {
-  color: #79b8ff !important;
+  color: var(--accent) !important;
 }
 
 /* ============================================
-   3. DROPDOWN MENUS
-   Mazzucato: clean, floating, well-spaced
+   3. DROPDOWN MEGA-MENU
+   McKinsey: dark navy panel, full-width, multi-column
    ============================================ */
 
-/* FIX #3: Dark dropdown menus — Mazzucato uses #343434 dark bg, white text
-   This creates the signature "premium" dropdown feel */
+/* Mega-menu dropdown panel */
 .nav-dropdown-list {
-  background: #343434 !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-  padding: 0.75rem 0 !important;
-  min-width: 220px !important;
+  background: var(--navy) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  padding: 1.5rem 2rem !important;
+  min-width: 280px !important;
   border: none !important;
-  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease !important;
+  border-top: 3px solid var(--accent) !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.15s ease !important;
   transform: translateY(4px);
 }
 
-/* Dark mode dropdown — same dark treatment (already dark, just slightly different shade) */
-.dark .nav-dropdown-list {
-  background: #2a2a2e !important;
-  border: none !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-}
-
+/* Full-width mega-menu for Research dropdown */
 @media (min-width: 1024px) {
   .nav-dropdown:hover > .nav-dropdown-list {
     transform: translateY(0) !important;
   }
+}
+
+.dark .nav-dropdown-list {
+  background: #0a0f18 !important;
+  border: none !important;
+  border-top: 3px solid var(--accent) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
 }
 
 .nav-dropdown-item {
@@ -341,49 +551,49 @@ body > .page-wrapper > main,
   margin: 0 !important;
 }
 
-/* Dropdown links — white text on dark bg (Mazzucato pattern) */
+/* Dropdown links — McKinsey: 16px wt 300 white */
 .nav-dropdown-link {
   font-family: var(--font-body) !important;
-  font-weight: 500 !important;
-  font-size: 0.925rem !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  padding: 0.5rem 1.5rem !important;
-  transition: color 0.15s ease, background-color 0.15s ease !important;
+  font-weight: 300 !important;
+  font-size: 0.95rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.45rem 0.75rem !important;
+  transition: color 0.15s ease, padding-left 0.15s ease !important;
   display: block;
 }
 
 .nav-dropdown-link:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--accent) !important;
+  padding-left: 1rem !important;
+  background-color: transparent !important;
 }
 
 .dark .nav-dropdown-link {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .dark .nav-dropdown-link:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--accent) !important;
 }
 
 .dark .nav-dropdown-item:hover {
   background-color: transparent !important;
 }
 
-/* Dropdown section headers (Par thème / Par type) — adapted for dark dropdown bg */
+/* Dropdown section headers (Par thème / Par type) — McKinsey caps style */
 .nav-dropdown-link[href="#par-theme"],
 .nav-dropdown-link[href="#par-type"] {
-  font-family: var(--font-heading) !important;
+  font-family: var(--font-body) !important;
   font-size: 0.7rem !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.45) !important;
+  letter-spacing: 0.15em;
+  color: var(--accent) !important;
   pointer-events: none;
   cursor: default;
-  padding: 0.6rem 1.5rem 0.25rem !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  margin-top: 0.25rem;
+  padding: 0.75rem 0.75rem 0.35rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 0.5rem;
 }
 
 .nav-dropdown-item:first-child .nav-dropdown-link[href="#par-theme"] {
@@ -445,7 +655,7 @@ body > .page-wrapper > main,
 #hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #001a33 0%, #003366 35%, #0a1628 70%, #002244 100%) !important;
+  background: linear-gradient(135deg, #020e16 0%, #051c2c 35%, #071520 70%, #0a3049 100%) !important;
   background-size: 300% 300% !important;
   animation: heroGradient 12s ease infinite;
   min-height: 0;
@@ -498,33 +708,34 @@ body > .page-wrapper > main,
   margin-left: 0 !important;
 }
 
-/* Hero title — Poppins, Mazzucato 40px 700 */
+/* Hero title — Playfair Display italic, McKinsey Bower-style */
 #hero h1 {
   font-family: var(--font-heading) !important;
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem) !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
   font-weight: 700 !important;
-  line-height: 1.25 !important;
-  letter-spacing: -0.02em;
+  font-style: italic;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em;
   color: #ffffff !important;
-  max-width: 600px;
+  max-width: 650px;
 }
 
-/* Hero subtitle — Inter, lighter, left-aligned */
+/* Hero subtitle — Inter, light weight, McKinsey feel */
 #hero p {
   font-family: var(--font-body) !important;
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.75;
+  font-weight: 300;
+  line-height: 1.7;
   opacity: 0.85;
-  max-width: 540px;
-  color: rgba(255, 255, 255, 0.9) !important;
+  max-width: 580px;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
-/* Hero CTA buttons — Mazzucato style */
+/* Hero CTA buttons — McKinsey clean style */
 #hero a[class*="btn"],
 #hero a[class*="primary"] {
-  font-family: var(--font-heading) !important;
-  font-weight: 600 !important;
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
   transition: all 0.25s ease !important;
 }
 
@@ -568,7 +779,7 @@ section.hbb-section, .hbb-section {
   display: block;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, var(--navy) 15%, transparent 15%);
+  background: linear-gradient(90deg, var(--accent) 15%, transparent 15%);
 }
 
 .dark .blox-stats::before,
@@ -576,7 +787,7 @@ section.hbb-section, .hbb-section {
 .dark .blox-collection::before,
 .dark .blox-cta-card::before,
 .dark .blox-markdown::before {
-  background: linear-gradient(90deg, #79b8ff 15%, transparent 15%);
+  background: linear-gradient(90deg, var(--accent) 15%, transparent 15%);
 }
 
 /* Section accent bar — 5px navy line at top (Mazzucato uses #f66) */
@@ -598,13 +809,13 @@ section.hbb-section, .hbb-section {
   left: 50%;
   transform: translateX(-50%);
   width: 3rem;
-  height: 4px;
-  background: var(--navy);
-  border-radius: 2px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 0;
 }
 
 .dark .hb-section-heading h2::after {
-  background: #79b8ff;
+  background: var(--accent);
 }
 
 /* Section titles rendered as <div> by Hugo Blox (collection, markdown blocks) */
@@ -1152,7 +1363,7 @@ article img:hover,
 }
 
 .hero-roles .role-accent {
-  color: #e8524f;
+  color: var(--accent);
 }
 
 /* ============================================
@@ -1161,7 +1372,7 @@ article img:hover,
    ============================================ */
 
 .dark-showcase {
-  background: #343434;
+  background: var(--navy);
   padding: 4rem 2rem;
   width: 100vw;
   position: relative;
@@ -1224,7 +1435,7 @@ article img:hover,
   overflow: hidden;
   text-decoration: none !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: #2a2a2e;
+  background: var(--navy-light);
 }
 
 .showcase-card:hover {
@@ -1253,7 +1464,7 @@ article img:hover,
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
-  color: #e8524f;
+  color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   display: block;
@@ -1283,7 +1494,7 @@ article img:hover,
   display: block;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #e8524f 15%, transparent 15%);
+  background: var(--accent);
   position: absolute;
   top: 0;
   left: 0;
@@ -1312,7 +1523,7 @@ article img:hover,
 
 .two-col-role {
   font-family: var(--font-heading) !important;
-  color: #e8524f !important;
+  color: var(--accent) !important;
   font-size: 1.625rem !important;
   font-weight: 700 !important;
   margin-bottom: 1rem;
@@ -1334,28 +1545,29 @@ article img:hover,
   color: #e0e0e0;
 }
 
-/* CTA button — Mazzucato: dark bg, sharp corners */
+/* CTA button — McKinsey: dark bg, clean, with arrow */
 .mazz-btn {
   display: inline-block;
-  font-family: var(--font-heading) !important;
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+  font-size: 1rem;
   color: #ffffff !important;
   background: var(--navy);
-  padding: 0.9rem 2rem;
+  padding: 0.85rem 2rem;
   text-decoration: none !important;
   transition: background 0.2s ease, transform 0.2s ease;
   margin-top: 0.5rem;
+  letter-spacing: 0.01em;
 }
 
 .mazz-btn:hover {
-  background: var(--navy-light);
+  background: var(--accent);
   transform: translateY(-2px);
 }
 
 .dark .mazz-btn {
-  background: #79b8ff;
-  color: #0d1117 !important;
+  background: var(--accent);
+  color: #ffffff !important;
 }
 
 /* Quote block — Mazzucato: large italic with quote marks */
@@ -1371,13 +1583,13 @@ article img:hover,
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 5rem;
   line-height: 1;
-  color: #e8524f;
+  color: var(--accent);
   opacity: 0.25;
   display: block;
 }
 
 .dark .mazz-quote .quote-mark {
-  color: #e8524f;
+  color: var(--accent);
   opacity: 0.35;
 }
 
@@ -1387,13 +1599,13 @@ article img:hover,
 }
 
 .mazz-quote p {
-  font-family: Georgia, 'Times New Roman', serif !important;
+  font-family: var(--font-heading) !important;
   font-style: italic;
-  font-size: 1.5rem !important;
-  line-height: 1.5 !important;
-  color: #666 !important;
+  font-size: 1.375rem !important;
+  line-height: 1.55 !important;
+  color: #555 !important;
   margin: -1rem 0 0.75rem 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .dark .mazz-quote p {
@@ -1405,7 +1617,7 @@ article img:hover,
   font-style: normal;
   font-size: 1rem;
   font-weight: 600;
-  color: #e8524f;
+  color: var(--accent);
   display: block;
   margin-top: 0.75rem;
 }
