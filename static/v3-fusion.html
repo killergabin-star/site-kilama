@@ -61,7 +61,7 @@
     background: linear-gradient(90deg, var(--navy) 0%, var(--blue-fpsq) 40%, transparent 80%);
     opacity: 0; transition: opacity 0.35s;
   }
-  nav.scrolled::after { opacity: 0.12; }
+  nav.scrolled::after { opacity: 0.2; }
   .nav-inner {
     max-width: 1100px; margin: 0 auto; padding: 0 2rem;
     display: flex; align-items: center; justify-content: space-between;
@@ -207,22 +207,22 @@
 
   /* ── Section label — PIIE-inspired editorial header ── */
   .section-label {
-    font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    color: var(--text-secondary); margin-bottom: 2rem;
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--navy); margin-bottom: 2.5rem;
     display: flex; align-items: center; gap: 1rem;
+    opacity: 0.7;
   }
   .section-label::before {
     content: '';
-    width: 3px; height: 14px;
+    width: 28px; height: 2.5px;
     background: var(--blue-fpsq);
-    border-radius: 1px;
     flex-shrink: 0;
   }
   .section-label::after {
     content: '';
     flex: 1; height: 1px;
-    background: var(--border-light);
+    background: rgba(27, 42, 74, 0.12);
   }
 
   /* ── SECTION 1 : Hero — DARK PHOTO (Mazzucato-meets-Blattman) ── */
@@ -345,9 +345,9 @@
 
   /* ── SECTION 2 : Dernière publication ── */
   .featured {
-    padding: 4rem 0;
+    padding: 4.5rem 0 4rem;
     background: var(--ivory-deep);
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(27, 42, 74, 0.1);
   }
   .featured-card {
     display: grid;
@@ -395,14 +395,17 @@
   }
   /* Chart visualization on cover — now handled inline */
   .featured-tag {
-    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
+    font-family: var(--font-heading); font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
     color: var(--red-analytical); margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2.5px solid var(--red-analytical);
+    display: inline-block;
   }
   .featured-title {
-    font-family: var(--font-body); font-weight: 600; font-size: 1.9rem;
-    color: var(--navy); line-height: 1.25; margin-bottom: 1.2rem;
-    letter-spacing: -0.01em;
+    font-family: var(--font-body); font-weight: 600; font-size: 2.1rem;
+    color: var(--navy); line-height: 1.22; margin-bottom: 1rem;
+    letter-spacing: -0.015em;
   }
   .featured-excerpt {
     font-size: 1.02rem; color: var(--text-secondary); line-height: 1.7;
@@ -433,9 +436,9 @@
   .featured-secondary-item:first-child { border-top: 1px solid var(--border-light); }
   .featured-secondary-item:hover { background: rgba(44, 95, 138, 0.02); }
   .featured-secondary-tag {
-    font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--blue-fpsq); margin-bottom: 0.2rem;
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--blue-fpsq); margin-bottom: 0.25rem;
   }
   .featured-secondary-title {
     font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
@@ -448,9 +451,9 @@
 
   /* ── SECTION 3 : Programmes ── */
   .programmes {
-    padding: 4rem 0;
+    padding: 4.5rem 0 4rem;
     background: var(--ivory);
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(27, 42, 74, 0.1);
   }
   .programmes-grid {
     display: grid;
@@ -458,39 +461,56 @@
     gap: 2rem;
   }
   .programme-card {
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 0;
     border-left: 3px solid var(--blue-fpsq);
     background: var(--ivory-deep);
     transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
     position: relative;
     box-shadow: 0 1px 4px rgba(27, 42, 74, 0.08);
+    overflow: hidden;
   }
   .programme-card:hover {
     box-shadow: 0 6px 24px rgba(27, 42, 74, 0.14);
     transform: translateY(-4px);
     border-left-color: var(--navy);
   }
+  /* Generative SVG header zone */
+  .programme-card-viz {
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(27,42,74,0.03) 0%, rgba(44,95,138,0.06) 100%);
+  }
+  .programme-card-viz svg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  }
+  .programme-card-num {
+    position: absolute; top: 12px; left: 16px;
+    font-family: var(--font-mono); font-size: 2.8rem; font-weight: 400;
+    color: rgba(27, 42, 74, 0.10);
+    line-height: 1;
+    z-index: 2;
+    transition: color 0.25s;
+  }
+  .programme-card:hover .programme-card-num { color: rgba(44, 95, 138, 0.20); }
   .programme-card-arrow {
-    position: absolute; top: 1rem; right: 1.2rem;
+    position: absolute; top: 16px; right: 16px;
     font-family: var(--font-heading); font-size: 1.1rem;
     color: rgba(27, 42, 74, 0.12);
     transition: color 0.2s, transform 0.2s;
+    z-index: 2;
   }
   .programme-card:hover .programme-card-arrow {
     color: var(--blue-fpsq);
     transform: translateX(3px);
   }
-  /* Large monospace number — top left behind text */
-  .programme-card-num {
-    font-family: var(--font-mono); font-size: 2.2rem; font-weight: 400;
-    color: rgba(27, 42, 74, 0.06);
-    line-height: 1;
-    margin-bottom: 0.3rem;
+  .programme-card-content {
+    padding: 1.2rem 1.5rem 1.5rem;
   }
   .programme-card-level {
     font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--text-secondary); margin-bottom: 0.5rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--blue-fpsq); margin-bottom: 0.5rem;
   }
   .programme-card-title {
     font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
@@ -508,9 +528,9 @@
 
   /* ── SECTION 4 : Analyses récentes ── */
   .analyses {
-    padding: 4rem 0;
+    padding: 4.5rem 0 4rem;
     background: var(--ivory-deep);
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(27, 42, 74, 0.1);
   }
   .analyses-header {
     display: flex; justify-content: space-between; align-items: flex-end;
@@ -524,23 +544,23 @@
   }
   .analyses-view-all:hover { text-decoration: none; gap: 0.5rem; }
   .analysis-item {
-    padding: 1.25rem 0;
+    padding: 1.1rem 0;
     border-bottom: 1px solid var(--border-light);
     display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 2rem;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
     align-items: baseline;
-    transition: background 0.15s;
+    transition: background 0.15s, padding-left 0.2s;
   }
-  .analysis-item:hover { background: rgba(44, 95, 138, 0.015); }
+  .analysis-item:hover { background: rgba(44, 95, 138, 0.025); padding-left: 0.5rem; }
   .analysis-item:first-of-type { border-top: 1px solid var(--border-light); }
   .analysis-date {
     font-family: var(--font-heading); font-size: 0.75rem;
     color: var(--text-secondary);
   }
   .analysis-tag {
-    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
     color: #fff; margin-bottom: 0.4rem;
     display: inline-block;
     padding: 0.2rem 0.65rem;
@@ -551,8 +571,8 @@
   .analysis-tag.tag-research { background: var(--red-analytical); }
   .analysis-tag.tag-foresight { background: var(--gold-caps); color: var(--navy); }
   .analysis-title {
-    font-family: var(--font-body); font-weight: 600; font-size: 1.12rem;
-    color: var(--navy); line-height: 1.38; margin-bottom: 0.3rem;
+    font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
+    color: var(--navy); line-height: 1.35; margin-bottom: 0.25rem;
   }
   .analysis-title a { color: var(--navy); text-decoration: none; }
   .analysis-title a:hover { color: var(--blue-fpsq); text-decoration: none; }
@@ -572,149 +592,157 @@
   .analysis-item:hover .analysis-read { opacity: 1; }
   .analysis-read:hover { gap: 0.5rem; text-decoration: none; }
 
-  /* ── SECTION 5 : Vigie — dark dashboard (React-style upgrade) ── */
+  /* ── SECTION 5 : Vigie — Scenario Space ── */
   .vigie {
-    padding: 4rem 0;
+    padding: 5rem 0 4rem;
     background: var(--navy);
     color: rgba(255, 255, 255, 0.85);
     position: relative;
+    overflow: hidden;
   }
-  .vigie .section-label {
-    color: rgba(255, 255, 255, 0.4);
-  }
-  .vigie .section-label::before {
-    background: var(--gold-caps);
-  }
-  .vigie .section-label::after {
-    background: rgba(255, 255, 255, 0.08);
-  }
+  .vigie .section-label { color: rgba(255,255,255,0.4); }
+  .vigie .section-label::before { background: var(--gold-caps); }
+  .vigie .section-label::after { background: rgba(255,255,255,0.08); }
   .vigie-header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: end;
-    margin-bottom: 2rem;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 3rem; align-items: end; margin-bottom: 1.5rem;
   }
   .vigie-header h2 {
-    font-size: 1.75rem; color: #fff; margin-bottom: 0.8rem;
-    letter-spacing: -0.01em;
+    font-size: 1.9rem; color: #fff; margin-bottom: 0.6rem;
+    letter-spacing: -0.015em;
   }
   .vigie-header p {
-    font-size: 1rem; color: rgba(255, 255, 255, 0.6); line-height: 1.7;
-    max-width: 600px;
+    font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.7;
+    max-width: 550px;
   }
-  /* KPI strip — GTA-inspired metrics */
-  .vigie-kpis {
-    display: flex; gap: 2.5rem;
-    padding-bottom: 0.3rem;
-  }
-  .vigie-kpi {
-    text-align: center;
-  }
+  .vigie-kpis { display: flex; gap: 2.5rem; }
+  .vigie-kpi { text-align: center; }
   .vigie-kpi-number {
     font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700;
-    color: var(--gold-caps); line-height: 1;
-    letter-spacing: -0.02em;
+    color: var(--gold-caps); line-height: 1; letter-spacing: -0.02em;
   }
   .vigie-kpi-label {
     font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.4); margin-top: 0.35rem;
+    color: rgba(255,255,255,0.4); margin-top: 0.35rem;
   }
-  /* Active scenarios list */
-  .vigie-scenarios {
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.04);
+
+  /* ── Scenario Space — central fan chart visualization ── */
+  .vigie-viz {
+    margin: 2rem 0 2.5rem;
+    position: relative;
+    height: 240px;
     border-radius: 4px;
-    padding: 0 1.5rem;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
   }
-  .vigie-scenario {
-    display: grid;
-    grid-template-columns: 8px 1fr auto;
-    gap: 1.2rem;
-    align-items: center;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: background 0.15s;
+  .vigie-viz svg { width: 100%; height: 100%; }
+  .vigie-viz-label {
+    position: absolute; font-family: var(--font-mono); font-size: 0.65rem;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.04em;
   }
-  .vigie-scenario:first-child { border-top: none; }
-  .vigie-scenario:last-child { border-bottom: none; }
-  .vigie-scenario:hover { background: rgba(255, 255, 255, 0.02); }
-  /* Status dot — color-coded like GTA */
-  .vigie-status {
-    width: 8px; height: 8px; border-radius: 50%;
-    flex-shrink: 0;
+  .vigie-viz-label.now { top: auto; bottom: 12px; left: 80px; }
+  .vigie-viz-label.horizon { top: auto; bottom: 12px; right: 40px; }
+
+  /* ── Scenario panels — 3 large cards under the viz ── */
+  .vigie-panels {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2rem; margin-bottom: 2.5rem;
   }
-  .vigie-status.active { background: #2E7D32; } /* vert — monitoring actif */
-  .vigie-status.watch { background: var(--gold-caps); } /* ambre — sous surveillance */
-  .vigie-status.alert { background: var(--red-analytical); } /* rouge — alerte */
-  .vigie-scenario-content {}
-  .vigie-scenario-title {
-    font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
-    color: #fff; line-height: 1.35; margin-bottom: 0.15rem;
-  }
-  .vigie-scenario-meta {
-    font-family: var(--font-heading); font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.4);
-  }
-  .vigie-scenario-right {
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .vigie-sparkline {
-    width: 80px; height: 28px;
-  }
-  .vigie-sparkline polyline {
-    fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
-  }
-  .vigie-scenario-prob {
-    font-family: var(--font-mono); font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.85); font-weight: 400;
-    white-space: nowrap;
-  }
-  .vigie-scenario-delta {
-    font-family: var(--font-mono); font-size: 0.72rem;
-    font-weight: 600; white-space: nowrap;
-  }
-  .vigie-scenario-delta.up { color: var(--red-analytical); }
-  .vigie-scenario-delta.down { color: #2E7D32; }
-  /* Feature grid underneath */
-  .vigie-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-  }
-  .vigie-feature {
-    padding: 1.5rem;
-    border-left: 2px solid var(--gold-caps);
-    background: rgba(255, 255, 255, 0.04);
+  .vigie-panel {
+    padding: 1.8rem 1.5rem;
     border-radius: 4px;
-    transition: background 0.2s;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    transition: background 0.2s, border-color 0.25s, transform 0.25s;
   }
-  .vigie-feature:hover {
-    background: rgba(255, 255, 255, 0.07);
+  .vigie-panel:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
   }
-  .vigie-feature h4 {
-    font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem;
-    color: #fff; margin-bottom: 0.5rem;
+  .vigie-panel-status {
+    display: flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 1rem;
   }
-  .vigie-feature p {
-    font-size: 0.88rem; color: rgba(255, 255, 255, 0.5); line-height: 1.55;
+  .vigie-panel-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    box-shadow: 0 0 8px currentColor;
+  }
+  .vigie-panel-dot.active { background: #2E7D32; color: #2E7D32; }
+  .vigie-panel-dot.watch { background: var(--gold-caps); color: var(--gold-caps); }
+  .vigie-panel-dot.alert { background: var(--red-analytical); color: var(--red-analytical); }
+  .vigie-panel-label {
+    font-family: var(--font-mono); font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+  }
+  .vigie-panel-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
+    color: #fff; line-height: 1.35; margin-bottom: 0.8rem;
+  }
+  .vigie-panel-prob {
+    font-family: var(--font-mono); font-size: 2rem; font-weight: 400;
+    color: #fff; margin-bottom: 0.2rem; line-height: 1;
+  }
+  .vigie-panel-delta {
+    font-family: var(--font-mono); font-size: 0.78rem;
+    font-weight: 600; margin-bottom: 1.2rem;
+  }
+  .vigie-panel-delta.up { color: var(--red-analytical); }
+  .vigie-panel-delta.down { color: #2E7D32; }
+  .vigie-panel-delta.stable { color: rgba(255,255,255,0.4); }
+  /* Signpost progress bar */
+  .vigie-panel-signposts {
+    margin-bottom: 0.6rem;
+  }
+  .vigie-panel-signposts-label {
+    font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.35); margin-bottom: 0.4rem;
+    display: flex; justify-content: space-between;
+  }
+  .vigie-panel-bar {
+    height: 3px; background: rgba(255,255,255,0.08);
+    border-radius: 2px; overflow: hidden;
+  }
+  .vigie-panel-bar-fill {
+    height: 100%; border-radius: 2px;
+    transition: width 0.5s;
+  }
+  .vigie-panel-bar-fill.active { background: #2E7D32; }
+  .vigie-panel-bar-fill.watch { background: var(--gold-caps); }
+  .vigie-panel-bar-fill.alert { background: var(--red-analytical); }
+  .vigie-panel-meta {
+    font-family: var(--font-heading); font-size: 0.68rem;
+    color: rgba(255,255,255,0.3); margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
   .vigie-cta {
-    margin-top: 2.5rem;
+    text-align: center;
   }
   .vigie-cta a {
-    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
-    color: var(--gold-caps);
-    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600;
+    color: var(--gold-caps); padding: 14px 36px;
+    border: 1px solid rgba(212,160,23,0.3);
+    border-radius: 2px;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.25s;
   }
-  .vigie-cta a:hover { text-decoration: none; gap: 0.6rem; color: #fff; }
+  .vigie-cta a:hover {
+    text-decoration: none; gap: 0.7rem;
+    background: rgba(212,160,23,0.08);
+    border-color: rgba(212,160,23,0.5);
+  }
 
   /* ── SECTION 6 : Teaching teaser ── */
   .teaching {
-    padding: 4rem 0;
+    padding: 4.5rem 0 4rem;
     background: var(--ivory);
-    border-top: 1px solid var(--border-light);
+    border-top: 1px solid rgba(27, 42, 74, 0.1);
   }
   .teaching-grid {
     display: grid;
@@ -723,8 +751,15 @@
     align-items: start;
   }
   .teaching-intro h2 {
-    font-size: 1.5rem; color: var(--navy); margin-bottom: 1rem;
+    font-size: 1.6rem; color: var(--navy); margin-bottom: 1rem;
     letter-spacing: -0.01em;
+  }
+  .teaching-intro h2::after {
+    content: '';
+    display: block;
+    width: 40px; height: 2px;
+    background: var(--blue-fpsq);
+    margin-top: 0.8rem;
   }
   .teaching-intro p {
     font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;
@@ -786,7 +821,7 @@
   }
   .credentials blockquote {
     font-family: var(--font-accent); font-weight: 700; font-style: italic;
-    font-size: 1.4rem; color: #fff; line-height: 1.55;
+    font-size: 1.5rem; color: #fff; line-height: 1.5;
     margin-bottom: 1.5rem;
     border: none; padding: 0;
     position: relative;
@@ -812,19 +847,29 @@
   }
   .credential-badge {
     text-align: center;
-    padding: 1.5rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
     background: rgba(255, 255, 255, 0.03);
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .credential-badge::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 40px; height: 2.5px;
+    background: var(--gold-caps); opacity: 0.5;
+    transition: width 0.3s, opacity 0.3s;
   }
   .credential-badge:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
   }
+  .credential-badge:hover::before { width: 70px; opacity: 0.8; }
   .credential-badge-value {
-    font-family: var(--font-heading); font-size: 0.88rem; font-weight: 700;
-    color: #fff; margin-bottom: 0.3rem;
+    font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700;
+    color: #fff; margin-bottom: 0.35rem;
   }
   .credential-badge-value a { color: var(--gold-caps); }
   .credential-badge-value a:hover { color: #fff; text-decoration: none; }
@@ -836,6 +881,7 @@
   /* Links row centered */
   .credentials-links-row {
     text-align: center;
+    margin-top: -0.5rem;
   }
   .credentials-links-row a {
     font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500;
@@ -845,7 +891,7 @@
   }
   .credentials-links-row a:hover { color: var(--gold-caps); text-decoration: none; }
   .credentials-link {
-    margin-top: 2rem; text-align: center;
+    margin-top: 1.5rem; text-align: center;
   }
   .credentials-link a {
     font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
@@ -872,15 +918,18 @@
   .footer-brand {
     font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;
     color: #fff; letter-spacing: 0.04em; margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--gold-caps);
+    display: inline-block;
   }
   .footer-brand-desc {
     font-family: var(--font-body); font-size: 0.85rem;
     color: rgba(255,255,255,0.5); line-height: 1.6;
   }
   .footer-col-title {
-    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.4); margin-bottom: 1rem;
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.5); margin-bottom: 1rem;
   }
   .footer-col a {
     display: block; padding: 0.25rem 0;
@@ -905,12 +954,15 @@
   }
   .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
 
-  /* ── Recent strip — horizontal bar between hero and featured ── */
+  /* ── Recent strip — horizontal bar between hero and featured (Economist ticker feel) ── */
   .recent-strip {
-    padding: 1.5rem 0;
-    background: var(--ivory);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+    padding: 0.9rem 0;
+    background: #fff;
+    border-top: 3px solid var(--navy);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.1);
+    box-shadow: 0 2px 12px rgba(27, 42, 74, 0.06);
+    position: relative;
+    z-index: 10;
   }
   .recent-strip-inner {
     display: grid;
@@ -919,10 +971,12 @@
     align-items: center;
   }
   .recent-strip-label {
-    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.12em;
-    color: var(--text-secondary);
+    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--navy);
     white-space: nowrap;
+    padding-right: 1rem;
+    border-right: 2px solid var(--border-light);
   }
   .recent-strip-items {
     display: grid;
@@ -937,11 +991,14 @@
   }
   .recent-strip-item:hover { background: rgba(44, 95, 138, 0.02); }
   .recent-strip-tag {
-    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em;
+    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
     color: var(--blue-fpsq);
     white-space: nowrap;
     flex-shrink: 0;
+    padding: 0.15rem 0.5rem;
+    background: rgba(44, 95, 138, 0.06);
+    border-radius: 2px;
   }
   .recent-strip-title {
     font-family: var(--font-body); font-weight: 600; font-size: 0.88rem;
@@ -1254,37 +1311,136 @@
   <div class="container">
     <div class="section-label">Programme de recherche</div>
     <div class="programmes-grid">
+      <!-- Card 01 — States: fracture/disruption network -->
       <div class="programme-card">
-        <div class="programme-card-arrow">→</div>
-        <div class="programme-card-num">01</div>
-        <div class="programme-card-level">États</div>
-        <div class="programme-card-title">Instabilité politique, corruption et choix économiques</div>
-        <div class="programme-card-desc">Coups d'État, corruption, déformation des choix professionnels. Haïti, Sahel, Corne de l'Afrique comme laboratoires des fragilités.</div>
-        <div class="programme-card-status">QJE under review · Oxford Econ. Papers under review</div>
+        <div class="programme-card-viz">
+          <div class="programme-card-num">01</div>
+          <div class="programme-card-arrow">→</div>
+          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+            <defs><linearGradient id="pgFrac" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B2A4A" stop-opacity="0.06"/><stop offset="100%" stop-color="#C0392B" stop-opacity="0.04"/></linearGradient></defs>
+            <!-- Fracture lines -->
+            <line x1="120" y1="0" x2="180" y2="100" stroke="#1B2A4A" stroke-width="0.6" opacity="0.08"/>
+            <line x1="250" y1="0" x2="200" y2="100" stroke="#C0392B" stroke-width="0.5" opacity="0.06"/>
+            <line x1="350" y1="0" x2="400" y2="100" stroke="#1B2A4A" stroke-width="0.7" opacity="0.07"/>
+            <line x1="180" y1="50" x2="350" y2="40" stroke="#1B2A4A" stroke-width="0.4" opacity="0.06"/>
+            <!-- Disruption nodes -->
+            <circle cx="180" cy="50" r="18" fill="url(#pgFrac)"/><circle cx="180" cy="50" r="4" fill="#C0392B" opacity="0.12"/>
+            <circle cx="350" cy="40" r="14" fill="url(#pgFrac)"/><circle cx="350" cy="40" r="3" fill="#1B2A4A" opacity="0.10"/>
+            <circle cx="120" cy="25" r="8" fill="url(#pgFrac)"/><circle cx="120" cy="25" r="2" fill="#1B2A4A" opacity="0.08"/>
+            <circle cx="420" cy="70" r="10" fill="url(#pgFrac)"/><circle cx="420" cy="70" r="2.5" fill="#C0392B" opacity="0.08"/>
+            <!-- Alert pulse -->
+            <circle cx="180" cy="50" r="28" fill="none" stroke="#C0392B" stroke-width="0.5" opacity="0.06"/>
+            <!-- Scatter points — fragility data -->
+            <circle cx="100" cy="70" r="1.2" fill="#1B2A4A" opacity="0.12"/><circle cx="220" cy="30" r="1" fill="#1B2A4A" opacity="0.10"/>
+            <circle cx="280" cy="75" r="1.5" fill="#C0392B" opacity="0.08"/><circle cx="310" cy="20" r="0.8" fill="#1B2A4A" opacity="0.10"/>
+            <circle cx="380" cy="60" r="1.3" fill="#1B2A4A" opacity="0.10"/><circle cx="450" cy="35" r="1" fill="#1B2A4A" opacity="0.08"/>
+          </svg>
+        </div>
+        <div class="programme-card-content">
+          <div class="programme-card-level">États</div>
+          <div class="programme-card-title">Instabilité politique, corruption et choix économiques</div>
+          <div class="programme-card-desc">Coups d'État, corruption, déformation des choix professionnels. Haïti, Sahel, Corne de l'Afrique comme laboratoires des fragilités.</div>
+          <div class="programme-card-status">QJE under review · Oxford Econ. Papers under review</div>
+        </div>
       </div>
+      <!-- Card 02 — Firms: cluster/network -->
       <div class="programme-card">
-        <div class="programme-card-arrow">→</div>
-        <div class="programme-card-num">02</div>
-        <div class="programme-card-level">Entreprises</div>
-        <div class="programme-card-title">Risque géopolitique et performance des PME</div>
-        <div class="programme-card-desc">Impact des chocs politiques sur l'investissement, l'emploi et la survie des firmes. 337&nbsp;000 entreprises, 79 pays.</div>
-        <div class="programme-card-status">Working paper · Soumission 2026</div>
+        <div class="programme-card-viz">
+          <div class="programme-card-num">02</div>
+          <div class="programme-card-arrow">→</div>
+          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+            <defs><linearGradient id="pgClust" x1="0" y1="0" x2="1" y2="0.5"><stop offset="0%" stop-color="#2C5F8A" stop-opacity="0.05"/><stop offset="100%" stop-color="#1B2A4A" stop-opacity="0.03"/></linearGradient></defs>
+            <!-- Firm network — interconnected clusters -->
+            <line x1="130" y1="45" x2="250" y2="35" stroke="#2C5F8A" stroke-width="0.6" opacity="0.10"/>
+            <line x1="250" y1="35" x2="370" y2="55" stroke="#2C5F8A" stroke-width="0.6" opacity="0.10"/>
+            <line x1="250" y1="35" x2="310" y2="80" stroke="#2C5F8A" stroke-width="0.4" opacity="0.07"/>
+            <line x1="130" y1="45" x2="180" y2="80" stroke="#2C5F8A" stroke-width="0.4" opacity="0.07"/>
+            <line x1="370" y1="55" x2="440" y2="30" stroke="#2C5F8A" stroke-width="0.4" opacity="0.07"/>
+            <!-- Hub nodes — firms -->
+            <circle cx="130" cy="45" r="16" fill="url(#pgClust)"/><circle cx="130" cy="45" r="5" fill="#2C5F8A" opacity="0.12"/>
+            <circle cx="250" cy="35" r="22" fill="url(#pgClust)"/><circle cx="250" cy="35" r="6" fill="#2C5F8A" opacity="0.10"/>
+            <circle cx="370" cy="55" r="14" fill="url(#pgClust)"/><circle cx="370" cy="55" r="4" fill="#2C5F8A" opacity="0.12"/>
+            <!-- Satellite dots — smaller firms -->
+            <circle cx="180" cy="80" r="6" fill="url(#pgClust)"/><circle cx="180" cy="80" r="2" fill="#2C5F8A" opacity="0.08"/>
+            <circle cx="310" cy="80" r="8" fill="url(#pgClust)"/><circle cx="310" cy="80" r="2.5" fill="#2C5F8A" opacity="0.08"/>
+            <circle cx="440" cy="30" r="7" fill="url(#pgClust)"/><circle cx="440" cy="30" r="2" fill="#2C5F8A" opacity="0.08"/>
+            <circle cx="100" cy="20" r="1.2" fill="#2C5F8A" opacity="0.10"/><circle cx="200" cy="15" r="1" fill="#2C5F8A" opacity="0.08"/>
+            <circle cx="400" cy="85" r="1.5" fill="#2C5F8A" opacity="0.08"/><circle cx="460" cy="65" r="1" fill="#2C5F8A" opacity="0.06"/>
+          </svg>
+        </div>
+        <div class="programme-card-content">
+          <div class="programme-card-level">Entreprises</div>
+          <div class="programme-card-title">Risque géopolitique et performance des PME</div>
+          <div class="programme-card-desc">Impact des chocs politiques sur l'investissement, l'emploi et la survie des firmes. 337&nbsp;000 entreprises, 79 pays.</div>
+          <div class="programme-card-status">Working paper · Soumission 2026</div>
+        </div>
       </div>
+      <!-- Card 03 — International system: flow lines -->
       <div class="programme-card">
-        <div class="programme-card-arrow">→</div>
-        <div class="programme-card-num">03</div>
-        <div class="programme-card-level">Système international</div>
-        <div class="programme-card-title">Architecture de l'aide et financement du développement</div>
-        <div class="programme-card-desc">Chine comme bailleur alternatif, fragmentation des alliances, weaponisation des interdépendances économiques.</div>
-        <div class="programme-card-status">Rapport G7 · China Aid WP</div>
+        <div class="programme-card-viz">
+          <div class="programme-card-num">03</div>
+          <div class="programme-card-arrow">→</div>
+          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="pgFlow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#D4A017" stop-opacity="0.08"/><stop offset="50%" stop-color="#2C5F8A" stop-opacity="0.06"/><stop offset="100%" stop-color="#1B2A4A" stop-opacity="0.04"/></linearGradient>
+            </defs>
+            <!-- Aid flow curves — bezier paths -->
+            <path d="M0,60 C80,30 160,70 250,40 S400,20 500,50" stroke="#D4A017" stroke-width="1.2" opacity="0.12" fill="none"/>
+            <path d="M0,75 C100,55 200,85 300,55 S420,40 500,65" stroke="#2C5F8A" stroke-width="0.8" opacity="0.10" fill="none"/>
+            <path d="M0,40 C120,20 200,50 300,30 S400,45 500,25" stroke="#1B2A4A" stroke-width="0.6" opacity="0.08" fill="none" stroke-dasharray="4,4"/>
+            <!-- Source/destination nodes -->
+            <circle cx="80" cy="42" r="10" fill="url(#pgFlow)"/><circle cx="80" cy="42" r="3" fill="#D4A017" opacity="0.15"/>
+            <circle cx="250" cy="40" r="14" fill="url(#pgFlow)"/><circle cx="250" cy="40" r="4" fill="#D4A017" opacity="0.12"/>
+            <circle cx="420" cy="32" r="8" fill="url(#pgFlow)"/><circle cx="420" cy="32" r="2.5" fill="#2C5F8A" opacity="0.10"/>
+            <!-- Transfer arrow markers -->
+            <polygon points="175,48 185,52 175,56" fill="#D4A017" opacity="0.10"/>
+            <polygon points="340,38 350,42 340,46" fill="#2C5F8A" opacity="0.08"/>
+          </svg>
+        </div>
+        <div class="programme-card-content">
+          <div class="programme-card-level">Système international</div>
+          <div class="programme-card-title">Architecture de l'aide et financement du développement</div>
+          <div class="programme-card-desc">Chine comme bailleur alternatif, fragmentation des alliances, weaponisation des interdépendances économiques.</div>
+          <div class="programme-card-status">Rapport G7 · China Aid WP</div>
+        </div>
       </div>
+      <!-- Card 04 — Foresight: branching scenarios -->
       <div class="programme-card">
-        <div class="programme-card-arrow">→</div>
-        <div class="programme-card-num">04</div>
-        <div class="programme-card-level">Prospectif</div>
-        <div class="programme-card-title">Vigie — Prospective quantitative</div>
-        <div class="programme-card-desc">Scénarios conditionnels, signposts, probabilités calibrées. Combler le vide entre analyse qualitative et modélisation macro.</div>
-        <div class="programme-card-status">Framework opérationnel · VSN actifs</div>
+        <div class="programme-card-viz">
+          <div class="programme-card-num">04</div>
+          <div class="programme-card-arrow">→</div>
+          <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="pgProb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D4A017" stop-opacity="0.06"/><stop offset="100%" stop-color="transparent"/></linearGradient>
+            </defs>
+            <!-- Scenario tree — branching paths from a single origin -->
+            <path d="M80,50 C150,50 180,25 280,18" stroke="#2E7D32" stroke-width="1" opacity="0.14" fill="none"/>
+            <path d="M80,50 C150,50 200,50 300,48" stroke="#D4A017" stroke-width="1.2" opacity="0.16" fill="none"/>
+            <path d="M80,50 C150,55 200,70 320,82" stroke="#C0392B" stroke-width="0.8" opacity="0.12" fill="none"/>
+            <!-- Probability cone — shaded area between best/worst -->
+            <path d="M80,50 C150,50 180,25 280,18 L300,48 C200,50 150,50 80,50Z" fill="#D4A017" opacity="0.03"/>
+            <path d="M80,50 C150,50 200,50 300,48 L320,82 C200,70 150,55 80,50Z" fill="#C0392B" opacity="0.02"/>
+            <!-- Origin node -->
+            <circle cx="80" cy="50" r="12" fill="url(#pgProb)"/><circle cx="80" cy="50" r="4" fill="#D4A017" opacity="0.18"/>
+            <!-- Endpoint markers -->
+            <circle cx="280" cy="18" r="4" fill="#2E7D32" opacity="0.12"/>
+            <circle cx="300" cy="48" r="5" fill="#D4A017" opacity="0.14"/>
+            <circle cx="320" cy="82" r="3.5" fill="#C0392B" opacity="0.10"/>
+            <!-- Signpost markers — diamond shapes -->
+            <rect x="165" y="35" width="5" height="5" transform="rotate(45 167.5 37.5)" fill="#1B2A4A" opacity="0.10"/>
+            <rect x="220" y="28" width="4" height="4" transform="rotate(45 222 30)" fill="#1B2A4A" opacity="0.08"/>
+            <!-- Probability labels (decorative) -->
+            <text x="425" y="22" font-family="JetBrains Mono, monospace" font-size="7" fill="#2E7D32" opacity="0.15">p=0.25</text>
+            <text x="425" y="52" font-family="JetBrains Mono, monospace" font-size="7" fill="#D4A017" opacity="0.18">p=0.45</text>
+            <text x="425" y="86" font-family="JetBrains Mono, monospace" font-size="7" fill="#C0392B" opacity="0.12">p=0.30</text>
+          </svg>
+        </div>
+        <div class="programme-card-content">
+          <div class="programme-card-level">Prospectif</div>
+          <div class="programme-card-title">Vigie — Prospective quantitative</div>
+          <div class="programme-card-desc">Scénarios conditionnels, signposts, probabilités calibrées. Combler le vide entre analyse qualitative et modélisation macro.</div>
+          <div class="programme-card-status">Framework opérationnel · VSN actifs</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1350,84 +1506,118 @@
   </div>
 </section>
 
-<!-- SECTION 5 : Vigie / Foresight -->
+<!-- SECTION 5 : Vigie — Scenario Space -->
 <section class="vigie reveal" id="foresight">
   <div class="container">
     <div class="section-label">Foresight</div>
     <div class="vigie-header">
       <div>
         <h2>Vigie — Prospective stratégique quantitative</h2>
-        <p>Scénarios conditionnels rigoureux avec probabilités calibrées, signposts observables et métriques d'alerte pour chaque bifurcation géopolitique.</p>
+        <p>Chaque bifurcation géopolitique majeure fait l'objet d'un scénario conditionnel avec probabilités calibrées et signposts observables.</p>
       </div>
       <div class="vigie-kpis">
-        <div class="vigie-kpi">
-          <div class="vigie-kpi-number">3</div>
-          <div class="vigie-kpi-label">Scénarios actifs</div>
-        </div>
-        <div class="vigie-kpi">
-          <div class="vigie-kpi-number">12</div>
-          <div class="vigie-kpi-label">Signposts</div>
-        </div>
-        <div class="vigie-kpi">
-          <div class="vigie-kpi-number">Q2</div>
-          <div class="vigie-kpi-label">Horizon</div>
-        </div>
+        <div class="vigie-kpi"><div class="vigie-kpi-number">3</div><div class="vigie-kpi-label">Scénarios</div></div>
+        <div class="vigie-kpi"><div class="vigie-kpi-number">18</div><div class="vigie-kpi-label">Signposts</div></div>
+        <div class="vigie-kpi"><div class="vigie-kpi-number">Q4</div><div class="vigie-kpi-label">Horizon</div></div>
       </div>
     </div>
 
-    <!-- Active scenarios with status indicators -->
-    <div class="vigie-scenarios">
-      <div class="vigie-scenario">
-        <div class="vigie-status active"></div>
-        <div class="vigie-scenario-content">
-          <div class="vigie-scenario-title">VSN Iran — Trajectoires post-accord nucléaire</div>
-          <div class="vigie-scenario-meta">3 trajectoires · 8 signposts · Mise à jour mars 2026</div>
-        </div>
-        <div class="vigie-scenario-right">
-          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,20 12,18 24,14 36,16 48,10 60,12 72,6 80,8" stroke="#2E7D32"/></svg>
-          <div class="vigie-scenario-prob">p = 0.45</div>
-          <div class="vigie-scenario-delta up">+12pp</div>
-        </div>
-      </div>
-      <div class="vigie-scenario">
-        <div class="vigie-status watch"></div>
-        <div class="vigie-scenario-content">
-          <div class="vigie-scenario-title">Fragmentation commerciale Asie — Scénarios polycrises</div>
-          <div class="vigie-scenario-meta">2 trajectoires · 6 signposts · En construction</div>
-        </div>
-        <div class="vigie-scenario-right">
-          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,14 12,16 24,12 36,18 48,15 60,20 72,17 80,22" stroke="#D4A017"/></svg>
-          <div class="vigie-scenario-prob">p = 0.30</div>
-          <div class="vigie-scenario-delta down">-3pp</div>
-        </div>
-      </div>
-      <div class="vigie-scenario">
-        <div class="vigie-status alert"></div>
-        <div class="vigie-scenario-content">
-          <div class="vigie-scenario-title">Architecture de l'aide — Reconfiguration post-G7</div>
-          <div class="vigie-scenario-meta">2 trajectoires · 4 signposts · Alerte budgétaire active</div>
-        </div>
-        <div class="vigie-scenario-right">
-          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,8 12,10 24,6 36,14 48,12 60,18 72,22 80,25" stroke="#C0392B"/></svg>
-          <div class="vigie-scenario-prob">p = 0.60</div>
-          <div class="vigie-scenario-delta up">+8pp</div>
-        </div>
-      </div>
+    <!-- Central scenario space — fan chart -->
+    <div class="vigie-viz">
+      <div class="vigie-viz-label now">T₀ MARS 2026</div>
+      <div class="vigie-viz-label horizon">HORIZON Q4 2026</div>
+      <svg viewBox="0 0 1100 240" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="coneG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2E7D32" stop-opacity="0"/><stop offset="100%" stop-color="#2E7D32" stop-opacity="0.12"/></linearGradient>
+          <linearGradient id="coneA" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#D4A017" stop-opacity="0"/><stop offset="100%" stop-color="#D4A017" stop-opacity="0.10"/></linearGradient>
+          <linearGradient id="coneR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#C0392B" stop-opacity="0"/><stop offset="100%" stop-color="#C0392B" stop-opacity="0.08"/></linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Time grid -->
+        <line x1="100" y1="20" x2="100" y2="220" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="300" y1="20" x2="300" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4,6"/>
+        <line x1="500" y1="20" x2="500" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4,6"/>
+        <line x1="700" y1="20" x2="700" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4,6"/>
+        <line x1="900" y1="20" x2="900" y2="220" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4,6"/>
+        <text x="300" y="235" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(255,255,255,0.15)">AVR</text>
+        <text x="500" y="235" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(255,255,255,0.15)">JUN</text>
+        <text x="700" y="235" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(255,255,255,0.15)">AOÛ</text>
+        <text x="900" y="235" font-family="JetBrains Mono, monospace" font-size="8" fill="rgba(255,255,255,0.15)">OCT</text>
+        <!-- Probability cones (shaded areas) -->
+        <path d="M100,120 C300,118 500,90 700,55 L900,30 L1050,22 L1050,50 L900,55 L700,72 C500,100 300,119 100,120Z" fill="url(#coneG)"/>
+        <path d="M100,120 C300,120 500,118 700,115 L900,112 L1050,108 L1050,140 L900,138 L700,132 C500,128 300,122 100,120Z" fill="url(#coneA)"/>
+        <path d="M100,120 C300,122 500,145 700,175 L900,200 L1050,215 L1050,192 L900,182 L700,162 C500,138 300,121 100,120Z" fill="url(#coneR)"/>
+        <!-- Trajectory lines -->
+        <path d="M100,120 C250,118 400,100 550,80 Q700,58 850,42 L1050,28" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M100,120 C250,120 400,119 550,118 Q700,116 850,120 L1050,122" stroke="#D4A017" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8"/>
+        <path d="M100,120 C250,122 400,140 550,160 Q700,178 850,195 L1050,208" stroke="#C0392B" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <!-- Origin node -->
+        <circle cx="100" cy="120" r="6" fill="#D4A017" opacity="0.6" filter="url(#glow)"/>
+        <circle cx="100" cy="120" r="3" fill="#fff" opacity="0.9"/>
+        <!-- Endpoint nodes -->
+        <circle cx="1050" cy="28" r="5" fill="#2E7D32" opacity="0.5" filter="url(#glow)"/>
+        <circle cx="1050" cy="122" r="6" fill="#D4A017" opacity="0.6" filter="url(#glow)"/>
+        <circle cx="1050" cy="208" r="4.5" fill="#C0392B" opacity="0.5" filter="url(#glow)"/>
+        <!-- Signpost markers on trajectories -->
+        <rect x="295" y="117" width="6" height="6" rx="1" transform="rotate(45 298 120)" fill="#D4A017" opacity="0.5"/>
+        <rect x="495" y="77" width="5" height="5" rx="1" transform="rotate(45 497.5 79.5)" fill="#2E7D32" opacity="0.4"/>
+        <rect x="695" y="173" width="5" height="5" rx="1" transform="rotate(45 697.5 175.5)" fill="#C0392B" opacity="0.4"/>
+        <rect x="545" y="155" width="5" height="5" rx="1" transform="rotate(45 547.5 157.5)" fill="#C0392B" opacity="0.3"/>
+        <rect x="845" y="40" width="5" height="5" rx="1" transform="rotate(45 847.5 42.5)" fill="#2E7D32" opacity="0.3"/>
+        <!-- Endpoint probability labels -->
+        <text x="1060" y="32" font-family="JetBrains Mono, monospace" font-size="10" fill="#2E7D32" opacity="0.7">0.25</text>
+        <text x="1060" y="126" font-family="JetBrains Mono, monospace" font-size="11" fill="#D4A017" opacity="0.8" font-weight="600">0.45</text>
+        <text x="1060" y="212" font-family="JetBrains Mono, monospace" font-size="10" fill="#C0392B" opacity="0.6">0.30</text>
+        <!-- Scenario labels (right side) -->
+        <text x="960" y="20" font-family="Inter, sans-serif" font-size="8" fill="rgba(255,255,255,0.3)" text-transform="uppercase" letter-spacing="0.08em">DÉSESCALADE</text>
+        <text x="960" y="145" font-family="Inter, sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-transform="uppercase" letter-spacing="0.08em">STATU QUO</text>
+        <text x="960" y="225" font-family="Inter, sans-serif" font-size="8" fill="rgba(255,255,255,0.3)" text-transform="uppercase" letter-spacing="0.08em">ESCALADE</text>
+      </svg>
     </div>
 
-    <!-- Feature grid -->
-    <div class="vigie-features">
-      <div class="vigie-feature">
-        <h4>Scénarios conditionnels</h4>
-        <p>Trajectoires ancrées dans les données, avec probabilités calibrées et horizons temporels explicites.</p>
+    <!-- 3 Scenario panels -->
+    <div class="vigie-panels">
+      <div class="vigie-panel">
+        <div class="vigie-panel-status">
+          <div class="vigie-panel-dot active"></div>
+          <div class="vigie-panel-label">Monitoring actif</div>
+        </div>
+        <div class="vigie-panel-title">VSN Iran — Trajectoires post-accord nucléaire</div>
+        <div class="vigie-panel-prob">0.45</div>
+        <div class="vigie-panel-delta up">↑ +12pp depuis T-1</div>
+        <div class="vigie-panel-signposts">
+          <div class="vigie-panel-signposts-label"><span>Signposts déclenchés</span><span>5 / 8</span></div>
+          <div class="vigie-panel-bar"><div class="vigie-panel-bar-fill active" style="width: 62.5%"></div></div>
+        </div>
+        <div class="vigie-panel-meta">3 trajectoires · Mise à jour mars 2026</div>
       </div>
-      <div class="vigie-feature">
-        <h4>Signposts observables</h4>
-        <p>Indicateurs qui signalent en temps réel quelle trajectoire se matérialise.</p>
+      <div class="vigie-panel">
+        <div class="vigie-panel-status">
+          <div class="vigie-panel-dot watch"></div>
+          <div class="vigie-panel-label">Sous surveillance</div>
+        </div>
+        <div class="vigie-panel-title">Fragmentation commerciale Asie — Polycrises</div>
+        <div class="vigie-panel-prob">0.30</div>
+        <div class="vigie-panel-delta down">↓ -3pp depuis T-1</div>
+        <div class="vigie-panel-signposts">
+          <div class="vigie-panel-signposts-label"><span>Signposts déclenchés</span><span>2 / 6</span></div>
+          <div class="vigie-panel-bar"><div class="vigie-panel-bar-fill watch" style="width: 33%"></div></div>
+        </div>
+        <div class="vigie-panel-meta">2 trajectoires · En construction</div>
       </div>
-      <div class="vigie-feature">
-        <h4>Métriques d'alerte</h4>
-        <p>Seuils quantifiés déclenchant une révision des scénarios et recommandations.</p>
+      <div class="vigie-panel">
+        <div class="vigie-panel-status">
+          <div class="vigie-panel-dot alert"></div>
+          <div class="vigie-panel-label">Alerte active</div>
+        </div>
+        <div class="vigie-panel-title">Architecture de l'aide — Reconfiguration post-G7</div>
+        <div class="vigie-panel-prob">0.60</div>
+        <div class="vigie-panel-delta up">↑ +8pp depuis T-1</div>
+        <div class="vigie-panel-signposts">
+          <div class="vigie-panel-signposts-label"><span>Signposts déclenchés</span><span>3 / 4</span></div>
+          <div class="vigie-panel-bar"><div class="vigie-panel-bar-fill alert" style="width: 75%"></div></div>
+        </div>
+        <div class="vigie-panel-meta">2 trajectoires · Alerte budgétaire</div>
       </div>
     </div>
 
