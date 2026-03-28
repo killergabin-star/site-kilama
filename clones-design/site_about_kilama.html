@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Eric Kilama</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   ABOUT — Improvised composition
+   Mazzucato info-sections × PIIE credentials density
+   × McKinsey weight 300 headlines × Economist clean editorial
+   ═══════════════════════════════════════════════════ */
+:root {
+    --navy: #1B2A4A;
+    --blue: #2C5F8A;
+    --red: #C0392B;
+    --gold: #D4A017;
+    --ivory: #F8F7F4;
+    --ivory-deep: #F0EDE8;
+    --anthracite: #2D2D2D;
+    --text-secondary: #5A6068;
+    --border-light: rgba(27,42,74,0.08);
+    --white: #FFFFFF;
+
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-serif);
+    font-size: 16px; font-weight: 400;
+    line-height: 1.6; color: var(--anthracite);
+    background: var(--ivory);
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header — same as homepage (Mazzucato dropdown) */
+.header {
+    height: 72px; position: fixed;
+    top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px;
+    background: var(--white);
+    box-shadow: 0 1px 4px rgba(27,42,74,0.08);
+}
+.header-logo { display: flex; flex-direction: column; line-height: 1.05; text-decoration: none; }
+.header-logo .first { font-family: var(--font-sans); font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: 1.5px; text-transform: uppercase; }
+.header-logo .last { font-family: var(--font-sans); font-size: 18px; font-weight: 800; color: var(--blue); letter-spacing: 1.5px; text-transform: uppercase; }
+.header-nav { display: flex; gap: 28px; align-items: center; }
+.header-nav a {
+    font-family: var(--font-sans); font-size: 14px; font-weight: 600;
+    color: var(--navy); text-decoration: none; transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--blue); text-decoration: none; }
+.header-nav a.active { color: var(--blue); border-bottom: 2px solid var(--blue); padding-bottom: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   HERO — McKinsey weight 300 + portrait area
+   ═══════════════════════════════════════════════════ */
+.about-hero {
+    padding: 120px 40px 64px;
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px; align-items: end;
+}
+.about-hero h1 {
+    font-family: var(--font-sans);
+    font-size: 44px; font-weight: 300;
+    color: var(--navy); line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+.about-hero h1 strong { font-weight: 600; }
+.about-hero-subtitle {
+    font-family: var(--font-serif);
+    font-size: 18px; color: var(--text-secondary);
+    line-height: 1.6; max-width: 560px;
+}
+.portrait-area {
+    width: 300px; height: 380px;
+    background: linear-gradient(135deg, var(--ivory-deep), #e4dfd8);
+    display: flex; align-items: center; justify-content: center;
+}
+.portrait-placeholder {
+    width: 240px; height: 320px;
+    background: linear-gradient(to top, rgba(27,42,74,0.05), rgba(27,42,74,0.02));
+    border: 1px solid var(--border-light);
+}
+
+/* ═══════════════════════════════════════════════════
+   INFO SECTIONS — Mazzucato alternating layout
+   ═══════════════════════════════════════════════════ */
+.info-section {
+    padding: 64px 40px;
+    max-width: 1100px; margin: 0 auto;
+}
+.info-section.alt { background: var(--ivory-deep); max-width: none; }
+.info-section.alt .info-inner { max-width: 1100px; margin: 0 auto; }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: start;
+}
+.info-grid.reverse { direction: rtl; }
+.info-grid.reverse > * { direction: ltr; }
+
+.info-label {
+    font-family: var(--font-sans);
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--blue); margin-bottom: 12px;
+}
+.info-heading {
+    font-family: var(--font-sans);
+    font-size: 28px; font-weight: 300;
+    color: var(--navy); line-height: 1.2;
+    margin-bottom: 16px;
+}
+.info-heading strong { font-weight: 600; }
+
+.info-text p {
+    font-family: var(--font-serif);
+    font-size: 16px; color: var(--anthracite);
+    line-height: 1.6; margin-bottom: 12px;
+}
+
+/* Quote box — Mazzucato style */
+.info-quote {
+    background: var(--navy);
+    padding: 24px;
+    margin-top: 20px;
+}
+.info-quote blockquote {
+    font-family: var(--font-display);
+    font-size: 20px; font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.4;
+}
+.info-quote cite {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 13px; font-style: normal;
+    color: var(--gold);
+    margin-top: 10px;
+}
+
+/* ═══════════════════════════════════════════════════
+   PHILOSOPHY — Narrative & approach
+   ═══════════════════════════════════════════════════ */
+.philosophy-section {
+    padding: 64px 40px;
+    max-width: 1100px; margin: 0 auto;
+}
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+.philosophy-text p {
+    font-family: var(--font-serif);
+    font-size: 16px; color: var(--anthracite);
+    line-height: 1.7; margin-bottom: 16px;
+}
+.philosophy-principles { list-style: none; }
+.philosophy-principles li {
+    padding: 16px 0;
+    border-top: 1px solid var(--border-light);
+}
+.philosophy-principles li:first-child { border-top: 2px solid var(--navy); }
+.principle-num {
+    font-family: var(--font-sans);
+    font-size: 11px; font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 4px;
+}
+.principle-title {
+    font-family: var(--font-sans);
+    font-size: 15px; font-weight: 600;
+    color: var(--navy); margin-bottom: 4px;
+}
+.principle-desc {
+    font-family: var(--font-serif);
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.5;
+}
+.cv-download {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 600;
+    color: var(--blue); margin-top: 16px;
+    padding: 10px 20px;
+    border: 1.5px solid var(--blue);
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+.cv-download:hover {
+    background: var(--blue); color: var(--white);
+    text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   CREDENTIALS GRID — PIIE density
+   ═══════════════════════════════════════════════════ */
+.credentials-section {
+    background: var(--ivory-deep);
+    padding: 64px 40px;
+}
+.credentials-inner { max-width: 1100px; margin: 0 auto; }
+.cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.cred-card {
+    background: var(--white);
+    border-left: 3px solid var(--blue);
+    padding: 20px 24px;
+}
+.cred-card h4 {
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 600;
+    color: var(--navy); margin-bottom: 6px;
+}
+.cred-card p {
+    font-family: var(--font-serif);
+    font-size: 14px; color: var(--text-secondary);
+    line-height: 1.5;
+}
+.cred-card.gold { border-left-color: var(--gold); }
+.cred-card.red { border-left-color: var(--red); }
+
+/* ═══════════════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════════════ */
+.contact-section {
+    padding: 64px 40px;
+    max-width: 1100px; margin: 0 auto;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+.contact-item {
+    font-family: var(--font-sans);
+    font-size: 14px; color: var(--anthracite);
+    margin-bottom: 16px;
+}
+.contact-item strong {
+    display: block; color: var(--navy);
+    margin-bottom: 4px;
+}
+.contact-item a { color: var(--blue); }
+
+/* Footer — same as homepage */
+.footer {
+    background: var(--navy);
+    padding: 48px 40px 32px; color: var(--white);
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 48px; margin-bottom: 32px;
+}
+.footer-brand { font-family: var(--font-sans); font-size: 16px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+.footer-brand span { color: var(--blue); }
+.footer-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+.footer-col h4 { font-family: var(--font-sans); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+.footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 6px; text-decoration: none; }
+.footer-col a:hover { color: var(--gold); text-decoration: none; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-family: var(--font-sans); font-size: 12px; color: rgba(255,255,255,0.3); }
+
+@media (max-width: 900px) {
+    .about-hero { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <a href="/" class="header-logo">
+        <span class="first">ERIC</span>
+        <span class="last">KILAMA</span>
+    </a>
+    <nav class="header-nav">
+        <a href="/">Home</a>
+        <a href="/research">Research</a>
+        <a href="/policy">Policy</a>
+        <a href="/vigie">Foresight</a>
+        <a href="#">Teaching</a>
+        <a href="#" class="active">About</a>
+        <a href="#" style="color:var(--text-secondary); font-size:12px;">FR / EN</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="about-hero">
+    <div>
+        <h1>Macroéconomiste-stratège,<br><strong>quantifier l'incertitude</strong></h1>
+        <p class="about-hero-subtitle">
+            12 ans d'expérience entre recherche académique, conseil stratégique et prospective institutionnelle. Du CAPS au Quai d'Orsay aux think tanks, une question constante : comment mesurer la transmission des chocs géopolitiques à l'économie ?
+        </p>
+    </div>
+    <div class="portrait-area">
+        <div class="portrait-placeholder"></div>
+    </div>
+</section>
+
+<!-- Info Section 1 — Researcher (Mazzucato style) -->
+<section class="info-section">
+    <div class="info-grid">
+        <div>
+            <div class="info-label">Chercheur</div>
+            <h2 class="info-heading">Économétrie causale &amp; <strong>risque géopolitique</strong></h2>
+            <div class="info-text">
+                <p>Doctorat en économie du développement (CERDI, Clermont-Ferrand). Spécialisé en économétrie causale appliquée aux questions de risque géopolitique, de commerce international et de gouvernance.</p>
+                <p>Chercheur associé au BETA (Université de Lorraine) et à la FERDI. Publications dans European Economic Review, Journal of Comparative Economics, Cambridge Review of International Affairs.</p>
+            </div>
+            <div class="info-quote">
+                <blockquote>« La rigueur quantitative n'est pas incompatible avec la pertinence politique — elle en est la condition. »</blockquote>
+                <cite>Eric Kilama</cite>
+            </div>
+        </div>
+        <div>
+            <svg viewBox="0 0 400 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#E8E4DE"/>
+                <rect x="30" y="30" width="340" height="240" rx="2" fill="#DDD8D0"/>
+                <rect x="50" y="50" width="130" height="8" rx="4" fill="#C8C0B8"/>
+                <rect x="50" y="70" width="200" height="6" rx="3" fill="#D0C8C0"/>
+                <rect x="50" y="90" width="180" height="6" rx="3" fill="#D0C8C0"/>
+                <rect x="50" y="120" width="300" height="130" rx="2" fill="#D8D2CA"/>
+                <text x="200" y="195" font-family="Inter" font-size="12" fill="#A09890" text-anchor="middle">Publication / Research output</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section 2 — Policy Advisor -->
+<section class="info-section alt">
+    <div class="info-inner">
+        <div class="info-grid reverse">
+            <div>
+                <svg viewBox="0 0 400 300" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" fill="#E2DED8"/>
+                    <rect x="100" y="40" width="200" height="220" rx="2" fill="#D8D2CA"/>
+                    <circle cx="200" cy="120" r="40" fill="#CCC6BE"/>
+                    <rect x="150" y="180" width="100" height="6" rx="3" fill="#C0B8B0"/>
+                    <rect x="160" y="200" width="80" height="4" rx="2" fill="#C8C0B8"/>
+                </svg>
+            </div>
+            <div>
+                <div class="info-label">Conseiller stratégique</div>
+                <h2 class="info-heading">Du CAPS aux <strong>décideurs G7</strong></h2>
+                <div class="info-text">
+                    <p>Cinq ans au Centre d'Analyse, de Prévision et de Stratégie (CAPS) du Ministère de l'Europe et des Affaires étrangères. Rédaction de notes stratégiques pour le cabinet du Ministre et le réseau diplomatique français.</p>
+                    <p>Développement d'outils de prospective quantitative — le moteur de scénarios FPSQ, des indices de risque géopolitique appliqués, et des notes de veille stratégique (VSN) pour les décideurs.</p>
+                </div>
+                <div class="info-quote">
+                    <blockquote>« Un analyste crédible au CAPS, compétent sur les sujets macro et géopolitiques. »</blockquote>
+                    <cite>Ambassadeur Lafont Rapnouil — Ancien directeur CAPS</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy & Approach -->
+<section class="philosophy-section">
+    <div class="info-label">Philosophie de recherche</div>
+    <h2 class="info-heading" style="margin-bottom:24px;">Pourquoi <strong>quantifier l'incertitude</strong></h2>
+    <div class="philosophy-grid">
+        <div class="philosophy-text">
+            <p>La recherche en économie géopolitique souffre d'un paradoxe : les décideurs ont besoin de chiffres, mais les chiffres disponibles sont soit trop agrégés pour être utiles, soit trop fragiles pour être fiables. Mon programme de recherche tente de résoudre ce paradoxe — produire des mesures rigoureuses du risque géopolitique qui soient directement exploitables.</p>
+            <p>Le fil rouge de ce travail est la <strong>transmission causale</strong> : comment un choc géopolitique — une crise au détroit d'Hormuz, un tarif douanier, un changement de régime — se propage-t-il à travers les canaux commerciaux, financiers et institutionnels ? Et peut-on identifier ces canaux avec la rigueur d'un essai clinique, plutôt qu'avec l'intuition d'un éditorialiste ?</p>
+            <p>C'est cette question qui relie mes travaux apparemment disparates : l'impact de l'aide chinoise sur la corruption, les effets des coups d'État sur le développement, la transmission du GPR au commerce bilatéral, et les scénarios macrofinanciers de FPSQ. Chaque projet est un angle différent sur le même problème — mesurer et anticiper les conséquences économiques de l'instabilité politique.</p>
+            <p>Cinq ans au CAPS m'ont convaincu que la recherche quantitative et le conseil stratégique ne sont pas deux mondes — ils sont deux moments du même travail. L'analyse qui ne parvient pas au décideur est inutile ; le conseil qui ne repose pas sur des données est dangereux.</p>
+            <a href="#" class="cv-download">Télécharger le CV complet (PDF) →</a>
+        </div>
+        <div>
+            <ul class="philosophy-principles">
+                <li>
+                    <div class="principle-num">Principe 01</div>
+                    <div class="principle-title">Identification causale, pas corrélation</div>
+                    <div class="principle-desc">Chaque résultat repose sur une stratégie d'identification explicite : DiD, IV, SCM, Event Study. Les associations ne sont jamais présentées comme des effets.</div>
+                </li>
+                <li>
+                    <div class="principle-num">Principe 02</div>
+                    <div class="principle-title">Pertinence politique, pas abstraction</div>
+                    <div class="principle-desc">Un résultat qui ne peut pas être traduit en recommandation actionnable n'est pas fini. Chaque projet vise un public décisionnel identifié.</div>
+                </li>
+                <li>
+                    <div class="principle-num">Principe 03</div>
+                    <div class="principle-title">Transparence et réplicabilité</div>
+                    <div class="principle-desc">Données, code et méthodologie sont documentés et accessibles. La crédibilité se construit sur la reproductibilité, pas sur l'autorité.</div>
+                </li>
+                <li>
+                    <div class="principle-num">Principe 04</div>
+                    <div class="principle-title">Prospective ancrée dans les données</div>
+                    <div class="principle-desc">Les scénarios FPSQ ne sont pas des récits — ce sont des simulations calibrées, testées par 234 diagnostics et validées par Monte Carlo.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Credentials -->
+<section class="credentials-section">
+    <div class="credentials-inner">
+        <div class="info-label">Compétences &amp; credentials</div>
+        <h2 class="info-heading" style="margin-bottom:24px;">Expertise <strong>multidimensionnelle</strong></h2>
+        <div class="cred-grid">
+            <div class="cred-card">
+                <h4>Économétrie causale</h4>
+                <p>DiD, IV, Event Study, SCM, RDD. Expertise en identification causale appliquée aux questions de commerce et de risque géopolitique.</p>
+            </div>
+            <div class="cred-card">
+                <h4>Prospective quantitative</h4>
+                <p>Moteur de scénarios FPSQ (v1.4, 234 tests). Monte Carlo, projections macrofinancières, calibration de modèles.</p>
+            </div>
+            <div class="cred-card gold">
+                <h4>Intelligence géopolitique</h4>
+                <p>5 ans au CAPS. Rédaction de notes stratégiques, veille géopolitique, coordination d'analyses pour décideurs.</p>
+            </div>
+            <div class="cred-card">
+                <h4>Publications académiques</h4>
+                <p>European Economic Review, Journal of Comparative Economics, Cambridge Review of International Affairs. AEJ en review.</p>
+            </div>
+            <div class="cred-card red">
+                <h4>Habilitation Secret Défense</h4>
+                <p>Habilitation valide jusqu'en septembre 2026. Expérience en environnement classifié (MEAE).</p>
+            </div>
+            <div class="cred-card">
+                <h4>Outils &amp; langages</h4>
+                <p>R (primary), Stata, Python, LaTeX. Analyse de données massives, visualisation, automatisation de pipelines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section">
+    <div class="info-label">Contact</div>
+    <h2 class="info-heading" style="margin-bottom:24px;"><strong>Prendre contact</strong></h2>
+    <div class="contact-grid">
+        <div>
+            <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:kilamaericgabin@yahoo.fr">kilamaericgabin@yahoo.fr</a>
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn</strong>
+                <a href="#">linkedin.com/in/eric-gabin-kilama</a>
+            </div>
+            <div class="contact-item">
+                <strong>ORCID</strong>
+                <a href="#">orcid.org/xxxx-xxxx</a>
+            </div>
+        </div>
+        <div>
+            <div class="contact-item">
+                <strong>Affiliations</strong>
+                BETA — Université de Lorraine<br>
+                FERDI — Clermont-Ferrand<br>
+                Fondation France-Asie
+            </div>
+            <div class="contact-item">
+                <strong>Références</strong>
+                Ambassadeur Lafont Rapnouil (CAPS)<br>
+                Alexandre Escorcia (MinArm)<br>
+                Christian Ebeke (FMI)
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">ERIC <span>KILAMA</span></div>
+                <p class="footer-desc">Intelligence géopolitique quantifiée — recherche, prospective et conseil.</p>
+            </div>
+            <div class="footer-col"><h4>Research</h4><a href="#">Publications</a><a href="#">Working Papers</a><a href="#">Data</a></div>
+            <div class="footer-col"><h4>Policy</h4><a href="#">Briefs</a><a href="#">Notes</a><a href="#">Vigie FPSQ</a></div>
+            <div class="footer-col"><h4>About</h4><a href="#">Bio</a><a href="#">Teaching</a><a href="#">Contact</a></div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Eric Kilama. Tous droits réservés.</div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eric Kilama — Economist &amp; Strategist</title>
+  <meta name="description" content="Eric Kilama. Quantifier la transmission des chocs geopolitiques a l'economie. Chercheur associe BETA, FERDI. Former CAPS/Quai d'Orsay." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-light': '#243656',
+            'navy-dark': '#111D33',
+            blue: '#2C5F8A',
+            'blue-light': '#3A7AB5',
+            red: '#C0392B',
+            gold: '#D4A017',
+            ivory: '#F8F7F4',
+            'ivory-warm': '#F5F3EE',
+            anthracite: '#2D2D2D',
+            'anthracite-light': '#4A4A4A',
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- React 18 CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* --- Base --- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { margin: 0; padding: 0; background: #F8F7F4; color: #2D2D2D; font-family: 'Source Serif 4', Georgia, serif; }
+
+    /* --- Animations --- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes drawLine {
+      from { stroke-dashoffset: 300; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(44, 95, 138, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(44, 95, 138, 0); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-60px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(60px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale { opacity: 0; transform: scale(0.92); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+
+    /* --- Hero parallax --- */
+    .hero-bg {
+      background-image:
+        linear-gradient(135deg, rgba(27,42,74,0.92) 0%, rgba(27,42,74,0.7) 40%, rgba(27,42,74,0.55) 100%),
+        url('avatar.png');
+      background-size: cover;
+      background-position: center 20%;
+      background-attachment: fixed;
+    }
+    @media (max-width: 768px) {
+      .hero-bg { background-attachment: scroll; background-position: center center; }
+    }
+
+    /* --- Utility --- */
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #D4A017 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .line-accent {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, #D4A017, #C0392B);
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(27, 42, 74, 0.15);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #D4A017;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Sparkline animation */
+    .sparkline-path {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      transition: stroke-dashoffset 2s ease;
+    }
+    .sparkline-path.animate {
+      stroke-dashoffset: 0;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F8F7F4; }
+    ::-webkit-scrollbar-thumb { background: #1B2A4A; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2C5F8A; }
+
+    /* Custom selection */
+    ::selection { background: rgba(44, 95, 138, 0.2); color: #1B2A4A; }
+
+    /* Print */
+    @media print { .no-print { display: none !important; } }
+
+    /* Dropdown */
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef, useCallback } = React;
+
+    /* ============================================================
+       INTERSECTION OBSERVER HOOK
+    ============================================================ */
+    function useReveal(threshold = 0.15) {
+      const ref = useRef(null);
+      useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const obs = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              el.classList.add('visible');
+              obs.unobserve(el);
+            }
+          },
+          { threshold }
+        );
+        obs.observe(el);
+        return () => obs.disconnect();
+      }, []);
+      return ref;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    function Navigation() {
+      const [scrolled, setScrolled] = useState(false);
+      const [mobileOpen, setMobileOpen] = useState(false);
+
+      useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 60);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
+
+      const navItems = [
+        { label: 'Recherche', href: '#research', children: [
+          { label: 'Instabilite politique', href: '#research' },
+          { label: 'Risque geopolitique & PME', href: '#research' },
+          { label: 'Architecture de l\'aide', href: '#research' },
+        ]},
+        { label: 'Analyses', href: '#analyses' },
+        { label: 'Vigie', href: '#vigie' },
+        { label: 'Publications', href: '#featured' },
+        { label: 'Contact', href: '#credentials' },
+      ];
+
+      return (
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 no-print ${
+          scrolled
+            ? 'bg-navy/95 backdrop-blur-md shadow-lg shadow-navy/20 py-3'
+            : 'bg-transparent py-5'
+        }`}>
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            {/* Logo */}
+            <a href="#" className="flex items-center gap-3 group">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-red flex items-center justify-center text-white font-inter font-bold text-sm tracking-wider transition-transform duration-300 group-hover:scale-110">
+                EK
+              </div>
+              <span className="font-inter font-semibold text-white text-lg tracking-tight hidden sm:block">
+                Eric Kilama
+              </span>
+            </a>
+
+            {/* Desktop nav */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navItems.map((item) => (
+                <div key={item.label} className={item.children ? 'dropdown relative' : ''}>
+                  <a
+                    href={item.href}
+                    className="nav-link font-inter text-sm font-medium text-white/80 hover:text-white tracking-wide uppercase"
+                  >
+                    {item.label}
+                    {item.children && (
+                      <svg className="inline-block w-3 h-3 ml-1 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                  </a>
+                  {item.children && (
+                    <div className="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-navy-dark/98 backdrop-blur-lg rounded-xl shadow-2xl border border-white/10 p-2">
+                      {item.children.map((child) => (
+                        <a
+                          key={child.label}
+                          href={child.href}
+                          className="block px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors font-inter"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <a
+                href="#credentials"
+                className="ml-4 px-5 py-2.5 bg-gradient-to-r from-blue to-blue-light text-white font-inter text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-blue/30 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                CV & Contact
+              </a>
+            </div>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden text-white p-2"
+              aria-label="Menu"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile menu */}
+          {mobileOpen && (
+            <div className="lg:hidden bg-navy-dark/98 backdrop-blur-lg border-t border-white/10 mt-2">
+              <div className="px-6 py-4 space-y-1">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block py-3 text-white/80 hover:text-white font-inter text-sm font-medium border-b border-white/5 last:border-0"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </nav>
+      );
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    function Hero() {
+      const [loaded, setLoaded] = useState(false);
+      useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
+
+      return (
+        <section className="hero-bg relative min-h-screen flex items-center overflow-hidden">
+          {/* Noise texture overlay */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'repeat',
+          }} />
+
+          {/* Geometric accent lines */}
+          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+            <svg viewBox="0 0 400 800" fill="none" className="w-full h-full">
+              <line x1="100" y1="0" x2="100" y2="800" stroke="#D4A017" strokeWidth="0.5" />
+              <line x1="200" y1="0" x2="200" y2="800" stroke="#D4A017" strokeWidth="0.5" />
+              <line x1="300" y1="0" x2="300" y2="800" stroke="#D4A017" strokeWidth="0.5" />
+              <circle cx="200" cy="400" r="150" stroke="#D4A017" strokeWidth="0.5" />
+              <circle cx="200" cy="400" r="100" stroke="#D4A017" strokeWidth="0.5" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 lg:py-40 w-full">
+            <div className="max-w-4xl">
+              {/* Kicker */}
+              <div
+                className={`transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              >
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="line-accent" />
+                  <span className="font-mono text-gold text-xs tracking-[0.3em] uppercase font-medium">
+                    Economiste-strategue &middot; Ph.D.
+                  </span>
+                </div>
+              </div>
+
+              {/* Name */}
+              <h1
+                className={`transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+                style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.05 }}
+              >
+                <span className="font-playfair font-bold text-white block">
+                  Eric Kilama
+                </span>
+              </h1>
+
+              {/* Tagline */}
+              <p
+                className={`mt-6 font-playfair text-xl sm:text-2xl lg:text-3xl text-white/90 italic leading-snug max-w-3xl transition-all duration-1000 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              >
+                Quantifier la transmission des chocs
+                <br className="hidden sm:block" />
+                {' '}geopolitiques a l'economie
+              </p>
+
+              {/* Subtitle */}
+              <p
+                className={`mt-8 font-serif text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl transition-all duration-1000 delay-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              >
+                Sanctions, coups d'Etat, guerres commerciales, fragmentation des chaines de valeur : ces chocs ne restent jamais confines au politique. Ils se propagent a l'economie par des canaux identifiables et mesurables.
+              </p>
+
+              {/* Affiliations */}
+              <div
+                className={`mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 transition-all duration-1000 delay-[800ms] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              >
+                <span className="font-mono text-xs text-white/50 tracking-wider uppercase">BETA</span>
+                <span className="text-white/20">|</span>
+                <span className="font-mono text-xs text-white/50 tracking-wider uppercase">FERDI</span>
+                <span className="text-white/20">|</span>
+                <span className="font-mono text-xs text-white/50 tracking-wider uppercase">Ex-CAPS / Quai d'Orsay</span>
+              </div>
+
+              {/* CTAs */}
+              <div
+                className={`mt-10 flex flex-wrap gap-4 transition-all duration-1000 delay-[900ms] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              >
+                <a
+                  href="#research"
+                  className="group inline-flex items-center gap-2 px-8 py-4 bg-white text-navy font-inter font-semibold text-sm rounded-lg hover:bg-ivory transition-all duration-300 hover:shadow-xl hover:shadow-white/10 hover:-translate-y-1"
+                >
+                  Programmes de recherche
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a
+                  href="#featured"
+                  className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-inter font-semibold text-sm rounded-lg hover:border-gold hover:text-gold transition-all duration-300 hover:-translate-y-1"
+                >
+                  Derniere publication
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-[1200ms] ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
+              <div className="w-1 h-3 bg-white/60 rounded-full animate-bounce" />
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       RECENT STRIP
+    ============================================================ */
+    function RecentStrip() {
+      const ref = useReveal(0.3);
+      const items = [
+        { tag: 'POLICY', color: 'text-blue', label: 'Financement du developpement G7' },
+        { tag: 'FORESIGHT', color: 'text-gold', label: 'VSN Iran post-accord' },
+        { tag: 'RESEARCH', color: 'text-red', label: 'Geopolitical risk & SME' },
+      ];
+      return (
+        <div ref={ref} className="reveal bg-navy-dark border-y border-white/5">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12">
+            <span className="font-mono text-[10px] tracking-[0.3em] text-white/30 uppercase">Recent</span>
+            {items.map((item, i) => (
+              <React.Fragment key={item.tag}>
+                {i > 0 && <span className="hidden sm:block w-px h-4 bg-white/10" />}
+                <div className="flex items-center gap-2 text-sm">
+                  <span className={`font-mono text-[10px] tracking-[0.2em] ${item.color} font-bold uppercase`}>{item.tag}</span>
+                  <span className="text-white/50 font-serif">{item.label}</span>
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    /* ============================================================
+       FEATURED PUBLICATION
+    ============================================================ */
+    function FeaturedPublication() {
+      const ref = useReveal();
+      return (
+        <section id="featured" className="py-24 lg:py-32 bg-ivory">
+          <div ref={ref} className="reveal max-w-7xl mx-auto px-6">
+            {/* Section header */}
+            <div className="flex items-center gap-4 mb-12">
+              <div className="line-accent" />
+              <span className="font-mono text-[11px] tracking-[0.3em] text-anthracite-light uppercase font-medium">Publication a la une</span>
+            </div>
+
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+              {/* Left: dark card with chart */}
+              <div className="lg:col-span-2 bg-navy rounded-2xl p-8 lg:p-10 relative overflow-hidden group card-hover">
+                {/* Subtle grid pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <svg width="100%" height="100%">
+                    <defs>
+                      <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                  </svg>
+                </div>
+
+                {/* Decorative chart SVG */}
+                <div className="relative mb-8">
+                  <svg viewBox="0 0 300 160" className="w-full" fill="none">
+                    {/* Grid lines */}
+                    <line x1="30" y1="20" x2="30" y2="140" stroke="white" strokeWidth="0.3" opacity="0.2" />
+                    <line x1="30" y1="140" x2="280" y2="140" stroke="white" strokeWidth="0.3" opacity="0.2" />
+                    {[40, 60, 80, 100, 120].map((y) => (
+                      <line key={y} x1="30" y1={y} x2="280" y2={y} stroke="white" strokeWidth="0.2" opacity="0.1" strokeDasharray="4 4" />
+                    ))}
+
+                    {/* Area fill */}
+                    <path d="M 30 120 Q 80 100, 110 90 T 170 70 Q 210 55, 250 45 L 280 40 L 280 140 L 30 140 Z" fill="url(#areaGrad)" />
+                    <defs>
+                      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#D4A017" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#D4A017" stopOpacity="0.02" />
+                      </linearGradient>
+                    </defs>
+
+                    {/* Main line */}
+                    <path
+                      d="M 30 120 Q 80 100, 110 90 T 170 70 Q 210 55, 250 45 L 280 40"
+                      stroke="#D4A017"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+
+                    {/* Secondary line */}
+                    <path
+                      d="M 30 110 Q 70 115, 110 108 T 180 100 Q 220 92, 260 88 L 280 85"
+                      stroke="#2C5F8A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeDasharray="6 3"
+                    />
+
+                    {/* Data points */}
+                    <circle cx="110" cy="90" r="3.5" fill="#D4A017" />
+                    <circle cx="170" cy="70" r="3.5" fill="#D4A017" />
+                    <circle cx="250" cy="45" r="3.5" fill="#D4A017" />
+
+                    {/* Labels */}
+                    <text x="35" y="15" fill="white" opacity="0.4" fontSize="8" fontFamily="JetBrains Mono">Mds USD</text>
+                    <text x="245" y="155" fill="white" opacity="0.3" fontSize="7" fontFamily="JetBrains Mono">2025</text>
+                    <text x="105" y="155" fill="white" opacity="0.3" fontSize="7" fontFamily="JetBrains Mono">2020</text>
+                    <text x="35" y="155" fill="white" opacity="0.3" fontSize="7" fontFamily="JetBrains Mono">2015</text>
+                  </svg>
+                </div>
+
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-2.5 py-1 bg-gold/20 text-gold font-mono text-[10px] tracking-wider uppercase rounded-md font-bold">Rapport</span>
+                    <span className="text-white/30 font-mono text-xs">Mars 2026</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-white/40 font-mono text-xs mb-6">
+                    <span>42 pages</span>
+                    <span>&middot;</span>
+                    <span>FERDI &middot; BETA</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: text content */}
+              <div className="lg:col-span-3 flex flex-col justify-center">
+                <h3 className="font-playfair text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mb-6">
+                  Financement du developpement a la veille de la presidence francaise du G7
+                </h3>
+                <p className="font-serif text-lg text-anthracite/80 leading-relaxed mb-8">
+                  Comment la France peut-elle peser sur l'architecture du financement du developpement dans un contexte de retrait americain et de montee en puissance de la Chine ? Ce rapport propose un cadre analytique et des recommandations operationnelles pour la presidence francaise du G7.
+                </p>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center">
+                    <span className="font-inter text-xs font-bold text-navy">EK</span>
+                  </div>
+                  <div>
+                    <p className="font-inter text-sm font-semibold text-navy">Eric Kilama</p>
+                    <p className="font-mono text-xs text-anthracite/50">FERDI &middot; BETA &middot; Universite de Lorraine</p>
+                  </div>
+                </div>
+                <a href="#" className="group inline-flex items-center gap-2 font-inter text-sm font-semibold text-blue hover:text-navy transition-colors">
+                  Lire le rapport complet
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       RESEARCH PROGRAMMES
+    ============================================================ */
+    function ResearchProgrammes() {
+      const ref = useReveal();
+      const programmes = [
+        {
+          num: '01',
+          title: 'Etats',
+          subtitle: 'Instabilite politique, corruption et choix economiques',
+          detail: 'QJE under review',
+          desc: 'Comment les coups d\'Etat reconfigurent-ils les politiques economiques ? Econometrie causale sur les chocs politiques.',
+          accent: 'from-red/20 to-red/5',
+          border: 'hover:border-red/30',
+          numColor: 'text-red',
+        },
+        {
+          num: '02',
+          title: 'Entreprises',
+          subtitle: 'Risque geopolitique et performance des PME',
+          detail: '337 000 firmes, 79 pays',
+          desc: 'La transmission du risque geopolitique a l\'economie reelle, mesuree au niveau micro-economique le plus fin.',
+          accent: 'from-blue/20 to-blue/5',
+          border: 'hover:border-blue/30',
+          numColor: 'text-blue',
+        },
+        {
+          num: '03',
+          title: 'Systeme international',
+          subtitle: 'Architecture de l\'aide et financement du developpement',
+          detail: 'China Aid, G7',
+          desc: 'La recomposition de l\'architecture financiere du developpement face a la concurrence des modeles.',
+          accent: 'from-gold/20 to-gold/5',
+          border: 'hover:border-gold/30',
+          numColor: 'text-gold',
+        },
+        {
+          num: '04',
+          title: 'Prospectif',
+          subtitle: 'Vigie — Prospective quantitative',
+          detail: 'Scenarios conditionnels, signposts',
+          desc: 'Methodologie prospective quantitative pour anticiper les trajectoires economiques de scenarios geopolitiques.',
+          accent: 'from-navy/10 to-navy/5',
+          border: 'hover:border-navy/30',
+          numColor: 'text-navy',
+        },
+      ];
+
+      return (
+        <section id="research" className="py-24 lg:py-32 bg-white">
+          <div ref={ref} className="reveal max-w-7xl mx-auto px-6">
+            {/* Section header */}
+            <div className="flex items-center gap-4 mb-4">
+              <div className="line-accent" />
+              <span className="font-mono text-[11px] tracking-[0.3em] text-anthracite-light uppercase font-medium">Programmes de recherche</span>
+            </div>
+            <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4 max-w-3xl leading-tight">
+              Quatre axes, une question
+            </h2>
+            <p className="font-serif text-lg text-anthracite/60 mb-16 max-w-2xl">
+              Comment les chocs geopolitiques se propagent-ils a l'economie ? Chaque programme attaque un maillon de la chaine causale.
+            </p>
+
+            {/* 2x2 grid */}
+            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              {programmes.map((p, i) => (
+                <div
+                  key={p.num}
+                  className={`reveal stagger-${i + 1} group relative bg-ivory rounded-2xl p-8 lg:p-10 border border-transparent ${p.border} transition-all duration-500 card-hover overflow-hidden`}
+                >
+                  {/* Background gradient blob */}
+                  <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${p.accent} rounded-full -translate-y-12 translate-x-12 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+
+                  <div className="relative">
+                    <div className="flex items-start justify-between mb-6">
+                      <span className={`font-mono text-4xl font-bold ${p.numColor} opacity-20 group-hover:opacity-40 transition-opacity`}>
+                        {p.num}
+                      </span>
+                      <svg className="w-5 h-5 text-anthracite/20 group-hover:text-blue transition-colors mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+
+                    <h3 className="font-inter text-xs font-bold tracking-[0.2em] uppercase text-anthracite/40 mb-2">{p.title}</h3>
+                    <h4 className="font-playfair text-xl lg:text-2xl font-bold text-navy mb-3 leading-snug">{p.subtitle}</h4>
+                    <p className="font-mono text-[11px] text-blue/70 tracking-wider mb-4 uppercase">{p.detail}</p>
+                    <p className="font-serif text-base text-anthracite/70 leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       ANALYSES RECENTES
+    ============================================================ */
+    function AnalysesRecentes() {
+      const ref = useReveal();
+      const analyses = [
+        {
+          date: 'Mars 2026',
+          tag: 'Policy',
+          tagColor: 'bg-blue/10 text-blue',
+          title: 'La fragilite par la base : PME de defense et resilience geopolitique',
+          author: 'Eric Kilama',
+          org: 'IFRI',
+        },
+        {
+          date: 'Fevr. 2026',
+          tag: 'Foresight',
+          tagColor: 'bg-gold/10 text-gold',
+          title: 'VSN Iran : scenarios economiques post-accord nucleaire',
+          author: 'Eric Kilama',
+          org: null,
+        },
+        {
+          date: 'Janv. 2026',
+          tag: 'Research',
+          tagColor: 'bg-red/10 text-red',
+          title: 'Evidence on the political economy of a failed coup d\'etat',
+          author: 'Eric Kilama, Camille Laville',
+          org: null,
+        },
+        {
+          date: 'Dec. 2025',
+          tag: 'Policy',
+          tagColor: 'bg-blue/10 text-blue',
+          title: 'Sanctions et fragmentation commerciale : le cout pour les economies africaines',
+          author: 'Eric Kilama',
+          org: 'BETA, FERDI',
+        },
+        {
+          date: 'Nov. 2025',
+          tag: 'Research',
+          tagColor: 'bg-red/10 text-red',
+          title: 'The commodity channel of China\'s foreign aid: evidence from a synthetic control approach',
+          author: 'Eric Kilama',
+          org: null,
+        },
+      ];
+
+      return (
+        <section id="analyses" className="py-24 lg:py-32 bg-ivory-warm">
+          <div ref={ref} className="reveal max-w-7xl mx-auto px-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="line-accent" />
+              <span className="font-mono text-[11px] tracking-[0.3em] text-anthracite-light uppercase font-medium">Analyses recentes</span>
+            </div>
+            <h2 className="font-playfair text-3xl sm:text-4xl font-bold text-navy mb-16">
+              Dernieres publications
+            </h2>
+
+            <div className="space-y-0">
+              {analyses.map((a, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className={`reveal stagger-${i + 1} group block border-b border-anthracite/10 py-8 first:border-t hover:bg-white/60 transition-all duration-300 -mx-6 px-6 lg:-mx-10 lg:px-10`}
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
+                    {/* Date */}
+                    <div className="lg:w-28 shrink-0">
+                      <span className="font-mono text-xs text-anthracite/40 tracking-wider">{a.date}</span>
+                    </div>
+
+                    {/* Tag */}
+                    <div className="lg:w-24 shrink-0">
+                      <span className={`inline-block px-3 py-1 ${a.tagColor} font-mono text-[10px] tracking-[0.15em] uppercase rounded-full font-bold`}>
+                        {a.tag}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-playfair text-lg lg:text-xl font-semibold text-navy group-hover:text-blue transition-colors leading-snug">
+                        {a.title}
+                      </h3>
+                    </div>
+
+                    {/* Author */}
+                    <div className="lg:w-48 shrink-0 lg:text-right">
+                      <p className="font-inter text-sm text-anthracite/60">
+                        {a.author}
+                        {a.org && <span className="text-anthracite/30"> ({a.org})</span>}
+                      </p>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="hidden lg:block shrink-0">
+                      <svg className="w-5 h-5 text-anthracite/20 group-hover:text-blue group-hover:translate-x-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       VIGIE DASHBOARD
+    ============================================================ */
+    function VigieDashboard() {
+      const ref = useReveal();
+
+      const scenarios = [
+        {
+          name: 'Fragmentation commerciale acceleree',
+          status: 'red',
+          prob: 0.45,
+          sparkline: 'M0 30 Q15 25, 30 28 T60 20 Q75 15, 90 22 T120 10',
+          trend: '+12pp',
+        },
+        {
+          name: 'Accord nucleaire Iran',
+          status: 'amber',
+          prob: 0.30,
+          sparkline: 'M0 20 Q15 22, 30 18 T60 25 Q75 20, 90 22 T120 20',
+          trend: '-3pp',
+        },
+        {
+          name: 'Reshoring BITD europeenne',
+          status: 'green',
+          prob: 0.60,
+          sparkline: 'M0 30 Q15 28, 30 22 T60 18 Q75 12, 90 10 T120 8',
+          trend: '+8pp',
+        },
+      ];
+
+      const features = [
+        {
+          icon: (
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          ),
+          title: 'Scenarios conditionnels',
+          desc: 'Arbres de probabilites mis a jour par signposts observes.',
+        },
+        {
+          icon: (
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          ),
+          title: 'Signposts observables',
+          desc: 'Indicateurs avances identifies ex ante, suivi systematique.',
+        },
+        {
+          icon: (
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          ),
+          title: "Metriques d'alerte",
+          desc: 'Seuils de bascule calibres sur donnees historiques.',
+        },
+      ];
+
+      const statusColors = {
+        green: 'bg-emerald-400',
+        amber: 'bg-amber-400',
+        red: 'bg-red-400',
+      };
+      const statusGlow = {
+        green: 'shadow-emerald-400/50',
+        amber: 'shadow-amber-400/50',
+        red: 'shadow-red-400/50',
+      };
+
+      return (
+        <section id="vigie" className="py-24 lg:py-32 bg-navy text-white overflow-hidden">
+          <div ref={ref} className="reveal max-w-7xl mx-auto px-6">
+            {/* Header */}
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-[60px] h-[3px] bg-gradient-to-r from-gold to-gold/40" />
+              <span className="font-mono text-[11px] tracking-[0.3em] text-white/40 uppercase font-medium">Vigie — Prospective quantitative</span>
+            </div>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+              <div>
+                <h2 className="font-playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                  Tableau de bord
+                </h2>
+                <p className="font-serif text-lg text-white/50 max-w-xl">
+                  Suivi en temps reel des scenarios geopolitiques et de leurs indicateurs avances.
+                </p>
+              </div>
+
+              {/* KPIs */}
+              <div className="flex gap-8 lg:gap-12">
+                {[
+                  { value: '3', label: 'Scenarios actifs' },
+                  { value: '12', label: 'Signposts' },
+                  { value: 'Q2', label: 'Horizon' },
+                ].map((kpi) => (
+                  <div key={kpi.label} className="text-center lg:text-right">
+                    <div className="font-mono text-3xl lg:text-4xl font-bold text-gold">{kpi.value}</div>
+                    <div className="font-mono text-[10px] tracking-[0.2em] text-white/30 uppercase mt-1">{kpi.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Scenario rows */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden mb-12">
+              {/* Table header */}
+              <div className="hidden lg:grid grid-cols-12 gap-4 px-8 py-4 border-b border-white/5 text-white/30 font-mono text-[10px] tracking-[0.2em] uppercase">
+                <div className="col-span-1">Statut</div>
+                <div className="col-span-4">Scenario</div>
+                <div className="col-span-3">Tendance (6 mois)</div>
+                <div className="col-span-2 text-center">Probabilite</div>
+                <div className="col-span-2 text-right">Variation</div>
+              </div>
+
+              {scenarios.map((s, i) => (
+                <div
+                  key={s.name}
+                  className={`group grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-4 items-center px-6 lg:px-8 py-6 ${
+                    i < scenarios.length - 1 ? 'border-b border-white/5' : ''
+                  } hover:bg-white/5 transition-colors cursor-pointer`}
+                >
+                  {/* Status dot */}
+                  <div className="lg:col-span-1 flex items-center gap-3 lg:block">
+                    <div className={`w-3 h-3 rounded-full ${statusColors[s.status]} shadow-lg ${statusGlow[s.status]}`} />
+                    <span className="lg:hidden font-mono text-[10px] text-white/30 uppercase">{s.status}</span>
+                  </div>
+
+                  {/* Scenario name */}
+                  <div className="lg:col-span-4">
+                    <span className="font-inter text-sm font-semibold text-white/90 group-hover:text-white transition-colors">
+                      {s.name}
+                    </span>
+                  </div>
+
+                  {/* Sparkline */}
+                  <div className="lg:col-span-3">
+                    <svg viewBox="0 0 120 40" className="w-full max-w-[180px] h-10">
+                      <path
+                        d={s.sparkline}
+                        fill="none"
+                        stroke={s.status === 'red' ? '#C0392B' : s.status === 'amber' ? '#D4A017' : '#10B981'}
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        className="sparkline-path"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Probability */}
+                  <div className="lg:col-span-2 lg:text-center">
+                    <span className="font-mono text-lg font-bold text-white/90">
+                      p={s.prob.toFixed(2)}
+                    </span>
+                  </div>
+
+                  {/* Trend */}
+                  <div className="lg:col-span-2 lg:text-right">
+                    <span className={`font-mono text-sm font-bold ${
+                      s.trend.startsWith('+') ? 'text-red' : 'text-emerald-400'
+                    }`}>
+                      {s.trend}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Feature cards */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {features.map((f, i) => (
+                <div
+                  key={f.title}
+                  className={`reveal stagger-${i + 1} group bg-white/5 backdrop-blur-sm rounded-xl p-6 lg:p-8 border border-white/5 hover:border-gold/20 transition-all duration-500 card-hover`}
+                >
+                  <div className="text-gold/70 mb-4 group-hover:text-gold transition-colors">{f.icon}</div>
+                  <h4 className="font-inter text-sm font-bold text-white mb-2 tracking-wide">{f.title}</h4>
+                  <p className="font-serif text-sm text-white/50 leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       CREDENTIALS
+    ============================================================ */
+    function Credentials() {
+      const ref = useReveal();
+      return (
+        <section id="credentials" className="py-24 lg:py-32 bg-navy-dark relative overflow-hidden">
+          {/* Background decorative */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <svg width="100%" height="100%">
+              <defs>
+                <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <circle cx="15" cy="15" r="1" fill="white" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#dots)" />
+            </svg>
+          </div>
+
+          <div ref={ref} className="reveal max-w-5xl mx-auto px-6 relative">
+            {/* Quote */}
+            <div className="text-center mb-20">
+              <svg className="w-12 h-12 mx-auto mb-8 text-gold/30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609L9.978 5.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
+              </svg>
+              <blockquote className="font-playfair text-xl sm:text-2xl lg:text-3xl italic text-white/90 leading-relaxed max-w-4xl mx-auto mb-8">
+                Econometrie causale pour identifier les mecanismes, donnees massives pour mesurer les effets, prospective quantitative pour anticiper les trajectoires.
+              </blockquote>
+              <div className="w-16 h-px bg-gold/40 mx-auto mb-6" />
+              <p className="font-inter text-sm text-white/40 tracking-wider uppercase">Eric Kilama</p>
+            </div>
+
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
+              {[
+                { label: 'BETA \u00B7 FERDI', sub: 'Chercheur associe' },
+                { label: 'CAPS / MEAE', sub: '2018\u20132023' },
+                { label: 'EER \u00B7 JCE', sub: 'Publications rang A' },
+              ].map((badge) => (
+                <div
+                  key={badge.label}
+                  className="group px-8 py-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-gold/30 transition-all duration-300 text-center card-hover"
+                >
+                  <div className="font-inter text-sm font-bold text-white tracking-wider">{badge.label}</div>
+                  <div className="font-mono text-[10px] text-white/30 mt-1 tracking-wider uppercase">{badge.sub}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                { label: 'Google Scholar', href: '#', icon: (
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+                  </svg>
+                )},
+                { label: 'LinkedIn', href: 'http://www.linkedin.com/in/eric-gabin-kilama-aa4b4941', icon: (
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                )},
+                { label: 'ORCID', href: '#', icon: (
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-3.919-3.722h-2.4z"/>
+                  </svg>
+                )},
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="group inline-flex items-center gap-2 px-5 py-3 text-white/50 hover:text-gold font-inter text-sm font-medium transition-all duration-300 rounded-lg hover:bg-white/5"
+                >
+                  <span className="text-white/30 group-hover:text-gold transition-colors">{link.icon}</span>
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    function Footer() {
+      const columns = [
+        {
+          title: 'Recherche',
+          links: [
+            { label: 'Instabilite politique', href: '#research' },
+            { label: 'Risque geopolitique & PME', href: '#research' },
+            { label: 'Financement du dev.', href: '#research' },
+            { label: 'Prospective (Vigie)', href: '#vigie' },
+          ],
+        },
+        {
+          title: 'Analyses',
+          links: [
+            { label: 'Policy briefs', href: '#analyses' },
+            { label: 'Foresight', href: '#analyses' },
+            { label: 'Working papers', href: '#analyses' },
+            { label: 'Publications', href: '#featured' },
+          ],
+        },
+        {
+          title: 'Profil',
+          links: [
+            { label: 'CV', href: '#credentials' },
+            { label: 'Affiliations', href: '#credentials' },
+            { label: 'Google Scholar', href: '#' },
+            { label: 'ORCID', href: '#' },
+          ],
+        },
+        {
+          title: 'Contact',
+          links: [
+            { label: 'contact@erickilama.com', href: 'mailto:contact@erickilama.com' },
+            { label: 'LinkedIn', href: 'http://www.linkedin.com/in/eric-gabin-kilama-aa4b4941' },
+          ],
+        },
+      ];
+
+      return (
+        <footer className="bg-navy py-16 lg:py-20 no-print">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Top: logo + columns */}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
+              {/* Brand column */}
+              <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-red flex items-center justify-center text-white font-inter font-bold text-sm">
+                    EK
+                  </div>
+                  <span className="font-inter font-semibold text-white text-lg tracking-tight">Eric Kilama</span>
+                </div>
+                <p className="font-serif text-sm text-white/40 leading-relaxed max-w-xs">
+                  Economiste-strategue. Chercheur associe BETA &middot; FERDI.
+                </p>
+              </div>
+
+              {columns.map((col) => (
+                <div key={col.title}>
+                  <h4 className="font-inter text-xs font-bold tracking-[0.2em] uppercase text-white/30 mb-4">{col.title}</h4>
+                  <ul className="space-y-3">
+                    {col.links.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          className="font-serif text-sm text-white/50 hover:text-white transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom */}
+            <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="font-mono text-[11px] text-white/20 tracking-wider">
+                &copy; 2026 Eric Kilama. Tous droits reserves.
+              </p>
+              <div className="flex items-center gap-6">
+                {/* Social icons */}
+                <a href="http://www.linkedin.com/in/eric-gabin-kilama-aa4b4941" className="text-white/20 hover:text-gold transition-colors" aria-label="LinkedIn">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-white/20 hover:text-gold transition-colors" aria-label="Google Scholar">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+                  </svg>
+                </a>
+                <a href="mailto:contact@erickilama.com" className="text-white/20 hover:text-gold transition-colors" aria-label="Email">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    /* ============================================================
+       APP — MAIN COMPONENT
+    ============================================================ */
+    function App() {
+      useEffect(() => {
+        // Initialize IntersectionObserver for all reveal elements
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Animate sparklines when visible
+                entry.target.querySelectorAll('.sparkline-path').forEach((path) => {
+                  path.classList.add('animate');
+                });
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach((el) => {
+          observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+      }, []);
+
+      return (
+        <>
+          <Navigation />
+          <Hero />
+          <RecentStrip />
+          <FeaturedPublication />
+          <ResearchProgrammes />
+          <AnalysesRecentes />
+          <VigieDashboard />
+          <Credentials />
+          <Footer />
+        </>
+      );
+    }
+
+    /* ============================================================
+       MOUNT
+    ============================================================ */
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

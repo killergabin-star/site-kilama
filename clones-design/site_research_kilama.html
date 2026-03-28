@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Eric Kilama</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   RESEARCH — PIIE visual DNA
+   Utility bar, institutional header, publication cards,
+   sidebar filters, clean editorial density
+   ═══════════════════════════════════════════════════ */
+:root {
+    --navy: #1B2A4A;
+    --blue: #2C5F8A;
+    --red: #C0392B;
+    --gold: #D4A017;
+    --ivory: #F8F7F4;
+    --ivory-deep: #F0EDE8;
+    --anthracite: #2D2D2D;
+    --text-secondary: #5A6068;
+    --border-light: rgba(27,42,74,0.08);
+    --white: #FFFFFF;
+
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-serif);
+    font-size: 16px; font-weight: 400;
+    line-height: 1.45; color: var(--navy);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════════════
+   PIIE UTILITY BAR
+   ═══════════════════════════════════════════════════ */
+.utility-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    height: 36px; display: flex; align-items: center;
+    font-family: var(--font-sans); font-size: 12px;
+}
+.utility-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center; width: 100%;
+}
+.utility-links { display: flex; gap: 20px; list-style: none; }
+.utility-links a { color: var(--blue); font-weight: 400; }
+.utility-social { display: flex; gap: 14px; }
+.utility-social a { color: var(--blue); font-size: 13px; }
+
+/* ═══════════════════════════════════════════════════
+   PIIE HEADER
+   ═══════════════════════════════════════════════════ */
+.main-header {
+    background: var(--white);
+    border-bottom: 3px solid var(--navy);
+    padding: 20px 0;
+}
+.header-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.header-brand {
+    text-decoration: none;
+}
+.header-name {
+    font-family: var(--font-sans);
+    font-size: 22px; font-weight: 700;
+    color: var(--navy); letter-spacing: -0.01em;
+}
+.header-name span { color: var(--blue); }
+.header-tagline {
+    font-family: var(--font-serif);
+    font-size: 13px; color: var(--text-secondary);
+    margin-top: 2px;
+}
+.header-search {
+    display: flex; align-items: center; gap: 8px;
+}
+.header-search input {
+    font-family: var(--font-sans);
+    font-size: 13px; padding: 6px 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 3px; width: 200px;
+    background: var(--ivory);
+}
+.header-search button {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 600;
+    padding: 6px 14px; border: none;
+    background: var(--navy); color: var(--white);
+    border-radius: 3px; cursor: pointer;
+}
+
+/* Main nav */
+.main-nav {
+    background: var(--navy);
+    padding: 0;
+}
+.nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    display: flex; gap: 0;
+}
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--white);
+    background: rgba(255,255,255,0.05);
+    border-bottom-color: var(--gold);
+    text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   PAGE LAYOUT
+   ═══════════════════════════════════════════════════ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+.page-hero {
+    background: var(--ivory);
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+.page-hero h1 {
+    font-family: var(--font-sans);
+    font-size: 32px; font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+.page-hero p {
+    font-family: var(--font-serif);
+    font-size: 17px; color: var(--text-secondary);
+    max-width: 600px; line-height: 1.5;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 48px;
+    padding: 40px 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   PUBLICATION CARDS — PIIE style
+   ═══════════════════════════════════════════════════ */
+.pub-list { list-style: none; }
+.pub-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+}
+.pub-item:first-child { padding-top: 0; }
+.pub-date {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 500;
+    color: var(--text-secondary);
+    text-align: right;
+    padding-top: 4px;
+}
+.pub-type {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.8px;
+    padding: 2px 8px; border-radius: 2px;
+    margin-bottom: 6px;
+}
+.type-journal { background: rgba(44,95,138,0.1); color: var(--blue); }
+.type-wp { background: rgba(27,42,74,0.08); color: var(--navy); }
+.type-report { background: rgba(212,160,23,0.1); color: #B8860B; }
+.type-brief { background: rgba(192,57,43,0.08); color: var(--red); }
+.type-vigie { background: rgba(34,136,51,0.08); color: #228833; }
+
+.pub-title {
+    font-family: var(--font-serif);
+    font-size: 18px; font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3; margin-bottom: 6px;
+}
+.pub-title a { color: var(--navy); }
+.pub-title a:hover { color: var(--blue); }
+.pub-authors {
+    font-family: var(--font-sans);
+    font-size: 13px; color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+.pub-abstract {
+    font-family: var(--font-serif);
+    font-size: 15px; color: var(--anthracite);
+    line-height: 1.5;
+}
+.pub-tags {
+    display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
+}
+.pub-tag {
+    font-family: var(--font-mono);
+    font-size: 10px; font-weight: 400;
+    color: var(--blue);
+    background: rgba(44,95,138,0.06);
+    padding: 2px 8px; border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════
+   SIDEBAR — PIIE filter panels
+   ═══════════════════════════════════════════════════ */
+.sidebar-panel {
+    background: var(--ivory);
+    border: 1px solid var(--border-light);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.sidebar-title {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--navy);
+}
+.sidebar-list { list-style: none; }
+.sidebar-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+.sidebar-list a {
+    font-family: var(--font-sans);
+    font-size: 13px; font-weight: 400;
+    color: var(--anthracite);
+}
+.sidebar-list a:hover { color: var(--blue); }
+.sidebar-count {
+    font-size: 11px; color: var(--text-secondary);
+    float: right;
+}
+
+.sidebar-highlight {
+    background: var(--navy);
+    color: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.sidebar-highlight h4 {
+    font-family: var(--font-sans);
+    font-size: 13px; font-weight: 600;
+    margin-bottom: 8px;
+}
+.sidebar-highlight p {
+    font-family: var(--font-serif);
+    font-size: 14px; color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+}
+.sidebar-highlight a {
+    display: inline-block; margin-top: 10px;
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 600;
+    color: var(--gold); text-decoration: none;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — PIIE institutional
+   ═══════════════════════════════════════════════════ */
+.footer {
+    background: var(--navy);
+    padding: 48px 0 32px; color: var(--white);
+    margin-top: 48px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 48px; margin-bottom: 32px;
+}
+.footer-brand-name {
+    font-family: var(--font-sans);
+    font-size: 16px; font-weight: 700;
+    margin-bottom: 8px;
+}
+.footer-brand-name span { color: var(--blue); }
+.footer-desc {
+    font-size: 14px; color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+}
+.footer-col h4 {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: rgba(255,255,255,0.4); margin-bottom: 12px;
+}
+.footer-col a {
+    display: block; font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 6px; text-decoration: none;
+}
+.footer-col a:hover { color: var(--gold); text-decoration: none; }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-family: var(--font-sans);
+    font-size: 12px; color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 900px) {
+    .content-layout { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- PIIE utility bar -->
+<div class="utility-bar">
+    <div class="utility-inner">
+        <div class="utility-links">
+            <a href="#">Newsletter</a>
+            <a href="#">Données</a>
+            <a href="#">RSS</a>
+        </div>
+        <div class="utility-social">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter/X</a>
+            <a href="#">ORCID</a>
+        </div>
+    </div>
+</div>
+
+<!-- PIIE header -->
+<div class="main-header">
+    <div class="header-inner">
+        <a href="/" class="header-brand">
+            <div class="header-name">ERIC <span>KILAMA</span></div>
+            <div class="header-tagline">Quantifying Geopolitical Risk Transmission to the Economy</div>
+        </a>
+        <div class="header-search">
+            <input type="text" placeholder="Search publications...">
+            <button>Search</button>
+        </div>
+    </div>
+</div>
+
+<!-- PIIE nav bar -->
+<nav class="main-nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-link">Home</a>
+        <a href="#" class="nav-link active">Research</a>
+        <a href="/policy" class="nav-link">Policy</a>
+        <a href="/vigie" class="nav-link">Foresight</a>
+        <a href="#" class="nav-link">Teaching</a>
+        <a href="#" class="nav-link">About</a>
+    </div>
+</nav>
+
+<!-- Page hero -->
+<div class="page-hero">
+    <div class="container">
+        <h1>Research &amp; Publications</h1>
+        <p>Academic publications, working papers, reports and data — quantifying how geopolitical shocks transmit to the economy.</p>
+    </div>
+</div>
+
+<!-- Main content + sidebar -->
+<div class="container">
+    <div class="content-layout">
+        <main>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-date">2026<br>Feb</div>
+                    <div>
+                        <span class="pub-type type-brief">Policy Brief</span>
+                        <div class="pub-title"><a href="#">La fragilité par la base : PME de défense et résilience géopolitique</a></div>
+                        <div class="pub-authors">Eric Kilama</div>
+                        <div class="pub-abstract">Quantification of vulnerabilities in France's defense industrial base. A geopolitical risk scoring methodology applied to SMEs critical to the BITD supply chain.</div>
+                        <div class="pub-tags"><span class="pub-tag">BITD</span><span class="pub-tag">SME</span><span class="pub-tag">Risk scoring</span></div>
+                    </div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-date">2026<br>Jan</div>
+                    <div>
+                        <span class="pub-type type-wp">Working Paper</span>
+                        <div class="pub-title"><a href="#">Geopolitical Risk and Bilateral Trade: Causal Evidence from GPR Shocks</a></div>
+                        <div class="pub-authors">Eric Kilama</div>
+                        <div class="pub-abstract">New causal estimates of geopolitical risk transmission to bilateral trade flows. Difference-in-differences identification on 494 monthly observations across 180+ country pairs using the Caldara-Iacoviello GPR index.</div>
+                        <div class="pub-tags"><span class="pub-tag">GPR</span><span class="pub-tag">DiD</span><span class="pub-tag">PPML</span><span class="pub-tag">Trade</span></div>
+                    </div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-date">2025<br>Dec</div>
+                    <div>
+                        <span class="pub-type type-wp">Working Paper</span>
+                        <div class="pub-title"><a href="#">Does Chinese Aid Increase Corruption? Causal Evidence from Instrumental Variables</a></div>
+                        <div class="pub-authors">Eric Kilama</div>
+                        <div class="pub-abstract">Instrumental variable estimates of Chinese development aid on governance indicators. Exploits temporal variation in China's steel production capacity as an instrument for aid allocation.</div>
+                        <div class="pub-tags"><span class="pub-tag">China Aid</span><span class="pub-tag">IV</span><span class="pub-tag">WGI</span><span class="pub-tag">Corruption</span></div>
+                    </div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-date">2025<br>Nov</div>
+                    <div>
+                        <span class="pub-type type-report">Report</span>
+                        <div class="pub-title"><a href="#">G7 Development Finance: Are Promises Kept? A Quantitative Audit</a></div>
+                        <div class="pub-authors">Eric Kilama</div>
+                        <div class="pub-abstract">Comprehensive audit of G7 ODA commitments since 2015. Analysis of gaps between pledges and disbursements, with focus on fragile states and the "dilution" phenomenon in aid allocation.</div>
+                        <div class="pub-tags"><span class="pub-tag">G7</span><span class="pub-tag">ODA</span><span class="pub-tag">Fragile states</span></div>
+                    </div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-date">2025<br>Oct</div>
+                    <div>
+                        <span class="pub-type type-vigie">Vigie FPSQ</span>
+                        <div class="pub-title"><a href="#">FPSQ v1.4 — Macrofinancial Scenario Engine: Architecture &amp; Results</a></div>
+                        <div class="pub-authors">Eric Kilama</div>
+                        <div class="pub-abstract">Technical documentation for the FPSQ scenario projection engine. 5 geopolitical trajectories, 234 unit tests, Monte Carlo simulation framework, and validation against AMP panel evaluation.</div>
+                        <div class="pub-tags"><span class="pub-tag">FPSQ</span><span class="pub-tag">Monte Carlo</span><span class="pub-tag">Scenarios</span></div>
+                    </div>
+                </li>
+                <li class="pub-item">
+                    <div class="pub-date">2024</div>
+                    <div>
+                        <span class="pub-type type-journal">Journal Article</span>
+                        <div class="pub-title"><a href="#">The Economic Consequences of Failed Coups: A Difference-in-Differences Approach</a></div>
+                        <div class="pub-authors">Eric Kilama · <em>Under review, AEJ: Applied</em></div>
+                        <div class="pub-abstract">Long-run economic effects of coup attempts using staggered DiD. Failed coups create persistent institutional disruption through military spending reallocation and FDI deterrence.</div>
+                        <div class="pub-tags"><span class="pub-tag">Coups</span><span class="pub-tag">DiD</span><span class="pub-tag">Institutions</span></div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-highlight">
+                <h4>Dernier rapport</h4>
+                <p>La fragilité par la base : PME de défense et résilience géopolitique</p>
+                <a href="#">Lire le brief →</a>
+            </div>
+
+            <div class="sidebar-panel">
+                <div class="sidebar-title">By Type</div>
+                <ul class="sidebar-list">
+                    <li><a href="#">Journal Articles <span class="sidebar-count">4</span></a></li>
+                    <li><a href="#">Working Papers <span class="sidebar-count">6</span></a></li>
+                    <li><a href="#">Policy Briefs <span class="sidebar-count">3</span></a></li>
+                    <li><a href="#">Reports <span class="sidebar-count">2</span></a></li>
+                    <li><a href="#">Vigie FPSQ <span class="sidebar-count">5</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-panel">
+                <div class="sidebar-title">By Topic</div>
+                <ul class="sidebar-list">
+                    <li><a href="#">Geopolitical Risk <span class="sidebar-count">8</span></a></li>
+                    <li><a href="#">International Trade <span class="sidebar-count">5</span></a></li>
+                    <li><a href="#">Development Finance <span class="sidebar-count">4</span></a></li>
+                    <li><a href="#">Political Economy <span class="sidebar-count">3</span></a></li>
+                    <li><a href="#">Macrofinancial <span class="sidebar-count">6</span></a></li>
+                    <li><a href="#">Defense / BITD <span class="sidebar-count">2</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-panel">
+                <div class="sidebar-title">Data &amp; Replication</div>
+                <ul class="sidebar-list">
+                    <li><a href="#">GPR/SME Dataset</a></li>
+                    <li><a href="#">China Aid Database</a></li>
+                    <li><a href="#">FPSQ Parameters</a></li>
+                    <li><a href="#">Replication packages</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-name">ERIC <span>KILAMA</span></div>
+                <p class="footer-desc">Quantifying geopolitical risk transmission — research, foresight, and strategic advisory.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Research</h4>
+                <a href="#">Publications</a><a href="#">Working Papers</a><a href="#">Data</a><a href="#">Replication</a>
+            </div>
+            <div class="footer-col">
+                <h4>Policy</h4>
+                <a href="#">Briefs</a><a href="#">VSN Notes</a><a href="#">G7 Report</a><a href="#">Vigie FPSQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="#">Bio</a><a href="#">Teaching</a><a href="#">Contact</a><a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Eric Kilama. All rights reserved.</div>
+    </div>
+</footer>
+
+</body>
+</html>

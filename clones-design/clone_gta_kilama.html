@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Trade Alert — Clone Kilama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           GTA Clone — Eric Kilama
+           Faithful reproduction from live extraction
+           28 mars 2026
+           ============================================ */
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            /* Font mapping: Roboto → Inter */
+            --font-sans: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+            /* Colors from live extraction */
+            --primary-blue: #3B97ED;
+            --light-blue: #7DC3F8;
+            --light-blue-bg: #F0F6FD;
+            --navy-text: #0B263D;
+            --hero-overlay: #21303E;
+            --slate: #2B4661;
+            --dark-card: #202E3B;
+            --footer-bg: #182029;
+            --white: #FFFFFF;
+            --gray-text: #676767;
+            --gold: #FFBA24;
+            --gray-150: #F5F5F5;
+            --gray-300: #D1D5DB;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--gray-text);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ============================================
+           HEADER — 56px, fixed, white, shadow
+           ============================================ */
+        .header {
+            height: 56px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-logo svg {
+            height: 28px;
+        }
+
+        .header-logo-text {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--navy-text);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .header-nav a {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-text);
+        }
+
+        .header-nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-actions button {
+            background: none;
+            border: none;
+            color: var(--gray-text);
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 14px;
+        }
+
+        /* ============================================
+           SECTION 1 — Hero Banner
+           bg-image + #21303E overlay, 434px
+           ============================================ */
+        .hero-section {
+            padding-top: 56px; /* offset for fixed header */
+            background: var(--hero-overlay);
+            position: relative;
+        }
+
+        .hero-banner {
+            min-height: 434px;
+            background: var(--hero-overlay);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 170px 40px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Simulated banner image overlay */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1a2d3f 0%, #21303E 40%, #2B4661 100%);
+            opacity: 0.9;
+        }
+
+        .hero-banner > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* H1 — 30px/500 white */
+        .hero-title {
+            font-family: var(--font-sans);
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 41px;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            line-height: 24px;
+        }
+
+        /* ============================================
+           SECTION 2 — Featured/Blog cards
+           Negative margin overlap, outreach cards
+           ============================================ */
+        .featured-section {
+            margin-top: -75px;
+            padding: 0 40px 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Outreach card — 10px border-radius (GTA uses rounded!) */
+        .outreach-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            overflow: hidden;
+            display: flex;
+            min-height: 142px;
+        }
+
+        .outreach-card-icon {
+            width: 80px;
+            flex-shrink: 0;
+            background: var(--gray-150);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid var(--gray-300);
+        }
+
+        .outreach-card-icon .icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-blue);
+        }
+
+        .outreach-card-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .outreach-card-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray-text);
+            margin-bottom: 4px;
+        }
+
+        /* H3 card — 16px/500 blue */
+        .outreach-card-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            line-height: 22px;
+        }
+
+        .outreach-card-desc {
+            font-size: 14px;
+            color: var(--gray-text);
+            margin-top: 4px;
+            line-height: 20px;
+        }
+
+        /* Large featured card with dark bg */
+        .featured-card-dark {
+            background: var(--slate);
+            border-radius: 10px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 280px;
+            grid-column: span 1;
+        }
+
+        .featured-card-dark .card-label {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 8px;
+        }
+
+        /* H3 featured dark — 26px/500 white */
+        .featured-card-dark h3 {
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 36px;
+        }
+
+        .featured-card-dark p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            line-height: 20px;
+        }
+
+        /* ============================================
+           SECTION 3 — Latest updates
+           White bg, H2 26px/500 navy
+           ============================================ */
+        .latest-section {
+            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* H2 section — 26px/500 navy */
+        .section-title {
+            font-family: var(--font-sans);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--navy-text);
+            line-height: 36px;
+            margin-bottom: 32px;
+        }
+
+        .updates-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .update-date {
+            font-size: 13px;
+            color: var(--gray-text);
+            min-width: 100px;
+        }
+
+        .update-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-blue);
+        }
+
+        .update-type {
+            font-size: 12px;
+            color: var(--gray-text);
+            margin-left: auto;
+            background: var(--gray-150);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        /* ============================================
+           SECTION 4 — Analyse our Data
+           SVG charts, Graph/Table toggles
+           ============================================ */
+        .data-section {
+            padding: 0 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .data-charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .chart-card {
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .chart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        /* H3 data label — 16px/500 navy */
+        .chart-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--navy-text);
+            line-height: 22px;
+        }
+
+        .chart-toggles {
+            display: flex;
+            gap: 4px;
+        }
+
+        /* Toggle buttons — 11px, light blue states */
+        .toggle-btn {
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-sans);
+        }
+
+        .toggle-btn.active {
+            background: var(--light-blue);
+            color: var(--white);
+        }
+
+        .toggle-btn.inactive {
+            background: var(--light-blue-bg);
+            color: var(--light-blue);
+        }
+
+        .chart-area {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ============================================
+           SECTION 5 — Trust / Partners
+           bg: #2B4661, pt: 80px
+           ============================================ */
+        .trust-section {
+            background: var(--slate);
+            padding: 80px 40px;
+        }
+
+        /* H2 trusted — 26px/500 white, centered */
+        .trust-title {
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 36px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust-logo {
+            width: 120px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 11px;
+        }
+
+        /* ============================================
+           SECTION 6 — Explore our Evidence
+           bg: #2B4661, 4 cards
+           ============================================ */
+        .explore-section {
+            background: var(--slate);
+            padding: 0 40px 80px;
+        }
+
+        /* H2 explore — 30px/400 white */
+        .explore-title {
+            font-family: var(--font-sans);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 30px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Evidence cards — bg #202E3B, 5px radius */
+        .explore-card {
+            background: var(--dark-card);
+            border-radius: 5px;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 91px;
+        }
+
+        .explore-card-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* H3 explore — 20px/500 white */
+        .explore-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 28px;
+        }
+
+        .explore-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+
+        .explore-card .arrow {
+            font-size: 20px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ============================================
+           SECTION 7 — Theory of Progress
+           White section
+           ============================================ */
+        .theory-section {
+            background: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .theory-section .section-title {
+            text-align: center;
+        }
+
+        .theory-desc {
+            font-size: 16px;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 24px;
+        }
+
+        /* ============================================
+           FOOTER — bg: #182029, 633px
+           ============================================ */
+        .footer {
+            background: var(--footer-bg);
+            padding: 60px 40px;
+            min-height: 633px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 48px;
+            gap: 60px;
+        }
+
+        .footer-brand {
+            flex: 1;
+        }
+
+        .footer-logo-white {
+            margin-bottom: 24px;
+        }
+
+        .footer-logo-white svg {
+            height: 28px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            line-height: 22px;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .footer-social a {
+            font-size: 14px;
+            color: #F9F9F9;
+        }
+
+        .footer-social a.gold {
+            color: var(--gold);
+        }
+
+        .footer-links-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links-col h4 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        /* Footer product links — 16px, #F9F9F9 */
+        .footer-links-col a {
+            font-size: 16px;
+            color: #F9F9F9;
+        }
+
+        .footer-links-col a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER — 56px, fixed, white
+         ============================================ -->
+    <header class="header">
+        <div class="header-logo">
+            <svg viewBox="0 0 32 32" height="28" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="14" fill="none" stroke="#3B97ED" stroke-width="2"/>
+                <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="#3B97ED" opacity="0.3"/>
+                <circle cx="16" cy="16" r="4" fill="#3B97ED"/>
+            </svg>
+            <span class="header-logo-text">Global Trade Alert</span>
+        </div>
+        <nav class="header-nav">
+            <a href="#">Data Center</a>
+            <a href="#">Analysis</a>
+            <a href="#">Activity Tracker</a>
+            <a href="#">GTA Threads</a>
+            <a href="#">API</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="header-actions">
+            <button>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <circle cx="8" cy="8" r="6" stroke="#676767" stroke-width="1.5"/>
+                    <line x1="12.5" y1="12.5" x2="16" y2="16" stroke="#676767" stroke-width="1.5"/>
+                </svg>
+            </button>
+            <button>Sign in</button>
+        </div>
+    </header>
+
+    <!-- ============================================
+         SECTION 1 — Hero Banner
+         ============================================ -->
+    <div class="hero-section">
+        <div class="hero-banner">
+            <h1 class="hero-title">The World's Trade and Industrial Policy Watchdog</h1>
+            <p class="hero-subtitle">Monitoring trade policy measures worldwide since 2009. Independent evidence for governments, companies, and leading academics.</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 2 — Featured / Blog cards
+         Negative margin overlap
+         ============================================ -->
+    <section class="featured-section">
+        <div class="featured-grid">
+            <!-- Featured dark card 1 -->
+            <div class="featured-card-dark">
+                <span class="card-label">FEATURED ANALYSIS</span>
+                <h3>Chokepoint: Tracking Trade Policy Responses to the Hormuz Crisis</h3>
+                <p>Real-time monitoring of policy measures triggered by the Strait of Hormuz disruption.</p>
+            </div>
+
+            <!-- Featured dark card 2 -->
+            <div class="featured-card-dark" style="background: var(--dark-card);">
+                <span class="card-label">NEW TOOL</span>
+                <h3>A New Way to Work with Global Trade Alert Evidence</h3>
+                <p>Explore our redesigned data interface with enhanced search and filtering.</p>
+            </div>
+
+            <!-- Outreach cards column -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="outreach-card">
+                    <div class="outreach-card-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="outreach-card-content">
+                        <span class="outreach-card-label">ANALYSIS</span>
+                        <a href="#" class="outreach-card-title">Policy responses to the 2026 Iran conflict</a>
+                        <span class="outreach-card-desc">143 measures documented across 38 jurisdictions</span>
+                    </div>
+                </div>
+                <div class="outreach-card">
+                    <div class="outreach-card-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="outreach-card-content">
+                        <span class="outreach-card-label">ANALYSIS</span>
+                        <a href="#" class="outreach-card-title">US Tariff-Driven Trade Deals</a>
+                        <span class="outreach-card-desc">Tracking bilateral deal negotiations and outcomes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — Latest updates
+         ============================================ -->
+    <section class="latest-section">
+        <h2 class="section-title">Latest updates</h2>
+        <div class="updates-list">
+            <div class="update-item">
+                <span class="update-date">27 Mar 2026</span>
+                <a href="#" class="update-title">EU extends safeguard measures on steel imports</a>
+                <span class="update-type">Tariff measure</span>
+            </div>
+            <div class="update-item">
+                <span class="update-date">26 Mar 2026</span>
+                <a href="#" class="update-title">Japan revises export controls on semiconductor equipment</a>
+                <span class="update-type">Export restriction</span>
+            </div>
+            <div class="update-item">
+                <span class="update-date">26 Mar 2026</span>
+                <a href="#" class="update-title">India implements retaliatory tariffs on US agricultural products</a>
+                <span class="update-type">Tariff measure</span>
+            </div>
+            <div class="update-item">
+                <span class="update-date">25 Mar 2026</span>
+                <a href="#" class="update-title">China announces subsidy package for green technology manufacturers</a>
+                <span class="update-type">Subsidy</span>
+            </div>
+            <div class="update-item">
+                <span class="update-date">25 Mar 2026</span>
+                <a href="#" class="update-title">UK-Australia FTA review: preliminary findings published</a>
+                <span class="update-type">FTA provision</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4 — Analyse our Data
+         SVG charts + toggles
+         ============================================ -->
+    <section class="data-section">
+        <h2 class="section-title">Analyse our Data</h2>
+        <div class="data-charts">
+            <!-- Chart 1: New policies per year -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">New policies per year</h3>
+                    <div class="chart-toggles">
+                        <button class="toggle-btn active">Graph</button>
+                        <button class="toggle-btn inactive">Table</button>
+                        <button class="toggle-btn inactive">Export</button>
+                    </div>
+                </div>
+                <div class="chart-area">
+                    <svg viewBox="0 0 480 200" width="100%" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Bar chart -->
+                        <rect x="20" y="160" width="460" height="1" fill="#E5E7EB"/>
+                        <rect x="20" y="120" width="460" height="1" fill="#E5E7EB" opacity="0.5"/>
+                        <rect x="20" y="80" width="460" height="1" fill="#E5E7EB" opacity="0.5"/>
+                        <rect x="20" y="40" width="460" height="1" fill="#E5E7EB" opacity="0.5"/>
+                        <!-- Bars -->
+                        <rect x="40" y="120" width="30" height="40" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <rect x="80" y="100" width="30" height="60" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <rect x="120" y="90" width="30" height="70" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <rect x="160" y="85" width="30" height="75" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <rect x="200" y="70" width="30" height="90" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <rect x="240" y="65" width="30" height="95" fill="#3B97ED" opacity="0.8" rx="2"/>
+                        <rect x="280" y="60" width="30" height="100" fill="#3B97ED" opacity="0.8" rx="2"/>
+                        <rect x="320" y="45" width="30" height="115" fill="#3B97ED" opacity="0.8" rx="2"/>
+                        <rect x="360" y="30" width="30" height="130" fill="#3B97ED" opacity="0.9" rx="2"/>
+                        <rect x="400" y="20" width="30" height="140" fill="#3B97ED" rx="2"/>
+                        <rect x="440" y="50" width="30" height="110" fill="#E74C3C" opacity="0.7" rx="2"/>
+                        <!-- Year labels -->
+                        <text x="48" y="175" font-size="9" fill="#676767" text-anchor="middle">2015</text>
+                        <text x="128" y="175" font-size="9" fill="#676767" text-anchor="middle">2017</text>
+                        <text x="208" y="175" font-size="9" fill="#676767" text-anchor="middle">2019</text>
+                        <text x="288" y="175" font-size="9" fill="#676767" text-anchor="middle">2021</text>
+                        <text x="368" y="175" font-size="9" fill="#676767" text-anchor="middle">2023</text>
+                        <text x="448" y="175" font-size="9" fill="#676767" text-anchor="middle">2025</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Chart 2: Affected jurisdictions -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Affected jurisdictions</h3>
+                    <div class="chart-toggles">
+                        <button class="toggle-btn active">Graph</button>
+                        <button class="toggle-btn inactive">Table</button>
+                        <button class="toggle-btn inactive">Export</button>
+                    </div>
+                </div>
+                <div class="chart-area">
+                    <svg viewBox="0 0 480 200" width="100%" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- World map simplified -->
+                        <rect x="20" y="160" width="460" height="1" fill="#E5E7EB"/>
+                        <!-- Horizontal bar chart -->
+                        <text x="18" y="35" font-size="10" fill="#676767" text-anchor="end">China</text>
+                        <rect x="80" y="25" width="350" height="16" fill="#3B97ED" opacity="0.8" rx="2"/>
+                        <text x="18" y="60" font-size="10" fill="#676767" text-anchor="end">USA</text>
+                        <rect x="80" y="50" width="320" height="16" fill="#3B97ED" opacity="0.75" rx="2"/>
+                        <text x="18" y="85" font-size="10" fill="#676767" text-anchor="end">EU</text>
+                        <rect x="80" y="75" width="280" height="16" fill="#3B97ED" opacity="0.7" rx="2"/>
+                        <text x="18" y="110" font-size="10" fill="#676767" text-anchor="end">India</text>
+                        <rect x="80" y="100" width="200" height="16" fill="#3B97ED" opacity="0.65" rx="2"/>
+                        <text x="18" y="135" font-size="10" fill="#676767" text-anchor="end">Japan</text>
+                        <rect x="80" y="125" width="150" height="16" fill="#3B97ED" opacity="0.6" rx="2"/>
+                        <text x="18" y="158" font-size="10" fill="#676767" text-anchor="end">Brazil</text>
+                        <rect x="80" y="148" width="120" height="16" fill="#3B97ED" opacity="0.55" rx="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5 — Trust / Partners
+         bg: #2B4661
+         ============================================ -->
+    <section class="trust-section">
+        <h2 class="trust-title">Trusted by International Governments, Global Companies and Leading Academics</h2>
+        <div class="trust-logos">
+            <div class="trust-logo">WTO</div>
+            <div class="trust-logo">OECD</div>
+            <div class="trust-logo">World Bank</div>
+            <div class="trust-logo">IMF</div>
+            <div class="trust-logo">UNCTAD</div>
+            <div class="trust-logo">G20</div>
+            <div class="trust-logo">EU Commission</div>
+            <div class="trust-logo">USTR</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6 — Explore our Evidence
+         bg: #2B4661
+         ============================================ -->
+    <section class="explore-section">
+        <h2 class="explore-title">Explore our Evidence</h2>
+        <div class="explore-grid">
+            <a href="#" class="explore-card">
+                <div class="explore-card-info">
+                    <h3>Data Center</h3>
+                    <p>Extract and analyse trade policy data</p>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#" class="explore-card">
+                <div class="explore-card-info">
+                    <h3>GTA Threads</h3>
+                    <p>See granular policy implementation timelines</p>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#" class="explore-card">
+                <div class="explore-card-info">
+                    <h3>API Access</h3>
+                    <p>Integrate GTA data into your workflows</p>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+            <a href="#" class="explore-card">
+                <div class="explore-card-info">
+                    <h3>Notification Services</h3>
+                    <p>Stay informed on policy changes that matter</p>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7 — Theory of Progress
+         ============================================ -->
+    <section class="theory-section">
+        <h2 class="section-title">Our Theory of Progress</h2>
+        <p class="theory-desc">Independent monitoring improves policy choices. By making trade and industrial policy transparent, we help governments, firms, and researchers navigate an increasingly complex global economy.</p>
+    </section>
+
+    <!-- ============================================
+         FOOTER — bg: #182029, 633px
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo-white">
+                    <svg viewBox="0 0 32 32" height="28" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" fill="none" stroke="#3B97ED" stroke-width="2"/>
+                        <circle cx="16" cy="16" r="4" fill="#3B97ED"/>
+                    </svg>
+                </div>
+                <p class="footer-desc">Global Trade Alert provides comprehensive data and analysis on trade and industrial policies worldwide.</p>
+                <div class="footer-social">
+                    <a href="#">Contact</a>
+                    <a href="#">X</a>
+                    <a href="#">Bluesky</a>
+                    <a href="#">Linkedin</a>
+                    <a href="#" class="gold">Subscribe</a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Products</h4>
+                <a href="#">Data Center</a>
+                <a href="#">Activity Tracker</a>
+                <a href="#">Analysis</a>
+                <a href="#">Notification Service</a>
+                <a href="#">Threads</a>
+                <a href="#">API Access</a>
+                <a href="#">MCP Integration</a>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>About</h4>
+                <a href="#">Methodology</a>
+                <a href="#">About Us</a>
+                <a href="#">Team</a>
+                <a href="#">Partners</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; 2026 Global Trade Alert. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Imprint</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

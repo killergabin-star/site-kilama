@@ -1,0 +1,88 @@
+{
+  "id": "kilama-v3-prototype",
+  "viewports": [
+    { "label": "desktop", "width": 1440, "height": 900 },
+    { "label": "tablet", "width": 768, "height": 1024 },
+    { "label": "mobile", "width": 375, "height": 812 }
+  ],
+  "scenarios": [
+    {
+      "label": "Full page — above fold",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": ["document"],
+      "delay": 1500,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Hero section",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".hero"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1
+    },
+    {
+      "label": "Featured publication",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".featured"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": ".featured"
+    },
+    {
+      "label": "Programmes grid",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".programmes"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": ".programmes"
+    },
+    {
+      "label": "Analyses recentes",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".analyses"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": ".analyses"
+    },
+    {
+      "label": "Vigie dashboard",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".vigie"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": ".vigie"
+    },
+    {
+      "label": "Credentials",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": [".credentials"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": ".credentials"
+    },
+    {
+      "label": "Footer",
+      "url": "http://localhost:1314/v3-prototype.html",
+      "selectors": ["footer"],
+      "delay": 1000,
+      "misMatchThreshold": 0.1,
+      "scrollToSelector": "footer"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

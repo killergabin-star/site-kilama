@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McKinsey & Company — Clone Kilama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Source+Serif+4:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           McKinsey Clone — Eric Kilama
+           Faithful reproduction from live extraction
+           28 mars 2026
+           ============================================ */
+
+        /* --- Reset --- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* --- Variables (mapped from extraction) --- */
+        :root {
+            /* Font mapping: McKinsey Sans → Inter, Bower → Source Serif 4 */
+            --font-sans: 'Inter', 'Helvetica Neue', Calibri, Corbel, Helvetica, Arial, sans-serif;
+            --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+            /* Colors from live extraction */
+            --navy: #051C2C;          /* Primary bg: BentoBox, How we help */
+            --deep-blue: #042A76;     /* Podcast section bg */
+            --electric-blue: #2251FF; /* Societal impact bg, Careers CTA */
+            --light-gray: #F0F0F0;    /* Accordion bg */
+            --white: #FFFFFF;
+            --text-body: #333333;
+            --text-white: #FFFFFF;
+            --black: #000000;
+
+            /* Spacing */
+            --section-gap: 64px;      /* Consistent between sections 3-7 */
+            --bento-gap: 16px;        /* BentoBox grid gap */
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+            color: var(--text-body);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ============================================
+           HEADER — 90px, transparent, absolute
+           Overlays dark BentoBox content
+           ============================================ */
+        .header {
+            height: 90px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            /* NO background, NO border, NO shadow — confirmed */
+        }
+
+        .header-logo {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-white);
+            letter-spacing: 0.5px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-white);
+        }
+
+        .header-nav a:hover {
+            opacity: 0.8;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-actions button {
+            background: none;
+            border: none;
+            color: var(--text-white);
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+
+        /* ============================================
+           SECTION 1 — BentoBox (0-1389px)
+           bg: #051C2C, padding: 156px 80px 64px
+           7-col × 3-row CSS Grid, gap 16px
+           ============================================ */
+        .bentobox-wrapper {
+            background: var(--navy);
+            position: relative;
+        }
+
+        .bentobox-section {
+            padding: 156px 80px 64px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 234px 514px 389px;
+            gap: var(--bento-gap);
+            grid-template-areas:
+                "intro  intro  intro  intro  feat   feat   feat"
+                "item2  item2  item3  item3  feat   feat   feat"
+                "item2  item2  item3  item3  promo  promo  promo";
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .bento-intro {
+            grid-area: intro;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 24px;
+        }
+
+        .bento-intro p {
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-white);
+            max-width: 560px;
+            line-height: 26px;
+        }
+
+        .bento-featured { grid-area: feat; position: relative; overflow: hidden; }
+        .bento-item2 { grid-area: item2; position: relative; overflow: hidden; }
+        .bento-item3 { grid-area: item3; position: relative; overflow: hidden; }
+        .bento-item4 { grid-area: promo; position: relative; overflow: hidden; }
+
+        /* Card base — ZERO decoration confirmed */
+        .bento-card {
+            position: relative;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .bento-card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bento-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+        }
+
+        .bento-card-content {
+            position: relative;
+            z-index: 2;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        /* Label: "ARTICLE", "CASE STUDY" — 18px/300, white, native caps */
+        .card-label {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Card title — H6 24px/500 */
+        .card-title {
+            font-family: var(--font-sans);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-white);
+            line-height: 30px;
+        }
+
+        /* Hero card title — H2 44px/300, LH 52px */
+        .card-title-hero {
+            font-family: var(--font-sans);
+            font-size: 44px;
+            font-weight: 300;
+            color: var(--text-white);
+            line-height: 52px;
+        }
+
+        /* ============================================
+           SECTION 2 — Podcast (1389-2564px)
+           bg: #042A76, height: 1175px
+           ============================================ */
+        .podcast-section {
+            background: var(--deep-blue);
+            padding: 80px;
+            min-height: 1175px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .podcast-label {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        /* Podcast H3 — 76px/300 McKinsey Sans */
+        .podcast-title {
+            font-family: var(--font-sans);
+            font-size: 76px;
+            font-weight: 300;
+            color: var(--text-white);
+            line-height: 84px;
+            max-width: 800px;
+            margin-bottom: 48px;
+        }
+
+        .podcast-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: auto;
+        }
+
+        .podcast-card {
+            display: flex;
+            gap: 24px;
+        }
+
+        .podcast-thumb {
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+            border-radius: 0;
+        }
+
+        .podcast-card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .podcast-card-label {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+
+        .podcast-card-title {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-white);
+            line-height: 28px;
+        }
+
+        /* ============================================
+           SECTION 3 — How we help clients
+           bg: #051C2C, Bower 52px/300
+           ============================================ */
+        .help-section {
+            background: var(--navy);
+            padding: 80px;
+            min-height: 704px;
+        }
+
+        /* Section label — H2 16px/500 (TINY) */
+        .section-label {
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 24px;
+        }
+
+        /* Bower serif CTA — 52px/300 */
+        .bower-heading {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--text-white);
+            line-height: 62px;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        .help-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .help-card {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px;
+        }
+
+        .help-card h5 {
+            font-family: var(--font-sans);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .help-card p {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            line-height: 24px;
+        }
+
+        .arrow-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-white);
+        }
+
+        /* ============================================
+           SECTION 4 — Careers
+           bg: white, mt: 64px, Bower 44px/300 blue
+           ============================================ */
+        .careers-section {
+            background: var(--white);
+            margin-top: var(--section-gap);
+            padding: 60px 80px;
+            height: 367px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            overflow: hidden;
+        }
+
+        .careers-content { flex: 1; }
+
+        .careers-heading {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            font-weight: 300;
+            color: var(--electric-blue);
+            line-height: 52px;
+            margin-bottom: 24px;
+        }
+
+        .careers-desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-body);
+            line-height: 24px;
+            max-width: 480px;
+        }
+
+        .careers-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--electric-blue);
+        }
+
+        .careers-image {
+            width: 400px;
+            height: 280px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        /* ============================================
+           SECTION 5 — Societal impact
+           bg: #2251FF, mt: 64px, Bower 52px/300
+           ============================================ */
+        .impact-section {
+            background: var(--electric-blue);
+            margin-top: var(--section-gap);
+            padding: 80px;
+            min-height: 768px;
+        }
+
+        .impact-heading {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--text-white);
+            line-height: 62px;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 32px;
+        }
+
+        .impact-card h5 {
+            font-family: var(--font-sans);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .impact-card p {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.85);
+            line-height: 24px;
+        }
+
+        .impact-card .arrow-link {
+            color: var(--text-white);
+        }
+
+        /* ============================================
+           SECTION 6 — App CTA
+           bg: white, mt: 64px, Bower 52px/300
+           ============================================ */
+        .app-section {
+            background: var(--white);
+            margin-top: var(--section-gap);
+            padding: 80px;
+            min-height: 461px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .app-content { flex: 1; }
+
+        .app-heading {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            font-weight: 300;
+            color: var(--navy);
+            line-height: 62px;
+            margin-bottom: 24px;
+        }
+
+        .app-desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-body);
+            line-height: 24px;
+            max-width: 520px;
+        }
+
+        .app-cta-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .app-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--navy);
+            color: var(--text-white);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 8px;
+        }
+
+        .app-phone {
+            width: 300px;
+            height: 300px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 180px;
+            height: 320px;
+            background: var(--navy);
+            border-radius: 24px;
+            padding: 8px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--deep-blue);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           SECTION 7 — Accordion (legal)
+           bg: #F0F0F0, mt: 64px
+           ============================================ */
+        .accordion-section {
+            background: var(--light-gray);
+            margin-top: var(--section-gap);
+            padding: 40px 80px;
+            min-height: 198px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #D9D9D9;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion-title {
+            font-family: var(--font-sans);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .accordion-toggle {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--text-body);
+            cursor: pointer;
+        }
+
+        /* ============================================
+           FOOTER — transparent bg, 659px
+           ============================================ */
+        .footer {
+            padding: 80px;
+            min-height: 659px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            margin-bottom: 48px;
+        }
+
+        .footer-main-links {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        /* Footer main links — 20px/400, black */
+        .footer-main-links a {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--black);
+        }
+
+        .footer-subscribe {
+            margin-bottom: 48px;
+        }
+
+        .footer-subscribe h4 {
+            font-family: var(--font-sans);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-body);
+            margin-bottom: 16px;
+        }
+
+        .footer-subscribe p {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-body);
+            max-width: 400px;
+            line-height: 24px;
+        }
+
+        .footer-email-form {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .footer-email-input {
+            flex: 1;
+            max-width: 300px;
+            padding: 12px 16px;
+            border: 1px solid #D9D9D9;
+            border-radius: 0;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .footer-email-btn {
+            padding: 12px 24px;
+            background: var(--navy);
+            color: var(--text-white);
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .footer-social-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--text-body);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .footer-secondary-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            border-top: 1px solid #D9D9D9;
+            padding-top: 24px;
+            margin-top: auto;
+        }
+
+        /* Footer secondary — 14px */
+        .footer-secondary-links a {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-body);
+        }
+
+        .footer-copyright {
+            margin-top: 24px;
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(51,51,51,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER — 90px, transparent overlay
+         ============================================ -->
+    <header class="header">
+        <div class="header-logo">
+            <svg viewBox="0 0 215 22" height="22" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="17" font-family="Inter, sans-serif" font-size="16" font-weight="400" fill="white">McKinsey &amp; Company</text>
+            </svg>
+        </div>
+        <nav class="header-nav">
+            <a href="#">Industries</a>
+            <a href="#">Capabilities</a>
+            <a href="#">Featured Insights</a>
+            <a href="#">Careers</a>
+            <a href="#">About us</a>
+        </nav>
+        <div class="header-actions">
+            <button>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5"/>
+                    <line x1="14" y1="14" x2="18" y2="18" stroke="white" stroke-width="1.5"/>
+                </svg>
+            </button>
+            <button>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="2" y1="5" x2="18" y2="5" stroke="white" stroke-width="1.5"/>
+                    <line x1="2" y1="10" x2="18" y2="10" stroke="white" stroke-width="1.5"/>
+                    <line x1="2" y1="15" x2="18" y2="15" stroke="white" stroke-width="1.5"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================
+         SECTION 1 — BentoBox
+         bg: #051C2C, 7-col × 3-row grid
+         ============================================ -->
+    <div class="bentobox-wrapper">
+        <div class="bentobox-section">
+            <div class="bento-grid">
+
+                <!-- Intro cell -->
+                <div class="bento-intro">
+                    <p>Game-changing work. People-powered growth. At McKinsey, we help you think bigger and see farther than ever before.</p>
+                </div>
+
+                <!-- Featured card — Hero H2 44px/300 -->
+                <div class="bento-featured">
+                    <div class="bento-card">
+                        <div class="bento-card-bg" style="background: linear-gradient(135deg, #0a3d5c 0%, #072440 60%, #051C2C 100%);"></div>
+                        <div class="bento-card-overlay"></div>
+                        <div class="bento-card-content">
+                            <span class="card-label">CASE STUDY</span>
+                            <h2 class="card-title-hero">How Campbell's is investing in leadership—and driving growth</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bento-item2">
+                    <div class="bento-card">
+                        <div class="bento-card-bg" style="background: linear-gradient(135deg, #1a3a5c 0%, #0d2640 100%);"></div>
+                        <div class="bento-card-overlay"></div>
+                        <div class="bento-card-content">
+                            <span class="card-label">ARTICLE</span>
+                            <h6 class="card-title">Staying in the game: How women CEOs build leadership that endures</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bento-item3">
+                    <div class="bento-card">
+                        <div class="bento-card-bg" style="background: linear-gradient(135deg, #2d4a6c 0%, #1a3050 100%);"></div>
+                        <div class="bento-card-overlay"></div>
+                        <div class="bento-card-content">
+                            <span class="card-label">REPORT</span>
+                            <h6 class="card-title">The state of AI: How organizations are rewiring to capture value</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo cell -->
+                <div class="bento-item4">
+                    <div class="bento-card">
+                        <div class="bento-card-bg" style="background: linear-gradient(135deg, #163050 0%, #0a2038 100%);"></div>
+                        <div class="bento-card-overlay"></div>
+                        <div class="bento-card-content">
+                            <span class="card-label">ARTICLE</span>
+                            <h6 class="card-title">What every CEO needs to know about generative AI</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         SECTION 2 — Podcast
+         bg: #042A76, H3: 76px/300
+         ============================================ -->
+    <section class="podcast-section">
+        <span class="podcast-label">The McKinsey Podcast</span>
+        <h3 class="podcast-title">The McKinsey Podcast</h3>
+
+        <div class="podcast-grid">
+            <div class="podcast-card">
+                <div class="podcast-thumb" style="background: linear-gradient(135deg, #1a4080 0%, #0d2a60 100%);"></div>
+                <div class="podcast-card-info">
+                    <span class="podcast-card-label">PODCAST</span>
+                    <h6 class="podcast-card-title">How to recession-proof your organization</h6>
+                </div>
+            </div>
+            <div class="podcast-card">
+                <div class="podcast-thumb" style="background: linear-gradient(135deg, #2a5090 0%, #1a3870 100%);"></div>
+                <div class="podcast-card-info">
+                    <span class="podcast-card-label">PODCAST</span>
+                    <h6 class="podcast-card-title">Author Talks: The leadership paradox in uncertain times</h6>
+                </div>
+            </div>
+            <div class="podcast-card">
+                <div class="podcast-thumb" style="background: linear-gradient(135deg, #0d3060 0%, #061a40 100%);"></div>
+                <div class="podcast-card-info">
+                    <span class="podcast-card-label">PODCAST</span>
+                    <h6 class="podcast-card-title">AI at work: What does real transformation look like?</h6>
+                </div>
+            </div>
+            <div class="podcast-card">
+                <div class="podcast-thumb" style="background: linear-gradient(135deg, #1a3050 0%, #0a2038 100%);"></div>
+                <div class="podcast-card-info">
+                    <span class="podcast-card-label">PODCAST</span>
+                    <h6 class="podcast-card-title">The economics of sustainability: Value creation beyond ESG</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3 — How we help clients
+         bg: #051C2C, Bower 52px/300
+         ============================================ -->
+    <section class="help-section">
+        <h2 class="section-label">How we help clients</h2>
+        <h3 class="bower-heading">Let's turn your biggest opportunities into your next big move</h3>
+
+        <div class="help-cards">
+            <div class="help-card">
+                <h5>Industry expertise</h5>
+                <p>We serve clients across every major industry. Our deep expertise helps leaders make bold moves in their markets.</p>
+                <a class="arrow-link" href="#">Explore industries →</a>
+            </div>
+            <div class="help-card">
+                <h5>Capabilities</h5>
+                <p>From strategy to implementation, our capabilities help organizations build lasting change and competitive advantage.</p>
+                <a class="arrow-link" href="#">Explore capabilities →</a>
+            </div>
+            <div class="help-card">
+                <h5>Tech &amp; AI</h5>
+                <p>We help companies reimagine their business with technology and AI at the core — turning ambition into measurable outcomes.</p>
+                <a class="arrow-link" href="#">Explore tech →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4 — Careers
+         bg: white, mt: 64px, Bower 44px/300 blue
+         ============================================ -->
+    <section class="careers-section">
+        <div class="careers-content">
+            <h2 class="section-label" style="color: var(--text-body);">Careers</h2>
+            <h2 class="careers-heading">Looking for your next move?</h2>
+            <p class="careers-desc">We're a global management consulting firm that serves a broad mix of private, public, and social sector institutions. We help our clients make lasting improvements to their performance.</p>
+            <a class="careers-cta" href="#">Search for open roles →</a>
+        </div>
+        <div class="careers-image">
+            <svg viewBox="0 0 400 280" width="400" height="280" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="280" fill="#E8E8E8"/>
+                <rect x="40" y="40" width="320" height="200" rx="0" fill="#DEDEDE"/>
+                <rect x="60" y="60" width="130" height="160" fill="#D0D0D0"/>
+                <rect x="210" y="60" width="130" height="100" fill="#D0D0D0"/>
+                <circle cx="125" cy="100" r="28" fill="#C0C0C0"/>
+                <rect x="97" y="140" width="56" height="6" rx="3" fill="#B0B0B0"/>
+                <rect x="102" y="154" width="46" height="4" rx="2" fill="#C0C0C0"/>
+                <rect x="230" y="80" width="90" height="5" rx="2" fill="#B0B0B0"/>
+                <rect x="230" y="95" width="70" height="4" rx="2" fill="#C0C0C0"/>
+                <rect x="230" y="108" width="80" height="4" rx="2" fill="#C0C0C0"/>
+                <rect x="230" y="130" width="60" height="20" rx="2" fill="#042A76" opacity="0.25"/>
+                <rect x="210" y="180" width="130" height="40" fill="#D0D0D0"/>
+                <rect x="220" y="192" width="80" height="4" rx="2" fill="#B8B8B8"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5 — Societal impact
+         bg: #2251FF, mt: 64px, Bower 52px/300
+         ============================================ -->
+    <section class="impact-section">
+        <h2 class="section-label">Societal impact</h2>
+        <h3 class="impact-heading">Sharing our best to help more people succeed</h3>
+
+        <div class="impact-cards">
+            <div class="impact-card">
+                <h5>McKinsey.org</h5>
+                <p>Catalyzing transformative change for those who need it most through capability building, partnerships, and innovation.</p>
+                <a class="arrow-link" href="#">Learn more →</a>
+            </div>
+            <div class="impact-card">
+                <h5>McKinsey Health Institute</h5>
+                <p>Helping stakeholders across the global health ecosystem improve lives by catalyzing modernization of health systems.</p>
+                <a class="arrow-link" href="#">Learn more →</a>
+            </div>
+            <div class="impact-card">
+                <h5>Sustainability</h5>
+                <p>Helping companies and communities achieve inclusive and sustainable growth, from strategy through execution.</p>
+                <a class="arrow-link" href="#">Learn more →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6 — App CTA
+         bg: white, mt: 64px, Bower 52px/300
+         ============================================ -->
+    <section class="app-section">
+        <div class="app-content">
+            <h3 class="app-heading">The world moves fast. Don't just keep pace. Stay ahead.</h3>
+            <p class="app-desc">Get the McKinsey App. Insights delivered to you, so you can make the decisions that matter.</p>
+            <div class="app-cta-buttons">
+                <a class="app-cta-btn" href="#">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zM6.5 4.75l5 3.25-5 3.25V4.75z" fill="white"/></svg>
+                    App Store
+                </a>
+                <a class="app-cta-btn" href="#">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 1l5.5 7-5.5 7M2.5 1L14 8 2.5 15" stroke="white" stroke-width="1.2" fill="none"/></svg>
+                    Google Play
+                </a>
+            </div>
+        </div>
+        <div class="app-phone">
+            <div class="phone-mockup">
+                <div class="phone-screen">McKinsey</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7 — Accordion (legal)
+         bg: #F0F0F0, mt: 64px
+         ============================================ -->
+    <section class="accordion-section">
+        <div class="accordion-item">
+            <h4 class="accordion-title">Deferred Prosecution Agreement Relating to Our Work for Purdue Pharma</h4>
+            <div class="accordion-toggle">+</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER — transparent bg, 659px
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <svg viewBox="0 0 215 22" height="22" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="17" font-family="Inter, sans-serif" font-size="16" font-weight="400" fill="#051C2C">McKinsey &amp; Company</text>
+            </svg>
+        </div>
+
+        <div class="footer-main-links">
+            <a href="#">Careers</a>
+            <a href="#">About us</a>
+            <a href="#">Alumni</a>
+            <a href="#">Contact us</a>
+            <a href="#">Global locations</a>
+        </div>
+
+        <div class="footer-subscribe">
+            <h4>Subscribe</h4>
+            <p>Sign up for our newsletters to stay informed on the issues that matter to you.</p>
+            <div class="footer-email-form">
+                <input type="email" class="footer-email-input" placeholder="Enter your email">
+                <button class="footer-email-btn">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <div class="footer-social-icon"></div>
+            <div class="footer-social-icon"></div>
+            <div class="footer-social-icon"></div>
+            <div class="footer-social-icon"></div>
+            <div class="footer-social-icon"></div>
+        </div>
+
+        <div class="footer-secondary-links">
+            <a href="#">Scam warning</a>
+            <a href="#">FAQ</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Your privacy choices</a>
+            <a href="#">Cookie preferences</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Local language information</a>
+            <a href="#">Accessibility statement</a>
+        </div>
+
+        <p class="footer-copyright">&copy; 1996–2026 McKinsey &amp; Company</p>
+    </footer>
+
+</body>
+</html>

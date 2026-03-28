@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Presentation Catalog — Kilama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ====== PALETTE (swap via --palette) ====== */
+        :root {
+            /* Chrome palette (swappable) */
+            --accent: #2C5F8A;
+            --accent-hover: #3A7AB0;
+            --dark: #1B2A4A;
+            --secondary: #C4A35A;
+            --bg: #F5F1EB;
+            --card-bg: #FFFFFF;
+            --text: #1B2A4A;
+            --text-muted: rgba(27,42,74,0.6);
+            --border: rgba(27,42,74,0.12);
+            --positive: #228833;
+            --negative: #C0392B;
+            --stripe: #F8F6F2;
+
+            /* Scenario palette (INVARIANT — never changes with --palette) */
+            --sc-reform: #228833;
+            --sc-cooperative: #4477AA;
+            --sc-sq: #CCBB44;
+            --sc-fragmentation: #EE6677;
+            --sc-crisis: #AA3377;
+            --sc-contained: #66CCEE;
+            --sc-deep: #882255;
+
+            /* Alert levels */
+            --alert-high: #C0392B;
+            --alert-medium: #E67E22;
+            --alert-low: #F1C40F;
+
+            /* Typography */
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --base-size: 15px;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            font-size: var(--base-size);
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            padding: 40px;
+        }
+
+        .page-title {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .page-heading {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .section-label {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ====== 1. DATA-METRIC-CARD (PIIE style) ====== */
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .metric-card {
+            background: var(--dark);
+            padding: 24px;
+            border-radius: 0;
+        }
+
+        .metric-card .metric-label {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .metric-card .metric-value {
+            font-family: var(--font-sans);
+            font-size: 36px;
+            font-weight: 300;
+            color: #FFFFFF;
+            line-height: 1.1;
+        }
+
+        .metric-card .metric-trend {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .metric-card .metric-trend.up { color: var(--sc-reform); }
+        .metric-card .metric-trend.down { color: var(--sc-fragmentation); }
+        .metric-card .metric-trend.neutral { color: var(--sc-sq); }
+
+        .metric-card .metric-sparkline {
+            height: 24px;
+            margin-top: 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* ====== 2. DATA-CHART-FRAME (Economist style) ====== */
+        .chart-frame {
+            background: var(--card-bg);
+            margin-bottom: 32px;
+            padding: 32px;
+        }
+
+        .chart-frame .chart-accent-line {
+            height: 3px;
+            width: 40px;
+            background: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .chart-frame .chart-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .chart-frame .chart-subtitle {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .chart-frame .chart-slot {
+            width: 100%;
+            min-height: 300px;
+            background: #FAFAFA;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-frame .chart-slot img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .chart-frame .chart-source {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .chart-frame .chart-note {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ====== 3. DATA-TOGGLE-BAR (GTA style) ====== */
+        .toggle-bar {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 16px;
+        }
+
+        .toggle-btn {
+            padding: 5px 14px;
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.15s;
+        }
+
+        .toggle-btn.active {
+            background: var(--accent);
+            color: #FFFFFF;
+        }
+
+        .toggle-btn:not(.active) {
+            background: rgba(44,95,138,0.08);
+            color: var(--accent);
+        }
+
+        .toggle-btn:hover:not(.active) { background: rgba(44,95,138,0.15); }
+
+        /* ====== 4. DATA-SCENARIO-BADGE ====== */
+        .scenario-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .scenario-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--dark);
+            border-left: 4px solid;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .scenario-badge:hover { background: rgba(27,42,74,0.85); }
+
+        .scenario-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .scenario-badge .scenario-name {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 600;
+            color: #FFFFFF;
+            flex: 1;
+        }
+
+        .scenario-badge .scenario-prob {
+            font-family: var(--font-sans);
+            font-size: 20px;
+            font-weight: 300;
+            color: #FFFFFF;
+        }
+
+        .scenario-badge .scenario-prob span {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ====== 5. DATA-TABLE-FRAME (Economist zero-decoration) ====== */
+        .table-frame {
+            background: var(--card-bg);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .table-frame .table-title {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 13px;
+        }
+
+        .data-table thead th {
+            text-align: left;
+            padding: 10px 12px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--dark);
+        }
+
+        .data-table thead th.num { text-align: right; }
+
+        .data-table tbody td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .data-table tbody td.num {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .data-table tbody tr:nth-child(even) { background: var(--stripe); }
+
+        .data-table tbody td .sig { color: var(--accent); font-weight: 600; }
+        .data-table tbody td .neg { color: var(--negative); }
+        .data-table tbody td .pos { color: var(--positive); }
+
+        .table-frame .table-note {
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* ====== 6. DATA-FAN-CHART-FRAME ====== */
+        .fan-legend {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .fan-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-sans);
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .fan-legend-swatch {
+            width: 24px;
+            height: 12px;
+            border-radius: 1px;
+        }
+
+        /* ====== 7. DATA-ALERT-CARD ====== */
+        .alert-card {
+            display: flex;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--card-bg);
+            border-left: 4px solid;
+            margin-bottom: 16px;
+        }
+
+        .alert-card.high { border-color: var(--alert-high); }
+        .alert-card.medium { border-color: var(--alert-medium); }
+        .alert-card.low { border-color: var(--alert-low); }
+
+        .alert-severity {
+            font-family: var(--font-sans);
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            flex-shrink: 0;
+            height: fit-content;
+        }
+
+        .alert-card.high .alert-severity { background: var(--alert-high); color: white; }
+        .alert-card.medium .alert-severity { background: var(--alert-medium); color: white; }
+        .alert-card.low .alert-severity { background: var(--alert-low); color: var(--dark); }
+
+        .alert-content .alert-title {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .alert-content .alert-text {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ====== 8. DATA-COMPARISON-GRID ====== */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .comparison-grid .chart-frame { margin-bottom: 0; padding: 24px; }
+        .comparison-grid .chart-slot { min-height: 200px; }
+
+        /* ====== DASHBOARD LAYOUT: EXECUTIVE ====== */
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 32px;
+        }
+
+        .dashboard-timestamp {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .dashboard-body {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 24px;
+        }
+
+        .dashboard-sidebar {
+            position: sticky;
+            top: 20px;
+            align-self: start;
+        }
+
+        .dashboard-main {
+            min-width: 0;
+        }
+
+        /* ====== SVG DEMO CHARTS ====== */
+        .demo-fan-chart { width: 100%; }
+        .demo-bar-chart { width: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="dashboard-header">
+        <div>
+            <div class="page-title">FPSQ / Vigie v1.4.0</div>
+            <h1 class="page-heading">Global Macro Outlook Dashboard</h1>
+        </div>
+        <div class="dashboard-timestamp">Last update: 28 March 2026, 09:00 CET — MC(500)</div>
+    </div>
+
+    <!-- KPI ROW — piie:data-metric-card -->
+    <div class="section-label">Key Indicators — Status Quo Scenario</div>
+    <div class="metric-row">
+        <div class="metric-card">
+            <div class="metric-label">GDP Growth (AE)</div>
+            <div class="metric-value">2.1%</div>
+            <div class="metric-trend up">▲ +0.3pp vs Jan</div>
+            <div class="metric-sparkline">
+                <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none">
+                    <polyline points="0,18 20,16 40,14 60,15 80,12 100,10 120,11 140,8 160,7 180,6 200,5" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Sovereign Spread (EMDE)</div>
+            <div class="metric-value">320bp</div>
+            <div class="metric-trend down">▼ -45bp vs Q4</div>
+            <div class="metric-sparkline">
+                <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none">
+                    <polyline points="0,5 20,7 40,10 60,8 80,12 100,14 120,13 140,16 160,18 180,19 200,20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Financial Stress Index</div>
+            <div class="metric-value">42</div>
+            <div class="metric-trend neutral">→ Stable</div>
+            <div class="metric-sparkline">
+                <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none">
+                    <polyline points="0,12 20,11 40,13 60,12 80,14 100,12 120,13 140,11 160,12 180,13 200,12" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">ODA / GNI Ratio</div>
+            <div class="metric-value">0.33%</div>
+            <div class="metric-trend down">▼ -0.04pp vs 2024</div>
+            <div class="metric-sparkline">
+                <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none">
+                    <polyline points="0,8 20,9 40,10 60,11 80,12 100,13 120,14 140,15 160,16 180,17 200,18" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-body">
+
+        <!-- SIDEBAR: Scenario Panel -->
+        <div class="dashboard-sidebar">
+            <div class="section-label">Active Scenarios</div>
+            <div class="scenario-panel">
+                <div class="scenario-badge" style="border-color: var(--sc-cooperative);">
+                    <div class="scenario-dot" style="background: var(--sc-cooperative);"></div>
+                    <div class="scenario-name">Soft Landing</div>
+                    <div class="scenario-prob">35<span>%</span></div>
+                </div>
+                <div class="scenario-badge" style="border-color: var(--sc-sq);">
+                    <div class="scenario-dot" style="background: var(--sc-sq);"></div>
+                    <div class="scenario-name">Status Quo</div>
+                    <div class="scenario-prob">25<span>%</span></div>
+                </div>
+                <div class="scenario-badge" style="border-color: var(--sc-reform);">
+                    <div class="scenario-dot" style="background: var(--sc-reform);"></div>
+                    <div class="scenario-name">AI Breakout</div>
+                    <div class="scenario-prob">15<span>%</span></div>
+                </div>
+                <div class="scenario-badge" style="border-color: var(--sc-fragmentation);">
+                    <div class="scenario-dot" style="background: var(--sc-fragmentation);"></div>
+                    <div class="scenario-name">Stagflation</div>
+                    <div class="scenario-prob">15<span>%</span></div>
+                </div>
+                <div class="scenario-badge" style="border-color: var(--sc-crisis);">
+                    <div class="scenario-dot" style="background: var(--sc-crisis);"></div>
+                    <div class="scenario-name">Recession</div>
+                    <div class="scenario-prob">10<span>%</span></div>
+                </div>
+            </div>
+
+            <!-- ALERTS -->
+            <div class="section-label" style="margin-top: 32px;">Vigie Alerts</div>
+            <div class="alert-card medium">
+                <div class="alert-severity">Watch</div>
+                <div class="alert-content">
+                    <div class="alert-title">US CRE Stress</div>
+                    <div class="alert-text">Office vacancy rate 22.4%, CMBS spreads widening</div>
+                </div>
+            </div>
+            <div class="alert-card low">
+                <div class="alert-severity">Monitor</div>
+                <div class="alert-content">
+                    <div class="alert-title">EMDE Debt Rollover</div>
+                    <div class="alert-text">$1.2T maturing H2 2026, 3 countries at elevated risk</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="dashboard-main">
+
+            <!-- CHART FRAME: Fan Chart (Economist style) -->
+            <div class="chart-frame">
+                <div class="chart-accent-line"></div>
+                <h3 class="chart-title">GDP Growth Projections, Advanced Economies</h3>
+                <p class="chart-subtitle">2025–2035, 5 scenarios with MC uncertainty bands (p10–p90)</p>
+
+                <div class="toggle-bar">
+                    <button class="toggle-btn active" onclick="setToggle(this)">Graph</button>
+                    <button class="toggle-btn" onclick="setToggle(this)">Table</button>
+                    <button class="toggle-btn" onclick="setToggle(this)">Export</button>
+                </div>
+
+                <div class="fan-legend">
+                    <div class="fan-legend-item"><div class="fan-legend-swatch" style="background: rgba(68,119,170,0.15);"></div>p10–p90</div>
+                    <div class="fan-legend-item"><div class="fan-legend-swatch" style="background: rgba(68,119,170,0.35);"></div>p25–p75</div>
+                    <div class="fan-legend-item"><div class="fan-legend-swatch" style="background: var(--sc-cooperative); height: 3px; width: 24px;"></div>Median</div>
+                    <div class="fan-legend-item"><div class="fan-legend-swatch" style="background: var(--sc-reform); height: 2px; width: 24px; border: 1px dashed var(--sc-reform);"></div>Reform</div>
+                    <div class="fan-legend-item"><div class="fan-legend-swatch" style="background: var(--sc-crisis); height: 2px; width: 24px; border: 1px dashed var(--sc-crisis);"></div>Crisis</div>
+                </div>
+
+                <div class="chart-slot">
+                    <!-- SLOT: fan_chart_gdp_growth_ae.png from viz.py -->
+                    <svg viewBox="0 0 700 300" width="100%" height="300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- p10-p90 band -->
+                        <polygon points="50,220 113,210 176,195 239,180 302,165 365,155 428,145 491,135 554,130 617,125 680,120 680,200 617,190 554,185 491,180 428,175 365,170 302,165 239,160 176,155 113,150 50,155" fill="rgba(68,119,170,0.12)"/>
+                        <!-- p25-p75 band -->
+                        <polygon points="50,200 113,190 176,178 239,168 302,158 365,150 428,142 491,136 554,132 617,128 680,124 680,180 617,175 554,170 491,166 428,162 365,158 302,155 239,150 176,145 113,140 50,145" fill="rgba(68,119,170,0.25)"/>
+                        <!-- Median (SQ) -->
+                        <polyline points="50,172 113,165 176,160 239,155 302,150 365,148 428,145 491,142 554,140 617,138 680,136" fill="none" stroke="#4477AA" stroke-width="2.5"/>
+                        <!-- Reform scenario -->
+                        <polyline points="50,172 113,162 176,152 239,140 302,130 365,122 428,115 491,108 554,102 617,98 680,95" fill="none" stroke="#228833" stroke-width="1.5" stroke-dasharray="6,3"/>
+                        <!-- Crisis scenario -->
+                        <polyline points="50,172 113,175 176,185 239,195 302,200 365,210 428,215 491,218 554,216 617,212 680,208" fill="none" stroke="#AA3377" stroke-width="1.5" stroke-dasharray="6,3"/>
+                        <!-- X axis labels -->
+                        <text x="50" y="250" font-family="Inter" font-size="10" fill="#999">2025</text>
+                        <text x="176" y="250" font-family="Inter" font-size="10" fill="#999">2027</text>
+                        <text x="302" y="250" font-family="Inter" font-size="10" fill="#999">2029</text>
+                        <text x="428" y="250" font-family="Inter" font-size="10" fill="#999">2031</text>
+                        <text x="554" y="250" font-family="Inter" font-size="10" fill="#999">2033</text>
+                        <text x="670" y="250" font-family="Inter" font-size="10" fill="#999">2035</text>
+                        <!-- Y axis labels -->
+                        <text x="30" y="100" font-family="Inter" font-size="10" fill="#999" text-anchor="end">4%</text>
+                        <text x="30" y="150" font-family="Inter" font-size="10" fill="#999" text-anchor="end">2%</text>
+                        <text x="30" y="200" font-family="Inter" font-size="10" fill="#999" text-anchor="end">0%</text>
+                        <!-- Gridlines -->
+                        <line x1="50" y1="100" x2="680" y2="100" stroke="#EEE" stroke-width="0.5"/>
+                        <line x1="50" y1="150" x2="680" y2="150" stroke="#EEE" stroke-width="0.5"/>
+                        <line x1="50" y1="200" x2="680" y2="200" stroke="#EEE" stroke-width="0.5"/>
+                        <!-- Axis line -->
+                        <line x1="50" y1="235" x2="680" y2="235" stroke="#CCC" stroke-width="1"/>
+                    </svg>
+                </div>
+                <p class="chart-source">Source: FPSQ/Vigie v1.4.0, Monte Carlo (500 draws), calibrated on IMF WEO Jan 2026</p>
+                <p class="chart-note">Note: Shaded areas represent p10–p90 and p25–p75 uncertainty bands around the SQ median</p>
+            </div>
+
+            <!-- COMPARISON GRID — 2×2 small multiples -->
+            <div class="section-label">Scenario Comparison — Terminal Values (2035)</div>
+            <div class="comparison-grid">
+                <div class="chart-frame">
+                    <h3 class="chart-title" style="font-size: 16px;">GDP Growth</h3>
+                    <div class="chart-slot" style="min-height: 160px;">
+                        <svg viewBox="0 0 300 140" width="100%" height="140">
+                            <rect x="20" y="20" width="45" height="100" fill="var(--sc-cooperative)" rx="1"/>
+                            <rect x="75" y="40" width="45" height="80" fill="var(--sc-sq)" rx="1"/>
+                            <rect x="130" y="10" width="45" height="110" fill="var(--sc-reform)" rx="1"/>
+                            <rect x="185" y="60" width="45" height="60" fill="var(--sc-fragmentation)" rx="1"/>
+                            <rect x="240" y="90" width="45" height="30" fill="var(--sc-crisis)" rx="1"/>
+                            <text x="42" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SL</text>
+                            <text x="97" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SQ</text>
+                            <text x="152" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">AI</text>
+                            <text x="207" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Stag</text>
+                            <text x="262" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Rec</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="chart-frame">
+                    <h3 class="chart-title" style="font-size: 16px;">Inflation</h3>
+                    <div class="chart-slot" style="min-height: 160px;">
+                        <svg viewBox="0 0 300 140" width="100%" height="140">
+                            <rect x="20" y="60" width="45" height="60" fill="var(--sc-cooperative)" rx="1"/>
+                            <rect x="75" y="50" width="45" height="70" fill="var(--sc-sq)" rx="1"/>
+                            <rect x="130" y="65" width="45" height="55" fill="var(--sc-reform)" rx="1"/>
+                            <rect x="185" y="15" width="45" height="105" fill="var(--sc-fragmentation)" rx="1"/>
+                            <rect x="240" y="70" width="45" height="50" fill="var(--sc-crisis)" rx="1"/>
+                            <text x="42" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SL</text>
+                            <text x="97" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SQ</text>
+                            <text x="152" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">AI</text>
+                            <text x="207" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Stag</text>
+                            <text x="262" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Rec</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="chart-frame">
+                    <h3 class="chart-title" style="font-size: 16px;">Sovereign Spread (EMDE)</h3>
+                    <div class="chart-slot" style="min-height: 160px;">
+                        <svg viewBox="0 0 300 140" width="100%" height="140">
+                            <rect x="20" y="65" width="45" height="55" fill="var(--sc-cooperative)" rx="1"/>
+                            <rect x="75" y="50" width="45" height="70" fill="var(--sc-sq)" rx="1"/>
+                            <rect x="130" y="70" width="45" height="50" fill="var(--sc-reform)" rx="1"/>
+                            <rect x="185" y="25" width="45" height="95" fill="var(--sc-fragmentation)" rx="1"/>
+                            <rect x="240" y="10" width="45" height="110" fill="var(--sc-crisis)" rx="1"/>
+                            <text x="42" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SL</text>
+                            <text x="97" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SQ</text>
+                            <text x="152" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">AI</text>
+                            <text x="207" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Stag</text>
+                            <text x="262" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Rec</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="chart-frame">
+                    <h3 class="chart-title" style="font-size: 16px;">Debt / GDP</h3>
+                    <div class="chart-slot" style="min-height: 160px;">
+                        <svg viewBox="0 0 300 140" width="100%" height="140">
+                            <rect x="20" y="50" width="45" height="70" fill="var(--sc-cooperative)" rx="1"/>
+                            <rect x="75" y="40" width="45" height="80" fill="var(--sc-sq)" rx="1"/>
+                            <rect x="130" y="55" width="45" height="65" fill="var(--sc-reform)" rx="1"/>
+                            <rect x="185" y="20" width="45" height="100" fill="var(--sc-fragmentation)" rx="1"/>
+                            <rect x="240" y="5" width="45" height="115" fill="var(--sc-crisis)" rx="1"/>
+                            <text x="42" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SL</text>
+                            <text x="97" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">SQ</text>
+                            <text x="152" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">AI</text>
+                            <text x="207" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Stag</text>
+                            <text x="262" y="135" font-family="Inter" font-size="8" fill="#999" text-anchor="middle">Rec</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATA TABLE — Economist zero-decoration -->
+            <div class="table-frame">
+                <div class="toggle-bar">
+                    <button class="toggle-btn active" onclick="setToggle(this)">Table</button>
+                    <button class="toggle-btn" onclick="setToggle(this)">Graph</button>
+                    <button class="toggle-btn" onclick="setToggle(this)">Export</button>
+                </div>
+                <h3 class="table-title">Terminal Values by Scenario (2035)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th class="num">Soft Landing</th>
+                            <th class="num">Status Quo</th>
+                            <th class="num">AI Breakout</th>
+                            <th class="num">Stagflation</th>
+                            <th class="num">Recession</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GDP Growth (AE)</td>
+                            <td class="num"><span class="pos">2.8%</span></td>
+                            <td class="num">2.1%</td>
+                            <td class="num"><span class="pos">3.4%</span></td>
+                            <td class="num"><span class="neg">1.2%</span></td>
+                            <td class="num"><span class="neg">0.4%</span></td>
+                        </tr>
+                        <tr>
+                            <td>GDP Growth (EMDE)</td>
+                            <td class="num"><span class="pos">4.5%</span></td>
+                            <td class="num">3.8%</td>
+                            <td class="num"><span class="pos">5.1%</span></td>
+                            <td class="num"><span class="neg">2.4%</span></td>
+                            <td class="num"><span class="neg">1.1%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Inflation (AE)</td>
+                            <td class="num">2.2%</td>
+                            <td class="num">2.5%</td>
+                            <td class="num">2.0%</td>
+                            <td class="num"><span class="neg">4.8%</span></td>
+                            <td class="num">1.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Sovereign Spread (EMDE, bp)</td>
+                            <td class="num"><span class="pos">280</span></td>
+                            <td class="num">320</td>
+                            <td class="num"><span class="pos">250</span></td>
+                            <td class="num"><span class="neg">520</span></td>
+                            <td class="num"><span class="neg">680</span></td>
+                        </tr>
+                        <tr>
+                            <td>Debt/GDP (AE)</td>
+                            <td class="num">108%</td>
+                            <td class="num">115%</td>
+                            <td class="num"><span class="pos">102%</span></td>
+                            <td class="num"><span class="neg">128%</span></td>
+                            <td class="num"><span class="neg">142%</span></td>
+                        </tr>
+                        <tr>
+                            <td>ODA/GNI</td>
+                            <td class="num">0.35%</td>
+                            <td class="num">0.33%</td>
+                            <td class="num"><span class="pos">0.38%</span></td>
+                            <td class="num"><span class="neg">0.28%</span></td>
+                            <td class="num"><span class="neg">0.25%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Financial Stress Index</td>
+                            <td class="num"><span class="pos">35</span></td>
+                            <td class="num">42</td>
+                            <td class="num"><span class="pos">30</span></td>
+                            <td class="num"><span class="neg">65</span></td>
+                            <td class="num"><span class="neg">78</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-note">Source: FPSQ/Vigie v1.4.0. Green = favorable vs SQ; Red = unfavorable. MC(500), calibrated Jan 2026.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function setToggle(btn) {
+        var bar = btn.parentElement;
+        bar.querySelectorAll('.toggle-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

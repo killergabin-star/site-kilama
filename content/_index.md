@@ -1,78 +1,82 @@
 ---
 title: ""
-date: 2026-02-25
+date: 2026-03-27
 type: landing
 
 design:
-  spacing: "5rem"
+  spacing: "0"
 
 sections:
-  # ── Hero : positionnement, pas biographie ──
+  # ── Hero : promesse, pas biographie ──
   - block: hero
     id: hero
     content:
       title: |
-        À l'intersection de la recherche,
-        de la stratégie et de l'action publique
+        Quantifier les chocs
+        géopolitiques
       text: |
-        Macroéconomiste. Ancien conseiller au Quai d'Orsay (CAPS, 2018-2023).
-        Chercheur associé BETA & FERDI. Spécialiste de la géoéconomie,
-        du financement du développement et des risques géopolitiques.
+        Sanctions, coups d'État, guerres commerciales, fragmentation des chaînes de valeur :
+        ces chocs ne restent jamais confinés à la sphère politique. Ils se propagent à l'économie
+        par des canaux identifiables et mesurables.
 
-        <div class="hero-roles">
-          <span class="role role-accent">Chercheur</span>
-          <span class="role">Stratège</span>
-          <span class="role role-accent">Conseiller</span>
-        </div>
       primary_action:
-        text: Découvrir mes travaux
-        url: /research/
+        text: Dernier rapport
+        url: /policy/
       secondary_action:
-        text: Foresight →
+        text: Explorer Vigie
         url: /foresight/
     design:
       css_class: dark
       background:
         color: black
 
-  # ── Chiffres clés ──
-  - block: stats
-    id: stats
+  # ── Mini-bio : qui est Eric Kilama ──
+  - block: markdown
+    id: intro-bio
     content:
-      items:
-        - statistic: "4"
-          description: "Publications rang A"
-        - statistic: "5 ans"
-          description: "Conseiller CAPS / Quai d'Orsay"
-        - statistic: "12+"
-          description: "Années d'expérience"
-        - statistic: "3"
-          description: "Affiliations académiques"
+      title: ""
+      text: |
+        <div class="intro-bio-section">
+          <div class="intro-bio-content">
+            <p class="intro-bio-lead">Eric Kilama est économiste-stratège. Son programme de recherche porte sur une question simple aux implications immenses : <strong>comment les chocs géopolitiques se transmettent-ils à l'économie, et peut-on les mesurer ?</strong></p>
+            <p>Il combine économétrie causale, données massives et prospective quantitative pour analyser l'impact des coups d'État, sanctions, guerres commerciales et rivalités de puissances sur les États, les entreprises et l'architecture du financement du développement.</p>
+            <a href="/about/" class="intro-bio-link">En savoir plus &rarr;</a>
+          </div>
+        </div>
 
-  # ── Domaines d'expertise ──
-  - block: features
-    id: expertise
+  # ── Programme de recherche — 4 niveaux d'analyse ──
+  - block: markdown
+    id: programme
     content:
-      title: Domaines d'expertise
-      items:
-        - name: "Géoéconomie & Risques"
-          description: "Sanctions, compétition sino-américaine, arsenalisation des interdépendances, PME et chaînes de valeur."
-          icon: globe-alt
-          icon_pack: hero
-        - name: "Financement du développement"
-          description: "Architecture financière internationale, réforme des BMD, Agenda 2030, dette des PMA."
-          icon: banknotes
-          icon_pack: hero
-        - name: "Transition énergétique"
-          description: "Subventions aux énergies fossiles (FFSR), politique climatique, certification FMI Climate Risks."
-          icon: bolt
-          icon_pack: hero
-        - name: "Institutions & Économie politique"
-          description: "Corruption, survie des dirigeants, coups d'État, économie politique des ressources."
-          icon: scale
-          icon_pack: hero
+      title: ""
+      text: |
+        <div class="research-programme">
+          <h2 class="section-label">Programme de recherche</h2>
+          <div class="programme-grid">
+            <div class="programme-card">
+              <span class="programme-level">États</span>
+              <p>Comment l'instabilité politique altère les institutions et les comportements économiques. Coups d'État, corruption, choix professionnels, fragilités institutionnelles.</p>
+              <a href="/research/institutions/" class="programme-link">Institutions &rarr;</a>
+            </div>
+            <div class="programme-card">
+              <span class="programme-level">Entreprises</span>
+              <p>L'impact concret du risque géopolitique sur l'investissement, l'emploi et la survie des PME. 337 000 entreprises, 79 pays.</p>
+              <a href="/research/geoeconomie/" class="programme-link">Géoéconomie &rarr;</a>
+            </div>
+            <div class="programme-card">
+              <span class="programme-level">Système international</span>
+              <p>La géopolitique redessine l'architecture de l'aide et du financement du développement. Chine bailleur alternatif, fragmentation des alliances.</p>
+              <a href="/research/developpement/" class="programme-link">Développement &rarr;</a>
+            </div>
+            <div class="programme-card">
+              <span class="programme-level">Prospectif</span>
+              <p>Comprendre ne suffit pas — il faut anticiper. Le framework <em>Vigie</em> produit des scénarios conditionnels avec signposts et probabilités.</p>
+              <a href="/foresight/" class="programme-link">Foresight &rarr;</a>
+            </div>
+          </div>
+        </div>
 
-  # ── Dernières analyses ──
+  # ── Dernières publications ──
   - block: collection
     id: analyses
     content:
@@ -84,75 +88,40 @@ sections:
     design:
       view: date-title-summary
 
-  # ── Publication phare — section sombre image-cards ──
+  # ── Sections du site — navigation par blocs ──
   - block: markdown
-    id: publications-phares
+    id: sections-nav
     content:
       title: ""
       text: |
-        <div class="dark-showcase">
-          <h2 class="showcase-title">Publications récentes</h2>
-          <div class="showcase-grid">
-            <a href="/post/2026-01-pme-geopolitiques/" class="showcase-card">
-              <div class="showcase-card-img" style="background: linear-gradient(135deg, #003366 0%, #001a33 100%);">
-                <span class="showcase-card-icon">🛡️</span>
-              </div>
-              <div class="showcase-card-body">
-                <span class="showcase-card-date">Février 2026</span>
-                <h3>La fragilité par la base</h3>
-                <p>PME de la BITD et résilience géopolitique — Policy Brief</p>
-              </div>
-            </a>
-            <a href="/post/2025-07-ffd4/" class="showcase-card">
-              <div class="showcase-card-img" style="background: linear-gradient(135deg, #1a5276 0%, #003366 100%);">
-                <span class="showcase-card-icon">🌍</span>
-              </div>
-              <div class="showcase-card-body">
-                <span class="showcase-card-date">Juillet 2025</span>
-                <h3>FfD4 : Time for a reset?</h3>
-                <p>L'architecture financière internationale face aux défis actuels</p>
-              </div>
-            </a>
-            <a href="/post/2025-07-haiti/" class="showcase-card">
-              <div class="showcase-card-img" style="background: linear-gradient(135deg, #0a1628 0%, #1a5276 100%);">
-                <span class="showcase-card-icon">🏛️</span>
-              </div>
-              <div class="showcase-card-body">
-                <span class="showcase-card-date">Juillet 2025</span>
-                <h3>Haïti : sortir de l'impasse</h3>
-                <p>Repenser l'action internationale face à la crise sécuritaire</p>
-              </div>
-            </a>
-          </div>
+        <div class="sections-nav">
+          <a href="/research/" class="section-nav-card">
+            <h3>Research</h3>
+            <p>Articles et working papers qui identifient les mécanismes de transmission des chocs géopolitiques aux économies nationales et aux entreprises.</p>
+          </a>
+          <a href="/policy/" class="section-nav-card">
+            <h3>Policy</h3>
+            <p>Notes et rapports pour décideurs sur les conséquences économiques des coups d'État, sanctions, guerres commerciales et reconfigurations de l'aide.</p>
+          </a>
+          <a href="/foresight/" class="section-nav-card">
+            <h3>Foresight</h3>
+            <p>Scénarios quantifiés des trajectoires géopolitiques et économiques, avec signposts, probabilités et indicateurs d'alerte.</p>
+          </a>
+          <a href="/teaching/" class="section-nav-card">
+            <h3>Teaching</h3>
+            <p>Cours et séminaires en économétrie causale, macroéconomie appliquée et économie politique internationale.</p>
+          </a>
         </div>
 
-  # ── À propos — 2 colonnes : bio + quote (Mazzucato pattern) ──
+  # ── Citation ──
   - block: markdown
-    id: a-propos
+    id: citation
     content:
       title: ""
       text: |
-        <div class="two-col-section">
-          <div class="two-col-left">
-            <h2 class="two-col-role">Chercheur</h2>
-            <p>
-              Macroéconomiste avec 12 ans d'expérience à l'intersection de la recherche académique,
-              du conseil stratégique au plus haut niveau de l'État et de la coopération internationale.
-              Ancien Économiste-Conseiller au CAPS/Quai d'Orsay (2018-2023), aujourd'hui chercheur associé
-              au BETA (Université de Lorraine) et à la FERDI.
-            </p>
-            <p>
-              <strong>Habilitation Secret Défense</strong> · Bilingue FR-EN (TOEIC 955) · Certifié FMI <em>Climate Risks</em> (2024)
-            </p>
-            <a href="/about/" class="mazz-btn">En savoir plus</a>
-          </div>
-          <div class="two-col-right">
-            <blockquote class="mazz-quote">
-              <span class="quote-mark">"</span>
-              <p>L'enjeu pour l'Europe n'est pas de choisir entre compétitivité et souveraineté — c'est de comprendre que sans la seconde, la première est illusoire. Les PME sont le terrain de vérité de cette équation.</p>
-              <span class="quote-mark quote-mark-end">"</span>
-              <cite>Eric Kilama, Policy Brief PME-BITD, 2026</cite>
-            </blockquote>
-          </div>
+        <div class="pull-quote-section">
+          <blockquote class="pull-quote">
+            <p>Cette approche — économétrie causale pour identifier les mécanismes, données massives pour mesurer les effets, prospective quantitative pour anticiper les trajectoires — constitue une intelligence géopolitique rigoureusement chiffrée, au service des décideurs.</p>
+          </blockquote>
         </div>
 ---

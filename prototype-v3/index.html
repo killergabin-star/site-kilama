@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Kilama — Quantifier les chocs géopolitiques</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --ivory-deep: #F0EDE8;
+    --anthracite: #2D2D2D;
+    --text-secondary: #5A6068;
+    --border-light: rgba(27, 42, 74, 0.08);
+    --font-heading: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-body: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+    --font-accent: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--anthracite);
+    background: var(--ivory);
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; }
+  code, .data-label { font-family: var(--font-mono); font-size: 0.875rem; }
+  blockquote, .pull-quote { font-family: var(--font-accent); font-style: italic; }
+
+  a { color: var(--blue-fpsq); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(248, 247, 244, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-light);
+  }
+  /* Accent line under nav — institutional polish */
+  nav::after {
+    content: '';
+    position: absolute; bottom: -1px; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--blue-fpsq) 40%, transparent 80%);
+    opacity: 0.12;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name {
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;
+    color: var(--navy); letter-spacing: 0.04em; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
+  .nav-links > li { position: relative; }
+  .nav-links > li > a {
+    font-family: var(--font-heading); font-size: 0.88rem; font-weight: 500;
+    color: var(--text-secondary); text-decoration: none;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    transition: color 0.2s;
+    padding: 1rem 1.1rem;
+    display: flex; align-items: center; gap: 0.35rem;
+  }
+  .nav-links > li > a:hover { color: var(--navy); text-decoration: none; }
+  /* Chevron for dropdown items */
+  .nav-chevron {
+    display: inline-block; width: 0; height: 0;
+    border-left: 3.5px solid transparent; border-right: 3.5px solid transparent;
+    border-top: 4px solid currentColor;
+    transition: transform 0.2s;
+  }
+  .nav-links > li:hover .nav-chevron { transform: rotate(180deg); }
+
+  /* Dropdown panels */
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0;
+    background: #fff;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 8px 32px rgba(27, 42, 74, 0.08), 0 2px 8px rgba(27, 42, 74, 0.04);
+    min-width: 280px;
+    padding: 1.2rem 0;
+    opacity: 0; visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    border-radius: 2px;
+  }
+  .nav-links > li:hover .nav-dropdown {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .nav-dropdown-section {
+    padding: 0 1.5rem;
+  }
+  .nav-dropdown-section + .nav-dropdown-section {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-light);
+  }
+  .nav-dropdown-label {
+    font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-secondary); margin-bottom: 0.5rem;
+  }
+  .nav-dropdown a {
+    display: block; padding: 0.4rem 0;
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 500;
+    color: var(--anthracite); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-dropdown a:hover { color: var(--blue-fpsq); text-decoration: none; }
+  .nav-dropdown-desc {
+    font-family: var(--font-body); font-size: 0.78rem;
+    color: var(--text-secondary); line-height: 1.4;
+    margin-top: -0.1rem; margin-bottom: 0.3rem;
+  }
+
+  .lang-switch {
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600;
+    color: var(--text-secondary); text-decoration: none;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .lang-switch:hover { color: var(--navy); border-color: rgba(27, 42, 74, 0.2); text-decoration: none; }
+
+  /* ── Hamburger menu (mobile) ── */
+  .nav-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    width: 28px; height: 20px; position: relative;
+    flex-shrink: 0;
+  }
+  .nav-toggle span {
+    display: block; width: 100%; height: 2px;
+    background: var(--navy); border-radius: 1px;
+    position: absolute; left: 0;
+    transition: all 0.25s ease;
+  }
+  .nav-toggle span:nth-child(1) { top: 0; }
+  .nav-toggle span:nth-child(2) { top: 9px; }
+  .nav-toggle span:nth-child(3) { top: 18px; }
+  .nav-toggle.active span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+
+  /* Mobile menu panel */
+  .nav-mobile {
+    display: none;
+    position: fixed; top: 56px; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 8px 32px rgba(27, 42, 74, 0.08);
+    padding: 1.5rem 2rem 2rem;
+    z-index: 99;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+  .nav-mobile.open { display: block; }
+  .nav-mobile a {
+    display: block; padding: 0.7rem 0;
+    font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500;
+    color: var(--anthracite); text-decoration: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover { color: var(--blue-fpsq); }
+  .nav-mobile-sublabel {
+    font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--text-secondary); margin-top: 1rem; margin-bottom: 0.3rem;
+  }
+  .nav-mobile-sub a {
+    font-size: 0.82rem; padding: 0.5rem 0 0.5rem 1rem;
+    color: var(--text-secondary); border-bottom: none;
+  }
+  .nav-mobile-sub a:hover { color: var(--blue-fpsq); }
+
+  /* ── Layout ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ── Section label — PIIE-inspired editorial header ── */
+  .section-label {
+    font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--text-secondary); margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 3px; height: 14px;
+    background: var(--blue-fpsq);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: var(--border-light);
+  }
+
+  /* ── SECTION 1 : Hero ── */
+  .hero {
+    padding: 7.5rem 0 3.5rem;
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Abstract geopolitical flow — right side, behind portrait */
+  .hero-visual {
+    position: absolute; top: 56px; right: -12%; bottom: 0;
+    width: 50%; height: calc(100% - 56px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: var(--font-heading); font-weight: 700;
+    font-size: 2.85rem; color: var(--navy); line-height: 1.12;
+    margin-bottom: 1.8rem; letter-spacing: -0.02em;
+  }
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.08rem; color: var(--text-secondary); line-height: 1.75;
+    margin-bottom: 2.5rem; max-width: 520px;
+  }
+  .hero-cta { display: flex; gap: 1rem; align-items: center; }
+  .btn-primary {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+    background: var(--navy); color: #fff; padding: 11px 26px;
+    border: none; border-radius: 2px; text-decoration: none;
+    letter-spacing: 0.02em; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #253a62; text-decoration: none; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(27,42,74,0.15); }
+  .btn-secondary {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+    color: var(--blue-fpsq); text-decoration: none; padding: 11px 0;
+    letter-spacing: 0.02em; transition: color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--navy); text-decoration: none; }
+
+  /* Hero portrait — Blattman-style editorial portrait */
+  .hero-portrait {
+    margin-bottom: 0;
+  }
+  .hero-portrait img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 2px;
+    box-shadow: 0 8px 32px rgba(27, 42, 74, 0.14), 0 2px 8px rgba(27, 42, 74, 0.06);
+    filter: contrast(1.03) saturate(0.90);
+  }
+  .hero-portrait-caption {
+    font-family: var(--font-heading); font-size: 0.72rem; font-weight: 500;
+    color: var(--text-secondary); margin-top: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Mini-list right column */
+  .hero-sidebar-label {
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-secondary); margin-bottom: 1.5rem;
+    padding-top: 0;
+  }
+  .hero-sidebar-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .hero-sidebar-item:first-of-type { border-top: 1px solid var(--border-light); }
+  .hero-sidebar-item:hover { background: rgba(44, 95, 138, 0.03); border-bottom-color: rgba(27, 42, 74, 0.15); }
+  .hero-sidebar-tag {
+    font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--blue-fpsq); margin-bottom: 0.3rem;
+  }
+  .hero-sidebar-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+    color: var(--navy); line-height: 1.35;
+  }
+  .hero-sidebar-date {
+    font-family: var(--font-heading); font-size: 0.72rem;
+    color: var(--text-secondary); margin-top: 0.3rem;
+  }
+
+  /* ── SECTION 2 : Dernière publication ── */
+  .featured {
+    padding: 5rem 0;
+    background: var(--ivory-deep);
+    border-top: 1px solid var(--border-light);
+  }
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: start;
+  }
+  .featured-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  /* Cover — sophisticated report cover */
+  .featured-cover {
+    width: 100%; height: 300px;
+    background: var(--navy);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(27, 42, 74, 0.18), 0 2px 8px rgba(27, 42, 74, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .featured-cover:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 40px rgba(27, 42, 74, 0.22), 0 4px 12px rgba(27, 42, 74, 0.10);
+  }
+  .featured-cover-inner {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 1.8rem 2rem;
+  }
+  .featured-cover-tag {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--gold-caps); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .featured-cover-title {
+    font-family: var(--font-accent); font-weight: 700; font-style: italic;
+    font-size: 1.4rem; color: #fff; line-height: 1.3;
+    max-width: 75%;
+  }
+  .featured-cover-year {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: rgba(255,255,255,0.4); margin-top: 0.6rem;
+  }
+  /* Chart visualization on cover — now handled inline */
+  .featured-tag {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--red-analytical); margin-bottom: 1rem;
+  }
+  .featured-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 1.9rem;
+    color: var(--navy); line-height: 1.25; margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+  .featured-excerpt {
+    font-size: 1.02rem; color: var(--text-secondary); line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .featured-meta {
+    font-family: var(--font-heading); font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .featured-meta-dot {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--text-secondary); display: inline-block;
+  }
+  .featured-link {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+  .featured-link:hover { gap: 0.7rem; text-decoration: none; }
+  .featured-secondary { padding-top: 0.5rem; }
+  .featured-secondary-item {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .featured-secondary-item:first-child { border-top: 1px solid var(--border-light); }
+  .featured-secondary-item:hover { background: rgba(44, 95, 138, 0.02); }
+  .featured-secondary-tag {
+    font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--blue-fpsq); margin-bottom: 0.2rem;
+  }
+  .featured-secondary-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+    color: var(--navy); line-height: 1.35;
+  }
+  .featured-secondary-date {
+    font-family: var(--font-heading); font-size: 0.68rem;
+    color: var(--text-secondary); margin-top: 0.25rem;
+  }
+
+  /* ── SECTION 3 : Programmes ── */
+  .programmes {
+    padding: 5rem 0;
+    background: var(--ivory);
+  }
+  .programmes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .programme-card {
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border-left: 3px solid var(--blue-fpsq);
+    background: var(--ivory-deep);
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    position: relative;
+    box-shadow: 0 1px 4px rgba(27, 42, 74, 0.08);
+  }
+  .programme-card:hover {
+    box-shadow: 0 6px 24px rgba(27, 42, 74, 0.14);
+    transform: translateY(-2px);
+    border-left-color: var(--navy);
+  }
+  /* Large monospace number — top right */
+  .programme-card-num {
+    position: absolute; top: 0.8rem; right: 1.2rem;
+    font-family: var(--font-mono); font-size: 2.2rem; font-weight: 400;
+    color: rgba(27, 42, 74, 0.06);
+    line-height: 1;
+  }
+  .programme-card-level {
+    font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-secondary); margin-bottom: 0.5rem;
+  }
+  .programme-card-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
+    color: var(--navy); line-height: 1.35; margin-bottom: 0.5rem;
+  }
+  .programme-card-desc {
+    font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;
+  }
+  .programme-card-status {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--blue-fpsq); margin-top: 0.8rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  /* ── SECTION 4 : Analyses récentes ── */
+  .analyses {
+    padding: 4.5rem 0;
+    background: var(--ivory-deep);
+    border-top: 1px solid var(--border-light);
+  }
+  .analyses-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 0;
+  }
+  .analyses-header .section-label { margin-bottom: 1.5rem; }
+  .analyses-view-all {
+    font-family: var(--font-heading); font-size: 0.78rem; font-weight: 600;
+    color: var(--blue-fpsq); margin-bottom: 2.5rem;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .analyses-view-all:hover { text-decoration: none; gap: 0.5rem; }
+  .analysis-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 2rem;
+    align-items: baseline;
+    transition: background 0.15s;
+  }
+  .analysis-item:hover { background: rgba(44, 95, 138, 0.015); }
+  .analysis-item:first-of-type { border-top: 1px solid var(--border-light); }
+  .analysis-date {
+    font-family: var(--font-heading); font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+  .analysis-tag {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--blue-fpsq); margin-bottom: 0.25rem;
+  }
+  .analysis-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 1.12rem;
+    color: var(--navy); line-height: 1.38; margin-bottom: 0.3rem;
+  }
+  .analysis-title a { color: var(--navy); text-decoration: none; }
+  .analysis-title a:hover { color: var(--blue-fpsq); text-decoration: none; }
+  .analysis-chapeau {
+    font-size: 0.86rem; color: var(--text-secondary); line-height: 1.5;
+  }
+  .analysis-author {
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 500;
+    color: var(--text-secondary); margin-top: 0.3rem;
+  }
+  .analysis-read {
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600;
+    color: var(--blue-fpsq); margin-top: 0.5rem;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    opacity: 0; transition: opacity 0.2s, gap 0.2s;
+  }
+  .analysis-item:hover .analysis-read { opacity: 1; }
+  .analysis-read:hover { gap: 0.5rem; text-decoration: none; }
+
+  /* ── SECTION 5 : Vigie — mini-dashboard ── */
+  .vigie {
+    padding: 5rem 0;
+    background: var(--ivory);
+    position: relative;
+    border-top: 1px solid var(--border-light);
+  }
+  .vigie-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: end;
+    margin-bottom: 2rem;
+  }
+  .vigie-header h2 {
+    font-size: 1.75rem; color: var(--navy); margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+  }
+  .vigie-header p {
+    font-size: 1rem; color: var(--text-secondary); line-height: 1.7;
+    max-width: 600px;
+  }
+  /* KPI strip — GTA-inspired metrics */
+  .vigie-kpis {
+    display: flex; gap: 2.5rem;
+    padding-bottom: 0.3rem;
+  }
+  .vigie-kpi {
+    text-align: center;
+  }
+  .vigie-kpi-number {
+    font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700;
+    color: var(--navy); line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .vigie-kpi-label {
+    font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-secondary); margin-top: 0.35rem;
+  }
+  /* Active scenarios list */
+  .vigie-scenarios {
+    margin-bottom: 2rem;
+  }
+  .vigie-scenario {
+    display: grid;
+    grid-template-columns: 8px 1fr auto;
+    gap: 1.2rem;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s;
+  }
+  .vigie-scenario:first-child { border-top: 1px solid var(--border-light); }
+  .vigie-scenario:hover { background: rgba(44, 95, 138, 0.015); }
+  /* Status dot — color-coded like GTA */
+  .vigie-status {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .vigie-status.active { background: #2E7D32; } /* vert — monitoring actif */
+  .vigie-status.watch { background: var(--gold-caps); } /* ambre — sous surveillance */
+  .vigie-status.alert { background: var(--red-analytical); } /* rouge — alerte */
+  .vigie-scenario-content {}
+  .vigie-scenario-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+    color: var(--navy); line-height: 1.35; margin-bottom: 0.15rem;
+  }
+  .vigie-scenario-meta {
+    font-family: var(--font-heading); font-size: 0.72rem;
+    color: var(--text-secondary);
+  }
+  .vigie-scenario-right {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .vigie-sparkline {
+    width: 80px; height: 28px;
+  }
+  .vigie-sparkline polyline {
+    fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .vigie-scenario-prob {
+    font-family: var(--font-mono); font-size: 0.82rem;
+    color: var(--navy); font-weight: 400;
+    white-space: nowrap;
+  }
+  /* Feature grid underneath */
+  .vigie-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .vigie-feature {
+    padding: 1.5rem;
+    border-left: 2px solid var(--gold-caps);
+    background: var(--ivory-deep);
+    transition: box-shadow 0.2s;
+  }
+  .vigie-feature:hover {
+    box-shadow: 0 2px 12px rgba(27, 42, 74, 0.05);
+  }
+  .vigie-feature h4 {
+    font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem;
+    color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .vigie-feature p {
+    font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;
+  }
+  .vigie-cta {
+    margin-top: 2.5rem;
+  }
+  .vigie-cta a {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+    color: var(--blue-fpsq);
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .vigie-cta a:hover { text-decoration: none; gap: 0.6rem; }
+
+  /* ── SECTION 6 : Citation & credentials — NAVY section ── */
+  .credentials {
+    padding: 5rem 0;
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .credentials blockquote {
+    font-family: var(--font-accent); font-weight: 700; font-style: italic;
+    font-size: 1.55rem; color: #fff; line-height: 1.5;
+    border-left: 3px solid var(--gold-caps);
+    padding-left: 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .credentials blockquote::before {
+    content: '\201C';
+    position: absolute; top: -0.4rem; left: -0.2rem;
+    font-family: var(--font-accent); font-size: 4rem;
+    color: var(--gold-caps); opacity: 0.2;
+    line-height: 1;
+  }
+  .credentials-attribution {
+    font-family: var(--font-heading); font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .credentials-badges {
+    padding-top: 0.5rem;
+  }
+  .credential-badge {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .credential-badge:first-child { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .credential-badge-label {
+    font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4); margin-bottom: 0.15rem;
+  }
+  .credential-badge-value {
+    font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .credential-badge-value a { color: var(--gold-caps); }
+  .credential-badge-value a:hover { color: #fff; text-decoration: none; }
+  .credentials-link {
+    margin-top: 2rem;
+  }
+  .credentials-link a {
+    font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
+    color: var(--gold-caps);
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .credentials-link a:hover { gap: 0.6rem; text-decoration: none; color: #fff; }
+
+  /* ── Footer — Bruegel-style mini-sitemap ── */
+  footer {
+    padding: 3.5rem 0 2.5rem;
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand {
+    font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;
+    color: #fff; letter-spacing: 0.04em; margin-bottom: 1rem;
+  }
+  .footer-brand-desc {
+    font-family: var(--font-body); font-size: 0.85rem;
+    color: rgba(255,255,255,0.5); line-height: 1.6;
+  }
+  .footer-col-title {
+    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4); margin-bottom: 1rem;
+  }
+  .footer-col a {
+    display: block; padding: 0.25rem 0;
+    font-family: var(--font-heading); font-size: 0.82rem;
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .footer-col a:hover { color: #fff; text-decoration: none; }
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom-left {
+    font-family: var(--font-heading); font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-bottom-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-bottom-links a {
+    font-family: var(--font-heading); font-size: 0.72rem;
+    color: rgba(255,255,255,0.35); text-decoration: none;
+  }
+  .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── Recent strip — horizontal bar between hero and featured ── */
+  .recent-strip {
+    padding: 1.5rem 0;
+    background: var(--ivory);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .recent-strip-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .recent-strip-label {
+    font-family: var(--font-heading); font-size: 0.68rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .recent-strip-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .recent-strip-item {
+    display: flex; gap: 0.8rem; align-items: baseline;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: background 0.15s;
+  }
+  .recent-strip-item:hover { background: rgba(44, 95, 138, 0.02); }
+  .recent-strip-tag {
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--blue-fpsq);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .recent-strip-title {
+    font-family: var(--font-body); font-weight: 600; font-size: 0.88rem;
+    color: var(--navy); line-height: 1.3;
+  }
+  .recent-strip-item:hover .recent-strip-title { color: var(--blue-fpsq); }
+  @media (max-width: 768px) {
+    .recent-strip-inner { grid-template-columns: 1fr; gap: 0.8rem; }
+    .recent-strip-items { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero { padding: 6rem 0 2.5rem; }
+    .hero h1 { font-size: 1.85rem; }
+    .hero-visual { display: none; }
+    .hero-portrait { text-align: center; margin-bottom: 1rem; }
+    .hero-portrait img { max-width: 280px; }
+    .credentials-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .credentials blockquote { font-size: 1.15rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero::before { display: none; }
+    .featured-card { grid-template-columns: 1fr; gap: 2rem; }
+    .featured-cover { height: 160px; }
+    .featured-title { font-size: 1.35rem; }
+    .programmes-grid { grid-template-columns: 1fr; }
+    .vigie-features { grid-template-columns: 1fr; }
+    .vigie-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .vigie-kpis { justify-content: flex-start; }
+    .vigie-scenario { grid-template-columns: 8px 1fr; }
+    .vigie-scenario-prob { display: none; }
+    .programme-card-num { font-size: 1.5rem; }
+    .analysis-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .nav-links { display: none !important; }
+    .nav-toggle { display: block; }
+    .nav-inner { padding: 0 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .analyses-header { flex-direction: column; align-items: flex-start; }
+    .analyses-view-all { margin-bottom: 1.5rem; }
+    section, .hero, .featured, .programmes, .analyses, .vigie, .credentials {
+      padding: 3rem 0;
+    }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+    .hero h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-name">ERIC KILAMA</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('active'); document.getElementById('navMobile').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li>
+        <a href="#research">Research <span class="nav-chevron"></span></a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-section">
+            <div class="nav-dropdown-label">Publications</div>
+            <a href="#">Working Papers</a>
+            <a href="#">Articles publiés</a>
+            <a href="#">Rapports</a>
+          </div>
+          <div class="nav-dropdown-section">
+            <div class="nav-dropdown-label">Programmes</div>
+            <a href="#">Instabilité politique &amp; économie</a>
+            <a href="#">Risque géopolitique &amp; PME</a>
+            <a href="#">Architecture de l'aide</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#policy">Policy <span class="nav-chevron"></span></a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-section">
+            <div class="nav-dropdown-label">Conseil</div>
+            <a href="#">Notes &amp; Policy Briefs</a>
+            <a href="#">Analyses pour décideurs</a>
+          </div>
+          <div class="nav-dropdown-section">
+            <div class="nav-dropdown-label">Institutions</div>
+            <a href="#">CAPS — Quai d'Orsay</a>
+            <a href="#">G7 / OCDE</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="#foresight">Foresight <span class="nav-chevron"></span></a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-section">
+            <div class="nav-dropdown-label">Vigie</div>
+            <a href="#">Scénarios actifs</a>
+            <a href="#">Framework prospectif</a>
+            <a href="#">Signposts &amp; métriques</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#" class="lang-switch">EN</a>
+  </div>
+</nav>
+
+<!-- Mobile menu panel -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#research">Research</a>
+  <div class="nav-mobile-sub">
+    <a href="#">Working Papers</a>
+    <a href="#">Articles publiés</a>
+    <a href="#">Programmes</a>
+  </div>
+  <a href="#policy">Policy</a>
+  <div class="nav-mobile-sub">
+    <a href="#">Notes &amp; Policy Briefs</a>
+    <a href="#">CAPS — Quai d'Orsay</a>
+  </div>
+  <a href="#foresight">Foresight</a>
+  <div class="nav-mobile-sub">
+    <a href="#">Scénarios actifs</a>
+    <a href="#">Framework prospectif</a>
+  </div>
+  <a href="#teaching">Teaching</a>
+  <a href="#about">About</a>
+</div>
+
+<!-- SECTION 1 : Hero -->
+<section class="hero">
+  <!-- Sophisticated geopolitical flow network -->
+  <svg class="hero-visual" viewBox="0 0 700 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dot grid substrate -->
+    <pattern id="dotgrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.7" fill="#1B2A4A" opacity="0.08"/>
+    </pattern>
+    <rect width="700" height="550" fill="url(#dotgrid)"/>
+
+    <!-- Flow curves — bezier paths suggesting trade/transmission routes -->
+    <path d="M50,120 C150,80 250,140 350,100 S500,60 620,110" stroke="#2C5F8A" stroke-width="1.5" opacity="0.12" fill="none"/>
+    <path d="M80,200 C180,160 280,220 380,180 S520,150 650,190" stroke="#1B2A4A" stroke-width="2" opacity="0.14" fill="none"/>
+    <path d="M30,300 C130,260 230,320 350,270 S500,240 680,280" stroke="#2C5F8A" stroke-width="1.2" opacity="0.10" fill="none"/>
+    <path d="M100,380 C200,340 320,400 420,350 S560,320 660,370" stroke="#1B2A4A" stroke-width="1.8" opacity="0.12" fill="none"/>
+    <path d="M60,450 C180,420 300,470 420,430 S580,400 680,440" stroke="#2C5F8A" stroke-width="1" opacity="0.08" fill="none"/>
+
+    <!-- Cross-links (vertical connections between flows) -->
+    <path d="M200,100 C210,160 190,200 200,260" stroke="#1B2A4A" stroke-width="0.8" opacity="0.08" fill="none"/>
+    <path d="M380,90 C400,150 370,200 390,270" stroke="#1B2A4A" stroke-width="0.8" opacity="0.08" fill="none"/>
+    <path d="M520,120 C540,180 510,230 530,290" stroke="#1B2A4A" stroke-width="0.8" opacity="0.08" fill="none"/>
+
+    <!-- Major nodes — varying sizes suggest hierarchy (double halos) -->
+    <circle cx="200" cy="105" r="10" fill="#1B2A4A" opacity="0.06"/>
+    <circle cx="200" cy="105" r="3.5" fill="#1B2A4A" opacity="0.14"/>
+    <circle cx="380" cy="180" r="16" fill="#1B2A4A" opacity="0.04"/>
+    <circle cx="380" cy="180" r="5" fill="#1B2A4A" opacity="0.12"/>
+    <circle cx="530" cy="155" r="8" fill="#1B2A4A" opacity="0.05"/>
+    <circle cx="530" cy="155" r="3" fill="#1B2A4A" opacity="0.13"/>
+    <circle cx="350" cy="270" r="13" fill="#2C5F8A" opacity="0.04"/>
+    <circle cx="350" cy="270" r="4.5" fill="#2C5F8A" opacity="0.10"/>
+    <circle cx="150" cy="300" r="6" fill="#1B2A4A" opacity="0.06"/>
+    <circle cx="150" cy="300" r="2.5" fill="#1B2A4A" opacity="0.14"/>
+    <circle cx="500" cy="280" r="9" fill="#1B2A4A" opacity="0.04"/>
+    <circle cx="500" cy="280" r="3.5" fill="#1B2A4A" opacity="0.12"/>
+    <circle cx="420" cy="350" r="11" fill="#2C5F8A" opacity="0.04"/>
+    <circle cx="420" cy="350" r="4" fill="#2C5F8A" opacity="0.10"/>
+    <circle cx="250" cy="380" r="6" fill="#1B2A4A" opacity="0.06"/>
+    <circle cx="600" cy="190" r="8" fill="#1B2A4A" opacity="0.05"/>
+    <circle cx="600" cy="190" r="3" fill="#1B2A4A" opacity="0.12"/>
+
+    <!-- Accent pulse rings — gold for "alert/monitoring" feel -->
+    <circle cx="380" cy="180" r="24" fill="none" stroke="#D4A017" stroke-width="0.7" opacity="0.10"/>
+    <circle cx="420" cy="350" r="20" fill="none" stroke="#D4A017" stroke-width="0.5" opacity="0.08"/>
+    <circle cx="200" cy="105" r="16" fill="none" stroke="#2C5F8A" stroke-width="0.5" opacity="0.06"/>
+  </svg>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>Quantifier la transmission des chocs géopolitiques à l'économie</h1>
+        <p class="hero-subtitle">Sanctions, coups d'État, guerres commerciales, fragmentation des chaînes de valeur&nbsp;: ces chocs ne restent jamais confinés au politique. Ils se propagent à l'économie par des canaux identifiables et mesurables.</p>
+        <div class="hero-cta">
+          <a href="#" class="btn-primary">Dernier rapport</a>
+          <a href="#" class="btn-secondary">Scénarios Vigie →</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-portrait">
+          <img src="avatar.png" alt="Eric Kilama — Économiste-stratège">
+          <div class="hero-portrait-caption">Ph.D. Economics (CERDI) · Chercheur associé BETA · FERDI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent strip — horizontal band -->
+<div class="recent-strip">
+  <div class="container">
+    <div class="recent-strip-inner">
+      <div class="recent-strip-label">Récent</div>
+      <div class="recent-strip-items">
+        <a href="#" class="recent-strip-item">
+          <div class="recent-strip-tag">Policy</div>
+          <div class="recent-strip-title">Financement du développement et présidence française du G7</div>
+        </a>
+        <a href="#" class="recent-strip-item">
+          <div class="recent-strip-tag">Foresight</div>
+          <div class="recent-strip-title">VSN Iran&nbsp;: scénarios post-accord nucléaire</div>
+        </a>
+        <a href="#" class="recent-strip-item">
+          <div class="recent-strip-tag">Research</div>
+          <div class="recent-strip-title">Geopolitical risk and SME performance</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2 : Dernière publication -->
+<section class="featured reveal">
+  <div class="container">
+    <div class="section-label">Dernière publication</div>
+    <div class="featured-card">
+      <div class="featured-main">
+        <div class="featured-cover">
+          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:1;">
+            <!-- Grid lines -->
+            <line x1="60" y1="40" x2="60" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="120" y1="40" x2="120" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="180" y1="40" x2="180" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="240" y1="40" x2="240" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="300" y1="40" x2="300" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="360" y1="40" x2="360" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+            <line x1="60" y1="100" x2="380" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            <line x1="60" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            <line x1="60" y1="220" x2="380" y2="220" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            <!-- Primary trend line -->
+            <polyline points="60,220 100,210 140,195 180,200 220,165 260,175 300,130 340,140 380,85" stroke="rgba(255,255,255,0.45)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Area fill under primary -->
+            <polygon points="60,220 100,210 140,195 180,200 220,165 260,175 300,130 340,140 380,85 380,260 60,260" fill="url(#coverGrad)" opacity="0.15"/>
+            <defs><linearGradient id="coverGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+            <!-- Secondary lines -->
+            <polyline points="60,240 100,235 140,225 180,218 220,222 260,208 300,198 340,188 380,165" stroke="rgba(212,160,23,0.45)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <polyline points="60,200 100,205 140,210 180,190 220,195 260,172 300,178 340,160 380,145" stroke="rgba(44,95,138,0.35)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+            <!-- Data points on primary -->
+            <circle cx="220" cy="165" r="3" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="300" cy="130" r="3.5" fill="rgba(255,255,255,0.35)"/>
+            <circle cx="380" cy="85" r="5" fill="rgba(212,160,23,0.5)"/>
+            <circle cx="380" cy="85" r="8" fill="none" stroke="rgba(212,160,23,0.2)" stroke-width="1"/>
+          </svg>
+          <div class="featured-cover-inner">
+            <div class="featured-cover-tag">Rapport · FERDI · BETA</div>
+            <div class="featured-cover-title">Financement du développement à la veille du G7</div>
+            <div class="featured-cover-year">2026 · 42 pages</div>
+          </div>
+        </div>
+        <div class="featured-tag">Rapport · Policy</div>
+        <div class="featured-title">Financement du développement à la veille de la présidence française du G7</div>
+        <div class="featured-excerpt">Trajectoires de l'aide publique au développement, arbitrages budgétaires et recommandations pour le sommet. Analyse des recompositions de l'architecture de l'aide face à la fragmentation géopolitique.</div>
+        <div class="featured-author" style="font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.8rem;">Eric Kilama</div>
+        <div class="featured-meta">
+          <span>Mars 2026</span>
+          <span class="featured-meta-dot"></span>
+          <span>42 pages</span>
+          <span class="featured-meta-dot"></span>
+          <span>FERDI · BETA</span>
+        </div>
+        <div style="margin-top: 1.2rem;">
+          <a href="#" class="featured-link">Lire le rapport →</a>
+        </div>
+      </div>
+      <div class="featured-secondary">
+        <div class="featured-secondary-item">
+          <div class="featured-secondary-tag">Foresight</div>
+          <div class="featured-secondary-title">VSN Iran&nbsp;: trois trajectoires conditionnelles post-accord nucléaire</div>
+          <div class="featured-secondary-date">Mars 2026</div>
+        </div>
+        <div class="featured-secondary-item">
+          <div class="featured-secondary-tag">Research</div>
+          <div class="featured-secondary-title">Geopolitical risk and SME performance: evidence from 79 countries</div>
+          <div class="featured-secondary-date">Working paper · 2026</div>
+        </div>
+        <div class="featured-secondary-item">
+          <div class="featured-secondary-tag">Research</div>
+          <div class="featured-secondary-title">China's aid as commodity buffer stocks: a synthetic control approach</div>
+          <div class="featured-secondary-date">Working paper · 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 : Programmes de recherche -->
+<section class="programmes reveal" id="research">
+  <div class="container">
+    <div class="section-label">Programme de recherche</div>
+    <div class="programmes-grid">
+      <div class="programme-card">
+        <div class="programme-card-num">01</div>
+        <div class="programme-card-level">États</div>
+        <div class="programme-card-title">Instabilité politique, corruption et choix économiques</div>
+        <div class="programme-card-desc">Coups d'État, corruption, déformation des choix professionnels. Haïti, Sahel, Corne de l'Afrique comme laboratoires des fragilités.</div>
+        <div class="programme-card-status">QJE under review · Oxford Econ. Papers under review</div>
+      </div>
+      <div class="programme-card">
+        <div class="programme-card-num">02</div>
+        <div class="programme-card-level">Entreprises</div>
+        <div class="programme-card-title">Risque géopolitique et performance des PME</div>
+        <div class="programme-card-desc">Impact des chocs politiques sur l'investissement, l'emploi et la survie des firmes. 337&nbsp;000 entreprises, 79 pays.</div>
+        <div class="programme-card-status">Working paper · Soumission 2026</div>
+      </div>
+      <div class="programme-card">
+        <div class="programme-card-num">03</div>
+        <div class="programme-card-level">Système international</div>
+        <div class="programme-card-title">Architecture de l'aide et financement du développement</div>
+        <div class="programme-card-desc">Chine comme bailleur alternatif, fragmentation des alliances, weaponisation des interdépendances économiques.</div>
+        <div class="programme-card-status">Rapport G7 · China Aid WP</div>
+      </div>
+      <div class="programme-card">
+        <div class="programme-card-num">04</div>
+        <div class="programme-card-level">Prospectif</div>
+        <div class="programme-card-title">Vigie — Prospective quantitative</div>
+        <div class="programme-card-desc">Scénarios conditionnels, signposts, probabilités calibrées. Combler le vide entre analyse qualitative et modélisation macro.</div>
+        <div class="programme-card-status">Framework opérationnel · VSN actifs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 : Analyses récentes -->
+<section class="analyses reveal" id="policy">
+  <div class="container">
+    <div class="analyses-header">
+      <div class="section-label">Analyses récentes</div>
+      <a href="#" class="analyses-view-all">Toutes les analyses →</a>
+    </div>
+    <div class="analysis-item">
+      <div class="analysis-date">Mars 2026</div>
+      <div>
+        <div class="analysis-tag">Policy</div>
+        <div class="analysis-title"><a href="#">La fragilité par la base&nbsp;: PME de défense et résilience géopolitique</a></div>
+        <div class="analysis-chapeau">Pourquoi la base industrielle et technologique de défense ne se réduit pas aux grands groupes.</div>
+        <div class="analysis-author">Eric Kilama (IFRI)</div>
+        <a href="#" class="analysis-read">Lire →</a>
+      </div>
+    </div>
+    <div class="analysis-item">
+      <div class="analysis-date">Févr. 2026</div>
+      <div>
+        <div class="analysis-tag">Foresight</div>
+        <div class="analysis-title"><a href="#">VSN Iran&nbsp;: scénarios économiques post-accord nucléaire</a></div>
+        <div class="analysis-chapeau">Trois trajectoires conditionnelles avec signposts et probabilités pour l'économie iranienne.</div>
+        <div class="analysis-author">Eric Kilama</div>
+        <a href="#" class="analysis-read">Lire →</a>
+      </div>
+    </div>
+    <div class="analysis-item">
+      <div class="analysis-date">Janv. 2026</div>
+      <div>
+        <div class="analysis-tag">Research</div>
+        <div class="analysis-title"><a href="#">Evidence on the political economy of a failed coup d'état</a></div>
+        <div class="analysis-chapeau">Comment les tentatives de coup d'État échouées révèlent les mécanismes de transmission politique→économie.</div>
+        <div class="analysis-author">Eric Kilama, Camille Laville</div>
+        <a href="#" class="analysis-read">Lire →</a>
+      </div>
+    </div>
+    <div class="analysis-item">
+      <div class="analysis-date">Déc. 2025</div>
+      <div>
+        <div class="analysis-tag">Policy</div>
+        <div class="analysis-title"><a href="#">Sanctions et fragmentation commerciale&nbsp;: le coût pour les économies africaines</a></div>
+        <div class="analysis-chapeau">Mesurer l'impact différencié des sanctions occidentales sur les partenaires commerciaux du continent.</div>
+        <div class="analysis-author">Eric Kilama (BETA, FERDI)</div>
+        <a href="#" class="analysis-read">Lire →</a>
+      </div>
+    </div>
+    <div class="analysis-item">
+      <div class="analysis-date">Nov. 2025</div>
+      <div>
+        <div class="analysis-tag">Research</div>
+        <div class="analysis-title"><a href="#">The commodity channel of China's foreign aid: evidence from a synthetic control approach</a></div>
+        <div class="analysis-chapeau">L'aide chinoise stabilise-t-elle les prix des matières premières dans les pays récipiendaires ? Approche contrefactuelle.</div>
+        <div class="analysis-author">Eric Kilama</div>
+        <a href="#" class="analysis-read">Lire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 : Vigie / Foresight -->
+<section class="vigie reveal" id="foresight">
+  <div class="container">
+    <div class="section-label">Foresight</div>
+    <div class="vigie-header">
+      <div>
+        <h2>Vigie — Prospective stratégique quantitative</h2>
+        <p>Scénarios conditionnels rigoureux avec probabilités calibrées, signposts observables et métriques d'alerte pour chaque bifurcation géopolitique.</p>
+      </div>
+      <div class="vigie-kpis">
+        <div class="vigie-kpi">
+          <div class="vigie-kpi-number">3</div>
+          <div class="vigie-kpi-label">Scénarios actifs</div>
+        </div>
+        <div class="vigie-kpi">
+          <div class="vigie-kpi-number">12</div>
+          <div class="vigie-kpi-label">Signposts</div>
+        </div>
+        <div class="vigie-kpi">
+          <div class="vigie-kpi-number">Q2</div>
+          <div class="vigie-kpi-label">Horizon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active scenarios with status indicators -->
+    <div class="vigie-scenarios">
+      <div class="vigie-scenario">
+        <div class="vigie-status active"></div>
+        <div class="vigie-scenario-content">
+          <div class="vigie-scenario-title">VSN Iran — Trajectoires post-accord nucléaire</div>
+          <div class="vigie-scenario-meta">3 trajectoires · 8 signposts · Mise à jour mars 2026</div>
+        </div>
+        <div class="vigie-scenario-right">
+          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,20 12,18 24,14 36,16 48,10 60,12 72,6 80,8" stroke="#2E7D32"/></svg>
+          <div class="vigie-scenario-prob">p = 0.45</div>
+        </div>
+      </div>
+      <div class="vigie-scenario">
+        <div class="vigie-status watch"></div>
+        <div class="vigie-scenario-content">
+          <div class="vigie-scenario-title">Fragmentation commerciale Asie — Scénarios polycrises</div>
+          <div class="vigie-scenario-meta">2 trajectoires · 6 signposts · En construction</div>
+        </div>
+        <div class="vigie-scenario-right">
+          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,14 12,16 24,12 36,18 48,15 60,20 72,17 80,22" stroke="#D4A017"/></svg>
+          <div class="vigie-scenario-prob">p = 0.30</div>
+        </div>
+      </div>
+      <div class="vigie-scenario">
+        <div class="vigie-status alert"></div>
+        <div class="vigie-scenario-content">
+          <div class="vigie-scenario-title">Architecture de l'aide — Reconfiguration post-G7</div>
+          <div class="vigie-scenario-meta">2 trajectoires · 4 signposts · Alerte budgétaire active</div>
+        </div>
+        <div class="vigie-scenario-right">
+          <svg class="vigie-sparkline" viewBox="0 0 80 28"><polyline points="0,8 12,10 24,6 36,14 48,12 60,18 72,22 80,25" stroke="#C0392B"/></svg>
+          <div class="vigie-scenario-prob">p = 0.60</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature grid -->
+    <div class="vigie-features">
+      <div class="vigie-feature">
+        <h4>Scénarios conditionnels</h4>
+        <p>Trajectoires ancrées dans les données, avec probabilités calibrées et horizons temporels explicites.</p>
+      </div>
+      <div class="vigie-feature">
+        <h4>Signposts observables</h4>
+        <p>Indicateurs qui signalent en temps réel quelle trajectoire se matérialise.</p>
+      </div>
+      <div class="vigie-feature">
+        <h4>Métriques d'alerte</h4>
+        <p>Seuils quantifiés déclenchant une révision des scénarios et recommandations.</p>
+      </div>
+    </div>
+
+    <div class="vigie-cta">
+      <a href="#">Explorer les scénarios actifs →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 : Citation & credentials -->
+<section class="credentials reveal" id="about">
+  <div class="container">
+    <div class="credentials-grid">
+      <div>
+        <blockquote>Économétrie causale pour identifier les mécanismes, données massives pour mesurer les effets, prospective quantitative pour anticiper les trajectoires.</blockquote>
+        <div class="credentials-attribution">Eric Kilama — Économiste-stratège, Ph.D. Economics (CERDI)</div>
+        <div class="credentials-link">
+          <a href="#">En savoir plus →</a>
+        </div>
+      </div>
+      <div class="credentials-badges">
+        <div class="credential-badge">
+          <div class="credential-badge-label">Recherche</div>
+          <div class="credential-badge-value">Chercheur associé, BETA · FERDI</div>
+        </div>
+        <div class="credential-badge">
+          <div class="credential-badge-label">Conseil</div>
+          <div class="credential-badge-value">CAPS / Ministère de l'Europe et des Affaires étrangères</div>
+        </div>
+        <div class="credential-badge">
+          <div class="credential-badge-label">Publications</div>
+          <div class="credential-badge-value">European Economic Review · Journal of Commodity Economics</div>
+        </div>
+        <div class="credential-badge">
+          <div class="credential-badge-label">Liens</div>
+          <div class="credential-badge-value">
+            <a href="#">Google Scholar</a> ·
+            <a href="#">LinkedIn</a> ·
+            <a href="#">ORCID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ERIC KILAMA</div>
+        <div class="footer-brand-desc">Intelligence géopolitique quantifiée. Recherche, prospective et conseil pour les décideurs.</div>
+        <div style="margin-top: 1.2rem; font-family: var(--font-heading); font-size: 0.78rem;">
+          <a href="mailto:contact@erickilama.com" style="color: rgba(255,255,255,0.5); text-decoration: none;">contact@erickilama.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Research</div>
+        <a href="#">Working Papers</a>
+        <a href="#">Articles publiés</a>
+        <a href="#">Programmes</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Policy & Foresight</div>
+        <a href="#">Notes & Briefs</a>
+        <a href="#">Scénarios Vigie</a>
+        <a href="#">Framework</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">À propos</div>
+        <a href="#">Parcours</a>
+        <a href="#">Teaching</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">© 2026 Eric Kilama · erickilama.com · Mis à jour mars 2026</div>
+      <ul class="footer-bottom-links">
+        <li><a href="#">Google Scholar</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">ORCID</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll reveal script with fallback -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Fallback: force-reveal all sections after 1.5s (for environments where IO doesn't fire)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }, 1500);
+</script>
+
+</body>
+</html>

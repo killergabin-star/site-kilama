@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric Kilama — Intelligence géopolitique quantifiée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #C0392B;
+    --dark: #0D0D0D;
+    --dark-bg: #1A1A1A;
+    --white: #FFFFFF;
+    --light-gray: #F2F2F2;
+    --medium-gray: #595959;
+    --border-light: #D9D9D9;
+    --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.41;
+    color: var(--dark);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: var(--dark); text-decoration: none; }
+  a:hover { color: var(--red); }
+  img { max-width: 100%; display: block; }
+
+  /* ═══════════════════════════════════════════════════
+     1. HEADER — 3 bars stacked, 162px total
+     Bar 1: sticky top nav (57px) — logo left, Insider/ForYou center, icons right
+     Bar 2: main bar (80px) — Economist wordmark centered
+     Bar 3: quick-links nav (41px) — horizontal topic links
+     ═══════════════════════════════════════════════════ */
+  .header {
+    position: relative;
+    width: 100%;
+    /* 57 + 64 + 41 = 162px — matches Economist exactly */
+  }
+
+  /* Bar 1 — sticky nav */
+  .header-bar-1 {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--white);
+    height: 57px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--medium-gray);
+  }
+  .header-bar-1-inner {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo-small {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .header-nav-main {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .header-nav-main a {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .header-nav-main a:hover { color: var(--red); }
+  .red-dot { color: var(--red); margin-right: 2px; }
+  .header-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .header-actions a, .header-actions button {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .header-search-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--dark);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* Bar 2 — main logo bar (fits within 121px with bar 3) */
+  .header-bar-2 {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    border-bottom: 1px solid var(--dark);
+    padding: 0 32px;
+  }
+  .header-wordmark {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--dark);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  /* Bar 3 — quick links */
+  .header-bar-3 {
+    background: var(--white);
+    height: 41px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-light);
+    overflow-x: auto;
+  }
+  .header-bar-3-inner {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .header-bar-3 a {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+  .header-bar-3 a:hover { color: var(--red); }
+
+  /* ═══════════════════════════════════════════════════
+     CONTENT CONTAINER
+     ═══════════════════════════════════════════════════ */
+  .content-container {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Section spacing — consistent 56px margin-top */
+  .section-block {
+    margin-top: 56px;
+  }
+
+  /* Section H2 — 20px/700 sans, dark, NOT red, NOT large */
+  .section-heading {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 16px;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  /* Category fly-title — 15px/400 sans, RED, lowercase */
+  .fly-title {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--red);
+    line-height: 20px;
+    margin-bottom: 4px;
+  }
+
+  /* Article headline — serif, size varies by importance */
+  .headline-hero {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .headline-secondary {
+    font-family: var(--font-serif);
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .headline-small {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--dark);
+  }
+  .headline-medium {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  /* Article summary text */
+  .article-summary {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--dark);
+  }
+
+  /* Horizontal rule — thin dividers, Economist uses ~39 of them */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--dark);
+    margin: 0;
+  }
+  .rule--light {
+    border-top-color: var(--border-light);
+  }
+  .rule--red {
+    border-top: 3px solid var(--red);
+    width: 48px;
+    margin-bottom: 12px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     2. TOP STORIES — hero area (968px height)
+     Layout: main article (800px) = image + text,
+     side column with smaller articles
+     ═══════════════════════════════════════════════════ */
+  .top-stories {
+    padding-top: 24px;
+  }
+  .top-stories-grid {
+    display: grid;
+    grid-template-columns: 1fr 384px;
+    gap: 32px;
+  }
+  .hero-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .hero-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #2C5F8A 0%, #1B2A4A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-image-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+  }
+  .hero-body {
+    padding-top: 8px;
+  }
+  .side-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .side-article {
+    padding: 12px 0;
+    border-top: 1px solid var(--border-light);
+  }
+  .side-article:first-child {
+    border-top: 1px solid var(--dark);
+    padding-top: 12px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     3. INSIDER — dark section (#0D0D0D bg)
+     Height: ~326px, serif display 40px/500 white
+     ═══════════════════════════════════════════════════ */
+  .insider-section {
+    margin-top: 56px;
+  }
+  .insider-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .insider-dark {
+    background: var(--dark);
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    max-height: 326px;
+    overflow: hidden;
+  }
+  .insider-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, #1a1a3e 0%, #2a1a3e 50%, #0D0D0D 100%);
+    border-radius: 0;
+  }
+  .insider-title {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .insider-subtitle {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .insider-label {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     4-8. CONTENT SECTIONS — horizontal card rows
+     Cards: ZERO decoration (no border, radius, shadow)
+     Image top, red fly-title, serif headline
+     ═══════════════════════════════════════════════════ */
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .card-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 32px;
+  }
+  .card {
+    /* ZERO decoration — Economist signature */
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3a6b8c 0%, #1B2A4A 60%, #2C5F8A 100%);
+    position: relative;
+  }
+  .card-image-placeholder.variant-2 {
+    background: linear-gradient(135deg, #5a3a2c 0%, #8B6914 60%, #3a2a1a 100%);
+  }
+  .card-image-placeholder.variant-3 {
+    background: linear-gradient(135deg, #2a4a2c 0%, #1a3a2a 60%, #4a6a4c 100%);
+  }
+  .card-image-placeholder.variant-4 {
+    background: linear-gradient(135deg, #4a2a4c 0%, #2a1a3e 60%, #6a4a6c 100%);
+  }
+  .card-image-placeholder.variant-5 {
+    background: linear-gradient(135deg, #8a4a2c 0%, #C0392B 60%, #6a2a1c 100%);
+  }
+  .card-body {
+    padding: 8px 0 0;
+  }
+
+  /* Small card — horizontal layout (image small left, text right) */
+  .card-horizontal {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-light);
+  }
+  .card-horizontal .card-image {
+    width: 128px;
+    height: 72px;
+    aspect-ratio: auto;
+    margin-bottom: 0;
+  }
+
+  /* Numbered list (Most Read) — each item separated by thin rule */
+  .numbered-list {
+    list-style: none;
+    counter-reset: article-counter;
+  }
+  .numbered-item {
+    counter-increment: article-counter;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border-light);
+    align-items: start;
+  }
+  .numbered-item:first-child {
+    border-top: 1px solid var(--dark);
+  }
+  .numbered-item::before {
+    content: counter(article-counter);
+    font-family: var(--font-sans);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--medium-gray);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     VIDEOS SECTION — horizontal scroll
+     ═══════════════════════════════════════════════════ */
+  .video-scroll {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .video-card {
+    flex: 0 0 280px;
+    background: none;
+    border: none;
+  }
+  .video-image {
+    width: 280px;
+    height: 158px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-play::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 14px solid var(--dark);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-left: 3px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     WEEKLY EDITION — bottom section
+     Label: 15px/400 lowercase, not red
+     Sub-sections with articles
+     ═══════════════════════════════════════════════════ */
+  .weekly-edition-label {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--dark);
+    text-transform: lowercase;
+    margin-bottom: 24px;
+  }
+  .weekly-subsection {
+    margin-top: 32px;
+  }
+  .weekly-subsection-title {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .weekly-article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .weekly-article {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .weekly-article:first-child {
+    border-top: 1px solid var(--dark);
+    padding-top: 12px;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     FOOTER — dark #1A1A1A, ~567px
+     Social icons top, link columns middle, legal bottom
+     ═══════════════════════════════════════════════════ */
+  .footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    margin-top: 64px;
+    padding: 48px 0 32px;
+  }
+  .footer-inner {
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-social-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-social-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--dark-bg);
+  }
+  .footer-app-links {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-app-links a {
+    color: var(--white);
+    text-decoration: underline;
+    text-decoration-color: rgba(255,255,255,0.4);
+  }
+  .footer-middle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .footer-col-title {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-links a {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
+  .footer-legal {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+    max-width: 600px;
+  }
+  .footer-legal-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer-legal-links a {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+  .footer-legal-links a:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HEADER — 3 bars, 162px total
+     ═══════════════════════════════════════════════════ -->
+<header class="header">
+  <!-- Bar 1: sticky nav -->
+  <div class="header-bar-1">
+    <div class="header-bar-1-inner">
+      <a href="#" class="header-logo-small">Eric Kilama</a>
+      <nav class="header-nav-main">
+        <a href="#"><span class="red-dot">●</span> Insider</a>
+        <a href="#">For you</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#">My account</a>
+        <button>
+          <svg class="header-search-icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="16" y1="16" x2="22" y2="22"></line>
+          </svg>
+        </button>
+        <a href="#">Menu</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar 2: centered wordmark -->
+  <div class="header-bar-2">
+    <a href="#" class="header-wordmark">Eric Kilama</a>
+  </div>
+
+  <!-- Bar 3: quick-links nav -->
+  <nav class="header-bar-3">
+    <div class="header-bar-3-inner">
+      <a href="#">Édition hebdomadaire</a>
+      <a href="#">Monde en bref</a>
+      <a href="#">Géopolitique</a>
+      <a href="#">Commerce</a>
+      <a href="#">Économie</a>
+      <a href="#">Finance</a>
+      <a href="#">Afrique</a>
+      <a href="#">Asie</a>
+      <a href="#">Moyen-Orient</a>
+      <a href="#">Amériques</a>
+      <a href="#">Intelligence artificielle</a>
+      <a href="#">Données</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     TOP STORIES — hero + side articles
+     ═══════════════════════════════════════════════════ -->
+<div class="content-container top-stories">
+  <hr class="rule">
+  <div class="top-stories-grid" style="margin-top: 24px;">
+    <!-- Main hero article -->
+    <div>
+      <div class="hero-article">
+        <div class="hero-image-placeholder" style="background: #ECF0F5; display: flex; align-items: center; justify-content: center; padding: 20px;">
+          <!-- SVG Map: global chokepoints -->
+          <svg viewBox="0 0 500 300" style="width: 100%; max-width: 460px;">
+            <!-- World outline simplified -->
+            <rect x="0" y="0" width="500" height="300" fill="#ECF0F5"/>
+            <!-- Continents (simplified blobs) -->
+            <path d="M60,80 Q80,60 120,70 Q140,50 170,65 Q190,55 200,70 Q210,60 220,75 L225,120 Q210,130 190,125 Q170,135 150,130 Q120,140 100,130 Q80,135 60,120 Z" fill="#C8D6E0" stroke="#8BA3B5" stroke-width="0.5"/>
+            <path d="M230,70 Q260,50 300,55 Q340,45 380,50 Q400,55 420,70 Q430,90 420,110 Q400,130 380,125 Q350,135 320,130 Q290,140 260,130 Q240,120 230,100 Z" fill="#C8D6E0" stroke="#8BA3B5" stroke-width="0.5"/>
+            <path d="M120,150 Q140,140 160,145 Q180,135 190,150 Q195,170 185,190 Q170,210 150,215 Q130,210 120,195 Q115,175 120,150 Z" fill="#C8D6E0" stroke="#8BA3B5" stroke-width="0.5"/>
+            <path d="M350,140 Q380,130 410,140 Q430,155 440,180 Q435,210 420,230 Q400,240 380,235 Q360,225 350,200 Q345,170 350,140 Z" fill="#C8D6E0" stroke="#8BA3B5" stroke-width="0.5"/>
+            <!-- Chokepoints with red dots -->
+            <circle cx="220" cy="115" r="6" fill="#C0392B" opacity="0.9"/>
+            <text x="220" y="108" font-family="Inter" font-size="7" fill="#C0392B" text-anchor="middle" font-weight="600">Hormuz</text>
+            <circle cx="290" cy="100" r="4" fill="#C0392B" opacity="0.7"/>
+            <text x="290" y="93" font-family="Inter" font-size="6" fill="#C0392B" text-anchor="middle">Suez</text>
+            <circle cx="400" cy="155" r="4" fill="#C0392B" opacity="0.7"/>
+            <text x="400" y="148" font-family="Inter" font-size="6" fill="#C0392B" text-anchor="middle">Malacca</text>
+            <circle cx="145" cy="152" r="4" fill="#C0392B" opacity="0.7"/>
+            <text x="145" y="145" font-family="Inter" font-size="6" fill="#C0392B" text-anchor="middle">Panama</text>
+            <circle cx="195" cy="135" r="3" fill="#2C5F8A" opacity="0.7"/>
+            <text x="195" y="128" font-family="Inter" font-size="6" fill="#2C5F8A" text-anchor="middle">Bab el-M.</text>
+            <!-- Trade flow lines -->
+            <line x1="140" y1="90" x2="220" y2="115" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+            <line x1="220" y1="115" x2="290" y2="100" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+            <line x1="290" y1="100" x2="400" y2="155" stroke="#C0392B" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.4"/>
+            <!-- Legend -->
+            <circle cx="30" cy="275" r="4" fill="#C0392B"/>
+            <text x="38" y="278" font-family="Inter" font-size="7" fill="#595959">Goulet critique</text>
+            <circle cx="130" cy="275" r="3" fill="#2C5F8A"/>
+            <text x="138" y="278" font-family="Inter" font-size="7" fill="#595959">Goulet secondaire</text>
+            <text x="30" y="292" font-family="Inter" font-size="6" fill="#999">Source: FPSQ Monitor, calculs de l'auteur</text>
+          </svg>
+        </div>
+        <div class="hero-body">
+          <p class="fly-title">Briefing</p>
+          <h3><a href="#" class="headline-hero">Hormuz n'est pas le seul point faible du commerce mondial</a></h3>
+          <p class="article-summary" style="margin-top: 12px;">De nombreuses routes maritimes sont vulnérables, du détroit de Malacca au canal de Panama. Une analyse quantitative des goulets d'étranglement géopolitiques.</p>
+        </div>
+      </div>
+      <!-- Sub-articles row below hero -->
+      <div class="card-grid-3" style="margin-top: 24px;">
+        <div class="card">
+          <p class="fly-title">Commerce</p>
+          <h3><a href="#" class="headline-secondary">Les gagnants et les perdants de la guerre commerciale vous surprendront</a></h3>
+        </div>
+        <div class="card">
+          <p class="fly-title">Géopolitique</p>
+          <h3><a href="#" class="headline-secondary">Le renseignement américain en crise structurelle</a></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side column -->
+    <div class="side-articles">
+      <div class="side-article">
+        <p class="fly-title">Économie</p>
+        <h3><a href="#" class="headline-small">Le coût du divorce est sous-estimé — mais ce sont les enfants qui paient le plus</a></h3>
+      </div>
+      <div class="side-article">
+        <p class="fly-title">Culture</p>
+        <h3><a href="#" class="headline-small">La Russie devrait-elle être bienvenue aux grandes expositions d'art ?</a></h3>
+      </div>
+      <div class="side-article">
+        <p class="fly-title">Données</p>
+        <h3><a href="#" class="headline-small">Faut-il suivre son VO2 max ? Ce que disent vraiment les données</a></h3>
+      </div>
+      <div class="side-article">
+        <p class="fly-title">Asie</p>
+        <h3><a href="#" class="headline-small">La Chine s'attaque à l'un des marchés automobiles les plus singuliers du monde</a></h3>
+      </div>
+      <div class="side-article">
+        <p class="fly-title">Afrique</p>
+        <h3><a href="#" class="headline-small">L'aide chinoise en Afrique : entre mythe et réalité quantifiable</a></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     INSIDER — dark section
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container insider-section">
+  <div class="insider-header section-block">
+    <h2 class="section-heading">Insider</h2>
+  </div>
+  <div class="insider-dark">
+    <div>
+      <p class="insider-label">Entretien exclusif</p>
+      <h2 class="insider-title">Christine Lagarde et la gestion des crises dans un monde trumpien</h2>
+      <p class="insider-subtitle">Comment la BCE navigue entre inflation résiduelle, fragmentation géopolitique et pression politique américaine.</p>
+    </div>
+    <div class="insider-image-placeholder"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     WORLD NEWS — 3-column cards
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Actualités monde</h2>
+  <div class="card-grid-3">
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Moyen-Orient</p>
+        <h3><a href="#" class="headline-medium">La Russie veut limiter ses contacts avec l'extérieur</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-2"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Amériques</p>
+        <h3><a href="#" class="headline-medium">Les aéroports engorgés testent le nouveau secrétaire du DHS</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-3"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Économie</p>
+        <h3><a href="#" class="headline-medium">Le logement le plus inabordable n'est pas où vous pensez</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     LATEST VIDEOS — horizontal scroll
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Dernières vidéos</h2>
+  <div class="video-scroll">
+    <div class="video-card">
+      <div class="video-image">
+        <div class="video-play"></div>
+      </div>
+      <p class="fly-title">Analyse</p>
+      <h3><a href="#" class="headline-small">Le commerce mondial face aux nouveaux goulets d'étranglement</a></h3>
+    </div>
+    <div class="video-card">
+      <div class="video-image" style="background: linear-gradient(135deg, #2a1a1e 0%, #4a2a2e 100%);">
+        <div class="video-play"></div>
+      </div>
+      <p class="fly-title">Débat</p>
+      <h3><a href="#" class="headline-small">Tarifs américains : quel impact sur les chaînes de valeur ?</a></h3>
+    </div>
+    <div class="video-card">
+      <div class="video-image" style="background: linear-gradient(135deg, #1a2a1e 0%, #2a4a2e 100%);">
+        <div class="video-play"></div>
+      </div>
+      <p class="fly-title">Données</p>
+      <h3><a href="#" class="headline-small">Mesurer le risque géopolitique : notre méthodologie FPSQ</a></h3>
+    </div>
+    <div class="video-card">
+      <div class="video-image" style="background: linear-gradient(135deg, #2a2a3e 0%, #3a3a5e 100%);">
+        <div class="video-play"></div>
+      </div>
+      <p class="fly-title">Prospective</p>
+      <h3><a href="#" class="headline-small">Scénarios 2026 : les signaux faibles de la prochaine crise</a></h3>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     BUSINESS, FINANCE AND ECONOMICS — 3-column
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Commerce, finance et économie</h2>
+  <div class="card-grid-3">
+    <div class="card">
+      <div class="card-image" style="background: #F7F3EF; display: flex; align-items: center; justify-content: center; padding: 12px;">
+        <svg viewBox="0 0 340 180" style="width: 100%;">
+          <text x="10" y="15" font-family="Inter" font-size="9" fill="#0D0D0D" font-weight="600">Taux directeurs, pays émergents sélectionnés</text>
+          <text x="10" y="26" font-family="Inter" font-size="7" fill="#999">En %, fin de période</text>
+          <line x1="30" y1="40" x2="30" y2="150" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="30" y1="150" x2="320" y2="150" stroke="#0D0D0D" stroke-width="0.8"/>
+          <line x1="30" y1="70" x2="320" y2="70" stroke="#E0E0E0" stroke-width="0.3"/>
+          <line x1="30" y1="110" x2="320" y2="110" stroke="#E0E0E0" stroke-width="0.3"/>
+          <text x="26" y="44" font-family="Inter" font-size="7" fill="#999" text-anchor="end">15%</text>
+          <text x="26" y="74" font-family="Inter" font-size="7" fill="#999" text-anchor="end">10%</text>
+          <text x="26" y="114" font-family="Inter" font-size="7" fill="#999" text-anchor="end">5%</text>
+          <text x="26" y="154" font-family="Inter" font-size="7" fill="#999" text-anchor="end">0%</text>
+          <polyline points="30,130 90,120 150,80 210,55 270,60 320,65" fill="none" stroke="#C0392B" stroke-width="2"/>
+          <polyline points="30,110 90,105 150,95 210,85 270,90 320,88" fill="none" stroke="#2C5F8A" stroke-width="1.5"/>
+          <polyline points="30,135 90,130 150,125 210,115 270,118 320,120" fill="none" stroke="#D4A017" stroke-width="1.5" stroke-dasharray="4,2"/>
+          <text x="323" y="68" font-family="Inter" font-size="7" fill="#C0392B">Brésil</text>
+          <text x="323" y="91" font-family="Inter" font-size="7" fill="#2C5F8A">Inde</text>
+          <text x="323" y="123" font-family="Inter" font-size="7" fill="#D4A017">Afr. Sud</text>
+          <text x="30" y="168" font-family="Inter" font-size="6" fill="#999">2021   2022   2023   2024   2025   2026</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <p class="fly-title">Finance</p>
+        <h3><a href="#" class="headline-medium">Les marchés émergents face au resserrement monétaire global</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image" style="background: #F0F4F8; display: flex; align-items: center; justify-content: center; padding: 12px;">
+        <svg viewBox="0 0 340 180" style="width: 100%;">
+          <text x="10" y="15" font-family="Inter" font-size="9" fill="#0D0D0D" font-weight="600">Aide chinoise en Afrique, Mrd $</text>
+          <text x="10" y="26" font-family="Inter" font-size="7" fill="#999">Engagements annuels, prix constants 2015</text>
+          <line x1="40" y1="40" x2="40" y2="150" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="150" x2="320" y2="150" stroke="#0D0D0D" stroke-width="0.8"/>
+          <!-- Bar chart -->
+          <rect x="55" y="120" width="22" height="30" fill="#C0392B" opacity="0.3"/>
+          <rect x="85" y="100" width="22" height="50" fill="#C0392B" opacity="0.4"/>
+          <rect x="115" y="75" width="22" height="75" fill="#C0392B" opacity="0.5"/>
+          <rect x="145" y="55" width="22" height="95" fill="#C0392B" opacity="0.6"/>
+          <rect x="175" y="45" width="22" height="105" fill="#C0392B" opacity="0.7"/>
+          <rect x="205" y="60" width="22" height="90" fill="#C0392B" opacity="0.7"/>
+          <rect x="235" y="80" width="22" height="70" fill="#C0392B" opacity="0.6"/>
+          <rect x="265" y="70" width="22" height="80" fill="#C0392B" opacity="0.8"/>
+          <rect x="295" y="50" width="22" height="100" fill="#C0392B" opacity="0.9"/>
+          <text x="66" y="165" font-family="Inter" font-size="6" fill="#595959" text-anchor="middle">'16</text>
+          <text x="126" y="165" font-family="Inter" font-size="6" fill="#595959" text-anchor="middle">'18</text>
+          <text x="186" y="165" font-family="Inter" font-size="6" fill="#595959" text-anchor="middle">'20</text>
+          <text x="246" y="165" font-family="Inter" font-size="6" fill="#595959" text-anchor="middle">'22</text>
+          <text x="306" y="165" font-family="Inter" font-size="6" fill="#595959" text-anchor="middle">'24</text>
+          <text x="40" y="175" font-family="Inter" font-size="6" fill="#999">Source: AidData, calculs de l'auteur</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <p class="fly-title">Commerce</p>
+        <h3><a href="#" class="headline-medium">L'aide chinoise remodèle les flux commerciaux africains</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image" style="background: #F5F2EE; display: flex; align-items: center; justify-content: center; padding: 12px;">
+        <svg viewBox="0 0 340 180" style="width: 100%;">
+          <text x="10" y="15" font-family="Inter" font-size="9" fill="#0D0D0D" font-weight="600">Incertitude politique et IDE</text>
+          <text x="10" y="26" font-family="Inter" font-size="7" fill="#999">Scatter plot, pays émergents (2015-2025)</text>
+          <line x1="40" y1="40" x2="40" y2="150" stroke="#E0E0E0" stroke-width="0.5"/>
+          <line x1="40" y1="150" x2="320" y2="150" stroke="#0D0D0D" stroke-width="0.8"/>
+          <text x="36" y="44" font-family="Inter" font-size="7" fill="#999" text-anchor="end">IDE</text>
+          <text x="320" y="164" font-family="Inter" font-size="7" fill="#999" text-anchor="end">Incertitude pol. →</text>
+          <!-- Scatter dots -->
+          <circle cx="80" cy="60" r="4" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="100" cy="75" r="3" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="130" cy="80" r="5" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="150" cy="95" r="3.5" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="170" cy="85" r="4" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="200" cy="100" r="3" fill="#2C5F8A" opacity="0.5"/>
+          <circle cx="220" cy="110" r="4.5" fill="#C0392B" opacity="0.5"/>
+          <circle cx="250" cy="115" r="3" fill="#C0392B" opacity="0.5"/>
+          <circle cx="270" cy="125" r="4" fill="#C0392B" opacity="0.5"/>
+          <circle cx="290" cy="135" r="3.5" fill="#C0392B" opacity="0.5"/>
+          <!-- Trend line -->
+          <line x1="60" y1="55" x2="310" y2="140" stroke="#0D0D0D" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+          <text x="180" y="175" font-family="Inter" font-size="6" fill="#999" text-anchor="middle">Source: GPR/SME index, World Bank WDI</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <p class="fly-title">Économie</p>
+        <h3><a href="#" class="headline-medium">Le coût réel de l'incertitude politique sur l'investissement</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     IN BRIEF — dense text-only list
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">En bref</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px;">
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Asie</p>
+      <h3><a href="#" class="headline-small">La Corée du Sud suspend temporairement ses accords commerciaux avec le Myanmar</a></h3>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Europe</p>
+      <h3><a href="#" class="headline-small">L'Allemagne adopte un plan de relance industrielle controversé</a></h3>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Amériques</p>
+      <h3><a href="#" class="headline-small">Le Brésil annonce de nouvelles mesures anti-déforestation</a></h3>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Afrique</p>
+      <h3><a href="#" class="headline-small">Le Nigeria rejoint le partenariat BRICS de développement</a></h3>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Moyen-Orient</p>
+      <h3><a href="#" class="headline-small">Les Émirats investissent 10 milliards dans l'intelligence artificielle</a></h3>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 12px;">
+      <p class="fly-title">Commerce</p>
+      <h3><a href="#" class="headline-small">L'OMC revoit ses prévisions de croissance du commerce mondial à la baisse</a></h3>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     COLUMNS — editorial columns with horizontal cards
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Chroniques</h2>
+  <div style="display: flex; flex-direction: column;">
+    <div class="card-horizontal">
+      <div class="card-image"><div class="card-image-placeholder variant-2" style="width: 128px; height: 72px;"></div></div>
+      <div>
+        <p class="fly-title">Bagehot</p>
+        <h3><a href="#" class="headline-small">La diplomatie économique britannique post-Brexit : un bilan sans complaisance</a></h3>
+      </div>
+    </div>
+    <div class="card-horizontal">
+      <div class="card-image"><div class="card-image-placeholder variant-3" style="width: 128px; height: 72px;"></div></div>
+      <div>
+        <p class="fly-title">Free exchange</p>
+        <h3><a href="#" class="headline-small">Pourquoi la productivité totale des facteurs reste le mystère central de la macroéconomie</a></h3>
+      </div>
+    </div>
+    <div class="card-horizontal">
+      <div class="card-image"><div class="card-image-placeholder variant-4" style="width: 128px; height: 72px;"></div></div>
+      <div>
+        <p class="fly-title">Charlemagne</p>
+        <h3><a href="#" class="headline-small">L'Union européenne et la politique industrielle : entre ambition et réalité</a></h3>
+      </div>
+    </div>
+    <div class="card-horizontal">
+      <div class="card-image"><div class="card-image-placeholder" style="width: 128px; height: 72px;"></div></div>
+      <div>
+        <p class="fly-title">Schumpeter</p>
+        <h3><a href="#" class="headline-small">L'IA générative va-t-elle détruire ou créer de la valeur dans le conseil ?</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     DISCOVER MORE — 4-column grid
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">À découvrir</h2>
+  <div class="card-grid-4">
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Science</p>
+        <h3><a href="#" class="headline-small">Les modèles climatiques sous-estiment-ils le risque de point de basculement ?</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-2"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Société</p>
+        <h3><a href="#" class="headline-small">La mobilité sociale en Europe : un graphique qui dit tout</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-3"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Technologie</p>
+        <h3><a href="#" class="headline-small">Le paradoxe de Solow à l'ère de l'IA : cette fois est-ce différent ?</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-4"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Afrique</p>
+        <h3><a href="#" class="headline-small">Désindustrialisation prématurée : le diagnostic et les solutions</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     MOST READ — numbered list
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Les plus lus par les abonnés</h2>
+  <div style="max-width: 800px;">
+    <ol class="numbered-list">
+      <li class="numbered-item">
+        <div>
+          <p class="fly-title">Briefing</p>
+          <h3><a href="#" class="headline-medium">Hormuz n'est pas le seul point faible du commerce mondial</a></h3>
+        </div>
+      </li>
+      <li class="numbered-item">
+        <div>
+          <p class="fly-title">Commerce</p>
+          <h3><a href="#" class="headline-medium">La guerre commerciale de Trump : un bilan quantifié</a></h3>
+        </div>
+      </li>
+      <li class="numbered-item">
+        <div>
+          <p class="fly-title">Finance</p>
+          <h3><a href="#" class="headline-medium">Les taux d'intérêt resteront élevés plus longtemps que prévu</a></h3>
+        </div>
+      </li>
+      <li class="numbered-item">
+        <div>
+          <p class="fly-title">Géopolitique</p>
+          <h3><a href="#" class="headline-medium">Le risque géopolitique est-il mesurable ? Notre réponse</a></h3>
+        </div>
+      </li>
+      <li class="numbered-item">
+        <div>
+          <p class="fly-title">Afrique</p>
+          <h3><a href="#" class="headline-medium">L'aide au développement après la crise du multilatéralisme</a></h3>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FEATURED THEMATIC — "America at 250" equivalent
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule" style="border-top-width: 3px;">
+  <h2 class="section-heading" style="margin-top: 16px;">Polycrises : le monde en 2026</h2>
+  <div class="hero-article" style="margin-top: 16px;">
+    <div class="hero-image-placeholder" style="background: linear-gradient(135deg, #0D0D0D 0%, #2C5F8A 50%, #1B2A4A 100%);"></div>
+    <div class="hero-body">
+      <p class="fly-title">Dossier spécial</p>
+      <h3><a href="#" class="headline-hero">Comment la convergence des crises redéfinit l'ordre économique mondial</a></h3>
+      <p class="article-summary" style="margin-top: 12px;">Énergie, dette, démographie, climat : quatre trajectoires qui se croisent. Notre cadre d'analyse FPSQ permet de quantifier leur interaction.</p>
+    </div>
+  </div>
+  <div class="card-grid-3" style="margin-top: 32px;">
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-5"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Énergie</p>
+        <h3><a href="#" class="headline-medium">Le détroit d'Hormuz et la vulnérabilité européenne</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-2"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Dette</p>
+        <h3><a href="#" class="headline-medium">Les pays émergents face au mur de la dette</a></h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><div class="card-image-placeholder variant-3"></div></div>
+      <div class="card-body">
+        <p class="fly-title">Prospective</p>
+        <h3><a href="#" class="headline-medium">Cinq scénarios pour l'économie mondiale en 2027</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     GRAPHIC DETAIL
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">Graphique de la semaine</h2>
+  <div class="hero-article">
+    <div style="width: 100%; aspect-ratio: 16/10; background: var(--light-gray); display: flex; align-items: center; justify-content: center; padding: 24px 32px;">
+      <!-- SVG chart: GPR index multi-series -->
+      <svg viewBox="0 0 480 280" style="width: 100%; max-width: 480px;">
+        <!-- Title -->
+        <text x="40" y="18" font-family="Inter" font-size="11" fill="#0D0D0D" font-weight="600">Indice de risque géopolitique (GPR/SME)</text>
+        <text x="40" y="32" font-family="Inter" font-size="9" fill="#595959">Indice composite, base 100 = moyenne 2015-2019</text>
+        <!-- Y axis -->
+        <line x1="40" y1="50" x2="40" y2="230" stroke="#D9D9D9" stroke-width="1"/>
+        <!-- Y gridlines + labels -->
+        <line x1="40" y1="50" x2="450" y2="50" stroke="#E8E8E8" stroke-width="0.5"/>
+        <text x="35" y="54" font-family="Inter" font-size="8" fill="#999" text-anchor="end">250</text>
+        <line x1="40" y1="95" x2="450" y2="95" stroke="#E8E8E8" stroke-width="0.5"/>
+        <text x="35" y="99" font-family="Inter" font-size="8" fill="#999" text-anchor="end">200</text>
+        <line x1="40" y1="140" x2="450" y2="140" stroke="#E8E8E8" stroke-width="0.5"/>
+        <text x="35" y="144" font-family="Inter" font-size="8" fill="#999" text-anchor="end">150</text>
+        <line x1="40" y1="185" x2="450" y2="185" stroke="#E8E8E8" stroke-width="0.5"/>
+        <text x="35" y="189" font-family="Inter" font-size="8" fill="#999" text-anchor="end">100</text>
+        <line x1="40" y1="230" x2="450" y2="230" stroke="#0D0D0D" stroke-width="1"/>
+        <text x="35" y="234" font-family="Inter" font-size="8" fill="#999" text-anchor="end">50</text>
+        <!-- X axis labels -->
+        <text x="40" y="248" font-family="Inter" font-size="8" fill="#595959">2015</text>
+        <text x="108" y="248" font-family="Inter" font-size="8" fill="#595959">2017</text>
+        <text x="177" y="248" font-family="Inter" font-size="8" fill="#595959">2019</text>
+        <text x="245" y="248" font-family="Inter" font-size="8" fill="#595959">2021</text>
+        <text x="313" y="248" font-family="Inter" font-size="8" fill="#595959">2023</text>
+        <text x="382" y="248" font-family="Inter" font-size="8" fill="#595959">2025</text>
+        <!-- Area fill under GPR -->
+        <path d="M40,185 L74,180 L108,182 L142,175 L177,140 L211,95 L245,90 L279,120 L313,105 L347,85 L382,60 L416,55 L450,50 L450,230 L40,230 Z" fill="#C0392B" opacity="0.08"/>
+        <!-- Line 1: GPR composite (red, bold) -->
+        <polyline points="40,185 74,180 108,182 142,175 177,140 211,95 245,90 279,120 313,105 347,85 382,60 416,55 450,50" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+        <!-- Line 2: SME component (blue, dashed) -->
+        <polyline points="40,190 74,188 108,186 142,184 177,170 211,150 245,155 279,160 313,148 347,130 382,110 416,105 450,95" fill="none" stroke="#2C5F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <!-- Line 3: Baseline (gray, thin) -->
+        <line x1="40" y1="185" x2="450" y2="185" stroke="#999" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <!-- Event annotations -->
+        <line x1="211" y1="95" x2="211" y2="230" stroke="#595959" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="211" y="240" font-family="Inter" font-size="7" fill="#595959" text-anchor="middle">Invasion Ukraine</text>
+        <line x1="382" y1="60" x2="382" y2="230" stroke="#595959" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="382" y="240" font-family="Inter" font-size="7" fill="#595959" text-anchor="middle">Crise Hormuz</text>
+        <!-- Current value label -->
+        <circle cx="450" cy="50" r="3" fill="#C0392B"/>
+        <text x="455" y="53" font-family="Inter" font-size="9" fill="#C0392B" font-weight="600">248</text>
+        <circle cx="450" cy="95" r="2.5" fill="#2C5F8A"/>
+        <text x="455" y="98" font-family="Inter" font-size="9" fill="#2C5F8A" font-weight="500">167</text>
+        <!-- Legend -->
+        <line x1="40" y1="268" x2="55" y2="268" stroke="#C0392B" stroke-width="2.5"/>
+        <text x="60" y="271" font-family="Inter" font-size="8" fill="#595959">GPR composite</text>
+        <line x1="150" y1="268" x2="165" y2="268" stroke="#2C5F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="170" y="271" font-family="Inter" font-size="8" fill="#595959">Composante SME</text>
+        <text x="300" y="271" font-family="Inter" font-size="7" fill="#999">Source: Kilama (2026), calculs de l'auteur</text>
+      </svg>
+    </div>
+    <div class="hero-body">
+      <p class="fly-title">Données</p>
+      <h3><a href="#" class="headline-secondary">L'indice de risque géopolitique atteint un niveau inédit depuis 2022</a></h3>
+      <p class="article-summary" style="margin-top: 12px;">Notre indicateur composite GPR/SME, qui mesure les tensions géopolitiques à partir de l'analyse textuelle et des flux commerciaux, signale une escalade structurelle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FEATURED STORY
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block">
+  <hr class="rule">
+  <h2 class="section-heading" style="margin-top: 16px;">À la une</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+    <div>
+      <p class="fly-title">Recherche</p>
+      <h3><a href="#" class="headline-hero">Coups d'État et commerce international : l'évidence empirique</a></h3>
+      <p class="article-summary" style="margin-top: 12px;">Une analyse causale de l'impact des changements de régime sur les flux bilatéraux, utilisant les méthodes d'inférence les plus récentes.</p>
+    </div>
+    <div class="hero-image-placeholder" style="background: linear-gradient(135deg, #4a2a1c 0%, #8B6914 50%, #2C5F8A 100%);"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     WEEKLY EDITION — bottom section
+     ═══════════════════════════════════════════════════ -->
+<section class="content-container section-block" style="margin-top: 80px;">
+  <hr class="rule" style="border-top-width: 3px;">
+  <h2 class="weekly-edition-label" style="margin-top: 16px;">Édition hebdomadaire | 28 mars 2026</h2>
+
+  <div class="weekly-subsection">
+    <h3 class="weekly-subsection-title">Commerce</h3>
+    <div class="weekly-article-list">
+      <div class="weekly-article">
+        <p class="fly-title">Commerce</p>
+        <h3><a href="#" class="headline-small">Les tarifs de Trump : cartographie des secteurs affectés</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Commerce</p>
+        <h3><a href="#" class="headline-small">Le RCEP trois ans après : bilan et perspectives</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Commerce</p>
+        <h3><a href="#" class="headline-small">Chaînes de valeur mondiales : la nouvelle géographie de la production</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="weekly-subsection">
+    <h3 class="weekly-subsection-title">Finance et économie</h3>
+    <div class="weekly-article-list">
+      <div class="weekly-article">
+        <p class="fly-title">Finance</p>
+        <h3><a href="#" class="headline-small">Les banques centrales face au trilemme de 2026</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Économie</p>
+        <h3><a href="#" class="headline-small">L'inflation sous-jacente : le signal dans le bruit</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Finance</p>
+        <h3><a href="#" class="headline-small">Les marchés de dette souveraine en 2026</a></h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="weekly-subsection">
+    <h3 class="weekly-subsection-title">Géopolitique et développement</h3>
+    <div class="weekly-article-list">
+      <div class="weekly-article">
+        <p class="fly-title">Afrique</p>
+        <h3><a href="#" class="headline-small">L'aide chinoise au développement : données et analyse causale</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Géopolitique</p>
+        <h3><a href="#" class="headline-small">Iran : l'escalade dans le détroit d'Hormuz en cinq graphiques</a></h3>
+      </div>
+      <div class="weekly-article">
+        <p class="fly-title">Développement</p>
+        <h3><a href="#" class="headline-small">La réforme des banques multilatérales de développement : où en est-on ?</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER — dark #1A1A1A
+     ═══════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <!-- Top: social icons + app links -->
+    <div class="footer-top">
+      <div class="footer-social">
+        <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+        <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+        <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
+        <a href="#" class="footer-social-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></a>
+      </div>
+      <div class="footer-app-links">
+        Télécharger l'app : <a href="#">iOS</a> · <a href="#">Android</a>
+      </div>
+    </div>
+
+    <!-- Middle: link columns -->
+    <div class="footer-middle">
+      <div>
+        <p class="footer-col-title">Recherche</p>
+        <ul class="footer-links">
+          <li><a href="#">Commerce international</a></li>
+          <li><a href="#">Risque géopolitique</a></li>
+          <li><a href="#">Développement</a></li>
+          <li><a href="#">Économie politique</a></li>
+          <li><a href="#">Macroéconomie</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Outils</p>
+        <ul class="footer-links">
+          <li><a href="#">FPSQ Monitor</a></li>
+          <li><a href="#">Données GPR/SME</a></li>
+          <li><a href="#">Analyses quantitatives</a></li>
+          <li><a href="#">Graphiques interactifs</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">À propos</p>
+        <ul class="footer-links">
+          <li><a href="#">Bio & parcours</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Enseignement</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Institutions</p>
+        <ul class="footer-links">
+          <li><a href="#">CERDI</a></li>
+          <li><a href="#">CAPS — Quai d'Orsay</a></li>
+          <li><a href="#">Fondation France-Asie</a></li>
+          <li><a href="#">IDÉ Éditeur</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom: legal -->
+    <div class="footer-bottom">
+      <p class="footer-legal">Copyright © Eric Kilama 2026. Tous droits réservés. Intelligence géopolitique quantifiée — analyses, données et prospective pour les décideurs.</p>
+      <div class="footer-legal-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

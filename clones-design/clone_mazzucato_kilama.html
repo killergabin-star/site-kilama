@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Mazzucato — Clone Kilama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --font-sans: 'Inter', 'Poppins', Arial, sans-serif;
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --coral: #FF6666;
+            --dark-blue: #023259;
+            --body-text: rgba(0,0,0,0.8);
+            --text-dark: #333333;
+            --footer-bg: #333333;
+            --white: #FFFFFF;
+            --gray-bg: #C4C4C4;
+            --dark-bg: #333333;
+            --light-bg: #F2F2F2;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--body-text);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* HEADER — 93px, fixed, transparent → white on scroll */
+        .header {
+            height: 93px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: var(--white);
+            border-bottom: 1px solid #666666;
+        }
+
+        /* Logo — MARIANA / MAZZUCATO two-line */
+        .header-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .header-logo .first-name {
+            font-family: var(--font-sans);
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .header-logo .last-name {
+            font-family: var(--font-sans);
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--coral);
+            letter-spacing: 1px;
+        }
+
+        .header.scrolled .header-logo .first-name { color: var(--text-dark); }
+
+        .header-nav {
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        /* Nav item = container with dropdown */
+        .nav-item {
+            position: relative;
+            cursor: pointer;
+            padding: 0 14px;
+            height: 93px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item > span {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        /* Chevron indicator */
+        .nav-item > span::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            margin-left: 6px;
+            margin-bottom: 3px;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-item:hover > span::after {
+            transform: rotate(-135deg);
+            margin-bottom: -1px;
+        }
+
+        .header.scrolled .nav-item > span { color: #666666; }
+        .nav-item:hover > span { color: var(--coral); }
+
+        /* Social icons in nav */
+        .nav-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: 16px;
+        }
+
+        .nav-social a {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .header.scrolled .nav-social a { color: #666666; }
+        .nav-social a:hover { color: var(--coral); }
+
+        .nav-hamburger {
+            width: 24px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-left: 16px;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--white);
+            transition: background 0.3s ease;
+        }
+
+        .header.scrolled .nav-hamburger span { background: #666666; }
+
+        /* Dropdown — smooth slide-down */
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 100;
+            background: transparent;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+        }
+
+        .nav-item:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-links {
+            background: #343434;
+            border-bottom: 4px solid var(--coral);
+            padding: 13px 16px;
+            white-space: nowrap;
+        }
+
+        .dropdown-links a {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--white);
+            padding: 5px 0;
+            transition: color 0.15s;
+        }
+
+        .dropdown-links a:hover { color: var(--coral); }
+
+        .dropdown-links a.sub-item { padding-left: 20px; }
+
+        /* HERO — 760px, portrait bg */
+        .hero-section {
+            height: 760px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 80px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+        }
+
+        .hero-portrait {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .hero-portrait-placeholder {
+            width: 400px;
+            height: 600px;
+            background: linear-gradient(to top, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-sans);
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-content p {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        /* PUBLICATIONS CAROUSEL — Slick-style, 2 slides visible */
+        .publications-section {
+            padding: 20px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-viewport {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .carousel-slide {
+            min-width: 600px;
+            height: 211px;
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .slide-image {
+            width: 308px;
+            height: 205px;
+            background: var(--gray-bg);
+            flex-shrink: 0;
+            background-size: contain;
+            background-position: left top;
+            background-repeat: no-repeat;
+        }
+
+        .slide-info {
+            padding: 0 20px 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .slide-info h3 {
+            font-family: var(--font-sans);
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--coral);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .slide-info h4 {
+            font-family: var(--font-sans);
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .slide-info .slide-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 16px;
+            border: 1px solid var(--text-dark);
+            font-family: var(--font-sans);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-info .slide-button:hover { background: var(--text-dark); color: var(--white); }
+
+        /* Carousel arrows — 23×256px, positioned on sides */
+        .carousel-arrow {
+            position: absolute;
+            top: 0;
+            width: 23px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .carousel-arrow.prev { left: calc(50% - 623px); }
+        .carousel-arrow.next { right: calc(50% - 623px); }
+
+        .carousel-arrow-btn {
+            width: 23px;
+            height: 82px;
+            background: var(--text-dark);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .carousel-arrow-btn svg { fill: #F2F2F2; }
+
+        /* Carousel dots — 20px circles */
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .carousel-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gray-bg);
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            transition: background 0.2s;
+        }
+
+        .carousel-dot.active { background: var(--white); box-shadow: 0 0 0 2px var(--text-dark); }
+
+        /* FEATURED BOOK — bg #023259 */
+        .featured-section {
+            background: var(--dark-blue);
+            min-height: 226px;
+            display: flex;
+            align-items: center;
+            padding: 40px 80px;
+            gap: 60px;
+        }
+
+        .featured-image {
+            width: 140px;
+            height: 180px;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 12px;
+        }
+
+        .featured-content h3 {
+            font-family: var(--font-sans);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .featured-content .edition-label { font-size: 18px; color: var(--coral); margin-bottom: 12px; }
+        .featured-content p { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 24px; }
+
+        .featured-cta {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 24px;
+            background: var(--coral);
+            color: var(--white);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 3px;
+        }
+
+        /* INFO SECTIONS — Academic, Advisor, Communicator (523px, 495px, 456px) */
+        .info-section {
+            padding: 50px 80px;
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .info-section.academic { min-height: 523px; }
+        .info-section.advisor { min-height: 495px; flex-direction: row-reverse; }
+        .info-section.communicator { min-height: 456px; }
+
+        .info-text { flex: 1; }
+
+        .info-heading {
+            font-family: var(--font-sans);
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--coral);
+            margin-bottom: 16px;
+        }
+
+        .info-desc {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            color: var(--body-text);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .info-quote {
+            background: var(--text-dark);
+            padding: 32px;
+        }
+
+        .info-quote blockquote {
+            font-family: var(--font-sans);
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.4;
+            font-style: normal;
+        }
+
+        .info-quote cite {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 18px;
+            font-style: normal;
+            color: var(--coral);
+            margin-top: 16px;
+        }
+
+        .info-image, .info-video {
+            width: 400px;
+            height: 300px;
+            flex-shrink: 0;
+            background: #E8E8E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-video { background: var(--gray-bg); }
+
+        .play-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .play-button:hover { transform: scale(1.1); }
+
+        /* BOOKS — 5 book covers in flex row, 205px each */
+        .books-section {
+            padding: 60px 80px;
+            min-height: 706px;
+        }
+
+        .books-section .info-heading { margin-bottom: 32px; }
+
+        .books-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-holder {
+            width: 205px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .book-cover {
+            width: 180px;
+            height: 260px;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .book-cover:hover { transform: translateY(-4px); }
+
+        .book-cover h4 { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.3; }
+        .book-cover .author { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+        .book-title-below {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 12px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* HIGHLIGHTS SECTIONS — flex-wrap grid of cards */
+        .highlights-section {
+            padding: 50px 80px 60px;
+        }
+
+        .highlights-section.dark-bg {
+            background: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .highlights-section.light-bg {
+            background: var(--light-bg);
+        }
+
+        .highlights-title {
+            font-family: var(--font-sans);
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--coral);
+            margin-bottom: 24px;
+        }
+
+        .highlights-section.dark-bg .highlights-title { color: var(--white); }
+
+        .highlights-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+        }
+
+        .highlight-card {
+            width: 252px;
+            cursor: pointer;
+        }
+
+        .highlight-card-date {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+
+        .light-bg .highlight-card-date { color: rgba(0,0,0,0.4); }
+
+        .highlight-card-image {
+            width: 252px;
+            height: 154px;
+            background: var(--gray-bg);
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .highlight-card-image .rollover {
+            width: 100%;
+            height: 100%;
+            background: var(--gray-bg);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover .rollover { transform: scale(1.05); }
+
+        .highlight-card h3 {
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .dark-bg .highlight-card h3 { color: var(--white); }
+        .light-bg .highlight-card h3 { color: var(--text-dark); }
+
+        .highlight-card .text {
+            font-family: var(--font-sans);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .dark-bg .highlight-card .text { color: rgba(255,255,255,0.6); }
+        .light-bg .highlight-card .text { color: rgba(0,0,0,0.6); }
+
+        .see-more-btn {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 10px 24px;
+            font-family: var(--font-sans);
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dark-bg .see-more-btn { color: var(--white); border-color: var(--white); background: transparent; }
+        .dark-bg .see-more-btn:hover { background: var(--white); color: var(--dark-bg); }
+        .light-bg .see-more-btn { color: var(--text-dark); border-color: var(--text-dark); background: transparent; }
+        .light-bg .see-more-btn:hover { background: var(--text-dark); color: var(--white); }
+
+        /* Section border dividers */
+        .section-border {
+            height: 5px;
+        }
+        .section-border.white { background: var(--white); }
+        .section-border.grey-dark { background: #444; }
+        .section-border.grey { background: #DDD; }
+
+        /* FOOTER — bg #333, 279px */
+        .footer {
+            background: var(--footer-bg);
+            padding: 48px 80px;
+            min-height: 279px;
+            color: var(--white);
+        }
+
+        .footer-grid { display: flex; gap: 80px; margin-bottom: 32px; }
+
+        .footer-col h4 { font-family: var(--font-sans); font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+        .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+        .footer-col a:hover { color: var(--coral); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        /* Scrollbar styling for carousel */
+        .carousel-viewport::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="mainHeader">
+        <a href="#" class="header-logo">
+            <span class="first-name">MARIANA</span>
+            <span class="last-name">MAZZUCATO</span>
+        </a>
+        <nav class="header-nav">
+            <div class="nav-item">
+                <span>About</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">Bio and CV</a>
+                        <a href="#">Contacts</a>
+                        <a href="#">Press and photos</a>
+                        <a href="#">Institute for Innovation and Public Purpose</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>Books</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">All books</a>
+                        <a href="#">The Common Good Economy</a>
+                        <a href="#">The Big Con</a>
+                        <a href="#">Mission Economy</a>
+                        <a href="#">The Value of Everything</a>
+                        <a href="#">The Entrepreneurial State</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>Research</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">Research Themes</a>
+                        <a href="#">Journal Articles</a>
+                        <a href="#">Working Papers</a>
+                        <a href="#">Book Chapters</a>
+                        <a href="#">Books</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>Policy</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">Policy Impact</a>
+                        <a href="#">Policy Papers</a>
+                        <a href="#">Policy Themes</a>
+                        <a href="#" class="sub-item">Capacity</a>
+                        <a href="#" class="sub-item">Climate</a>
+                        <a href="#" class="sub-item">Digital</a>
+                        <a href="#" class="sub-item">Finance</a>
+                        <a href="#" class="sub-item">Health</a>
+                        <a href="#" class="sub-item">Innovation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>Media</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">Highlights</a>
+                        <a href="#">TV</a>
+                        <a href="#">Radio and Podcasts</a>
+                        <a href="#">Articles by Mariana</a>
+                        <a href="#">Articles about Mariana</a>
+                        <a href="#">Blogs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">
+                <span>Talks</span>
+                <div class="dropdown-content">
+                    <div class="dropdown-links">
+                        <a href="#">Upcoming talks</a>
+                        <a href="#">Past talks</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-social">
+                <a href="#">𝕏</a>
+                <a href="#">🦋</a>
+            </div>
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Mariana Mazzucato</h1>
+            <p>Professor in the Economics of Innovation and Public Value at University College London and Founding Director of the UCL Institute for Innovation and Public Purpose (IIPP).</p>
+        </div>
+        <div class="hero-portrait">
+            <div class="hero-portrait-placeholder"></div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS CAROUSEL — Slick-style with arrows and dots -->
+    <section class="publications-section">
+        <div class="carousel-arrow prev" onclick="carouselPrev()">
+            <button class="carousel-arrow-btn">
+                <svg width="13" height="27" viewBox="0 0 13 27" fill="none"><path d="M12 26L2 13.5L12 1" stroke="#F2F2F2" stroke-width="2"/></svg>
+            </button>
+        </div>
+        <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #e8d5c0, #c4a882);"></div>
+                    <div class="slide-info">
+                        <h3>Health for All</h3>
+                        <h4>WHO Council for the Economics of Health For All</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #2a5a3a, #1a3a2a);"></div>
+                    <div class="slide-info">
+                        <h3>State Capacity and Capabilities for a Just Green World</h3>
+                        <h4>MGI Brazil</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #3a6a8a, #2a4a6a);"></div>
+                    <div class="slide-info">
+                        <h3>State Transformation in Brazil</h3>
+                        <h4>UCL IIPP Policy report 2024/15</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #d4a56a, #b8843a);"></div>
+                    <div class="slide-info">
+                        <h3>A Mission-Oriented Approach to School Meals</h3>
+                        <h4>UCL IIPP Policy report</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #4a2a5a, #2a1a3a);"></div>
+                    <div class="slide-info">
+                        <h3>Principles for an Inclusive and Sustainable Economy</h3>
+                        <h4>Discussion paper for the G20</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #5a3a2a, #3a2a1a);"></div>
+                    <div class="slide-info">
+                        <h3>Reimagining Financing for the SDGs</h3>
+                        <h4>UN DESA Policy report</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #8a4a2a, #6a3a1a);"></div>
+                    <div class="slide-info">
+                        <h3>Governing AI for Humanity</h3>
+                        <h4>United Nations High-Level Advisory Body</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #2a3a6a, #1a2a4a);"></div>
+                    <div class="slide-info">
+                        <h3>Industrial Policy for the Age of AI</h3>
+                        <h4>UCL IIPP Working paper</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #6a2a4a, #4a1a3a);"></div>
+                    <div class="slide-info">
+                        <h3>Innovation-Led Industrial Strategy for Brazil</h3>
+                        <h4>UCL IIPP Policy report</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #3a5a3a, #2a4a2a);"></div>
+                    <div class="slide-info">
+                        <h3>Mission-Oriented Innovation for Inclusive Growth</h3>
+                        <h4>European Commission</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #5a5a2a, #3a3a1a);"></div>
+                    <div class="slide-info">
+                        <h3>The Entrepreneurial State at 10</h3>
+                        <h4>UCL IIPP Anniversary edition</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-image" style="background: linear-gradient(135deg, #2a6a6a, #1a4a4a);"></div>
+                    <div class="slide-info">
+                        <h3>Creating and Sharing Value in the NHS</h3>
+                        <h4>UCL IIPP Policy report</h4>
+                        <a href="#" class="slide-button">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-arrow next" onclick="carouselNext()">
+            <button class="carousel-arrow-btn">
+                <svg width="13" height="27" viewBox="0 0 13 27" fill="none"><path d="M1 1L11 13.5L1 26" stroke="#F2F2F2" stroke-width="2"/></svg>
+            </button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- FEATURED BOOK -->
+    <section class="featured-section">
+        <div class="featured-image">Book</div>
+        <div class="featured-content">
+            <h3>The Common Good Economy</h3>
+            <div class="edition-label">UK edition</div>
+            <p>A radical blueprint for how we can reshape capitalism and create an economy that works for all.</p>
+            <a href="#" class="featured-cta">Order now</a>
+        </div>
+    </section>
+
+    <!-- ACADEMIC -->
+    <section class="info-section academic">
+        <div class="info-text">
+            <h2 class="info-heading">Academic</h2>
+            <p class="info-desc">Professor in the Economics of Innovation and Public Value at University College London (UCL), where she is Founding Director of the UCL Institute for Innovation and Public Purpose (IIPP).</p>
+            <div class="info-quote">
+                <blockquote>"One of the world's most influential economists... on a mission to save capitalism"</blockquote>
+                <cite>Quartz</cite>
+            </div>
+        </div>
+        <div class="info-image">
+            <svg viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#E8E8E8"/>
+                <rect x="30" y="30" width="340" height="240" fill="#DEDEDE"/>
+                <circle cx="200" cy="130" r="50" fill="#D0D0D0"/>
+                <rect x="120" y="200" width="160" height="8" rx="4" fill="#C8C8C8"/>
+                <rect x="140" y="220" width="120" height="6" rx="3" fill="#D0D0D0"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- BOOKS — 5 covers -->
+    <section class="books-section">
+        <h2 class="info-heading">Books</h2>
+        <div class="books-container">
+            <div class="book-holder">
+                <div class="book-cover" style="background: linear-gradient(135deg, #FF6666, #CC3333);"><h4>The Common Good Economy</h4><span class="author">Mariana Mazzucato</span></div>
+                <div class="book-title-below">The Common Good Economy</div>
+            </div>
+            <div class="book-holder">
+                <div class="book-cover" style="background: linear-gradient(135deg, #2a2a6a, #1a1a4a);"><h4>The Big Con</h4><span class="author">M. Mazzucato &amp; R. Collington</span></div>
+                <div class="book-title-below">The Big Con</div>
+            </div>
+            <div class="book-holder">
+                <div class="book-cover" style="background: linear-gradient(135deg, #0a4a2a, #083820);"><h4>Mission Economy</h4><span class="author">Mariana Mazzucato</span></div>
+                <div class="book-title-below">Mission Economy</div>
+            </div>
+            <div class="book-holder">
+                <div class="book-cover" style="background: linear-gradient(135deg, #4a2a2a, #3a1a1a);"><h4>The Value of Everything</h4><span class="author">Mariana Mazzucato</span></div>
+                <div class="book-title-below">The Value of Everything</div>
+            </div>
+            <div class="book-holder">
+                <div class="book-cover" style="background: linear-gradient(135deg, #2a4a6a, #1a3a5a);"><h4>The Entrepreneurial State</h4><span class="author">Mariana Mazzucato</span></div>
+                <div class="book-title-below">The Entrepreneurial State</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVISOR -->
+    <section class="info-section advisor">
+        <div class="info-text">
+            <h2 class="info-heading">Advisor</h2>
+            <p class="info-desc">She advises policymakers around the world on innovation-led inclusive and sustainable growth. She has advised the European Commission, WHO, UN, OECD, and governments across the globe.</p>
+            <div class="info-quote">
+                <blockquote>"Governments should shape markets, not just fix them"</blockquote>
+                <cite>The Guardian</cite>
+            </div>
+        </div>
+        <div class="info-image">
+            <svg viewBox="0 0 400 300" width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="#E8E8E8"/>
+                <rect x="30" y="50" width="150" height="200" fill="#DEDEDE"/>
+                <rect x="200" y="50" width="170" height="90" fill="#DEDEDE"/>
+                <rect x="200" y="160" width="170" height="90" fill="#DEDEDE"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- POLICY STORIES — dark bg, 4-card grid -->
+    <section class="highlights-section dark-bg">
+        <h1 class="highlights-title">Policy stories</h1>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-card-date">March 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #4a6a3a, #2a4a2a);"></div></div>
+                <h3>UCL IIPP and Government of Brazil</h3>
+                <div class="text">New partnership on mission-oriented industrial policy for green transition.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">February 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #3a4a6a, #2a3a5a);"></div></div>
+                <h3>WHO Council Policy Brief</h3>
+                <div class="text">Health for All: conditionalities for pharmaceutical innovation.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">January 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #6a3a4a, #4a2a3a);"></div></div>
+                <h3>Mission-Driven Public Finance</h3>
+                <div class="text">Keynote at World Economic Forum on shaping markets for public good.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">December 2025</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #5a5a3a, #3a3a2a);"></div></div>
+                <h3>European Green Deal Assessment</h3>
+                <div class="text">New report evaluating mission-oriented approach to climate policy.</div>
+            </div>
+        </div>
+        <a href="#" class="see-more-btn">See more policy stories</a>
+    </section>
+
+    <div class="section-border white"></div>
+
+    <!-- COMMUNICATOR + VIDEO -->
+    <section class="info-section communicator">
+        <div class="info-text">
+            <h2 class="info-heading">Communicator</h2>
+            <p class="info-desc">A best-selling author and sought-after public speaker. Her TED talks have been viewed over 4 million times. She appears regularly in major media outlets worldwide.</p>
+        </div>
+        <div class="info-video">
+            <div class="play-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- TALKS — dark bg, 4-card grid -->
+    <section class="highlights-section dark-bg">
+        <h1 class="highlights-title">Talks</h1>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-card-date">March 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #2a3a5a, #1a2a4a);"></div></div>
+                <h3>TED Talk: New Economics of Innovation</h3>
+                <div class="text">A radical rethinking of the role of the state in shaping markets.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">January 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #4a2a3a, #3a1a2a);"></div></div>
+                <h3>WEF Davos: Mission Economy</h3>
+                <div class="text">Panel on industrial policy and the entrepreneurial state.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">November 2025</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #3a5a4a, #2a4a3a);"></div></div>
+                <h3>Oxford Union: The Common Good</h3>
+                <div class="text">Lecture on reshaping capitalism for inclusive growth.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">October 2025</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #5a4a2a, #4a3a1a);"></div></div>
+                <h3>LSE Public Lecture</h3>
+                <div class="text">Value creation vs value extraction in modern economies.</div>
+            </div>
+        </div>
+        <a href="#" class="see-more-btn">See more talks</a>
+    </section>
+
+    <div class="section-border grey-dark"></div>
+
+    <!-- MEDIA — light bg, 4-card grid -->
+    <section class="highlights-section light-bg">
+        <h1 class="highlights-title">Media</h1>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-card-date">March 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ccc, #aaa);"></div></div>
+                <h3>Financial Times Interview</h3>
+                <div class="text">On the future of industrial strategy and the role of public investment.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">February 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #bbb, #999);"></div></div>
+                <h3>BBC Newsnight</h3>
+                <div class="text">Debating the green transition and market-shaping policy.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">January 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ddd, #bbb);"></div></div>
+                <h3>New York Times Op-Ed</h3>
+                <div class="text">Why the state must be an investor, not just a spender.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">December 2025</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ccc, #aaa);"></div></div>
+                <h3>The Guardian Long Read</h3>
+                <div class="text">The big con: how consultancies undermined public services.</div>
+            </div>
+        </div>
+        <a href="#" class="see-more-btn">See more media</a>
+    </section>
+
+    <div class="section-border grey"></div>
+
+    <!-- MEDIA 2 — light bg -->
+    <section class="highlights-section light-bg">
+        <h1 class="highlights-title">Latest articles</h1>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-card-date">March 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ddd, #bbb);"></div></div>
+                <h3>The Lancet: Health Innovation</h3>
+                <div class="text">Rethinking pharmaceutical pricing through a public value lens.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">February 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ccc, #aaa);"></div></div>
+                <h3>Research Policy</h3>
+                <div class="text">Mission-oriented innovation systems: a comparative analysis.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">January 2026</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #bbb, #999);"></div></div>
+                <h3>Nature Energy</h3>
+                <div class="text">Green industrial policy: lessons from the entrepreneurial state.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-date">December 2025</div>
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #ddd, #bbb);"></div></div>
+                <h3>Cambridge Journal of Economics</h3>
+                <div class="text">Value theory and the role of public purpose in innovation.</div>
+            </div>
+        </div>
+        <a href="#" class="see-more-btn">See more articles</a>
+    </section>
+
+    <!-- PROFILES — dark bg, shorter -->
+    <section class="highlights-section dark-bg" style="min-height: 502px;">
+        <h1 class="highlights-title">Profiles</h1>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #3a3a5a, #2a2a4a);"></div></div>
+                <h3>Bloomberg 50: Most Influential</h3>
+                <div class="text">Named among the 50 people who defined 2024.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #5a3a3a, #4a2a2a);"></div></div>
+                <h3>Prospect: Top Thinkers</h3>
+                <div class="text">World's top 50 thinkers for economic transformation.</div>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-card-image"><div class="rollover" style="background: linear-gradient(135deg, #3a5a3a, #2a4a2a);"></div></div>
+                <h3>Wired UK: Ideas Shaping the Future</h3>
+                <div class="text">Mission economy as blueprint for post-pandemic rebuilding.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>About</h4><a href="#">About Mariana</a><a href="#">Bio and CV</a><a href="#">Contacts</a><a href="#">Press and photos</a></div>
+            <div class="footer-col"><h4>Work</h4><a href="#">Books</a><a href="#">Journal articles</a><a href="#">Working papers</a><a href="#">Policy papers</a></div>
+            <div class="footer-col"><h4>Engage</h4><a href="#">Research</a><a href="#">Policy</a><a href="#">Media</a><a href="#">Talks</a></div>
+            <div class="footer-col"><h4>Institute</h4><a href="#">UCL IIPP</a><a href="#">Innovation &amp; Public Purpose</a></div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; 2026 Mariana Mazzucato. All rights reserved.</span>
+            <div class="footer-social"><a href="#">X</a><a href="#">In</a><a href="#">YT</a></div>
+        </div>
+    </footer>
+
+    <script>
+        // ====== HEADER SCROLL BEHAVIOR ======
+        // Transparent + white border on hero → white bg + gray border when scrolled
+        var header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ====== PUBLICATIONS CAROUSEL (Slick-style) ======
+        var track = document.getElementById('carouselTrack');
+        var slides = track.querySelectorAll('.carousel-slide');
+        var totalSlides = slides.length;
+        var slidesPerView = 2;
+        var currentIndex = 0;
+        var maxIndex = totalSlides - slidesPerView;
+        var dotsContainer = document.getElementById('carouselDots');
+
+        // Number of dot pages = ceil(totalSlides / slidesPerView)
+        var totalDots = Math.ceil(totalSlides / slidesPerView);
+
+        // Create dots
+        for (var i = 0; i < totalDots; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', function() {
+                var idx = parseInt(this.getAttribute('data-index')) * slidesPerView;
+                goToSlide(Math.min(idx, maxIndex));
+            });
+            dotsContainer.appendChild(dot);
+        }
+
+        function goToSlide(index) {
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            track.style.transform = 'translateX(-' + (currentIndex * 600) + 'px)';
+            updateDots();
+        }
+
+        function updateDots() {
+            var activeDotIndex = Math.floor(currentIndex / slidesPerView);
+            var dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach(function(d, i) {
+                d.classList.toggle('active', i === activeDotIndex);
+            });
+        }
+
+        function carouselPrev() {
+            goToSlide(currentIndex - slidesPerView);
+        }
+
+        function carouselNext() {
+            goToSlide(currentIndex + slidesPerView);
+        }
+
+        // Auto-play carousel every 5 seconds
+        var autoplayInterval = setInterval(function() {
+            if (currentIndex >= maxIndex) {
+                goToSlide(0);
+            } else {
+                carouselNext();
+            }
+        }, 5000);
+
+        // Pause autoplay on hover
+        var carouselSection = document.querySelector('.publications-section');
+        carouselSection.addEventListener('mouseenter', function() {
+            clearInterval(autoplayInterval);
+        });
+        carouselSection.addEventListener('mouseleave', function() {
+            autoplayInterval = setInterval(function() {
+                if (currentIndex >= maxIndex) {
+                    goToSlide(0);
+                } else {
+                    carouselNext();
+                }
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>

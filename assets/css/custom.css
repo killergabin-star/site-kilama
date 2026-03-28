@@ -1,29 +1,33 @@
 /* ============================================
-   KILAMA SITE — McKinsey-Inspired Design System
-   Navy (#051c2c) · Inter + Playfair Display · Clean & authoritative
+   KILAMA SITE — v3 "Institutional Intelligence"
+   Bruegel/PIIE register · Inter + Source Serif 4 · Quiet authority
    ============================================ */
 
 /* ── CSS Custom Properties ── */
 :root {
-  --navy: #051c2c;
-  --navy-light: #0a3049;
-  --navy-dark: #020e16;
-  --accent: #00a9f4;
-  --accent-hover: #0091d5;
-  --dark: #051c2c;
-  --text-primary: #333333;
-  --text-secondary: #6e6e6e;
-  --bg-white: #ffffff;
-  --bg-light: #f5f5f5;
-  --bg-medium: #eeeeee;
-  --border-light: rgba(0, 0, 0, 0.08);
-  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', 'Helvetica Neue', Calibri, Helvetica, Roboto, sans-serif;
+  --navy: #1B2A4A;
+  --navy-light: #2C5F8A;
+  --navy-dark: #0F1A2E;
+  --accent: #2C5F8A;
+  --accent-hover: #1B4A6E;
+  --accent-red: #C0392B;
+  --accent-gold: #D4A017;
+  --dark: #1B2A4A;
+  --text-primary: #2D2D2D;
+  --text-secondary: #5A5A5A;
+  --bg-white: #F8F7F4;
+  --bg-light: #F0EFE9;
+  --bg-medium: #E8E7E1;
+  --border-light: rgba(0, 0, 0, 0.06);
+  --font-heading: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-body: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 /* ============================================
-   0. MAZZUCATO SIGNATURE: ZERO BORDER-RADIUS
-   No rounded corners ANYWHERE on the site.
+   0. INSTITUTIONAL INTELLIGENCE: ZERO BORDER-RADIUS
+   Sharp corners = authority. Bruegel/PIIE register.
    ============================================ */
 
 *,
@@ -34,7 +38,8 @@
 
 /* ============================================
    1. GLOBAL TYPOGRAPHY
-   McKinsey: Inter body (wt 300), Playfair Display headlines
+   v3: Inter headings (700), Source Serif 4 body (400)
+   Bruegel editorial register — warm, readable, authoritative
    ============================================ */
 
 html {
@@ -47,52 +52,54 @@ body, .page-wrapper {
 }
 
 .dark body, .dark .page-wrapper {
-  background-color: #0d1117 !important;
+  background-color: #0F1A2E !important;
 }
 
 body, p, li, span, td, th, dd, dt {
   font-family: var(--font-body) !important;
-  font-weight: 300;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading) !important;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-weight: 700 !important;
   line-height: 1.15 !important;
+  font-size: 2rem !important;
 }
 
 h2 {
-  font-weight: 600 !important;
-  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+  font-size: 1.6rem !important;
   line-height: 1.3 !important;
   color: var(--navy);
 }
 
 .dark h2 {
-  color: #79b8ff;
+  color: #9BB8D3;
 }
 
 h3 {
-  font-weight: 500 !important;
-  font-size: 1.25rem !important;
-  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+  font-family: var(--font-heading) !important;
 }
 
-/* Body text — McKinsey: 16px, 300, clean line-height */
+/* Body text — Source Serif 4: 16px, 400, editorial line-height */
 .prose, .prose p, .prose li {
   font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.65;
   color: var(--text-primary);
 }
 
 .dark .prose, .dark .prose p, .dark .prose li {
-  color: #e0e0e0;
+  color: #d0d0d0;
 }
 
 /* ============================================
@@ -381,7 +388,7 @@ img.avatar {
   .xl\:text-7xl { font-size: 4.5rem; line-height: 1; }
 }
 
-/* Logo / brand — McKinsey: clean white, serif */
+/* Logo / brand — v3: Inter clean, no serif */
 .navbar-brand {
   font-family: var(--font-heading) !important;
   font-weight: 700 !important;
@@ -395,20 +402,21 @@ img.avatar {
 .navbar-brand .brand-first {
   display: block;
   font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: var(--font-body) !important;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-heading) !important;
   text-transform: uppercase;
 }
 
 .navbar-brand .brand-last {
   display: block;
   font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.02em;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
   color: #ffffff;
   font-family: var(--font-heading) !important;
+  text-transform: uppercase;
 }
 
 .dark .navbar-brand .brand-first {
@@ -466,11 +474,11 @@ img.avatar {
   color: var(--accent) !important;
 }
 
-/* Top-level nav links — McKinsey: Inter 16px wt 300 */
+/* Top-level nav links — v3: Inter 15px wt 400 */
 .nav-link {
-  font-family: var(--font-body) !important;
-  font-weight: 300 !important;
-  font-size: 1rem !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
   color: rgba(255, 255, 255, 0.85) !important;
   letter-spacing: 0.01em;
   transition: color 0.2s ease !important;
@@ -478,15 +486,15 @@ img.avatar {
   padding-bottom: 4px !important;
 }
 
-/* McKinsey blue indicator bar on hover */
+/* v3: Accent-red indicator bar on hover */
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 3px;
-  background: var(--accent);
+  height: 2px;
+  background: var(--accent-red);
   transition: width 0.25s ease;
 }
 
@@ -496,7 +504,7 @@ img.avatar {
 }
 
 .nav-link:hover {
-  color: var(--accent) !important;
+  color: #ffffff !important;
 }
 
 .dark .nav-link {
@@ -640,60 +648,37 @@ img.avatar {
 
 /* ============================================
    4. HERO SECTION
-   Mazzucato: full-width, tall, bold title left-aligned
-   Kilama: animated navy gradient (already good), taller
+   v3: Tall, navy, left-aligned — quiet institutional authority
+   No animation, no glow — just clarity
    ============================================ */
 
-/* Hero wrapper — Mazzucato: ~700px, not 100vh */
+/* Hero wrapper — controlled height, not fullscreen */
 .blox-hero {
   min-height: auto !important;
-  max-height: 700px !important;
+  max-height: 600px !important;
 }
 
-/* Hero section — animated navy gradient, controlled height
-   FIX #2: Capped at ~700px (Mazzucato is ~680px, not full-screen) */
+/* Hero section — static navy gradient, no animation */
 #hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #020e16 0%, #051c2c 35%, #071520 70%, #0a3049 100%) !important;
-  background-size: 300% 300% !important;
-  animation: heroGradient 12s ease infinite;
+  background: linear-gradient(160deg, #0F1A2E 0%, #1B2A4A 50%, #2C5F8A 100%) !important;
   min-height: 0;
-  max-height: 700px !important;
+  max-height: 600px !important;
 }
 
-@keyframes heroGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Subtle radial glow */
-#hero::after {
-  content: '';
-  position: absolute;
-  top: 10%;
-  right: -5%;
-  width: 50%;
-  height: 80%;
-  background: radial-gradient(ellipse, rgba(0, 102, 204, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Hero content above overlays */
+/* Hero content */
 #hero > div {
   position: relative;
   z-index: 2;
 }
 
-/* FIX #1: Hero text LEFT-ALIGNED like Mazzucato (text at 6% left)
-   FIX #2 complement: vertical padding reduced for ~700px total */
+/* Hero text LEFT-ALIGNED — institutional register */
 #hero .mx-auto.max-w-2xl {
   max-width: 1200px !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  padding: 4.5rem 6% !important;
+  padding: 5rem 6% !important;
 }
 
 #hero .text-center {
@@ -708,86 +693,80 @@ img.avatar {
   margin-left: 0 !important;
 }
 
-/* Hero title — Playfair Display italic, McKinsey Bower-style */
+/* Hero title — Inter 700, NOT italic. Clean and modern. */
 #hero h1 {
   font-family: var(--font-heading) !important;
-  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem) !important;
   font-weight: 700 !important;
-  font-style: italic;
-  line-height: 1.2 !important;
-  letter-spacing: -0.01em;
+  font-style: normal !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em;
   color: #ffffff !important;
-  max-width: 650px;
+  max-width: 600px;
 }
 
-/* Hero subtitle — Inter, light weight, McKinsey feel */
+/* Hero subtitle — Source Serif 4, readable */
 #hero p {
   font-family: var(--font-body) !important;
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.7;
-  opacity: 0.85;
-  max-width: 580px;
-  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
+  opacity: 0.9;
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.88) !important;
 }
 
-/* Hero CTA buttons — McKinsey clean style */
+/* Hero CTA buttons — clean, minimal */
 #hero a[class*="btn"],
 #hero a[class*="primary"] {
-  font-family: var(--font-body) !important;
-  font-weight: 400 !important;
-  transition: all 0.25s ease !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease !important;
 }
 
 #hero a[class*="btn"]:hover,
 #hero a[class*="primary"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ============================================
    5. SECTION RHYTHM
-   Mazzucato: alternating backgrounds, 5px accent bars,
-   generous vertical padding (88px), max-width centered
+   v3: Clean vertical flow, subtle dividers, ivoire background
+   Content-first — minimal visual noise
    ============================================ */
 
-/* Section spacing — generous Mazzucato-style */
+/* Section spacing — generous but not excessive */
 section.hbb-section, .hbb-section {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
-  /* Ensure sections NEVER overlap the fixed header (z-index: 1000) */
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
   z-index: 1 !important;
 }
 
-/* Page body — below the fixed header */
+/* Page body */
 .page-body {
   position: relative;
   z-index: 1;
 }
 
-/* Alternating section backgrounds — handled in section 18 below */
-
-/* MAZZUCATO SIGNATURE: Asymmetric gradient dividers at section tops
-   Original: linear-gradient(90deg, #f66 15%, [bg] 0) — 5px height
-   Kilama: navy accent instead of coral red */
-.blox-stats::before,
-.blox-features::before,
-.blox-collection::before,
-.blox-cta-card::before,
-.blox-markdown::before {
+/* v3: Thin accent-red divider — asymmetric, understated */
+.blox-collection::before {
   content: '';
   display: block;
   width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--accent) 15%, transparent 15%);
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-red) 12%, transparent 12%);
+  margin-bottom: 2rem;
 }
 
-.dark .blox-stats::before,
-.dark .blox-features::before,
-.dark .blox-collection::before,
-.dark .blox-cta-card::before,
-.dark .blox-markdown::before {
-  background: linear-gradient(90deg, var(--accent) 15%, transparent 15%);
+/* Remove dividers from other blocks — cleaner flow */
+.blox-stats::before,
+.blox-features::before,
+.blox-cta-card::before,
+.blox-markdown::before {
+  display: none !important;
 }
 
 /* Section accent bar — 5px navy line at top (Mazzucato uses #f66) */
@@ -1019,26 +998,26 @@ article a:hover h2 {
 
 /* ============================================
    10. FOOTER
-   Mazzucato: dark bg (#333), white text, clean minimal
+   v3: Navy dark, minimal — institutional
    ============================================ */
 
-/* Footer wrapper — dark background Mazzucato-style */
+/* Footer wrapper — navy dark */
 .page-footer {
-  background: #333333 !important;
+  background: var(--navy-dark) !important;
   color: #ffffff !important;
   padding: 0 !important;
   margin-top: 0 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 3px solid var(--accent-red);
 }
 
-/* Footer inner — override Tailwind mt-24 and text-slate-700 */
+/* Footer inner */
 .page-footer footer,
 .page-footer > footer {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding: 2.5rem 1.5rem 2rem !important;
   color: #ffffff !important;
-  background: #333333 !important;
+  background: var(--navy-dark) !important;
 }
 
 .page-footer footer *,
@@ -1309,27 +1288,24 @@ article img:hover,
 
 /* Dark footer */
 .dark .page-footer {
-  background: #161b22 !important;
-  border-top-color: rgba(121, 184, 255, 0.2);
+  background: #0A0F1A !important;
+  border-top-color: var(--accent-red);
 }
 
 .dark .page-footer footer {
-  background: #161b22 !important;
+  background: #0A0F1A !important;
 }
 
 /* ============================================
-   18. STRONGER ALTERNATING BACKGROUNDS
-   Make the bg contrast more visible (Mazzucato uses #f2f2f2)
+   18. ALTERNATING BACKGROUNDS — v3 ivoire
    ============================================ */
 
-.blox-stats .home-section-bg,
 .blox-collection .home-section-bg {
-  background-color: #f2f2f2 !important;
+  background-color: var(--bg-white) !important;
 }
 
-.dark .blox-stats .home-section-bg,
 .dark .blox-collection .home-section-bg {
-  background-color: #161b22 !important;
+  background-color: #152030 !important;
 }
 
 /* ============================================
@@ -1342,286 +1318,298 @@ article img:hover,
 }
 
 /* ============================================
-   20. HERO ROLES — "Chercheur · Stratège · Conseiller"
-   Mazzucato: "Academic Advisor Communicator" at hero bottom
+   20. v3 INTRO BIO SECTION
+   Clean, editorial, content-first
    ============================================ */
 
-.hero-roles {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
+.intro-bio-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.hero-roles .role {
-  font-family: var(--font-heading);
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.7);
+.intro-bio-content {
+  border-left: 3px solid var(--accent-red);
+  padding-left: 2rem;
 }
 
-.hero-roles .role-accent {
-  color: var(--accent);
+.intro-bio-lead {
+  font-family: var(--font-body) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 1rem;
+}
+
+.intro-bio-lead strong {
+  color: var(--navy) !important;
+  font-weight: 600;
+}
+
+.dark .intro-bio-lead strong {
+  color: #9BB8D3 !important;
+}
+
+.intro-bio-content p {
+  font-family: var(--font-body) !important;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.intro-bio-link {
+  display: inline-block;
+  font-family: var(--font-heading) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  margin-top: 1rem;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease !important;
+}
+
+.intro-bio-link:hover {
+  color: var(--navy) !important;
+}
+
+/* Remove parent section padding for intro-bio */
+#intro-bio {
+  padding-top: 3rem !important;
+  padding-bottom: 2rem !important;
 }
 
 /* ============================================
-   21. DARK SHOWCASE — Publications image-cards
-   Mazzucato: dark bg (#343434), image cards, 3-col grid
+   21. v3 RESEARCH PROGRAMME GRID
+   4 level-of-analysis cards — clean, editorial
    ============================================ */
 
-.dark-showcase {
-  background: var(--navy);
-  padding: 4rem 2rem;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Override the parent section bg */
-#publications-phares .home-section-bg {
-  background: transparent !important;
-}
-
-#publications-phares {
-  padding: 0 !important;
-}
-
-/* Fix Hugo Blox container chain for full-width dark section */
-#publications-phares .max-w-prose,
-#publications-phares [class*="max-w-prose"] {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-#publications-phares .prose {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-#publications-phares .flex {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-.showcase-title {
-  font-family: var(--font-heading) !important;
-  color: #ffffff !important;
-  font-size: 1.625rem !important;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1100px;
+.research-programme {
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  font-family: var(--font-heading) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent) !important;
+  margin-bottom: 2rem;
+}
+
+.programme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 @media (max-width: 768px) {
-  .showcase-grid {
+  .programme-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.programme-card {
+  padding: 1.75rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 3px solid var(--navy);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.programme-card:hover {
+  border-top-color: var(--accent-red);
+  transform: translateY(-2px);
+}
+
+.dark .programme-card {
+  background: #1A2540;
+  border-color: rgba(255, 255, 255, 0.08);
+  border-top-color: #9BB8D3;
+}
+
+.programme-level {
+  display: block;
+  font-family: var(--font-heading) !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-red);
+  margin-bottom: 0.75rem;
+}
+
+.dark .programme-level {
+  color: #E87C6F;
+}
+
+.programme-card p {
+  font-family: var(--font-body) !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+}
+
+.programme-link {
+  font-family: var(--font-heading) !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.programme-link:hover {
+  color: var(--navy) !important;
+}
+
+/* Programme section padding */
+#programme {
+  padding-top: 2rem !important;
+  padding-bottom: 3rem !important;
+  background: var(--bg-light) !important;
+}
+
+#programme .home-section-bg {
+  background: var(--bg-light) !important;
+}
+
+.dark #programme,
+.dark #programme .home-section-bg {
+  background: #0F1A2E !important;
+}
+
+/* ============================================
+   22. v3 SECTIONS NAVIGATION
+   4-card grid linking to main sections
+   ============================================ */
+
+.sections-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1024px) {
+  .sections-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sections-nav {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 }
 
-.showcase-card {
+.section-nav-card {
   display: block;
-  overflow: hidden;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   text-decoration: none !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: var(--navy-light);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.showcase-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-.showcase-card-img {
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.showcase-card-icon {
-  font-size: 3rem;
-  opacity: 0.6;
-}
-
-.showcase-card-body {
-  padding: 1.25rem;
-}
-
-.showcase-card-date {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.showcase-card h3 {
-  font-family: var(--font-heading) !important;
-  color: #ffffff !important;
-  font-size: 1.1rem !important;
-  font-weight: 700 !important;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.3;
-}
-
-.showcase-card p {
-  font-family: var(--font-body);
-  color: rgba(255, 255, 255, 0.6) !important;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Accent bar on the dark section */
-.dark-showcase::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 5px;
-  background: var(--accent);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* ============================================
-   22. TWO-COLUMN LAYOUT + QUOTE BLOCK
-   Mazzucato: text left, italic quote right
-   ============================================ */
-
-.two-col-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-@media (max-width: 768px) {
-  .two-col-section {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-.two-col-role {
-  font-family: var(--font-heading) !important;
-  color: var(--accent) !important;
-  font-size: 1.625rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 1rem;
-}
-
-.dark .two-col-role {
-  color: #79b8ff !important;
-}
-
-.two-col-left p {
-  font-family: var(--font-body);
-  color: var(--text-primary);
-  font-size: 1rem;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-
-.dark .two-col-left p {
-  color: #e0e0e0;
-}
-
-/* CTA button — McKinsey: dark bg, clean, with arrow */
-.mazz-btn {
-  display: inline-block;
-  font-family: var(--font-body) !important;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #ffffff !important;
-  background: var(--navy);
-  padding: 0.85rem 2rem;
-  text-decoration: none !important;
-  transition: background 0.2s ease, transform 0.2s ease;
-  margin-top: 0.5rem;
-  letter-spacing: 0.01em;
-}
-
-.mazz-btn:hover {
-  background: var(--accent);
+.section-nav-card:hover {
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 
-.dark .mazz-btn {
-  background: var(--accent);
-  color: #ffffff !important;
+.dark .section-nav-card {
+  background: #1A2540;
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Quote block — Mazzucato: large italic with quote marks */
-.mazz-quote {
-  position: relative;
+.section-nav-card h3 {
+  font-family: var(--font-heading) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  margin: 0 0 0.5rem 0 !important;
+  letter-spacing: -0.01em;
+}
+
+.dark .section-nav-card h3 {
+  color: #9BB8D3 !important;
+}
+
+.section-nav-card p {
+  font-family: var(--font-body) !important;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary) !important;
+  margin: 0;
+}
+
+#sections-nav {
+  padding-top: 2rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* ============================================
+   23. v3 PULL QUOTE
+   Centered editorial quote — Playfair Display accent
+   ============================================ */
+
+.pull-quote-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pull-quote {
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
   background: none !important;
+  position: relative;
 }
 
-.mazz-quote .quote-mark {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--accent);
-  opacity: 0.25;
+.pull-quote::before {
+  content: '';
   display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-red);
+  margin: 0 auto 2rem auto;
 }
 
-.dark .mazz-quote .quote-mark {
-  color: var(--accent);
-  opacity: 0.35;
-}
-
-.mazz-quote .quote-mark-end {
-  text-align: right;
-  margin-top: -1rem;
-}
-
-.mazz-quote p {
-  font-family: var(--font-heading) !important;
+.pull-quote p {
+  font-family: var(--font-accent) !important;
   font-style: italic;
-  font-size: 1.375rem !important;
-  line-height: 1.55 !important;
-  color: #555 !important;
-  margin: -1rem 0 0.75rem 0;
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  color: var(--text-secondary) !important;
+  margin: 0;
   font-weight: 400;
 }
 
-.dark .mazz-quote p {
-  color: #b0b0b0 !important;
+.dark .pull-quote p {
+  color: #9BB8D3 !important;
 }
 
-.mazz-quote cite {
-  font-family: var(--font-heading) !important;
-  font-style: normal;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--accent);
-  display: block;
-  margin-top: 0.75rem;
+#citation {
+  padding-top: 2rem !important;
+  padding-bottom: 3rem !important;
+  background: var(--bg-light) !important;
 }
 
-.dark .mazz-quote cite {
-  color: #79b8ff;
+#citation .home-section-bg {
+  background: var(--bg-light) !important;
+}
+
+.dark #citation,
+.dark #citation .home-section-bg {
+  background: #0F1A2E !important;
 }

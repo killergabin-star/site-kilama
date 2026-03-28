@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy — Eric Kilama</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   POLICY PAPERS — Economist visual DNA
+   Zero-decoration cards, red fly-titles, serif headlines,
+   3-bar header, editorial grid
+   ═══════════════════════════════════════════════════ */
+:root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red: #C0392B;
+    --gold: #D4A017;
+    --ivory: #F8F7F4;
+    --ivory-deep: #F0EDE8;
+    --anthracite: #2D2D2D;
+    --dark: #0D0D0D;
+    --dark-bg: #1A1A1A;
+    --text-secondary: #5A6068;
+    --border-light: #D9D9D9;
+    --border-dark: rgba(27,42,74,0.08);
+    --white: #FFFFFF;
+
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-serif);
+    font-size: 17px; font-weight: 400;
+    line-height: 1.41;
+    color: var(--dark);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--dark); text-decoration: none; }
+
+/* ═══════════════════════════════════════════════════
+   HEADER — Economist 3-bar pattern
+   Bar 1: sticky nav (57px)
+   Bar 2: centered wordmark (64px)
+   Bar 3: topic quick-links (41px)
+   ═══════════════════════════════════════════════════ */
+.header-bar-1 {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--white);
+    height: 57px; display: flex; align-items: center;
+    border-bottom: 1px solid var(--border-light);
+}
+.header-bar-1-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 32px;
+    width: 100%; display: flex; align-items: center;
+    justify-content: space-between;
+}
+.header-logo-small {
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 800;
+    color: var(--navy); letter-spacing: 1.5px;
+    text-transform: uppercase; text-decoration: none;
+}
+.header-logo-small span { color: var(--blue-fpsq); }
+.header-nav-main {
+    display: flex; gap: 24px; align-items: center;
+}
+.header-nav-main a {
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--dark); text-decoration: none;
+    transition: color 0.2s;
+}
+.header-nav-main a:hover { color: var(--red); }
+.red-dot { color: var(--red); margin-right: 2px; }
+.header-actions {
+    display: flex; gap: 16px; align-items: center;
+}
+.header-actions a {
+    font-family: var(--font-sans);
+    font-size: 13px; font-weight: 500;
+    color: var(--text-secondary); text-decoration: none;
+}
+
+.header-bar-2 {
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    height: 64px;
+    border-bottom: 1px solid var(--dark);
+    padding: 0 32px;
+}
+.header-wordmark {
+    font-family: var(--font-serif);
+    font-size: 28px; font-weight: 400;
+    color: var(--dark);
+    letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none;
+}
+
+.header-bar-3 {
+    background: var(--white);
+    height: 41px; display: flex; align-items: center;
+    border-bottom: 1px solid var(--border-light);
+    overflow-x: auto;
+}
+.header-bar-3-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 32px;
+    width: 100%; display: flex; gap: 24px;
+    align-items: center; white-space: nowrap;
+}
+.header-bar-3 a {
+    font-family: var(--font-sans);
+    font-size: 13px; font-weight: 400;
+    color: var(--dark); text-decoration: none;
+    flex-shrink: 0;
+}
+.header-bar-3 a:hover { color: var(--red); }
+
+/* ═══════════════════════════════════════════════════
+   CONTENT
+   ═══════════════════════════════════════════════════ */
+.content { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.section-block { margin-top: 48px; }
+
+.rule { border: none; border-top: 1px solid var(--dark); margin: 0; }
+.rule--red { border-top: 3px solid var(--red); width: 48px; margin-bottom: 12px; }
+
+.section-heading {
+    font-family: var(--font-sans);
+    font-size: 20px; font-weight: 700;
+    color: var(--dark); margin-bottom: 16px;
+}
+
+.fly-title {
+    font-family: var(--font-sans);
+    font-size: 14px; font-weight: 400;
+    color: var(--red);
+    line-height: 20px; margin-bottom: 4px;
+}
+
+.headline-hero {
+    font-family: var(--font-serif);
+    font-size: 32px; font-weight: 400;
+    line-height: 1.15; color: var(--dark);
+    margin-bottom: 8px;
+}
+.headline-hero a { color: var(--dark); }
+.headline-hero a:hover { color: var(--blue-fpsq); }
+
+.headline-medium {
+    font-family: var(--font-serif);
+    font-size: 19px; font-weight: 500;
+    line-height: 1.25; color: var(--dark);
+}
+.headline-medium a { color: var(--dark); }
+.headline-medium a:hover { color: var(--blue-fpsq); }
+
+.headline-small {
+    font-family: var(--font-serif);
+    font-size: 16px; font-weight: 500;
+    line-height: 1.3; color: var(--dark);
+}
+
+.article-summary {
+    font-family: var(--font-serif);
+    font-size: 16px; font-weight: 400;
+    line-height: 1.5; color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* Zero-decoration cards — Economist signature */
+.card {
+    background: none; border: none;
+    border-radius: 0; box-shadow: none; padding: 0;
+}
+.card-image {
+    width: 100%; aspect-ratio: 16/9;
+    margin-bottom: 8px; overflow: hidden;
+}
+.card-image-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #3a6b8c 0%, var(--navy) 60%, var(--blue-fpsq) 100%);
+}
+.card-image-placeholder.v2 { background: linear-gradient(135deg, #5a3a2c 0%, #8B6914 60%, #3a2a1a 100%); }
+.card-image-placeholder.v3 { background: linear-gradient(135deg, #2a4a2c 0%, #1a3a2a 60%, #4a6a4c 100%); }
+.card-image-placeholder.v4 { background: linear-gradient(135deg, #4a2a4c 0%, #2a1a3e 60%, #6a4a6c 100%); }
+.card-image-placeholder.v5 { background: linear-gradient(135deg, #8a4a2c 0%, #C0392B 60%, #6a2a1c 100%); }
+
+.card-body { padding: 8px 0 0; }
+
+/* Grid layouts */
+.top-stories-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+}
+.hero-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px; align-items: start;
+}
+.hero-image-placeholder {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--blue-fpsq) 0%, var(--navy) 100%);
+    position: relative; overflow: hidden;
+}
+.hero-image-placeholder::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+}
+
+.side-articles { display: flex; flex-direction: column; gap: 0; }
+.side-article {
+    padding: 12px 0;
+    border-top: 1px solid var(--border-light);
+}
+.side-article:first-child { border-top: 1px solid var(--dark); padding-top: 12px; }
+
+.card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 32px; }
+
+.card-horizontal {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 12px; align-items: start;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-light);
+}
+.card-horizontal .card-image {
+    width: 128px; height: 72px;
+    aspect-ratio: auto; margin-bottom: 0;
+}
+
+/* Tag badges */
+.tag-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 6px; border-radius: 2px;
+    margin-right: 6px;
+}
+.tag-brief { background: rgba(192,57,43,0.08); color: var(--red); }
+.tag-vsn { background: rgba(44,95,138,0.08); color: var(--blue-fpsq); }
+.tag-rapport { background: rgba(212,160,23,0.08); color: #B8860B; }
+.tag-vigie { background: rgba(27,42,74,0.08); color: var(--navy); }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — Economist dark
+   ═══════════════════════════════════════════════════ */
+.footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    margin-top: 64px;
+    padding: 48px 0 32px;
+}
+.footer-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 32px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.footer-col-title {
+    font-family: var(--font-sans);
+    font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+.footer-col a {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 15px; color: rgba(255,255,255,0.8);
+    margin-bottom: 8px; text-decoration: none;
+}
+.footer-col a:hover { color: rgba(255,255,255,0.5); }
+.footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.footer-legal {
+    font-family: var(--font-sans);
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    line-height: 1.5; max-width: 500px;
+}
+.footer-legal-links {
+    display: flex; gap: 16px;
+}
+.footer-legal-links a {
+    font-family: var(--font-sans);
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .top-stories-grid { grid-template-columns: 1fr; }
+    .hero-article { grid-template-columns: 1fr; }
+    .card-grid-3 { grid-template-columns: 1fr; }
+    .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HEADER — Economist 3-bar
+     ═══════════════════════════════════════════════════ -->
+<div class="header-bar-1">
+    <div class="header-bar-1-inner">
+        <a href="/" class="header-logo-small">ERIC <span>KILAMA</span></a>
+        <nav class="header-nav-main">
+            <a href="#"><span class="red-dot">●</span> Dernières notes</a>
+            <a href="#">Research</a>
+            <a href="/vigie">Vigie FPSQ</a>
+        </nav>
+        <div class="header-actions">
+            <a href="/about">About</a>
+            <a href="#">FR / EN</a>
+        </div>
+    </div>
+</div>
+<div class="header-bar-2">
+    <a href="/policy" class="header-wordmark">Policy Papers</a>
+</div>
+<nav class="header-bar-3">
+    <div class="header-bar-3-inner">
+        <a href="#briefs">Policy Briefs</a>
+        <a href="#vsn">Notes Stratégiques (VSN)</a>
+        <a href="#rapports">Rapports</a>
+        <a href="#vigie">Vigie FPSQ</a>
+        <a href="#caps">Archives CAPS</a>
+        <a href="#">Géopolitique</a>
+        <a href="#">Commerce</a>
+        <a href="#">Développement</a>
+        <a href="#">Défense</a>
+        <a href="#">Afrique</a>
+        <a href="#">Asie</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     TOP STORIES — hero + side
+     ═══════════════════════════════════════════════════ -->
+<div class="content section-block">
+    <hr class="rule">
+    <div class="top-stories-grid" style="margin-top: 24px;">
+        <div>
+            <div class="hero-article">
+                <div class="hero-image-placeholder"></div>
+                <div class="hero-body">
+                    <div class="fly-title">Policy Brief · IFRI</div>
+                    <h3 class="headline-hero"><a href="#">La fragilité par la base : quand les PME de défense deviennent un risque géopolitique</a></h3>
+                    <p class="article-summary">Les vulnérabilités de la BITD française ne viennent pas du sommet. Ce brief quantifie les fragilités des PME critiques et propose un scoring de risque géopolitique appliqué.</p>
+                    <p style="margin-top:12px;"><span class="tag-badge tag-brief">Brief</span> <span style="font-family:var(--font-sans); font-size:12px; color:var(--text-secondary);">Février 2026 · 12 pages</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="side-articles">
+            <div class="side-article">
+                <div class="fly-title">Note Stratégique</div>
+                <h3 class="headline-small"><a href="#">Iran 2026 : scénarios de crise et transmission aux marchés</a></h3>
+            </div>
+            <div class="side-article">
+                <div class="fly-title">Rapport G7</div>
+                <h3 class="headline-small"><a href="#">Le G7 tient-il ses promesses ? Audit quantitatif de l'APD</a></h3>
+            </div>
+            <div class="side-article">
+                <div class="fly-title">Vigie FPSQ</div>
+                <h3 class="headline-small"><a href="#">Scénarios macrofinanciers France : mise à jour T4 2025</a></h3>
+            </div>
+            <div class="side-article">
+                <div class="fly-title">Working Paper</div>
+                <h3 class="headline-small"><a href="#">Geopolitical Risk and Bilateral Trade: Causal Evidence</a></h3>
+            </div>
+            <div class="side-article">
+                <div class="fly-title">Policy Brief</div>
+                <h3 class="headline-small"><a href="#">PME et résilience géopolitique : approche BCG/McKinsey</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     POLICY BRIEFS — 3-column cards
+     ═══════════════════════════════════════════════════ -->
+<div class="content section-block" id="briefs">
+    <hr class="rule">
+    <h2 class="section-heading" style="margin-top:16px;">Policy Briefs</h2>
+    <div class="card-grid-3">
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Défense · BITD</p>
+                <h3 class="headline-medium"><a href="#">La fragilité par la base : PME de défense et résilience géopolitique</a></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder v2"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Commerce · Tariffs</p>
+                <h3 class="headline-medium"><a href="#">Political Risk Map : scoring PME face aux chocs commerciaux</a></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder v3"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Supply Chain</p>
+                <h3 class="headline-medium"><a href="#">Supply Chain Risk Survey : vulnérabilités critiques identifiées</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     NOTES STRATÉGIQUES — editorial horizontal cards
+     ═══════════════════════════════════════════════════ -->
+<div class="content section-block" id="vsn">
+    <hr class="rule">
+    <h2 class="section-heading" style="margin-top:16px;">Notes Stratégiques (VSN)</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px;">
+        <div class="card-horizontal">
+            <div class="card-image"><div class="card-image-placeholder v4" style="width:128px; height:72px;"></div></div>
+            <div>
+                <p class="fly-title">Iran · Golfe</p>
+                <h3 class="headline-small"><a href="#">Iran 2026 : scénarios de confrontation et transmission aux spreads souverains</a></h3>
+            </div>
+        </div>
+        <div class="card-horizontal">
+            <div class="card-image"><div class="card-image-placeholder v5" style="width:128px; height:72px;"></div></div>
+            <div>
+                <p class="fly-title">Asie · Polycrisis</p>
+                <h3 class="headline-small"><a href="#">Polycrisis Asie : Taiwan, mer de Chine et contagion macrofinancière</a></h3>
+            </div>
+        </div>
+        <div class="card-horizontal">
+            <div class="card-image"><div class="card-image-placeholder" style="width:128px; height:72px;"></div></div>
+            <div>
+                <p class="fly-title">Russie · Sanctions</p>
+                <h3 class="headline-small"><a href="#">L'efficacité des sanctions : mesurer l'impact réel sur le commerce bilatéral</a></h3>
+            </div>
+        </div>
+        <div class="card-horizontal">
+            <div class="card-image"><div class="card-image-placeholder v2" style="width:128px; height:72px;"></div></div>
+            <div>
+                <p class="fly-title">Afrique · Gouvernance</p>
+                <h3 class="headline-small"><a href="#">Aide chinoise et corruption : les canaux de transmission institutionnels</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     RAPPORTS — 4-column grid
+     ═══════════════════════════════════════════════════ -->
+<div class="content section-block" id="rapports">
+    <hr class="rule">
+    <h2 class="section-heading" style="margin-top:16px;">Rapports &amp; études</h2>
+    <div class="card-grid-4">
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder v3"></div></div>
+            <div class="card-body">
+                <p class="fly-title">G7 · APD</p>
+                <h3 class="headline-small"><a href="#">Financement du développement : le G7 tient-il ses promesses ?</a></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder v4"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Prospective</p>
+                <h3 class="headline-small"><a href="#">FPSQ v1.4 — Architecture et résultats du moteur de scénarios</a></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Commerce</p>
+                <h3 class="headline-small"><a href="#">Geoeconomic Dynamics Index : méthodologie et premiers résultats</a></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><div class="card-image-placeholder v5"></div></div>
+            <div class="card-body">
+                <p class="fly-title">Développement</p>
+                <h3 class="headline-small"><a href="#">Dilution de l'aide : les États fragiles face au saupoudrage</a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="footer-col-title">Research</p>
+                <a href="#">Commerce international</a>
+                <a href="#">Risque géopolitique</a>
+                <a href="#">Développement</a>
+                <a href="#">Économie politique</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Outils</p>
+                <a href="#">Vigie FPSQ</a>
+                <a href="#">Données GPR/SME</a>
+                <a href="#">Graphiques interactifs</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">À propos</p>
+                <a href="#">Bio &amp; parcours</a>
+                <a href="#">Publications</a>
+                <a href="#">Enseignement</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <p class="footer-col-title">Institutions</p>
+                <a href="#">CAPS — Quai d'Orsay</a>
+                <a href="#">BETA — U. Lorraine</a>
+                <a href="#">FERDI</a>
+                <a href="#">Fondation France-Asie</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-legal">&copy; 2026 Eric Kilama. Intelligence géopolitique quantifiée.</p>
+            <div class="footer-legal-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
