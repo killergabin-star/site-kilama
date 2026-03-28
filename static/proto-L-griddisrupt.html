@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proto L — Grid Disruption (p5.js Canvas)</title>
+<title>Proto L — Grid Disruption v2 (p5.js Canvas)</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
 <style>
@@ -88,10 +88,6 @@
     color: rgba(255,255,255,0.9);
     background: rgba(255,255,255,0.04);
   }
-  .ctrl-btn.active {
-    border-color: var(--gold-caps);
-    color: var(--gold-caps);
-  }
 
   .hint-line {
     text-align: center;
@@ -123,7 +119,7 @@
 </style>
 </head>
 <body>
-<div class="engine-tag">PROTO L — <span>P5.JS CANVAS — Grid Disruption — Order vs Chaos</span></div>
+<div class="engine-tag">PROTO L v2 — <span>P5.JS CANVAS — Grid Disruption — True Shock Waves</span></div>
 
 <section class="grid-section">
   <div class="container">
@@ -137,12 +133,12 @@
 
     <div class="controls">
       <button class="ctrl-btn" onclick="regenerate()">Régénérer</button>
-      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Pause</button>
       <button class="ctrl-btn" onclick="triggerShockWave()">Choc!</button>
       <button class="ctrl-btn" onclick="resetOrder()">Ordre</button>
     </div>
     <div class="hint-line">
-      SOURIS = zone de disruption · CLIC = onde de choc · Chaque régénération reconfigure les zones de fracture
+      CLIC = onde de choc depuis le point · SOURIS = onde locale · Le choc se propage et déplace les cellules
     </div>
 
     <div class="question-block">
@@ -153,349 +149,376 @@
 </section>
 
 <script>
-// ─── Global state ───────────────────────────────────────────
-const CELL_SIZE = 20;
-const GAP = 2;
+// ─── TRUE SHOCK WAVE GRID DISRUPTION v2 ────────────────────
+// All cells are squares. Waves DISPLACE cells like ripples in water.
+// No shape changes — pure positional + opacity wave propagation.
+
+const CELL_SIZE = 16;
+const GAP = 3;
 const STEP = CELL_SIZE + GAP;
 const CANVAS_W = 1200;
 const CANVAS_H = 500;
 
 let cols, rows;
-let cells = [];
-let shockWaves = [];
+let grid = [];        // 2D array [col][row] of cells
+let flatCells = [];   // flat reference for iteration
+let waves = [];
 let isAnimating = true;
-let noiseOffsetTime = 0;
-let disruptionThreshold = 0.58;
-let mouseDisruptionRadius = 100;
 let orderMode = false;
 let orderTransition = 0;
-let currentNoiseSeed = 0;
 
-// Zone colors
-const ZONE_COLORS = [
-  { r: 192, g: 57, b: 43 },   // red #C0392B
-  { r: 44, g: 95, b: 138 },   // blue #2C5F8A
-  { r: 212, g: 160, b: 23 },  // gold #D4A017
-  { r: 200, g: 208, b: 216 }  // white #C8D0D8
+// Zone palette
+const ZONES = [
+  { r: 192, g: 57, b: 43, label: "ÉTATS" },
+  { r: 44, g: 95, b: 138, label: "ENTREPRISES" },
+  { r: 212, g: 160, b: 23, label: "SYSTÈME INT." },
+  { r: 200, g: 208, b: 216, label: "PROSPECTIF" }
 ];
-const ZONE_LABELS = ["\u00C9TATS", "ENTREPRISES", "SYST\u00C8ME INT.", "PROSPECTIF"];
 
-let cnv;
-
-// ─── Cell class ────────────────────────────────────────────
+// ─── Cell ──────────────────────────────────────────────────
 class Cell {
   constructor(col, row) {
     this.col = col;
     this.row = row;
     this.baseX = col * STEP + STEP / 2;
     this.baseY = row * STEP + STEP / 2;
-    this.size = CELL_SIZE;
-    this.opacity = 0.08;
-    this.cornerRadius = 2;
-    this.isDisrupted = false;
-    this.disruptionStrength = 0;
 
-    // Current animated values
-    this.currentScale = 1;
-    this.currentRotation = 0;
-    this.currentOffsetX = 0;
-    this.currentOffsetY = 0;
+    // Displacement from waves (accumulated)
+    this.displaceX = 0;
+    this.displaceY = 0;
+    this.displaceVX = 0;  // velocity for spring-back
+    this.displaceVY = 0;
 
-    // Animation oscillation phase
-    this.animPhase = Math.random() * Math.PI * 2;
-    this.animSpeed = 0.02 + Math.random() * 0.02;
+    // Visual state
+    this.brightness = 0;    // wave glow (0 = base, 1 = bright flash)
+    this.baseOpacity = 0.12;
 
-    // Mouse disruption decay
-    this.mouseDisruptTimer = 0;
-
-    // Shock wave temporary disruption
-    this.shockDisruptTimer = 0;
-
-    // Zone index
-    this.zoneIndex = Math.floor((this.baseX / CANVAS_W) * 4);
-    if (this.zoneIndex > 3) this.zoneIndex = 3;
-
-    this.assignZoneColor();
-    this.generateDisruptionParams();
-  }
-
-  assignZoneColor() {
+    // Zone color
     let zoneProgress = (this.baseX / CANVAS_W) * 4;
     let zoneIdx = Math.floor(zoneProgress);
     let zoneFrac = zoneProgress - zoneIdx;
+    zoneIdx = Math.min(zoneIdx, 3);
 
-    if (zoneIdx >= 3) {
-      this.zoneColor = { ...ZONE_COLORS[3] };
-      return;
-    }
-
-    // Blend at boundaries
-    let blendWidth = 0.15;
-    if (zoneFrac > (1 - blendWidth)) {
-      let t = (zoneFrac - (1 - blendWidth)) / blendWidth;
-      t = t * t * (3 - 2 * t); // smoothstep
-      let c1 = ZONE_COLORS[zoneIdx];
-      let c2 = ZONE_COLORS[Math.min(zoneIdx + 1, 3)];
-      this.zoneColor = {
-        r: c1.r + (c2.r - c1.r) * t,
-        g: c1.g + (c2.g - c1.g) * t,
-        b: c1.b + (c2.b - c1.b) * t
-      };
-    } else if (zoneFrac < blendWidth && zoneIdx > 0) {
-      let t = 1 - (zoneFrac / blendWidth);
+    // Smooth blend at zone boundaries
+    let blend = 0.12;
+    if (zoneIdx < 3 && zoneFrac > (1 - blend)) {
+      let t = (zoneFrac - (1 - blend)) / blend;
       t = t * t * (3 - 2 * t);
-      let c1 = ZONE_COLORS[zoneIdx];
-      let c2 = ZONE_COLORS[zoneIdx - 1];
-      this.zoneColor = {
-        r: c1.r + (c2.r - c1.r) * t,
-        g: c1.g + (c2.g - c1.g) * t,
-        b: c1.b + (c2.b - c1.b) * t
-      };
+      let c1 = ZONES[zoneIdx], c2 = ZONES[zoneIdx + 1];
+      this.cr = c1.r + (c2.r - c1.r) * t;
+      this.cg = c1.g + (c2.g - c1.g) * t;
+      this.cb = c1.b + (c2.b - c1.b) * t;
     } else {
-      this.zoneColor = { ...ZONE_COLORS[zoneIdx] };
+      this.cr = ZONES[zoneIdx].r;
+      this.cg = ZONES[zoneIdx].g;
+      this.cb = ZONES[zoneIdx].b;
     }
+    this.zoneIdx = zoneIdx;
   }
 
-  generateDisruptionParams() {
-    let rng = Math.random;
-    this.disruptScale = 1.5 + rng() * 1.0;         // 1.5x to 2.5x
-    this.disruptRotation = (15 + rng() * 30) * (rng() > 0.5 ? 1 : -1) * Math.PI / 180;
-    this.disruptOffsetX = (5 + rng() * 10) * (rng() > 0.5 ? 1 : -1);
-    this.disruptOffsetY = (5 + rng() * 10) * (rng() > 0.5 ? 1 : -1);
-    this.disruptOpacity = 0.4 + rng() * 0.4;
-
-    // Shape: 70% square, 15% circle, 15% diamond
-    let shapeRoll = rng();
-    this.disruptShape = shapeRoll < 0.7 ? 'square' : (shapeRoll < 0.85 ? 'circle' : 'diamond');
-  }
-
-  updateDisruption(noiseVal) {
-    // Perlin noise determines base disruption (clustered)
-    let baseDisrupt = noiseVal > disruptionThreshold ? 1 : 0;
-    if (noiseVal > disruptionThreshold - 0.05 && noiseVal <= disruptionThreshold) {
-      baseDisrupt = (noiseVal - (disruptionThreshold - 0.05)) / 0.05;
-    }
-
-    // Mouse influence
-    let mouseStr = 0;
-    if (this.mouseDisruptTimer > 0) {
-      mouseStr = Math.min(this.mouseDisruptTimer / 60, 1);
-    }
-
-    // Shock wave influence
-    let shockStr = 0;
-    if (this.shockDisruptTimer > 0) {
-      shockStr = Math.min(this.shockDisruptTimer / 40, 1);
-    }
-
-    // Order mode suppresses disruption
-    let orderSuppress = orderMode ? orderTransition : 0;
-
-    // Combined disruption strength
-    this.disruptionStrength = Math.max(baseDisrupt, mouseStr, shockStr) * (1 - orderSuppress);
-    this.isDisrupted = this.disruptionStrength > 0.1;
-
-    // Compute targets
-    let targetScale = 1 + (this.disruptScale - 1) * this.disruptionStrength;
-    let targetRot = this.disruptRotation * this.disruptionStrength;
-    let targetOX = this.disruptOffsetX * this.disruptionStrength;
-    let targetOY = this.disruptOffsetY * this.disruptionStrength;
-    let targetOp = 0.08 + (this.disruptOpacity - 0.08) * this.disruptionStrength;
-
-    // Smooth interpolation
-    let lerpSpeed = 0.08;
-    this.currentScale += (targetScale - this.currentScale) * lerpSpeed;
-    this.currentRotation += (targetRot - this.currentRotation) * lerpSpeed;
-    this.currentOffsetX += (targetOX - this.currentOffsetX) * lerpSpeed;
-    this.currentOffsetY += (targetOY - this.currentOffsetY) * lerpSpeed;
-    this.opacity += (targetOp - this.opacity) * lerpSpeed;
-
-    // Continuous oscillation for disrupted cells
-    if (this.isDisrupted && isAnimating) {
-      this.animPhase += this.animSpeed;
-      let oscRot = Math.sin(this.animPhase) * 5 * Math.PI / 180 * this.disruptionStrength;
-      let oscScale = Math.sin(this.animPhase * 0.7) * 0.1 * this.disruptionStrength;
-      this.currentRotation += oscRot;
-      this.currentScale += oscScale;
-    }
-
-    // Decay timers
-    if (this.mouseDisruptTimer > 0) this.mouseDisruptTimer -= 1;
-    if (this.shockDisruptTimer > 0) this.shockDisruptTimer -= 1;
-  }
-
-  render() {
-    let drawX = this.baseX + this.currentOffsetX;
-    let drawY = this.baseY + this.currentOffsetY;
-    let drawSize = CELL_SIZE * this.currentScale;
-    let c = this.zoneColor;
-    let alpha = this.opacity * 255;
-
-    push();
-    translate(drawX, drawY);
-    rotate(this.currentRotation);
-    noStroke();
-    fill(c.r, c.g, c.b, alpha);
-
-    let currentShape = this.isDisrupted ? this.disruptShape : 'square';
-
-    if (currentShape === 'square') {
-      rectMode(CENTER);
-      rect(0, 0, drawSize, drawSize, this.cornerRadius * this.currentScale);
-    } else if (currentShape === 'circle') {
-      ellipse(0, 0, drawSize, drawSize);
-    } else if (currentShape === 'diamond') {
-      beginShape();
-      let half = drawSize / 2;
-      vertex(0, -half);
-      vertex(half, 0);
-      vertex(0, half);
-      vertex(-half, 0);
-      endShape(CLOSE);
-    }
-
-    pop();
-  }
-}
-
-// ─── Shock Wave class ──────────────────────────────────────
-class ShockWave {
-  constructor(x, y, zoneColor) {
-    this.x = x;
-    this.y = y;
-    this.radius = 0;
-    this.maxRadius = 250;
-    this.speed = 3.5;
-    this.life = 1;
-    this.ringWidth = 40;
-    this.color = zoneColor || { r: 200, g: 208, b: 216 };
-    this.done = false;
+  applyForce(fx, fy, glow) {
+    this.displaceVX += fx;
+    this.displaceVY += fy;
+    this.brightness = Math.max(this.brightness, glow);
   }
 
   update() {
+    // Spring physics: pull back to origin
+    let springK = 0.04;
+    let damping = 0.88;
+
+    // Spring force toward origin
+    this.displaceVX += (-this.displaceX * springK);
+    this.displaceVY += (-this.displaceY * springK);
+
+    // Damping
+    this.displaceVX *= damping;
+    this.displaceVY *= damping;
+
+    // Integrate
+    this.displaceX += this.displaceVX;
+    this.displaceY += this.displaceVY;
+
+    // Clamp max displacement
+    let maxD = STEP * 2.5;
+    this.displaceX = constrain(this.displaceX, -maxD, maxD);
+    this.displaceY = constrain(this.displaceY, -maxD, maxD);
+
+    // Brightness decay
+    this.brightness *= 0.92;
+
+    // Order mode: accelerate return
+    if (orderMode) {
+      this.displaceX *= 0.9;
+      this.displaceY *= 0.9;
+      this.displaceVX *= 0.8;
+      this.displaceVY *= 0.8;
+      this.brightness *= 0.85;
+    }
+  }
+
+  render() {
+    let dx = this.baseX + this.displaceX;
+    let dy = this.baseY + this.displaceY;
+
+    // Displacement magnitude for visual effects
+    let dispMag = Math.sqrt(this.displaceX * this.displaceX + this.displaceY * this.displaceY);
+    let dispNorm = Math.min(dispMag / (STEP * 1.5), 1);
+
+    // Opacity: base + displacement boost + wave glow
+    let alpha = (this.baseOpacity + dispNorm * 0.55 + this.brightness * 0.5) * 255;
+
+    // Color: brighten with wave glow
+    let glowMix = this.brightness;
+    let r = this.cr + (255 - this.cr) * glowMix * 0.6;
+    let g = this.cg + (255 - this.cg) * glowMix * 0.6;
+    let b = this.cb + (255 - this.cb) * glowMix * 0.6;
+
+    // Scale: cells compress slightly when displaced, expand at wavefront
+    let scale = 1 + this.brightness * 0.3 - dispNorm * 0.15;
+
+    let s = CELL_SIZE * scale;
+
+    noStroke();
+    fill(r, g, b, alpha);
+    rectMode(CENTER);
+    rect(dx, dy, s, s, 2);
+
+    // Bright wavefront highlight: small bright dot at displaced position
+    if (this.brightness > 0.3) {
+      fill(255, 255, 255, this.brightness * 80);
+      rect(dx, dy, s * 0.4, s * 0.4, 1);
+    }
+  }
+}
+
+// ─── Shock Wave ────────────────────────────────────────────
+class ShockWave {
+  constructor(x, y, strength) {
+    this.x = x;
+    this.y = y;
+    this.radius = 0;
+    this.prevRadius = 0;
+    this.speed = 4;
+    this.strength = strength || 1;
+    this.maxRadius = Math.max(CANVAS_W, CANVAS_H) * 0.8;
+    this.life = 1;
+    this.done = false;
+
+    // Wave properties
+    this.waveWidth = 35;      // width of the wavefront band
+    this.pushForce = 2.8;     // radial push force on cells
+    this.secondaryWaveDelay = 12; // frames delay for secondary wave
+    this.frameCount = 0;
+
+    // Visual ring color from nearest zone
+    let zoneIdx = Math.floor((x / CANVAS_W) * 4);
+    zoneIdx = constrain(zoneIdx, 0, 3);
+    this.zc = ZONES[zoneIdx];
+  }
+
+  update() {
+    this.frameCount++;
+    this.prevRadius = this.radius;
     this.radius += this.speed;
-    this.life = 1 - (this.radius / this.maxRadius);
+    this.life = Math.max(0, 1 - (this.radius / this.maxRadius));
+
     if (this.life <= 0) {
       this.done = true;
-      this.life = 0;
+      return;
     }
 
-    // Affect nearby cells
-    for (let cell of cells) {
-      let d = Math.hypot(cell.baseX - this.x, cell.baseY - this.y);
-      if (d > this.radius - this.ringWidth && d < this.radius + this.ringWidth) {
-        let proximity = 1 - Math.abs(d - this.radius) / this.ringWidth;
-        cell.shockDisruptTimer = Math.max(cell.shockDisruptTimer, proximity * 50 * this.life);
+    // Push cells at the wavefront
+    let innerR = this.radius - this.waveWidth;
+    let outerR = this.radius + this.waveWidth * 0.3;
+
+    for (let cell of flatCells) {
+      let dx = cell.baseX - this.x;
+      let dy = cell.baseY - this.y;
+      let d = Math.sqrt(dx * dx + dy * dy);
+
+      if (d < 1) continue; // skip epicenter
+
+      // Primary wavefront
+      if (d >= innerR && d <= outerR) {
+        let proximity = 1 - Math.abs(d - this.radius) / this.waveWidth;
+        proximity = proximity * proximity; // sharpen the peak
+
+        let force = proximity * this.pushForce * this.life * this.strength;
+        let nx = dx / d; // normalized direction
+        let ny = dy / d;
+
+        cell.applyForce(nx * force, ny * force, proximity * this.life * 0.8);
+      }
+
+      // Secondary trailing wave (inward pull — suction effect)
+      let trailR = this.radius - this.waveWidth * 2.5;
+      let trailWidth = this.waveWidth * 1.5;
+      if (this.frameCount > this.secondaryWaveDelay && trailR > 0) {
+        if (d >= trailR - trailWidth && d <= trailR + trailWidth * 0.3) {
+          let trailProx = 1 - Math.abs(d - trailR) / trailWidth;
+          trailProx = trailProx * trailProx;
+          let pullForce = trailProx * this.pushForce * 0.3 * this.life * this.strength;
+          let nx = dx / d;
+          let ny = dy / d;
+          // Pull INWARD (negative direction)
+          cell.applyForce(-nx * pullForce, -ny * pullForce, trailProx * this.life * 0.15);
+        }
       }
     }
   }
 
   render() {
     if (this.done) return;
-    let c = this.color;
+
+    let c = this.zc;
+    let alpha = this.life;
+
+    // Main wavefront ring — bright, visible
     noFill();
-    strokeWeight(2);
-    stroke(c.r, c.g, c.b, this.life * 40);
+    strokeWeight(3);
+    stroke(c.r, c.g, c.b, alpha * 120);
     ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
-    // Inner ring
-    stroke(c.r, c.g, c.b, this.life * 20);
-    ellipse(this.x, this.y, (this.radius - 10) * 2, (this.radius - 10) * 2);
+
+    // Outer glow ring
+    strokeWeight(1.5);
+    stroke(255, 255, 255, alpha * 40);
+    ellipse(this.x, this.y, (this.radius + 8) * 2, (this.radius + 8) * 2);
+
+    // Inner bright ring
+    strokeWeight(1);
+    stroke(c.r, c.g, c.b, alpha * 60);
+    ellipse(this.x, this.y, (this.radius - 12) * 2, (this.radius - 12) * 2);
+
+    // Trailing secondary wave ring
+    if (this.frameCount > this.secondaryWaveDelay) {
+      let trailR = this.radius - this.waveWidth * 2.5;
+      if (trailR > 0) {
+        strokeWeight(1);
+        stroke(c.r, c.g, c.b, alpha * 30);
+        ellipse(this.x, this.y, trailR * 2, trailR * 2);
+      }
+    }
+
+    // Epicenter flash (first 20 frames)
+    if (this.frameCount < 20) {
+      let flashAlpha = (1 - this.frameCount / 20) * 150;
+      fill(255, 255, 255, flashAlpha);
+      noStroke();
+      ellipse(this.x, this.y, 15 - this.frameCount * 0.5, 15 - this.frameCount * 0.5);
+    }
+  }
+}
+
+// ─── Continuous mouse wave (gentle) ────────────────────────
+let mouseWaveTimer = 0;
+
+function applyMouseWave() {
+  if (!isAnimating || orderMode) return;
+  let mx = mouseX, my = mouseY;
+  if (mx < 0 || mx > CANVAS_W || my < 0 || my > CANVAS_H) return;
+
+  let radius = 80;
+  let force = 0.6;
+
+  for (let cell of flatCells) {
+    let dx = cell.baseX - mx;
+    let dy = cell.baseY - my;
+    let d = Math.sqrt(dx * dx + dy * dy);
+
+    if (d < radius && d > 1) {
+      let proximity = 1 - d / radius;
+      proximity = proximity * proximity;
+      let nx = dx / d;
+      let ny = dy / d;
+      cell.applyForce(nx * force * proximity, ny * force * proximity, proximity * 0.15);
+    }
   }
 }
 
 // ─── p5.js Setup ───────────────────────────────────────────
 function setup() {
   let container = document.getElementById('grid-container');
-  cnv = createCanvas(CANVAS_W, CANVAS_H);
+  let cnv = createCanvas(CANVAS_W, CANVAS_H);
   cnv.parent(container);
   pixelDensity(1);
-
-  currentNoiseSeed = Math.floor(Math.random() * 10000);
-  noiseSeed(currentNoiseSeed);
 
   cols = Math.ceil(CANVAS_W / STEP);
   rows = Math.ceil(CANVAS_H / STEP);
 
-  initCells();
+  initGrid();
 
-  // Auto shock wave every 6 seconds
+  // Auto shock wave every 5 seconds
   setInterval(() => {
     if (isAnimating && !orderMode) {
       autoShockWave();
     }
-  }, 6000);
+  }, 5000);
 }
 
-function initCells() {
-  cells = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      cells.push(new Cell(c, r));
+function initGrid() {
+  grid = [];
+  flatCells = [];
+  for (let c = 0; c < cols; c++) {
+    grid[c] = [];
+    for (let r = 0; r < rows; r++) {
+      let cell = new Cell(c, r);
+      grid[c][r] = cell;
+      flatCells.push(cell);
     }
   }
 }
 
-// ─── p5.js Draw loop ──────────────────────────────────────
+// ─── Draw loop ─────────────────────────────────────────────
 function draw() {
   background(27, 42, 74);
 
-  if (isAnimating) {
-    noiseOffsetTime += 0.002;
-  }
-
-  // Order mode transition
+  // Order transition
   if (orderMode && orderTransition < 1) {
-    orderTransition = Math.min(orderTransition + 0.02, 1);
+    orderTransition = Math.min(orderTransition + 0.015, 1);
   } else if (!orderMode && orderTransition > 0) {
-    orderTransition = Math.max(orderTransition - 0.02, 0);
+    orderTransition = Math.max(orderTransition - 0.03, 0);
   }
 
-  // Mouse position
-  let mx = mouseX;
-  let my = mouseY;
-  let mouseInCanvas = mx >= 0 && mx <= CANVAS_W && my >= 0 && my <= CANVAS_H;
+  // Mouse continuous wave
+  applyMouseWave();
 
-  // Update and render cells
-  for (let cell of cells) {
-    // Perlin noise for disruption clustering
-    let nx = cell.col * 0.12 + noiseOffsetTime * 0.3;
-    let ny = cell.row * 0.12 + noiseOffsetTime * 0.2;
-    let noiseVal = noise(nx, ny, noiseOffsetTime);
+  // Update waves
+  for (let w of waves) {
+    w.update();
+  }
+  waves = waves.filter(w => !w.done);
 
-    // Mouse proximity disruption
-    if (mouseInCanvas && !orderMode) {
-      let d = Math.hypot(cell.baseX - mx, cell.baseY - my);
-      if (d < mouseDisruptionRadius) {
-        let strength = 1 - (d / mouseDisruptionRadius);
-        cell.mouseDisruptTimer = Math.max(cell.mouseDisruptTimer, strength * 120);
-      }
-    }
+  // Update cells
+  for (let cell of flatCells) {
+    cell.update();
+  }
 
-    cell.updateDisruption(noiseVal);
+  // Render cells
+  for (let cell of flatCells) {
     cell.render();
   }
 
-  // Update and render shock waves
-  for (let wave of shockWaves) {
-    wave.update();
-    wave.render();
+  // Render wave rings (on top)
+  for (let w of waves) {
+    w.render();
   }
-  shockWaves = shockWaves.filter(w => !w.done);
 
-  // Disruption index overlay
+  // Disruption index
   drawDisruptionIndex();
 
   // Zone labels
   drawZoneLabels();
 }
 
-// ─── Disruption Index ─────────────────────────────────────
+// ─── Disruption index ──────────────────────────────────────
 function drawDisruptionIndex() {
-  let disrupted = 0;
-  for (let cell of cells) {
-    if (cell.disruptionStrength > 0.15) disrupted++;
+  let totalDisp = 0;
+  for (let cell of flatCells) {
+    totalDisp += Math.sqrt(cell.displaceX * cell.displaceX + cell.displaceY * cell.displaceY);
   }
-  let pct = ((disrupted / cells.length) * 100).toFixed(1);
+  let avgDisp = totalDisp / flatCells.length;
+  let pct = Math.min(100, (avgDisp / (STEP * 0.8)) * 100).toFixed(1);
 
   let labelText = "DISRUPTION: " + pct + "%";
   textFont('JetBrains Mono');
@@ -506,96 +529,92 @@ function drawDisruptionIndex() {
   fill(27, 42, 74, 200);
   rect(CANVAS_W - tw - 30, 10, tw + 20, 24, 2);
 
-  fill(200, 208, 216, 180);
+  // Color based on level
+  let r = 200, g = 208, b = 216;
+  if (pct > 40) { r = 192; g = 57; b = 43; }
+  else if (pct > 15) { r = 212; g = 160; b = 23; }
+
+  fill(r, g, b, 200);
   textAlign(RIGHT, TOP);
   text(labelText, CANVAS_W - 20, 16);
 }
 
-// ─── Zone Labels ──────────────────────────────────────────
+// ─── Zone labels ───────────────────────────────────────────
 function drawZoneLabels() {
   textFont('JetBrains Mono');
   textSize(10);
   textAlign(CENTER, BOTTOM);
-
   for (let i = 0; i < 4; i++) {
-    let zoneCenter = (i * 0.25 + 0.125) * CANVAS_W;
-    let c = ZONE_COLORS[i];
-    fill(c.r, c.g, c.b, 90);
+    let cx = (i * 0.25 + 0.125) * CANVAS_W;
+    let z = ZONES[i];
+    fill(z.r, z.g, z.b, 90);
     noStroke();
-    text(ZONE_LABELS[i], zoneCenter, CANVAS_H - 12);
+    text(z.label, cx, CANVAS_H - 12);
   }
 }
 
-// ─── Mouse click triggers shock wave ──────────────────────
+// ─── Mouse click = shock wave ──────────────────────────────
 function mousePressed() {
-  if (mouseX >= 0 && mouseX <= CANVAS_W && mouseY >= 0 && mouseY <= CANVAS_H) {
-    let zoneIdx = Math.floor((mouseX / CANVAS_W) * 4);
-    if (zoneIdx > 3) zoneIdx = 3;
-    shockWaves.push(new ShockWave(mouseX, mouseY, ZONE_COLORS[zoneIdx]));
-    if (orderMode) {
-      orderMode = false;
-    }
+  let mx = mouseX, my = mouseY;
+  if (mx >= 0 && mx <= CANVAS_W && my >= 0 && my <= CANVAS_H) {
+    waves.push(new ShockWave(mx, my, 1.2));
+    if (orderMode) orderMode = false;
   }
 }
 
-// ─── Auto shock wave from disrupted cell ──────────────────
+// ─── Auto shock wave ──────────────────────────────────────
 function autoShockWave() {
-  let disruptedCells = cells.filter(c => c.disruptionStrength > 0.5);
-  if (disruptedCells.length === 0) disruptedCells = cells;
-  let source = disruptedCells[Math.floor(Math.random() * disruptedCells.length)];
-  let zoneIdx = source.zoneIndex;
-  shockWaves.push(new ShockWave(source.baseX, source.baseY, ZONE_COLORS[zoneIdx]));
+  // Pick a random position, weighted toward zone boundaries (where transmission happens)
+  let positions = [
+    CANVAS_W * 0.25,  // boundary States/Enterprises
+    CANVAS_W * 0.50,  // boundary Enterprises/SystInt
+    CANVAS_W * 0.75,  // boundary SystInt/Prospective
+    CANVAS_W * Math.random()  // random
+  ];
+  let x = positions[Math.floor(Math.random() * positions.length)];
+  x += (Math.random() - 0.5) * CANVAS_W * 0.1;
+  let y = CANVAS_H * (0.2 + Math.random() * 0.6);
+
+  waves.push(new ShockWave(x, y, 0.8 + Math.random() * 0.4));
 }
 
-// ─── Controls ─────────────────────────────────────────────
+// ─── Controls ──────────────────────────────────────────────
 function regenerate() {
-  currentNoiseSeed = Math.floor(Math.random() * 10000);
-  noiseSeed(currentNoiseSeed);
-  noiseOffsetTime = 0;
-  shockWaves = [];
+  waves = [];
   orderMode = false;
   orderTransition = 0;
-  for (let cell of cells) {
-    cell.generateDisruptionParams();
-    cell.mouseDisruptTimer = 0;
-    cell.shockDisruptTimer = 0;
-    cell.currentScale = 1;
-    cell.currentRotation = 0;
-    cell.currentOffsetX = 0;
-    cell.currentOffsetY = 0;
-    cell.opacity = 0.08;
+  for (let cell of flatCells) {
+    cell.displaceX = 0;
+    cell.displaceY = 0;
+    cell.displaceVX = 0;
+    cell.displaceVY = 0;
+    cell.brightness = 0;
   }
 }
 
 function toggleAnimation() {
   isAnimating = !isAnimating;
-  let btn = document.getElementById('btn-anim');
-  btn.classList.toggle('active', isAnimating);
+  document.getElementById('btn-anim').textContent = isAnimating ? 'Pause' : 'Play';
 }
 
 function triggerShockWave() {
+  // Strong shock from a random zone center
   let zone = Math.floor(Math.random() * 4);
-  let x = (zone * 0.25 + 0.125) * CANVAS_W;
-  let y = CANVAS_H / 2 + (Math.random() - 0.5) * 100;
-  shockWaves.push(new ShockWave(x, y, ZONE_COLORS[zone]));
-  if (orderMode) {
-    orderMode = false;
-  }
+  let x = (zone * 0.25 + 0.125) * CANVAS_W + (Math.random() - 0.5) * 60;
+  let y = CANVAS_H * (0.3 + Math.random() * 0.4);
+  waves.push(new ShockWave(x, y, 1.5));
+  if (orderMode) orderMode = false;
 }
 
 function resetOrder() {
   orderMode = true;
-  shockWaves = [];
-  for (let cell of cells) {
-    cell.mouseDisruptTimer = 0;
-    cell.shockDisruptTimer = 0;
-  }
+  waves = [];
 }
 
-// ─── Prevent scroll when interacting with canvas ──────────
+// Prevent scroll on canvas
 document.addEventListener('DOMContentLoaded', () => {
-  let wrapper = document.getElementById('grid-container');
-  wrapper.addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
+  document.getElementById('grid-container')
+    .addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
 });
 </script>
 </body>

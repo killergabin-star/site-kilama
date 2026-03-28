@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto M — Transmission Network (Data-Driven p5.js)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--blue-fpsq); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: var(--gold-caps); }
+
+  .section {
+    padding: 5rem 0 3rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.6rem; max-width: 700px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.45);
+    margin-bottom: 2rem; max-width: 600px;
+  }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    background: linear-gradient(135deg, #0d1525 0%, #1B2A4A 50%, #162240 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .controls {
+    display: flex; gap: 1rem; justify-content: center;
+    margin-top: 1.5rem; flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent; color: rgba(255,255,255,0.5);
+    cursor: pointer; letter-spacing: 0.1em; transition: all 0.2s;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.03);
+  }
+  .ctrl-btn.shock-btn { border-color: rgba(192,57,43,0.4); color: rgba(192,57,43,0.7); }
+  .ctrl-btn.shock-btn:hover { border-color: #C0392B; color: #C0392B; background: rgba(192,57,43,0.08); }
+
+  .hint-line {
+    text-align: center; margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 0.1em;
+  }
+
+  .legend {
+    display: flex; gap: 2rem; justify-content: center; margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex; align-items: center; gap: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: rgba(255,255,255,0.4); letter-spacing: 0.05em;
+  }
+  .legend-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO M — <span>DATA-DRIVEN</span> — Transmission Network — Real Coefficients</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">Programme de recherche — Cartographie</div>
+    <div class="section-title">Comment les chocs se transmettent</div>
+    <div class="section-sub">Chaque lien est un coefficient estimé. Chaque flux de particules une transmission mesurée. Cliquez sur un choc pour voir sa propagation à travers le système.</div>
+
+    <div class="canvas-wrapper" id="net-container"></div>
+
+    <div class="controls">
+      <button class="ctrl-btn shock-btn" onclick="fireShock(0)">Crise géopolitique</button>
+      <button class="ctrl-btn shock-btn" onclick="fireShock(1)">Guerre commerciale</button>
+      <button class="ctrl-btn shock-btn" onclick="fireShock(2)">Sanctions</button>
+      <button class="ctrl-btn shock-btn" onclick="fireShock(3)">Contagion financière</button>
+      <button class="ctrl-btn" onclick="fireAllShocks()">Polycrisis</button>
+      <button class="ctrl-btn" onclick="resetNetwork()">Reset</button>
+    </div>
+    <div class="hint-line">
+      CLIC sur un noeud = activer le choc · L'épaisseur des flux = force de transmission estimée
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#C0392B;"></div>Chocs</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#2C5F8A;"></div>Canaux</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#D4A017;"></div>Indicateurs</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#C8D0D8;"></div>Résultats macro</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// PROTO M — DATA-DRIVEN TRANSMISSION NETWORK
+// ═══════════════════════════════════════════════════════════
+// Every node = a real variable from the research programme
+// Every edge = an estimated transmission coefficient
+// Particles flow along edges proportionally to coefficient strength
+// Clicking a shock triggers cascading activation through the network
+
+const W = 1200, H = 560;
+
+// ─── DATA: Research programme variables ────────────────────
+// Node types: shock (red), channel (blue), indicator (gold), outcome (white)
+const NODE_DATA = [
+  // SHOCKS (col 1) — x ~120
+  { id: 'gpr',     label: 'GPR Index',         type: 'shock',     x: 100, y: 100, desc: 'Caldara & Iacoviello' },
+  { id: 'trade_w', label: 'Guerre comm.',       type: 'shock',     x: 100, y: 230, desc: 'Tarifs, quotas, embargos' },
+  { id: 'sanct',   label: 'Sanctions',          type: 'shock',     x: 100, y: 360, desc: 'OFAC, EU restrictive' },
+  { id: 'fin_con', label: 'Contagion fin.',     type: 'shock',     x: 100, y: 480, desc: 'Spreads, CDS, fuite K' },
+
+  // CHANNELS (col 2) — x ~380
+  { id: 'trade',   label: 'Commerce',           type: 'channel',   x: 370, y: 70,  desc: 'HS-6, 337k firmes' },
+  { id: 'fdi',     label: 'IDE',                type: 'channel',   x: 370, y: 170, desc: 'Greenfield + M&A' },
+  { id: 'confid',  label: 'Confiance',          type: 'channel',   x: 370, y: 270, desc: 'PMI, consumer sentiment' },
+  { id: 'supply',  label: 'Supply chain',       type: 'channel',   x: 370, y: 370, desc: 'GVC exposure, inputs' },
+  { id: 'aid',     label: 'Aide publique',      type: 'channel',   x: 370, y: 470, desc: 'APD, aide liée, China Aid' },
+
+  // INDICATORS (col 3) — x ~650
+  { id: 'exp',     label: 'Exports',            type: 'indicator', x: 640, y: 80,  desc: 'Volume, valeur, diversité' },
+  { id: 'inv',     label: 'Investissement',     type: 'indicator', x: 640, y: 170, desc: 'FBCF, capex privé' },
+  { id: 'emp',     label: 'Emploi PME',         type: 'indicator', x: 640, y: 260, desc: 'Embauches, licenciements' },
+  { id: 'price',   label: 'Prix',               type: 'indicator', x: 640, y: 350, desc: 'Input costs, PPI' },
+  { id: 'debt',    label: 'Dette souveraine',   type: 'indicator', x: 640, y: 440, desc: 'Spreads, ratings' },
+
+  // OUTCOMES (col 4) — x ~920
+  { id: 'gdp',     label: 'PIB',                type: 'outcome',   x: 920, y: 120, desc: 'Croissance trimestrielle' },
+  { id: 'stab',    label: 'Stabilité',          type: 'outcome',   x: 920, y: 250, desc: 'Indice fragilité étatique' },
+  { id: 'ineq',    label: 'Inégalités',         type: 'outcome',   x: 920, y: 380, desc: 'Gini, pauvreté, accès' },
+  { id: 'resil',   label: 'Résilience',         type: 'outcome',   x: 920, y: 480, desc: 'Capacité d\'absorption' },
+
+  // SCENARIOS (far right) — x ~1100
+  { id: 'scen_c',  label: 'Coopératif',         type: 'scenario',  x: 1090, y: 160, desc: 'p = 0.25' },
+  { id: 'scen_b',  label: 'Central',            type: 'scenario',  x: 1090, y: 290, desc: 'p = 0.45' },
+  { id: 'scen_a',  label: 'Adverse',            type: 'scenario',  x: 1090, y: 420, desc: 'p = 0.30' },
+];
+
+// ─── EDGES: Transmission coefficients ──────────────────────
+// weight = estimated coefficient strength (0-1), delay = propagation frames
+const EDGE_DATA = [
+  // Shocks → Channels
+  { from: 'gpr',     to: 'trade',   weight: 0.82, delay: 5 },
+  { from: 'gpr',     to: 'fdi',     weight: 0.65, delay: 8 },
+  { from: 'gpr',     to: 'confid',  weight: 0.91, delay: 3 },
+  { from: 'gpr',     to: 'supply',  weight: 0.58, delay: 10 },
+  { from: 'trade_w', to: 'trade',   weight: 0.95, delay: 3 },
+  { from: 'trade_w', to: 'supply',  weight: 0.78, delay: 6 },
+  { from: 'trade_w', to: 'price',   weight: 0.62, delay: 12 },
+  { from: 'sanct',   to: 'trade',   weight: 0.70, delay: 4 },
+  { from: 'sanct',   to: 'fdi',     weight: 0.85, delay: 6 },
+  { from: 'sanct',   to: 'aid',     weight: 0.55, delay: 15 },
+  { from: 'fin_con', to: 'fdi',     weight: 0.88, delay: 2 },
+  { from: 'fin_con', to: 'confid',  weight: 0.93, delay: 2 },
+  { from: 'fin_con', to: 'debt',    weight: 0.80, delay: 5 },
+
+  // Channels → Indicators
+  { from: 'trade',   to: 'exp',     weight: 0.90, delay: 4 },
+  { from: 'trade',   to: 'price',   weight: 0.55, delay: 8 },
+  { from: 'fdi',     to: 'inv',     weight: 0.85, delay: 6 },
+  { from: 'fdi',     to: 'emp',     weight: 0.50, delay: 12 },
+  { from: 'confid',  to: 'inv',     weight: 0.72, delay: 4 },
+  { from: 'confid',  to: 'emp',     weight: 0.68, delay: 8 },
+  { from: 'supply',  to: 'exp',     weight: 0.60, delay: 6 },
+  { from: 'supply',  to: 'price',   weight: 0.75, delay: 5 },
+  { from: 'aid',     to: 'debt',    weight: 0.45, delay: 20 },
+  { from: 'aid',     to: 'inv',     weight: 0.35, delay: 18 },
+
+  // Indicators → Outcomes
+  { from: 'exp',     to: 'gdp',     weight: 0.80, delay: 6 },
+  { from: 'inv',     to: 'gdp',     weight: 0.85, delay: 5 },
+  { from: 'emp',     to: 'gdp',     weight: 0.65, delay: 8 },
+  { from: 'emp',     to: 'ineq',    weight: 0.72, delay: 10 },
+  { from: 'price',   to: 'ineq',    weight: 0.55, delay: 12 },
+  { from: 'debt',    to: 'stab',    weight: 0.78, delay: 8 },
+  { from: 'debt',    to: 'resil',   weight: 0.60, delay: 10 },
+  { from: 'gdp',     to: 'stab',    weight: 0.50, delay: 6 },
+  { from: 'gdp',     to: 'resil',   weight: 0.55, delay: 8 },
+  { from: 'ineq',    to: 'stab',    weight: 0.65, delay: 10 },
+
+  // Outcomes → Scenarios
+  { from: 'gdp',     to: 'scen_c',  weight: 0.40, delay: 10 },
+  { from: 'gdp',     to: 'scen_b',  weight: 0.60, delay: 8 },
+  { from: 'gdp',     to: 'scen_a',  weight: 0.35, delay: 12 },
+  { from: 'stab',    to: 'scen_a',  weight: 0.75, delay: 8 },
+  { from: 'stab',    to: 'scen_b',  weight: 0.50, delay: 10 },
+  { from: 'resil',   to: 'scen_c',  weight: 0.70, delay: 8 },
+  { from: 'ineq',    to: 'scen_a',  weight: 0.60, delay: 10 },
+
+  // Feedback loops (subtle)
+  { from: 'stab',    to: 'confid',  weight: 0.30, delay: 25 },
+  { from: 'resil',   to: 'supply',  weight: 0.25, delay: 30 },
+];
+
+// ─── COLOR MAP ─────────────────────────────────────────────
+const TYPE_COLORS = {
+  shock:     { r: 192, g: 57, b: 43 },
+  channel:   { r: 44, g: 95, b: 138 },
+  indicator: { r: 212, g: 160, b: 23 },
+  outcome:   { r: 200, g: 208, b: 216 },
+  scenario:  { r: 160, g: 180, b: 200 },
+};
+
+const TYPE_RADIUS = {
+  shock: 28, channel: 22, indicator: 20, outcome: 22, scenario: 18
+};
+
+// ─── Runtime objects ───────────────────────────────────────
+let nodes = [];
+let edges = [];
+let flowParticles = [];
+let hoveredNode = null;
+
+// ─── Node class ────────────────────────────────────────────
+class Node {
+  constructor(data, index) {
+    this.id = data.id;
+    this.label = data.label;
+    this.type = data.type;
+    this.desc = data.desc;
+    this.x = data.x;
+    this.y = data.y;
+    this.baseX = data.x;
+    this.baseY = data.y;
+    this.index = index;
+    this.r = TYPE_RADIUS[data.type];
+    this.color = TYPE_COLORS[data.type];
+    this.activation = 0;        // 0 = dormant, 1 = fully activated
+    this.activationDecay = 0;   // decay timer
+    this.pulse = 0;
+    this.hovered = false;
+
+    // Gentle float
+    this.floatPhase = Math.random() * Math.PI * 2;
+    this.floatSpeed = 0.008 + Math.random() * 0.006;
+    this.floatAmpX = 2 + Math.random() * 3;
+    this.floatAmpY = 1.5 + Math.random() * 2.5;
+  }
+
+  activate(strength) {
+    this.activation = Math.min(1, this.activation + strength);
+    this.pulse = 1;
+    this.activationDecay = 120; // frames before decay starts
+  }
+
+  update() {
+    // Float
+    this.floatPhase += this.floatSpeed;
+    this.x = this.baseX + Math.sin(this.floatPhase) * this.floatAmpX;
+    this.y = this.baseY + Math.cos(this.floatPhase * 0.7) * this.floatAmpY;
+
+    // Activation decay
+    if (this.activationDecay > 0) {
+      this.activationDecay--;
+    } else {
+      this.activation *= 0.995;
+    }
+
+    // Pulse decay
+    this.pulse *= 0.94;
+  }
+
+  render() {
+    let c = this.color;
+    let act = this.activation;
+    let baseAlpha = 0.15 + act * 0.7;
+    let radius = this.r;
+
+    // Activation glow
+    if (act > 0.1) {
+      let glowR = radius * (1.8 + act * 1.5);
+      fill(c.r, c.g, c.b, act * 25);
+      noStroke();
+      ellipse(this.x, this.y, glowR * 2, glowR * 2);
+    }
+
+    // Pulse ring
+    if (this.pulse > 0.05) {
+      let pulseR = radius * (1 + (1 - this.pulse) * 3);
+      noFill();
+      stroke(c.r, c.g, c.b, this.pulse * 120);
+      strokeWeight(2);
+      ellipse(this.x, this.y, pulseR * 2, pulseR * 2);
+    }
+
+    // Node body
+    noStroke();
+    fill(c.r, c.g, c.b, baseAlpha * 255);
+    ellipse(this.x, this.y, radius * 2, radius * 2);
+
+    // Inner bright core
+    fill(c.r + (255 - c.r) * 0.4, c.g + (255 - c.g) * 0.4, c.b + (255 - c.b) * 0.4, (0.3 + act * 0.5) * 255);
+    ellipse(this.x, this.y, radius * 0.8, radius * 0.8);
+
+    // Hover highlight
+    if (this.hovered) {
+      noFill();
+      stroke(255, 255, 255, 60);
+      strokeWeight(1.5);
+      ellipse(this.x, this.y, radius * 2.5, radius * 2.5);
+    }
+
+    // Label
+    noStroke();
+    textFont('Inter');
+    textSize(10);
+    textAlign(CENTER, TOP);
+    let labelAlpha = 80 + act * 150 + (this.hovered ? 80 : 0);
+    fill(255, 255, 255, labelAlpha);
+    text(this.label, this.x, this.y + radius + 6);
+
+    // Coefficient display when activated
+    if (act > 0.3 && this.type !== 'shock') {
+      textFont('JetBrains Mono');
+      textSize(9);
+      fill(c.r, c.g, c.b, act * 200);
+      textAlign(CENTER, BOTTOM);
+      text(act.toFixed(2), this.x, this.y - radius - 4);
+    }
+  }
+
+  containsPoint(px, py) {
+    let d = dist(px, py, this.x, this.y);
+    return d < this.r * 1.5;
+  }
+}
+
+// ─── Edge class ────────────────────────────────────────────
+class Edge {
+  constructor(data, fromNode, toNode) {
+    this.from = fromNode;
+    this.to = toNode;
+    this.weight = data.weight;
+    this.delay = data.delay;
+    this.flowRate = 0;       // current particle emission rate
+    this.pendingActivation = 0;
+    this.pendingDelay = 0;
+  }
+
+  triggerFlow(strength) {
+    this.pendingActivation = strength * this.weight;
+    this.pendingDelay = this.delay;
+  }
+
+  update() {
+    // Delayed activation
+    if (this.pendingDelay > 0) {
+      this.pendingDelay--;
+      if (this.pendingDelay <= 0 && this.pendingActivation > 0) {
+        this.flowRate = this.pendingActivation;
+        // Activate target node
+        this.to.activate(this.pendingActivation * 0.8);
+        // Cascade: trigger outgoing edges from target
+        for (let e of edges) {
+          if (e.from === this.to && e !== this) {
+            e.triggerFlow(this.pendingActivation * 0.7);
+          }
+        }
+        this.pendingActivation = 0;
+      }
+    }
+
+    // Emit flow particles
+    if (this.flowRate > 0.05) {
+      let numParticles = Math.ceil(this.flowRate * 3);
+      for (let i = 0; i < numParticles; i++) {
+        if (Math.random() < this.flowRate * 0.4) {
+          flowParticles.push(new FlowParticle(this));
+        }
+      }
+      this.flowRate *= 0.97;
+    }
+  }
+
+  render() {
+    let act = Math.max(this.from.activation, this.to.activation, this.flowRate);
+    let baseAlpha = 0.04 + act * 0.2;
+
+    // Edge line
+    let midColor = lerpColor(
+      color(this.from.color.r, this.from.color.g, this.from.color.b),
+      color(this.to.color.r, this.to.color.g, this.to.color.b),
+      0.5
+    );
+
+    stroke(red(midColor), green(midColor), blue(midColor), baseAlpha * 255);
+    strokeWeight(0.5 + this.weight * 2.5 * (0.3 + act * 0.7));
+    noFill();
+
+    // Curved edge
+    let mx = (this.from.x + this.to.x) / 2;
+    let my = (this.from.y + this.to.y) / 2;
+    let dx = this.to.x - this.from.x;
+    let dy = this.to.y - this.from.y;
+    let cx = mx + dy * 0.08;
+    let cy = my - dx * 0.08;
+
+    beginShape();
+    vertex(this.from.x, this.from.y);
+    quadraticVertex(cx, cy, this.to.x, this.to.y);
+    endShape();
+
+    // Weight label on hover
+    if ((this.from.hovered || this.to.hovered) && this.weight > 0.3) {
+      noStroke();
+      textFont('JetBrains Mono');
+      textSize(8);
+      fill(255, 255, 255, 100);
+      textAlign(CENTER, CENTER);
+      text(this.weight.toFixed(2), cx, cy);
+    }
+  }
+}
+
+// ─── Flow Particle ─────────────────────────────────────────
+class FlowParticle {
+  constructor(edge) {
+    this.edge = edge;
+    this.t = 0;                              // 0→1 along edge
+    this.speed = 0.008 + Math.random() * 0.012;
+    this.size = 2 + edge.weight * 3;
+    this.life = 1;
+    this.trail = [];
+    this.maxTrail = 8;
+
+    // Perpendicular offset for visual spread
+    this.perpOffset = (Math.random() - 0.5) * 8;
+
+    // Color blend from→to
+    let fc = edge.from.color, tc = edge.to.color;
+    this.cr = fc.r;
+    this.cg = fc.g;
+    this.cb = fc.b;
+    this.cr2 = tc.r;
+    this.cg2 = tc.g;
+    this.cb2 = tc.b;
+  }
+
+  update() {
+    this.t += this.speed;
+    if (this.t >= 1) {
+      this.life = 0;
+      return;
+    }
+
+    // Position along curved edge
+    let f = this.edge.from;
+    let t = this.edge.to;
+    let mx = (f.x + t.x) / 2;
+    let my = (f.y + t.y) / 2;
+    let dx = t.x - f.x;
+    let dy = t.y - f.y;
+    let cx = mx + dy * 0.08;
+    let cy = my - dx * 0.08;
+
+    // Quadratic bezier
+    let u = this.t;
+    let px = (1-u)*(1-u)*f.x + 2*(1-u)*u*cx + u*u*t.x;
+    let py = (1-u)*(1-u)*f.y + 2*(1-u)*u*cy + u*u*t.y;
+
+    // Add perpendicular offset
+    let len = Math.sqrt(dx*dx + dy*dy);
+    if (len > 0) {
+      px += (-dy/len) * this.perpOffset;
+      py += (dx/len) * this.perpOffset;
+    }
+
+    // Store trail
+    this.trail.push({ x: px, y: py });
+    if (this.trail.length > this.maxTrail) this.trail.shift();
+
+    this.px = px;
+    this.py = py;
+  }
+
+  render() {
+    if (this.life <= 0 || !this.px) return;
+
+    // Color interpolation
+    let r = this.cr + (this.cr2 - this.cr) * this.t;
+    let g = this.cg + (this.cg2 - this.cg) * this.t;
+    let b = this.cb + (this.cb2 - this.cb) * this.t;
+
+    // Trail
+    noFill();
+    for (let i = 1; i < this.trail.length; i++) {
+      let alpha = (i / this.trail.length) * 80 * this.edge.flowRate;
+      stroke(r, g, b, alpha);
+      strokeWeight(this.size * (i / this.trail.length) * 0.6);
+      line(this.trail[i-1].x, this.trail[i-1].y, this.trail[i].x, this.trail[i].y);
+    }
+
+    // Head
+    noStroke();
+    fill(r, g, b, 180);
+    ellipse(this.px, this.py, this.size, this.size);
+
+    // Bright core
+    fill(255, 255, 255, 100 * this.edge.flowRate);
+    ellipse(this.px, this.py, this.size * 0.4, this.size * 0.4);
+  }
+}
+
+// ─── p5.js Setup ───────────────────────────────────────────
+function setup() {
+  let container = document.getElementById('net-container');
+  let cnv = createCanvas(W, H);
+  cnv.parent(container);
+  pixelDensity(1);
+
+  // Create nodes
+  for (let i = 0; i < NODE_DATA.length; i++) {
+    nodes.push(new Node(NODE_DATA[i], i));
+  }
+
+  // Create edges
+  for (let ed of EDGE_DATA) {
+    let fromNode = nodes.find(n => n.id === ed.from);
+    let toNode = nodes.find(n => n.id === ed.to);
+    if (fromNode && toNode) {
+      edges.push(new Edge(ed, fromNode, toNode));
+    }
+  }
+
+  // Auto-fire a shock every 8 seconds
+  setInterval(() => {
+    let shockIdx = Math.floor(Math.random() * 4);
+    fireShock(shockIdx);
+  }, 8000);
+
+  // Fire initial shock after 2s
+  setTimeout(() => fireShock(0), 2000);
+}
+
+// ─── Draw ──────────────────────────────────────────────────
+function draw() {
+  background(13, 21, 37);
+
+  // Subtle column indicators
+  drawColumnGuides();
+
+  // Update
+  for (let n of nodes) {
+    n.hovered = false;
+    n.update();
+  }
+
+  // Hover detection
+  hoveredNode = null;
+  for (let n of nodes) {
+    if (n.containsPoint(mouseX, mouseY)) {
+      n.hovered = true;
+      hoveredNode = n;
+      break;
+    }
+  }
+
+  for (let e of edges) e.update();
+  for (let p of flowParticles) p.update();
+  flowParticles = flowParticles.filter(p => p.life > 0);
+
+  // Render edges (behind)
+  for (let e of edges) e.render();
+
+  // Render particles
+  for (let p of flowParticles) p.render();
+
+  // Render nodes (on top)
+  for (let n of nodes) n.render();
+
+  // Column headers
+  drawColumnHeaders();
+
+  // Tooltip
+  if (hoveredNode) drawTooltip(hoveredNode);
+}
+
+// ─── Column guides ─────────────────────────────────────────
+function drawColumnGuides() {
+  stroke(255, 255, 255, 6);
+  strokeWeight(1);
+  // Vertical dividers between columns
+  let cols = [240, 510, 780, 1010];
+  for (let cx of cols) {
+    line(cx, 30, cx, H - 20);
+  }
+}
+
+function drawColumnHeaders() {
+  textFont('JetBrains Mono');
+  textSize(9);
+  textAlign(CENTER, TOP);
+  noStroke();
+
+  let headers = [
+    { x: 100, label: 'CHOCS', color: TYPE_COLORS.shock },
+    { x: 370, label: 'CANAUX', color: TYPE_COLORS.channel },
+    { x: 640, label: 'INDICATEURS', color: TYPE_COLORS.indicator },
+    { x: 920, label: 'RÉSULTATS', color: TYPE_COLORS.outcome },
+    { x: 1090, label: 'SCÉNARIOS', color: TYPE_COLORS.scenario },
+  ];
+
+  for (let h of headers) {
+    fill(h.color.r, h.color.g, h.color.b, 100);
+    text(h.label, h.x, 12);
+  }
+}
+
+// ─── Tooltip ───────────────────────────────────────────────
+function drawTooltip(node) {
+  let tx = node.x + 35;
+  let ty = node.y - 20;
+  if (tx + 150 > W) tx = node.x - 180;
+  if (ty < 10) ty = 10;
+
+  // Background
+  fill(13, 21, 37, 230);
+  stroke(node.color.r, node.color.g, node.color.b, 80);
+  strokeWeight(1);
+  rect(tx, ty, 150, 44, 3);
+
+  noStroke();
+  textAlign(LEFT, TOP);
+
+  // Title
+  textFont('Inter');
+  textSize(11);
+  fill(255, 255, 255, 220);
+  text(node.label, tx + 8, ty + 6);
+
+  // Description
+  textFont('JetBrains Mono');
+  textSize(9);
+  fill(255, 255, 255, 100);
+  text(node.desc, tx + 8, ty + 24);
+}
+
+// ─── Mouse click on node ───────────────────────────────────
+function mousePressed() {
+  if (hoveredNode && hoveredNode.type === 'shock') {
+    let idx = nodes.filter(n => n.type === 'shock').indexOf(hoveredNode);
+    if (idx >= 0) fireShock(idx);
+  }
+}
+
+// ─── Fire shock ────────────────────────────────────────────
+function fireShock(shockIndex) {
+  let shockNodes = nodes.filter(n => n.type === 'shock');
+  if (shockIndex >= shockNodes.length) return;
+
+  let shockNode = shockNodes[shockIndex];
+  shockNode.activate(1);
+
+  // Trigger all outgoing edges from this shock
+  for (let e of edges) {
+    if (e.from === shockNode) {
+      e.triggerFlow(1);
+    }
+  }
+}
+
+function fireAllShocks() {
+  for (let i = 0; i < 4; i++) {
+    setTimeout(() => fireShock(i), i * 300);
+  }
+}
+
+function resetNetwork() {
+  for (let n of nodes) {
+    n.activation = 0;
+    n.pulse = 0;
+    n.activationDecay = 0;
+  }
+  for (let e of edges) {
+    e.flowRate = 0;
+    e.pendingActivation = 0;
+    e.pendingDelay = 0;
+  }
+  flowParticles = [];
+}
+
+// Prevent scroll on canvas
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('net-container')
+    .addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
+});
+</script>
+</body>
+</html>
