@@ -1,6 +1,6 @@
 # Index des Prototypes Visuels — erickilama.com
 
-> Catalogue de 15 moteurs visuels prototypés pour le site.
+> Catalogue de 19 moteurs visuels prototypés pour le site.
 > Chaque proto est un fichier HTML autonome, servi par Hugo sur `localhost:1314/proto-*.html`.
 > Inspirations : Pentagram (Halstead, Opara, Lupi), Graphcore, RAND Art+Data.
 
@@ -22,8 +22,12 @@
 | J  | Typographic Generative | **REJETÉ** | — |
 | K  | Ribbon Weave | **REJETÉ** | — |
 | L  | Grid Disruption v2 | **REJETÉ** | Concept OK, rendu insuffisant (carrés qui bougent) |
-| M  | Transmission Network | **CONCEPT VALIDÉ** | Data-driven, mais rendu trop classique (node-graph) |
-| N  | Transmission Field | **DIRECTION** | Concept validé — rendu à approfondir (R&D moteur) |
+| M  | Transmission Network | **REJETÉ** | — |
+| N  | Transmission Field | **REJETÉ** | — |
+| O  | Fiber Field | **GARDÉ** | Background analytique / Hero / Vigie |
+| P  | Fluid Simulation | **REJETÉ** | — |
+| Q  | Voronoi Fracture | **REJETÉ** | — |
+| R  | Turing Patterns | **REJETÉ** | — |
 
 ---
 
@@ -283,23 +287,19 @@
 | Grid disruption | L | Grille ordonnée + ondes de choc propagées |
 | Data-driven network | M | Transmission cascade avec coefficients estimés |
 | Particle field dynamics | N | Particules révèlent les chemins de transmission |
+| Curl noise fiber field | O | Streamlines accumulées, divergence-free, 4 zones |
+| WebGL Navier-Stokes | P | Fluid sim, champs continus |
+| Voronoi tessellation | Q | Arêtes lumineuses, fracture propagée |
+| Gray-Scott reaction-diffusion | R | Motifs Turing organiques émergents |
 
 ---
 
-## R&D — Moteurs à explorer
+## R&D — Explorées et non retenues
 
-Le vocabulaire visuel actuel (cercles, carrés, particules, lignes) a atteint ses limites.
-Pour un rendu véritablement innovant du concept N (transmission data-driven), explorer :
-
-| Moteur | Technique | Ce que ça changerait |
-|--------|-----------|---------------------|
-| **WebGL Fluid Sim** | Navier-Stokes 2D | Le choc EST une perturbation fluide, pas des dots qui bougent |
-| **Contour field continu** | Marching squares data-driven | Pas de formes discrètes, gradient continu piloté par les données |
-| **Fibre / hatching** | Lignes courbes en densité | Comme des fibres sous tension, pas des points |
-| **Voronoi dynamique** | Tessellation qui se fracture | L'espace craque sous le choc |
-| **Reaction-diffusion** | Turing patterns data-driven | Motifs organiques émergents |
+Les 4 moteurs avancés (O-R) ont été explorés. Seul **O (Fiber Field)** retenu.
+P (fluid sim), Q (Voronoi), R (reaction-diffusion) : techniquement fonctionnels mais pas retenus visuellement.
 
 ---
 
 *Dernière mise à jour : 28 mars 2026*
-*15 prototypes, 7 gardés (A,C,D,E,F,H + N direction), 6 rejetés (B,G,J,K,L), 2 concepts (M,N)*
+*19 prototypes, 8 gardés (A,C,D,E,F,H,I réserve,O), 11 rejetés (B,G,J,K,L,M,N,P,Q,R)*
