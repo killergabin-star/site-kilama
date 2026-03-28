@@ -1,6 +1,6 @@
 # Index des Prototypes Visuels — erickilama.com
 
-> Catalogue de 9 moteurs visuels prototypés pour le site.
+> Catalogue de 12 moteurs visuels prototypés pour le site.
 > Chaque proto est un fichier HTML autonome, servi par Hugo sur `localhost:1314/proto-*.html`.
 > Inspirations : Pentagram (Halstead, Opara, Lupi), Graphcore, RAND Art+Data.
 
@@ -19,6 +19,9 @@
 | G  | Lupi Dendrites | **REJETÉ** | — |
 | H  | Data Rings Orbital | **GARDÉ** | Élément décoratif / About / Loading |
 | I  | Radial Sunburst | **EN RÉSERVE** | Portrait de données / identité visuelle |
+| J  | Typographic Generative | **À ÉVALUER** | Hero animé / section Vigie / identité textuelle |
+| K  | Ribbon Weave | **À ÉVALUER** | Section Programmes (flux interconnectés) / Hero |
+| L  | Grid Disruption | **À ÉVALUER** | Section Vigie / Hero (propagation de chocs) |
 
 ---
 
@@ -188,13 +191,78 @@
 
 ---
 
+## Proto J — Typographic Generative
+
+- **Fichier** : `proto-J-typographic.html`
+- **Moteur** : p5.js Canvas (textToPoints + particle system)
+- **Inspiration** : Pentagram typographic identity systems — generative type
+- **Concept** : Les mots-clés du programme de recherche (« CHOCS · TRANSMISSION · MESURE ») sont rendus comme des nuages de particules-caractères. Les lettres dérivent lentement, se dispersent, puis se reforment en boucle de 8s.
+- **Contenu** :
+  - 3 mots en particules : CHOCS (rouge), TRANSMISSION (bleu), MESURE (or)
+  - Chaque lettre = une particule autonome avec position cible et position errante
+  - Fond : question de recherche en wallpaper textuel à 0.06 opacité
+  - Traces fantômes (ghost trails) pendant la phase de dispersion
+- **Interaction** :
+  - Souris = zone de répulsion (200px) — les lettres fuient le curseur
+  - Clic = dispersion forcée de toutes les lettres
+  - Cycle automatique : 4s formé → 4s dispersé
+- **Performance** : ~150 particules, 60fps
+- **Cas d'usage** : hero animé ou section identitaire. La typographie comme matériau vivant — les mots se forment et se déforment comme les chocs perturbent les systèmes. Fort potentiel de branding.
+
+---
+
+## Proto K — Ribbon Weave Composition
+
+- **Fichier** : `proto-K-ribbons.html`
+- **Moteur** : p5.js Canvas (bezier curves + depth sorting)
+- **Inspiration** : Pentagram ribbon/stripe identity systems — interlocking flows
+- **Concept** : 4 groupes de 3 rubans colorés s'entrelacent sur un fond navy. Chaque groupe traverse le canvas dans une direction différente, créant un tissage visuel avec effet de profondeur (over/under).
+- **Contenu** :
+  - Groupe rouge (États) : flux gauche→droite
+  - Groupe bleu (Entreprises) : flux haut→bas
+  - Groupe or (Système Int.) : flux droite→gauche
+  - Groupe blanc (Prospectif) : flux bas→haut
+  - Points de contrôle modulés par Perlin noise
+  - Dots lumineux aux intersections de rubans
+- **Interaction** :
+  - Souris = attracteur local — les rubans proches sont attirés vers le curseur
+  - Clic = snap momentané (les rubans se tendent puis relâchent)
+  - Mouvement continu par oscillation sinusoïdale
+- **Performance** : 12 rubans × ~20 segments, 60fps
+- **Cas d'usage** : section Programmes ou hero. Les rubans entrelacés évoquent les flux économiques interconnectés — aide, commerce, investissement, diplomatie. Le tissage = la complexité des transmissions de chocs.
+
+---
+
+## Proto L — Grid Disruption
+
+- **Fichier** : `proto-L-griddisrupt.html`
+- **Moteur** : p5.js Canvas (grid system + shock wave propagation)
+- **Inspiration** : Pentagram grid disruption systems — order vs chaos
+- **Concept** : Une grille ordonnée de ~1200 cellules (55×22) en 4 zones colorées est perturbée par des clusters de disruption générés par Perlin noise. Des ondes de choc se propagent périodiquement depuis des points aléatoires, déformant temporairement les cellules (rotation, déplacement, changement de taille).
+- **Contenu** :
+  - 4 zones colorées : rouge (États), bleu (Entreprises), or (Système Int.), blanc (Prospectif)
+  - Clusters de disruption par Perlin noise (rotation, scale, offset aléatoires)
+  - Onde de choc toutes les 6s avec propagation radiale
+  - Compteur « DISRUPTION: XX% » en temps réel
+  - Transition douce entre ordre et chaos
+- **Interaction** :
+  - Souris = zone de disruption locale (150px) — les cellules proches se déforment
+  - Clic = onde de choc depuis la position du clic
+  - Bouton « Choc! » = onde de choc manuelle
+  - Bouton « Ordre » = retour à la grille parfaite
+  - Boutons Régénérer et Animer/Pause
+- **Performance** : ~1200 cellules, 60fps
+- **Cas d'usage** : section Vigie ou hero. **Le plus aligné conceptuellement avec le programme de recherche** — la métaphore visuelle EST la question de recherche : un système ordonné perturbé par des chocs qui se propagent. Chaque cellule = un agent économique, chaque onde = un événement géopolitique. Le compteur de disruption quantifie visuellement le désordre.
+
+---
+
 ## Moteurs maîtrisés
 
 | Moteur | Protos | Avantages | Limites |
 |--------|--------|-----------|---------|
 | **SVG pur** | A | Ultra-léger, imprimable, accessible | Pas d'animation complexe |
 | **CSS @keyframes** | E | Zéro JS, chargement instant, compatible partout | Animations limitées (pas de physique) |
-| **p5.js Canvas** | C, D, F, H, I | Génératif, interactif, Perlin noise, mouse | Dépendance CDN (~300KB), pas imprimable |
+| **p5.js Canvas** | C, D, F, H, I, J, K, L | Génératif, interactif, Perlin noise, mouse | Dépendance CDN (~300KB), pas imprimable |
 | **p5.js Bezier** | G (rejeté) | Courbes organiques | Densité insuffisante sans optimisation |
 
 ## Techniques disponibles
@@ -208,8 +276,11 @@
 | Concentric rings | H | Anneaux de marques géométriques en rotation différentielle |
 | Radial data encoding | I | Rayons composés de marques variées, silhouette asymétrique |
 | CSS-only animation | E | @keyframes, clip-path, transforms sans JS |
+| Typographic particles | J | Caractères comme particules — formation/dispersion cyclique |
+| Ribbon weave | K | Rubans entrelacés avec profondeur over/under |
+| Grid disruption | L | Grille ordonnée + ondes de choc propagées |
 
 ---
 
 *Dernière mise à jour : 28 mars 2026*
-*9 prototypes, 7 gardés, 2 rejetés (B, G)*
+*12 prototypes, 7 gardés, 2 rejetés (B, G), 3 à évaluer (J, K, L)*

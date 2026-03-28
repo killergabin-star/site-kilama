@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto L — Grid Disruption (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+    --silver: #C8D0D8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .grid-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO L — <span>P5.JS CANVAS — Grid Disruption — Order vs Chaos</span></div>
+
+<section class="grid-section">
+  <div class="container">
+    <div class="section-label">Foresight — Propagation de chocs</div>
+    <div class="section-title">Quand les chocs traversent le système</div>
+    <div class="section-sub">Un système ordonné perturbé par des chocs qui se propagent. Chaque cellule est un agent, chaque onde un événement géopolitique qui déforme l'ordre établi.</div>
+
+    <div class="canvas-wrapper" id="grid-container">
+      <!-- p5 canvas injected here -->
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="regenerate()">Régénérer</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" onclick="triggerShockWave()">Choc!</button>
+      <button class="ctrl-btn" onclick="resetOrder()">Ordre</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = zone de disruption · CLIC = onde de choc · Chaque régénération reconfigure les zones de fracture
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question de design</div>
+      <div class="q-text">La disruption contrôlée d'une grille régulière peut-elle rendre visible la propagation d'un choc géopolitique à travers un système économique ordonné ?</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ─── Global state ───────────────────────────────────────────
+const CELL_SIZE = 20;
+const GAP = 2;
+const STEP = CELL_SIZE + GAP;
+const CANVAS_W = 1200;
+const CANVAS_H = 500;
+
+let cols, rows;
+let cells = [];
+let shockWaves = [];
+let isAnimating = true;
+let noiseOffsetTime = 0;
+let disruptionThreshold = 0.58;
+let mouseDisruptionRadius = 100;
+let orderMode = false;
+let orderTransition = 0;
+let currentNoiseSeed = 0;
+
+// Zone colors
+const ZONE_COLORS = [
+  { r: 192, g: 57, b: 43 },   // red #C0392B
+  { r: 44, g: 95, b: 138 },   // blue #2C5F8A
+  { r: 212, g: 160, b: 23 },  // gold #D4A017
+  { r: 200, g: 208, b: 216 }  // white #C8D0D8
+];
+const ZONE_LABELS = ["\u00C9TATS", "ENTREPRISES", "SYST\u00C8ME INT.", "PROSPECTIF"];
+
+let cnv;
+
+// ─── Cell class ────────────────────────────────────────────
+class Cell {
+  constructor(col, row) {
+    this.col = col;
+    this.row = row;
+    this.baseX = col * STEP + STEP / 2;
+    this.baseY = row * STEP + STEP / 2;
+    this.size = CELL_SIZE;
+    this.opacity = 0.08;
+    this.cornerRadius = 2;
+    this.isDisrupted = false;
+    this.disruptionStrength = 0;
+
+    // Current animated values
+    this.currentScale = 1;
+    this.currentRotation = 0;
+    this.currentOffsetX = 0;
+    this.currentOffsetY = 0;
+
+    // Animation oscillation phase
+    this.animPhase = Math.random() * Math.PI * 2;
+    this.animSpeed = 0.02 + Math.random() * 0.02;
+
+    // Mouse disruption decay
+    this.mouseDisruptTimer = 0;
+
+    // Shock wave temporary disruption
+    this.shockDisruptTimer = 0;
+
+    // Zone index
+    this.zoneIndex = Math.floor((this.baseX / CANVAS_W) * 4);
+    if (this.zoneIndex > 3) this.zoneIndex = 3;
+
+    this.assignZoneColor();
+    this.generateDisruptionParams();
+  }
+
+  assignZoneColor() {
+    let zoneProgress = (this.baseX / CANVAS_W) * 4;
+    let zoneIdx = Math.floor(zoneProgress);
+    let zoneFrac = zoneProgress - zoneIdx;
+
+    if (zoneIdx >= 3) {
+      this.zoneColor = { ...ZONE_COLORS[3] };
+      return;
+    }
+
+    // Blend at boundaries
+    let blendWidth = 0.15;
+    if (zoneFrac > (1 - blendWidth)) {
+      let t = (zoneFrac - (1 - blendWidth)) / blendWidth;
+      t = t * t * (3 - 2 * t); // smoothstep
+      let c1 = ZONE_COLORS[zoneIdx];
+      let c2 = ZONE_COLORS[Math.min(zoneIdx + 1, 3)];
+      this.zoneColor = {
+        r: c1.r + (c2.r - c1.r) * t,
+        g: c1.g + (c2.g - c1.g) * t,
+        b: c1.b + (c2.b - c1.b) * t
+      };
+    } else if (zoneFrac < blendWidth && zoneIdx > 0) {
+      let t = 1 - (zoneFrac / blendWidth);
+      t = t * t * (3 - 2 * t);
+      let c1 = ZONE_COLORS[zoneIdx];
+      let c2 = ZONE_COLORS[zoneIdx - 1];
+      this.zoneColor = {
+        r: c1.r + (c2.r - c1.r) * t,
+        g: c1.g + (c2.g - c1.g) * t,
+        b: c1.b + (c2.b - c1.b) * t
+      };
+    } else {
+      this.zoneColor = { ...ZONE_COLORS[zoneIdx] };
+    }
+  }
+
+  generateDisruptionParams() {
+    let rng = Math.random;
+    this.disruptScale = 1.5 + rng() * 1.0;         // 1.5x to 2.5x
+    this.disruptRotation = (15 + rng() * 30) * (rng() > 0.5 ? 1 : -1) * Math.PI / 180;
+    this.disruptOffsetX = (5 + rng() * 10) * (rng() > 0.5 ? 1 : -1);
+    this.disruptOffsetY = (5 + rng() * 10) * (rng() > 0.5 ? 1 : -1);
+    this.disruptOpacity = 0.4 + rng() * 0.4;
+
+    // Shape: 70% square, 15% circle, 15% diamond
+    let shapeRoll = rng();
+    this.disruptShape = shapeRoll < 0.7 ? 'square' : (shapeRoll < 0.85 ? 'circle' : 'diamond');
+  }
+
+  updateDisruption(noiseVal) {
+    // Perlin noise determines base disruption (clustered)
+    let baseDisrupt = noiseVal > disruptionThreshold ? 1 : 0;
+    if (noiseVal > disruptionThreshold - 0.05 && noiseVal <= disruptionThreshold) {
+      baseDisrupt = (noiseVal - (disruptionThreshold - 0.05)) / 0.05;
+    }
+
+    // Mouse influence
+    let mouseStr = 0;
+    if (this.mouseDisruptTimer > 0) {
+      mouseStr = Math.min(this.mouseDisruptTimer / 60, 1);
+    }
+
+    // Shock wave influence
+    let shockStr = 0;
+    if (this.shockDisruptTimer > 0) {
+      shockStr = Math.min(this.shockDisruptTimer / 40, 1);
+    }
+
+    // Order mode suppresses disruption
+    let orderSuppress = orderMode ? orderTransition : 0;
+
+    // Combined disruption strength
+    this.disruptionStrength = Math.max(baseDisrupt, mouseStr, shockStr) * (1 - orderSuppress);
+    this.isDisrupted = this.disruptionStrength > 0.1;
+
+    // Compute targets
+    let targetScale = 1 + (this.disruptScale - 1) * this.disruptionStrength;
+    let targetRot = this.disruptRotation * this.disruptionStrength;
+    let targetOX = this.disruptOffsetX * this.disruptionStrength;
+    let targetOY = this.disruptOffsetY * this.disruptionStrength;
+    let targetOp = 0.08 + (this.disruptOpacity - 0.08) * this.disruptionStrength;
+
+    // Smooth interpolation
+    let lerpSpeed = 0.08;
+    this.currentScale += (targetScale - this.currentScale) * lerpSpeed;
+    this.currentRotation += (targetRot - this.currentRotation) * lerpSpeed;
+    this.currentOffsetX += (targetOX - this.currentOffsetX) * lerpSpeed;
+    this.currentOffsetY += (targetOY - this.currentOffsetY) * lerpSpeed;
+    this.opacity += (targetOp - this.opacity) * lerpSpeed;
+
+    // Continuous oscillation for disrupted cells
+    if (this.isDisrupted && isAnimating) {
+      this.animPhase += this.animSpeed;
+      let oscRot = Math.sin(this.animPhase) * 5 * Math.PI / 180 * this.disruptionStrength;
+      let oscScale = Math.sin(this.animPhase * 0.7) * 0.1 * this.disruptionStrength;
+      this.currentRotation += oscRot;
+      this.currentScale += oscScale;
+    }
+
+    // Decay timers
+    if (this.mouseDisruptTimer > 0) this.mouseDisruptTimer -= 1;
+    if (this.shockDisruptTimer > 0) this.shockDisruptTimer -= 1;
+  }
+
+  render() {
+    let drawX = this.baseX + this.currentOffsetX;
+    let drawY = this.baseY + this.currentOffsetY;
+    let drawSize = CELL_SIZE * this.currentScale;
+    let c = this.zoneColor;
+    let alpha = this.opacity * 255;
+
+    push();
+    translate(drawX, drawY);
+    rotate(this.currentRotation);
+    noStroke();
+    fill(c.r, c.g, c.b, alpha);
+
+    let currentShape = this.isDisrupted ? this.disruptShape : 'square';
+
+    if (currentShape === 'square') {
+      rectMode(CENTER);
+      rect(0, 0, drawSize, drawSize, this.cornerRadius * this.currentScale);
+    } else if (currentShape === 'circle') {
+      ellipse(0, 0, drawSize, drawSize);
+    } else if (currentShape === 'diamond') {
+      beginShape();
+      let half = drawSize / 2;
+      vertex(0, -half);
+      vertex(half, 0);
+      vertex(0, half);
+      vertex(-half, 0);
+      endShape(CLOSE);
+    }
+
+    pop();
+  }
+}
+
+// ─── Shock Wave class ──────────────────────────────────────
+class ShockWave {
+  constructor(x, y, zoneColor) {
+    this.x = x;
+    this.y = y;
+    this.radius = 0;
+    this.maxRadius = 250;
+    this.speed = 3.5;
+    this.life = 1;
+    this.ringWidth = 40;
+    this.color = zoneColor || { r: 200, g: 208, b: 216 };
+    this.done = false;
+  }
+
+  update() {
+    this.radius += this.speed;
+    this.life = 1 - (this.radius / this.maxRadius);
+    if (this.life <= 0) {
+      this.done = true;
+      this.life = 0;
+    }
+
+    // Affect nearby cells
+    for (let cell of cells) {
+      let d = Math.hypot(cell.baseX - this.x, cell.baseY - this.y);
+      if (d > this.radius - this.ringWidth && d < this.radius + this.ringWidth) {
+        let proximity = 1 - Math.abs(d - this.radius) / this.ringWidth;
+        cell.shockDisruptTimer = Math.max(cell.shockDisruptTimer, proximity * 50 * this.life);
+      }
+    }
+  }
+
+  render() {
+    if (this.done) return;
+    let c = this.color;
+    noFill();
+    strokeWeight(2);
+    stroke(c.r, c.g, c.b, this.life * 40);
+    ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
+    // Inner ring
+    stroke(c.r, c.g, c.b, this.life * 20);
+    ellipse(this.x, this.y, (this.radius - 10) * 2, (this.radius - 10) * 2);
+  }
+}
+
+// ─── p5.js Setup ───────────────────────────────────────────
+function setup() {
+  let container = document.getElementById('grid-container');
+  cnv = createCanvas(CANVAS_W, CANVAS_H);
+  cnv.parent(container);
+  pixelDensity(1);
+
+  currentNoiseSeed = Math.floor(Math.random() * 10000);
+  noiseSeed(currentNoiseSeed);
+
+  cols = Math.ceil(CANVAS_W / STEP);
+  rows = Math.ceil(CANVAS_H / STEP);
+
+  initCells();
+
+  // Auto shock wave every 6 seconds
+  setInterval(() => {
+    if (isAnimating && !orderMode) {
+      autoShockWave();
+    }
+  }, 6000);
+}
+
+function initCells() {
+  cells = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      cells.push(new Cell(c, r));
+    }
+  }
+}
+
+// ─── p5.js Draw loop ──────────────────────────────────────
+function draw() {
+  background(27, 42, 74);
+
+  if (isAnimating) {
+    noiseOffsetTime += 0.002;
+  }
+
+  // Order mode transition
+  if (orderMode && orderTransition < 1) {
+    orderTransition = Math.min(orderTransition + 0.02, 1);
+  } else if (!orderMode && orderTransition > 0) {
+    orderTransition = Math.max(orderTransition - 0.02, 0);
+  }
+
+  // Mouse position
+  let mx = mouseX;
+  let my = mouseY;
+  let mouseInCanvas = mx >= 0 && mx <= CANVAS_W && my >= 0 && my <= CANVAS_H;
+
+  // Update and render cells
+  for (let cell of cells) {
+    // Perlin noise for disruption clustering
+    let nx = cell.col * 0.12 + noiseOffsetTime * 0.3;
+    let ny = cell.row * 0.12 + noiseOffsetTime * 0.2;
+    let noiseVal = noise(nx, ny, noiseOffsetTime);
+
+    // Mouse proximity disruption
+    if (mouseInCanvas && !orderMode) {
+      let d = Math.hypot(cell.baseX - mx, cell.baseY - my);
+      if (d < mouseDisruptionRadius) {
+        let strength = 1 - (d / mouseDisruptionRadius);
+        cell.mouseDisruptTimer = Math.max(cell.mouseDisruptTimer, strength * 120);
+      }
+    }
+
+    cell.updateDisruption(noiseVal);
+    cell.render();
+  }
+
+  // Update and render shock waves
+  for (let wave of shockWaves) {
+    wave.update();
+    wave.render();
+  }
+  shockWaves = shockWaves.filter(w => !w.done);
+
+  // Disruption index overlay
+  drawDisruptionIndex();
+
+  // Zone labels
+  drawZoneLabels();
+}
+
+// ─── Disruption Index ─────────────────────────────────────
+function drawDisruptionIndex() {
+  let disrupted = 0;
+  for (let cell of cells) {
+    if (cell.disruptionStrength > 0.15) disrupted++;
+  }
+  let pct = ((disrupted / cells.length) * 100).toFixed(1);
+
+  let labelText = "DISRUPTION: " + pct + "%";
+  textFont('JetBrains Mono');
+  textSize(11);
+  let tw = textWidth(labelText);
+
+  noStroke();
+  fill(27, 42, 74, 200);
+  rect(CANVAS_W - tw - 30, 10, tw + 20, 24, 2);
+
+  fill(200, 208, 216, 180);
+  textAlign(RIGHT, TOP);
+  text(labelText, CANVAS_W - 20, 16);
+}
+
+// ─── Zone Labels ──────────────────────────────────────────
+function drawZoneLabels() {
+  textFont('JetBrains Mono');
+  textSize(10);
+  textAlign(CENTER, BOTTOM);
+
+  for (let i = 0; i < 4; i++) {
+    let zoneCenter = (i * 0.25 + 0.125) * CANVAS_W;
+    let c = ZONE_COLORS[i];
+    fill(c.r, c.g, c.b, 90);
+    noStroke();
+    text(ZONE_LABELS[i], zoneCenter, CANVAS_H - 12);
+  }
+}
+
+// ─── Mouse click triggers shock wave ──────────────────────
+function mousePressed() {
+  if (mouseX >= 0 && mouseX <= CANVAS_W && mouseY >= 0 && mouseY <= CANVAS_H) {
+    let zoneIdx = Math.floor((mouseX / CANVAS_W) * 4);
+    if (zoneIdx > 3) zoneIdx = 3;
+    shockWaves.push(new ShockWave(mouseX, mouseY, ZONE_COLORS[zoneIdx]));
+    if (orderMode) {
+      orderMode = false;
+    }
+  }
+}
+
+// ─── Auto shock wave from disrupted cell ──────────────────
+function autoShockWave() {
+  let disruptedCells = cells.filter(c => c.disruptionStrength > 0.5);
+  if (disruptedCells.length === 0) disruptedCells = cells;
+  let source = disruptedCells[Math.floor(Math.random() * disruptedCells.length)];
+  let zoneIdx = source.zoneIndex;
+  shockWaves.push(new ShockWave(source.baseX, source.baseY, ZONE_COLORS[zoneIdx]));
+}
+
+// ─── Controls ─────────────────────────────────────────────
+function regenerate() {
+  currentNoiseSeed = Math.floor(Math.random() * 10000);
+  noiseSeed(currentNoiseSeed);
+  noiseOffsetTime = 0;
+  shockWaves = [];
+  orderMode = false;
+  orderTransition = 0;
+  for (let cell of cells) {
+    cell.generateDisruptionParams();
+    cell.mouseDisruptTimer = 0;
+    cell.shockDisruptTimer = 0;
+    cell.currentScale = 1;
+    cell.currentRotation = 0;
+    cell.currentOffsetX = 0;
+    cell.currentOffsetY = 0;
+    cell.opacity = 0.08;
+  }
+}
+
+function toggleAnimation() {
+  isAnimating = !isAnimating;
+  let btn = document.getElementById('btn-anim');
+  btn.classList.toggle('active', isAnimating);
+}
+
+function triggerShockWave() {
+  let zone = Math.floor(Math.random() * 4);
+  let x = (zone * 0.25 + 0.125) * CANVAS_W;
+  let y = CANVAS_H / 2 + (Math.random() - 0.5) * 100;
+  shockWaves.push(new ShockWave(x, y, ZONE_COLORS[zone]));
+  if (orderMode) {
+    orderMode = false;
+  }
+}
+
+function resetOrder() {
+  orderMode = true;
+  shockWaves = [];
+  for (let cell of cells) {
+    cell.mouseDisruptTimer = 0;
+    cell.shockDisruptTimer = 0;
+  }
+}
+
+// ─── Prevent scroll when interacting with canvas ──────────
+document.addEventListener('DOMContentLoaded', () => {
+  let wrapper = document.getElementById('grid-container');
+  wrapper.addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
+});
+</script>
+</body>
+</html>

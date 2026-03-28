@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto J — Typographic Generative (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+    --silver: #C8D0D8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .typo-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO J — <span>P5.JS CANVAS — Typographic Generative — Text as Material</span></div>
+
+<section class="typo-section">
+  <div class="container">
+    <div class="section-label">Research — Typographie générative</div>
+    <div class="section-title">La donnée comme matière typographique</div>
+    <div class="section-sub">Les lettres se décomposent, dérivent en constellations abstraites, puis se recomposent. La typographie devient matière vivante — le texte respire.</div>
+
+    <div class="canvas-wrapper" id="typo-container">
+      <!-- p5 canvas injected here -->
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="disperseAll()">Disperser</button>
+      <button class="ctrl-btn" onclick="reformAll()">Reformer</button>
+      <button class="ctrl-btn" id="btn-cycle" onclick="toggleCycle()">Auto-cycle</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = répulsion locale · CLIC = dispersion violente · Auto-cycle = 8s entre états
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question de design</div>
+      <div class="q-text">Comment les chocs géopolitiques se transmettent-ils à l'économie, et peut-on les mesurer ?</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ─── Configuration ───────────────────────────────────────────
+const WORDS = [
+  { text: "CHOCS", color: [192, 57, 43] },       // red-analytical
+  { text: "TRANSMISSION", color: [44, 95, 138] }, // blue-fpsq
+  { text: "MESURE", color: [212, 160, 23] }       // gold-caps
+];
+const SEPARATOR = "\u00B7"; // middle dot
+let FONT_SIZE = 52; // will be recalculated based on canvas width
+const DRIFT_RANGE = 150;
+const EASE_FACTOR = 0.04;
+const MOUSE_RADIUS = 200;
+const MOUSE_FORCE = 12;
+const TRAIL_OPACITY = 25; // out of 255
+const BG_TEXT = "Comment les chocs g\u00E9opolitiques se transmettent-ils \u00E0 l'\u00E9conomie?";
+
+// ─── Global State ────────────────────────────────────────────
+let charParticles = [];
+let separatorParticles = [];
+let currentState = "FORMED"; // FORMED, DRIFTING, REFORMED
+let autoCycle = true;
+let lastStateChange = 0;
+let CYCLE_INTERVAL = 8000;
+let cnv;
+let interFont;
+let monoFont;
+let canvasW, canvasH;
+let clickBurst = false;
+let clickBurstTime = 0;
+
+// Ghost trails buffer
+let ghostTrails = [];
+const MAX_GHOSTS = 60;
+
+// ─── p5.js Setup ─────────────────────────────────────────────
+function setup() {
+  const container = document.getElementById('typo-container');
+  canvasW = container.offsetWidth;
+  canvasH = container.offsetHeight;
+  cnv = createCanvas(canvasW, canvasH);
+  cnv.parent('typo-container');
+
+  textFont('Inter');
+  textStyle(BOLD);
+  textAlign(CENTER, CENTER);
+
+  buildCharParticles();
+  lastStateChange = millis();
+
+  // Mark auto-cycle button active
+  document.getElementById('btn-cycle').classList.add('active');
+}
+
+function buildCharParticles() {
+  charParticles = [];
+  separatorParticles = [];
+
+  // Calculate responsive font size: fit text within 90% of canvas width
+  let targetWidth = canvasW * 0.9;
+  FONT_SIZE = 52; // start with ideal size
+  textSize(FONT_SIZE);
+  textStyle(BOLD);
+  textFont('Inter');
+
+  // Measure at current size
+  let fullString = WORDS.map(w => w.text).join(" " + SEPARATOR + " ");
+  let measuredWidth = textWidth(fullString);
+
+  // Scale font if text is too wide
+  if (measuredWidth > targetWidth) {
+    FONT_SIZE = Math.floor(FONT_SIZE * (targetWidth / measuredWidth));
+    FONT_SIZE = Math.max(FONT_SIZE, 20); // minimum 20px
+    textSize(FONT_SIZE);
+  }
+
+  // Measure total width with final font size
+  let wordWidths = WORDS.map(w => textWidth(w.text));
+  let sepWidth = textWidth(" " + SEPARATOR + " ");
+  let totalWidth = wordWidths.reduce((a, b) => a + b, 0) + sepWidth * (WORDS.length - 1);
+
+  // Starting X position (centered)
+  let startX = (canvasW - totalWidth) / 2;
+  let baseY = canvasH / 2;
+
+  let cursorX = startX;
+
+  for (let wi = 0; wi < WORDS.length; wi++) {
+    let word = WORDS[wi];
+    let chars = word.text.split('');
+
+    for (let ci = 0; ci < chars.length; ci++) {
+      let ch = chars[ci];
+      let charW = textWidth(ch);
+      let homeX = cursorX + charW / 2;
+      let homeY = baseY;
+
+      charParticles.push(new CharParticle(ch, homeX, homeY, word.color, wi));
+      cursorX += charW;
+    }
+
+    // Add separator dot between words (not after last)
+    if (wi < WORDS.length - 1) {
+      let spaceW = textWidth(" ");
+      cursorX += spaceW;
+      let dotW = textWidth(SEPARATOR);
+      let dotX = cursorX + dotW / 2;
+      separatorParticles.push(new SeparatorDot(dotX, baseY, wi));
+      cursorX += dotW + spaceW;
+    }
+  }
+}
+
+// ─── CharParticle Class ──────────────────────────────────────
+class CharParticle {
+  constructor(ch, homeX, homeY, col, wordIndex) {
+    this.ch = ch;
+    this.homeX = homeX;
+    this.homeY = homeY;
+    this.x = homeX;
+    this.y = homeY;
+    this.targetX = homeX;
+    this.targetY = homeY;
+    this.col = col;
+    this.wordIndex = wordIndex;
+
+    this.rotation = 0;
+    this.targetRotation = 0;
+    this.scale = 1;
+    this.targetScale = 1;
+    this.opacity = 255;
+    this.targetOpacity = 255;
+
+    // Perlin noise offsets (unique per character)
+    this.noiseOffX = random(1000);
+    this.noiseOffY = random(1000);
+    this.noiseOffR = random(1000);
+    this.noiseOffS = random(1000);
+    this.noiseSpeed = random(0.003, 0.008);
+
+    // Breathing phase
+    this.breathPhase = random(TWO_PI);
+    this.breathSpeed = random(0.015, 0.03);
+
+    // Velocity for mouse push
+    this.vx = 0;
+    this.vy = 0;
+  }
+
+  setDriftTarget() {
+    let offsetX = map(noise(this.noiseOffX + millis() * 0.0003), 0, 1, -DRIFT_RANGE, DRIFT_RANGE);
+    let offsetY = map(noise(this.noiseOffY + millis() * 0.0003), 0, 1, -DRIFT_RANGE * 0.7, DRIFT_RANGE * 0.7);
+    this.targetX = this.homeX + offsetX;
+    this.targetY = this.homeY + offsetY;
+    this.targetRotation = map(noise(this.noiseOffR + millis() * 0.0003), 0, 1, -PI / 6, PI / 6);
+    this.targetScale = map(noise(this.noiseOffS + millis() * 0.0003), 0, 1, 0.7, 1.3);
+    this.targetOpacity = map(noise(this.noiseOffX + 500 + millis() * 0.0002), 0, 1, 153, 255);
+  }
+
+  setHomeTarget() {
+    this.targetX = this.homeX;
+    this.targetY = this.homeY;
+    this.targetRotation = 0;
+    this.targetScale = 1;
+    this.targetOpacity = 255;
+  }
+
+  burstScatter() {
+    // Violent scatter on click
+    let angle = random(TWO_PI);
+    let dist = random(200, 400);
+    this.targetX = this.homeX + cos(angle) * dist;
+    this.targetY = this.homeY + sin(angle) * dist;
+    this.targetRotation = random(-PI / 3, PI / 3);
+    this.targetScale = random(0.5, 1.5);
+    this.vx = cos(angle) * random(5, 15);
+    this.vy = sin(angle) * random(5, 15);
+  }
+
+  update() {
+    // Mouse repulsion
+    let mx = mouseX;
+    let my = mouseY;
+    let container = document.getElementById('typo-container');
+    let rect = container.getBoundingClientRect();
+    // Check if mouse is within canvas
+    if (mx > 0 && mx < canvasW && my > 0 && my < canvasH) {
+      let dx = this.x - mx;
+      let dy = this.y - my;
+      let d = sqrt(dx * dx + dy * dy);
+      if (d < MOUSE_RADIUS && d > 1) {
+        let force = (MOUSE_RADIUS - d) / MOUSE_RADIUS * MOUSE_FORCE;
+        this.vx += (dx / d) * force;
+        this.vy += (dy / d) * force;
+      }
+    }
+
+    // Apply velocity with friction
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vx *= 0.92;
+    this.vy *= 0.92;
+
+    // Lerp towards target
+    this.x = lerp(this.x, this.targetX, EASE_FACTOR);
+    this.y = lerp(this.y, this.targetY, EASE_FACTOR);
+    this.rotation = lerp(this.rotation, this.targetRotation, EASE_FACTOR);
+    this.scale = lerp(this.scale, this.targetScale, EASE_FACTOR);
+    this.opacity = lerp(this.opacity, this.targetOpacity, EASE_FACTOR);
+
+    // Breathing oscillation (subtle scale pulse when formed)
+    if (currentState === "FORMED") {
+      this.breathPhase += this.breathSpeed;
+      let breathScale = 1 + sin(this.breathPhase) * 0.02;
+      this.scale = lerp(this.scale, breathScale, 0.05);
+    }
+  }
+
+  render() {
+    push();
+    translate(this.x, this.y);
+    rotate(this.rotation);
+    scale(this.scale);
+    fill(this.col[0], this.col[1], this.col[2], this.opacity);
+    noStroke();
+    textSize(FONT_SIZE);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    text(this.ch, 0, 0);
+    pop();
+  }
+
+  renderGhost() {
+    // Faint trail copy
+    push();
+    translate(this.x, this.y);
+    rotate(this.rotation);
+    scale(this.scale * 0.98);
+    fill(this.col[0], this.col[1], this.col[2], TRAIL_OPACITY);
+    noStroke();
+    textSize(FONT_SIZE);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    text(this.ch, 0, 0);
+    pop();
+  }
+}
+
+// ─── SeparatorDot Class ──────────────────────────────────────
+class SeparatorDot {
+  constructor(homeX, homeY, index) {
+    this.homeX = homeX;
+    this.homeY = homeY;
+    this.x = homeX;
+    this.y = homeY;
+    this.index = index;
+    this.orbitAngle = random(TWO_PI);
+    this.orbitSpeed = random(0.008, 0.015);
+    this.orbitRadius = 8;
+    this.targetOrbitRadius = 8;
+    this.scale = 1;
+    this.targetScale = 1;
+    this.opacity = 200;
+  }
+
+  setDriftTarget() {
+    this.targetOrbitRadius = random(30, 60);
+    this.targetScale = random(0.8, 1.4);
+  }
+
+  setHomeTarget() {
+    this.targetOrbitRadius = 8;
+    this.targetScale = 1;
+  }
+
+  burstScatter() {
+    this.targetOrbitRadius = random(80, 150);
+    this.targetScale = random(0.6, 1.6);
+  }
+
+  update() {
+    this.orbitAngle += this.orbitSpeed;
+    this.orbitRadius = lerp(this.orbitRadius, this.targetOrbitRadius, EASE_FACTOR);
+    this.scale = lerp(this.scale, this.targetScale, EASE_FACTOR);
+
+    this.x = this.homeX + cos(this.orbitAngle) * this.orbitRadius;
+    this.y = this.homeY + sin(this.orbitAngle) * this.orbitRadius;
+  }
+
+  render() {
+    push();
+    translate(this.x, this.y);
+    scale(this.scale);
+    fill(255, 255, 255, this.opacity);
+    noStroke();
+    textSize(FONT_SIZE);
+    textStyle(BOLD);
+    textAlign(CENTER, CENTER);
+    text(SEPARATOR, 0, 0);
+    pop();
+  }
+}
+
+// ─── Background text wallpaper ───────────────────────────────
+function drawBackgroundText() {
+  push();
+  fill(255, 255, 255, 10); // ~0.04 opacity — subtle data wallpaper
+  noStroke();
+  textSize(9);
+  textStyle(NORMAL);
+  textAlign(LEFT, TOP);
+  textFont('JetBrains Mono');
+
+  let lineHeight = 14;
+  let textW = textWidth(BG_TEXT + "   ");
+  let cols = ceil(canvasW / textW) + 1;
+  let rows = ceil(canvasH / lineHeight) + 1;
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      text(BG_TEXT, c * textW - (r * 30) % textW, r * lineHeight);
+    }
+  }
+
+  // Reset font for main text
+  textFont('Inter');
+  pop();
+}
+
+// ─── Ghost trails management ─────────────────────────────────
+function captureGhosts() {
+  if (currentState !== "DRIFTING") return;
+  if (frameCount % 8 !== 0) return; // capture every 8 frames
+
+  let snapshot = [];
+  for (let p of charParticles) {
+    snapshot.push({
+      ch: p.ch,
+      x: p.x,
+      y: p.y,
+      rotation: p.rotation,
+      scale: p.scale,
+      col: p.col,
+      born: millis()
+    });
+  }
+  ghostTrails.push(snapshot);
+  if (ghostTrails.length > MAX_GHOSTS) {
+    ghostTrails.shift();
+  }
+}
+
+function drawGhosts() {
+  let now = millis();
+  let surviving = [];
+  for (let snapshot of ghostTrails) {
+    let age = now - snapshot[0].born;
+    if (age > 3000) continue; // fade out after 3 seconds
+    surviving.push(snapshot);
+    let fadeAlpha = map(age, 0, 3000, TRAIL_OPACITY, 0);
+    for (let g of snapshot) {
+      push();
+      translate(g.x, g.y);
+      rotate(g.rotation);
+      scale(g.scale * 0.98);
+      fill(g.col[0], g.col[1], g.col[2], fadeAlpha);
+      noStroke();
+      textSize(FONT_SIZE);
+      textStyle(BOLD);
+      textAlign(CENTER, CENTER);
+      textFont('Inter');
+      text(g.ch, 0, 0);
+      pop();
+    }
+  }
+  ghostTrails = surviving;
+}
+
+// ─── State management ────────────────────────────────────────
+function setState(newState) {
+  currentState = newState;
+  lastStateChange = millis();
+
+  if (newState === "DRIFTING") {
+    for (let p of charParticles) p.setDriftTarget();
+    for (let s of separatorParticles) s.setDriftTarget();
+  } else if (newState === "FORMED" || newState === "REFORMED") {
+    for (let p of charParticles) p.setHomeTarget();
+    for (let s of separatorParticles) s.setHomeTarget();
+  }
+}
+
+function triggerBurst() {
+  for (let p of charParticles) p.burstScatter();
+  for (let s of separatorParticles) s.burstScatter();
+  currentState = "DRIFTING";
+  lastStateChange = millis();
+  clickBurst = true;
+  clickBurstTime = millis();
+}
+
+// ─── Draw loop ───────────────────────────────────────────────
+function draw() {
+  background(27, 42, 74); // navy
+
+  // Background wallpaper text
+  drawBackgroundText();
+
+  // Auto-cycle state transitions
+  if (autoCycle) {
+    let elapsed = millis() - lastStateChange;
+    if (elapsed > CYCLE_INTERVAL) {
+      if (currentState === "FORMED") {
+        setState("DRIFTING");
+      } else if (currentState === "DRIFTING") {
+        setState("REFORMED");
+      } else if (currentState === "REFORMED") {
+        setState("FORMED");
+      }
+    }
+  }
+
+  // In drifting state, continuously update Perlin drift targets
+  if (currentState === "DRIFTING") {
+    for (let p of charParticles) {
+      p.setDriftTarget();
+    }
+    for (let s of separatorParticles) {
+      s.setDriftTarget();
+    }
+  }
+
+  // After burst, slowly reform
+  if (clickBurst && millis() - clickBurstTime > 3000) {
+    setState("REFORMED");
+    clickBurst = false;
+  }
+
+  // Capture ghost trails
+  captureGhosts();
+
+  // Draw ghost trails
+  drawGhosts();
+
+  // Update and render separator dots
+  for (let s of separatorParticles) {
+    s.update();
+    s.render();
+  }
+
+  // Update and render character particles
+  textFont('Inter');
+  for (let p of charParticles) {
+    p.update();
+    p.render();
+  }
+
+  // State indicator (subtle)
+  push();
+  fill(255, 255, 255, 40);
+  noStroke();
+  textSize(9);
+  textFont('JetBrains Mono');
+  textStyle(NORMAL);
+  textAlign(RIGHT, BOTTOM);
+  let stateLabel = currentState === "REFORMED" ? "REFORMING..." : currentState;
+  text(stateLabel, canvasW - 15, canvasH - 10);
+  pop();
+}
+
+// ─── Mouse interaction ───────────────────────────────────────
+function mousePressed() {
+  // Check if click is within canvas bounds
+  let container = document.getElementById('typo-container');
+  let rect = container.getBoundingClientRect();
+  if (mouseX > 0 && mouseX < canvasW && mouseY > 0 && mouseY < canvasH) {
+    triggerBurst();
+  }
+}
+
+// ─── Window resize ───────────────────────────────────────────
+function windowResized() {
+  let container = document.getElementById('typo-container');
+  canvasW = container.offsetWidth;
+  canvasH = container.offsetHeight;
+  resizeCanvas(canvasW, canvasH);
+  buildCharParticles();
+  if (currentState === "DRIFTING") {
+    for (let p of charParticles) p.setDriftTarget();
+  }
+}
+
+// ─── External controls ───────────────────────────────────────
+function disperseAll() {
+  autoCycle = false;
+  document.getElementById('btn-cycle').classList.remove('active');
+  setState("DRIFTING");
+}
+
+function reformAll() {
+  autoCycle = false;
+  document.getElementById('btn-cycle').classList.remove('active');
+  setState("REFORMED");
+}
+
+function toggleCycle() {
+  autoCycle = !autoCycle;
+  let btn = document.getElementById('btn-cycle');
+  if (autoCycle) {
+    btn.classList.add('active');
+    lastStateChange = millis(); // reset timer
+  } else {
+    btn.classList.remove('active');
+  }
+}
+</script>
+</body>
+</html>
