@@ -1,6 +1,6 @@
 # Index des Prototypes Visuels — erickilama.com
 
-> Catalogue de 12 moteurs visuels prototypés pour le site.
+> Catalogue de 15 moteurs visuels prototypés pour le site.
 > Chaque proto est un fichier HTML autonome, servi par Hugo sur `localhost:1314/proto-*.html`.
 > Inspirations : Pentagram (Halstead, Opara, Lupi), Graphcore, RAND Art+Data.
 
@@ -19,9 +19,11 @@
 | G  | Lupi Dendrites | **REJETÉ** | — |
 | H  | Data Rings Orbital | **GARDÉ** | Élément décoratif / About / Loading |
 | I  | Radial Sunburst | **EN RÉSERVE** | Portrait de données / identité visuelle |
-| J  | Typographic Generative | **À ÉVALUER** | Hero animé / section Vigie / identité textuelle |
-| K  | Ribbon Weave | **À ÉVALUER** | Section Programmes (flux interconnectés) / Hero |
-| L  | Grid Disruption | **À ÉVALUER** | Section Vigie / Hero (propagation de chocs) |
+| J  | Typographic Generative | **REJETÉ** | — |
+| K  | Ribbon Weave | **REJETÉ** | — |
+| L  | Grid Disruption v2 | **REJETÉ** | Concept OK, rendu insuffisant (carrés qui bougent) |
+| M  | Transmission Network | **CONCEPT VALIDÉ** | Data-driven, mais rendu trop classique (node-graph) |
+| N  | Transmission Field | **DIRECTION** | Concept validé — rendu à approfondir (R&D moteur) |
 
 ---
 
@@ -279,8 +281,25 @@
 | Typographic particles | J | Caractères comme particules — formation/dispersion cyclique |
 | Ribbon weave | K | Rubans entrelacés avec profondeur over/under |
 | Grid disruption | L | Grille ordonnée + ondes de choc propagées |
+| Data-driven network | M | Transmission cascade avec coefficients estimés |
+| Particle field dynamics | N | Particules révèlent les chemins de transmission |
+
+---
+
+## R&D — Moteurs à explorer
+
+Le vocabulaire visuel actuel (cercles, carrés, particules, lignes) a atteint ses limites.
+Pour un rendu véritablement innovant du concept N (transmission data-driven), explorer :
+
+| Moteur | Technique | Ce que ça changerait |
+|--------|-----------|---------------------|
+| **WebGL Fluid Sim** | Navier-Stokes 2D | Le choc EST une perturbation fluide, pas des dots qui bougent |
+| **Contour field continu** | Marching squares data-driven | Pas de formes discrètes, gradient continu piloté par les données |
+| **Fibre / hatching** | Lignes courbes en densité | Comme des fibres sous tension, pas des points |
+| **Voronoi dynamique** | Tessellation qui se fracture | L'espace craque sous le choc |
+| **Reaction-diffusion** | Turing patterns data-driven | Motifs organiques émergents |
 
 ---
 
 *Dernière mise à jour : 28 mars 2026*
-*12 prototypes, 7 gardés, 2 rejetés (B, G), 3 à évaluer (J, K, L)*
+*15 prototypes, 7 gardés (A,C,D,E,F,H + N direction), 6 rejetés (B,G,J,K,L), 2 concepts (M,N)*
