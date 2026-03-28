@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto H — Lupi Data Rings (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .rings-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  /* Canvas container */
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO H — <span>P5.JS CANVAS — Lupi Data Rings — Orbital Encoding</span></div>
+
+<section class="rings-section">
+  <div class="container">
+    <div class="section-label">Programme de recherche</div>
+    <div class="section-title">Orbites d'un programme de recherche</div>
+    <div class="section-sub">Quatre axes en rotation. Chaque anneau encode une dimension — intensité, fréquence, convergence. Un orrery intellectuel, lent et précis.</div>
+
+    <div class="canvas-wrapper" id="rings-container">
+      <!-- p5 canvas injected here -->
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="regenerateRings()">Régénérer</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" onclick="adjustSpeed(1)">Vitesse +</button>
+      <button class="ctrl-btn" onclick="adjustSpeed(-1)">Vitesse −</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = contrôle de vitesse · CLIC = expansion du quadrant · Les anneaux respirent
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question</div>
+      <div class="q-text">Comment encoder visuellement la densité et la complémentarité de quatre axes de recherche en une seule composition orbitale ?</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ─── Global state ───────────────────────────────────────────
+let isAnimating = true;
+let speedMultiplier = 1.0;
+let rings = [];
+let connectingLines = [];
+let breathPhase = 0;
+let clickExpansion = { active: false, quadrant: -1, amount: 0, returning: false };
+let seed;
+
+// ─── Quadrant colors ───────────────────────────────────────
+const QUAD_COLORS = [
+  { r: 44, g: 95, b: 138 },   // BLUE  — Entreprises (315-45, right)
+  { r: 212, g: 160, b: 23 },  // GOLD  — Système Int. (45-135, bottom)
+  { r: 192, g: 57, b: 43 },   // RED   — États (135-225, left)
+  { r: 200, g: 208, b: 216 }  // WHITE — Prospectif (225-315, top)
+];
+
+const QUAD_LABELS = [
+  { text: "ENTREPRISES", angle: 0 },
+  { text: "SYSTÈME INT.", angle: Math.PI / 2 },
+  { text: "ÉTATS", angle: Math.PI },
+  { text: "PROSPECTIF", angle: 3 * Math.PI / 2 }
+];
+
+// ─── Ring definitions ───────────────────────────────────────
+function buildRings() {
+  rings = [];
+  const ringCount = 10;
+  const minR = 60;
+  const maxR = 220;
+  const spacing = (maxR - minR) / (ringCount - 1);
+
+  for (let i = 0; i < ringCount; i++) {
+    let ring = {
+      radius: minR + i * spacing,
+      baseRadius: minR + i * spacing,
+      rotation: random(TWO_PI),
+      speed: map(i, 0, ringCount - 1, 0.008, 0.001),
+      direction: (i % 2 === 0) ? 1 : -1,
+      marks: [],
+      type: getRingType(i)
+    };
+
+    // Generate marks based on type
+    let markCount;
+    switch (ring.type) {
+      case 'dots':
+        markCount = floor(random(20, 31));
+        for (let m = 0; m < markCount; m++) {
+          ring.marks.push({
+            angle: (TWO_PI / markCount) * m + random(-0.03, 0.03),
+            size: random(2, 4),
+            opacity: random(0.5, 0.9)
+          });
+        }
+        break;
+      case 'ticks':
+        markCount = floor(random(40, 61));
+        for (let m = 0; m < markCount; m++) {
+          ring.marks.push({
+            angle: (TWO_PI / markCount) * m + random(-0.02, 0.02),
+            length: random(8, 13),
+            weight: 1,
+            opacity: random(0.4, 0.85)
+          });
+        }
+        break;
+      case 'dashes':
+        markCount = floor(random(12, 22));
+        let dashAngle = 0;
+        for (let m = 0; m < markCount; m++) {
+          let arcLen = random(5, 16) * (PI / 180);
+          let gap = random(3, 10) * (PI / 180);
+          ring.marks.push({
+            startAngle: dashAngle,
+            arcLength: arcLen,
+            opacity: random(0.4, 0.8)
+          });
+          dashAngle += arcLen + gap;
+          if (dashAngle > TWO_PI) break;
+        }
+        break;
+      case 'diamonds':
+        markCount = floor(random(15, 26));
+        for (let m = 0; m < markCount; m++) {
+          ring.marks.push({
+            angle: (TWO_PI / markCount) * m + random(-0.05, 0.05),
+            size: random(4, 7),
+            rotSpeed: random(0.005, 0.02),
+            rotPhase: random(TWO_PI),
+            opacity: random(0.45, 0.85)
+          });
+        }
+        break;
+      case 'mixed':
+        markCount = floor(random(18, 30));
+        for (let m = 0; m < markCount; m++) {
+          ring.marks.push({
+            angle: (TWO_PI / markCount) * m + random(-0.04, 0.04),
+            isDot: m % 2 === 0,
+            size: random(2, 4),
+            length: random(6, 10),
+            opacity: random(0.2, 0.5)
+          });
+        }
+        break;
+    }
+    rings.push(ring);
+  }
+}
+
+function getRingType(i) {
+  if (i <= 1) return 'dots';
+  if (i <= 3) return 'ticks';
+  if (i <= 5) return 'dashes';
+  if (i <= 7) return 'diamonds';
+  return 'mixed';
+}
+
+// ─── Connecting lines ───────────────────────────────────────
+function buildConnectingLines() {
+  connectingLines = [];
+  let lineCount = floor(random(4, 7));
+  for (let i = 0; i < lineCount; i++) {
+    let r1idx = floor(random(0, 4));
+    let r2idx = floor(random(5, 10));
+    connectingLines.push({
+      ring1: r1idx,
+      ring2: r2idx,
+      mark1: floor(random(rings[r1idx].marks.length)),
+      mark2: floor(random(rings[r2idx].marks.length)),
+      opacity: random(0.06, 0.15)
+    });
+  }
+}
+
+// ─── Color interpolation for quadrants ──────────────────────
+function getQuadrantColor(angle, hoverQuadrant) {
+  // Normalize angle to 0..TWO_PI
+  let a = ((angle % TWO_PI) + TWO_PI) % TWO_PI;
+
+  // Quadrant boundaries (shifted so right = quadrant 0)
+  // Q0: 315-45   (right)   -> center 0
+  // Q1: 45-135   (bottom)  -> center PI/2
+  // Q2: 135-225  (left)    -> center PI
+  // Q3: 225-315  (top)     -> center 3PI/2
+  const blendZone = 15 * (PI / 180); // 15 degrees blend
+
+  // Determine base quadrant
+  let qIdx;
+  if (a >= 7 * PI / 4 || a < PI / 4) qIdx = 0;
+  else if (a >= PI / 4 && a < 3 * PI / 4) qIdx = 1;
+  else if (a >= 3 * PI / 4 && a < 5 * PI / 4) qIdx = 2;
+  else qIdx = 3;
+
+  // Quadrant boundaries
+  const boundaries = [PI / 4, 3 * PI / 4, 5 * PI / 4, 7 * PI / 4];
+
+  // Check if we're in a blend zone
+  let c = QUAD_COLORS[qIdx];
+  let finalR = c.r, finalG = c.g, finalB = c.b;
+
+  for (let b = 0; b < boundaries.length; b++) {
+    let bAngle = boundaries[b];
+    let dist = abs(a - bAngle);
+    if (dist > PI) dist = TWO_PI - dist;
+
+    if (dist < blendZone) {
+      let t = dist / blendZone; // 0 at boundary, 1 at edge of blend
+      // Determine which two quadrants to blend
+      let qA = b;
+      let qB = (b + 1) % 4;
+      // If on the side of qB
+      let cA = QUAD_COLORS[qA];
+      let cB = QUAD_COLORS[qB];
+
+      // Smooth blend
+      let blend = 0.5 + 0.5 * Math.sin((t - 0.5) * PI);
+      // Figure out which side we're on
+      let diff = a - bAngle;
+      if (diff > PI) diff -= TWO_PI;
+      if (diff < -PI) diff += TWO_PI;
+      if (diff < 0) {
+        // closer to qA
+        finalR = lerp(cA.r, cB.r, 1 - blend);
+        finalG = lerp(cA.g, cB.g, 1 - blend);
+        finalB = lerp(cA.b, cB.b, 1 - blend);
+      } else {
+        finalR = lerp(cB.r, cA.r, 1 - blend);
+        finalG = lerp(cB.g, cA.g, 1 - blend);
+        finalB = lerp(cB.b, cA.b, 1 - blend);
+      }
+      break;
+    }
+  }
+
+  return { r: finalR, g: finalG, b: finalB };
+}
+
+function getHoveredQuadrant(mx, my, cx, cy) {
+  let a = atan2(my - cy, mx - cx);
+  if (a < 0) a += TWO_PI;
+  if (a >= 7 * PI / 4 || a < PI / 4) return 0;
+  if (a >= PI / 4 && a < 3 * PI / 4) return 1;
+  if (a >= 3 * PI / 4 && a < 5 * PI / 4) return 2;
+  return 3;
+}
+
+// ─── p5.js sketch ───────────────────────────────────────────
+let cnv;
+let parentEl;
+
+function setup() {
+  parentEl = document.getElementById('rings-container');
+  let w = parentEl.offsetWidth;
+  let h = parentEl.offsetHeight;
+  cnv = createCanvas(w, h);
+  cnv.parent('rings-container');
+  seed = floor(random(99999));
+  buildRings();
+  buildConnectingLines();
+  pixelDensity(2);
+}
+
+function draw() {
+  let w = width;
+  let h = height;
+  let cx = w / 2;
+  let cy = h / 2;
+
+  background(27, 42, 74);
+
+  // Mouse distance factor for speed modulation
+  let md = dist(mouseX, mouseY, cx, cy);
+  let maxDist = dist(0, 0, cx, cy);
+  let mouseFactor = 1.0;
+  if (mouseX > 0 && mouseX < w && mouseY > 0 && mouseY < h) {
+    mouseFactor = map(md, 0, maxDist, 2.5, 0.5);
+  }
+
+  // Hovered quadrant
+  let hoverQ = -1;
+  if (mouseX > 0 && mouseX < w && mouseY > 0 && mouseY < h) {
+    hoverQ = getHoveredQuadrant(mouseX, mouseY, cx, cy);
+  }
+
+  // Breath pulse (5s cycle)
+  breathPhase += 0.012;
+  let breathVal = 0.5 + 0.5 * sin(breathPhase);
+  let breathAlpha = map(breathVal, 0, 1, 0.85, 1.0);
+
+  // Click expansion
+  if (clickExpansion.active) {
+    if (!clickExpansion.returning) {
+      clickExpansion.amount += 1.2;
+      if (clickExpansion.amount >= 15) clickExpansion.returning = true;
+    } else {
+      clickExpansion.amount -= 0.6;
+      if (clickExpansion.amount <= 0) {
+        clickExpansion.active = false;
+        clickExpansion.amount = 0;
+      }
+    }
+  }
+
+  push();
+  translate(cx, cy);
+
+  // ─── Draw connecting lines ──────────────────────────────
+  for (let cl of connectingLines) {
+    let r1 = rings[cl.ring1];
+    let r2 = rings[cl.ring2];
+    if (cl.mark1 >= r1.marks.length || cl.mark2 >= r2.marks.length) continue;
+    let m1 = r1.marks[cl.mark1];
+    let m2 = r2.marks[cl.mark2];
+    let a1 = (m1.angle || m1.startAngle || 0) + r1.rotation;
+    let a2 = (m2.angle || m2.startAngle || 0) + r2.rotation;
+    let rad1 = r1.radius;
+    let rad2 = r2.radius;
+
+    // Apply click expansion
+    if (clickExpansion.active) {
+      let qa1 = getQuadFromAngle(a1);
+      let qa2 = getQuadFromAngle(a2);
+      if (qa1 === clickExpansion.quadrant) rad1 += clickExpansion.amount;
+      if (qa2 === clickExpansion.quadrant) rad2 += clickExpansion.amount;
+    }
+
+    let x1 = cos(a1) * rad1;
+    let y1 = sin(a1) * rad1;
+    let x2 = cos(a2) * rad2;
+    let y2 = sin(a2) * rad2;
+
+    let ca = getQuadrantColor(a1, hoverQ);
+    stroke(ca.r, ca.g, ca.b, cl.opacity * 255 * breathAlpha);
+    strokeWeight(0.5);
+    line(x1, y1, x2, y2);
+  }
+
+  // ─── Draw rings ─────────────────────────────────────────
+  for (let i = 0; i < rings.length; i++) {
+    let ring = rings[i];
+
+    // Update rotation
+    if (isAnimating) {
+      ring.rotation += ring.speed * ring.direction * speedMultiplier * mouseFactor;
+    }
+
+    let r = ring.radius;
+
+    push();
+    rotate(ring.rotation);
+
+    switch (ring.type) {
+      case 'dots':
+        drawDots(ring, r, hoverQ, breathAlpha, ring.rotation);
+        break;
+      case 'ticks':
+        drawTicks(ring, r, hoverQ, breathAlpha, ring.rotation);
+        break;
+      case 'dashes':
+        drawDashes(ring, r, hoverQ, breathAlpha, ring.rotation);
+        break;
+      case 'diamonds':
+        drawDiamonds(ring, r, hoverQ, breathAlpha, ring.rotation);
+        break;
+      case 'mixed':
+        drawMixed(ring, r, hoverQ, breathAlpha, ring.rotation);
+        break;
+    }
+
+    pop();
+  }
+
+  // ─── Central diamond ────────────────────────────────────
+  let centralRot = frameCount * 0.008 * speedMultiplier;
+  let glowPulse = 0.3 + 0.2 * sin(frameCount * 0.03);
+
+  // Glow layers
+  noStroke();
+  for (let g = 4; g >= 0; g--) {
+    let gs = 15 + g * 8;
+    let ga = glowPulse * (0.04 - g * 0.007);
+    fill(200, 208, 216, ga * 255);
+    push();
+    rotate(centralRot);
+    beginShape();
+    vertex(0, -gs);
+    vertex(gs, 0);
+    vertex(0, gs);
+    vertex(-gs, 0);
+    endShape(CLOSE);
+    pop();
+  }
+
+  // Core diamond
+  push();
+  rotate(centralRot);
+  noFill();
+  stroke(200, 208, 216, 200);
+  strokeWeight(1.2);
+  let ds = 15;
+  beginShape();
+  vertex(0, -ds);
+  vertex(ds, 0);
+  vertex(0, ds);
+  vertex(-ds, 0);
+  endShape(CLOSE);
+
+  // Inner cross
+  stroke(200, 208, 216, 80);
+  strokeWeight(0.5);
+  line(0, -ds * 0.5, 0, ds * 0.5);
+  line(-ds * 0.5, 0, ds * 0.5, 0);
+  pop();
+
+  // ─── Text labels ────────────────────────────────────────
+  let outerR = 240;
+  textFont('JetBrains Mono');
+  textSize(10);
+  textAlign(CENTER, CENTER);
+
+  for (let q = 0; q < 4; q++) {
+    let la = QUAD_LABELS[q].angle;
+    let lx = cos(la) * outerR;
+    let ly = sin(la) * outerR;
+    let qc = QUAD_COLORS[q];
+    let labelAlpha = (hoverQ === q) ? 0.7 : 0.4;
+
+    push();
+    fill(qc.r, qc.g, qc.b, labelAlpha * 255 * breathAlpha);
+    noStroke();
+
+    // Draw with letter spacing simulation
+    let txt = QUAD_LABELS[q].text;
+    let charW = 6.5;
+    let totalW = txt.length * charW;
+    for (let c = 0; c < txt.length; c++) {
+      text(txt[c], lx - totalW / 2 + c * charW + charW / 2, ly);
+    }
+    pop();
+  }
+
+  pop();
+}
+
+// ─── Drawing functions ──────────────────────────────────────
+
+function drawDots(ring, r, hoverQ, breathAlpha, ringRot) {
+  noStroke();
+  for (let m of ring.marks) {
+    let worldAngle = m.angle + ringRot;
+    let c = getQuadrantColor(worldAngle, hoverQ);
+    let qIdx = getQuadFromAngle(worldAngle);
+    let hoverBoost = (hoverQ === qIdx) ? 1.0 : 0.8;
+
+    let rad = r;
+    if (clickExpansion.active && clickExpansion.quadrant === qIdx) {
+      rad += clickExpansion.amount;
+    }
+
+    let x = cos(m.angle) * rad;
+    let y = sin(m.angle) * rad;
+    let alpha = m.opacity * hoverBoost * breathAlpha;
+    fill(c.r, c.g, c.b, alpha * 255);
+    circle(x, y, m.size);
+  }
+}
+
+function drawTicks(ring, r, hoverQ, breathAlpha, ringRot) {
+  for (let m of ring.marks) {
+    let worldAngle = m.angle + ringRot;
+    let c = getQuadrantColor(worldAngle, hoverQ);
+    let qIdx = getQuadFromAngle(worldAngle);
+    let hoverBoost = (hoverQ === qIdx) ? 1.0 : 0.8;
+
+    let rad = r;
+    if (clickExpansion.active && clickExpansion.quadrant === qIdx) {
+      rad += clickExpansion.amount;
+    }
+
+    let x1 = cos(m.angle) * rad;
+    let y1 = sin(m.angle) * rad;
+    let x2 = cos(m.angle) * (rad + m.length);
+    let y2 = sin(m.angle) * (rad + m.length);
+    let alpha = m.opacity * hoverBoost * breathAlpha;
+    stroke(c.r, c.g, c.b, alpha * 255);
+    strokeWeight(m.weight);
+    line(x1, y1, x2, y2);
+  }
+}
+
+function drawDashes(ring, r, hoverQ, breathAlpha, ringRot) {
+  noFill();
+  for (let m of ring.marks) {
+    let midAngle = m.startAngle + m.arcLength / 2 + ringRot;
+    let c = getQuadrantColor(midAngle, hoverQ);
+    let qIdx = getQuadFromAngle(midAngle);
+    let hoverBoost = (hoverQ === qIdx) ? 1.0 : 0.8;
+
+    let rad = r;
+    if (clickExpansion.active && clickExpansion.quadrant === qIdx) {
+      rad += clickExpansion.amount;
+    }
+
+    let alpha = m.opacity * hoverBoost * breathAlpha;
+    stroke(c.r, c.g, c.b, alpha * 255);
+    strokeWeight(1.5);
+    arc(0, 0, rad * 2, rad * 2, m.startAngle, m.startAngle + m.arcLength);
+  }
+}
+
+function drawDiamonds(ring, r, hoverQ, breathAlpha, ringRot) {
+  for (let m of ring.marks) {
+    let worldAngle = m.angle + ringRot;
+    let c = getQuadrantColor(worldAngle, hoverQ);
+    let qIdx = getQuadFromAngle(worldAngle);
+    let hoverBoost = (hoverQ === qIdx) ? 1.0 : 0.8;
+
+    let rad = r;
+    if (clickExpansion.active && clickExpansion.quadrant === qIdx) {
+      rad += clickExpansion.amount;
+    }
+
+    let x = cos(m.angle) * rad;
+    let y = sin(m.angle) * rad;
+    let alpha = m.opacity * hoverBoost * breathAlpha;
+    let s = m.size;
+    let dRot = m.rotPhase + frameCount * m.rotSpeed;
+
+    push();
+    translate(x, y);
+    rotate(dRot);
+    noFill();
+    stroke(c.r, c.g, c.b, alpha * 255);
+    strokeWeight(0.8);
+    beginShape();
+    vertex(0, -s);
+    vertex(s, 0);
+    vertex(0, s);
+    vertex(-s, 0);
+    endShape(CLOSE);
+    pop();
+  }
+}
+
+function drawMixed(ring, r, hoverQ, breathAlpha, ringRot) {
+  for (let m of ring.marks) {
+    let worldAngle = m.angle + ringRot;
+    let c = getQuadrantColor(worldAngle, hoverQ);
+    let qIdx = getQuadFromAngle(worldAngle);
+    let hoverBoost = (hoverQ === qIdx) ? 1.0 : 0.8;
+
+    let rad = r;
+    if (clickExpansion.active && clickExpansion.quadrant === qIdx) {
+      rad += clickExpansion.amount;
+    }
+
+    let x = cos(m.angle) * rad;
+    let y = sin(m.angle) * rad;
+    let alpha = m.opacity * hoverBoost * breathAlpha;
+
+    if (m.isDot) {
+      noStroke();
+      fill(c.r, c.g, c.b, alpha * 255);
+      circle(x, y, m.size);
+    } else {
+      let x2 = cos(m.angle) * (rad + m.length);
+      let y2 = sin(m.angle) * (rad + m.length);
+      stroke(c.r, c.g, c.b, alpha * 255);
+      strokeWeight(0.7);
+      line(x, y, x2, y2);
+    }
+  }
+}
+
+// ─── Utilities ──────────────────────────────────────────────
+
+function getQuadFromAngle(a) {
+  a = ((a % TWO_PI) + TWO_PI) % TWO_PI;
+  if (a >= 7 * PI / 4 || a < PI / 4) return 0;
+  if (a >= PI / 4 && a < 3 * PI / 4) return 1;
+  if (a >= 3 * PI / 4 && a < 5 * PI / 4) return 2;
+  return 3;
+}
+
+// ─── Mouse interaction ──────────────────────────────────────
+
+function mousePressed() {
+  let cx = width / 2;
+  let cy = height / 2;
+  let md = dist(mouseX, mouseY, cx, cy);
+
+  // Only respond within the rings area
+  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height && md < 280) {
+    let q = getHoveredQuadrant(mouseX, mouseY, cx, cy);
+    clickExpansion.active = true;
+    clickExpansion.quadrant = q;
+    clickExpansion.amount = 0;
+    clickExpansion.returning = false;
+  }
+}
+
+// ─── Resize ─────────────────────────────────────────────────
+
+function windowResized() {
+  let w = parentEl.offsetWidth;
+  let h = parentEl.offsetHeight;
+  resizeCanvas(w, h);
+}
+
+// ─── Controls ───────────────────────────────────────────────
+
+function regenerateRings() {
+  seed = floor(random(99999));
+  randomSeed(seed);
+  buildRings();
+  buildConnectingLines();
+}
+
+function toggleAnimation() {
+  isAnimating = !isAnimating;
+  let btn = document.getElementById('btn-anim');
+  if (isAnimating) {
+    btn.classList.remove('active');
+  } else {
+    btn.classList.add('active');
+  }
+}
+
+function adjustSpeed(dir) {
+  if (dir > 0) {
+    speedMultiplier = min(speedMultiplier * 1.4, 5.0);
+  } else {
+    speedMultiplier = max(speedMultiplier * 0.7, 0.15);
+  }
+}
+</script>
+</body>
+</html>

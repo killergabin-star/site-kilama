@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto G — Lupi Dendrites (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .dendrite-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  /* Canvas container */
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Zone labels overlay */
+  .zone-labels {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .zone-label {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(27, 42, 74, 0.75);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+  }
+  .zone-label.z1 { left: 10%; color: #C0392B; }
+  .zone-label.z2 { left: 32%; color: #2C5F8A; }
+  .zone-label.z3 { left: 53%; color: #D4A017; }
+  .zone-label.z4 { left: 74%; color: rgba(200,210,220,0.9); }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO G — <span>P5.JS CANVAS — Lupi Dendrites — Neural Data Flows</span></div>
+
+<section class="dendrite-section">
+  <div class="container">
+    <div class="section-label">Programme de recherche</div>
+    <div class="section-title">Quatre échelles d'analyse, un système de transmission</div>
+    <div class="section-sub">Chaque foyer émet des dendrites — courbes organiques qui portent les données entre les échelles. Le réseau respire, les connexions se tissent en temps réel.</div>
+
+    <div class="canvas-wrapper" id="dendrite-container">
+      <!-- p5 canvas injected here -->
+      <div class="zone-labels">
+        <div class="zone-label z1">États fragiles</div>
+        <div class="zone-label z2">Entreprises & BITD</div>
+        <div class="zone-label z3">Système international</div>
+        <div class="zone-label z4">Prospectif</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="regenerateDendrites()">Régénérer</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" id="btn-density" onclick="addDensity()">Densité +</button>
+      <button class="ctrl-btn" id="btn-wind" onclick="toggleWind()">Vent</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = champ de vent · CLIC = pulse lumière · Les dendrites respirent · Chaque régénération est unique
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question de design</div>
+      <div class="q-text">
+        Les dendrites organiques à la Giorgia Lupi rendent-elles les connexions entre axes de recherche plus sensibles qu'une grille statique ? Le mouvement lent évoque-t-il la transmission des chocs ?
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// PROTO G — LUPI DENDRITES — Neural Data Flows
+// Organic bezier tendrils radiating from 4 focal points
+// Inspired by Giorgia Lupi's RAND "Imaging Mental Health"
+// ═══════════════════════════════════════════════════════════════
+
+let canvasW, canvasH;
+let isAnimating = true;
+let windEnabled = true;
+let pulseActive = false;
+let pulseStartFrame = 0;
+const PULSE_DURATION = 45; // frames
+
+// Focal points (will be set relative to canvas size)
+let focalPoints = [];
+let allTendrils = [];
+let dataLabels = [];
+
+// ── Focal point definitions ──
+const FOCAL_DEFS = [
+  {
+    xPct: 0.15, yPct: 0.50,
+    colors: ['#C0392B', '#E74C3C', '#8B1A1A'],
+    name: 'États',
+    labels: ['disruption', 'fragilité', 'coups d\'État', 'résilience', 'contagion']
+  },
+  {
+    xPct: 0.38, yPct: 0.45,
+    colors: ['#2C5F8A', '#4A8CC0', '#1A3D5C'],
+    name: 'Entreprises',
+    labels: ['337k firmes', '79 pays', 'chaînes de valeur', 'BITD', 'résilience PME']
+  },
+  {
+    xPct: 0.62, yPct: 0.55,
+    colors: ['#D4A017', '#B8930F', '#E8C840'],
+    name: 'Système Int.',
+    labels: ['aide', 'alliances', 'G7', 'sanctions', 'multilatéral']
+  },
+  {
+    xPct: 0.85, yPct: 0.50,
+    colors: ['#C8D0D8', '#A0B0C0', '#E0E8F0'],
+    name: 'Prospectif',
+    labels: ['scénarios', 'signposts', 'calibration', 'vigie', 'anticipation']
+  }
+];
+
+// ── Tendril class ──
+class Tendril {
+  constructor(focal, focalIndex) {
+    this.focalX = focal.x;
+    this.focalY = focal.y;
+    this.focalIndex = focalIndex;
+
+    // Pick a random color from the focal palette
+    const colors = FOCAL_DEFS[focalIndex].colors;
+    this.colorHex = colors[Math.floor(Math.random() * colors.length)];
+    this.col = this.hexToRGB(this.colorHex);
+
+    // Direction: random angle with bias outward from center
+    const centerX = canvasW * 0.5;
+    const centerY = canvasH * 0.5;
+    const outAngle = Math.atan2(focal.y - centerY, focal.x - centerX);
+    // Mix outward bias with random spread
+    this.baseAngle = outAngle + (Math.random() - 0.5) * Math.PI * 1.4;
+
+    // Number of segments
+    this.numSegments = Math.floor(Math.random() * 5) + 4; // 4-8
+    // Length per segment
+    this.segLength = Math.random() * 30 + 25; // 25-55px per segment
+    // Total approximate length
+    this.totalLength = this.numSegments * this.segLength;
+
+    // Perlin noise offsets (unique per tendril)
+    this.noiseOffsetX = Math.random() * 10000;
+    this.noiseOffsetY = Math.random() * 10000;
+    this.noiseSpeed = Math.random() * 0.003 + 0.001; // very slow
+
+    // Phase offset for organic diversity
+    this.phaseOffset = Math.random() * 1000;
+
+    // Stroke weight at base
+    this.baseWeight = Math.random() * 1.5 + 1.5; // 1.5-3.0
+
+    // Alpha at base
+    this.baseAlpha = Math.random() * 60 + 140; // 140-200
+
+    // Curve amplitude (how much noise deflects control points)
+    this.amplitude = Math.random() * 40 + 20; // 20-60
+
+    // Pre-compute segment angles (slight deviations from base)
+    this.segAngles = [];
+    let angle = this.baseAngle;
+    for (let i = 0; i < this.numSegments; i++) {
+      angle += (Math.random() - 0.5) * 0.5;
+      this.segAngles.push(angle);
+    }
+  }
+
+  hexToRGB(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return { r, g, b };
+  }
+
+  draw(p, time, mx, my, windOn, pulseT) {
+    // Build the chain of points
+    let points = [];
+    let x = this.focalX;
+    let y = this.focalY;
+    points.push({ x, y });
+
+    for (let i = 0; i < this.numSegments; i++) {
+      const t = time * this.noiseSpeed + this.phaseOffset;
+      const nx = p.noise(this.noiseOffsetX + i * 0.3, t);
+      const ny = p.noise(this.noiseOffsetY + i * 0.3, t + 500);
+
+      // Noise-driven offset perpendicular to segment direction
+      const perpAngle = this.segAngles[i] + Math.PI * 0.5;
+      const noiseDeflect = (nx - 0.5) * 2 * this.amplitude;
+      const noiseDeflectY = (ny - 0.5) * 2 * this.amplitude * 0.5;
+
+      // Base step along the segment angle
+      const stepX = Math.cos(this.segAngles[i]) * this.segLength;
+      const stepY = Math.sin(this.segAngles[i]) * this.segLength;
+
+      x += stepX + Math.cos(perpAngle) * noiseDeflect;
+      y += stepY + Math.sin(perpAngle) * noiseDeflect + noiseDeflectY;
+
+      // Wind interaction (mouse)
+      if (windOn && mx > 0 && my > 0) {
+        const dx = x - mx;
+        const dy = y - my;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const windRadius = 150;
+        if (dist < windRadius) {
+          const force = (1 - dist / windRadius) * 30;
+          x += (dx / dist) * force;
+          y += (dy / dist) * force;
+        }
+      }
+
+      points.push({ x, y });
+    }
+
+    // Draw as a series of bezier curves through the points
+    p.noFill();
+    for (let i = 0; i < points.length - 1; i++) {
+      const progress = i / (points.length - 1);
+      const nextProgress = (i + 1) / (points.length - 1);
+
+      // Taper stroke weight
+      const sw = p.lerp(this.baseWeight, 0.3, progress);
+      p.strokeWeight(sw);
+
+      // Taper alpha
+      let alpha = p.lerp(this.baseAlpha, 20, progress);
+
+      // Pulse effect: wave of brightness traveling from focal point outward
+      if (pulseT >= 0 && pulseT <= 1) {
+        const pulsePos = pulseT; // 0 at focal, 1 at tip
+        const dist = Math.abs(progress - pulsePos);
+        if (dist < 0.25) {
+          const boost = (1 - dist / 0.25) * 180;
+          alpha = Math.min(255, alpha + boost);
+        }
+      }
+
+      p.stroke(this.col.r, this.col.g, this.col.b, alpha);
+
+      // Compute bezier control points
+      const p0 = points[i];
+      const p1 = points[i + 1];
+
+      // Control points offset from midpoint with some noise curvature
+      const midX = (p0.x + p1.x) / 2;
+      const midY = (p0.y + p1.y) / 2;
+
+      const ct = time * this.noiseSpeed * 0.7 + this.phaseOffset;
+      const c1nx = p.noise(this.noiseOffsetX + i * 0.7 + 100, ct);
+      const c1ny = p.noise(this.noiseOffsetY + i * 0.7 + 100, ct);
+      const c2nx = p.noise(this.noiseOffsetX + i * 0.7 + 200, ct);
+      const c2ny = p.noise(this.noiseOffsetY + i * 0.7 + 200, ct);
+
+      const curvature = this.amplitude * 0.6 * (1 - progress * 0.5);
+      const cx1 = p0.x + (midX - p0.x) * 0.5 + (c1nx - 0.5) * curvature;
+      const cy1 = p0.y + (midY - p0.y) * 0.5 + (c1ny - 0.5) * curvature;
+      const cx2 = p1.x - (p1.x - midX) * 0.5 + (c2nx - 0.5) * curvature;
+      const cy2 = p1.y - (p1.y - midY) * 0.5 + (c2ny - 0.5) * curvature;
+
+      p.bezier(p0.x, p0.y, cx1, cy1, cx2, cy2, p1.x, p1.y);
+    }
+  }
+}
+
+// ── Data label class ──
+class DataLabel {
+  constructor(focal, focalIndex, labelText, idx, total) {
+    this.text = labelText;
+    this.focalIndex = focalIndex;
+    const colors = FOCAL_DEFS[focalIndex].colors;
+    this.colorHex = colors[0];
+    this.col = this.hexToRGB(this.colorHex);
+
+    // Position: scattered around focal with random offset
+    const angle = (idx / total) * Math.PI * 2 + (Math.random() - 0.5) * 0.8;
+    const radius = Math.random() * 80 + 40;
+    this.x = focal.x + Math.cos(angle) * radius;
+    this.y = focal.y + Math.sin(angle) * radius;
+
+    this.noiseOff = Math.random() * 10000;
+    this.baseAlpha = Math.random() * 0.15 + 0.25; // 0.25-0.40
+  }
+
+  hexToRGB(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return { r, g, b };
+  }
+
+  draw(p, time) {
+    const breathe = p.noise(this.noiseOff, time * 0.002) * 0.15;
+    const alpha = (this.baseAlpha + breathe) * 255;
+    p.fill(this.col.r, this.col.g, this.col.b, alpha);
+    p.noStroke();
+    p.textFont('JetBrains Mono');
+    p.textSize(9);
+    p.textAlign(p.CENTER, p.CENTER);
+
+    // Slight drift
+    const dx = (p.noise(this.noiseOff + 50, time * 0.001) - 0.5) * 6;
+    const dy = (p.noise(this.noiseOff + 150, time * 0.001) - 0.5) * 6;
+    p.text(this.text, this.x + dx, this.y + dy);
+  }
+}
+
+// ── Setup & initialization ──
+function initFocalPoints() {
+  focalPoints = FOCAL_DEFS.map(def => ({
+    x: canvasW * def.xPct,
+    y: canvasH * def.yPct
+  }));
+}
+
+function createTendrils(countPer) {
+  allTendrils = [];
+  for (let fi = 0; fi < focalPoints.length; fi++) {
+    const count = countPer || (Math.floor(Math.random() * 7) + 12); // 12-18
+    for (let t = 0; t < count; t++) {
+      allTendrils.push(new Tendril(focalPoints[fi], fi));
+    }
+  }
+}
+
+function createLabels() {
+  dataLabels = [];
+  for (let fi = 0; fi < focalPoints.length; fi++) {
+    const labels = FOCAL_DEFS[fi].labels;
+    for (let li = 0; li < labels.length; li++) {
+      dataLabels.push(new DataLabel(focalPoints[fi], fi, labels[li], li, labels.length));
+    }
+  }
+}
+
+// ── p5.js sketch ──
+const sketch = function(p) {
+  p.setup = function() {
+    const container = document.getElementById('dendrite-container');
+    canvasW = container.offsetWidth;
+    canvasH = container.offsetHeight;
+    const canvas = p.createCanvas(canvasW, canvasH);
+    canvas.parent('dendrite-container');
+
+    initFocalPoints();
+    createTendrils();
+    createLabels();
+
+    p.frameRate(30);
+  };
+
+  p.draw = function() {
+    if (!isAnimating && p.frameCount > 2) return;
+
+    // Dark navy background with slight transparency for subtle trail
+    p.background(27, 42, 74, 255);
+
+    const time = p.frameCount;
+
+    // Mouse position relative to canvas
+    let mx = p.mouseX;
+    let my = p.mouseY;
+    // Only count mouse if it's inside the canvas
+    if (mx < 0 || mx > canvasW || my < 0 || my > canvasH) {
+      mx = -1000;
+      my = -1000;
+    }
+
+    // Compute pulse progress
+    let pulseT = -1;
+    if (pulseActive) {
+      const elapsed = p.frameCount - pulseStartFrame;
+      if (elapsed > PULSE_DURATION) {
+        pulseActive = false;
+      } else {
+        pulseT = elapsed / PULSE_DURATION;
+      }
+    }
+
+    // Draw focal point glows
+    for (let fi = 0; fi < focalPoints.length; fi++) {
+      const fp = focalPoints[fi];
+      const col = hexToRGBHelper(FOCAL_DEFS[fi].colors[0]);
+
+      // Breathing glow
+      const breathe = p.noise(fi * 100, time * 0.008) * 0.4 + 0.6;
+
+      // Outer glow
+      for (let r = 60; r > 0; r -= 10) {
+        const alpha = (1 - r / 60) * 25 * breathe;
+        p.noStroke();
+        p.fill(col.r, col.g, col.b, alpha);
+        p.ellipse(fp.x, fp.y, r * 2, r * 2);
+      }
+
+      // Core dot
+      p.fill(col.r, col.g, col.b, 180 * breathe);
+      p.noStroke();
+      p.ellipse(fp.x, fp.y, 6, 6);
+    }
+
+    // Draw all tendrils
+    for (const tendril of allTendrils) {
+      tendril.draw(p, time, mx, my, windEnabled, pulseT);
+    }
+
+    // Draw data labels
+    for (const label of dataLabels) {
+      label.draw(p, time);
+    }
+  };
+
+  p.mousePressed = function() {
+    // Check if click is inside canvas
+    if (p.mouseX >= 0 && p.mouseX <= canvasW && p.mouseY >= 0 && p.mouseY <= canvasH) {
+      pulseActive = true;
+      pulseStartFrame = p.frameCount;
+    }
+  };
+
+  p.windowResized = function() {
+    const container = document.getElementById('dendrite-container');
+    canvasW = container.offsetWidth;
+    canvasH = container.offsetHeight;
+    p.resizeCanvas(canvasW, canvasH);
+    initFocalPoints();
+    createTendrils();
+    createLabels();
+  };
+};
+
+function hexToRGBHelper(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return { r, g, b };
+}
+
+// ── Controls ──
+function regenerateDendrites() {
+  initFocalPoints();
+  createTendrils();
+  createLabels();
+  // Force a redraw even if paused
+  if (!isAnimating) {
+    isAnimating = true;
+    setTimeout(() => { isAnimating = false; }, 100);
+  }
+}
+
+function toggleAnimation() {
+  isAnimating = !isAnimating;
+  const btn = document.getElementById('btn-anim');
+  btn.classList.toggle('active', isAnimating);
+  if (isAnimating) {
+    // Restart the draw loop
+    myP5.loop();
+  }
+}
+
+let densityLevel = 0;
+function addDensity() {
+  densityLevel++;
+  const extra = 4 + densityLevel * 2;
+  // Add more tendrils to each focal point
+  for (let fi = 0; fi < focalPoints.length; fi++) {
+    for (let t = 0; t < extra; t++) {
+      allTendrils.push(new Tendril(focalPoints[fi], fi));
+    }
+  }
+  const btn = document.getElementById('btn-density');
+  btn.classList.add('active');
+  setTimeout(() => btn.classList.remove('active'), 300);
+}
+
+function toggleWind() {
+  windEnabled = !windEnabled;
+  const btn = document.getElementById('btn-wind');
+  btn.classList.toggle('active', windEnabled);
+}
+
+// ── Initialize ──
+let myP5 = new p5(sketch);
+
+// Set initial button states
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn-anim').classList.add('active');
+  document.getElementById('btn-wind').classList.add('active');
+});
+</script>
+</body>
+</html>
