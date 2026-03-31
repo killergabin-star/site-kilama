@@ -1,0 +1,744 @@
+{{ define "styles" }}
+<style>
+/* Research page specifics */
+.research-vision {
+  background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
+  padding: 100px 40px 80px;
+  margin-bottom: 0;
+}
+.research-vision-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.research-vision .section-label {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.research-vision h1 {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 750px;
+  margin-bottom: 24px;
+}
+.research-vision-text {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* Research axes grid */
+.research-axes {
+  background: var(--ivory);
+  padding: 72px 40px;
+}
+.research-axes-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.axes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.axe-item {
+  border-top: 1px solid var(--gray-200);
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.axe-item:first-child {
+  border-top: none;
+}
+.axe-label {
+  position: sticky;
+  top: 100px;
+}
+.axe-number {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-fpsq);
+  margin-bottom: 8px;
+}
+.axe-title {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.axe-question {
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+.axe-content p {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--anthracite);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.axe-methods {
+  font-family: var(--font-data);
+  font-size: 12px;
+  color: var(--gray-500);
+  letter-spacing: 0.03em;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-200);
+}
+.axe-methods strong {
+  color: var(--anthracite);
+  font-weight: 700;
+}
+.axe-papers {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.axe-paper-tag {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border: 1px solid var(--gray-200);
+  color: var(--navy);
+  transition: all 0.15s;
+}
+.axe-paper-tag:hover {
+  border-color: var(--blue-fpsq);
+  color: var(--blue-fpsq);
+  background: rgba(44,95,138,0.04);
+}
+.axe-paper-tag .paper-status {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 6px;
+}
+.status-submitted { color: var(--blue-fpsq); }
+.status-rr { color: var(--gold-caps); }
+.status-wp { color: var(--gray-400); }
+.status-published { color: var(--vert-dev); }
+
+/* Methodological DNA — visual break */
+.research-method-break {
+  background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
+  padding: 56px 40px;
+}
+.research-method-break-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.method-break-label {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-caps);
+  margin-bottom: 16px;
+}
+.method-break-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.4;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+.method-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.method-tag {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Featured Paper — proper CSS */
+.featured-section {
+  background: var(--white);
+  padding: 64px 40px;
+}
+.featured-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.featured-paper {
+  background: var(--navy);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.featured-label {
+  font-family: var(--font-data);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.featured-title {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.featured-meta {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+.featured-desc {
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+.featured-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stat-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px;
+}
+.stat-box .stat-label {
+  font-family: var(--font-data);
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.stat-box .stat-value {
+  font-family: var(--font-data);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 4px;
+}
+
+/* Section heading — Economist style */
+.section-heading-r {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.rule-r {
+  border: none;
+  border-top: 1px solid var(--navy);
+  margin-bottom: 16px;
+}
+
+/* Research citation */
+.research-quote {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+  text-align: center;
+}
+.research-quote-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.research-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--navy);
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+.research-quote .credentials {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Research En bref */
+.research-numbers {
+  background: var(--ivory);
+  padding: 48px 40px 64px;
+}
+.research-numbers-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.numbers-grid-r {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.number-item-r {
+  text-align: center;
+  padding: 20px 0;
+}
+.number-item-r .number-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.number-item-r .number-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* Publications section */
+.publications-section {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+}
+.publications-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.pub-list {
+  list-style: none;
+}
+.pub-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  align-items: start;
+}
+.pub-item:first-child {
+  border-top: 2px solid var(--navy);
+}
+.pub-journal {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-fpsq);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 4px;
+}
+.pub-title {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.pub-title a { color: var(--navy); text-decoration: none; }
+.pub-title a:hover { color: var(--blue-fpsq); }
+.pub-meta {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray-500);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .axe-item { grid-template-columns: 1fr; gap: 16px; }
+  .axe-label { position: static; }
+  .featured-paper { grid-template-columns: 1fr; }
+  .pub-item { grid-template-columns: 80px 1fr; gap: 16px; }
+  .numbers-grid-r { grid-template-columns: repeat(3, 1fr); }
+  .research-vision, .research-method-break { padding: 60px 20px; }
+  .research-axes, .featured-section, .publications-section, .research-quote, .research-numbers { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 600px) {
+  .featured-stats { grid-template-columns: 1fr; }
+  .numbers-grid-r { grid-template-columns: repeat(2, 1fr); }
+  .pub-item { grid-template-columns: 1fr; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- ═══ RESEARCH VISION — McKinsey "How we help" dark treatment ═══ -->
+  <div class="page-body">
+    <div class="research-vision">
+      <div class="research-vision-inner">
+        <div class="section-label">Programme de recherche</div>
+        <h1>Isoler l'impact causal des chocs géopolitiques sur l'économie réelle</h1>
+        <p class="research-vision-text">
+          Économétrie causale sur données granulaires. Cinq axes de recherche, de la vulnérabilité des PME européennes à l'architecture financière internationale.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══ FIVE RESEARCH AXES ═══ -->
+    <div class="research-axes" id="axes">
+      <div class="research-axes-inner">
+
+        <!-- Axe 1 -->
+        <div class="axe-item">
+          <div class="axe-label">
+            <div class="axe-number">Axe I</div>
+            <div class="axe-title">Chocs géopolitiques &amp; entreprises</div>
+            <div class="axe-question">Comment le retour de la géopolitique expose-t-il la vulnérabilité structurelle du tissu industriel européen ?</div>
+          </div>
+          <div class="axe-content">
+            <p>
+              Les PME européennes absorbent les chocs géopolitiques par un effondrement de l'investissement plutôt que par la transmission aux prix — un mécanisme invisible qui fragilise l'ensemble de la chaîne d'approvisionnement de défense. Le gradient d'impact entre micro-entreprises et grandes entreprises atteint 3.8× après le choc Ukraine, un résultat qui invalide les instruments de crise hérités de la pandémie.
+            </p>
+            <p>
+              L'extension vers les questions de souveraineté industrielle et de financement bancaire de la défense ouvre un agenda de recherche à l'intersection de l'économie bancaire et de la géoéconomie : comment les critères ESG interagissent-ils avec l'impératif de souveraineté ? Les 4 500 PME de la BITD font-elles face au même déficit de pouvoir de marché ?
+            </p>
+            <div class="axe-methods">
+              <strong>Données :</strong> ECB SAFE panel · 337K obs · 12 pays euro · 37 vagues (2009–2025)<br>
+              <strong>Méthodes :</strong> Triple-DiD · Bartik IV · Event Study · SAFE-EIBIS
+            </div>
+            <div class="axe-papers">
+              <a href="#" class="axe-paper-tag">Geopolitical Risk and Euro-Area SMEs <span class="paper-status status-submitted">Submitted</span></a>
+              <a href="#" class="axe-paper-tag">Energy Subsidies and Inequalities <span class="paper-status status-wp">WP</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Axe 2 -->
+        <div class="axe-item">
+          <div class="axe-label">
+            <div class="axe-number">Axe II</div>
+            <div class="axe-title">Finance du développement &amp; compétition géopolitique</div>
+            <div class="axe-question">Comment la compétition G7-Chine transforme-t-elle l'architecture financière du développement ?</div>
+          </div>
+          <div class="axe-content">
+            <p>
+              Les prêts chinois adossés aux ressources — et non la propriété actionnariale — stabilisent les flux de matières premières pendant les disruptions d'offre (+39 à 50% aux horizons 1 et 2). Ce mécanisme affine le cadre des contrats incomplets : dans les juridictions à faible qualité institutionnelle, le mécanisme d'auto-exécution du prêt-collatéral se substitue à l'exécution judiciaire des droits de propriété résiduels.
+            </p>
+            <p>
+              La contraction de l'aide française au Sahel post-Barkhane, la restructuration des architectures de l'APD face à la compétition sino-occidentale, et l'absence de <em>development bargain</em> crédible européen sont les angles morts que ce programme quantifie.
+            </p>
+            <div class="axe-methods">
+              <strong>Données :</strong> AidData GeoGCDF v3 · BACI/Comtrade · OCDE-CRS · 118 disruptions<br>
+              <strong>Méthodes :</strong> LP-DiD within-pair · PPML · SCM · Extension GHM
+            </div>
+            <div class="axe-papers">
+              <a href="#" class="axe-paper-tag">Chinese Finance &amp; Commodity Disruptions <span class="paper-status status-submitted">Submitted</span></a>
+              <a href="#" class="axe-paper-tag">SDGs through Fossil Fuel Reform <span class="paper-status status-wp">WP</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Axe 3 -->
+        <div class="axe-item">
+          <div class="axe-label">
+            <div class="axe-number">Axe III</div>
+            <div class="axe-title">Gouvernance, instabilité &amp; survie autoritaire</div>
+            <div class="axe-question">Comment la survie autoritaire affecte-t-elle les conditions d'investissement et l'accès aux ressources critiques ?</div>
+          </div>
+          <div class="axe-content">
+            <p>
+              Les coups d'État manqués augmentent la grande corruption via le patronage — un mécanisme qui affecte les IDE extractifs, les flux d'aide, et la stabilité des chaînes d'approvisionnement en matières premières critiques. Le coup au Niger (2023) a interrompu l'accès européen à l'uranium. Le coup au Mali a reconfiguré les alliances Sahel-Russie.
+            </p>
+            <p>
+              L'extension vers les investissements extractifs teste si le recul des IDE occidentaux post-coup reflète la corruption ou la pression de compliance réglementaire (FCPA, UK Bribery Act) — une distinction centrale pour la conception des politiques de développement.
+            </p>
+            <div class="axe-methods">
+              <strong>Données :</strong> Base dilution · fDi Markets · FCPA enforcement · V-Dem · 92 pays (1950–2010)<br>
+              <strong>Méthodes :</strong> Callaway-Sant'Anna DiD · Event Study · Médiation causale
+            </div>
+            <div class="axe-papers">
+              <a href="#" class="axe-paper-tag">Corruption &amp; Occupational Choice <span class="paper-status status-rr">R&amp;R</span></a>
+              <a href="#" class="axe-paper-tag">Failed Coups &amp; Corruption <span class="paper-status status-wp">WP</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ METHODOLOGICAL DNA — visual break (moved here for page rhythm) ═══ -->
+    <section class="research-method-break">
+      <div class="research-method-break-inner">
+        <div class="method-break-label">ADN méthodologique</div>
+        <div class="method-break-title">
+          Économétrie causale sur données granulaires. Chaque résultat est adossé à une stratégie d'identification, des tests de robustesse et des données réplicables.
+        </div>
+        <div class="method-tags">
+          <span class="method-tag">Difference-in-Differences</span>
+          <span class="method-tag">Bartik IV</span>
+          <span class="method-tag">Event Study</span>
+          <span class="method-tag">Contrôle synthétique</span>
+          <span class="method-tag">PPML</span>
+          <span class="method-tag">LP-DiD</span>
+          <span class="method-tag">Médiation causale</span>
+          <span class="method-tag">SVAR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ AXES IV–V (continued) ═══ -->
+    <div class="research-axes">
+      <div class="research-axes-inner">
+
+        <!-- Axe 4 -->
+        <div class="axe-item">
+          <div class="axe-label">
+            <div class="axe-number">Axe IV</div>
+            <div class="axe-title">Énergie, ressources critiques &amp; transition</div>
+            <div class="axe-question">Comment les pressions géopolitiques interagissent-elles avec les réformes énergétiques et l'accès aux minerais critiques ?</div>
+          </div>
+          <div class="axe-content">
+            <p>
+              L'explosion des prix post-Ukraine a forcé les gouvernements à réintroduire des subventions énergétiques pour des raisons de stabilité politique — un calcul de survie qui contredit la trajectoire de réforme. Ce programme distingue trois types de pression vers la réforme : géopolitique (chocs d'offre exogènes), budgétaire (consolidation fiscale), et conditionnalité (programme FMI).
+            </p>
+            <p>
+              La compétition pour les minerais critiques (cobalt, lithium, terres rares) restructure l'architecture contractuelle internationale. La Chine sécurise par des contrats exécutoires, l'Europe par des normes — l'EU CRM Act (2024) est une réponse réglementaire à un problème contractuel que cette recherche quantifie.
+            </p>
+            <div class="axe-methods">
+              <strong>Données :</strong> IEA fossil fuel subsidies · EU CRM list · USGS mineral yearbooks · GPR Index<br>
+              <strong>Méthodes :</strong> Panel DiD staggered · SVAR décomposition · DSGE calibré
+            </div>
+            <div class="axe-papers">
+              <a href="#" class="axe-paper-tag">FFSR &amp; Social Spending <span class="paper-status status-wp">WP</span></a>
+              <a href="#" class="axe-paper-tag">Energy Subsidies &amp; Inequalities <span class="paper-status status-wp">WP</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Axe 5 -->
+        <div class="axe-item">
+          <div class="axe-label">
+            <div class="axe-number">Axe V</div>
+            <div class="axe-title">Actifs sûrs, sanctions &amp; architecture financière internationale</div>
+            <div class="axe-question">L'Europe a-t-elle des actifs sûrs quand le risque géopolitique s'intensifie — et que se passe-t-il quand le choc vient de Washington ?</div>
+          </div>
+          <div class="axe-content">
+            <p>
+              Les chocs géopolitiques d'origine non-américaine renforcent le statut de valeur refuge des Treasuries — c'est le <em>flight-to-safety</em> classique. Mais les chocs d'origine américaine (tarifs unilatéraux, coercition commerciale) érodent ce statut et redistribuent la hiérarchie <em>intra-européenne</em> : les exportateurs allemands deviennent plus exposés que les italiens, inversant le classement conventionnel. Cette asymétrie, jamais documentée sur un panel multi-souverains, est le coeur du projet.
+            </p>
+            <p>
+              La décomposition menaces/actes (GPRT vs GPRA) génère une prédiction testable : les menaces géopolitiques élargissent le spread de <em>convenience yield</em> US-Europe de manière persistante, tandis que les actes réalisés ne produisent qu'un effet transitoire. Si chaque crise géopolitique creuse le fossé transatlantique de liquidité, l'argument pour un Eurobond change de nature — c'est un instrument de souveraineté, pas un outil budgétaire.
+            </p>
+            <p>
+              En parallèle, le gel des réserves de la Banque centrale de Russie (février 2022) a déclenché une dédollarisation défensive mesurable — achats d'or, swaps bilatéraux PBoC, contournement SWIFT — qui restructure le système monétaire international.
+            </p>
+            <div class="axe-methods">
+              <strong>Données :</strong> Du-Im-Schreger convenience yields · SHS-BCE · EPFR · GPR country-specific (44 pays) · IMF IFS<br>
+              <strong>Méthodes :</strong> Identification narrative (hors fenêtres FOMC/BCE) · Décomposition GPRT/GPRA · Event Study · SCM
+            </div>
+            <div class="axe-papers">
+              <a href="#" class="axe-paper-tag">Inflation Targeting: Selection Bias <span class="paper-status status-published">EER 2020</span></a>
+              <a href="#" class="axe-paper-tag">China &amp; Emerging Donors in Aid Landscape <span class="paper-status status-published">CER 2016</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ FEATURED PAPER ═══ -->
+    <section class="featured-section">
+      <div class="featured-inner">
+        <div class="featured-paper">
+          <div>
+            <div class="featured-label">Featured · Latest</div>
+            <h2 class="featured-title">Geopolitical Risk and the Granular Fragility of Euro-Area SMEs</h2>
+            <div class="featured-meta">AEJ: Applied Economics (target) · 2026 · Eric Kilama</div>
+            <p class="featured-desc">
+              Triple-difference design on 337,666 firm-wave observations. 3.8× impact gradient between micro firms and large enterprises. Investment collapse (−0.94 SD within 15 days) rather than price pass-through.
+            </p>
+          </div>
+          <div class="featured-stats">
+            <div class="stat-box">
+              <div class="stat-label">Observations</div>
+              <div class="stat-value">337,666</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Impact Gradient</div>
+              <div class="stat-value">3.8×</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Countries</div>
+              <div class="stat-value">12</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Invest. Collapse</div>
+              <div class="stat-value">−0.94 SD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PUBLICATIONS ═══ -->
+    <div class="publications-section" id="publications">
+      <div class="publications-inner">
+        <hr class="rule-r">
+        <h2 class="section-heading-r">Publications &amp; Working Papers</h2>
+
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-journal">AEJ:AE</div>
+            <div>
+              <div class="pub-title"><a href="#">Geopolitical Risk and the Granular Fragility of Euro-Area SMEs</a></div>
+              <div class="pub-meta">Submitted · 2026 · ECB SAFE · 337K obs · Triple-DiD · Bartik IV</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">JIE</div>
+            <div>
+              <div class="pub-title"><a href="#">The Synthetic Buffer Stock: Chinese Development Finance and Commodity Supply Disruptions</a></div>
+              <div class="pub-meta">Submitted · 2026 · AidData GeoGCDF · BACI · 118 disruptions · LP-DiD · PPML</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">OxEcPa</div>
+            <div>
+              <div class="pub-title"><a href="#">Corruption and Occupational Choice: Evidence from Sub-Saharan Africa</a></div>
+              <div class="pub-meta">En révision · with H. Sedgo, E. Djimeu</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">CPS</div>
+            <div>
+              <div class="pub-title"><a href="#">The Price of Survival: Failed Coups and Corruption</a></div>
+              <div class="pub-meta">Working Paper · 2025 · Callaway-Sant'Anna DiD · 92 countries · 1950–2010</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">WP</div>
+            <div>
+              <div class="pub-title"><a href="#">Energy Subsidies Policy and Inequalities: Evidence from Panel Analysis</a></div>
+              <div class="pub-meta">Working Paper · 2025</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">WP</div>
+            <div>
+              <div class="pub-title"><a href="#">Can We Implement the SDGs through Fossil Fuel Subsidy Reform and Taxation?</a></div>
+              <div class="pub-meta">Working Paper · 2025</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">EER</div>
+            <div>
+              <div class="pub-title"><a href="#">Inflation targeting: Genuine effects or publication selection bias?</a></div>
+              <div class="pub-meta">Published · European Economic Review, 128, 2020 · with H. Balima &amp; R. Tapsoba</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">JCE</div>
+            <div>
+              <div class="pub-title"><a href="#">The Importance of Oil in the Allocation of Foreign Aid: The Case of G7 donors</a></div>
+              <div class="pub-meta">Published · Journal of Comparative Economics, 48(2), 2020 · with C. Couharde, F. Karanfil &amp; L.-D. Omgba</div>
+            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-journal">CER</div>
+            <div>
+              <div class="pub-title"><a href="#">China and Emerging donors influence in the aid landscape: A recipient perspective</a></div>
+              <div class="pub-meta">Published · China Economic Review, 38, 2016</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       CITATION RECHERCHE + CREDENTIALS
+       ═══════════════════════════════════════════════ -->
+  <section class="research-quote">
+    <div class="research-quote-inner">
+      <blockquote>
+        Identifier les canaux de transmission, c'est transformer l'incertitude en paramètres décisionnels.
+      </blockquote>
+      <div class="credentials">
+        <span>EER</span>
+        <span>&middot;</span>
+        <span>JCE</span>
+        <span>&middot;</span>
+        <span>CER</span>
+        <span>&middot;</span>
+        <span>OxEcPa (submitted)</span>
+        <span>&middot;</span>
+        <span>JIE (submitted)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       EN BREF — Key numbers
+       ═══════════════════════════════════════════════ -->
+  <section class="research-numbers">
+    <div class="research-numbers-inner">
+      <hr class="rule-r">
+      <h2 class="section-heading-r">En bref</h2>
+      <div class="numbers-grid-r">
+        <div class="number-item-r">
+          <div class="number-value">5</div>
+          <div class="number-label">Axes de recherche</div>
+        </div>
+        <div class="number-item-r">
+          <div class="number-value">11</div>
+          <div class="number-label">Publications &amp; WP</div>
+        </div>
+        <div class="number-item-r">
+          <div class="number-value">2</div>
+          <div class="number-label">CNRS 1 publiés</div>
+        </div>
+        <div class="number-item-r">
+          <div class="number-value">337K</div>
+          <div class="number-label">Observations (GPR/SME)</div>
+        </div>
+        <div class="number-item-r">
+          <div class="number-value">8</div>
+          <div class="number-label">Méthodes causales</div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

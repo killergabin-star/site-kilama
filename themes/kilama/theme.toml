@@ -1,0 +1,9 @@
+name = "kilama"
+license = "MIT"
+description = "Custom theme for erickilama.com — Institutional Intelligence"
+min_version = "0.80.0"
+tags = ["institutional", "research", "think-tank", "economics"]
+
+[author]
+  name = "Eric Gabin Kilama"
+  homepage = "https://erickilama.com"

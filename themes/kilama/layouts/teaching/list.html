@@ -1,0 +1,760 @@
+{{ define "styles" }}
+<style>
+/* ═══════════════════════════════════════════════════
+   TEACHING — Economist editorial + McKinsey depth
+   ═══════════════════════════════════════════════════ */
+
+/* Hero */
+.teaching-hero {
+  background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
+  padding: 100px 40px 80px;
+  position: relative;
+}
+.teaching-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.teaching-hero .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+.teaching-hero h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+.teaching-hero h1 strong {
+  font-weight: 300;
+}
+.teaching-hero-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+/* Philosophie section — editorial flow */
+.teaching-philosophy {
+  background: var(--ivory);
+  padding: 64px 40px;
+}
+.teaching-philosophy-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.philosophy-flow {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 32px;
+}
+.philosophy-item {
+  display: contents;
+}
+.philosophy-item .pillar-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(27, 42, 74, 0.08);
+  line-height: 1;
+  padding-top: 24px;
+}
+.philosophy-item .pillar-content {
+  padding: 24px 0;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+}
+.philosophy-item h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.philosophy-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Enseignements — Economist fly-title list */
+.teaching-content {
+  background: var(--ivory);
+  padding: 0 40px 64px;
+}
+.teaching-content-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.theme-header-teaching {
+  margin-top: 48px;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.12);
+}
+.theme-name-teaching {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.course-entry {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+.course-entry:last-child {
+  border-bottom: none;
+}
+.course-fly-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--red-analytical);
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.course-entry .course-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.course-entry .course-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.course-entry .course-title a:hover {
+  color: var(--blue-fpsq);
+}
+.course-entry .course-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.55;
+  max-width: 800px;
+}
+.course-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Geopolitical Officer — McKinsey gradient dossier */
+.geo-dossier {
+  background: linear-gradient(160deg, #051C2C 0%, #042A76 30%, #051C2C 100%);
+  padding: 80px 40px;
+}
+.geo-dossier-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.geo-dossier-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+.geo-dossier h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 750px;
+  margin-bottom: 20px;
+}
+.geo-dossier-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+.geo-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.geo-mod-card {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+}
+.geo-mod-card .mod-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold-caps);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.geo-mod-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.geo-mod-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.geo-dossier-cta {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.geo-dossier-cta:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.5);
+}
+.geo-formats {
+  display: inline-block;
+  margin-left: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Approche pedagogique — editorial list */
+.teaching-methods {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+}
+.teaching-methods-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.methods-list {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+.method-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+.method-item .method-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue-fpsq);
+  margin-bottom: 4px;
+}
+.method-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.method-item p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--anthracite);
+  line-height: 1.55;
+}
+
+/* Direction de recherche */
+.supervision-section {
+  background: var(--ivory);
+  padding: 64px 40px;
+}
+.supervision-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.thesis-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+}
+.thesis-entry {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.thesis-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--blue-fpsq);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+.thesis-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.thesis-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Citation pedagogique */
+.teaching-quote {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+  text-align: center;
+}
+.teaching-quote-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.teaching-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--navy);
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+.teaching-quote .credentials {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* En bref — key numbers */
+.teaching-numbers {
+  background: var(--ivory);
+  padding: 48px 40px 64px;
+}
+.teaching-numbers-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.number-item {
+  text-align: center;
+  padding: 20px 0;
+}
+.number-item .number-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.number-item .number-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* Section headings — Economist style */
+.section-heading-t {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.rule-t {
+  border: none;
+  border-top: 1px solid var(--navy);
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .philosophy-flow { grid-template-columns: 40px 1fr; gap: 0 16px; }
+  .philosophy-item .pillar-num { font-size: 28px; }
+  .geo-modules-grid { grid-template-columns: 1fr; }
+  .methods-list { grid-template-columns: 1fr; }
+  .numbers-grid { grid-template-columns: repeat(3, 1fr); }
+  .thesis-entry { grid-template-columns: 1fr; }
+  .teaching-hero, .geo-dossier { padding: 60px 20px; }
+  .teaching-philosophy, .teaching-content, .teaching-methods, .supervision-section, .teaching-quote, .teaching-numbers { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 600px) {
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- ═══════════════════════════════════════════════
+       HERO — Teaching vision
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-hero">
+    <div class="teaching-hero-inner">
+      <div class="section-label">Teaching &amp; Formation</div>
+      <h1>Former à l'intelligence <strong>géopolitique quantifiée</strong></h1>
+      <p class="teaching-hero-text">
+        Donner aux étudiants et aux cadres les outils pour mesurer, anticiper et décider face aux chocs géopolitiques — de l'économétrie causale au stress-test opérationnel.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       PHILOSOPHIE PÉDAGOGIQUE — 3 piliers
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-philosophy">
+    <div class="teaching-philosophy-inner">
+      <hr class="rule-t">
+      <h2 class="section-heading-t">Approche pédagogique</h2>
+      <div class="philosophy-flow">
+        <div class="philosophy-item">
+          <div class="pillar-num">01</div>
+          <div class="pillar-content">
+            <h3>Rigueur académique</h3>
+            <p>Chaque cours repose sur la littérature de recherche la plus récente. Les étudiants lisent les articles originaux, répliquent les résultats et confrontent les méthodes. L'exigence intellectuelle est non négociable.</p>
+          </div>
+        </div>
+        <div class="philosophy-item">
+          <div class="pillar-num">02</div>
+          <div class="pillar-content">
+            <h3>Ancrage opérationnel</h3>
+            <p>Chaque concept théorique est illustré par un cas réel issu de l'expérience CAPS, des missions de conseil ou de la recherche en cours. Le détroit d'Ormuz, la dette zambienne, les tarifs américains : les étudiants travaillent sur des données et des problèmes vivants.</p>
+          </div>
+        </div>
+        <div class="philosophy-item">
+          <div class="pillar-num">03</div>
+          <div class="pillar-content">
+            <h3>Autonomie méthodologique</h3>
+            <p>L'objectif n'est pas de transmettre des recettes mais de construire l'autonomie analytique. L'étudiant doit pouvoir, seul, identifier un problème, collecter les données pertinentes, choisir la méthode adaptée et interpréter les résultats avec prudence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ENSEIGNEMENTS UNIVERSITAIRES — Economist format
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-content" id="cours">
+    <div class="teaching-content-inner">
+
+      <!-- ══ ÉCONOMIE INTERNATIONALE & GÉOPOLITIQUE ══ -->
+      <div class="theme-header-teaching">
+        <div class="theme-name-teaching">Économie internationale et géopolitique</div>
+      </div>
+      <ul class="course-list">
+        <li class="course-entry">
+          <div class="course-fly-title">Master 2 — Séminaire avancé</div>
+          <div class="course-title"><a href="#">Économie internationale et fragmentation géoéconomique</a></div>
+          <div class="course-desc">Commerce international à l'ère de la fragmentation. Tarifs, sanctions, friend-shoring : les nouveaux déterminants des flux commerciaux. Modèle de gravité structurel, PPML, et estimation des coûts de la fragmentation. Les étudiants répliquent les estimations récentes de Gopinath et al. (2024) et testent leurs propres scénarios tarifaires.</div>
+          <div class="course-meta"><span>24h CM + Séminaire</span><span>Projet recherche</span><span>Syllabus disponible</span></div>
+        </li>
+        <li class="course-entry">
+          <div class="course-fly-title">Master 1 — Cours magistral + TD</div>
+          <div class="course-title"><a href="#">Économie bancaire et risque géopolitique</a></div>
+          <div class="course-desc">Comment les chocs géopolitiques se transmettent via les canaux bancaires et financiers. De la théorie de l'intermédiation aux stress-tests intégrant le risque géopolitique. Études de cas : sanctions russes et gel des réserves de la BCE, exposition bancaire européenne aux économies sous tension, BPI et financement défense.</div>
+          <div class="course-meta"><span>36h CM + TD</span><span>Étude de cas</span><span>Syllabus disponible</span></div>
+        </li>
+        <li class="course-entry">
+          <div class="course-fly-title">Master 1 — Module spécialisé</div>
+          <div class="course-title"><a href="#">Risque géopolitique et chaînes de valeur</a></div>
+          <div class="course-desc">Quantifier l'exposition des entreprises au risque géopolitique. Construction d'indices composites (GPR, EPU), scoring sectoriel, cartographie des vulnérabilités. Application aux PME de la BITD et aux chaînes d'approvisionnement critiques (semi-conducteurs, minerais, énergie).</div>
+          <div class="course-meta"><span>18h CM</span><span>Projet terrain</span><span>Nouveau cours</span></div>
+        </li>
+      </ul>
+
+      <!-- ══ ÉCONOMIE DU DÉVELOPPEMENT ══ -->
+      <div class="theme-header-teaching">
+        <div class="theme-name-teaching">Économie du développement</div>
+      </div>
+      <ul class="course-list">
+        <li class="course-entry">
+          <div class="course-fly-title">Licence 3 / Master 1 — Cours magistral + TD</div>
+          <div class="course-title"><a href="#">Économie du développement</a></div>
+          <div class="course-desc">Aide au développement, institutions et croissance. Focus sur la compétition G7-Chine et ses conséquences pour les économies récipiendaires. Séances dédiées aux nightlights comme proxy du développement local, aux flux financiers illicites, et à la mesure de l'impact de l'aide. Les TD alternent exercices de réplication et analyse de données originales.</div>
+          <div class="course-meta"><span>36h CM + TD</span><span>Réplication</span><span>Syllabus disponible</span></div>
+        </li>
+        <li class="course-entry">
+          <div class="course-fly-title">Master 2 — Séminaire de recherche</div>
+          <div class="course-title"><a href="#">Finance du développement et architecture de l'aide</a></div>
+          <div class="course-desc">La restructuration de l'aide internationale depuis 2015 : montée de la Chine, conditionnalité géopolitique, instruments innovants (blending, DFI). Les étudiants analysent les données AidData et OCDE-CAD pour produire un policy brief original en fin de séminaire.</div>
+          <div class="course-meta"><span>24h Séminaire</span><span>Policy brief</span><span>Données ouvertes</span></div>
+        </li>
+      </ul>
+
+      <!-- ══ MÉTHODES QUANTITATIVES ══ -->
+      <div class="theme-header-teaching">
+        <div class="theme-name-teaching">Méthodes quantitatives</div>
+      </div>
+      <ul class="course-list">
+        <li class="course-entry">
+          <div class="course-fly-title">Master 1 / Master 2 — TD + Projet R</div>
+          <div class="course-title"><a href="#">Économétrie causale appliquée</a></div>
+          <div class="course-desc">Méthodes d'inférence causale pour l'analyse des politiques publiques et des chocs exogènes. Difference-in-differences robustes (Callaway-Sant'Anna, Sun-Abraham), variables instrumentales, event studies, contrôle synthétique (Abadie). Chaque méthode est enseignée via un article de référence ET un cas d'application original tiré des données du cours.</div>
+          <div class="course-meta"><span>24h TD + Projet R</span><span>Code disponible</span><span>Données fournies</span></div>
+        </li>
+        <li class="course-entry">
+          <div class="course-fly-title">Master 2 — Atelier intensif</div>
+          <div class="course-title"><a href="#">Data Lab : de la donnée brute au résultat publiable</a></div>
+          <div class="course-desc">Atelier pratique de bout en bout : collecte de données (Comtrade, WDI, AidData), nettoyage et documentation, choix de spécification, estimation, diagnostic, présentation des résultats. R comme outil principal, avec exercices de réplication en Stata. Les étudiants produisent une note de recherche complète en 4 séances.</div>
+          <div class="course-meta"><span>12h Atelier</span><span>R + Stata</span><span>Format intensif</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       GEOPOLITICAL OFFICER — McKinsey gradient dossier
+       ═══════════════════════════════════════════════ -->
+  <section class="geo-dossier" id="officer">
+    <div class="geo-dossier-inner">
+      <div class="geo-dossier-label">Formation professionnelle</div>
+      <h2>Le Geopolitical Officer : former les analystes et économistes au monde tel qu'il se reconfigure</h2>
+      <p class="geo-dossier-excerpt">
+        Le régime économique international qui prévalait depuis Bretton Woods se fragmente. Les entreprises, les institutions et les analystes qui fonctionnent avec les cadres d'avant ne sont pas équipés pour ce qui vient. Ces formations transmettent les méthodes quantitatives et les cadres analytiques nécessaires pour lire le signal géopolitique et le convertir en décision économique.
+      </p>
+      <div class="geo-modules-grid">
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 01</div>
+          <h4>Lire les signaux géopolitiques</h4>
+          <p>Taxonomie des risques, sources de données, grilles de lecture. Du GPR Index aux signaux faibles. Introduction pour analystes non spécialisés.</p>
+        </div>
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 02</div>
+          <h4>Quantifier le risque dans la supply chain</h4>
+          <p>Scoring du risque géopolitique par maillon. Application aux chaînes d'approvisionnement critiques et au secteur défense. Cas BITD.</p>
+        </div>
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 03</div>
+          <h4>Stress-test géopolitique pour PME</h4>
+          <p>Adapter les stress-tests bancaires au risque géopolitique des PME. Scénarios calibrés, canaux de transmission, données réelles.</p>
+        </div>
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 04</div>
+          <h4>Finance du développement et compétition G7-Chine</h4>
+          <p>Restructuration de l'aide internationale. Implications pour les investisseurs et opérateurs dans les pays émergents.</p>
+        </div>
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 05</div>
+          <h4>Construire une veille géopolitique opérationnelle</h4>
+          <p>Sources, méthodes, outils. Du scan quotidien au tableau de bord automatisé. Inspiré du système Vigie.</p>
+        </div>
+        <div class="geo-mod-card">
+          <div class="mod-num">Module 06</div>
+          <h4>Scénarios prospectifs et aide à la décision</h4>
+          <p>Modélisation de scénarios à horizon 18 mois. Arbres de décision, Monte Carlo, calibration sur événements historiques.</p>
+        </div>
+      </div>
+      <div>
+        <a href="mailto:eric@erickilama.com" class="geo-dossier-cta">Demander un programme sur mesure &rarr;</a>
+        <span class="geo-formats">Demi-journée &middot; Journée &middot; Cycle 5 séances</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       APPROCHE PÉDAGOGIQUE — innovations méthode
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-methods">
+    <div class="teaching-methods-inner">
+      <hr class="rule-t">
+      <h2 class="section-heading-t">Innovations pédagogiques</h2>
+      <p style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: var(--anthracite); line-height: 1.6; max-width: 700px; margin-top: 8px; margin-bottom: 24px;">
+        Trois dispositifs et trois outils, inspirés des pratiques de Penn State, Columbia, Michigan et de la Fed de Saint-Louis, adaptés à l'enseignement de la géoéconomie quantitative.
+      </p>
+      <div class="methods-list">
+        <div class="method-item">
+          <div class="method-label">Dispositif — Simulation</div>
+          <h4>Simulation macroéconomique de chocs géopolitiques</h4>
+          <p>Outil de simulation paramétrable où les étudiants pilotent un pays face à des chocs géopolitiques calibrés (embargo énergétique, sanctions, flight-to-safety). Politique monétaire et budgétaire sous contrainte, arbitrage inflation-croissance en temps réel. Production d'un rapport de politique macroéconomique évalué. Complété par un comité de sanctions role-play avec briefs classifiés par rôle (États-Unis, UE, pays cible, entreprises).</p>
+        </div>
+        <div class="method-item">
+          <div class="method-label">Dispositif — Data Lab</div>
+          <h4>GeoRisk Data Labs</h4>
+          <p>Travaux dirigés R/Python sur données réelles : SAFE de la BCE (337K observations), indice GPR, AidData, FRED. Les étudiants répliquent des résultats publiés, puis testent leurs propres scénarios — scoring d'exposition PME, mesure d'impact d'un choc tarifaire, cartographie des vulnérabilités par maillon de chaîne d'approvisionnement. Chaque lab produit un output publiable.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-label">Dispositif — Intelligence artificielle</div>
+          <h4>IA sous garde-fous : le sparring partner critique</h4>
+          <p>L'IA génère un policy brief sur un sujet de cours (sanctions russes, aide chinoise). L'étudiant doit le déconstruire avec les données empiriques et les modèles vus en cours. Évalué sur la qualité de la critique, pas du brief. Protocole structuré : évaluer les biais, identifier les erreurs factuelles, corriger avec des sources primaires. Développement de la GenAI literacy comme compétence professionnelle.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-label">Outil — Veille en temps réel</div>
+          <h4>Vigie : le dashboard comme support de cours</h4>
+          <p>Le système de veille géopolitique Vigie, développé en interne, sert de support pédagogique live. En séance : identifier un signal faible, le contextualiser, produire une analyse structurée et une recommandation en 45 minutes. L'exercice simule le rythme opérationnel d'un analyste en cellule de crise.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-label">Outil — Format inversé</div>
+          <h4>Classe inversée ciblée</h4>
+          <p>Sur 3 à 4 semaines stratégiques par cours, la théorie est assimilée en amont (vidéos, lectures, modules IA). Le présentiel est intégralement réservé aux data labs, simulations de crise et résolution de cas. Inspiré de l'approche FRED-based de la Fed de Saint-Louis et de CORE Econ.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-label">Outil — Évaluation opérationnelle</div>
+          <h4>Produire pour un décideur, pas pour un correcteur</h4>
+          <p>Policy briefs, notes d'alerte sous contrainte de temps, rapports de simulation, mémoires appliqués. Les étudiants produisent des outputs professionnels évalués sur leur utilité opérationnelle — un directeur politique lirait-il ce résultat, et en ferait-il quoi ? Formats calibrés sur les standards CAPS, OCDE et think tanks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       DIRECTION DE RECHERCHE
+       ═══════════════════════════════════════════════ -->
+  <section class="supervision-section" id="supervision">
+    <div class="supervision-inner">
+      <hr class="rule-t">
+      <h2 class="section-heading-t">Direction de recherche</h2>
+      <p style="font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: var(--anthracite); line-height: 1.6; max-width: 700px; margin-top: 8px;">
+        Sujets de mémoire proposés pour Master 2 et co-encadrements doctoraux. Chaque thème est adossé à des données disponibles et s'inscrit dans un axe de recherche établi.
+      </p>
+      <ul class="thesis-list">
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2</div>
+          <div class="thesis-content">
+            <h4>Sanctions et marchés financiers : contagion entre classes d'actifs</h4>
+            <p>Mesurer l'impact des régimes de sanctions sur les prix d'actifs, la volatilité et les effets de contagion entre marchés actions et obligataires. Données Bloomberg + OFAC timelines.</p>
+          </div>
+        </li>
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2</div>
+          <div class="thesis-content">
+            <h4>PME de défense et rationnement bancaire : ESG vs souveraineté</h4>
+            <p>Comment les banques traitent-elles les PME de la BITD ? Tension entre contraintes ESG et impératif de souveraineté industrielle. Données FARE + enquêtes sectorielles.</p>
+          </div>
+        </li>
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2</div>
+          <div class="thesis-content">
+            <h4>Minerais critiques et gravité structurelle : la distance géopolitique comme distorsion</h4>
+            <p>Modèle de gravité des flux de minerais critiques (cobalt, lithium, terres rares) avec l'alignement géopolitique comme variable de friction. Données Comtrade HS-6 + indices d'alliance.</p>
+          </div>
+        </li>
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2</div>
+          <div class="thesis-content">
+            <h4>Aide et remittances au Sahel : substitution lors des ruptures diplomatiques</h4>
+            <p>Les transferts diaspora compensent-ils la contraction de l'aide bilatérale après un coup d'État ? Cas Mali, Burkina, Niger. Données OCDE-CAD + Banque mondiale remittances.</p>
+          </div>
+        </li>
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2</div>
+          <div class="thesis-content">
+            <h4>Politique de voisinage européenne : déterminants politiques vs géographiques</h4>
+            <p>Analyse PPML des instruments de voisinage (ENI, IPA) : les allocations suivent-elles la proximité géographique ou les signaux d'alignement politique ? Données DG NEAR.</p>
+          </div>
+        </li>
+        <li class="thesis-entry">
+          <div class="thesis-level">Master 2 / Doctorat</div>
+          <div class="thesis-content">
+            <h4>Coups d'État et IDE extractif : le mécanisme de la corruption anticipée</h4>
+            <p>Les coups d'État augmentent-ils l'investissement étranger dans le pétrole et les mines via les anticipations de corruption ? Données fDi Markets + V-Dem.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CITATION PÉDAGOGIQUE + CREDENTIALS
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-quote">
+    <div class="teaching-quote-inner">
+      <blockquote>
+        Former à la mesure du risque géopolitique, c'est investir dans la capacité décisionnelle de demain.
+      </blockquote>
+      <div class="credentials">
+        <span>CERDI</span>
+        <span>&middot;</span>
+        <span>BETA (Lorraine)</span>
+        <span>&middot;</span>
+        <span>FERDI</span>
+        <span>&middot;</span>
+        <span>CAPS / MEAE</span>
+        <span>&middot;</span>
+        <span>Sciences Po</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       EN BREF — Key numbers
+       ═══════════════════════════════════════════════ -->
+  <section class="teaching-numbers">
+    <div class="teaching-numbers-inner">
+      <hr class="rule-t">
+      <h2 class="section-heading-t">En bref</h2>
+      <div class="numbers-grid">
+        <div class="number-item">
+          <div class="number-value">7</div>
+          <div class="number-label">Cours proposés</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">174h</div>
+          <div class="number-label">Volume horaire annuel</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">L3–D</div>
+          <div class="number-label">Niveaux couverts</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">6</div>
+          <div class="number-label">Modules formation pro</div>
+        </div>
+        <div class="number-item">
+          <div class="number-value">6</div>
+          <div class="number-label">Sujets de mémoire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

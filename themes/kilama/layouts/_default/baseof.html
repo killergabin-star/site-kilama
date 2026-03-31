@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}
+  {{ block "styles" . }}{{ end }}
+</head>
+<body class="{{ with .Params.bodyClass }}{{ . }}{{ end }}">
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+{{ partial "nav.html" . }}
+
+{{ block "main" . }}
+  <main class="container" style="padding-top: 120px;">
+    {{ .Content }}
+  </main>
+{{ end }}
+
+{{ partial "footer.html" . }}
+
+<!-- Shared scripts -->
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const prog = document.getElementById('scrollProgress');
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  if (h > 0) prog.style.width = (window.scrollY / h * 100) + '%';
+});
+
+// Nav scroll transition
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+</script>
+
+{{ block "scripts" . }}{{ end }}
+
+</body>
+</html>

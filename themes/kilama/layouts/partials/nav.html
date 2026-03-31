@@ -1,0 +1,66 @@
+<!-- Navigation — Mazzucato dropdown pattern -->
+<nav class="site-nav{{ if .IsHome }} site-nav--home{{ end }}" id="mainNav">
+  <a href="{{ "/" | relURL }}" class="wordmark">
+    <span class="first-name">ERIC</span>
+    <span class="last-name">KILAMA</span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-item{{ if eq .Section "research" }} active{{ end }}">
+      <a href="{{ "research/" | relURL }}">Research</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="{{ "research/" | relURL }}">Publications académiques</a>
+          <a href="{{ "research/" | relURL }}#working-papers">Working Papers</a>
+          <a href="{{ "research/" | relURL }}#data">Données &amp; réplication</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item{{ if eq .Section "policy" }} active{{ end }}">
+      <a href="{{ "policy/" | relURL }}">Policy</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="{{ "policy/" | relURL }}">Notes stratégiques</a>
+          <a href="{{ "policy/" | relURL }}#briefs">Policy Briefs</a>
+          <a href="{{ "policy/" | relURL }}#rapports">Rapports analytiques</a>
+          <a href="{{ "policy/" | relURL }}#scenarios">Scénarios prospectifs</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item{{ if eq .Section "foresight" }} active{{ end }}">
+      <a href="{{ "foresight/" | relURL }}">Foresight</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="{{ "foresight/" | relURL }}">Vigie — Dashboard</a>
+          <a href="{{ "foresight/" | relURL }}#scenarios">Polycrisis Monitor</a>
+          <a href="{{ "foresight/" | relURL }}#gpr">GPR Tracker</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item{{ if eq .Section "teaching" }} active{{ end }}">
+      <a href="{{ "teaching/" | relURL }}">Teaching</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="{{ "teaching/" | relURL }}">Cours &amp; séminaires</a>
+          <a href="{{ "teaching/" | relURL }}#officer">Geopolitical Officer</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item{{ if eq .Section "about" }} active{{ end }}">
+      <a href="{{ "about/" | relURL }}">About</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="{{ "about/" | relURL }}">Parcours &amp; philosophie</a>
+          <a href="{{ "about/" | relURL }}#publications">Publications</a>
+          <a href="mailto:eric@erickilama.com">Contact</a>
+        </div>
+      </div>
+    </div>
+    <span class="nav-lang">
+      {{ if eq .Site.Language.Lang "fr" }}
+        <a href="#" class="active">FR</a> / <a href="{{ replace .Permalink "/fr/" "/en/" }}">EN</a>
+      {{ else }}
+        <a href="{{ replace .Permalink "/en/" "/fr/" }}">FR</a> / <a href="#" class="active">EN</a>
+      {{ end }}
+    </span>
+  </div>
+</nav>

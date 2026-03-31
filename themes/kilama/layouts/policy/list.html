@@ -1,0 +1,1043 @@
+{{ define "styles" }}
+<style>
+/* ═══════════════════════════════════════════════════
+   POLICY — The Economist editorial density
+   Sticky tabs + compact editorial + tab catalog
+   ═══════════════════════════════════════════════════ */
+
+/* Policy vision header */
+.policy-vision {
+  background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
+  padding: 80px 40px;
+}
+.policy-vision-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.policy-vision .section-label {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.policy-vision h1 {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+.policy-vision-text {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+/* ═══ STICKY FILTER TABS ═══ */
+.policy-filters {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 40px;
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+}
+.policy-filters-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.filter-btn {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-500);
+  padding: 14px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+.filter-btn:hover { color: var(--navy); }
+.filter-btn.active {
+  color: var(--navy);
+  border-bottom-color: var(--navy);
+  font-weight: 600;
+}
+
+/* ═══ EDITORIAL SECTIONS ═══ */
+
+/* Featured note — hero card */
+.policy-featured {
+  background: var(--ivory);
+  padding: 48px 40px;
+}
+.policy-featured-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: start;
+}
+.featured-content { padding: 8px 0; }
+.featured-format {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-analytical);
+  margin-bottom: 12px;
+}
+.featured-title {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.featured-excerpt {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--anthracite);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.featured-meta {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-data);
+  font-size: 11px;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.featured-cover {
+  background: linear-gradient(145deg, var(--navy) 0%, #0d2840 100%);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 360px;
+}
+.featured-cover-label {
+  font-family: var(--font-data);
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.featured-cover-title {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.3;
+}
+.featured-cover-author {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+}
+
+/* ═══ ECONOMIST PATTERNS ═══ */
+
+.rule-red {
+  border: none;
+  border-top: 3px solid var(--red-analytical);
+  width: 48px;
+  margin-bottom: 12px;
+}
+.rule-section {
+  border: none;
+  border-top: 1px solid var(--navy);
+  margin-bottom: 12px;
+}
+.section-heading-econ {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/* Fly-title — Economist red category label */
+.fly-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--red-analytical);
+  margin-bottom: 4px;
+}
+.note-title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.note-title a { color: var(--navy); text-decoration: none; }
+.note-title a:hover { color: var(--red-analytical); }
+.note-excerpt {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--anthracite);
+  line-height: 1.5;
+}
+.note-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray-500);
+}
+.note-format-tag {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+/* Graphique de la semaine */
+.graphic-detail {
+  background: var(--ivory);
+  padding: 48px 40px;
+  border-top: 1px solid var(--gray-200);
+}
+.graphic-detail-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.graphic-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 16px;
+}
+.graphic-chart {
+  background: var(--ivory-deep);
+  padding: 24px;
+  border: 1px solid rgba(27,42,74,0.06);
+}
+.graphic-body .fly-title { margin-bottom: 8px; }
+
+/* Dossier special — dark band */
+.dossier-special {
+  background: linear-gradient(135deg, #051C2C 0%, #042A76 40%, #051C2C 100%);
+  padding: 64px 40px;
+}
+.dossier-special-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.dossier-label {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+}
+.dossier-title {
+  font-family: var(--font-body);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+.dossier-excerpt {
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+.dossier-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+.dossier-card {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 16px;
+}
+.dossier-card .fly-title { color: rgba(255,255,255,0.5); font-size: 12px; margin-bottom: 6px; }
+.dossier-card .note-title { color: var(--white); font-size: 18px; font-weight: 400; }
+.dossier-card .note-title a { color: var(--white); }
+.dossier-card .note-title a:hover { color: rgba(255,255,255,0.7); }
+.dossier-card .note-excerpt { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 6px; }
+
+/* Débats & Controverses */
+.debats-section {
+  background: var(--ivory-deep);
+  padding: 48px 40px;
+  border-top: 1px solid var(--gray-200);
+}
+.debats-section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.debats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+.debat-card {
+  border-top: 3px solid var(--red-analytical);
+  padding-top: 16px;
+}
+.debat-card .fly-title { margin-bottom: 6px; }
+.debat-card .note-title { font-size: 18px; margin-bottom: 8px; }
+.debat-card .note-excerpt { font-size: 14px; }
+
+/* En bref — dense 2-column */
+.en-bref {
+  background: var(--ivory);
+  padding: 48px 40px;
+  border-top: 1px solid var(--gray-200);
+}
+.en-bref-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.en-bref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 48px;
+}
+.en-bref-item {
+  border-top: 1px solid var(--gray-200);
+  padding-top: 12px;
+}
+.en-bref-item .fly-title { margin-bottom: 4px; }
+.en-bref-item .note-title { font-size: 17px; }
+
+/* ═══ CATALOGUE PAR ONGLETS ═══ */
+
+.catalog-section {
+  background: var(--ivory-deep);
+  padding: 56px 40px 80px;
+  border-top: 2px solid var(--navy);
+}
+.catalog-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.catalog-panel { display: none; }
+.catalog-panel.active { display: block; }
+.catalog-list { list-style: none; }
+.catalog-list li {
+  padding: 16px 0;
+  border-top: 1px solid var(--gray-200);
+}
+.catalog-list li:first-child { border-top: 1px solid var(--navy); }
+.catalog-count {
+  font-family: var(--font-data);
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 20px;
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+  .policy-featured-inner { grid-template-columns: 1fr; }
+  .dossier-cards { grid-template-columns: 1fr; }
+  .graphic-detail-grid { grid-template-columns: 1fr; }
+  .en-bref-grid { grid-template-columns: 1fr; }
+  .debats-grid { grid-template-columns: 1fr; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <div class="page-body">
+
+    <!-- ═══ POLICY VISION — dark header ═══ -->
+    <div class="policy-vision">
+      <div class="policy-vision-inner">
+        <div class="section-label">Policy &amp; Strategic Intelligence</div>
+        <h1>De l'analyse quantitative à la recommandation opérationnelle</h1>
+        <p class="policy-vision-text">
+          Chaque note traduit un résultat de recherche en recommandation actionnable. Le registre combine le rapport analytique, le policy brief et le scénario prospectif. Les destinataires : décideurs G7, analystes institutionnels, directions stratégiques.
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══ STICKY FILTER TABS ═══ -->
+    <div class="policy-filters">
+      <div class="policy-filters-inner">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="geopolitique">Risque géopolitique</button>
+        <button class="filter-btn" data-filter="commerce">Commerce &amp; Sanctions</button>
+        <button class="filter-btn" data-filter="developpement">Finance du développement</button>
+        <button class="filter-btn" data-filter="energie">Énergie &amp; Climat</button>
+        <button class="filter-btn" data-filter="defense">Défense &amp; Industrie</button>
+        <button class="filter-btn" data-filter="afrique">Afrique</button>
+        <button class="filter-btn" data-filter="asie">Asie-Pacifique</button>
+        <button class="filter-btn" data-filter="europe">Europe</button>
+      </div>
+    </div>
+
+    <!-- ═══ À LA UNE — featured note ═══ -->
+    <div class="policy-featured">
+      <div class="policy-featured-inner">
+        <div class="featured-content">
+          <div class="featured-format">Rapport analytique · 15 pages</div>
+          <h2 class="featured-title">La fragilité par la base : chocs géopolitiques et vulnérabilité des PME européennes de défense</h2>
+          <p class="featured-excerpt">
+            26 millions de PME européennes constituent le socle de la base industrielle de défense. Elles absorbent les chocs sans les transmettre aux prix — un mécanisme invisible qui fragilise l'ensemble de la chaîne. L'investissement s'effondre en 15 jours. Sept recommandations opérationnelles.
+          </p>
+          <div class="featured-meta">
+            <span>Défense &amp; Industrie</span>
+            <span>Mars 2026</span>
+            <span>26M PME analysées</span>
+            <span>7 recommandations</span>
+          </div>
+        </div>
+        <div class="featured-cover">
+          <div class="featured-cover-label">Rapport 2026</div>
+          <div class="featured-cover-title">La fragilité par la base</div>
+          <div class="featured-cover-author">Eric Kilama</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ GRAPHIQUE DE LA SEMAINE ═══ -->
+    <div class="graphic-detail">
+      <div class="graphic-detail-inner">
+        <hr class="rule-section">
+        <h2 class="section-heading-econ">Graphique de la semaine</h2>
+        <div class="graphic-detail-grid">
+          <div class="graphic-chart">
+            <svg viewBox="0 0 480 280" style="width: 100%;">
+              <text x="40" y="18" font-family="Inter" font-size="11" fill="#051C2C" font-weight="600">Indice de risque géopolitique (GPR/SME)</text>
+              <text x="40" y="32" font-family="Inter" font-size="9" fill="#5A6068">Indice composite, base 100 = moyenne 2015-2019</text>
+              <line x1="40" y1="50" x2="40" y2="230" stroke="#D9D9D9" stroke-width="1"/>
+              <line x1="40" y1="50" x2="450" y2="50" stroke="#E8E8E8" stroke-width="0.5"/>
+              <text x="35" y="54" font-family="Inter" font-size="8" fill="#999" text-anchor="end">250</text>
+              <line x1="40" y1="95" x2="450" y2="95" stroke="#E8E8E8" stroke-width="0.5"/>
+              <text x="35" y="99" font-family="Inter" font-size="8" fill="#999" text-anchor="end">200</text>
+              <line x1="40" y1="140" x2="450" y2="140" stroke="#E8E8E8" stroke-width="0.5"/>
+              <text x="35" y="144" font-family="Inter" font-size="8" fill="#999" text-anchor="end">150</text>
+              <line x1="40" y1="185" x2="450" y2="185" stroke="#E8E8E8" stroke-width="0.5"/>
+              <text x="35" y="189" font-family="Inter" font-size="8" fill="#999" text-anchor="end">100</text>
+              <line x1="40" y1="230" x2="450" y2="230" stroke="#051C2C" stroke-width="1"/>
+              <text x="35" y="234" font-family="Inter" font-size="8" fill="#999" text-anchor="end">50</text>
+              <text x="40" y="248" font-family="Inter" font-size="8" fill="#5A6068">2015</text>
+              <text x="108" y="248" font-family="Inter" font-size="8" fill="#5A6068">2017</text>
+              <text x="177" y="248" font-family="Inter" font-size="8" fill="#5A6068">2019</text>
+              <text x="245" y="248" font-family="Inter" font-size="8" fill="#5A6068">2021</text>
+              <text x="313" y="248" font-family="Inter" font-size="8" fill="#5A6068">2023</text>
+              <text x="382" y="248" font-family="Inter" font-size="8" fill="#5A6068">2025</text>
+              <path d="M40,185 L74,180 L108,182 L142,175 L177,140 L211,95 L245,90 L279,120 L313,105 L347,85 L382,60 L416,55 L450,50 L450,230 L40,230 Z" fill="#C0392B" opacity="0.08"/>
+              <polyline points="40,185 74,180 108,182 142,175 177,140 211,95 245,90 279,120 313,105 347,85 382,60 416,55 450,50" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+              <polyline points="40,190 74,188 108,186 142,184 177,170 211,150 245,155 279,160 313,148 347,130 382,110 416,105 450,95" fill="none" stroke="#2C5F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
+              <line x1="40" y1="185" x2="450" y2="185" stroke="#999" stroke-width="0.8" stroke-dasharray="3,3"/>
+              <line x1="211" y1="95" x2="211" y2="230" stroke="#5A6068" stroke-width="0.5" stroke-dasharray="2,2"/>
+              <text x="211" y="240" font-family="Inter" font-size="7" fill="#5A6068" text-anchor="middle">Invasion Ukraine</text>
+              <line x1="382" y1="60" x2="382" y2="230" stroke="#5A6068" stroke-width="0.5" stroke-dasharray="2,2"/>
+              <text x="382" y="240" font-family="Inter" font-size="7" fill="#5A6068" text-anchor="middle">Crise Ormuz</text>
+              <circle cx="450" cy="50" r="3" fill="#C0392B"/>
+              <text x="455" y="53" font-family="Inter" font-size="9" fill="#C0392B" font-weight="600">248</text>
+              <circle cx="450" cy="95" r="2.5" fill="#2C5F8A"/>
+              <text x="455" y="98" font-family="Inter" font-size="9" fill="#2C5F8A" font-weight="500">167</text>
+              <line x1="40" y1="268" x2="55" y2="268" stroke="#C0392B" stroke-width="2.5"/>
+              <text x="60" y="271" font-family="Inter" font-size="8" fill="#5A6068">GPR composite</text>
+              <line x1="150" y1="268" x2="165" y2="268" stroke="#2C5F8A" stroke-width="1.5" stroke-dasharray="6,3"/>
+              <text x="170" y="271" font-family="Inter" font-size="8" fill="#5A6068">Composante SME</text>
+              <text x="300" y="271" font-family="Inter" font-size="7" fill="#999">Source: Kilama (2026), calculs de l'auteur</text>
+            </svg>
+          </div>
+          <div class="graphic-body">
+            <div class="fly-title">Données</div>
+            <div class="note-title"><a href="#">L'indice de risque géopolitique atteint un niveau inédit depuis 2022</a></div>
+            <div class="note-excerpt" style="margin-top: 12px;">Notre indicateur composite GPR/SME, qui mesure les tensions géopolitiques à partir de l'analyse textuelle et des flux commerciaux, signale une escalade structurelle. L'indice composite atteint 248, soit 2.5 fois sa moyenne pré-pandémie.</div>
+            <div class="note-meta" style="margin-top: 16px;"><span>Mars 2026</span><span class="note-format-tag">Données · mise à jour hebdomadaire</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ DOSSIER SPECIAL ═══ -->
+    <div class="dossier-special">
+      <div class="dossier-special-inner">
+        <div class="dossier-label">Dossier spécial</div>
+        <h2 class="dossier-title">Polycrises : comment la convergence des chocs redéfinit l'ordre économique mondial</h2>
+        <p class="dossier-excerpt">Énergie, dette, démographie, climat : quatre trajectoires qui se croisent. Notre cadre d'analyse FPSQ permet de quantifier leur interaction et d'en déduire des scénarios opérationnels pour les décideurs.</p>
+        <div class="dossier-cards">
+          <div class="dossier-card">
+            <div class="fly-title">Énergie</div>
+            <div class="note-title"><a href="#">Le détroit d'Ormuz et la vulnérabilité européenne : trois scénarios</a></div>
+            <div class="note-excerpt">Simulation d'une fermeture : +27% Brent, cascade PME en 15 jours.</div>
+          </div>
+          <div class="dossier-card">
+            <div class="fly-title">Dette</div>
+            <div class="note-title"><a href="#">Les pays émergents face au mur de la dette souveraine</a></div>
+            <div class="note-excerpt">Restructurations en chaîne : le Common Framework à l'épreuve des faits.</div>
+          </div>
+          <div class="dossier-card">
+            <div class="fly-title">Prospective</div>
+            <div class="note-title"><a href="#">Cinq scénarios pour l'économie mondiale en 2027</a></div>
+            <div class="note-excerpt">Stress-test Monte Carlo sur la base de notre modèle FPSQ.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ DÉBATS & CONTROVERSES ═══ -->
+    <div class="debats-section">
+      <div class="debats-section-inner">
+        <hr class="rule-section">
+        <h2 class="section-heading-econ">Débats &amp; Controverses</h2>
+        <div class="debats-grid">
+          <div class="debat-card">
+            <div class="fly-title">Déficits courants</div>
+            <div class="note-title"><a href="#">Gopinath vs Pettis : la controverse sur le rééquilibrage mondial</a></div>
+            <div class="note-excerpt">Le FMI et Michael Pettis s'opposent sur les mécanismes du déficit courant américain. Six couches de réconciliation.</div>
+            <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Analyse · 3 500 mots</span></div>
+          </div>
+          <div class="debat-card">
+            <div class="fly-title">Ajustement structurel</div>
+            <div class="note-title"><a href="#">Hickel vs le consensus : l'ajustement structurel a-t-il fonctionné ?</a></div>
+            <div class="note-excerpt">Relecture contradictoire de 40 ans de conditionnalité IFI. Données, biais méthodologiques, ce que dit vraiment l'évidence.</div>
+            <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Analyse · 4 250 mots</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ EN BREF ═══ -->
+    <div class="en-bref">
+      <div class="en-bref-inner">
+        <hr class="rule-section">
+        <h2 class="section-heading-econ">En bref</h2>
+        <div class="en-bref-grid" style="margin-top: 16px;">
+          <div class="en-bref-item">
+            <div class="fly-title">Asie</div>
+            <div class="note-title"><a href="#">La Corée du Sud suspend ses accords commerciaux avec le Myanmar après le séisme</a></div>
+          </div>
+          <div class="en-bref-item">
+            <div class="fly-title">Europe</div>
+            <div class="note-title"><a href="#">L'Allemagne adopte un plan de relance industrielle controversé de 500 Md€</a></div>
+          </div>
+          <div class="en-bref-item">
+            <div class="fly-title">Moyen-Orient</div>
+            <div class="note-title"><a href="#">Les Émirats investissent 10 milliards dans l'intelligence artificielle souveraine</a></div>
+          </div>
+          <div class="en-bref-item">
+            <div class="fly-title">Afrique</div>
+            <div class="note-title"><a href="#">Le Nigeria rejoint le partenariat BRICS de développement : implications pour l'APD</a></div>
+          </div>
+          <div class="en-bref-item">
+            <div class="fly-title">Commerce</div>
+            <div class="note-title"><a href="#">L'OMC revoit ses prévisions de croissance du commerce mondial à la baisse (−1.2 pt)</a></div>
+          </div>
+          <div class="en-bref-item">
+            <div class="fly-title">Finance</div>
+            <div class="note-title"><a href="#">Les banques centrales non-occidentales accumulent de l'or à un rythme record</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         CATALOGUE DES NOTES — controlled by sticky tabs
+         ═══════════════════════════════════════════════════ -->
+    <div class="catalog-section" id="catalogue">
+      <div class="catalog-inner">
+        <hr class="rule-section">
+        <h2 class="section-heading-econ" style="margin-bottom: 24px;">Catalogue des notes</h2>
+
+        <!-- ══ RISQUE GÉOPOLITIQUE ══ -->
+        <div class="catalog-panel" data-theme="geopolitique">
+          <div class="catalog-count">13 notes · Risque géopolitique</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Polycrisis</div>
+              <div class="note-title"><a href="#">Triple choc simultané : Ormuz + tarifs + réarmement</a></div>
+              <div class="note-excerpt">Scénario polycrisis à trois dimensions. Impact PIB UE projeté : −3.1% à −5.4%. Stress-test Monte Carlo.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Scénario · 8 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Survie autoritaire</div>
+              <div class="note-title"><a href="#">Coups d'État et corruption : les mécanismes de survie autoritaire</a></div>
+              <div class="note-excerpt">Comment les régimes post-coup utilisent la corruption comme instrument de consolidation. Implications pour investisseurs et programmes d'aide.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Liaisons dangereuses</div>
+              <div class="note-title"><a href="#">Crise iranienne et finance de guerre russe : les liaisons dangereuses</a></div>
+              <div class="note-excerpt">Une escalade iranienne finance indirectement l'effort de guerre russe via les marchés pétroliers.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Sahel</div>
+              <div class="note-title"><a href="#">Sahel post-Barkhane : reconfiguration des alliances et conséquences économiques</a></div>
+              <div class="note-excerpt">Mali, Burkina, Niger : le basculement vers la Russie restructure les flux d'aide, de commerce et d'investissement.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Dédollarisation</div>
+              <div class="note-title"><a href="#">Dédollarisation défensive : achats d'or des banques centrales post-2022</a></div>
+              <div class="note-excerpt">Les banques centrales non-occidentales accumulent de l'or à un rythme record. Signal direct de hedging anti-sanctions.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">IDE &amp; compliance</div>
+              <div class="note-title"><a href="#">Patronage post-coup et IDE extractifs : le canal compliance</a></div>
+              <div class="note-excerpt">Les IDE occidentaux reculent après les coups, mais est-ce la corruption ou la pression réglementaire (FCPA) ?</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Contagion</div>
+              <div class="note-title"><a href="#">Contagion géopolitique : comment les chocs se propagent entre théâtres</a></div>
+              <div class="note-excerpt">Ukraine → énergie → inflation → instabilité politique → migration. Cartographie des chaînes de transmission.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Scénario · 8 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Non-alignement</div>
+              <div class="note-title"><a href="#">Non-alignement des producteurs de minerais : stratégie rationnelle</a></div>
+              <div class="note-excerpt">Les pays riches en ressources optimisent leur position entre partenaires occidentaux et chinois.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Mesure du risque</div>
+              <div class="note-title"><a href="#">Indice de stress géopolitique composite : méthodologie et résultats</a></div>
+              <div class="note-excerpt">Construction d'un indice intégrant GPR, volatilité commodités, spreads souverains et flux commerciaux.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Malédiction des ressources</div>
+              <div class="note-title"><a href="#">Rentes pétrolières et inégalités infranationales : l'effet malédiction revisité</a></div>
+              <div class="note-excerpt">Les régions productrices ne bénéficient pas proportionnellement. Données géolocalisées et nightlights.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Scénario Taiwan</div>
+              <div class="note-title"><a href="#">Scénario Taiwan : implications économiques d'une escalade dans le détroit</a></div>
+              <div class="note-excerpt">Modélisation des impacts d'un blocus ou d'un conflit sur les chaînes de semi-conducteurs et le commerce mondial.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Scénario · 8 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Corruption &amp; capital humain</div>
+              <div class="note-title"><a href="#">Corruption et choix occupationnels : pourquoi les talents fuient le public</a></div>
+              <div class="note-excerpt">La corruption systémique pousse les individus qualifiés vers le secteur privé ou l'émigration.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Risque politique</div>
+              <div class="note-title"><a href="#">Instabilité politique et conditions d'investissement : indice composite</a></div>
+              <div class="note-excerpt">Construction d'un indice composite intégrant coups, corruption, risque politique et compliance pour 92 pays.</div>
+              <div class="note-meta"><span>Sept. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ COMMERCE & SANCTIONS ══ -->
+        <div class="catalog-panel" data-theme="commerce">
+          <div class="catalog-count">9 notes · Commerce &amp; Sanctions</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Politique tarifaire</div>
+              <div class="note-title"><a href="#">Section 122 et crise constitutionnelle du commerce : anatomie d'un contournement</a></div>
+              <div class="note-excerpt">Après l'invalidation des tarifs IEEPA par la Cour suprême (6-3), bascule sur la Section 122. Tarif universel 10%, menace 15%.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Coordination G7</div>
+              <div class="note-title"><a href="#">Triangulation G7 : coordination tarifaire face à la fragmentation</a></div>
+              <div class="note-excerpt">Analyse de l'alignement des politiques commerciales au sein du G7.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Chaînes de valeur</div>
+              <div class="note-title"><a href="#">Tarifs réciproques et chaînes de valeur européennes : qui paie ?</a></div>
+              <div class="note-excerpt">Les tarifs américains sur les intrants se transmettent asymétriquement selon la position dans la chaîne de valeur.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Transition &amp; commerce</div>
+              <div class="note-title"><a href="#">CBAM et compétitivité industrielle : premiers effets mesurés</a></div>
+              <div class="note-excerpt">L'ajustement carbone aux frontières restructure les flux commerciaux. Bilan sectoriel à 12 mois.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Réalignement commercial</div>
+              <div class="note-title"><a href="#">Friend-shoring : rhétorique ou réalité ? Données de flux commerciaux 2022-2025</a></div>
+              <div class="note-excerpt">Les données douanières montrent un réarrangement limité des flux — le friend-shoring reste largement discursif.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Contrôles à l'exportation</div>
+              <div class="note-title"><a href="#">Entity Lists et PME européennes : le coût caché de la compliance</a></div>
+              <div class="note-excerpt">Les contrôles à l'exportation américains imposent un coût de compliance disproportionné aux PME.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Fragmentation</div>
+              <div class="note-title"><a href="#">Fragmentation commerciale : indices et mesures disponibles</a></div>
+              <div class="note-excerpt">Revue critique des indices de fragmentation commerciale. Construction d'un indice composite calibré.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Contrôles à l'exportation</div>
+              <div class="note-title"><a href="#">Semiconductor export controls : effets de second tour sur l'industrie européenne</a></div>
+              <div class="note-excerpt">Les contrôles américains sur les semi-conducteurs affectent l'industrie européenne par les chaînes de valeur intermédiaires.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Relations UE-Chine</div>
+              <div class="note-title"><a href="#">Dérisking vs decoupling : ce que disent les données</a></div>
+              <div class="note-excerpt">Analyse quantitative de la distinction entre dérisking et découplage dans les flux commerciaux UE-Chine.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ FINANCE DU DÉVELOPPEMENT ══ -->
+        <div class="catalog-panel" data-theme="developpement">
+          <div class="catalog-count">8 notes · Finance du développement</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Compétition G7-Chine</div>
+              <div class="note-title"><a href="#">G7 Development Finance in a Fragmented World</a></div>
+              <div class="note-excerpt">Comment la compétition G7-Chine restructure l'architecture de l'aide.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 15 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Aide française</div>
+              <div class="note-title"><a href="#">APD française au Sahel : contraction post-Barkhane et substitution</a></div>
+              <div class="note-excerpt">La rupture diplomatique a contracté l'aide française. Les remittances compensent-elles ?</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Instruments chinois</div>
+              <div class="note-title"><a href="#">Prêts adossés aux ressources : l'instrument chinois qui stabilise les flux</a></div>
+              <div class="note-excerpt">+39 à 50% de stabilisation des flux de commodités. Le mécanisme d'auto-exécution contourne la faiblesse institutionnelle.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Conditionnalité</div>
+              <div class="note-title"><a href="#">Conditionnalité géopolitique de l'aide : le basculement post-2022</a></div>
+              <div class="note-excerpt">L'aide occidentale se réalloue vers des objectifs de sécurité.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Partenariats</div>
+              <div class="note-title"><a href="#">L'absence de development bargain crédible : l'angle mort européen</a></div>
+              <div class="note-excerpt">Un partenariat qui ne propose que des normes sans infrastructure ne peut pas concurrencer les contrats chinois.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Architecture financière</div>
+              <div class="note-title"><a href="#">Architecture financière internationale : post-Bretton Woods en pratique</a></div>
+              <div class="note-excerpt">Les institutions de Bretton Woods face à la compétition des banques de développement alternatives.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Dette souveraine</div>
+              <div class="note-title"><a href="#">Dette souveraine africaine : restructurations et leçons du Common Framework</a></div>
+              <div class="note-excerpt">Le Common Framework du G20 a échoué à traiter les cas Zambie et Ghana efficacement.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Flux financiers illicites</div>
+              <div class="note-title"><a href="#">IFF et gouvernance extractive : l'hémorragie invisible des flux financiers illicites</a></div>
+              <div class="note-excerpt">Les flux financiers illicites dans le secteur extractif coûtent 5 à 15% de recettes fiscales manquées.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ ÉNERGIE & CLIMAT ══ -->
+        <div class="catalog-panel" data-theme="energie">
+          <div class="catalog-count">10 notes · Énergie &amp; Climat</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Détroit d'Ormuz : scénario de fermeture et impacts énergétiques européens</a></div>
+              <div class="note-excerpt">Simulation d'une fermeture du détroit : +27% Brent, cascade sur les coûts PME en 15 jours.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Restructuration énergétique européenne : voies nord-africaines et renouvelables</a></div>
+              <div class="note-excerpt">Cartographie des alternatives au gaz russe. Corridors nord-africains versus accélération renouvelable.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Minerais critiques : la géopolitique des contrats d'approvisionnement</a></div>
+              <div class="note-excerpt">Comment la Chine sécurise le cobalt, le lithium et les terres rares.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Subventions fossiles post-Ukraine : le retour en arrière des réformes</a></div>
+              <div class="note-excerpt">L'explosion des prix a forcé la réintroduction de subventions en Europe et en Afrique.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Uranium nigérien : après le coup, les contrats</a></div>
+              <div class="note-excerpt">Le coup au Niger a interrompu l'accès européen à l'uranium. Cartographie des alternatives.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">EU CRM Act : réponse réglementaire à un problème contractuel</a></div>
+              <div class="note-excerpt">L'Europe sécurise par des normes, la Chine par des contrats exécutoires.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">GNL américain et dépendance européenne : le transfert de vulnérabilité</a></div>
+              <div class="note-excerpt">Remplacer le gaz russe par le GNL américain ne réduit pas la dépendance — il la déplace.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Transition énergétique et rentes pétrolières : le dilemme des producteurs africains</a></div>
+              <div class="note-excerpt">Les pays producteurs d'hydrocarbures africains face à la transition.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Gazoducs est-méditerranéens : viabilité géopolitique et économique</a></div>
+              <div class="note-excerpt">EastMed, corridor turc, routes alternatives. Analyse de faisabilité.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Énergie &amp; Climat</div>
+              <div class="note-title"><a href="#">Choc pétrolier et mécanismes de transmission aux PME : canaux identifiés</a></div>
+              <div class="note-excerpt">Synthèse des mécanismes par lesquels un choc de prix du pétrole se transmet à l'investissement des PME.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ DÉFENSE & INDUSTRIE ══ -->
+        <div class="catalog-panel" data-theme="defense">
+          <div class="catalog-count">8 notes · Défense &amp; Industrie</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Réarmement européen</div>
+              <div class="note-title"><a href="#">ReArm Europe : LPM 2024-2030 et les 4 500 PME de la BITD</a></div>
+              <div class="note-excerpt">Le plan de réarmement européen (800 Md€) repose sur 4 500 PME.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Financement défense</div>
+              <div class="note-title"><a href="#">Financement bancaire de la défense : +22% en six mois</a></div>
+              <div class="note-excerpt">Le crédit bancaire au secteur défense accélère. Bpifrance (450 M€), BEI, FBF.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">ESG &amp; souveraineté</div>
+              <div class="note-title"><a href="#">ESG et souveraineté : le dilemme des investisseurs institutionnels</a></div>
+              <div class="note-excerpt">Comment les critères ESG interagissent avec l'impératif de réarmement.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Industrie de défense</div>
+              <div class="note-title"><a href="#">Ecosystème Versailles-Satory : 1.2 Md€ de capacités industrielles</a></div>
+              <div class="note-excerpt">KNDS, Arquus, DGA PME Tour. Cartographie du cluster industriel de défense francilien.</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Capacités industrielles</div>
+              <div class="note-title"><a href="#">Munitions : goulets d'étranglement industriels et solutions de court terme</a></div>
+              <div class="note-excerpt">La production européenne de munitions reste insuffisante. Diagnostic des contraintes.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Coopération bilatérale</div>
+              <div class="note-title"><a href="#">SCAF/MGCS : l'économie politique de la coopération franco-allemande</a></div>
+              <div class="note-excerpt">Les programmes d'armement bilatéraux face aux divergences industrielles.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Budgets militaires</div>
+              <div class="note-title"><a href="#">Dépenses militaires européennes : comparaison des trajectoires post-2022</a></div>
+              <div class="note-excerpt">Analyse comparative des budgets défense dans l'UE. Qui atteint le 2% PIB.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">BITD &amp; PME</div>
+              <div class="note-title"><a href="#">Base industrielle de défense et PME : le maillon faible identifié</a></div>
+              <div class="note-excerpt">Les sous-traitants de rang 2 et 3 absorbent les contraintes sans marge de manœuvre.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ AFRIQUE ══ -->
+        <div class="catalog-panel" data-theme="afrique">
+          <div class="catalog-count">6 notes · Afrique</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Sahel</div>
+              <div class="note-title"><a href="#">Sahel post-Barkhane : reconfiguration des alliances et conséquences économiques</a></div>
+              <div class="note-excerpt">Mali, Burkina, Niger : le basculement vers la Russie restructure les flux d'aide, de commerce et d'investissement.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Aide française</div>
+              <div class="note-title"><a href="#">APD française au Sahel : contraction post-Barkhane et substitution</a></div>
+              <div class="note-excerpt">La rupture diplomatique a contracté l'aide française. Les remittances compensent-elles ?</div>
+              <div class="note-meta"><span>Fév. 2026</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Uranium</div>
+              <div class="note-title"><a href="#">Uranium nigérien : après le coup, les contrats</a></div>
+              <div class="note-excerpt">Le coup au Niger a interrompu l'accès européen à l'uranium. Cartographie des alternatives.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Transition énergétique</div>
+              <div class="note-title"><a href="#">Transition énergétique et rentes pétrolières : le dilemme des producteurs africains</a></div>
+              <div class="note-excerpt">Les pays producteurs d'hydrocarbures africains face à la transition.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Flux financiers illicites</div>
+              <div class="note-title"><a href="#">IFF et gouvernance extractive : l'hémorragie invisible des flux financiers illicites</a></div>
+              <div class="note-excerpt">Les flux financiers illicites dans le secteur extractif coûtent 5 à 15% de recettes fiscales manquées.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Dette souveraine</div>
+              <div class="note-title"><a href="#">Dette souveraine africaine : restructurations et leçons du Common Framework</a></div>
+              <div class="note-excerpt">Le Common Framework du G20 a échoué à traiter les cas Zambie et Ghana efficacement.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Rapport · 10 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ ASIE-PACIFIQUE ══ -->
+        <div class="catalog-panel" data-theme="asie">
+          <div class="catalog-count">3 notes · Asie-Pacifique</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Scénario Taiwan</div>
+              <div class="note-title"><a href="#">Scénario Taiwan : implications économiques d'une escalade dans le détroit</a></div>
+              <div class="note-excerpt">Modélisation des impacts d'un blocus ou d'un conflit sur les chaînes de semi-conducteurs.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Scénario · 8 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Instruments chinois</div>
+              <div class="note-title"><a href="#">Prêts adossés aux ressources : l'instrument chinois qui stabilise les flux</a></div>
+              <div class="note-excerpt">+39 à 50% de stabilisation des flux de commodités. Auto-exécution contourne la faiblesse institutionnelle.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Relations UE-Chine</div>
+              <div class="note-title"><a href="#">Dérisking vs decoupling : ce que disent les données</a></div>
+              <div class="note-excerpt">Analyse quantitative de la distinction entre dérisking et découplage dans les flux commerciaux UE-Chine.</div>
+              <div class="note-meta"><span>Oct. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ══ EUROPE ══ -->
+        <div class="catalog-panel" data-theme="europe">
+          <div class="catalog-count">5 notes · Europe</div>
+          <ul class="catalog-list">
+            <li>
+              <div class="fly-title">Réarmement européen</div>
+              <div class="note-title"><a href="#">ReArm Europe : LPM 2024-2030 et les 4 500 PME de la BITD</a></div>
+              <div class="note-excerpt">Le plan de réarmement européen (800 Md€) repose sur 4 500 PME.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Rapport · 14 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Transition &amp; commerce</div>
+              <div class="note-title"><a href="#">CBAM et compétitivité industrielle : premiers effets mesurés</a></div>
+              <div class="note-excerpt">L'ajustement carbone aux frontières restructure les flux commerciaux.</div>
+              <div class="note-meta"><span>Jan. 2026</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Restructuration énergétique</div>
+              <div class="note-title"><a href="#">Restructuration énergétique européenne : voies nord-africaines et renouvelables</a></div>
+              <div class="note-excerpt">Cartographie des alternatives au gaz russe. Corridors nord-africains versus accélération renouvelable.</div>
+              <div class="note-meta"><span>Mars 2026</span><span class="note-format-tag">Rapport · 12 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Contrôles à l'exportation</div>
+              <div class="note-title"><a href="#">Entity Lists et PME européennes : le coût caché de la compliance</a></div>
+              <div class="note-excerpt">Les contrôles à l'exportation américains imposent un coût de compliance disproportionné aux PME.</div>
+              <div class="note-meta"><span>Déc. 2025</span><span class="note-format-tag">Brief · 6 pages</span></div>
+            </li>
+            <li>
+              <div class="fly-title">Budgets militaires</div>
+              <div class="note-title"><a href="#">Dépenses militaires européennes : comparaison des trajectoires post-2022</a></div>
+              <div class="note-excerpt">Analyse comparative des budgets défense dans l'UE. Qui atteint le 2% PIB.</div>
+              <div class="note-meta"><span>Nov. 2025</span><span class="note-format-tag">Note rapide · 4 pages</span></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+// Sticky filter tabs control the catalog panels
+// Click on "Tous" shows editorial sections + hides catalog
+// Click on a theme scrolls to catalog and shows that panel
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Update active tab
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    if (filter === 'all') {
+      // Hide all catalog panels
+      document.querySelectorAll('.catalog-panel').forEach(p => p.classList.remove('active'));
+      return;
+    }
+
+    // Show matching catalog panel, hide others
+    document.querySelectorAll('.catalog-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.theme === filter);
+    });
+
+    // Scroll to catalog section
+    document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+{{ end }}

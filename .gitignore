@@ -1,4 +1,37 @@
-node_modules/
+# Hugo build
 public/
 resources/
 .hugo_build.lock
+
+# Node
+node_modules/
+
+# Working files — not for production
+clones-design/
+articles/
+staging/
+*.pdf
+
+# Architecture & planning docs
+ARCHITECTURE_SITE.md
+CONTENT_GAP_MAP.md
+HANDOFF_SESSION.md
+PROPOSITIONS_SITE_V2.md
+SITE_CONTENT_REFERENCE.md
+SITE_EVALUATION_AND_CONTENT_PLAN.md
+
+# Backups
+go.mod.bak
+go.sum.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Working directories
+output/
+prototypes/
+site-bridge/
+
+# Claude
+.claude/

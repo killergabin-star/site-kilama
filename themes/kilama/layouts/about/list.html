@@ -1,0 +1,581 @@
+{{ define "styles" }}
+<style>
+/* ═══════════════════════════════════════════════════
+   ABOUT — Mazzucato hero + Teaching editorial patterns
+   ═══════════════════════════════════════════════════ */
+
+/* Hero — Dark gradient with photo blending right */
+.about-hero-full {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
+}
+.about-hero-bg {
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%;
+  height: 100%;
+  background: url('{{ "images/avatar_kilama_hero.png" | relURL }}') calc(100% + 100px) 10% / auto 135% no-repeat;
+  z-index: 1;
+}
+.about-hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    /* Left fade — solid colors matching hero gradient, then smooth fade */
+    linear-gradient(90deg,
+      #051C2C 0%,
+      #061E34 10%,
+      #08213C 18%,
+      #0A2545 26%,
+      #0C284E 34%,
+      #0E2B55 42%,
+      rgba(15, 45, 90, 0.88) 50%,
+      rgba(15, 45, 92, 0.65) 58%,
+      rgba(15, 45, 95, 0.38) 66%,
+      rgba(15, 45, 100, 0.14) 76%,
+      transparent 86%),
+    /* Right edge — hide beige photo bg */
+    linear-gradient(270deg,
+      rgba(4, 42, 118, 0.85) 0%,
+      rgba(10, 40, 100, 0.45) 6%,
+      rgba(15, 45, 104, 0.12) 15%,
+      transparent 28%),
+    /* Bottom fade */
+    linear-gradient(to top,
+      rgba(5, 28, 44, 0.4) 0%,
+      transparent 8%);
+  z-index: 2;
+}
+.about-hero-full::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  z-index: 3;
+  pointer-events: none;
+}
+.about-hero-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 40px 64px;
+}
+.about-hero-text { max-width: 540px; }
+.about-hero.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+}
+.about-hero-full h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.about-hero-full h1 strong { font-weight: 600; }
+.about-hero-lead {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 500px;
+}
+.about-hero-affiliations {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.about-hero-affiliations span {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* DIAGNOSTIC — Teaching philosophy flow (numbered) */
+.about-diagnostic {
+  background: var(--ivory);
+  padding: 64px 40px;
+}
+.about-diagnostic-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.12);
+  margin-bottom: 0;
+}
+.diagnostic-flow {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 32px;
+}
+.diagnostic-item { display: contents; }
+.diagnostic-item .diag-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(27, 42, 74, 0.08);
+  line-height: 1;
+  padding-top: 24px;
+}
+.diagnostic-item .diag-content {
+  padding: 24px 0;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+}
+.diagnostic-item h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.diagnostic-item p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* Pull quote — gold accent */
+.about-pullquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--navy);
+  border-left: 3px solid var(--gold-caps);
+  padding-left: 24px;
+  margin: 40px 0 0 112px;
+  max-width: 600px;
+  line-height: 1.4;
+}
+
+/* METHODE — Teaching philosophy flow (Mesurer/Anticiper/Transmettre) */
+.about-methode {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+}
+.about-methode-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.methode-flow {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 32px;
+}
+.methode-item { display: contents; }
+.methode-item .meth-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(27, 42, 74, 0.08);
+  line-height: 1;
+  padding-top: 24px;
+}
+.methode-item .meth-content {
+  padding: 24px 0;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+}
+.methode-item h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.methode-item p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 700px;
+}
+.methode-coda {
+  margin-top: 24px;
+  margin-left: 112px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* AXES — Teaching course-entry pattern */
+.about-axes {
+  background: var(--ivory);
+  padding: 64px 40px;
+}
+.about-axes-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.axe-entry {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+.axe-entry:last-child { border-bottom: none; }
+.axe-fly-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--red-analytical);
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.axe-entry .axe-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.axe-entry .axe-desc {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 800px;
+}
+.axe-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* PARCOURS — Teaching course-entry reuse */
+.about-parcours {
+  background: var(--ivory-deep);
+  padding: 64px 40px;
+}
+.about-parcours-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.parcours-entry {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+.parcours-entry:last-child { border-bottom: none; }
+.parcours-fly-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blue-fpsq);
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.parcours-entry h4 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.parcours-entry p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 15px;
+  color: var(--anthracite);
+  line-height: 1.6;
+  max-width: 800px;
+}
+.parcours-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* PUBLICATIONS */
+.about-publications {
+  background: var(--ivory);
+  padding: 64px 40px;
+}
+.about-publications-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.pub-entry {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+  align-items: start;
+}
+.pub-entry:last-child { border-bottom: none; }
+.pub-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue-fpsq);
+  background: rgba(44,95,138,0.08);
+  padding: 6px 10px;
+  text-align: center;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+.pub-entry h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.pub-detail {
+  font-family: 'Source Serif 4', serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* CONTACT — Geo Officer dossier pattern */
+.about-contact-section {
+  background: linear-gradient(160deg, #051C2C 0%, #042A76 30%, #051C2C 100%);
+  padding: 80px 40px;
+  text-align: center;
+}
+.about-contact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-contact-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 32px;
+  line-height: 1.3;
+}
+.about-contact-section .btn-outline-light {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 28px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+}
+.about-contact-section .btn-outline-light:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-hero-content { padding: 120px 24px 60px; }
+  .about-hero-text { max-width: 100%; }
+  .about-hero-bg { background-size: cover; background-position: center; }
+  .about-hero-bg::after {
+    background: linear-gradient(180deg, rgba(5,28,44,0.9) 0%, rgba(5,28,44,0.7) 50%, rgba(5,28,44,0.5) 100%);
+  }
+  .diagnostic-flow, .methode-flow { grid-template-columns: 1fr; }
+  .diagnostic-item .diag-num, .methode-item .meth-num { display: none; }
+  .about-pullquote, .methode-coda { margin-left: 0; }
+  .pub-entry { grid-template-columns: 60px 1fr; }
+  .about-diagnostic, .about-methode, .about-axes, .about-parcours, .about-publications { padding: 48px 24px; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+  <!-- HERO — Mazzucato photo pattern -->
+  <section class="about-hero-full page-body">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-text">
+        <div class="about-hero section-label">Parcours &amp; philosophie</div>
+        <h1>Mesurer ce que l'économie <strong>ne quantifie pas encore</strong></h1>
+        <p class="about-hero-lead">
+          Macroéconomiste de formation, analyste stratégique par expérience. Ce double ancrage a forgé une conviction : la géopolitique est redevenue une variable structurelle de l'économie mondiale — des bilans d'entreprises aux marchés souverains, des flux d'aide aux chaînes d'approvisionnement.
+        </p>
+        <div class="about-hero-affiliations">
+          <span>CAPS-MEAE</span>
+          <span>FERDI</span>
+          <span>CERDI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTIC — Teaching numbered flow -->
+  <section class="about-diagnostic">
+    <div class="about-diagnostic-inner">
+      <h2 class="about-section-title">Le diagnostic</h2>
+      <div class="diagnostic-flow">
+        <div class="diagnostic-item">
+          <div class="diag-num">01</div>
+          <div class="diag-content">
+            <h3>Un vide méthodologique</h3>
+            <p>On étudie les tarifs sans modéliser l'intention stratégique. On étudie l'aide sans interroger sa fonction géopolitique. On étudie le risque financier sans y incorporer le risque géopolitique comme facteur structurel.</p>
+          </div>
+        </div>
+        <div class="diagnostic-item">
+          <div class="diag-num">02</div>
+          <div class="diag-content">
+            <h3>Des conséquences opérationnelles</h3>
+            <p>Les instruments de crise hérités de la pandémie ciblent le mauvais canal pour les PME. Les programmes d'aide ignorent la compétition sino-occidentale qui les reconfigure. Les scénarios de planification sous-estiment les effets en cascade des chocs géopolitiques.</p>
+          </div>
+        </div>
+        <div class="diagnostic-item">
+          <div class="diag-num">03</div>
+          <div class="diag-content">
+            <h3>Un fossé à combler</h3>
+            <p>La géopolitique est revenue au centre des relations économiques internationales. La science économique ne dispose pas encore des instruments pour la mesurer rigoureusement et en déduire des recommandations opérationnelles.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-pullquote">
+        La géopolitique entre dans les bilans. Nos méthodes doivent suivre.
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODE — Teaching numbered flow -->
+  <section class="about-methode">
+    <div class="about-methode-inner">
+      <h2 class="about-section-title">La méthode</h2>
+      <div class="methode-flow">
+        <div class="methode-item">
+          <div class="meth-num">01</div>
+          <div class="meth-content">
+            <h3>Mesurer</h3>
+            <p>Isoler l'impact causal des chocs géopolitiques par l'inférence causale — différences-en-différences robustes, projections locales, variables instrumentales. Données granulaires : firmes, flux commerciaux bilatéraux, spreads souverains.</p>
+          </div>
+        </div>
+        <div class="methode-item">
+          <div class="meth-num">02</div>
+          <div class="meth-content">
+            <h3>Anticiper</h3>
+            <p>Construire des scénarios quantitatifs qui projettent les effets économiques des trajectoires géopolitiques. Stress-tests Monte Carlo, projections calibrées, signaux d'alerte pour décideurs.</p>
+          </div>
+        </div>
+        <div class="methode-item">
+          <div class="meth-num">03</div>
+          <div class="meth-content">
+            <h3>Transmettre</h3>
+            <p>Convertir les résultats en recommandations opérationnelles pour les décideurs et en formations pour les analystes. Du rapport stratégique au séminaire universitaire.</p>
+          </div>
+        </div>
+      </div>
+      <p class="methode-coda">La rigueur économétrique transforme ces analyses en résultats publiables dans les meilleures revues de la discipline — avec l'ambition de combler le fossé entre la recherche causale et la décision stratégique.</p>
+    </div>
+  </section>
+
+  <!-- AXES — Teaching course-entry pattern -->
+  <section class="about-axes">
+    <div class="about-axes-inner">
+      <h2 class="about-section-title">Programme de recherche</h2>
+      <div class="axe-entry">
+        <div class="axe-fly-title">Axe I — Canal réel</div>
+        <div class="axe-title">Chocs géopolitiques et entreprises</div>
+        <div class="axe-desc">Comment le retour de la géopolitique expose la vulnérabilité structurelle de la base industrielle européenne. Les PME absorbent les chocs sans les transmettre aux prix — un mécanisme invisible qui fragilise l'ensemble de la chaîne d'approvisionnement de défense.</div>
+        <div class="axe-meta">
+          <span>Triple-DiD</span>
+          <span>ECB SAFE</span>
+          <span>337K observations</span>
+        </div>
+      </div>
+      <div class="axe-entry">
+        <div class="axe-fly-title">Axe II — Architecture financière</div>
+        <div class="axe-title">Finance du développement et géopolitique</div>
+        <div class="axe-desc">Comment la compétition G7-Chine transforme l'architecture de l'aide au développement. La finance chinoise stabilisait les flux de commodités — jusqu'en 2016, quand la fragmentation géopolitique l'a transformée en instrument stratégique.</div>
+        <div class="axe-meta">
+          <span>LP-DiD</span>
+          <span>AidData GeoGCDF</span>
+          <span>118 disruptions</span>
+        </div>
+      </div>
+      <div class="axe-entry">
+        <div class="axe-fly-title">Axe III — Gouvernance</div>
+        <div class="axe-title">Gouvernance et instabilité</div>
+        <div class="axe-desc">Comment la survie autoritaire — à travers les coups d'État et la corruption — affecte les conditions d'investissement, les flux d'aide et l'accès aux ressources critiques.</div>
+        <div class="axe-meta">
+          <span>Callaway-Sant'Anna DiD</span>
+          <span>92 pays</span>
+          <span>1950–2010</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS SÉLECTIONNÉES — compact, pas CV -->
+  <section class="about-publications" id="publications">
+    <div class="about-publications-inner">
+      <h2 class="about-section-title">Publications sélectionnées</h2>
+      <div style="margin-top: 24px;">
+        <div class="pub-entry">
+          <div class="pub-badge">EER</div>
+          <div>
+            <h4>Inflation targeting: Genuine effects or publication selection bias?</h4>
+            <div class="pub-detail">European Economic Review, 128, 2020 — avec H. Balima &amp; R. Tapsoba</div>
+          </div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-badge">JCE</div>
+          <div>
+            <h4>The Importance of Oil in the Allocation of Foreign Aid: The Case of G7 donors</h4>
+            <div class="pub-detail">Journal of Comparative Economics, 48(2), 2020 — avec C. Couharde, F. Karanfil &amp; L.-D. Omgba</div>
+          </div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-badge">CER</div>
+          <div>
+            <h4>China and Emerging donors influence in the aid landscape: A recipient perspective</h4>
+            <div class="pub-detail">China Economic Review, 38, 2016</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT — Geo Officer dark dossier pattern -->
+  <section class="about-contact-section">
+    <div class="about-contact-inner">
+      <div class="about-contact-quote">
+        Mesurer, anticiper, décider, transmettre.
+      </div>
+      <a href="mailto:eric@erickilama.com" class="btn-outline-light">Contact &rarr;</a>
+    </div>
+  </section>
+{{ end }}

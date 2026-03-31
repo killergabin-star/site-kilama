@@ -3,12 +3,9 @@ baseURL: 'https://erickilama.com/'
 copyright: '&copy; {year} Eric Gabin Kilama'
 
 ############################
-## MODULES
+## THEME
 ############################
-module:
-  imports:
-    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-netlify
-    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-tailwind
+theme: kilama
 
 ############################
 ## LANGUAGE

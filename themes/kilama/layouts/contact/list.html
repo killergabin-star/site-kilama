@@ -1,0 +1,116 @@
+{{ define "styles" }}
+<style>
+.contact-section {
+  background: var(--ivory);
+  padding: 120px 40px 80px;
+  min-height: 70vh;
+}
+.contact-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.contact-eyebrow {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--blue-fpsq);
+  margin-bottom: 16px;
+}
+.contact-title {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.contact-text {
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--anthracite);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.contact-channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.contact-channel {
+  border-top: 2px solid var(--navy);
+  padding-top: 16px;
+}
+.contact-channel-label {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+.contact-channel-value {
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--navy);
+}
+.contact-channel-value a {
+  color: var(--navy);
+  text-decoration: none;
+}
+.contact-channel-value a:hover {
+  color: var(--blue-fpsq);
+}
+.contact-note {
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.6;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 24px;
+}
+@media (max-width: 600px) {
+  .contact-channels { grid-template-columns: 1fr; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-body">
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-eyebrow">Contact</div>
+      <h1 class="contact-title">Échangeons</h1>
+      <p class="contact-text">
+        Pour une collaboration de recherche, une intervention, un commentaire sur une publication ou une demande de données — n'hésitez pas à me contacter directement.
+      </p>
+      <div class="contact-channels">
+        <div class="contact-channel">
+          <div class="contact-channel-label">Email</div>
+          <div class="contact-channel-value"><a href="mailto:kilamaericgabin@yahoo.fr">kilamaericgabin@yahoo.fr</a></div>
+        </div>
+        <div class="contact-channel">
+          <div class="contact-channel-label">LinkedIn</div>
+          <div class="contact-channel-value"><a href="http://www.linkedin.com/in/eric-gabin-kilama-aa4b4941" target="_blank" rel="noopener">Eric Gabin Kilama</a></div>
+        </div>
+        <div class="contact-channel">
+          <div class="contact-channel-label">Affiliations</div>
+          <div class="contact-channel-value">BETA (Lorraine) · FERDI</div>
+        </div>
+        <div class="contact-channel">
+          <div class="contact-channel-label">Localisation</div>
+          <div class="contact-channel-value">Versailles, France</div>
+        </div>
+      </div>
+      <p class="contact-note">
+        Les données et codes de réplication associés aux publications sont disponibles sur demande. Pour les rapports sous embargo, merci de préciser votre affiliation institutionnelle.
+      </p>
+    </div>
+  </div>
+</div>
+{{ end }}
