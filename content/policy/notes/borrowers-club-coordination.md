@@ -15,11 +15,6 @@ draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 15 septembre 2024 | erickilama.com
-
----
-
 ## Le débat manquant
 
 La discussion sur la réforme de l'architecture internationale de la dette souveraine tourne, depuis une décennie, autour d'un seul axe : la coordination des créanciers. Comment inciter les détenteurs d'obligations a participer aux restructurations ? Comment intégrer la Chine dans un cadre multilatéral cohérent ? Comment articuler le Club de Paris, le Club de Londres et les nouveaux acteurs privés ? Ces questions sont légitimes. Elles sont aussi radicalement insuffisantes.
@@ -30,7 +25,7 @@ Cette asymétrie n'est pas un détail technique. Elle structure les résultats d
 
 ## L'asymétrie fondamentale
 
-La composition de la dette des marchés emergents a profondément évolué depuis les années 1980 -- une époque ou le marché des restructurations souveraines était dominé par les banquiers français de Lazard. Les créanciers comprennent désormais les institutions financières internationales, le secteur privé, les créanciers bilatéraux officiels et, de manière croissante, la Chine. La part des détenteurs d'obligations dans la dette publique extérieure des pays en développement a fortement progressé, passant de moins de 20 % en 2010 a plus de 30 % pour les économies de marché frontière (OCDE, Global Debt Report 2025). En volume et en complexité, la dette souveraine a changé de nature.
+La composition de la dette des marchés emergents a profondément évolué depuis les années 1980 -- une époque ou le marché des restructurations souveraines était dominé par les banquiers français de Lazard. Les créanciers comprennent désormais les institutions financières internationales, le secteur privé, les créanciers bilatéraux officiels et, de manière croissante, la Chine. La part des détenteurs d'obligations dans la dette publique extérieure des pays en développement a fortement progressé, passant de moins de 20 % en 2010 a plus de 30 % pour les économies de marché frontière (OCDE, Global Outlook on Financing for Sustainable Development 2024). En volume et en complexité, la dette souveraine a changé de nature.
 
 Face a cette complexité, les créanciers privés disposent de structures de coordination rodees. Du Club de Londres a l'International Capital Market Association en passant par l'Institute of International Finance, le secteur financier a bati, depuis les années 1970, un écosystème institutionnel qui lui permet de defendre collectivement ses intérêts, de partager l'information et d'influencer les règles du jeu. Comme le montrent Guzman, Colodenco et Wiedenbrug dans leur analyse de 2024, cette capacité de coordination confere aux créanciers un pouvoir disproportionne sur l'architecture de la dette souveraine -- tant dans la definition des règles qui gouvernent le cycle de la dette que dans l'issue des processus de restructuration.
 

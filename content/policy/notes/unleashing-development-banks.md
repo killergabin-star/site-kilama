@@ -15,11 +15,6 @@ draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 10 juillet 2024 | erickilama.com
-
----
-
 ## Introduction : un déficit de financement colossal
 
 À six ans de l'échéance de l'Agenda 2030, les pays à revenu faible et intermédiaire doivent mobiliser 4 000 milliards de dollars par an pour investir dans la santé, les infrastructures, la connectivité et la décarbonation. Ce déficit de financement colossal — estimé à environ 2 500 milliards de dollars par an compte tenu des flux actuels — a suscité une multiplication d'initiatives visant à réformer l'architecture financière internationale. La plupart se concentrent sur la mobilisation de capitaux privés, via des mécanismes de financement mixte (blended finance) et de dérisquage. Les résultats, après une décennie d'efforts, restent très en deçà des promesses.

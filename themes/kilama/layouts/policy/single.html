@@ -753,7 +753,7 @@
     </div>
     <h1 class="mck-hero__title">{{ .Title }}</h1>
     <div class="mck-hero__meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 janvier 2006" }}</time>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format "2 January 2006" .Date }}</time>
       <span class="mck-hero__meta-sep">|</span>
       {{ $typeLabel }}
       <span class="mck-hero__meta-sep">|</span>
@@ -878,7 +878,7 @@
         <div class="mck-related__card-title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
-        <div class="mck-related__card-date">{{ .Date.Format "2 January 2006" }}</div>
+        <div class="mck-related__card-date">{{ time.Format "2 January 2006" .Date }}</div>
       </div>
       {{ end }}
     </div>

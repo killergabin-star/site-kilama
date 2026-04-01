@@ -21,11 +21,6 @@ status: ready
 draft: false
 theme: polycrisis
 ---
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## Résumé
 
 L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière, d'une crise migratoire et d'une crise énergétique dont la convergence vers un nœud causal commun — la weaponisation de l'interdépendance économique par la première puissance mondiale — transforme la nature du risque international. Ce rapport identifié six chaînes causales inter-domaines et neuf boucles de rétroaction, dont sept amplificatrices et zéro stabilisatrice. L'absence complète de mécanisme correcteur endogène constitue le résultat le plus préoccupant de l'analyse.

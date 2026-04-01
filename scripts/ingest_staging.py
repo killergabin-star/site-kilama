@@ -183,7 +183,6 @@ def strip_title_heading(body: str) -> str:
     """
     Remove ONLY the first # heading from the body.
     The title is already in Hugo frontmatter and rendered by the template.
-    Author, date, and separators are preserved as visible content.
     """
     lines = body.split("\n")
     result = []
@@ -200,6 +199,56 @@ def strip_title_heading(body: str) -> str:
         result.append(line)
 
     return "\n".join(result)
+
+
+def strip_author_block(body: str) -> str:
+    """
+    Remove hardcoded author/date lines from the start of body text.
+    These are rendered by the Hugo template's hero + byline sections.
+    Patterns: **Eric Gabin Kilama** | date, bold date lines, following ---.
+    """
+    lines = body.split("\n")
+    i = 0
+
+    # Skip leading blank lines
+    while i < len(lines) and not lines[i].strip():
+        i += 1
+
+    modified = False
+
+    while i < len(lines):
+        line = lines[i].strip()
+
+        # Bold author line: **Eric Gabin Kilama** | ...
+        if re.match(r"^\*{1,2}Eric\s+Gabin\s+Kilama\*{1,2}", line):
+            i += 1
+            modified = True
+            continue
+
+        # Bold date on its own line: **Mars 2026**
+        if re.match(r"^\*\*[A-ZÉé][a-zéû]+ \d{4}\*\*$", line):
+            i += 1
+            modified = True
+            continue
+
+        # Blank line between author elements
+        if not line and modified:
+            i += 1
+            continue
+
+        # Horizontal rule after author block
+        if line == "---" and modified:
+            i += 1
+            if i < len(lines) and not lines[i].strip():
+                i += 1
+            break
+
+        break
+
+    if not modified:
+        return body
+
+    return "\n".join(lines[i:])
 
 
 def extract_summary(body: str, max_chars: int = 200) -> str:
@@ -358,9 +407,9 @@ def ingest_file(filepath: Path, dry_run: bool = False) -> dict | None:
     out_dir = CONTENT_DIR / section
     out_path = out_dir / slug
 
-    # Strip only the H1 title heading from body (already in Hugo frontmatter)
-    # Author, date, and separators are kept as visible content
-    clean_body = strip_title_heading(body).lstrip("\n")
+    # Strip H1 title + author/date lines (both rendered by Hugo template)
+    clean_body = strip_title_heading(body)
+    clean_body = strip_author_block(clean_body).lstrip("\n")
 
     # Build the output content
     hugo_yaml = yaml.dump(

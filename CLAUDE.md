@@ -106,6 +106,14 @@ Considere **erickilama.com** comme la **marque principale** :
 
 ---
 
+## Regles bio strictes
+
+- **MEAE/CAPS** : JAMAIS "il a ete", "ancien", "ex-" ou toute formulation au passe. Utiliser : "son experience au CAPS du Quai d'Orsay a forge sa conviction que la geopolitique est redevenue une variable structurelle de l'economie mondiale." Ou "CAPS-MEAE" / "CAPS — Quai d'Orsay" comme badge (sans verbe).
+- **BETA / Universite de Lorraine** : ZERO mention sur le site. Remplacer par FERDI, CERDI, ou omettre.
+- Ces regles s'appliquent a : templates, contenu, metadata, bios, badges, footers, attributions.
+
+---
+
 ## Principes UX et contenu
 
 - Le site doit parler **production intellectuelle** avant CV.

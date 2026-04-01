@@ -15,11 +15,6 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## Contexte du débat
 
 Le 26 mars 2026, Jason Hickel — anthropologue économique à l'Université autonome de Barcelone et figure intellectuelle du mouvement décroissant — a publié sur X : « Nous compilons des preuves sur les préjudices extraordinaires causés par les programmes d'ajustement structurel du FMI et de la Banque mondiale. » Quatre jours plus tard, le 30 mars, il défendait la méthodologie de son étude face aux critiques qui lui reprochaient l'absence d'évaluation causale originale[^1]. L'article en question, « Structural adjustment: damages, reparations and pathways to nonrecurrence », publié dans *BMJ Global Health* en 2026, constitue la tentative la plus ambitieuse à ce jour de synthétiser les preuves empiriques sur les effets sanitaires et économiques des programmes d'ajustement structurel (PAS) et d'en tirer des conséquences juridiques — un appel aux réparations[^2].

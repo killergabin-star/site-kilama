@@ -15,11 +15,6 @@ draft: false
 theme: sécurité
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 10 mars 2024 | erickilama.com
-
----
-
 ## Le pari kényan : une mission sous-dimensionnée face à l'ampleur de la crise
 
 La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels d'Haïti. Avec environ 1 100 agents de sécurité kényans, auxquels s'ajoutent quelques centaines de policiers des Bahamas, de la Jamaïque et d'Antigua-et-Barbuda, la force déployée fait face à un écosystème criminel estimé à 15 000 à 30 000 membres armés. Les gangs contrôlent plus de 85 % de Port-au-Prince, ont tué près de 3 000 personnes depuis 2022, enlevé 1 300 habitants et forcé plus de 360 000 personnes à fuir leur domicile (OIM, mars 2024).

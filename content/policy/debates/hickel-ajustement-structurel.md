@@ -18,11 +18,6 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## 1. L'échange — cinq jours, trois camps
 
 Le 25 mars 2026, Jostein Hauge, économiste de l'université de Cambridge spécialiste de politique industrielle, ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs décennies contre la politique industrielle était erronée — ses anciens conseils ont la valeur d'une disquette. »[^1] Le *World Development Report 2025* de la Banque mondiale, consacré à la revitalisation du secteur manufacturier, avait effectivement enterré l'hostilité historique de l'institution envers l'intervention étatique — sans formuler d'excuses pour les décennies de conditionnalité qui avaient imposé le contraire.

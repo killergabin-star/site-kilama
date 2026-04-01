@@ -16,9 +16,6 @@ draft: false
 theme: commerce
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 15 novembre 2024 | erickilama.com
-
 L'Union européenne a multiplié les instruments commerciaux unilatéraux pour se repositionner dans un environnement de compétition géoéconomique accrue, au moment où la crise climatique s'accélère. Cette reconfiguration, si elle répond à des impératifs légitimes de sécurité économique et de transition environnementale, risque d'aliéner les pays en développement et de compromettre les partenariats dont l'UE a besoin pour peser dans la gouvernance mondiale. L'analyse qui suit examine cette tension à travers la typologie des instruments déployés, leur impact différencié et leurs implications pour la politique extérieure européenne.
 
 ## 1. La prolifération des instruments géoéconomiques européens
@@ -65,7 +62,7 @@ Face à cette concurrence, l'UE a lancé le Global Gateway, doté de 300 milliar
 
 ## 6. Recommandations pour la nouvelle Commission
 
-La Commission von der Leyen II, entrée en fonction fin 2024, hérite d'un agenda commercial chargé et de tensions croissantes avec ses partenaires du Sud global. Trois orientations s'imposent.
+La prochaine Commission von der Leyen, attendue fin 2024, héritera d'un agenda commercial chargé et de tensions croissantes avec ses partenaires du Sud global. Trois orientations s'imposent.
 
 **Premièrement, intégrer l'impact sur les pays en développement dès la conception des instruments commerciaux.** Les études d'impact réalisées par la Commission se concentrent quasi exclusivement sur les effets intra-européens. Un mécanisme d'évaluation ex ante de l'impact sur les pays partenaires, associant les délégations de l'UE et les institutions de développement, permettrait d'anticiper les effets indésirables et de calibrer les mesures d'accompagnement.
 

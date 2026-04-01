@@ -15,11 +15,6 @@ draft: false
 theme: développement
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 15 juin 2024 | erickilama.com
-
----
-
 ## Un système sous tensions multiples
 
 Conflits armés, changement climatique, surendettement souverain, bouleversements géopolitiques : de multiples crises convergentes mettent à l'épreuve la viabilité de l'industrie de l'aide au développement. Cette industrie — le réseau d'institutions bilatérales, multilatérales et non gouvernementales qui canalisent les flux d'aide publique au développement (APD) — traverse une crise qui n'est pas seulement budgétaire, mais existentielle. Pour rester pertinents, les bailleurs traditionnels doivent se réinventer et accorder une voix substantiellement plus importante aux pays en développement et aux marchés émergents dans la gouvernance du système.

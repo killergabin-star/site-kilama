@@ -14,12 +14,6 @@ status: ready
 draft: false
 theme: iran
 ---
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 ### Synthèse
 
 L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a pas encore nommé. La crise que Washington a déclenchée pour empêcher l'Iran d'accéder à l'arme nucléaire génère un choc pétrolier qui accroît les revenus d'exportation russes de 0,8 à 9 milliards de dollars selon la durée de la fermeture d'Ormuz — prolongeant la guerre en Ukraine que les États-Unis prétendent vouloir terminer. Les alliés paient deux fois : à la pompe et sur le champ de bataille. La France, présidente du G7, dispose d'un levier de cadrage pour inscrire cette contradiction dans le communiqué et créer une pression systémique en faveur d'une résolution rapide. La fenêtre est étroite : dix à quinze jours avant que la divergence d'intérêts entre Moscou et Téhéran ne se referme.

@@ -18,11 +18,6 @@ draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
----
-
 ## Ce qui a changé
 
 En septembre 2024, une note précédente argumentait que la coordination des pays emprunteurs constituait un bien public mondial sous-produit — qu'elle bénéficiait à la stabilité financière globale, pas seulement aux pays endettés. L'argument était structurel. Dix-huit mois plus tard, il a trouvé un début de traduction institutionnelle — mais dans un contexte devenu considérablement plus hostile.

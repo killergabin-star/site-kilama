@@ -16,11 +16,6 @@ draft: false
 theme: sécurité
 author: Eric Gabin Kilama
 ---
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
----
-
 ## Introduction
 
 Depuis la publication de notre analyse en mai 2025 sur les leviers diplomatiques dont dispose la France pour relancer l'engagement international en Haïti, plusieurs développements significatifs ont eu lieu. L'initiative mémorielle sur la dette de 1825 a été lancée, la MMAS a été renouvelée mais sans renforcement substantiel, et le recours aux contractuels militaires privés par le gouvernement haïtien a ouvert un nouveau chapitre dans la gestion de la crise. Cette note actualise le diagnostic et évalue si les pistes d'action identifiées ont été suivies — et avec quels résultats.
