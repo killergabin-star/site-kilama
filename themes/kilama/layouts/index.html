@@ -27,18 +27,6 @@
   filter: grayscale(1) brightness(1.15) contrast(1.05);
   z-index: 1;
 }
-.hero-home .hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    /* Bottom fade — hide beige/white transition */
-    linear-gradient(to top, var(--white) 0%, var(--white) 2%, transparent 18%),
-    /* Left fade — protect text area and mask left edge */
-    linear-gradient(to right, var(--white) 0%, transparent 45%);
-  z-index: 2;
-  pointer-events: none;
-}
 
 .hero-home .hero-content {
   position: relative;
