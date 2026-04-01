@@ -1,7 +1,7 @@
 ---
 title: 'Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - Afrique
 - infrastructure

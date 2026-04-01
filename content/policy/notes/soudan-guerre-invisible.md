@@ -1,7 +1,7 @@
 ---
 title: 'Soudan : la guerre invisible et le dernier levier du G7'
 date: '2026-03-29'
-type: note
+doc_type: note
 tags:
 - soudan
 - crise-humanitaire

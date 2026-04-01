@@ -1,7 +1,7 @@
 ---
 title: 'La polycrisis vue d''Asie : canaux de transmission et vulnérabilités différenciées'
 date: '2026-03-30'
-type: note
+doc_type: note
 tags:
 - polycrisis
 - asie

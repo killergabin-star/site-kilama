@@ -1,7 +1,7 @@
 ---
 title: 'ReArm Europe et SAFE : l''Europe peut-elle se réarmer sans les États-Unis ?'
 date: '2026-03-17'
-type: note
+doc_type: note
 tags:
 - défense
 - rearm-europe

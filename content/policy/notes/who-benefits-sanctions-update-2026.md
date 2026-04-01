@@ -1,7 +1,7 @@
 ---
 title: À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - sanctions
 - Iran

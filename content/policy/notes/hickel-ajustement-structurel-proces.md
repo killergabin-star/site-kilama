@@ -1,7 +1,7 @@
 ---
 title: 'L''ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas'
 date: 2026-03-31
-type: note
+doc_type: note
 tags:
 - ajustement structurel
 - FMI

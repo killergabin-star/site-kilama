@@ -24,6 +24,10 @@ SITE_EVALUATION_AND_CONTENT_PLAN.md
 go.mod.bak
 go.sum.bak
 
+# Python bytecode
+__pycache__/
+*.pyc
+
 # OS
 .DS_Store
 Thumbs.db

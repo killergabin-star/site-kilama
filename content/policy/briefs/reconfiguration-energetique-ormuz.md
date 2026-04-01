@@ -1,7 +1,7 @@
 ---
 title: 'Reconfiguration des flux énergétiques post-Ormuz : l''avantage structurel chinois'
 date: '2026-03-29'
-type: brief
+doc_type: brief
 tags:
 - énergie
 - petrole

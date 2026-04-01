@@ -383,7 +383,7 @@
   {{ $allPages := where .Site.RegularPages "Section" "policy" }}
   {{ $allPages = sort $allPages "Date" "desc" }}
   {{ $featured := index (first 1 $allPages) 0 }}
-  {{ $debates := where $allPages ".Params.type" "controverse" }}
+  {{ $debates := where $allPages ".Params.doc_type" "controverse" }}
   {{ $recent := after 1 $allPages | first 6 }}
 
   {{/* Theme groupings for catalog */}}
@@ -431,7 +431,7 @@
     <div class="policy-featured">
       <div class="policy-featured-inner">
         <div class="featured-content">
-          <div class="featured-format">{{ with .Params.type }}{{ . | upper }}{{ else }}NOTE ANALYTIQUE{{ end }} · {{ .ReadingTime }} min</div>
+          <div class="featured-format">{{ with .Params.doc_type }}{{ . | upper }}{{ else }}NOTE ANALYTIQUE{{ end }} · {{ .ReadingTime }} min</div>
           <h2 class="featured-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
           <p class="featured-excerpt">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
           <div class="featured-meta">
@@ -567,7 +567,7 @@
                 <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
                 <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
                 <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-                <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+                <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
               </li>
               {{ end }}
             </ul>

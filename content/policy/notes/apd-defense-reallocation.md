@@ -1,7 +1,7 @@
 ---
 title: 'APD, défense et géopolitique : qui paie la réallocation ?'
 date: '2026-03-24'
-type: note
+doc_type: note
 tags:
 - apd
 - défense

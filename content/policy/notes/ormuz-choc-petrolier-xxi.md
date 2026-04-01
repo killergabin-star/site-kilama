@@ -1,7 +1,7 @@
 ---
 title: 'Ormuz fermé : anatomie du premier choc pétrolier du XXIe siècle'
 date: '2026-03-10'
-type: note
+doc_type: note
 tags:
 - petrole
 - ormuz

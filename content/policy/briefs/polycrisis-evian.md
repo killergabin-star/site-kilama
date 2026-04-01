@@ -1,7 +1,7 @@
 ---
 title: 'Polycrisis 2026 : ce que le G7 d''Évian peut encore faire'
 date: '2026-03-30'
-type: brief
+doc_type: brief
 tags:
 - polycrisis
 - brief

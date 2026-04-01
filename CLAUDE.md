@@ -70,7 +70,7 @@ La page d'accueil doit suivre l'ordre suivant :
 3. **Section 2 – Derniere publication** (policy brief / rapport APD).
 4. **Section 3 – Programmes de recherche** (4 cards avec bandeau gauche 3px bleu-fpsq).
 5. **Section 4 – Analyses recentes** (liste editoriale VoxEU : date + tag + titre + chapeau).
-6. **Section 5 – Citation & credentials** (Playfair, badges CAPS/BETA/FERDI).
+6. **Section 5 – Citation & credentials** (Playfair, badges CAPS/FERDI/CERDI).
 
 La bio complete n'apparait que sur la page **About**, pas en homepage.
 

@@ -1,7 +1,7 @@
 ---
 title: Un donateur du Nord a-t-il encore sa place au XXIe siècle ?
 date: '2024-09-20'
-type: note
+doc_type: note
 tags:
 - aide
 - donateurs

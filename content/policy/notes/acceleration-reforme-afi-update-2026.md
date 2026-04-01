@@ -1,7 +1,7 @@
 ---
 title: 'Réforme de l''architecture financière internationale : bilan d''étape et enjeux de 2026'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - architecture financière
 - FfD4

@@ -1,7 +1,7 @@
 ---
 title: 'Bilan G7 MAE Vaux-de-Cernay : la désescalade conditionnelle comme doctrine française'
 date: '2026-03-29'
-type: note
+doc_type: note
 tags:
 - g7
 - iran

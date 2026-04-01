@@ -1,7 +1,7 @@
 ---
 title: 'Routes, rail et développement africain : une analyse des investissements optimaux'
 date: '2024-09-05'
-type: note
+doc_type: note
 tags:
 - Afrique
 - infrastructure

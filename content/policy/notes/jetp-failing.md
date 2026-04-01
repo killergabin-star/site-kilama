@@ -1,7 +1,7 @@
 ---
 title: 'Just Energy Transition Partnerships : ce que les donateurs doivent faire pour relancer la dynamique'
 date: '2024-06-15'
-type: note
+doc_type: note
 tags:
 - JETP
 - transition énergétique

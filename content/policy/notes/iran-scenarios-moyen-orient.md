@@ -1,7 +1,7 @@
 ---
 title: 'L''Iran sous les bombes : scénarios pour le Moyen-Orient et l''architecture de sécurité européenne'
 date: '2026-03-03'
-type: note
+doc_type: note
 tags:
 - iran
 - moyen-orient

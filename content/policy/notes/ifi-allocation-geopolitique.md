@@ -1,7 +1,7 @@
 ---
 title: 'L''allocation géopolitique des IFI : quand les données confirment le soupçon'
 date: 2026-03-31
-type: note
+doc_type: note
 tags:
 - IFI
 - allocation

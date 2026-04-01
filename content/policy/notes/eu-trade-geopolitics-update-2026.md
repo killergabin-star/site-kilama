@@ -1,7 +1,7 @@
 ---
 title: 'Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - UE
 - politique commerciale

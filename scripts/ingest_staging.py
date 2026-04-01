@@ -338,7 +338,7 @@ def ingest_file(filepath: Path, dry_run: bool = False) -> dict | None:
     hugo_meta = {
         "title": title,
         "date": date_val,
-        "type": normalize_type(doc_type),
+        "doc_type": normalize_type(doc_type),
         "tags": tags,
         "summary": summary,
         "status": "ready",

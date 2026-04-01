@@ -4,8 +4,6 @@ role: "Macroéconomiste-Stratège (Ph.D)"
 bio: "Économie internationale, Risques géopolitiques, Financement du développement"
 
 organizations:
-  - name: "BETA — Université de Lorraine"
-    url: "https://beta-economics.fr/"
   - name: "FERDI"
     url: "https://ferdi.fr/"
 
@@ -17,15 +15,6 @@ interests:
   - Économétrie appliquée
 
 work:
-  - position: "Chercheur associé (Chaire Ressources Naturelles)"
-    company_name: "BETA — Université de Lorraine"
-    company_url: "https://beta-economics.fr/"
-    date_start: "2023-01-01"
-    date_end: ""
-    summary: |
-      Économie politique des institutions et corruption.
-      PME européennes face aux risques géopolitiques.
-      Collaboration IFRI (Initiative Géoéconomie).
   - position: "Économiste-Conseiller"
     company_name: "CAPS — Ministère de l'Europe et des Affaires étrangères"
     company_url: ""
@@ -100,9 +89,9 @@ highlight_name: true
 
 Macroéconomiste avec 12 ans d'expérience entre recherche académique, conseil stratégique au plus haut niveau de l'État et coopération internationale.
 
-Pendant 5 ans au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay, j'ai produit des analyses économiques et géopolitiques pour le cabinet du Ministre des Affaires étrangères : préparation des sommets G7 (Biarritz, Elmau, Hiroshima), présidence française de l'UE, coordination avec le FMI, la Banque mondiale et l'OCDE.
+Mon expérience au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay — analyses économiques et géopolitiques pour le cabinet du Ministre, préparation des sommets G7 (Biarritz, Elmau, Hiroshima), présidence française de l'UE, coordination avec le FMI, la Banque mondiale et l'OCDE — a forgé ma conviction que la géopolitique est redevenue une variable structurelle de l'économie mondiale.
 
-Chercheur associé à l'Université de Lorraine (BETA) et à la FERDI, je publie dans des revues internationales de premier plan — *European Economic Review*, *Journal of Comparative Economics*, *China Economic Review*. Un article est en évaluation à l'*American Economic Journal: Economic Policy*.
+Chercheur associé à la FERDI, je publie dans des revues internationales de premier plan — *European Economic Review*, *Journal of Comparative Economics*, *China Economic Review*. Un article est en évaluation à l'*American Economic Journal: Economic Policy*.
 
 Mes recherches actuelles portent sur l'exposition des PME européennes aux risques géopolitiques et sur l'économie politique de la corruption.
 

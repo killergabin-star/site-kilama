@@ -1,7 +1,7 @@
 ---
 title: L'industrie de l'aide est en crise d'identité
 date: '2024-06-15'
-type: note
+doc_type: note
 tags:
 - aide
 - APD

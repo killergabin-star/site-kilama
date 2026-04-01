@@ -1,7 +1,7 @@
 ---
 title: Accélération de la réforme de l'architecture financière internationale
 date: '2024-09-15'
-type: note
+doc_type: note
 tags:
 - architecture financière
 - réforme

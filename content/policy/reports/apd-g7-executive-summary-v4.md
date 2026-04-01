@@ -1,7 +1,7 @@
 ---
 title: 'Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement'
 date: '2026-03-29'
-type: report
+doc_type: report
 tags:
 - apd
 - g7

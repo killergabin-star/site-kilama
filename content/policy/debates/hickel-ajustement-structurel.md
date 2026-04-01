@@ -2,7 +2,7 @@
 title: 'Controverse : L''ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce
   que les spécialistes ne disent pas'
 date: 2026-03-31
-type: controverse
+doc_type: controverse
 tags:
 - ajustement structurel
 - FMI

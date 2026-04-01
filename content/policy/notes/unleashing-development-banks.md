@@ -1,7 +1,7 @@
 ---
 title: 'Banques de développement : de la correction des marchés à leur transformation'
 date: '2024-07-10'
-type: note
+doc_type: note
 tags:
 - BMD
 - réforme

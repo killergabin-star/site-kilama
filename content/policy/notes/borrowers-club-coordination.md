@@ -1,7 +1,7 @@
 ---
 title: 'Le Club des emprunteurs : la coordination des débiteurs, bien public mondial sous-produit'
 date: '2024-09-15'
-type: note
+doc_type: note
 tags:
 - dette
 - coordination emprunteurs

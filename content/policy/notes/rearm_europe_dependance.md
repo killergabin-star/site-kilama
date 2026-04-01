@@ -1,7 +1,7 @@
 ---
 title: 'ReArm Europe : le réarmement européen entre ambition et dépendance américaine'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - ReArm Europe
 - défense

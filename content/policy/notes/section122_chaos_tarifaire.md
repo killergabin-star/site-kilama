@@ -1,7 +1,7 @@
 ---
 title: 'La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - Section 122
 - tarifs

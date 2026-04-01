@@ -1,7 +1,7 @@
 ---
 title: 'Politique commerciale de l''UE et géopolitique : les défis de la nouvelle Commission'
 date: '2024-11-15'
-type: note
+doc_type: note
 tags:
 - UE
 - politique commerciale

@@ -1,7 +1,7 @@
 ---
 title: 1 100 Kenyans ne sauveront pas Haïti
 date: '2024-03-10'
-type: note
+doc_type: note
 tags:
 - Haiti
 - Kenya

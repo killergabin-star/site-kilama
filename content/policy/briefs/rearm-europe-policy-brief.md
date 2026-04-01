@@ -1,7 +1,7 @@
 ---
 title: 'ReArm Europe : l''arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian'
 date: '2026-03-29'
-type: brief
+doc_type: brief
 tags:
 - rearm-europe
 - g7

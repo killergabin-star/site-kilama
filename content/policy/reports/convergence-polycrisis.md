@@ -1,7 +1,7 @@
 ---
 title: 'La convergence des crises : anatomie d''une polycrisis sous administration Trump II'
 date: '2026-03-29'
-type: report
+doc_type: report
 tags:
 - polycrisis
 - convergence

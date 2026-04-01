@@ -1,7 +1,7 @@
 ---
 title: 'Haïti deux ans après : la mission kényane, les mercenaires et l''impasse qui se confirme'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - Haiti
 - Kenya

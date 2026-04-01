@@ -1,7 +1,7 @@
 ---
 title: 'SAFE vs Green Deal : le dilemme industriel européen'
 date: 2026-03-31
-type: note
+doc_type: note
 tags:
 - SAFE
 - Green Deal

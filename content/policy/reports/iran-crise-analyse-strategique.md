@@ -1,7 +1,7 @@
 ---
 title: 'La crise iranienne de mars 2026 : dynamique militaire, succession, reconfiguration énergétique et position française'
 date: '2026-03-29'
-type: report
+doc_type: report
 tags:
 - iran
 - crise

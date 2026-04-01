@@ -1,7 +1,7 @@
 ---
 title: 'Le Club des emprunteurs, dix-huit mois plus tard : de l''argument à l''institution'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - dette
 - coordination emprunteurs

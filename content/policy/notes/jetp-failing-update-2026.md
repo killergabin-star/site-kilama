@@ -1,7 +1,7 @@
 ---
 title: 'JETP : deux ans après, le bilan d''un mécanisme au point mort'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - JETP
 - transition énergétique

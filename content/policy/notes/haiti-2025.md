@@ -1,7 +1,7 @@
 ---
 title: 'Haïti : sortir de l''impasse sécuritaire, repenser l''action internationale'
 date: '2025-05-20'
-type: note
+doc_type: note
 tags:
 - Haiti
 - gouvernance

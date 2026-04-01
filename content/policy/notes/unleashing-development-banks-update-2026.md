@@ -1,7 +1,7 @@
 ---
 title: 'Banques de développement en 2026 : l''optimisation ne suffit plus'
 date: '2026-03-31'
-type: note
+doc_type: note
 tags:
 - BMD
 - réforme

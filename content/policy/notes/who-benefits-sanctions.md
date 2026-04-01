@@ -1,7 +1,7 @@
 ---
 title: À qui profitent les sanctions ? Leçons du cas iranien
 date: '2024-11-15'
-type: note
+doc_type: note
 tags:
 - sanctions
 - géopolitique
