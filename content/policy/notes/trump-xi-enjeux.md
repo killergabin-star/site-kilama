@@ -1,6 +1,6 @@
 ---
 title: 'Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert'
-date: '2026-03-29'
+date: '2026-03-28'
 doc_type: note
 tags:
 - chine

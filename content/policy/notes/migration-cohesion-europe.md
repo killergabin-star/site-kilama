@@ -1,6 +1,6 @@
 ---
 title: 'Migration et cohésion politique européenne : la boucle la plus dangereuse'
-date: '2025-11-15'
+date: '2026-03-25'
 doc_type: note
 tags:
 - migration

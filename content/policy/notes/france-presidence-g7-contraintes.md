@@ -1,6 +1,6 @@
 ---
 title: 'La France au G7 : présider sous contrainte'
-date: '2026-01-15'
+date: '2026-03-18'
 doc_type: note
 tags:
 - France

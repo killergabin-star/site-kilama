@@ -1,6 +1,6 @@
 ---
 title: 'ReArm Europe : le réarmement européen entre ambition et dépendance américaine'
-date: '2025-05-15'
+date: '2026-03-20'
 doc_type: note
 tags:
 - ReArm Europe

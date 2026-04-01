@@ -1,6 +1,6 @@
 ---
 title: 'Le donateur du Nord en 2026 : entre retrait américain et quête d''un nouveau mandat'
-date: '2026-03-31'
+date: '2026-03-14'
 doc_type: note
 tags:
 - aide

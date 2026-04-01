@@ -1,6 +1,6 @@
 ---
 title: 'Iran J+29 : trois lectures d''une pause prolongée'
-date: '2026-03-29'
+date: '2026-03-26'
 doc_type: note
 tags:
 - iran

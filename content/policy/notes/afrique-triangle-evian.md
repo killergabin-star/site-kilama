@@ -1,6 +1,6 @@
 ---
 title: 'L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7'
-date: '2026-02-20'
+date: '2026-03-06'
 doc_type: note
 tags:
 - Afrique

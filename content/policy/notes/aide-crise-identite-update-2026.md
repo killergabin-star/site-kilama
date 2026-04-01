@@ -1,6 +1,6 @@
 ---
 title: 'La crise d''identité de l''aide : ce que 2025-2026 a confirmé et aggravé'
-date: '2026-03-31'
+date: '2026-03-21'
 doc_type: note
 tags:
 - aide

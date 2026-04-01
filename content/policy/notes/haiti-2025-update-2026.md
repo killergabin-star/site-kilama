@@ -1,6 +1,6 @@
 ---
 title: 'Haïti : l''initiative mémorielle française à l''épreuve des faits'
-date: '2026-03-31'
+date: '2026-03-28'
 doc_type: note
 tags:
 - Haiti

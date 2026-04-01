@@ -1,6 +1,6 @@
 ---
 title: 'Le triangle impossible d''Évian : Ukraine, réarmement et Afrique sous présidence française'
-date: '2026-02-18'
+date: '2026-03-05'
 doc_type: note
 tags:
 - G7

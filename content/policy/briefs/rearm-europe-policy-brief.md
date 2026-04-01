@@ -1,6 +1,6 @@
 ---
 title: 'ReArm Europe : l''arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian'
-date: '2026-03-29'
+date: '2026-03-25'
 doc_type: brief
 tags:
 - rearm-europe

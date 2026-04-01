@@ -1,6 +1,6 @@
 ---
 title: 'Le Club des emprunteurs, dix-huit mois plus tard : de l''argument à l''institution'
-date: '2026-03-31'
+date: '2026-03-25'
 doc_type: note
 tags:
 - dette
