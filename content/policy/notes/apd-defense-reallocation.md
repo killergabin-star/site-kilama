@@ -10,7 +10,8 @@ tags:
 - spring-meetings
 - financement-développement
 summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1
-  milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les...
+  milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les projections de l'OCDE pour 2025 anticipent une
+  contraction supplémentaire de 9 à 17 %, qui constituerait le recul le plus grave depuis les coupes des années 1990.
 status: ready
 draft: false
 theme: development

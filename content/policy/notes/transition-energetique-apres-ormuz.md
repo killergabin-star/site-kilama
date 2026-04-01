@@ -10,7 +10,9 @@ tags:
 - COP30
 - G7
 summary: La fermeture partielle du détroit d'Ormuz, consécutive aux frappes américano-israéliennes sur l'Iran lancées le 28
-  février 2026, a provoqué le choc pétrolier le plus brutal depuis l'invasion russe de...
+  février 2026, a provoqué le choc pétrolier le plus brutal depuis l'invasion russe de l'Ukraine. Le Brent, qui oscillait
+  autour de 86 dollars le baril en janvier, a franchi la barre des 126 dollars à son pic de mars avant de se stabiliser autour
+  de 112 dollars fin mars, tandis que le...
 status: ready
 draft: false
 author: Eric Gabin Kilama

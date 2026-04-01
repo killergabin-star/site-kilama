@@ -251,7 +251,7 @@ def strip_author_block(body: str) -> str:
     return "\n".join(lines[i:])
 
 
-def extract_summary(body: str, max_chars: int = 200) -> str:
+def extract_summary(body: str, max_chars: int = 400) -> str:
     """
     Extract the first substantive paragraph after the heading.
     Skips blank lines, --- separators, lines starting with ** (author/date lines),

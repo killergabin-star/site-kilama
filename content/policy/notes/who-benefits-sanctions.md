@@ -9,7 +9,8 @@ tags:
 - économie politique
 - coercition économique
 summary: Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001,
-  le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus...
+  le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus que doublé. L'Union européenne a élargi
+  son propre arsenal, passant de quelques régimes ciblés à plus de quarante cadres restrictifs en vigueur.
 status: ready
 draft: false
 theme: geoeconomics

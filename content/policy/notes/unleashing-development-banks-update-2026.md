@@ -10,7 +10,9 @@ tags:
 - BAD
 - missions
 summary: 'En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement
-  (BPD) : passer de la correction des défaillances de marché à la transformation...'
+  (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s''appuyant
+  sur l''approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives
+  mais insuffisantes.'
 status: ready
 draft: false
 theme: architecture-financière

@@ -12,7 +12,8 @@ tags:
 - asean
 - transmission
 summary: '*Cette note constitue une extension régionale du rapport intégrateur « La convergence des crises : anatomie d''une
-  polycrisis sous administration Trump II » (mars 2026). Elle a été rédigée à la...'
+  polycrisis sous administration Trump II » (mars 2026). Elle a été rédigée à la demande de la Fondation France-Asie et porte
+  sur les canaux de transmission de la polycrisis vers l''Asie-Pacifique. Les analyses présentées n''engagent que leurs auteurs.*'
 status: ready
 draft: false
 theme: polycrisis-asie

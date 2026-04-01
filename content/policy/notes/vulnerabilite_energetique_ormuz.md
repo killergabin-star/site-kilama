@@ -9,7 +9,8 @@ tags:
 - G7
 - vulnérabilité européenne
 summary: 'La fermeture du détroit d''Ormuz (5 mars 2026) a provoqué un choc pétrolier immédiat : Brent à 127 dollars (+51
-  % en 48 heures), quelque 150 navires bloqués (estimations Lloyd''s), 21 % du commerce...'
+  % en 48 heures), quelque 150 navires bloqués (estimations Lloyd''s), 21 % du commerce mondial de pétrole interrompu. Cette
+  note analyse les restructurations durables que la crise révèle.'
 status: ready
 draft: false
 theme: énergie

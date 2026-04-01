@@ -12,7 +12,9 @@ tags:
 - NCQG
 - Sevilla Borrower's Forum
 summary: En septembre 2024, une note précédente argumentait que la coordination des pays emprunteurs constituait un bien public
-  mondial sous-produit — qu'elle bénéficiait à la stabilité financière globale,...
+  mondial sous-produit — qu'elle bénéficiait à la stabilité financière globale, pas seulement aux pays endettés. L'argument
+  était structurel. Dix-huit mois plus tard, il a trouvé un début de traduction institutionnelle — mais dans un contexte devenu
+  considérablement plus hostile.
 status: ready
 draft: false
 theme: architecture-financière

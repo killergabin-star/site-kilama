@@ -8,8 +8,10 @@ tags:
 - climat
 - COP29
 - G7
-summary: Depuis la publication de notre analyse sur les défaillances structurelles des Just Energy Transition Partnerships
-  en juin 2024, le diagnostic n'a fait que se confirmer — et les conditions...
+summary: 'Depuis la publication de notre analyse sur les défaillances structurelles des Just Energy Transition Partnerships
+  en juin 2024, le diagnostic n''a fait que se confirmer — et les conditions géopolitiques se sont considérablement durcies.
+  Cette note actualise l''évaluation initiale à la lumière de trois développements majeurs : le retrait annoncé des États-Unis
+  de l''Accord de Paris sous...'
 status: ready
 draft: false
 theme: énergie

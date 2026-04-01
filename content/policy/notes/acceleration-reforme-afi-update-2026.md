@@ -10,7 +10,8 @@ tags:
 - BMD
 - réforme
 summary: 'En septembre 2024, cette note identifiait trois conditions minimales pour une réforme ambitieuse de l''architecture
-  financière internationale : un Nouvel objectif collectif quantifié (NCQG)...'
+  financière internationale : un Nouvel objectif collectif quantifié (NCQG) opérationnel, des contributions déterminées au
+  niveau national (CDN) adossées à des plans de financement, et une Feuille de route du G20 assortie de mécanismes de redevabilité.'
 status: ready
 draft: false
 theme: architecture-financière

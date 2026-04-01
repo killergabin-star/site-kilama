@@ -12,7 +12,8 @@ tags:
 - commerce
 - controverse
 summary: 'Le 23 mars 2026, Pan Gongsheng, gouverneur de la Banque populaire de Chine, prend la parole au China Development
-  Forum : « les principaux pays déficitaires sont les mêmes qu''il y a quarante ans en...'
+  Forum : « les principaux pays déficitaires sont les mêmes qu''il y a quarante ans en raison des failles inhérentes du système
+  monétaire international.'
 status: ready
 draft: false
 author: Eric Gabin Kilama

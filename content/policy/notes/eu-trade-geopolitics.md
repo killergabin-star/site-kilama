@@ -10,7 +10,9 @@ tags:
 - durabilité
 - Global Gateway
 summary: L'Union européenne a multiplié les instruments commerciaux unilatéraux pour se repositionner dans un environnement
-  de compétition géoéconomique accrue, au moment où la crise climatique s'accélère....
+  de compétition géoéconomique accrue, au moment où la crise climatique s'accélère. Cette reconfiguration, si elle répond
+  à des impératifs légitimes de sécurité économique et de transition environnementale, risque d'aliéner les pays en développement
+  et de compromettre les partenariats...
 status: ready
 draft: false
 theme: commerce

@@ -10,7 +10,9 @@ tags:
 - Méditerranée
 - Pacte asile
 summary: L'Union européenne entre dans une phase où la question migratoire ne fonctionne plus comme un dossier sectoriel parmi
-  d'autres, mais comme un amplificateur de toutes les tensions existantes. La...
+  d'autres, mais comme un amplificateur de toutes les tensions existantes. La convergence entre crise migratoire, choc énergétique
+  lié à la fermeture partielle du détroit d'Ormuz, et montée des forces populistes crée une boucle de rétroaction dont la
+  dynamique est auto-renforçante.
 status: ready
 draft: false
 author: Eric Gabin Kilama

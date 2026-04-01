@@ -11,7 +11,9 @@ tags:
 - développement
 - France
 summary: 'Le sommet du G7 d''Évian (15-17 juin 2026) se prépare dans un contexte de compétition budgétaire sans précédent
-  entre trois agendas majeurs de l''Occident : la reconstruction de l''Ukraine (486...'
+  entre trois agendas majeurs de l''Occident : la reconstruction de l''Ukraine (486 milliards de dollars sur dix ans selon
+  la RDNA3 de la Banque mondiale), le réarmement européen (800 milliards d''euros à l''horizon 2030 dans le cadre de ReArm
+  Europe/Readiness 2030), et les partenariats de...'
 status: ready
 draft: false
 author: Eric Gabin Kilama

@@ -9,7 +9,9 @@ tags:
 - intervention internationale
 - Caraïbes
 summary: La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un
-  geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels...
+  geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels d'Haïti. Avec environ 1 100 agents de
+  sécurité kényans, auxquels s'ajoutent quelques centaines de policiers des Bahamas, de la Jamaïque et d'Antigua-et-Barbuda,
+  la force déployée fait face à un...
 status: ready
 draft: false
 theme: sécurité

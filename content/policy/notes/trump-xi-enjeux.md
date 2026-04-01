@@ -10,7 +10,8 @@ tags:
 - section-301
 - tarifs
 summary: Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent
-  depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué...
+  depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué sera lu à Pékin comme une tentative de cadrage
+  occidental.
 status: ready
 draft: false
 theme: trade

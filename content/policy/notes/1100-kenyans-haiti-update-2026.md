@@ -9,7 +9,9 @@ tags:
 - sécurité
 - mercenaires
 summary: Depuis notre analyse de mars 2024 sur les limites structurelles de la mission de sécurité kényane en Haïti, les développements
-  sur le terrain ont confirmé, point par point, le diagnostic initial. Les...
+  sur le terrain ont confirmé, point par point, le diagnostic initial. Les 1 100 policiers kényans n'ont pas sauvé Haïti.
+  La Mission multinationale d'appui à la sécurité (MMAS) a produit des résultats marginaux face à une crise qui a continué
+  de s'aggraver.
 status: ready
 draft: false
 theme: sécurité

@@ -9,7 +9,8 @@ tags:
 - G7
 - commerce
 summary: L'arrêt de la Cour suprême *Learning Resources v. Trump* (20 février 2026) a invalidé l'utilisation de l'International
-  Emergency Economic Powers Act (IEEPA) pour imposer des tarifs commerciaux,...
+  Emergency Economic Powers Act (IEEPA) pour imposer des tarifs commerciaux, jugeant que le déficit commercial ne constituait
+  pas une « urgence nationale » au sens du statut.
 status: ready
 draft: false
 theme: commerce

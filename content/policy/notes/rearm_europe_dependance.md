@@ -9,7 +9,9 @@ tags:
 - SAFE
 - industrie
 summary: Les dépenses de défense de l'UE-27 atteignent 381 milliards d'euros en 2026 --- 2,03 % du PIB collectif, un seuil
-  symbolique franchi pour la première fois depuis la fin de la Guerre froide. Le plan...
+  symbolique franchi pour la première fois depuis la fin de la Guerre froide. Le plan ReArm Europe, rebaptisé Readiness 2030,
+  fixe un objectif d'investissement de 800 milliards d'euros à l'horizon 2030, dont 650 milliards de dépenses nationales et
+  150 milliards de prêts européens à taux...
 status: ready
 draft: false
 theme: défense

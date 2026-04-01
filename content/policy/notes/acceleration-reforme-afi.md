@@ -9,7 +9,8 @@ tags:
 - climat
 - NCQG
 summary: Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous
-  présidence brésilienne, COP29 à Bakou — offrent une fenêtre d'opportunité pour faire...
+  présidence brésilienne, COP29 à Bakou — offrent une fenêtre d'opportunité pour faire avancer la réforme de l'architecture
+  financière internationale.
 status: ready
 draft: false
 theme: architecture-financière

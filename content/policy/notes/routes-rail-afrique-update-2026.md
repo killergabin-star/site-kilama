@@ -9,8 +9,10 @@ tags:
 - ZLECAf
 - Belt and Road
 - rail
-summary: Depuis notre analyse de septembre 2024 sur les investissements optimaux en infrastructures de transport en Afrique,
-  le paysage a significativement évolué. Trois développements structurent la nouvelle...
+summary: 'Depuis notre analyse de septembre 2024 sur les investissements optimaux en infrastructures de transport en Afrique,
+  le paysage a significativement évolué. Trois développements structurent la nouvelle donne : l''avancée du corridor de Lobito
+  sous impulsion américaine, la montée en puissance de la ZLECAf avec l''entrée en vigueur progressive des concessions tarifaires,
+  et l''intensification de la...'
 status: ready
 draft: false
 theme: afrique

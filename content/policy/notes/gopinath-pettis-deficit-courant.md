@@ -11,7 +11,9 @@ tags:
 - G7
 - commerce
 summary: La mi-mars 2026 a vu émerger sur la plateforme X un échange intellectuel inhabituel entre deux figures majeures de
-  l'économie internationale. Gita Gopinath, première directrice générale adjointe du...
+  l'économie internationale. Gita Gopinath, première directrice générale adjointe du Fonds monétaire international, a qualifié
+  de « terribly flawed view » l'idée selon laquelle le statut de monnaie de réserve du dollar serait responsable des déficits
+  commerciaux américains.
 status: ready
 draft: false
 author: Eric Gabin Kilama

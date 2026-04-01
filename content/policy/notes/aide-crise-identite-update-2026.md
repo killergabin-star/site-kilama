@@ -10,7 +10,8 @@ tags:
 - réforme
 - dette
 summary: En juin 2024, cette note diagnostiquait une crise existentielle de l'industrie de l'aide au développement, sous l'effet
-  conjugué de la géopolitisation des flux, du cercle vicieux de...
+  conjugué de la géopolitisation des flux, du cercle vicieux de l'humanitarisation et de la crise de la dette souveraine.
+  Depuis cette publication, les événements ont non seulement confirmé ce diagnostic, mais l'ont considérablement aggravé.
 status: ready
 draft: false
 theme: développement

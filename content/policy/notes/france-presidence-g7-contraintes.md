@@ -9,8 +9,10 @@ tags:
 - présidence
 - contrainte budgétaire
 - diplomatie
-summary: La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d'État et
-  de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d'Évian est symbolique :...
+summary: 'La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d''État
+  et de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d''Évian est symbolique : la ville avait déjà accueilli
+  le G8 en 2003 sous la présidence de Jacques Chirac, année où la France s''était distinguée par son refus de la guerre en
+  Irak.'
 status: ready
 draft: false
 author: Eric Gabin Kilama

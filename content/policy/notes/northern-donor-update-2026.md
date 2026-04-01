@@ -10,7 +10,9 @@ tags:
 - FfD4
 - réforme
 summary: 'En septembre 2024, cette note posait une question que beaucoup jugeaient prématurée : un donateur du Nord a-t-il
-  encore sa place au XXIe siècle ? Dix-huit mois plus tard, la question n''est plus...'
+  encore sa place au XXIe siècle ? Dix-huit mois plus tard, la question n''est plus théorique. La dissolution partielle de
+  l''USAID sous l''administration Trump, le recul de l''APD des principales économies avancées et la montée en puissance des
+  financeurs non traditionnels ont précipité une...'
 status: ready
 draft: false
 theme: développement

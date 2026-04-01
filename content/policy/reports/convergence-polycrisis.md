@@ -16,7 +16,8 @@ tags:
 - développement
 - migration
 summary: L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière,
-  d'une crise migratoire et d'une crise énergétique dont la convergence vers un...
+  d'une crise migratoire et d'une crise énergétique dont la convergence vers un nœud causal commun — la weaponisation de l'interdépendance
+  économique par la première puissance mondiale — transforme la nature du risque international.
 status: ready
 draft: false
 theme: polycrisis

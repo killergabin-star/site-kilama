@@ -14,7 +14,8 @@ tags:
 - succession
 - désescalade
 summary: L'assassinat de l'ayatollah Ali Khamenei le 28 février 2026 a ouvert la séquence la plus conséquente pour la sécurité
-  internationale depuis l'invasion russe de l'Ukraine. Les frappes américaines et...
+  internationale depuis l'invasion russe de l'Ukraine. Les frappes américaines et israéliennes constituent la première campagne
+  militaire directe contre l'Iran depuis la guerre Iran-Irak.
 status: ready
 draft: false
 theme: geopolitical

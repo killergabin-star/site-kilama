@@ -9,7 +9,8 @@ tags:
 - réforme
 - coopération
 summary: 'L''aide publique au développement (APD) a été introduite dans les années 1960 comme un instrument temporaire répondant
-  à un moment particulier de l''histoire : décolonisation, Guerre froide,...'
+  à un moment particulier de l''histoire : décolonisation, Guerre froide, industrialisation et efforts de réduction de la
+  pauvreté dans le « Sud global ».'
 status: ready
 draft: false
 theme: développement

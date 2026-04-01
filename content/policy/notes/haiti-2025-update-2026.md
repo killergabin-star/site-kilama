@@ -10,7 +10,9 @@ tags:
 - transition
 - gouvernance
 summary: Depuis la publication de notre analyse en mai 2025 sur les leviers diplomatiques dont dispose la France pour relancer
-  l'engagement international en Haïti, plusieurs développements significatifs ont...
+  l'engagement international en Haïti, plusieurs développements significatifs ont eu lieu. L'initiative mémorielle sur la
+  dette de 1825 a été lancée, la MMAS a été renouvelée mais sans renforcement substantiel, et le recours aux contractuels
+  militaires privés par le gouvernement...
 status: ready
 draft: false
 theme: sécurité

@@ -10,7 +10,8 @@ tags:
 - développement
 - Hickel
 summary: 'Le 26 mars 2026, Jason Hickel — anthropologue économique à l''Université autonome de Barcelone et figure intellectuelle
-  du mouvement décroissant — a publié sur X : « Nous compilons des preuves sur les...'
+  du mouvement décroissant — a publié sur X : « Nous compilons des preuves sur les préjudices extraordinaires causés par les
+  programmes d''ajustement structurel du FMI et de la Banque mondiale.'
 status: ready
 draft: false
 author: Eric Gabin Kilama

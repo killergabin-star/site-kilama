@@ -11,7 +11,7 @@ tags:
 - otan
 - nucleaire
 summary: '*Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et
-  des positions possibles pour le sommet d''Évian. Il est conçu pour une lecture de...'
+  des positions possibles pour le sommet d''Évian. Il est conçu pour une lecture de quinze minutes.*'
 status: ready
 draft: false
 theme: défense

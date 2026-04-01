@@ -9,7 +9,9 @@ tags:
 - géopolitique
 - dette
 summary: 'Conflits armés, changement climatique, surendettement souverain, bouleversements géopolitiques : de multiples crises
-  convergentes mettent à l''épreuve la viabilité de l''industrie de l''aide au...'
+  convergentes mettent à l''épreuve la viabilité de l''industrie de l''aide au développement. Cette industrie — le réseau
+  d''institutions bilatérales, multilatérales et non gouvernementales qui canalisent les flux d''aide publique au développement
+  (APD) — traverse une crise qui n''est pas...'
 status: ready
 draft: false
 theme: développement

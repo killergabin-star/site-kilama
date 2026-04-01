@@ -7,8 +7,10 @@ tags:
 - transition énergétique
 - climat
 - finance développement
-summary: Pour respecter l'ambition de limiter le réchauffement climatique à 1,5 degré Celsius, une action urgente est nécessaire
-  pour décarboner les systèmes énergétiques des principales économies émergentes....
+summary: 'Pour respecter l''ambition de limiter le réchauffement climatique à 1,5 degré Celsius, une action urgente est nécessaire
+  pour décarboner les systèmes énergétiques des principales économies émergentes. Les Just Energy Transition Partnerships
+  (JETP) ont été conçus pour répondre à ce défi : combiner le financement international, l''impulsion politique de haut niveau
+  et le cadre institutionnel...'
 status: ready
 draft: false
 theme: énergie

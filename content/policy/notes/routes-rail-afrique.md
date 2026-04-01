@@ -9,7 +9,9 @@ tags:
 - ZLECAf
 - développement
 summary: Malgré une croissance économique notable sur les deux dernières décennies, le déficit infrastructurel persistant
-  du continent africain — particulièrement dans les réseaux routiers — demeure une...
+  du continent africain — particulièrement dans les réseaux routiers — demeure une contrainte fondamentale à la transformation
+  économique, à la réduction de la pauvreté et à l'intégration régionale dans le cadre de la Zone de libre-échange continentale
+  africaine (ZLECAf).
 status: ready
 draft: false
 theme: afrique

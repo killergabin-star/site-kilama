@@ -11,7 +11,9 @@ tags:
 - dual-use
 - réarmement
 summary: L'Union européenne poursuit simultanément deux ambitions industrielles d'une ampleur sans précédent dans son histoire.
-  Le Green Deal européen, lancé en 2019, engage le continent vers la neutralité...
+  Le Green Deal européen, lancé en 2019, engage le continent vers la neutralité carbone à l'horizon 2050, avec des jalons
+  intermédiaires contraignants en matière de réduction des émissions, de déploiement des renouvelables et de décarbonation
+  industrielle.
 status: ready
 draft: false
 author: Eric Gabin Kilama

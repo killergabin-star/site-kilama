@@ -10,7 +10,9 @@ tags:
 - policy
 - scenarios
 summary: L'administration Trump II active simultanément trois canaux de crise — financier, commercial, énergétique — dont
-  la convergence vers un noeud causal commun engendre des dynamiques non linéaires. Le...
+  la convergence vers un noeud causal commun engendre des dynamiques non linéaires. Le passage du scénario central (croissance
+  mondiale à 2,3 %) au scénario d'embrasement (0,9 %) ne s'opère pas par dégradation graduelle mais par effet de seuil dès
+  que trois boucles de rétroaction...
 status: ready
 draft: false
 theme: polycrisis

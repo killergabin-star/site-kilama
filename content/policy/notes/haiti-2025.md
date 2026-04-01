@@ -9,7 +9,8 @@ tags:
 - diplomatie
 - crise
 summary: Un an après le déploiement de la Mission multinationale d'appui à la sécurité (MMAS) en Haïti, la crise continue
-  de s'aggraver. Les gangs ont accru leur pouvoir et leur contrôle territorial, face à...
+  de s'aggraver. Les gangs ont accru leur pouvoir et leur contrôle territorial, face à une MMAS dont la conception n'a jamais
+  reflété la réalité de la situation sur le terrain.
 status: ready
 draft: false
 theme: sécurité

@@ -13,7 +13,8 @@ tags:
 - épistémologie
 - controverse
 summary: 'Le 25 mars 2026, Jostein Hauge, économiste de l''université de Cambridge spécialiste de politique industrielle,
-  ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs...'
+  ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs décennies contre la politique industrielle
+  était erronée — ses anciens conseils ont la valeur d''une disquette.'
 status: ready
 draft: false
 author: Eric Gabin Kilama

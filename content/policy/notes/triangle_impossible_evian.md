@@ -11,7 +11,9 @@ tags:
 - APD
 - triangle impossible
 summary: 'La présidence française du G7 repose sur trois piliers affichés par Barrot à Munich (14 février 2026) : sécurité
-  euro-atlantique et Ukraine, partenariats et développement, réduction des déséquilibres...'
+  euro-atlantique et Ukraine, partenariats et développement, réduction des déséquilibres mondiaux. Derrière ces formules,
+  trois agendas budgétaires massifs se disputent les mêmes enveloppes : la reconstruction de l''Ukraine (486 milliards de
+  dollars sur dix ans, RDNA3 Banque mondiale,...'
 status: ready
 draft: false
 theme: g7

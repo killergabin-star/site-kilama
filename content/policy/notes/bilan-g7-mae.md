@@ -9,7 +9,9 @@ tags:
 - multilateralisme
 - diplomatie
 summary: La première réunion ministérielle des Affaires étrangères du G7 sous présidence française, tenue les 26 et 27 mars
-  2026 à l'abbaye de Vaux-de-Cernay, a révélé une reconfiguration significative des...
+  2026 à l'abbaye de Vaux-de-Cernay, a révélé une reconfiguration significative des rapports de force au sein du club. L'échec
+  du secrétaire d'État Rubio à obtenir un soutien allié explicite pour la campagne contre l'Iran, conjugué à la déclaration
+  allemande selon laquelle « ce n'est...
 status: ready
 draft: false
 theme: geopolitical

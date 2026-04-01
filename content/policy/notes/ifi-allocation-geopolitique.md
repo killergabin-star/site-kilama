@@ -11,7 +11,9 @@ tags:
 - conditionnalité
 - FfD4
 summary: Le soupçon est aussi vieux que les institutions elles-mêmes. Depuis la création du Fonds monétaire international
-  et de la Banque mondiale à Bretton Woods en 1944, les pays en développement contestent...
+  et de la Banque mondiale à Bretton Woods en 1944, les pays en développement contestent l'impartialité de l'allocation des
+  ressources multilatérales. Pendant longtemps, cette contestation relevait du registre politique. Désormais, elle dispose
+  d'une base empirique substantielle.
 status: ready
 draft: false
 author: Eric Gabin Kilama

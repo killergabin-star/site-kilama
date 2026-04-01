@@ -9,7 +9,9 @@ tags:
 - architecture financière
 - FfD4
 summary: 'La discussion sur la réforme de l''architecture internationale de la dette souveraine tourne, depuis une décennie,
-  autour d''un seul axe : la coordination des créanciers. Comment inciter les détenteurs...'
+  autour d''un seul axe : la coordination des créanciers. Comment inciter les détenteurs d''obligations a participer aux restructurations
+  ? Comment intégrer la Chine dans un cadre multilatéral cohérent ? Comment articuler le Club de Paris, le Club de Londres
+  et les nouveaux acteurs privés...'
 status: ready
 draft: false
 theme: architecture-financière

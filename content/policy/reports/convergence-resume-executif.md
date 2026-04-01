@@ -10,8 +10,10 @@ tags:
 - g7
 - evian
 - fpsq
-summary: L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière
-  de type 2008, d'une crise migratoire de type 2015 et d'une crise énergétique...
+summary: 'L''administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d''une crise
+  financière de type 2008, d''une crise migratoire de type 2015 et d''une crise énergétique de type 2022, avec cette différence
+  décisive que les trois canaux convergent vers un noeud causal commun : la weaponisation de l''interdépendance économique
+  par la première puissance mondiale.'
 status: ready
 draft: false
 theme: polycrisis

@@ -9,7 +9,9 @@ tags:
 - G7
 - présidence française
 summary: L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a pas encore nommé. La crise que Washington a déclenchée
-  pour empêcher l'Iran d'accéder à l'arme nucléaire génère un choc pétrolier...
+  pour empêcher l'Iran d'accéder à l'arme nucléaire génère un choc pétrolier qui accroît les revenus d'exportation russes
+  de 0,8 à 9 milliards de dollars selon la durée de la fermeture d'Ormuz — prolongeant la guerre en Ukraine que les États-Unis
+  prétendent vouloir terminer.
 status: ready
 draft: false
 theme: iran
