@@ -16,6 +16,12 @@ draft: false
 theme: trade
 ---
 
+*Centre d'analyse, de prévision et de stratégie — Note rapide*
+*29 mars 2026*
+
+
+---
+
 ## Résumé analytique
 
 Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué sera lu à Pékin comme une tentative de cadrage occidental. Les négociations préparatoires de Paris entre Scott Bessent et He Lifeng ont porté sur l'agriculture, les minéraux critiques et un accord Boeing de 500 appareils, esquissant les contours d'un commerce administré bilatéral qui marginaliserait l'Union européenne. Cette note examine les enjeux du sommet à la lumière du Second China Shock documenté par le PIIE, de l'invalidation par la Cour suprême des tarifs fondés sur l'IEEPA, et de la Section 301 lancée contre soixante pays le 12 mars. Elle identifié trois points de vigilance pour la diplomatie française : la préservation de l'accord de Turnberry, l'articulation entre solidarité G7 et autonomie commerciale européenne, et le risque d'un deal bilatéral sino-américain dont l'Europe supporterait les coûts de détournement.

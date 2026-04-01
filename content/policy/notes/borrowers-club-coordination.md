@@ -16,6 +16,10 @@ theme: architecture-financière
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 15 septembre 2024 | erickilama.com
+
+---
+
 ## Le débat manquant
 
 La discussion sur la réforme de l'architecture internationale de la dette souveraine tourne, depuis une décennie, autour d'un seul axe : la coordination des créanciers. Comment inciter les détenteurs d'obligations a participer aux restructurations ? Comment intégrer la Chine dans un cadre multilatéral cohérent ? Comment articuler le Club de Paris, le Club de Londres et les nouveaux acteurs privés ? Ces questions sont légitimes. Elles sont aussi radicalement insuffisantes.

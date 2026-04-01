@@ -15,6 +15,10 @@ theme: énergie
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 15 juin 2024 | erickilama.com
+
+---
+
 ## Un modèle prometteur en panne
 
 Pour respecter l'ambition de limiter le réchauffement climatique à 1,5 degré Celsius, une action urgente est nécessaire pour décarboner les systèmes énergétiques des principales économies émergentes. Les Just Energy Transition Partnerships (JETP) ont été conçus pour répondre à ce défi : combiner le financement international, l'impulsion politique de haut niveau et le cadre institutionnel nécessaires pour accélérer la transition énergétique dans les économies émergentes les plus pertinentes pour l'action climatique mondiale.

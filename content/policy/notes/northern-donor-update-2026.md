@@ -17,6 +17,10 @@ theme: développement
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
+
+---
+
 ## Introduction
 
 En septembre 2024, cette note posait une question que beaucoup jugeaient prématurée : un donateur du Nord a-t-il encore sa place au XXIe siècle ? Dix-huit mois plus tard, la question n'est plus théorique. La dissolution partielle de l'USAID sous l'administration Trump, le recul de l'APD des principales économies avancées et la montée en puissance des financeurs non traditionnels ont précipité une recomposition du paysage de la coopération internationale. Cette note examine ce que la période 2025-2026 révèle sur l'avenir du donateur du Nord et les contours possibles d'un nouveau mandat.

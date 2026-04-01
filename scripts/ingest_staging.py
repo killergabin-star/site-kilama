@@ -179,41 +179,23 @@ def extract_title(body: str) -> str | None:
     return None
 
 
-def strip_title_and_meta(body: str) -> str:
+def strip_title_heading(body: str) -> str:
     """
-    Remove the first # heading and any immediately following metadata lines
-    (author attribution, date, horizontal rules) from the body.
-    These are already captured in Hugo frontmatter and rendered by the template.
+    Remove ONLY the first # heading from the body.
+    The title is already in Hugo frontmatter and rendered by the template.
+    Author, date, and separators are preserved as visible content.
     """
     lines = body.split("\n")
     result = []
     found_title = False
-    skip_meta = False
 
-    for i, line in enumerate(lines):
+    for line in lines:
         stripped = line.strip()
 
-        # Remove the first H1 heading
+        # Remove only the first H1 heading (not H2+)
         if not found_title and stripped.startswith("# ") and not stripped.startswith("## "):
             found_title = True
-            skip_meta = True
             continue
-
-        # After title, skip metadata-like lines:
-        # - blank lines, --- separators, **Author** lines, *Date* lines
-        if skip_meta:
-            if not stripped:
-                continue
-            if stripped == "---":
-                continue
-            # Author/date attribution: **Name** or **Name** | date | site
-            if re.match(r"^\*{1,2}[^*]+\*{1,2}(\s*\|.*)?$", stripped):
-                continue
-            # Standalone date line: **Mars 2026** or *Mars 2026*
-            if re.match(r"^\*{1,2}[A-ZÀ-Ú][a-zà-ú]+ \d{4}\*{1,2}$", stripped):
-                continue
-            # Once we hit real content, stop skipping
-            skip_meta = False
 
         result.append(line)
 
@@ -376,9 +358,9 @@ def ingest_file(filepath: Path, dry_run: bool = False) -> dict | None:
     out_dir = CONTENT_DIR / section
     out_path = out_dir / slug
 
-    # Strip the title heading and author/date metadata from body
-    # (these are already in Hugo frontmatter and rendered by the template)
-    clean_body = strip_title_and_meta(body).lstrip("\n")
+    # Strip only the H1 title heading from body (already in Hugo frontmatter)
+    # Author, date, and separators are kept as visible content
+    clean_body = strip_title_heading(body).lstrip("\n")
 
     # Build the output content
     hugo_yaml = yaml.dump(

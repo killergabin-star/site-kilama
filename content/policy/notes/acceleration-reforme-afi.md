@@ -16,6 +16,10 @@ theme: architecture-financière
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 15 septembre 2024 | erickilama.com
+
+---
+
 ## Introduction : une fenêtre d'opportunité
 
 Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous présidence brésilienne, COP29 à Bakou — offraient une fenêtre d'opportunité pour faire avancer la réforme de l'architecture financière internationale. Cette accélération est nécessaire pour opérer le changement d'échelle radical qu'exige le financement de la transition climatique et, plus largement, la réalisation des Objectifs de développement durable.

@@ -15,6 +15,11 @@ draft: false
 theme: défense
 ---
 
+**Eric Gabin Kilama**
+**Mars 2026**
+
+---
+
 ### Contexte
 
 Les dépenses de défense de l'UE-27 atteignent 381 milliards d'euros en 2026 --- 2,03 % du PIB collectif, un seuil symbolique franchi pour la première fois depuis la fin de la Guerre froide. Le plan ReArm Europe, rebaptisé Readiness 2030, fixe un objectif d'investissement de 800 milliards d'euros à l'horizon 2030, dont 650 milliards de dépenses nationales et 150 milliards de prêts européens à taux préférentiel via le mécanisme SAFE (*Security Action For Europe*), proposé par la Commission en mars 2025 et adopté par le Conseil en mai 2025[^1]. Les premiers investissements SAFE, d'un montant de 38 milliards d'euros pour huit États membres, ont été approuvés début 2026. Le programme LEAP, initiative intergouvernementale lancée par cinq pays (France, Allemagne, Italie, Pologne, Royaume-Uni) à Cracovie en février 2026, vise la production de systèmes autonomes --- drones, munitions rôdeuses, reconnaissance. Dix-sept États membres ont activé la clause dérogatoire du Pacte de stabilité pour financer leurs acquisitions militaires, et la Commission a publié en janvier 2026 les lignes directrices précisant les conditions d'activation de la *National Escape Clause* pour les dépenses de défense.

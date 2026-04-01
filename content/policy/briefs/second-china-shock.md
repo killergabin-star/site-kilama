@@ -16,6 +16,12 @@ draft: false
 theme: trade
 ---
 
+*Centre d'analyse, de prévision et de stratégie — Étude*
+*29 mars 2026*
+
+
+---
+
 ## Table des matières
 
 1. [Résumé](#résumé)

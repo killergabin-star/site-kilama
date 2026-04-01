@@ -17,6 +17,10 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | Mars 2026
+
+---
+
 ## Contexte du débat
 
 La mi-mars 2026 a vu émerger sur la plateforme X un échange intellectuel inhabituel entre deux figures majeures de l'économie internationale. Gita Gopinath, première directrice générale adjointe du Fonds monétaire international, a qualifié de « terribly flawed view » l'idée selon laquelle le statut de monnaie de réserve du dollar serait responsable des déficits commerciaux américains[^1]. Cette prise de position visait directement le cadre analytique développé par Michael Pettis, professeur de finance à l'Université de Pékin et auteur, avec Matthew Klein, de *Trade Wars Are Class Wars* (Yale University Press, 2020). Roger Farmer (Université de Warwick, professeur émérite à UCLA) a commenté que « la théorie économique internationale dominante est centrée sur l'équilibre commercial et n'a pas intégré » les dynamiques structurelles que Pettis identifié[^2]. Luca Fornaro a apporté une nuance essentielle : « émettre la monnaie de réserve n'implique pas de facto des déficits commerciaux, mais les rend plus attrayants »[^3].

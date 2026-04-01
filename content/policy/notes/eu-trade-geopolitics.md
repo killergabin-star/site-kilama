@@ -17,6 +17,8 @@ theme: commerce
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 15 novembre 2024 | erickilama.com
+
 L'Union européenne a multiplié les instruments commerciaux unilatéraux pour se repositionner dans un environnement de compétition géoéconomique accrue, au moment où la crise climatique s'accélère. Cette reconfiguration, si elle répond à des impératifs légitimes de sécurité économique et de transition environnementale, risque d'aliéner les pays en développement et de compromettre les partenariats dont l'UE a besoin pour peser dans la gouvernance mondiale. L'analyse qui suit examine cette tension à travers la typologie des instruments déployés, leur impact différencié et leurs implications pour la politique extérieure européenne.
 
 ## 1. La prolifération des instruments géoéconomiques européens

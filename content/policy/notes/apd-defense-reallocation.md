@@ -16,6 +16,11 @@ draft: false
 theme: development
 ---
 
+**Note d'analyse** | 24 mars 2026
+
+
+---
+
 ## Résumé analytique
 
 L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1 milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les projections de l'OCDE pour 2025 anticipent une contraction supplémentaire de 9 à 17 %, qui constituerait le recul le plus grave depuis les coupes des années 1990. Cette contraction intervient dans un contexte de réarmement européen formalisé par le programme ReArm Europe, dont l'objectif de 800 milliards d'euros implique des arbitrages budgétaires explicites entre dépenses de défense et enveloppes de développement. La présente note examine si ce déclin relève d'un ajustement cyclique réversible ou d'une réallocation structurelle durable, en s'appuyant sur les conclusions du rapport « Au-delà du consensus » et la littérature récente sur le financement du développement.[^1]

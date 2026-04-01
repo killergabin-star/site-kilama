@@ -16,6 +16,10 @@ theme: développement
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 20 septembre 2024 | erickilama.com
+
+---
+
 ## Une légitimité en question
 
 L'aide publique au développement (APD) a été introduite dans les années 1960 comme un instrument temporaire répondant à un moment particulier de l'histoire : décolonisation, Guerre froide, industrialisation et efforts de réduction de la pauvreté dans le « Sud global ». Soixante ans plus tard, le monde a profondément changé, mais l'architecture institutionnelle de l'aide est restée remarquablement stable dans ses structures fondamentales. Dans un contexte où les frontières entre pays « développés » et « en développement » s'estompent, où les budgets de développement stagnent face à des besoins croissants, où la polarisation géopolitique entre Nord et Sud atteint des niveaux historiques de méfiance, et où le modèle donateur-bénéficiaire est de plus en plus rejeté, la justification traditionnelle de l'aide a atteint ses limites.

@@ -17,6 +17,12 @@ draft: false
 theme: défense
 ---
 
+**Policy Brief** | Eric Kilama | 29 mars 2026
+
+*Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et des positions possibles pour le sommet d'Évian. Il est conçu pour une lecture de quinze minutes.*
+
+---
+
 ## Contexte
 
 L'Union européenne dépense 381 milliards d'euros en défense en 2026, soit 2,03 % de son PIB collectif, un seuil franchi pour la première fois depuis la fin de la Guerre froide. L'accélération est considérable : plus 63 % entre 2020 et 2026, portée par la guerre en Ukraine, la réforme de la Schuldenbremse allemande et l'activation de la clause dérogatoire du Pacte de stabilité par dix-sept États membres. Le plan SAFE mobilise 150 milliards d'euros de prêts européens. L'initiative LEAP, lancée par cinq pays à Cracovie en février 2026, vise la production de systèmes autonomes. Le discours politique converge vers la « souveraineté stratégique ». Les budgets suivent. L'architecture industrielle, non.

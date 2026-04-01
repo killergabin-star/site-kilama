@@ -15,6 +15,11 @@ draft: false
 theme: geopolitical
 ---
 
+**Note d'analyse** | 29 mars 2026
+
+
+---
+
 ## Résumé analytique
 
 La première réunion ministérielle des Affaires étrangères du G7 sous présidence française, tenue les 26 et 27 mars 2026 à l'abbaye de Vaux-de-Cernay, a révélé une reconfiguration significative des rapports de force au sein du club. L'échec du secrétaire d'État Rubio à obtenir un soutien allié explicite pour la campagne contre l'Iran, conjugué à la déclaration allemande selon laquelle « ce n'est pas la guerre de l'OTAN », dessine un espace stratégique que la diplomatie française a commencé à occuper. La posture choisie — la désescalade conditionnelle — est un pari calculé. La formulation retenue dans le communiqué final — dont les éléments cités dans cette note proviennent de la version transmise aux postes le 27 mars — celle de « préoccupation partagée » plutôt que d'endossement explicite, constitue un précédent diplomatique dont la portée dépasse la seule question iranienne : elle installe la possibilité d'un différentiel transatlantique assumé au sein même du format G7. Pour la France, à six mois du sommet des chefs d'État d'Évian, la question n'est plus de savoir si ce différentiel est souhaitable mais s'il peut être institutionnalisé en doctrine opérationnelle.

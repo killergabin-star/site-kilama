@@ -16,6 +16,10 @@ theme: énergie
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
+
+---
+
 ## Introduction
 
 Depuis la publication de notre analyse sur les défaillances structurelles des Just Energy Transition Partnerships en juin 2024, le diagnostic n'a fait que se confirmer — et les conditions géopolitiques se sont considérablement durcies. Cette note actualise l'évaluation initiale à la lumière de trois développements majeurs : le retrait annoncé des États-Unis de l'Accord de Paris sous l'administration Trump, les résultats décevants de la COP29 à Bakou, et la crise iranienne de mars 2026 qui a propulsé le prix du Brent au-dessus de 90 dollars.

@@ -14,6 +14,13 @@ draft: false
 theme: development
 ---
 
+**Policy Brief for the IMF-World Bank Spring Meetings, April 13-18 2026**
+
+*Eric Kilama*
+*Based on the report "Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement"*
+
+---
+
 ## En bref
 
 L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024. Les projections de l'OCDE pour 2025 anticipent une contraction de 9 à 17 %, la plus sévère depuis les coupes des années 1990. Ce déclin intervient dans un contexte de réarmement européen (ReArm Europe, 800 milliards d'euros), de pression fiscale liée au conflit iranien, et de fragmentation institutionnelle révélée par le gel de l'USAID. Ce n'est pas un ajustement. C'est un changement de régime. Le présent policy brief identifié les angles morts prioritaires du consensus et propose deux recommandations phares que l'Union européenne et la présidence française du G7 peuvent porter dès les Spring Meetings, avant le sommet d'Évian de juin 2026.

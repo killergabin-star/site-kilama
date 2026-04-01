@@ -17,6 +17,10 @@ theme: architecture-financière
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
+
+---
+
 ## Introduction
 
 En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s'appuyant sur l'approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives mais insuffisantes. L'optimisation des bilans recommandée par le G20 Capital Adequacy Framework (CAF) a libéré des capacités de prêt supplémentaires. La Banque mondiale, sous la direction d'Ajay Banga, a engagé une réorientation stratégique. Mais le contexte géopolitique — retrait américain, recul de l'APD, aggravation de la crise de la dette — rend ces progrès dérisoires face à l'ampleur des besoins. Cette note évalue les avancées et les limites des réformes en cours, et identifié les conditions d'une transformation plus ambitieuse.

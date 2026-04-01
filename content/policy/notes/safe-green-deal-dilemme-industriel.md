@@ -17,6 +17,11 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
+**Eric Gabin Kilama**
+**Mars 2026**
+
+---
+
 ## Introduction
 
 L'Union européenne poursuit simultanément deux ambitions industrielles d'une ampleur sans précédent dans son histoire. Le Green Deal européen, lancé en 2019, engage le continent vers la neutralité carbone à l'horizon 2050, avec des jalons intermédiaires contraignants en matière de réduction des émissions, de déploiement des renouvelables et de décarbonation industrielle. Le plan Readiness 2030, annoncé en mars 2025 par la présidente de la Commission Ursula von der Leyen sous le label initial « ReArm Europe », vise à mobiliser environ 800 milliards d'euros à l'horizon 2030 pour moderniser les capacités de défense européennes, dont 150 milliards via l'instrument SAFE (Security Action for Europe) adopté par le Conseil en mai 2025[^1].

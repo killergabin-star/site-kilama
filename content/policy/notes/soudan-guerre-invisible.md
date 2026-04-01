@@ -14,6 +14,9 @@ draft: false
 theme: africa
 ---
 
+**Centre d'analyse, de prévision et de stratégie — Note d'analyse**
+**29 mars 2026**
+
 Éric Kilama
 
 

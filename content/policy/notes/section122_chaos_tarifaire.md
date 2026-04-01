@@ -15,6 +15,11 @@ draft: false
 theme: commerce
 ---
 
+**Eric Gabin Kilama**
+**Mars 2026**
+
+---
+
 ### Contexte
 
 L'arrêt de la Cour suprême *Learning Resources v. Trump* (20 février 2026) a invalidé l'utilisation de l'International Emergency Economic Powers Act (IEEPA) pour imposer des tarifs commerciaux, jugeant que le déficit commercial ne constituait pas une « urgence nationale » au sens du statut[^1]. En 72 heures, l'administration Trump a contourné la décision en invoquant la Section 122 du Trade Act de 1974, imposant un tarif universel de 10 % au titre de la correction d'un « déficit important et grave » de balance des paiements. Le plafond statutaire de la Section 122 est de 15 %, ce qui laisse une marge d'escalade de cinq points --- un levier de pression que l'administration conserve en réserve. Le 4 mars, le Canada a été ciblé par un tarif additionnel de 25 %, déclenchant les premières rétorsions au sein du G7 (25 % canadiens sur 30 milliards CAD d'importations américaines). La base juridique IEEPA résiduelle (fentanyl) maintient par ailleurs les tarifs sur la Chine à 21-30 %.
