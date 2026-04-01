@@ -14,7 +14,7 @@
     "threshold": 147.2,
     "threshold_label": "1-year moving average",
     "text": "GPR Index elevated at <strong>{value}</strong> — above {threshold_label} ({threshold}). Fragmentation scenario probability raised to <strong>25%</strong>",
-    "timestamp": "2026-04-01T02:24:44+01:00"
+    "timestamp": "2026-04-01T02:37:57+01:00"
   },
   "sparklines": {
     "header": "Key Indicators",
