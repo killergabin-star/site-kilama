@@ -1,6 +1,6 @@
 ---
 title: 'Le Second China Shock : anatomie d''un surplus de 1 200 milliards de dollars et ses conséquences européennes'
-date: '2026-03-29'
+date: '2025-10-20'
 doc_type: brief
 tags:
 - chine

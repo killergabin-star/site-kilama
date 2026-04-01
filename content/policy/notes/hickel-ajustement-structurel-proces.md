@@ -1,6 +1,6 @@
 ---
 title: 'L''ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas'
-date: 2026-03-31
+date: '2026-04-01'
 doc_type: note
 tags:
 - ajustement structurel

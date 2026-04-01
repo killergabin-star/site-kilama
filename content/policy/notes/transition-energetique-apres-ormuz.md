@@ -1,6 +1,6 @@
 ---
 title: 'La transition énergétique après Ormuz : accélération ou régression ?'
-date: 2026-03-31
+date: '2026-03-22'
 doc_type: note
 tags:
 - transition énergétique

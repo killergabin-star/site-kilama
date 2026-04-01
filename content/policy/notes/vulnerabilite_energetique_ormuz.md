@@ -1,6 +1,6 @@
 ---
 title: 'Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7'
-date: '2026-03-31'
+date: '2026-03-13'
 doc_type: note
 tags:
 - Ormuz

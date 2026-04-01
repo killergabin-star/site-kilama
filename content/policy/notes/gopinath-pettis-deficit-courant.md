@@ -1,6 +1,6 @@
 ---
 title: 'Gopinath contre Pettis : le déficit courant américain est-il un choix ou une contrainte structurelle ?'
-date: 2026-03-31
+date: '2026-03-29'
 doc_type: note
 tags:
 - macroéconomie internationale

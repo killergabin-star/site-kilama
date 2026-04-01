@@ -1,6 +1,6 @@
 ---
 title: 'Controverse : Le dollar condamne-t-il l''Amérique au déficit ? Gopinath, Pettis, et ce que la littérature dit vraiment'
-date: 2026-03-31
+date: '2026-04-01'
 doc_type: controverse
 tags:
 - macroéconomie internationale
