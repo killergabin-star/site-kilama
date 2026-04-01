@@ -19,17 +19,13 @@ theme: commerce
 author: Eric Gabin Kilama
 ---
 
-# Politique commerciale de l'UE face à Trump II : la double pression — Mise à jour 2026
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 Depuis la publication de cette analyse en novembre 2024, le contexte de la politique commerciale européenne a été bouleversé. Le retour de l'administration Trump, avec une politique tarifaire d'une ampleur inédite, a placé l'UE dans une position de double contrainte : défendre ses intérêts face à Washington tout en préservant ses relations avec les pays en développement. Cette note actualise le diagnostic et les recommandations à la lumière des développements de 2025-2026.
 
 ## 1. Le choc tarifaire américain : ampleur et conséquences
 
 L'administration Trump II a engagé une offensive commerciale systématique dès les premières semaines de son mandat. L'invocation de la Section 122 du Trade Act — un instrument utilisé une seule fois depuis 1971, par Nixon lors de la suspension de la convertibilité or du dollar — a marqué un tournant symbolique et juridique. Des tarifs universels de 10 % ont été imposés sur l'ensemble des importations américaines, auxquels s'ajoutent des tarifs sectoriels renforcés au titre de la Section 301 : 25 % sur l'acier et l'aluminium, 100 % sur les véhicules électriques chinois, des surtaxes sur les semi-conducteurs et les batteries.
 
-L'UE est directement touchée. Les exportations européennes vers les États-Unis — premier marché d'exportation de l'Union, représentant environ 450 milliards d'euros par an — sont soumises au tarif universel de 10 %, avec des majorations sectorielles pour l'automobile, l'acier et les produits pharmaceutiques. La Commission européenne estime l'impact initial à 0,3-0,5 point de PIB européen, un chiffre significatif pour une économie déjà en croissance faible.
+L'UE est directement touchée. Les exportations européennes vers les États-Unis — premier marché d'exportation de l'Union, représentant environ 450 milliards d'euros par an — sont soumises au tarif universel de 10 %, avec des majorations sectorielles pour l'automobile, l'acier et les produits pharmaceutiques. La Commission européenne estimé l'impact initial à 0,3-0,5 point de PIB européen, un chiffre significatif pour une économie déjà en croissance faible.
 
 La réponse européenne a oscillé entre fermeté rhétorique et prudence opérationnelle. La Commission a annoncé des mesures de rétorsion ciblées — surtaxes sur des produits américains emblématiques (bourbon, Harley-Davidson, produits agricoles) — tout en laissant ouverte la porte de la négociation. Cette ambivalence reflète une contrainte structurelle : l'UE a besoin des États-Unis comme partenaire sécuritaire en Europe de l'Est, ce qui limite sa marge de manœuvre sur le terrain commercial.
 
@@ -47,7 +43,7 @@ Le Mécanisme d'ajustement carbone aux frontières (CBAM), dont la phase transit
 
 Les importateurs rapportent des difficultés majeures à obtenir des données d'émissions vérifiées de leurs fournisseurs, en particulier dans les pays en développement où les systèmes de mesure, de reporting et de vérification (MRV) sont embryonnaires. La Commission a prévu des valeurs par défaut pour les pays sans données vérifiées, mais ces valeurs — basées sur les intensités d'émission moyennes des pays les moins performants — pénalisent les producteurs efficaces des pays en développement qui ne disposent pas de l'infrastructure de certification.
 
-Le contexte géopolitique complique encore l'équation. Le CBAM a été conçu dans un monde où les États-Unis étaient un partenaire potentiel dans la tarification carbone — l'administration Biden avait exploré un « club climat » transatlantique. Avec l'administration Trump, qui a retiré les États-Unis de l'Accord de Paris et qualifié le CBAM de « taxe protectionniste », cette perspective a disparu. L'UE se trouve seule à imposer une tarification carbone aux frontières, ce qui renforce la perception d'un instrument unilatéral européen parmi les pays en développement.
+Le contexte géopolitique complique encore l'équation. Le CBAM a été conçu dans un monde où les États-Unis étaient un partenaire potentiel dans la tarification carbone — l'administration Biden avait exploré un « club climat » transatlantique. Avec l'administration Trump, qui a retiré les États-Unis de l'Accord de Paris et qualifié le CBAM de « taxe protectionniste », cette perspective a disparu. L'UE se trouve seule à imposer une tarification carbone aux frontières, ce qui renforcé la perception d'un instrument unilatéral européen parmi les pays en développement.
 
 Les critiques du Sud global se sont intensifiées. Lors de la COP29 à Bakou (novembre 2024), un groupe de pays africains a formellement contesté la compatibilité du CBAM avec les règles de l'OMC et les principes de responsabilités communes mais différenciées. L'Inde a menacé de porter l'affaire devant le mécanisme de règlement des différends de l'OMC. Le Brésil, sous la présidence de Lula, a fait de la contestation du CBAM un élément de sa diplomatie climatique.
 

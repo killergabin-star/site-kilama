@@ -12,14 +12,7 @@ summary: 'La fermeture du détroit d''Ormuz (5 mars 2026) a provoqué un choc p�
   % en 48 heures), quelque 150 navires bloqués (estimations Lloyd''s), 21 % du commerce...'
 status: ready
 draft: false
-theme: energie
----
-
-# Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
+theme: énergie
 ---
 
 ### Contexte
@@ -28,7 +21,7 @@ La fermeture du détroit d'Ormuz (5 mars 2026) a provoqué un choc pétrolier im
 
 Ormuz n'est pas un choc d'offre classique — la production mondiale n'est pas affectée. C'est un « choc de transit », au sens de la catégorie *supply shock* de Kilian (2009, AER) : le pétrole existe mais ne peut pas atteindre les marchés. La distinction est cruciale pour le diagnostic et la réponse. Kilian décompose les mouvements du prix du pétrole en trois composantes structurelles : les chocs d'offre physique (disruption de production), les chocs de demande agrégée (expansion ou contraction de l'activité mondiale) et les chocs de demande de précaution (anticipation d'une pénurie future). Le choc d'Ormuz combine les premier et troisième canaux sans activer le deuxième. La production mondiale reste intacte ; c'est le transit qui est interrompu, et la perception d'une pénurie prolongée qui amplifie la hausse des prix. Selon le framework de Kilian, le choc de précaution est estimé à environ 28 % de la hausse initiale des prix — ce qui en fait l'amplificateur principal, et donc la cible prioritaire de la politique économique. Un choc de transit est potentiellement réversible, ce qui signifie que la composante spéculative du prix peut être résorbée par des interventions crédibles sur les anticipations, sans nécessairement résoudre le blocage physique.
 
-Caldara et Iacoviello (2022, AER) ajoutent une dimension temporelle décisive : leur indice de risque géopolitique (GPR) montre que la transformation d'un acte géopolitique initial en menace prolongée — le passage de l'événement au scénario de fermeture durable — est la combinaison la plus toxique pour l'investissement mondial. L'incertitude sur la durée du blocage pèse davantage sur les décisions d'investissement que le niveau absolu du prix du pétrole. Cette distinction oriente directement la réponse politique : la priorité est de réduire l'incertitude temporelle, pas seulement le prix.
+Caldara et Iacoviello (2022, AER) ajoutent une dimension temporelle décisive : leur indice de risque géopolitique (GPR) montre que la transformation d'un acte géopolitique initial en menace prolongée — le passage de l'événement au scénario de fermeture durable — est la combinaison la plus toxique pour l'investissement mondial. L'incertitude sur la durée du blocage pèse davantage sur les décisions d'investissement que le niveau absolu du prix du pétrole. Cette distinction orienté directement la réponse politique : la priorité est de réduire l'incertitude temporelle, pas seulement le prix.
 
 ### Analyse
 
@@ -38,7 +31,7 @@ Quatre vulnérabilités structurelles sont révélées par la crise.
 
 Le calcul saoudien est plus complexe qu'un simple arbitrage prix-volume. La Vision 2030 du prince héritier Mohammed bin Salman requiert des investissements massifs — NEOM (500 milliards de dollars d'investissement annoncé), The Line, le programme touristique de la mer Rouge — dont le financement repose sur des revenus pétroliers élevés et stables. Le PIF (Public Investment Fund) a besoin d'un baril au-dessus de 80 dollars pour équilibrer son portefeuille de diversification. À 127 dollars, l'Arabie saoudite engrange des surplus exceptionnels qui financent la transformation économique post-pétrolière — une ironie structurelle où la rente pétrolière finance la sortie de la rente pétrolière.
 
-Les dynamiques OPEP+ compliquent encore le tableau. L'accord OPEP+ repose sur des quotas de production dont la discipline s'est érodée depuis 2023, notamment de la part des Émirats arabes unis et de l'Irak. La crise d'Ormuz renforce paradoxalement la position de Riyad au sein du cartel : l'Arabie saoudite est le seul producteur du Golfe capable d'exporter sans transiter par le détroit, via le pipeline Yanbu. Les Émirats, le Koweït et le Qatar sont bloqués. Le rapport de force intra-OPEP+ s'est donc inversé en faveur de Riyad, qui dispose d'un monopole de fait sur la capacité d'exportation du Golfe pendant la crise.
+Les dynamiques OPEP+ compliquent encore le tableau. L'accord OPEP+ repose sur des quotas de production dont la discipline s'est érodée depuis 2023, notamment de la part des Émirats arabes unis et de l'Irak. La crise d'Ormuz renforcé paradoxalement la position de Riyad au sein du cartel : l'Arabie saoudite est le seul producteur du Golfe capable d'exporter sans transiter par le détroit, via le pipeline Yanbu. Les Émirats, le Koweït et le Qatar sont bloqués. Le rapport de force intra-OPEP+ s'est donc inversé en faveur de Riyad, qui dispose d'un monopole de fait sur la capacité d'exportation du Golfe pendant la crise.
 
 Historiquement, les décisions saoudiennes sur la spare capacity ont rarement répondu à la logique de stabilisation que l'Occident leur prête. En 1973, Riyad avait participé à l'embargo. En 1985, l'ouverture des vannes avait visé à punir les producteurs indisciplinés, pas à aider les consommateurs. En 1990, la compensation de la production irakienne et koweïtienne avait servi les intérêts saoudiens autant que la stabilité des marchés. Compter sur Riyad pour compenser le blocage d'Ormuz, c'est confondre capacité technique et volonté politique — une erreur récurrente des analyses occidentales de la politique énergétique saoudienne.
 
@@ -74,7 +67,7 @@ L'histoire offre deux leçons contradictoires. En 1973-1974, Arthur Burns à la 
 
 La Réserve fédérale fait face à un dilemme différent. Les États-Unis sont exportateurs nets de pétrole depuis 2019. La hausse du Brent améliore la balance commerciale énergétique américaine et les revenus des États producteurs (Texas, Nouveau-Mexique, Dakota du Nord), tout en augmentant l'inflation headline et en réduisant le pouvoir d'achat des ménages non producteurs. L'asymétrie de transmission entre la Fed et la BCE signifie que les deux banques centrales ne peuvent pas coordonner leurs réponses — la réponse optimale pour la zone euro (accommodation pour amortir le choc d'offre) est contradictoire avec la réponse optimale pour les États-Unis (neutralité ou léger resserrement pour contenir l'inflation dans une économie en surchauffe relative).
 
-Cette divergence monétaire a des conséquences directes sur le taux de change euro-dollar. Une BCE accommodante face à une Fed neutre déprécierait l'euro, renchérissant les importations d'énergie libellées en dollars — un cercle vicieux que Obstfeld (2010) qualifie de « piège de la devise faible » en situation de choc d'offre.
+Cette divergence monétaire a des conséquences directes sur le taux de changé euro-dollar. Une BCE accommodante face à une Fed neutre déprécierait l'euro, renchérissant les importations d'énergie libellées en dollars — un cercle vicieux que Obstfeld (2010) qualifie de « piège de la devise faible » en situation de choc d'offre.
 
 ### L'impact sur les économies émergentes
 
@@ -86,7 +79,7 @@ La destruction de demande, si elle advient, ne sera pas uniforme : elle frappera
 
 **Le Kenya**, pays hôte du Summit Africa Forward (mai 2026), importe la totalité de son pétrole. La hausse du baril se transmet directement au prix du transport intérieur — matatus (minibus urbains), camions sur le corridor Mombasa-Nairobi — et, par ce canal, aux prix alimentaires. L'East African Crude Oil Pipeline (EACOP), en construction entre l'Ouganda et la Tanzanie, n'est pas encore opérationnel et ne résoudrait que partiellement la dépendance régionale.
 
-Le nexus énergie-alimentation est le canal de transmission le plus rapide vers les populations vulnérables. La hausse du pétrole se transmet aux engrais azotés (le gaz naturel représente 70-80 % du coût de production de l'ammoniac), puis aux prix agricoles, puis au coût du panier alimentaire. La FAO estime que chaque hausse de 10 % du prix des engrais augmente le prix des céréales de 2 à 3 % avec un délai de 3 à 6 mois (FAO, *Food Outlook*, 2025). Pour les ménages des PMA qui consacrent 50 à 70 % de leur revenu à l'alimentation, cette transmission est directement appauvrissante.
+Le nexus énergie-alimentation est le canal de transmission le plus rapide vers les populations vulnérables. La hausse du pétrole se transmet aux engrais azotés (le gaz naturel représente 70-80 % du coût de production de l'ammoniac), puis aux prix agricoles, puis au coût du panier alimentaire. La FAO estimé que chaque hausse de 10 % du prix des engrais augmente le prix des céréales de 2 à 3 % avec un délai de 3 à 6 mois (FAO, *Food Outlook*, 2025). Pour les ménages des PMA qui consacrent 50 à 70 % de leur revenu à l'alimentation, cette transmission est directement appauvrissante.
 
 ### Enjeux pour la France
 
@@ -96,7 +89,7 @@ La présidence donne à la France le *framing* : proposer le Pacte de résilienc
 
 L'articulation G7-UE est à gérer : le REPowerEU (2022) et la Plateforme d'achat commun de gaz existent déjà. Le G7 complète ces mécanismes en les élargissant aux partenaires non-UE (Japon, Canada, Royaume-Uni). Le Conseil européen du 20-21 mars a révélé les fractures intra-UE : l'Allemagne et l'Italie, les plus exposées au choc gazier, plaident pour une réponse communautaire ambitieuse ; les Pays-Bas et la Suède, moins dépendants, résistent aux mécanismes de mutualisation des coûts.
 
-Le dividende de transition constitue un argument de long terme : un Brent durablement au-dessus de 100 dollars accélère la viabilité économique du solaire+stockage (coût complet sous 50 dollars/MWh dans les meilleures localisations, IRENA 2025), du nucléaire SMR (dont la France est en pointe avec EDF-Nuward) et de l'hydrogène vert. Ormuz renforce l'argument de souveraineté pour la transition — plus convaincant que l'argument climatique auprès des pays réticents au Pacte Vert. Le paradoxe est productif : un choc pétrolier finance politiquement la sortie du pétrole.
+Le dividende de transition constitue un argument de long terme : un Brent durablement au-dessus de 100 dollars accélère la viabilité économique du solaire+stockage (coût complet sous 50 dollars/MWh dans les meilleures localisations, IRENA 2025), du nucléaire SMR (dont la France est en pointe avec EDF-Nuward) et de l'hydrogène vert. Ormuz renforcé l'argument de souveraineté pour la transition — plus convaincant que l'argument climatique auprès des pays réticents au Pacte Vert. Le paradoxe est productif : un choc pétrolier finance politiquement la sortie du pétrole.
 
 ### Recommandations
 

@@ -6,7 +6,7 @@ tags:
 - rearm-europe
 - g7
 - evian
-- defense
+- défense
 - france
 - otan
 - nucleaire
@@ -14,15 +14,7 @@ summary: '*Ce document propose une analyse du réarmement européen, du mécanis
   des positions possibles pour le sommet d''Évian. Il est conçu pour une lecture de...'
 status: ready
 draft: false
-theme: defense
----
-
-# ReArm Europe : l'arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian
-
-**Policy Brief** | Eric Kilama | 29 mars 2026
-
-*Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et des positions possibles pour le sommet d'Évian. Il est conçu pour une lecture de quinze minutes.*
-
+theme: défense
 ---
 
 ## Contexte
@@ -59,7 +51,7 @@ La base industrielle repose sur des PME dont la fragilité est documentée : les
 
 SAFE est le deuxième instrument de dette commune européenne après NextGenerationEU. Le mécanisme peut être qualifié de « NextGenEU de la défense, avec les mêmes défauts et un tabou supplémentaire » : l'Union emprunte pour financer des achats que chaque État pourrait, en vertu de l'article 346 TFUE, exclure de toute régulation européenne.
 
-Le diagnostic est sans ambiguïté : SAFE finance les achats, pas les capacités de production. La structure de prêt oriente les incitations vers l'achat plutôt que vers l'investissement industriel. La Commission est à la fois émettrice de dette, allocataire des fonds et contrôleur du respect des conditions, une confusion des rôles que les premiers décaissements (38 milliards approuvés sans critères d'allocation publics) illustrent.
+Le diagnostic est sans ambiguïté : SAFE finance les achats, pas les capacités de production. La structure de prêt orienté les incitations vers l'achat plutôt que vers l'investissement industriel. La Commission est à la fois émettrice de dette, allocataire des fonds et contrôleur du respect des conditions, une confusion des rôles que les premiers décaissements (38 milliards approuvés sans critères d'allocation publics) illustrent.
 
 Plus fondamentalement, SAFE ne prévoit aucun mécanisme de capture de valeur pour le contribuable européen : ni participations, ni royalties, ni droits de propriété intellectuelle partagés. Le risque est socialisé, le rendement est privatisé. C'est le schéma classique du capitalisme de perte publique et de gain privé, appliqué à la défense. Le CHIPS and Science Act américain, qui inclut des clauses de clawback, des obligations de profit-sharing et un volet recherche fondamentale distinct du volet production, offre un modèle de conditionnalité qui fait défaut à SAFE.
 
@@ -107,4 +99,4 @@ L'Europe réarme, mais elle ne sait pas encore ce qu'elle construit. La préside
 
 ---
 
-*Sources : CAE Note n. 88, mars 2026 ; Acemoglu et al. (2022), « War, Socialism, and the Rise of Fascism », QJE ; Alesina et Spolaore (2006), « Conflict, Defense Spending, and the Number of Nations » ; Blanchard (2019), « Public Debt and Low Interest Rates », AER ; Bartelme, Costinot, Donaldson et Rodriguez-Clare (2025), « The Textbook Case for Industrial Policy », JPE ; Tooze (2020), « The Great War, the Conditions of Democracy », IRRC ; Evenett (2023), « Geopolitics, Conflict, Decoupling, and Divestment from Russia », Global Trade Alert / CEPR ; Agence européenne de défense, *Defence Data 2024* ; Moretti, Steinwender et Van Reenen (2025, RES) ; Kilama (2026) ; Trésor-Eco n. 360.*
+*Sources : CAE Note n. 88, mars 2026 ; Acemoglu et al. (2022), « War, Socialism, and the Rise of Fascism », QJE ; Alesina et Spolaore (2006), « Conflict, Défense Spending, and the Number of Nations » ; Blanchard (2019), « Public Debt and Low Interest Rates », AER ; Bartelme, Costinot, Donaldson et Rodriguez-Clare (2025), « The Textbook Case for Industrial Policy », JPE ; Tooze (2020), « The Great War, the Conditions of Democracy », IRRC ; Evenett (2023), « Geopolitics, Conflict, Decoupling, and Divestment from Russia », Global Trade Alert / CEPR ; Agence européenne de défense, *Defence Data 2024* ; Moretti, Steinwender et Van Reenen (2025, RES) ; Kilama (2026) ; Trésor-Eco n. 360.*

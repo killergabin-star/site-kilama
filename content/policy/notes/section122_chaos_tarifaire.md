@@ -15,13 +15,6 @@ draft: false
 theme: commerce
 ---
 
-# La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 ### Contexte
 
 L'arrêt de la Cour suprême *Learning Resources v. Trump* (20 février 2026) a invalidé l'utilisation de l'International Emergency Economic Powers Act (IEEPA) pour imposer des tarifs commerciaux, jugeant que le déficit commercial ne constituait pas une « urgence nationale » au sens du statut[^1]. En 72 heures, l'administration Trump a contourné la décision en invoquant la Section 122 du Trade Act de 1974, imposant un tarif universel de 10 % au titre de la correction d'un « déficit important et grave » de balance des paiements. Le plafond statutaire de la Section 122 est de 15 %, ce qui laisse une marge d'escalade de cinq points --- un levier de pression que l'administration conserve en réserve. Le 4 mars, le Canada a été ciblé par un tarif additionnel de 25 %, déclenchant les premières rétorsions au sein du G7 (25 % canadiens sur 30 milliards CAD d'importations américaines). La base juridique IEEPA résiduelle (fentanyl) maintient par ailleurs les tarifs sur la Chine à 21-30 %.
@@ -83,13 +76,13 @@ Les estimations convergent vers 28-37 milliards d'euros de pertes annuelles si l
 
 [^11]: Antràs, P. et Chor, D. (2022), « Global Value Chains », in Gopinath, G., Helpman, E. et Rogoff, K. (dir.), *Handbook of International Economics*, vol. 5, Elsevier.
 
-Le *reshoring* (relocalisation sur le territoire américain) reste marginal en volume mais visible en annonces. Les coûts sont prohibitifs pour la plupart des secteurs : le Boston Consulting Group estime le surcoût de production domestique entre 20 et 45 % selon les secteurs, un écart que les tarifs de 10-15 % ne compensent pas. Le *reshoring* effectif se concentre sur les semi-conducteurs (CHIPS Act) et les batteries (Inflation Reduction Act), où les subventions publiques comblent l'écart de coût.
+Le *reshoring* (relocalisation sur le territoire américain) reste marginal en volume mais visible en annonces. Les coûts sont prohibitifs pour la plupart des secteurs : le Boston Consulting Group estimé le surcoût de production domestique entre 20 et 45 % selon les secteurs, un écart que les tarifs de 10-15 % ne compensent pas. Le *reshoring* effectif se concentré sur les semi-conducteurs (CHIPS Act) et les batteries (Inflation Réduction Act), où les subventions publiques comblent l'écart de coût.
 
 Le *friendshoring* (redirection vers des pays alliés) est la dynamique dominante. Le Mexique, le Vietnam, l'Inde et la Pologne captent l'essentiel des réallocations. Mais le *friendshoring* a une limite structurelle : si les tarifs Section 301 s'appliquent aussi aux pays de *friendshoring* (le Mexique et le Vietnam sont parmi les soixante pays ciblés), la stratégie de contournement perd sa raison d'être. Mayer et Méjean (2025) documentent le « paradoxe de la fragmentation » : la diversification réduit le risque d'approvisionnement pays par pays mais augmente la complexité logistique et la vulnérabilité systémique[^12].
 
 [^12]: Mayer, T. et Méjean, I. (2025), « The Fragmentation Paradox: Derisking Trade and Global Safety ».
 
-Le *decoupling* (découplage) sino-occidental progresse dans les secteurs critiques (semi-conducteurs, terres rares, technologies duales) mais reste limité dans les secteurs à forte interdépendance (chimie, automobile, électronique grand public). Les données de Méjean et al. (2024) sur les dépendances commerciales européennes montrent que l'UE reste dépendante de la Chine pour plus de 50 % de ses importations dans 137 catégories de produits, dont 34 sont classées critiques[^13].
+Le *decoupling* (découplage) sino-occidental progressé dans les secteurs critiques (semi-conducteurs, terres rares, technologies duales) mais reste limité dans les secteurs à forte interdépendance (chimie, automobile, électronique grand public). Les données de Méjean et al. (2024) sur les dépendances commerciales européennes montrent que l'UE reste dépendante de la Chine pour plus de 50 % de ses importations dans 137 catégories de produits, dont 34 sont classées critiques[^13].
 
 [^13]: Méjean, I. et al. (2024), « Identifying European Trade Dependencies », CEPR Discussion Paper.
 

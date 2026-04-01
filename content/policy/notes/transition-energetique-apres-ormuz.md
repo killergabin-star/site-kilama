@@ -16,20 +16,13 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# La transition énergétique après Ormuz : accélération ou régression ?
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 ## Introduction
 
 La fermeture partielle du détroit d'Ormuz, consécutive aux frappes américano-israéliennes sur l'Iran lancées le 28 février 2026, a provoqué le choc pétrolier le plus brutal depuis l'invasion russe de l'Ukraine. Le Brent, qui oscillait autour de 86 dollars le baril en janvier, a franchi la barre des 126 dollars à son pic de mars avant de se stabiliser autour de 112 dollars fin mars, tandis que le brut de Dubaï atteignait un record historique de 166 dollars le 19 mars[^1]. La prime de risque géopolitique, estimée entre 15 et 20 dollars par baril par les analystes de Goldman Sachs et de JP Morgan, s'est installée durablement dans la structure des prix, signalant que le marché anticipe une perturbation prolongée[^2].
 
-Ce choc confronte les décideurs à un paradoxe que chaque crise pétrolière depuis 1973 a reproduit sans jamais le résoudre. D'un côté, la flambée des prix fossiles rappelle avec brutalité la vulnérabilité des économies dépendantes des hydrocarbures et renforce l'argument économique en faveur des alternatives bas-carbone. De l'autre, l'urgence sécuritaire pousse les gouvernements vers des réflexes de court terme : relance du charbon, libération des réserves stratégiques, contrats gaziers de long terme qui verrouillent les infrastructures fossiles pour des décennies.
+Ce choc confronté les décideurs à un paradoxe que chaque crise pétrolière depuis 1973 a reproduit sans jamais le résoudre. D'un côté, la flambée des prix fossiles rappelle avec brutalité la vulnérabilité des économies dépendantes des hydrocarbures et renforcé l'argument économique en faveur des alternatives bas-carbone. De l'autre, l'urgence sécuritaire pousse les gouvernements vers des réflexes de court terme : relance du charbon, libération des réserves stratégiques, contrats gaziers de long terme qui verrouillent les infrastructures fossiles pour des décennies.
 
-La configuration de 2026 présente toutefois trois singularités par rapport aux chocs précédents. Le coût des énergies renouvelables a atteint un plancher historique qui rend les alternatives structurellement compétitives. Le retrait américain de l'Accord de Paris, effectif depuis janvier 2026, prive la gouvernance climatique de son principal contributeur financier. Et la COP30 de Belém, achevée en novembre 2025, n'a pas réussi à inscrire dans son texte final une feuille de route contraignante de sortie des énergies fossiles, malgré le soutien de 88 pays[^3]. La transition énergétique mondiale dépend donc moins que jamais de la diplomatie climatique et davantage de la combinaison entre signaux de prix, politiques industrielles nationales et mécanismes de financement multilatéraux. Cette note examine les forces contradictoires que le choc d'Ormuz exerce sur cette transition et évalue les leviers dont dispose la présidence française du G7 pour peser sur la trajectoire.
+La configuration de 2026 présente toutefois trois singularités par rapport aux chocs précédents. Le coût des énergies renouvelables a atteint un plancher historique qui rend les alternatives structurellement compétitives. Le retrait américain de l'Accord de Paris, effectif depuis janvier 2026, privé la gouvernance climatique de son principal contributeur financier. Et la COP30 de Belém, achevée en novembre 2025, n'a pas réussi à inscrire dans son texte final une feuille de route contraignante de sortie des énergies fossiles, malgré le soutien de 88 pays[^3]. La transition énergétique mondiale dépend donc moins que jamais de la diplomatie climatique et davantage de la combinaison entre signaux de prix, politiques industrielles nationales et mécanismes de financement multilatéraux. Cette note examine les forces contradictoires que le choc d'Ormuz exerce sur cette transition et évalue les leviers dont dispose la présidence française du G7 pour peser sur la trajectoire.
 
 ---
 
@@ -37,7 +30,7 @@ La configuration de 2026 présente toutefois trois singularités par rapport aux
 
 ### Un goulot d'étranglement sans substitut
 
-Le détroit d'Ormuz concentre environ 20 % du pétrole maritime mondial et une proportion comparable des exportations mondiales de gaz naturel liquéfié (GNL)[^4]. La décision de l'Iran de fermer sélectivement le passage aux navires liés aux États-Unis, à Israël et à leurs alliés a provoqué une chute de 70 % du trafic pétrolier dans le détroit en mars, avec 21 attaques confirmées sur des navires marchands au 12 mars[^5]. QatarEnergy a déclaré la force majeure sur plusieurs contrats de GNL de long terme, affectant des clients en Italie, en Belgique, en Corée du Sud et en Chine[^6]. Les dommages infligés aux infrastructures qataries pourraient réduire la capacité d'exportation de GNL de 12,8 millions de tonnes par an pendant trois à cinq ans[^7].
+Le détroit d'Ormuz concentré environ 20 % du pétrole maritime mondial et une proportion comparable des exportations mondiales de gaz naturel liquéfié (GNL)[^4]. La décision de l'Iran de fermer sélectivement le passage aux navires liés aux États-Unis, à Israël et à leurs alliés a provoqué une chute de 70 % du trafic pétrolier dans le détroit en mars, avec 21 attaques confirmées sur des navires marchands au 12 mars[^5]. QatarEnergy a déclaré la force majeure sur plusieurs contrats de GNL de long terme, affectant des clients en Italie, en Belgique, en Corée du Sud et en Chine[^6]. Les dommages infligés aux infrastructures qataries pourraient réduire la capacité d'exportation de GNL de 12,8 millions de tonnes par an pendant trois à cinq ans[^7].
 
 ### La réponse d'urgence : réserves stratégiques et leurs limites
 
@@ -61,7 +54,7 @@ La crise d'Ormuz accélère la signature de contrats GNL de long terme qui engag
 
 ### Les subventions fossiles : le mur des 7 000 milliards
 
-Les subventions mondiales aux énergies fossiles constituent l'obstacle structurel le plus massif à la transition. Le Fonds monétaire international a estimé en décembre 2025 que ces subventions, incluant les coûts environnementaux non internalisés, atteignaient 7 200 milliards de dollars en 2024, soit 5,8 % du PIB mondial pour les seules subventions implicites[^17]. Le choc d'Ormuz renforce la pression politique en faveur du maintien de ces subventions : aucun gouvernement confronté à une inflation énergétique de l'ampleur observée en mars 2026 ne peut se permettre électoralement de supprimer les plafonnements de prix à la pompe ou les tarifs réglementés du gaz. Le FMI projette que ces subventions atteindront 8 200 milliards de dollars d'ici 2030 si les tendances actuelles se maintiennent[^18]. La transition énergétique se heurte ainsi à un paradoxe fiscal : plus les prix fossiles augmentent, plus les gouvernements subventionnent les fossiles pour protéger les consommateurs, ce qui réduit le signal-prix censé orienter la demande vers les alternatives.
+Les subventions mondiales aux énergies fossiles constituent l'obstacle structurel le plus massif à la transition. Le Fonds monétaire international a estimé en décembre 2025 que ces subventions, incluant les coûts environnementaux non internalisés, atteignaient 7 200 milliards de dollars en 2024, soit 5,8 % du PIB mondial pour les seules subventions implicites[^17]. Le choc d'Ormuz renforcé la pression politique en faveur du maintien de ces subventions : aucun gouvernement confronté à une inflation énergétique de l'ampleur observée en mars 2026 ne peut se permettre électoralement de supprimer les plafonnements de prix à la pompe ou les tarifs réglementés du gaz. Le FMI projette que ces subventions atteindront 8 200 milliards de dollars d'ici 2030 si les tendances actuelles se maintiennent[^18]. La transition énergétique se heurte ainsi à un paradoxe fiscal : plus les prix fossiles augmentent, plus les gouvernements subventionnent les fossiles pour protéger les consommateurs, ce qui réduit le signal-prix censé orienter la demande vers les alternatives.
 
 ---
 
@@ -73,7 +66,7 @@ Le choc d'Ormuz survient à un moment où les énergies renouvelables ont attein
 
 Cette compétitivité structurelle signifie que, contrairement aux chocs de 1973 ou 1979, la réponse renouvelable ne dépend plus d'un soutien public massif pour être économiquement viable. Elle dépend du coût du capital, de la vitesse de déploiement des réseaux et de la capacité des chaînes d'approvisionnement, trois facteurs que le choc d'Ormuz affecte de manière ambivalente.
 
-### L'Inflation Reduction Act : accélération sous menace
+### L'Inflation Réduction Act : accélération sous menace
 
 L'IRA américain, adopté en 2022, a catalysé plus de 1 000 milliards de dollars d'investissements privés dans les technologies propres, dont 215 milliards dans l'énergie renouvelable et 184 milliards dans les véhicules électriques et les batteries, générant plus de 334 000 emplois[^23]. Mais le One Big Beautiful Bill Act, signé par l'administration Trump, a imposé des échéances contraignantes : les projets éoliens et solaires doivent désormais commencer leur construction avant le 4 juillet 2026 pour bénéficier des crédits d'impôt existants[^24]. L'IRA est donc en sursis, ce qui accélère paradoxalement les investissements à court terme car les développeurs anticipent la fermeture de la fenêtre. Le premier trimestre 2025 a vu 10,8 gigawatts de nouvelle capacité solaire connectée au réseau américain[^25].
 

@@ -14,11 +14,6 @@ draft: false
 theme: africa
 ---
 
-# Soudan : la guerre invisible et le dernier levier du G7
-
-**Centre d'analyse, de prévision et de stratégie — Note d'analyse**
-**29 mars 2026**
-
 Éric Kilama
 
 

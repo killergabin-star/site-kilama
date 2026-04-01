@@ -4,23 +4,16 @@ date: '2026-03-24'
 type: note
 tags:
 - apd
-- defense
-- reallocation
+- défense
+- réallocation
 - g7
 - spring-meetings
-- financement-developpement
+- financement-développement
 summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1
   milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les...
 status: ready
 draft: false
 theme: development
----
-
-# APD, défense et géopolitique : qui paie la réallocation ?
-
-**Note d'analyse** | 24 mars 2026
-
-
 ---
 
 ## Résumé analytique
@@ -29,9 +22,9 @@ L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes 
 
 ## Le déclin chiffré
 
-Les données préliminaires de l'OCDE pour 2024 confirment une inflexion qui dépasse la volatilité habituelle des flux d'aide. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, contre 223,7 milliards en 2023, soit une baisse de 7,1 % en termes réels. Ce chiffre agrégé masque des disparités considérables entre donateurs. Le Royaume-Uni concentre les réductions les plus massives en valeur absolue parmi les pays du G7, avec une contraction qui ramène son ratio APD/RNB en deçà de 0,5 % pour la première fois depuis l'adoption de la loi de 2015 sur les 0,7 %.[^2] Les États-Unis, premier contributeur en volume, maintiennent leur APD en apparence mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays, révélant une fragilité systémique que les chiffres annuels ne captent pas.
+Les données préliminaires de l'OCDE pour 2024 confirment une inflexion qui dépasse la volatilité habituelle des flux d'aide. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, contre 223,7 milliards en 2023, soit une baisse de 7,1 % en termes réels. Ce chiffre agrégé masque des disparités considérables entre donateurs. Le Royaume-Uni concentré les réductions les plus massives en valeur absolue parmi les pays du G7, avec une contraction qui ramène son ratio APD/RNB en deçà de 0,5 % pour la première fois depuis l'adoption de la loi de 2015 sur les 0,7 %.[^2] Les États-Unis, premier contributeur en volume, maintiennent leur APD en apparence mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays, révélant une fragilité systémique que les chiffres annuels ne captent pas.
 
-La décomposition sectorielle de la contraction est aussi significative que son amplitude. Les coûts d'accueil des réfugiés dans les pays donneurs, comptabilisés comme APD selon les règles du CAD, ont diminué mécaniquement avec la stabilisation des flux ukrainiens en Europe, ce qui explique une partie de la baisse apparente sans affecter les transferts réels vers les pays en développement. En revanche, l'aide programmable pays, qui mesure les flux effectivement disponibles pour les gouvernements récipiendaires, a poursuivi la stagnation observée depuis 2019. Le grant element moyen de l'APD continue de décliner au profit des prêts concessionnels et des garanties comptabilisées en équivalent-don, ce qui signifie que la contraction réelle des dons aux pays les moins avancés est plus sévère que les chiffres agrégés ne l'indiquent.[^3] Les PMA paient le prix le plus lourd, et les statistiques officielles le dissimulent.
+La décomposition sectorielle de la contraction est aussi significative que son amplitude. Les coûts d'accueil des réfugiés dans les pays donneurs, comptabilisés comme APD selon les règles du CAD, ont diminué mécaniquement avec la stabilisation des flux ukrainiens en Europe, ce qui explique une partie de la baisse apparente sans affecter les transferts réels vers les pays en développement. En revanche, l'aide programmable pays, qui mesure les flux effectivement disponibles pour les gouvernements récipiendaires, a poursuivi la stagnation observée depuis 2019. Le grant élément moyen de l'APD continue de décliner au profit des prêts concessionnels et des garanties comptabilisées en équivalent-don, ce qui signifie que la contraction réelle des dons aux pays les moins avancés est plus sévère que les chiffres agrégés ne l'indiquent.[^3] Les PMA paient le prix le plus lourd, et les statistiques officielles le dissimulent.
 
 ## Cyclique ou structurel ?
 
@@ -51,17 +44,17 @@ Le programme ReArm Europe, annoncé en février 2026, fixe un objectif de 800 mi
 
 Le mécanisme de transmission n'est pas budgétaire au sens strict mais politique. L'argument selon lequel chaque euro dépensé en aide au développement est un euro non dépensé en défense est factuellement inexact, puisque les deux postes sont financés par des lignes budgétaires distinctes, mais il est politiquement opérant. L'argument est faux. Il fonctionne quand même. Le Royaume-Uni a démontré que l'arbitrage explicite défense-développement est désormais acceptable dans le débat public des pays du G7, ce qui constitue un précédent que d'autres donateurs pourraient suivre.[^5]
 
-Pour la France, la tension est particulièrement aiguë. La présidence du G7 implique une responsabilité de leadership sur l'agenda du développement au moment précis où la loi de programmation militaire 2024-2030, qui prévoit 413 milliards d'euros, absorbe les marges de manœuvre budgétaires. L'AFD est confrontée à un modèle économique sous pression : la remontée des taux d'intérêt augmente le coût de son refinancement obligataire, tandis que la demande de dons pour les PMA entre en concurrence avec la logique de prêts concessionnels qui domine son portefeuille.
+Pour la France, la tension est particulièrement aiguë. La présidence du G7 implique une responsabilité de leadership sur l'agenda du développement au moment précis où la loi de programmation militaire 2024-2030, qui prévoit 413 milliards d'euros, absorbe les marges de manœuvre budgétaires. L'AFD est confrontée à un modèle économique sous pression : la remontée des taux d'intérêt augmente le coût de son refinancement obligataire, tandis que la demande de dons pour les PMA entre en concurrence avec la logique de prêts concessionnels qui dominé son portefeuille.
 
 ## L'alternative chinoise
 
 La contraction de l'APD occidentale intervient dans un contexte où la Chine a consolidé sa position de premier créancier bilatéral des pays en développement. Le surplus commercial chinois, estimé à 1 200 milliards de dollars, est partiellement recyclé vers les pays du Sud Global via la Belt and Road Initiative, les prêts bilatéraux et les investissements directs. Ces flux ne sont pas comptabilisés comme APD au sens du CAD, ce qui rend les comparaisons directes problématiques, mais ils remplissent une fonction analogue dans les pays récipiendaires : financement d'infrastructures, appui budgétaire de facto, et diversification des sources de financement.
 
-Le modèle chinois présente des vulnérabilités documentées : surendettement induit par la BRI (Sri Lanka, Zambie, Laos), clauses de collatéralisation sur les infrastructures critiques, et restructurations de dette plus longues et opaques que celles du Club de Paris. Dreher et al. (2018) ont montré que l'aide chinoise ODA répond principalement à des considérations de politique étrangère, tandis que les financements moins concessionnels suivent des logiques commerciales — un profil que les auteurs jugent « pas fondamentalement différent » de celui des donateurs occidentaux. La distinction la plus significative porte sur la sensibilité aux indicateurs de gouvernance, que les financements chinois ignorent davantage.[^9] Ces vulnérabilités ne diminuent cependant pas l'attractivité du modèle pour les pays récipiendaires, et ce pour une raison que le débat occidental sous-estime : la prévisibilité. La Chine n'a jamais gelé unilatéralement ses décaissements. Dans un système où la principale menace n'est pas le surcoût d'un prêt mais l'interruption brutale d'un programme de dons, la prévisibilité l'emporte sur la concessionnalité. Le gel de l'USAID a rendu cette hiérarchie des préférences explicite.[^6] La leçon est cruelle pour les donateurs traditionnels.
+Le modèle chinois présente des vulnérabilités documentées : surendettement induit par la BRI (Sri Lanka, Zambie, Laos), clauses de collatéralisation sur les infrastructures critiques, et restructurations de dette plus longues et opaques que celles du Club de Paris. Dreher et al. (2018) ont montré que l'aide chinoise ODA répond principalement à des considérations de politique étrangère, tandis que les financements moins concessionnels suivent des logiques commerciales — un profil que les auteurs jugent « pas fondamentalement différent » de celui des donateurs occidentaux. La distinction la plus significative porte sur la sensibilité aux indicateurs de gouvernance, que les financements chinois ignorent davantage.[^9] Ces vulnérabilités ne diminuent cependant pas l'attractivité du modèle pour les pays récipiendaires, et ce pour une raison que le débat occidental sous-estimé : la prévisibilité. La Chine n'a jamais gelé unilatéralement ses décaissements. Dans un système où la principale menace n'est pas le surcoût d'un prêt mais l'interruption brutale d'un programme de dons, la prévisibilité l'emporte sur la concessionnalité. Le gel de l'USAID a rendu cette hiérarchie des préférences explicite.[^6] La leçon est cruelle pour les donateurs traditionnels.
 
 ## Les angles morts du consensus
 
-Le rapport « Au-delà du consensus » identifie huit angles morts dans l'agenda du financement du développement tel qu'il s'est constitué après Séville et le Bridgetown Initiative.[^7] Plusieurs sont directement pertinents pour la question de la réallocation défense-développement.
+Le rapport « Au-delà du consensus » identifié huit angles morts dans l'agenda du financement du développement tel qu'il s'est constitué après Séville et le Bridgetown Initiative.[^7] Plusieurs sont directement pertinents pour la question de la réallocation défense-développement.
 
 Le plus immédiatement visible est la cannibalisation statistique de l'APD. La montée des prêts DFI, des garanties non appelées et du double-comptage climatique masque une contraction réelle des dons aux PMA. Un pays du G7 peut afficher une performance APD stable tout en ayant réduit ses transferts nets effectifs aux plus fragiles. Ce phénomène brouille le diagnostic : la contraction budgétaire réelle est plus sévère que ce que les chiffres agrégés laissent paraître, ce qui signifie que l'effet de la réallocation vers la défense est sous-estimé.
 
@@ -93,7 +86,7 @@ Le MEAE devrait initier, avant fin avril, un contact exploratoire avec la Commis
 
 [^2]: La loi britannique International Development (Official Development Assistance Target) Act 2015 fixait un objectif de 0,7 % du RNB. Le gouvernement a invoqué une clause dérogatoire liée aux circonstances fiscales exceptionnelles pour ramener temporairement l'objectif à 0,5 % en 2021, sans retour au niveau statutaire depuis.
 
-[^3]: Sur la décomposition de l'APD et le déclin du grant element, voir Kharas et Rogerson, « Horizon 2025: Creative Destruction in the Aid Industry », ODI, 2012, et les travaux plus récents de Alonso et Glennie, « What is Development Co-operation? », Development Policy Review, 2024.
+[^3]: Sur la décomposition de l'APD et le déclin du grant élément, voir Kharas et Rogerson, « Horizon 2025: Creative Destruction in the Aid Industry », ODI, 2012, et les travaux plus récents de Alonso et Glennie, « What is Development Co-operation? », Development Policy Review, 2024.
 
 [^4]: Sur la vulnérabilité systémique liée à la concentration des flux d'aide, voir Clemens et Moss, « The Ghost of 0.7 Per Cent », International Journal of Development Issues, 2007. Le gel de l'USAID en janvier 2025 a affecté des programmes dans 104 pays selon le Government Accountability Office.
 
@@ -105,8 +98,8 @@ Le MEAE devrait initier, avant fin avril, un contact exploratoire avec la Commis
 
 [^8]: Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025 ; Rodrik, « Servicing Development », *Journal of Business Strategy*, 2025.
 
-[^9]: Dreher et al., « Aid, China, and Growth: Evidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
+[^9]: Dreher et al., « Aid, China, and Growth: Évidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
 
-[^10]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025.
+[^10]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Évidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025.
 
 [^11]: Zucman, « Global Offshore Wealth 2001-2023 », 2025.

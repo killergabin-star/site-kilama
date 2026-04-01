@@ -17,17 +17,13 @@ theme: geoeconomics
 author: Eric Gabin Kilama
 ---
 
-# À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 Depuis la publication de cette note en novembre 2024, le régime de sanctions contre l'Iran a connu une escalade sans précédent. La crise de mars 2026 — tensions dans le détroit d'Ormuz, menaces iraniennes sur les flux pétroliers, renforcement des sanctions américaines et européennes — a mis en lumière les contradictions structurelles que l'analyse initiale identifiait. Cette actualisation examine ce qui a changé, ce qui a été confirmé, et les nouvelles questions que pose l'évolution de la coercition économique internationale.
 
 ## 1. L'escalade de mars 2026 : le détroit d'Ormuz comme levier
 
 La crise de mars 2026 a constitué un test grandeur nature de la capacité de dissuasion des sanctions. Face au renforcement des mesures restrictives américaines — extension des sanctions secondaires au secteur pétrochimique, ciblage des réseaux de transbordement maritime, gel d'actifs supplémentaires —, l'Iran a répondu en instrumentalisant sa position géographique. Les manœuvres navales dans le détroit d'Ormuz, par lequel transite environ 20 % du pétrole mondial, ont provoqué une hausse temporaire des cours du Brent et rappelé une réalité souvent occultée : les pays sanctionnés ne sont pas des acteurs passifs. Ils disposent de leviers de rétorsion asymétriques dont le coût potentiel dépasse celui des sanctions elles-mêmes.
 
-Cette dynamique confirme l'analyse de Pape (1997) sur l'inefficacité de la coercition économique face à des enjeux perçus comme existentiels par l'État ciblé. L'Iran considère les sanctions comme une menace à sa souveraineté, non comme une incitation à la négociation. Chaque escalade renforce le narratif nationaliste du régime et justifie le renforcement de l'appareil sécuritaire.
+Cette dynamique confirme l'analyse de Pape (1997) sur l'inefficacité de la coercition économique face à des enjeux perçus comme existentiels par l'État ciblé. L'Iran considère les sanctions comme une menace à sa souveraineté, non comme une incitation à la négociation. Chaque escalade renforcé le narratif nationaliste du régime et justifie le renforcement de l'appareil sécuritaire.
 
 ## 2. Le quatorzième paquet européen et les limites de la coordination transatlantique
 
@@ -47,7 +43,7 @@ Ces réseaux ne sont plus artisanaux. Ils constituent une infrastructure parall�
 
 ## 4. L'Iran intérieur : radicalisation et fragmentation sociale
 
-Les données socio-économiques disponibles confirment et aggravent le diagnostic de 2024. La classe moyenne iranienne continue de s'éroder. L'inflation, qui avait brièvement reflué après la stabilisation du taux de change en 2023, a de nouveau accéléré sous l'effet de la crise de mars 2026. Le rial a perdu 15 % de sa valeur en quelques semaines. Les prix alimentaires ont augmenté de manière disproportionnée, frappant les ménages les plus vulnérables.
+Les données socio-économiques disponibles confirment et aggravent le diagnostic de 2024. La classe moyenne iranienne continue de s'éroder. L'inflation, qui avait brièvement reflué après la stabilisation du taux de changé en 2023, a de nouveau accéléré sous l'effet de la crise de mars 2026. Le rial a perdu 15 % de sa valeur en quelques semaines. Les prix alimentaires ont augmenté de manière disproportionnée, frappant les ménages les plus vulnérables.
 
 Sur le plan politique, la dynamique observée dans l'analyse initiale s'est intensifiée. Les Gardiens de la Révolution ont consolidé leur emprise économique, contrôlant désormais une part estimée entre 20 % et 40 % de l'économie formelle (les estimations varient selon les sources, aucune n'étant indépendamment vérifiable). Les élections de 2024 — législatives de mars (participation ~41 %, un record de faiblesse) puis présidentielle de juillet après le décès de Raïssi — ont consacré la marginalisation des courants réformateurs. Les sanctions n'ont pas affaibli le régime ; elles ont affaibli ceux qui, au sein du système politique iranien, plaidaient pour l'ouverture et le dialogue.
 

@@ -12,14 +12,8 @@ summary: Les agendas chargés de l'automne 2024 — Assemblées annuelles de la 
   présidence brésilienne, COP29 à Bakou — offraient une fenêtre d'opportunité pour faire...
 status: ready
 draft: false
-theme: architecture-financiere
+theme: architecture-financière
 author: Eric Gabin Kilama
----
-
-# Accélération de la réforme de l'architecture financière internationale
-
-**Eric Gabin Kilama** | 15 septembre 2024 | erickilama.com
-
 ---
 
 ## Introduction : une fenêtre d'opportunité
@@ -62,7 +56,7 @@ L'articulation entre CDN et plans de financement nationaux est cruciale. Sans ce
 
 ### La Feuille de route du G20 pour la finance durable
 
-Le G20, qui représente 85 % du PIB mondial et 80 % des émissions de gaz à effet de serre, dispose d'un levier unique pour accélérer la réforme de l'architecture financière. Sa Feuille de route pour la finance durable, adoptée en 2021 sous présidence italienne et enrichie sous les présidences successives, identifie des actions concrètes pour aligner les flux financiers sur les objectifs climatiques.
+Le G20, qui représente 85 % du PIB mondial et 80 % des émissions de gaz à effet de serre, dispose d'un levier unique pour accélérer la réforme de l'architecture financière. Sa Feuille de route pour la finance durable, adoptée en 2021 sous présidence italienne et enrichie sous les présidences successives, identifié des actions concrètes pour aligner les flux financiers sur les objectifs climatiques.
 
 Mais cette feuille de route souffre d'un déficit de mise en œuvre et de suivi. Le développement d'un cadre de redevabilité indépendant, exhaustif et ambitieux est nécessaire pour évaluer les progrès dans la mise en œuvre des engagements pris par chaque membre du G20. Sans mécanisme de suivi crédible, les engagements du G20 restent des déclarations d'intention sans conséquence.
 

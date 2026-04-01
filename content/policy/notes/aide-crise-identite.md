@@ -12,14 +12,8 @@ summary: 'Conflits armés, changement climatique, surendettement souverain, boul
   convergentes mettent à l''épreuve la viabilité de l''industrie de l''aide au...'
 status: ready
 draft: false
-theme: developpement
+theme: développement
 author: Eric Gabin Kilama
----
-
-# L'industrie de l'aide est en crise d'identité
-
-**Eric Gabin Kilama** | 15 juin 2024 | erickilama.com
-
 ---
 
 ## Un système sous tensions multiples

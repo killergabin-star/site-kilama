@@ -5,16 +5,15 @@ type: note
 tags:
 - iran
 - moyen-orient
-- securite
+- sécurité
 - scenarios
-- defense
+- défense
 summary: Note analytique, 3 mars 2026
 status: ready
 draft: false
 theme: geopolitical
 ---
 
-# L'Iran sous les bombes : scénarios pour le Moyen-Orient et l'architecture de sécurité européenne
 Note analytique, 3 mars 2026
 
 
@@ -22,7 +21,7 @@ Note analytique, 3 mars 2026
 
 ## Résumé analytique
 
-Les opérations militaires américaines et israéliennes contre l'Iran, lancées aux alentours du 1er mars 2026, constituent la première campagne de frappes directes sur le territoire iranien par une puissance extérieure depuis la guerre Iran-Irak. C'est un seuil historique. L'assassinat de l'ayatollah Ali Khamenei le 28 février et l'incertitude successorale qui en découle introduisent une variable structurelle dont les implications dépassent le seul théâtre moyen-oriental. Cette note identifie plusieurs canaux de transmission du conflit vers les intérêts européens et français — prix de l'énergie, incertitude macroéconomique, reconfiguration des flux commerciaux — et propose quatre scénarios pour les quatre à huit semaines à venir. Le scénario central retient l'hypothèse d'un conflit contenu mais prolongé, sans mécanisme de sortie identifié à ce stade, avec un Brent durablement supérieur à 100 dollars le baril. La France, qui n'a pas participé aux frappes mais s'est engagée sur la protection des pays du Golfe, dispose d'une fenêtre étroite pour articuler une position européenne différenciée avant que la dynamique d'escalade ne réduise l'espace diplomatique. Cette fenêtre se referme vite.
+Les opérations militaires américaines et israéliennes contre l'Iran, lancées aux alentours du 1er mars 2026, constituent la première campagne de frappes directes sur le territoire iranien par une puissance extérieure depuis la guerre Iran-Irak. C'est un seuil historique. L'assassinat de l'ayatollah Ali Khamenei le 28 février et l'incertitude successorale qui en découle introduisent une variable structurelle dont les implications dépassent le seul théâtre moyen-oriental. Cette note identifié plusieurs canaux de transmission du conflit vers les intérêts européens et français — prix de l'énergie, incertitude macroéconomique, reconfiguration des flux commerciaux — et propose quatre scénarios pour les quatre à huit semaines à venir. Le scénario central retient l'hypothèse d'un conflit contenu mais prolongé, sans mécanisme de sortie identifié à ce stade, avec un Brent durablement supérieur à 100 dollars le baril. La France, qui n'a pas participé aux frappes mais s'est engagée sur la protection des pays du Golfe, dispose d'une fenêtre étroite pour articuler une position européenne différenciée avant que la dynamique d'escalade ne réduise l'espace diplomatique. Cette fenêtre se referme vite.
 
 ---
 
@@ -30,7 +29,7 @@ Les opérations militaires américaines et israéliennes contre l'Iran, lancées
 
 Les premières frappes du CENTCOM sur les infrastructures militaires iraniennes ont débuté dans la nuit du 28 février au 1er mars 2026, en coordination apparente avec des opérations israéliennes. Plusieurs centaines de cibles ont été frappées en quarante-huit heures : installations du Corps des Gardiens de la révolution islamique, dépôts d'armement, centres de commandement, sites nucléaires.[^1]
 
-L'assassinat de l'ayatollah Ali Khamenei, confirmé le 28 février, prive le régime de son arbitre suprême. Le vide est vertigineux. Mojtaba Khamenei, fils du Guide défunt, est le successeur le plus probable, mais sa confirmation formelle n'est pas encore intervenue. Son profil — liens organiques avec le CGRI, absence de mandat électif, réputation d'intransigeance — laisse présager une marge de manœuvre diplomatique réduite.[^2]
+L'assassinat de l'ayatollah Ali Khamenei, confirmé le 28 février, privé le régime de son arbitre suprême. Le vide est vertigineux. Mojtaba Khamenei, fils du Guide défunt, est le successeur le plus probable, mais sa confirmation formelle n'est pas encore intervenue. Son profil — liens organiques avec le CGRI, absence de mandat électif, réputation d'intransigeance — laisse présager une marge de manœuvre diplomatique réduite.[^2]
 
 Le Brent est passé de 86 dollars le baril à plus de 95 dollars au matin du 3 mars, intégrant une prime de risque de 10 à 15 dollars -- l'indice GPR de Caldara et Iacoviello, qui mesure l'intensité de la couverture médiatique des tensions géopolitiques, enregistre un pic comparable à celui de février 2022.[^3] Des mouvements de la marine iranienne ont été signalés dans le détroit d'Ormuz sans blocage effectif à ce stade, mais l'hypothèse d'une restriction du transit constitue le risque le plus immédiat pour les économies européennes.[^3bis]
 

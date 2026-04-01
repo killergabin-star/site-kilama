@@ -5,33 +5,24 @@ type: brief
 tags:
 - apd
 - g7
-- financement-developpement
+- financement-développement
 - spring-meetings
-- reformes
+- réformes
 summary: '*Based on the report "Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement"*'
 status: ready
 draft: false
 theme: development
 ---
 
-# Development Finance at a Crossroads: What the G7 Must Do Before Évian
-
-**Policy Brief for the IMF-World Bank Spring Meetings, April 13-18 2026**
-
-*Eric Kilama*
-*Based on the report "Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement"*
-
----
-
 ## En bref
 
-L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024. Les projections de l'OCDE pour 2025 anticipent une contraction de 9 à 17 %, la plus sévère depuis les coupes des années 1990. Ce déclin intervient dans un contexte de réarmement européen (ReArm Europe, 800 milliards d'euros), de pression fiscale liée au conflit iranien, et de fragmentation institutionnelle révélée par le gel de l'USAID. Ce n'est pas un ajustement. C'est un changement de régime. Le présent policy brief identifie les angles morts prioritaires du consensus et propose deux recommandations phares que l'Union européenne et la présidence française du G7 peuvent porter dès les Spring Meetings, avant le sommet d'Évian de juin 2026.
+L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024. Les projections de l'OCDE pour 2025 anticipent une contraction de 9 à 17 %, la plus sévère depuis les coupes des années 1990. Ce déclin intervient dans un contexte de réarmement européen (ReArm Europe, 800 milliards d'euros), de pression fiscale liée au conflit iranien, et de fragmentation institutionnelle révélée par le gel de l'USAID. Ce n'est pas un ajustement. C'est un changement de régime. Le présent policy brief identifié les angles morts prioritaires du consensus et propose deux recommandations phares que l'Union européenne et la présidence française du G7 peuvent porter dès les Spring Meetings, avant le sommet d'Évian de juin 2026.
 
 ---
 
 ## Le diagnostic : un système en contraction et en crise de confiance
 
-Les Spring Meetings d'avril 2026 s'ouvrent dans un contexte inéditement défavorable pour l'agenda du financement du développement. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, soit 0,33 % du RNB combiné, en baisse de 7,1 % en termes réels par rapport à 2023. Le webinaire de données de l'OCDE du 9 avril — quatre jours avant l'ouverture des Spring Meetings — confirmera les chiffres 2025, qui pourraient marquer le recul le plus important en trois décennies. Le Royaume-Uni concentre les réductions les plus massives en valeur absolue. Les États-Unis maintiennent leur APD en apparence, mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays.
+Les Spring Meetings d'avril 2026 s'ouvrent dans un contexte inéditement défavorable pour l'agenda du financement du développement. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, soit 0,33 % du RNB combiné, en baisse de 7,1 % en termes réels par rapport à 2023. Le webinaire de données de l'OCDE du 9 avril — quatre jours avant l'ouverture des Spring Meetings — confirmera les chiffres 2025, qui pourraient marquer le recul le plus important en trois décennies. Le Royaume-Uni concentré les réductions les plus massives en valeur absolue. Les États-Unis maintiennent leur APD en apparence, mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays.
 
 Ce déclin n'est pas conjoncturel. Plusieurs facteurs structurels le distinguent des épisodes précédents de contraction.
 
@@ -45,11 +36,11 @@ Enfin, l'**érosion du consensus normatif** autour de l'objectif de 0,7 % du RNB
 
 ## Angles morts prioritaires
 
-Le rapport « Au-delà du consensus » identifie huit angles morts dans l'agenda post-Bridgetown. Les suivants sont particulièrement actionnables dans le cadre des Spring Meetings et du cycle G7 2026.
+Le rapport « Au-delà du consensus » identifié huit angles morts dans l'agenda post-Bridgetown. Les suivants sont particulièrement actionnables dans le cadre des Spring Meetings et du cycle G7 2026.
 
 ### La cannibalisation statistique de l'APD
 
-La montée des prêts DFI, des garanties non appelées et du double-comptage climatique dans les statistiques APD masque une contraction réelle des transferts nets vers les pays les moins avancés. Le grant element moyen de l'APD continue de décliner au profit des prêts concessionnels et des garanties comptabilisées en équivalent-don. Un pays du G7 peut afficher une performance APD stable tout en ayant réduit ses dons effectifs aux PMA de 15 à 20 % en termes réels. Les chiffres agrégés rassurent ; la décomposition par instrument et par groupe de revenu des bénéficiaires révèle une réalité différente. La contraction de 7,1 % en 2024 est elle-même un sous-estimateur : elle inclut des instruments qui ne constituent pas des transferts de ressources vers les pays en développement. Dreher et al. (2017, 2025) ont montré que l'efficacité de l'aide dépend de sa composition, de son ciblage et de sa fragmentation entre donateurs — un constat qui rend la cannibalisation statistique doublement problématique, puisqu'elle obscurcit précisément les indicateurs de qualité.[^2]
+La montée des prêts DFI, des garanties non appelées et du double-comptage climatique dans les statistiques APD masque une contraction réelle des transferts nets vers les pays les moins avancés. Le grant élément moyen de l'APD continue de décliner au profit des prêts concessionnels et des garanties comptabilisées en équivalent-don. Un pays du G7 peut afficher une performance APD stable tout en ayant réduit ses dons effectifs aux PMA de 15 à 20 % en termes réels. Les chiffres agrégés rassurent ; la décomposition par instrument et par groupe de revenu des bénéficiaires révèle une réalité différente. La contraction de 7,1 % en 2024 est elle-même un sous-estimateur : elle inclut des instruments qui ne constituent pas des transferts de ressources vers les pays en développement. Dreher et al. (2017, 2025) ont montré que l'efficacité de l'aide dépend de sa composition, de son ciblage et de sa fragmentation entre donateurs — un constat qui rend la cannibalisation statistique doublement problématique, puisqu'elle obscurcit précisément les indicateurs de qualité.[^2]
 
 L'implication pour les Spring Meetings est directe. Le débat sur les volumes d'APD qui se tiendra dans les couloirs du Comité du développement le 17 avril reposera sur des chiffres agrégés qui dissimulent la réalité de l'allocation. Sans un indicateur de transfert net par groupe de revenu des bénéficiaires — distinguant PMA, pays à revenu intermédiaire bas, et revenus intermédiaires supérieurs — toute discussion sur les volumes est un exercice de fiction comptable.
 
@@ -71,7 +62,7 @@ L'AfCFTA crée un marché continental de 3 400 milliards de dollars et 1,4 milli
 
 ### Proposition 1 : un G7 Transparency Pact lancé aux Spring Meetings
 
-La France, en tant que présidente du G7, peut présenter aux Spring Meetings un Transparency Pact dont l'architecture est la suivante. Chaque pays du G7 s'engage à un reporting exhaustif et désagrégé de tous ses flux de financement du développement — APD, Other Official Flows, prêts et prises de participation DFI, garanties appelées et non appelées, contributions aux fonds climatiques — avec une décomposition par instrument, pays bénéficiaire, groupe de revenu, secteur et conditionnalités. Un standard unique de reporting, aligné sur IATI mais avec vérification indépendante et publication trimestrielle, remplace l'auto-certification actuelle. Un Development Finance Scoreboard annuel compare la performance de chaque pays G7 sur les indicateurs qui comptent : ratio APD/RNB effectif, grant element moyen, part des PMA, écart entre annonces et décaissements, part de l'investissement productif dans les allocations, et score genre.
+La France, en tant que présidente du G7, peut présenter aux Spring Meetings un Transparency Pact dont l'architecture est la suivante. Chaque pays du G7 s'engage à un reporting exhaustif et désagrégé de tous ses flux de financement du développement — APD, Other Official Flows, prêts et prises de participation DFI, garanties appelées et non appelées, contributions aux fonds climatiques — avec une décomposition par instrument, pays bénéficiaire, groupe de revenu, secteur et conditionnalités. Un standard unique de reporting, aligné sur IATI mais avec vérification indépendante et publication trimestrielle, remplace l'auto-certification actuelle. Un Development Finance Scoreboard annuel compare la performance de chaque pays G7 sur les indicateurs qui comptent : ratio APD/RNB effectif, grant élément moyen, part des PMA, écart entre annonces et décaissements, part de l'investissement productif dans les allocations, et score genre.
 
 La faisabilité politique de cette proposition est élevée. Le coût budgétaire est nul. La pression de pairs qu'elle crée est immédiate. La France, dont la performance APD est au-dessus de la médiane G7 (autour de 0,5 % du RNB), n'a rien à perdre à la transparence. Le moment politique est idéal : la publication des données APD 2025 le 9 avril créera une onde de choc médiatique que la France peut canaliser en proposant un instrument qui rend les coupes silencieuses impossibles et les engagements mesurables. La Commission européenne et l'OCDE/CAD sont les interlocuteurs naturels pour l'opérationnalisation.
 
@@ -85,7 +76,7 @@ La faisabilité est moyenne. Les actionnaires des BMD résisteront à toute cont
 
 ## La position française au G7 d'Évian
 
-La France se trouve dans une position singulière. En tant que présidente du G7, elle porte la responsabilité de l'agenda de développement au moment où ses propres arbitrages défense-développement sont les plus tendus. La loi de programmation militaire 2024-2030 prévoit 413 milliards d'euros. L'AFD est confrontée à un modèle économique sous pression : la remontée des taux d'intérêt augmente le coût de son refinancement obligataire, tandis que la demande de dons pour les PMA entre en concurrence avec la logique de prêts concessionnels qui domine son portefeuille.
+La France se trouve dans une position singulière. En tant que présidente du G7, elle porte la responsabilité de l'agenda de développement au moment où ses propres arbitrages défense-développement sont les plus tendus. La loi de programmation militaire 2024-2030 prévoit 413 milliards d'euros. L'AFD est confrontée à un modèle économique sous pression : la remontée des taux d'intérêt augmente le coût de son refinancement obligataire, tandis que la demande de dons pour les PMA entre en concurrence avec la logique de prêts concessionnels qui dominé son portefeuille.
 
 Mais cette tension est aussi un levier de crédibilité. Un pays qui porte un agenda de réforme du financement du développement tout en assumant une hausse de ses dépenses de défense envoie un signal différent de celui d'un pays qui réduit son APD pour financer sa défense. La France peut articuler une position qui refuse le faux dilemme défense-développement : les deux postes répondent à des menaces de nature différente qui s'alimentent mutuellement — la contraction de l'aide dans les pays fragiles alimente les flux migratoires et l'instabilité que les budgets de défense prétendent gérer. Ce n'est pas de la rhétorique. C'est de la comptabilité stratégique.
 
@@ -122,13 +113,13 @@ Le troisième pilier de la position française à Évian doit être le Nairobi P
 
 ---
 
-[^1]: Dreher et al., « Aid, China, and Growth: Evidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Banking on Beijing », 2022. Pour un traitement plus large des flux chinois en Afrique, voir Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
+[^1]: Dreher et al., « Aid, China, and Growth: Évidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Banking on Beijing », 2022. Pour un traitement plus large des flux chinois en Afrique, voir Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
 
 [^2]: Dreher et al., « When Aid Misses Target », 2025 ; Dreher et al., « Aid Fragmentation and Effectiveness », 2017.
 
 [^3]: Zucman, « Global Offshore Wealth 2001-2023 », 2025.
 
-[^4]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025. Voir aussi Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.
+[^4]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Évidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025. Voir aussi Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.
 
 [^5]: Fontagne, « Greening the AfCFTA », 2024.
 

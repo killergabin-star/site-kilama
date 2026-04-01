@@ -13,14 +13,8 @@ summary: Depuis la publication de notre analyse en mai 2025 sur les leviers dipl
   l'engagement international en Haïti, plusieurs développements significatifs ont...
 status: ready
 draft: false
-theme: securite
+theme: sécurité
 author: Eric Gabin Kilama
----
-
-# Haïti : l'initiative mémorielle française à l'épreuve des faits
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Introduction
@@ -47,7 +41,7 @@ Les développements récents renforcent sa pertinence. La Chine a poursuivi ses 
 
 ### Le conseil présidentiel de transition : entre paralysie et contestation
 
-Le conseil présidentiel de transition, mis en place en 2024 pour piloter la sortie de crise, n'a pas réussi à construire le consensus national nécessaire à la reconstruction institutionnelle. Les conflits internes entre ses membres — représentant des factions politiques aux intérêts divergents — ont paralysé la prise de décision. L'objectif d'organiser des élections, initialement fixé à 2025, a été repoussé sine die. L'absence d'un calendrier électoral crédible prive le processus de transition de toute perspective de légitimation démocratique.
+Le conseil présidentiel de transition, mis en place en 2024 pour piloter la sortie de crise, n'a pas réussi à construire le consensus national nécessaire à la reconstruction institutionnelle. Les conflits internes entre ses membres — représentant des factions politiques aux intérêts divergents — ont paralysé la prise de décision. L'objectif d'organiser des élections, initialement fixé à 2025, a été repoussé sine die. L'absence d'un calendrier électoral crédible privé le processus de transition de toute perspective de légitimation démocratique.
 
 La société civile haïtienne, qui avait porté l'Accord de Montana comme alternative au cadre institutionnel défaillant, est de plus en plus marginalisée. Les organisations qui avaient participé aux consultations de 2021 constatent que leurs recommandations n'ont pas été intégrées dans le processus de transition. Cette marginalisation est d'autant plus regrettable que la société civile constitue le seul réservoir de légitimité locale dans un contexte où les partis politiques et les institutions étatiques ont perdu la confiance de la population.
 

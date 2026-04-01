@@ -3,7 +3,7 @@ title: 'ReArm Europe et SAFE : l''Europe peut-elle se réarmer sans les États-U
 date: '2026-03-17'
 type: note
 tags:
-- defense
+- défense
 - rearm-europe
 - safe
 - otan
@@ -13,10 +13,8 @@ tags:
 summary: Éric Kilama[^1]
 status: ready
 draft: false
-theme: defense
+theme: défense
 ---
-
-# ReArm Europe et SAFE : l'Europe peut-elle se réarmer sans les États-Unis ?
 
 ## Le paradoxe industriel, le précédent budgétaire et la question nucléaire
 
@@ -55,7 +53,7 @@ L'accélération est aussi fragile : un cessez-le-feu en Ukraine réduirait la p
 
 Le mécanisme SAFE est le deuxième instrument de dette commune européenne après NextGenerationEU, et cette filiation est instructive. NextGenEU était justifié par une situation exceptionnelle — la pandémie — et présenté comme temporaire et non reproductible. SAFE rompt avec cette logique en institutionnalisant la dette commune dans un domaine, la défense, qui relève explicitement de la souveraineté nationale au titre de l'article 346 du traité sur le fonctionnement de l'Union européenne[^4]. Le paradoxe constitutionnel est patent : l'Union emprunte collectivement pour financer des achats que chaque État pourrait, en vertu du traité, soustraire à toute régulation européenne. Cette incohérence n'est pas un détail juridique. Elle est au cœur du problème.
 
-[^4]: L'article 346 TFUE permet à tout État membre de prendre les mesures qu'il estime nécessaires à la protection de ses intérêts essentiels de sécurité, en particulier pour le commerce d'armes, de munitions et de matériel de guerre.
+[^4]: L'article 346 TFUE permet à tout État membre de prendre les mesures qu'il estimé nécessaires à la protection de ses intérêts essentiels de sécurité, en particulier pour le commerce d'armes, de munitions et de matériel de guerre.
 
 L'architecture de SAFE reproduit par ailleurs les faiblesses de gouvernance de NextGenEU. La Commission cumule les fonctions d'émettrice de dette, d'allocataire des fonds et de contrôleur du respect des conditions — une confusion des rôles qui affaiblit la crédibilité de la conditionnalité. Les premiers investissements approuvés, 38 milliards d'euros pour huit États membres, l'ont été sans publication des critères d'allocation, ce qui ne permet pas d'évaluer l'effectivité de la clause de préférence européenne à ce stade.
 
@@ -79,7 +77,7 @@ Les raisons sont structurelles, pas circonstancielles. L'interopérabilité OTAN
 
 Alesina et Spolaore (2006) montrent que les dépenses de défense et la taille des nations sont co-déterminées, et que la fragmentation politique génère une duplication des coûts de défense qui est l'exact analogue, au niveau étatique, de la fragmentation industrielle européenne[^8b]. La conséquence dynamique est importante : SAFE sans consolidation industrielle est non seulement inefficient mais potentiellement inflationniste.
 
-[^8b]: Alesina, A. et Spolaore, E. (2006). « Conflict, Defense Spending, and the Number of Nations. »
+[^8b]: Alesina, A. et Spolaore, E. (2006). « Conflict, Défense Spending, and the Number of Nations. »
 
 La conséquence dynamique est directe : si l'instrument stimule la demande tout en maintenant la fragmentation de l'offre, les coûts unitaires ne baisseront pas — ils risquent d'augmenter, parce que SAFE finance des séries de production dupliquées à échelle sous-optimale dans vingt-sept marchés nationaux. L'élasticité d'échelle est le warrant quantitatif pour faire de la consolidation industrielle une condition préalable au décaissement des fonds SAFE, et non un objectif parallèle. Conditionner d'abord. Décaisser ensuite.
 
@@ -87,7 +85,7 @@ La conséquence dynamique est directe : si l'instrument stimule la demande tout 
 
 ## 4. La doctrine nucléaire : la proposition Macron
 
-La publication de la National Defense Strategy américaine 2026 a modifié les termes du débat européen de manière durable. Le document abandonne explicitement la priorité européenne au profit d'une posture de sécurité hémisphérique, et l'analyse de Harvard qualifie cette rupture de « greatest transatlantic rupture since 1945 »[^9]. La formulation est significative : il ne s'agit plus d'un désengagement progressif mais d'une réorientation doctrinale formalisée, dans laquelle le président Trump est cité quarante-sept fois — un degré de personnalisation sans précédent dans un document de stratégie nationale.
+La publication de la National Défense Strategy américaine 2026 a modifié les termes du débat européen de manière durable. Le document abandonne explicitement la priorité européenne au profit d'une posture de sécurité hémisphérique, et l'analyse de Harvard qualifie cette rupture de « greatest transatlantic rupture since 1945 »[^9]. La formulation est significative : il ne s'agit plus d'un désengagement progressif mais d'une réorientation doctrinale formalisée, dans laquelle le président Trump est cité quarante-sept fois — un degré de personnalisation sans précédent dans un document de stratégie nationale.
 
 [^9]: La NDS 2026 a été publiée le 23 janvier 2026. L'analyse de Harvard à laquelle il est fait référence porte sur les implications stratégiques du « burden-shifting » — par opposition au traditionnel « burden-sharing » — pour l'architecture de sécurité transatlantique.
 
@@ -101,7 +99,7 @@ En Allemagne, la proposition se heurte à une culture stratégique construite de
 
 ## 5. La fragilité de la base industrielle : les PME de la BITD
 
-L'ensemble des instruments déployés — ReArm Europe, SAFE, LEAP, clause dérogatoire — organise une augmentation massive de la demande de défense adressée à une base industrielle dont la fragilité est désormais documentée. Le Trésor-Éco n° 360 (Alvarez et al., 2025) montre que les PME de la BITD française affichent des marges et une capitalisation inférieures à la moyenne industrielle[^10]. Les travaux conduits sur le panel ECB SAFE (337 000 entreprises, 12 pays) confirment et étendent ce résultat : les PME industrielles européennes ne répercutent que 17,6 % de la hausse de leurs coûts géopolitiques, contre 40 % pour les grandes entreprises[^11]. L'absorption des chocs dans les marges, et non dans les prix, est le mécanisme par lequel les PME maintiennent leurs parts de marché à court terme au prix d'une érosion de leur capacité d'investissement à moyen terme.
+L'ensemble des instruments déployés — ReArm Europe, SAFE, LEAP, clause dérogatoire — organisé une augmentation massive de la demande de défense adressée à une base industrielle dont la fragilité est désormais documentée. Le Trésor-Éco n° 360 (Alvarez et al., 2025) montre que les PME de la BITD française affichent des marges et une capitalisation inférieures à la moyenne industrielle[^10]. Les travaux conduits sur le panel ECB SAFE (337 000 entreprises, 12 pays) confirment et étendent ce résultat : les PME industrielles européennes ne répercutent que 17,6 % de la hausse de leurs coûts géopolitiques, contre 40 % pour les grandes entreprises[^11]. L'absorption des chocs dans les marges, et non dans les prix, est le mécanisme par lequel les PME maintiennent leurs parts de marché à court terme au prix d'une érosion de leur capacité d'investissement à moyen terme.
 
 [^10]: Alvarez et al. (2025). « Les PME de la BITD française. » *Trésor-Éco*, n° 360, DG Trésor/MinArm.
 [^11]: Kilama, E. G. (2026). « La fragilité par la base : les PME européennes face aux risques géopolitiques. » Policy Brief IFRI, février 2026.
@@ -128,7 +126,7 @@ La Commission européenne devrait réformer la gouvernance de SAFE en séparant 
 
 L'Agence européenne de défense devrait piloter un programme de consolidation industrielle séquencée, en commençant par le procurement conjoint volontaire pour les items non sensibles (munitions, logistique, équipements d'entraînement) dès 2027, avec extension progressive aux systèmes d'armes à partir de 2030, et assortir les décaissements SAFE d'un plancher de 15 % de R&D réinvestie dans la base industrielle européenne, conformément aux multiplicateurs estimés par Moretti, Steinwender et Van Reenen (2025)[^12] et Antolin-Diaz et Surico (2025)[^13].
 
-[^12]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025). « Intellectual Spoils of War? Defense R&D, Productivity, and International Spillovers. » *Review of Economic Studies* (à paraître). Les auteurs estiment un crowding-in de +0,5 % de la R&D privée par point de R&D militaire.
+[^12]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025). « Intellectual Spoils of War? Défense R&D, Productivity, and International Spillovers. » *Review of Economic Studies* (à paraître). Les auteurs estiment un crowding-in de +0,5 % de la R&D privée par point de R&D militaire.
 [^13]: Antolin-Diaz, J. et Surico, P. (2025). « Long-Run Effects of Government Spending. » *American Economic Review* (à paraître). Multiplicateur de la dépense militaire estimé entre 1,7 et 2,0 sur un horizon de quinze ans.
 
 ---

@@ -12,14 +12,8 @@ summary: À six ans de l'échéance de l'Agenda 2030, les pays à revenu faible 
   de dollars par an pour investir dans la santé, les infrastructures, la...
 status: ready
 draft: false
-theme: architecture-financiere
+theme: architecture-financière
 author: Eric Gabin Kilama
----
-
-# Banques de développement : de la correction des marchés à leur transformation
-
-**Eric Gabin Kilama** | 10 juillet 2024 | erickilama.com
-
 ---
 
 ## Introduction : un déficit de financement colossal
@@ -38,7 +32,7 @@ Les travaux de la Banque mondiale elle-même confirment ce diagnostic. Un docume
 
 La critique va plus loin. Daniela Gabor (2021) montre que l'approche par le dérisquage — le « consensus de Wall Street » — menace les progrès vers les ODD en contraignant l'espace budgétaire des pays en développement, en exacerbant la volatilité des flux financiers et en détournant l'attention politique de la transformation structurelle de long terme vers les rendements de court terme pour les investisseurs privés. Le dérisquage, dans cette analyse, n'est pas un instrument neutre : il restructure les relations entre États et marchés financiers au bénéfice de ces derniers.
 
-Plus fondamentalement, le principal obstacle à l'investissement privé dans les pays les plus pauvres n'est pas l'absence de projets « investissables » mais le coût du capital. Un projet d'infrastructure identique coûte deux à trois fois plus cher à financer en Afrique subsaharienne qu'en Europe, en raison de primes de risque souvent déconnectées des fondamentaux économiques. Les BPD disposent d'un avantage comparatif spécifique pour réduire ce différentiel — prêts en monnaie locale, garanties de change, rehaussement de crédit. Cet instrument de réduction du coût du capital est distinct du dérisquage et de l'approche par les missions ; il devrait constituer une priorité opérationnelle immédiate.
+Plus fondamentalement, le principal obstacle à l'investissement privé dans les pays les plus pauvres n'est pas l'absence de projets « investissables » mais le coût du capital. Un projet d'infrastructure identique coûte deux à trois fois plus cher à financer en Afrique subsaharienne qu'en Europe, en raison de primes de risque souvent déconnectées des fondamentaux économiques. Les BPD disposent d'un avantage comparatif spécifique pour réduire ce différentiel — prêts en monnaie locale, garanties de changé, rehaussement de crédit. Cet instrument de réduction du coût du capital est distinct du dérisquage et de l'approche par les missions ; il devrait constituer une priorité opérationnelle immédiate.
 
 ## Les limites du paradigme de la défaillance de marché
 
@@ -46,7 +40,7 @@ La perspective standard de la « défaillance de marché » fournit une justific
 
 Ce paradigme pose trois problèmes fondamentaux lorsqu'il est appliqué au financement du développement.
 
-**Premièrement, il est conservateur par nature.** En définissant le rôle de l'État comme correctif des imperfections du marché, il exclut la possibilité que l'État crée de nouveaux marchés, oriente l'investissement vers des secteurs stratégiques ou façonne activement la trajectoire de développement d'une économie. Or, l'histoire économique montre que les transformations structurelles réussies — de l'industrialisation allemande au XIXe siècle au miracle est-asiatique au XXe — ont reposé sur des interventions publiques qui allaient bien au-delà de la simple correction des défaillances de marché (Chang, 2002).
+**Premièrement, il est conservateur par nature.** En définissant le rôle de l'État comme correctif des imperfections du marché, il exclut la possibilité que l'État crée de nouveaux marchés, orienté l'investissement vers des secteurs stratégiques ou façonne activement la trajectoire de développement d'une économie. Or, l'histoire économique montre que les transformations structurelles réussies — de l'industrialisation allemande au XIXe siècle au miracle est-asiatique au XXe — ont reposé sur des interventions publiques qui allaient bien au-delà de la simple correction des défaillances de marché (Chang, 2002).
 
 **Deuxièmement, il présuppose que le marché est l'état normal.** Les marchés financiers dans les pays en développement ne sont pas des marchés efficients affectés par quelques imperfections corrigeables : ce sont des marchés incomplets, fragmentés, dominés par quelques acteurs et souvent incapables de financer des investissements de long terme. La correction des défaillances de marché n'a pas de sens lorsque le marché lui-même reste à construire.
 
@@ -74,7 +68,7 @@ Cinq éléments structurent cette approche.
 
 Un élément fondamental distingue l'approche par les missions du paradigme de dérisquage : la conditionnalité attachée au soutien public. La politique de développement peut s'inspirer des politiques industrielles vertes récentes dans les économies avancées.
 
-Le CHIPS and Science Act américain, par exemple, assortit ses 52,7 milliards de dollars de subventions de conditions portant sur le partage des bénéfices, la limitation des rachats d'actions et la protection des travailleurs. L'Inflation Reduction Act conditionne les crédits d'impôt au respect de normes salariales et de contenu local. Le mécanisme d'ajustement carbone aux frontières de l'Union européenne lie l'accès au marché européen au contenu carbone des produits importés.
+Le CHIPS and Science Act américain, par exemple, assortit ses 52,7 milliards de dollars de subventions de conditions portant sur le partage des bénéfices, la limitation des rachats d'actions et la protection des travailleurs. L'Inflation Réduction Act conditionne les crédits d'impôt au respect de normes salariales et de contenu local. Le mécanisme d'ajustement carbone aux frontières de l'Union européenne lie l'accès au marché européen au contenu carbone des produits importés.
 
 Appliquée aux BPD, cette logique implique que les conditions de réciprocité déterminent des partenariats équitables et orientent la finance publique et privée vers des résultats inclusifs et durables. Les prises de participation dans les entreprises bénéficiaires, les clauses de partage des profits, les exigences en matière de création d'emplois locaux et de transfert de technologie sont autant de mécanismes permettant de s'assurer que le soutien public génère des retombées pour les bénéficiaires ultimes — les citoyens des pays en développement — et pas seulement pour les investisseurs privés.
 
@@ -94,9 +88,9 @@ L'approche par les missions ne doit pas être comprise comme une prescription de
 
 **Un renforcement des capacités étatiques** pour la planification stratégique, la coordination des politiques et la gestion de projets complexes. L'approche par les missions est exigeante en capacités institutionnelles : elle suppose des administrations capables de définir des priorités stratégiques, de coordonner des acteurs multiples et de suivre des programmes sur plusieurs décennies. Dans de nombreux pays en développement, ces capacités font défaut et doivent être construites — un investissement que les BPD elles-mêmes pourraient contribuer à financer.
 
-**Une mobilisation de la finance privée alignée sur les missions**, via des conditionnalités de politique industrielle, l'utilisation créative des marchés publics et de nouveaux instruments financiers. La mobilisation du secteur privé reste un objectif, mais elle change de nature : il ne s'agit plus de dérisquer des investissements existants mais de créer les conditions dans lesquelles de nouveaux investissements deviennent viables et rentables.
+**Une mobilisation de la finance privée alignée sur les missions**, via des conditionnalités de politique industrielle, l'utilisation créative des marchés publics et de nouveaux instruments financiers. La mobilisation du secteur privé reste un objectif, mais elle changé de nature : il ne s'agit plus de dérisquer des investissements existants mais de créer les conditions dans lesquelles de nouveaux investissements deviennent viables et rentables.
 
-**Une gestion des risques macro-financiers**, incluant la maîtrise des flux de capitaux, l'orientation de la finance vers l'investissement productif et le maintien de l'espace budgétaire. L'approche par les missions est vulnérable aux mêmes risques macro-financiers que toute stratégie d'investissement public ambitieuse : cycles de capitaux, chocs de taux d'intérêt, crises de change. Une gestion prudente de ces risques est indispensable.
+**Une gestion des risques macro-financiers**, incluant la maîtrise des flux de capitaux, l'orientation de la finance vers l'investissement productif et le maintien de l'espace budgétaire. L'approche par les missions est vulnérable aux mêmes risques macro-financiers que toute stratégie d'investissement public ambitieuse : cycles de capitaux, chocs de taux d'intérêt, crises de changé. Une gestion prudente de ces risques est indispensable.
 
 **La démocratisation de la finance du développement**, avec des mécanismes de participation citoyenne, de transparence et de redevabilité. Les missions ne peuvent être définies par les seules élites technocratiques : elles doivent refléter les priorités des populations bénéficiaires, ce qui suppose des processus de consultation et de délibération inclusifs.
 

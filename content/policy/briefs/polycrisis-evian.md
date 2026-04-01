@@ -16,8 +16,6 @@ draft: false
 theme: polycrisis
 ---
 
-# Polycrisis 2026 : ce que le G7 d'Évian peut encore faire
-
 ## Policy Brief
 
 
@@ -63,7 +61,7 @@ Le seul scénario qui ne se réalise pas par défaut est le Sursaut. Il requiert
 
 ## Trois catégories de stratégies robustes
 
-L'approche *Robust Decision Making* prescrit de privilégier les stratégies qui performent raisonnablement bien dans l'ensemble des scénarios plutôt que celles qui optimisent un scénario particulier. Trois catégories se dégagent.
+L'approche *Robust Décision Making* prescrit de privilégier les stratégies qui performent raisonnablement bien dans l'ensemble des scénarios plutôt que celles qui optimisent un scénario particulier. Trois catégories se dégagent.
 
 ### Stratégies « no regret »
 
@@ -125,7 +123,7 @@ La proposition concrète : un paquet humanitaire de 3 milliards de dollars sur 1
 
 ## Les signposts : surveiller pour anticiper
 
-Le cadre DAPP (*Decision-making under Deep Uncertainty with Adaptation Pathways and Policy signposts*) prescrit l'identification de signaux observables dont le franchissement déclenche la réévaluation des options politiques. Cinq indicateurs prioritaires méritent un suivi quotidien ou hebdomadaire.
+Le cadre DAPP (*Décision-making under Deep Uncertainty with Adaptation Pathways and Policy signposts*) prescrit l'identification de signaux observables dont le franchissement déclenche la réévaluation des options politiques. Cinq indicateurs prioritaires méritent un suivi quotidien ou hebdomadaire.
 
 | Signpost | Seuil d'alerte | Seuil critique | Fréquence |
 |----------|:--------------:|:--------------:|:---------:|
@@ -143,7 +141,7 @@ Sept signposts complémentaires (écart Brent-WTI, volume des réexportations d'
 
 ## Le piège de l'ambition calibrée
 
-Le sommet d'Évian concentre un paradoxe diplomatique classique, aggravé par les circonstances. Un sommet trop ambitieux qui échoue à produire des résultats concrets confirmerait l'impuissance du G7 et accélérerait le scénario de Découplage Ordonné — c'est-à-dire la marginalisation de l'Europe dans un ordre bilatéral sino-américain. Un sommet trop modeste qui sécurise des résultats marginaux signalerait que le dernier forum de coordination des économies avancées a perdu sa capacité de réponse aux chocs systémiques.
+Le sommet d'Évian concentré un paradoxe diplomatique classique, aggravé par les circonstances. Un sommet trop ambitieux qui échoue à produire des résultats concrets confirmerait l'impuissance du G7 et accélérerait le scénario de Découplage Ordonné — c'est-à-dire la marginalisation de l'Europe dans un ordre bilatéral sino-américain. Un sommet trop modeste qui sécurise des résultats marginaux signalerait que le dernier forum de coordination des économies avancées a perdu sa capacité de réponse aux chocs systémiques.
 
 La présidence française dispose de trois atouts. La crédibilité diplomatique acquise par la médiation sur l'Iran (suspension conditionnelle de mars 2026). La capacité de lier les enjeux commerciaux et sécuritaires dans un *package* cohérent — ce que ni l'Allemagne ni le Royaume-Uni ne peuvent faire seuls. Et la temporalité : Évian sera le premier G7 post-NDS 2026, le premier après l'audience SCOTUS sur l'IEEPA, le premier après le sommet Trump-Xi. Chacun de ces jalons aura clarifié le périmètre du négociable.
 
@@ -157,7 +155,7 @@ La trajectoire optimale est celle des résultats limités mais réels. Un mécan
 
 [^2]: Acemoglu, D. et al. (2015). « Networks, Shocks, and Systemic Risk », *American Economic Review*. Gopinath, G. et al. (2024). « Banking, Trade, and the Making of a Dominant Currency », *Quarterly Journal of Economics*.
 
-[^3]: Jordà, O., Schularick, M. et Taylor, A.M. (2016). « Sovereigns versus Banks: Credit, Crises, and Consequences ». Les multiplicateurs *state-dependent* 1,7-2,3 sont calibrés sur ces estimations, ajustées à la configuration 2026.
+[^3]: Jordà, O., Schularick, M. et Taylor, A.M. (2016). « Sovereigns versus Banks: Credit, Crises, and Conséquences ». Les multiplicateurs *state-dependent* 1,7-2,3 sont calibrés sur ces estimations, ajustées à la configuration 2026.
 
 [^4]: Maggiori, M., Neiman, B. et Schreger, J. (2021). « Redrawing the Map of Global Capital Flows », *Quarterly Journal of Economics*.
 

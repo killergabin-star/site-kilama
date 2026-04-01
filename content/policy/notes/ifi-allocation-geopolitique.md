@@ -17,17 +17,11 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# L'allocation géopolitique des IFI : quand les données confirment le soupçon
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## Introduction
 
 Le soupçon est aussi vieux que les institutions elles-mêmes. Depuis la création du Fonds monétaire international et de la Banque mondiale à Bretton Woods en 1944, les pays en développement contestent l'impartialité de l'allocation des ressources multilatérales. Pendant longtemps, cette contestation relevait du registre politique. Désormais, elle dispose d'une base empirique substantielle.
 
-En 2026, deux publications du World Inequality Lab de l'École d'économie de Paris ont transformé un grief politique en fait documenté. Paula Druschke et Gastón Nievas ont publié un document de travail intitulé « The Global Democratic Deficit: Institutional Asymmetries and the Provision of Global Public Goods », démontrant qu'environ 70 % des prêts de la Banque mondiale et 67 % de ceux du FMI vont à des pays géopolitiquement alignés sur le G7[^1]. Parallèlement, le *Rapport sur les inégalités mondiales 2026* — coordonné par Lucas Chancel, Ricardo Gómez-Carrera, Rowaida Moshrif et Thomas Piketty — consacre un chapitre entier au « privilège exorbitant » des économies avancées, documentant des transferts nets annuels des pays pauvres vers les pays riches équivalant à trois fois le montant de l'aide publique au développement[^2].
+En 2026, deux publications du World Inequality Lab de l'École d'économie de Paris ont transformé un grief politique en fait documenté. Paula Druschke et Gastón Nievas ont publié un document de travail intitulé « The Global Democratic Déficit: Institutional Asymmetries and the Provision of Global Public Goods », démontrant qu'environ 70 % des prêts de la Banque mondiale et 67 % de ceux du FMI vont à des pays géopolitiquement alignés sur le G7[^1]. Parallèlement, le *Rapport sur les inégalités mondiales 2026* — coordonné par Lucas Chancel, Ricardo Gómez-Carrera, Rowaida Moshrif et Thomas Piketty — consacre un chapitre entier au « privilège exorbitant » des économies avancées, documentant des transferts nets annuels des pays pauvres vers les pays riches équivalant à trois fois le montant de l'aide publique au développement[^2].
 
 Cette note analyse ces résultats, les situe dans le contexte institutionnel de 2026 — entre le *Compromiso de Sevilla* issu de la FfD4, la reconstitution record d'IDA-21, la 17e révision des quotes-parts du FMI et la montée des alternatives institutionnelles — et en tire les implications pour la position française au G7 d'Évian.
 
@@ -123,7 +117,7 @@ Les comparaisons avec les institutions alternatives sont tirées de sources publ
 
 ---
 
-[^1]: P. Druschke et G. Nievas, « The Global Democratic Deficit: Institutional Asymmetries and the Provision of Global Public Goods », World Inequality Lab Working Paper 2026/06.
+[^1]: P. Druschke et G. Nievas, « The Global Democratic Déficit: Institutional Asymmetries and the Provision of Global Public Goods », World Inequality Lab Working Paper 2026/06.
 [^2]: L. Chancel, R. Gómez-Carrera, R. Moshrif et T. Piketty (dir.), *Rapport sur les inégalités mondiales 2026*, World Inequality Lab, 2025. Chapitre « Exorbitant Privilege ».
 [^3]: Druschke et Nievas (2026), op. cit. La base couvre la Société des Nations, l'ONU et ses agences (OMS, OMC, OIT, UNESCO), les institutions de Bretton Woods, l'Union européenne et les banques régionales de développement.
 [^4]: Ibid. Les « pays alignés sur le G7 » sont définis selon une métrique composite intégrant les votes à l'Assemblée générale de l'ONU.
@@ -136,22 +130,22 @@ Les comparaisons avec les institutions alternatives sont tirées de sources publ
 [^11]: A. Alesina et D. Dollar, « Who Gives Foreign Aid to Whom and Why? », *Journal of Economic Growth*, vol. 5, n° 1, 2000, p. 33-63.
 [^12]: A. Dreher, J.-E. Sturm et J. R. Vreeland, « Global Horse Trading: IMF Loans for Votes in the United Nations Security Council », *European Economic Review*, vol. 53, n° 7, 2009, p. 742-757.
 [^13]: Ibid. L'effet est robuste à différentes spécifications et résiste aux tests de placebo.
-[^14]: A. Dreher, J.-E. Sturm et J. R. Vreeland, « Development Aid and International Politics: Does Membership on the UN Security Council Influence World Bank Decisions? », *Journal of Development Economics*, vol. 88, n° 1, 2009, p. 1-18.
+[^14]: A. Dreher, J.-E. Sturm et J. R. Vreeland, « Development Aid and International Politics: Does Membership on the UN Security Council Influence World Bank Décisions? », *Journal of Development Economics*, vol. 88, n° 1, 2009, p. 1-18.
 [^15]: A. Dreher, V. Eichenauer et K. Gehring, « Geopolitics, Aid, and Growth: The Impact of UN Security Council Membership on the Effectiveness of Aid », *The World Bank Economic Review*, vol. 32, n° 2, 2018, p. 268-286.
 [^16]: T. Forster, A. Kentikelenis, B. Reinsberg et T. Stubbs, « How structural adjustment programs affect inequality: A disaggregated analysis of IMF conditionality, 1980-2014 », *Social Science Research*, 2019.
 [^17]: A. Kentikelenis et T. Stubbs, « The IMF, Structural Adjustment, and Poverty: A Cross-National Difference-in-Differences Analysis, 1980-2019 », *Journal of Development Studies*, 2026.
 [^18]: ONU, « Fourth International Conference on Financing for Development delivers renewed hope and action for sustainable development », communiqué de presse, juillet 2025.
-[^19]: Center for Economic and Social Rights, « Building blocks for change: Reflections on FfD4 and the Compromiso de Sevilla », juillet 2025.
+[^19]: Center for Economic and Social Rights, « Building blocks for changé: Reflections on FfD4 and the Compromiso de Sevilla », juillet 2025.
 [^20]: Bretton Woods Project, « Fourth International Conference on Financing for Development exposes continued lack of commitment to address systemic issues », juillet 2025.
 [^21]: Banque mondiale, « World Bank Group Announces Record $100 Billion IDA Replenishment », communiqué de presse, 5 décembre 2024.
-[^22]: Ibid. et Center for Global Development, « IDA Prevails, Others Flail—and What Recent Replenishments Portend for 2025 », décembre 2024.
+[^22]: Ibid. et Center for Global Development, « IDA Prevails, Others Flail—and What Récent Replenishments Portend for 2025 », décembre 2024.
 [^23]: Center for Global Development, op. cit.
 [^24]: Global Development Policy Center, « A Challenging Imperative: IMF Reform, the 17th Quota Review and Increasing Voice and Representation for Developing Countries », avril 2025.
-[^25]: FMI, « IMF Board of Governors Approves Quota Increase Under 16th General Review Quotas », décembre 2023.
+[^25]: FMI, « IMF Board of Governors Approves Quota Increase Under 16th Général Review Quotas », décembre 2023.
 [^26]: Atlantic Council, « Understanding the debate over IMF quota reform », 2025.
 [^27]: Tricontinental Institute for Social Research, « The Global North Has Nine Times More Voting Power at the IMF Than the Global South », 10e newsletter, 2025.
 [^28]: AIIB, rapports annuels 2024-2025. L'AIIB est la deuxième banque de développement la plus multilatérale par le nombre de membres, derrière la Banque mondiale.
-[^29]: Green Finance & Development Center, données compilées 2018-2024 ; Tandfonline, « Partners and rivals? The AIIB's cooperation with preexisting multilateral development banks », 2025.
+[^29]: Green Finance & Development Center, données compilées 2018-2024 ; Tandfonline, « Partners and rivals? The AIIB's cooperation with preexisting multilatéral development banks », 2025.
 [^30]: Green Finance & Development Center, « China Belt and Road Initiative (BRI) Investment Report 2025 H1 ».
 [^31]: Ibid. L'augmentation en Afrique reflète une relance des engagements après le ralentissement pandémique.
 [^32]: Radio Free Asia, « Developing nations face 'tidal wave' of debt repayments to China in 2025 », mai 2025. Banque mondiale, comparaison des modalités de prêt, 2024.

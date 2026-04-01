@@ -15,13 +15,6 @@ draft: false
 theme: iran
 ---
 
-# La crise iranienne finance la guerre russe : implications pour la présidence française du G7
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 ### Synthèse
 
 L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a pas encore nommé. La crise que Washington a déclenchée pour empêcher l'Iran d'accéder à l'arme nucléaire génère un choc pétrolier qui accroît les revenus d'exportation russes de 0,8 à 9 milliards de dollars selon la durée de la fermeture d'Ormuz — prolongeant la guerre en Ukraine que les États-Unis prétendent vouloir terminer. Les alliés paient deux fois : à la pompe et sur le champ de bataille. La France, présidente du G7, dispose d'un levier de cadrage pour inscrire cette contradiction dans le communiqué et créer une pression systémique en faveur d'une résolution rapide. La fenêtre est étroite : dix à quinze jours avant que la divergence d'intérêts entre Moscou et Téhéran ne se referme.
@@ -46,11 +39,11 @@ La fermeture d'Ormuz bénéficie à la Russie par trois canaux distincts, de nat
 
 **Le canal pétrolier est immédiat et quantifiable.** C'est le mécanisme le plus direct : chaque dollar supplémentaire sur le Brent accroît les revenus d'exportation russes d'environ 100 millions de dollars par mois (sur la base de 7,4 Mb/j d'exports totaux de pétrole et produits pétroliers). La décomposition structurelle de Kilian (2009, AER) permet de classer ce choc : offre pure, sans composante de demande agrégée, ce qui en fait le type de choc aux effets macroéconomiques les plus récessionnaires pour les importateurs. Le rétrécissement du discount Urals amplifie l'effet — l'Inde, premier acheteur de brut russe, achète aujourd'hui à un prix plus proche du marché mondial qu'il ne l'a été depuis deux ans.
 
-Pour les alliés, la facture est symétrique et inversée. Le surcoût d'importation annualisé pour l'Union européenne atteint 99 milliards de dollars dans le scénario central (Brent à 100 $) ; pour la France seule, 12 milliards, auxquels s'ajoutent 0,5 à 2 milliards d'effet de change si l'euro faiblit face au dollar[^5].
+Pour les alliés, la facture est symétrique et inversée. Le surcoût d'importation annualisé pour l'Union européenne atteint 99 milliards de dollars dans le scénario central (Brent à 100 $) ; pour la France seule, 12 milliards, auxquels s'ajoutent 0,5 à 2 milliards d'effet de changé si l'euro faiblit face au dollar[^5].
 
 **Le canal GNL et engrais est différé et conditionnel.** Le Qatar exporte 106 milliards de mètres cubes de GNL par an — premier rang mondial — dont une part croissante alimente l'Europe depuis la rupture avec le gaz russe. Si Ormuz reste fermé au-delà de deux semaines, l'Europe se retrouve en situation de double vulnérabilité énergétique — pétrole *et* gaz — sans le coussin des pipelines alternatifs, dont les capacités sont déjà saturées. La Russie redevient fournisseur de dernier recours, exactement la dépendance que l'UE a passé quatre ans à démanteler. Le Qatar représente par ailleurs 11 % de la production mondiale d'urée ; un choc sur les prix des engrais se transmet, à horizon de six mois, en insécurité alimentaire dans les pays les plus vulnérables — le mécanisme documenté par le FMI après l'invasion de l'Ukraine en 2022.
 
-**Le canal diplomatique est qualitatif mais structurant.** Moscou se positionne comme l'interlocuteur indispensable de la crise — le seul acteur qui parle à la fois à Téhéran et à Washington. Chaque jour de crise prolongée renforce cette position et offre à Poutine la légitimité internationale qu'il cherche depuis l'isolement de 2022. Le processus trilatéral de Genève sur l'Ukraine est au point mort, et personne n'en parle — c'est précisément le détournement d'attention que Moscou recherche.
+**Le canal diplomatique est qualitatif mais structurant.** Moscou se positionne comme l'interlocuteur indispensable de la crise — le seul acteur qui parle à la fois à Téhéran et à Washington. Chaque jour de crise prolongée renforcé cette position et offre à Poutine la légitimité internationale qu'il cherche depuis l'isolement de 2022. Le processus trilatéral de Genève sur l'Ukraine est au point mort, et personne n'en parle — c'est précisément le détournement d'attention que Moscou recherche.
 
 **En somme** : la Russie est le bénéficiaire net de chaque cascade déclenchée par la fermeture d'Ormuz — pétrolière, gazière, alimentaire, diplomatique. Les perdants nets sont l'Union européenne (surcoût énergétique et dilemme monétaire), les importateurs asiatiques (Inde, Japon, Corée du Sud), et à terme l'Afrique subsaharienne (engrais et sécurité alimentaire). L'Arabie Saoudite, dont l'équilibre budgétaire se situe à 80-85 dollars le baril (FMI, REO octobre 2025), bénéficie également — ce qui en fait un allié incertain de la résolution rapide.
 
@@ -78,7 +71,7 @@ Un aspect sous-estimé de la crise est son effet sur la politique monétaire eur
 
 #### La fenêtre de timing
 
-Un facteur de pression supplémentaire joue en faveur de la résolution rapide. L'opération Epic Fury a été lancée sans autorisation du Congrès ; aux termes du War Powers Resolution (1973), l'administration dispose de 60 jours — soit fin avril 2026 — pour obtenir cette autorisation ou retirer ses forces. Cette échéance constitutionnelle crée une pression structurelle intégrable dans le calcul de timing.
+Un facteur de pression supplémentaire joue en faveur de la résolution rapide. L'opération Epic Fury a été lancée sans autorisation du Congrès ; aux termes du War Powers Résolution (1973), l'administration dispose de 60 jours — soit fin avril 2026 — pour obtenir cette autorisation ou retirer ses forces. Cette échéance constitutionnelle crée une pression structurelle intégrable dans le calcul de timing.
 
 Par ailleurs, la divergence d'intérêts entre Moscou et Téhéran sur le *timing* de la crise — Moscou veut la prolongation, Téhéran a besoin d'une résolution rapide avant que le triumvirat au pouvoir ne se disloque — n'est exploitable que dans la fenêtre actuelle (J+5 à J+15). Au-delà de J+15-J+20, le risque est double : l'IRGC marginalise les pragmatiques iraniens, et la Russie consolide son rôle de médiateur. Les intérêts convergent à nouveau, et le levier disparaît.
 
@@ -151,7 +144,7 @@ La fenêtre est courte. Au-delà de J+15, la divergence Russie-Iran se résorbe 
 
 *UE importe ~10 Mb/j. France ~1,2 Mb/j. Calcul : volume x hausse prix x 365.*
 
-**Effet de change** : si l'EUR/USD se déprécie de 5 à 10 % (mouvement typique des épisodes de stress géopolitique), surcoût additionnel de 0,5-2 Mds $ pour la France.
+**Effet de changé** : si l'EUR/USD se déprécie de 5 à 10 % (mouvement typique des épisodes de stress géopolitique), surcoût additionnel de 0,5-2 Mds $ pour la France.
 
 **Réserves stratégiques** : stocks OCDE à 88 jours de couverture (sept. 2025, AIE), sous le seuil d'alerte de 90 jours. SPR américaine à ~400 M barils. À 20 Mb/j de déficit, les réserves ne couvrent que 35-40 jours.
 
@@ -187,7 +180,7 @@ La fenêtre est courte. Au-delà de J+15, la divergence Russie-Iran se résorbe 
 
 **Couverture presse** : AP/ABC/US News (4 mars) ; Bloomberg (3 mars) ; Washington Times (4 mars) ; Chatham House (mars) ; IPS Journal (mars) ; FDD (2 mars) ; BusinessToday India (1-5 mars).
 
-**Institutions** : FMI, Regional Economic Outlook (oct. 2025) ; AIE, Oil Market Report (2025).
+**Institutions** : FMI, Régional Economic Outlook (oct. 2025) ; AIE, Oil Market Report (2025).
 
 ---
 
@@ -195,5 +188,5 @@ La fenêtre est courte. Au-delà de J+15, la divergence Russie-Iran se résorbe 
 [^2]: Kilian, Rapson & Schipper (2024, CEPR). En 2022, l'élargissement du discount reflétait la stigmatisation du brut russe — phénomène de demande. Ici, c'est la rareté de l'offre alternative — phénomène d'offre. Mécanismes opposés, trajectoires de prix inversées.
 [^3]: Calculs détaillés en Annexe technique A2. Les fourchettes reflètent principalement l'incertitude sur la réponse OPEP+ et l'hypothèse de volume d'export constant.
 [^4]: Sur la règle budgétaire russe et le Fonds national de bien-être : le surplus pétrolier au-dessus du prix plancher (~60 $/baril en 2026) alimente le NWF avant d'être disponible pour les dépenses courantes. Le lien revenus-dépenses militaires est réel mais différé et non-linéaire.
-[^5]: UE importe ~10 Mb/j, France ~1,2 Mb/j. Calcul : volume x hausse prix x 365. Effet de change typique des épisodes de stress géopolitique : dépréciation EUR/USD de 5-10 %.
+[^5]: UE importe ~10 Mb/j, France ~1,2 Mb/j. Calcul : volume x hausse prix x 365. Effet de changé typique des épisodes de stress géopolitique : dépréciation EUR/USD de 5-10 %.
 [^6]: Bernanke & Blanchard (2023), « What Caused the US Pandemic-Era Inflation? », NBER WP 31417. La décomposition montre que le resserrement monétaire face à un choc d'offre ne traite pas la source de l'inflation — il aggrave la composante récessionnaire.

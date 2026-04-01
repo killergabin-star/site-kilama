@@ -5,28 +5,22 @@ type: note
 tags:
 - Haiti
 - Kenya
-- securite
+- sécurité
 - intervention internationale
 - Caraïbes
 summary: La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un
   geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels...
 status: ready
 draft: false
-theme: securite
+theme: sécurité
 author: Eric Gabin Kilama
----
-
-# 1 100 Kenyans ne sauveront pas Haïti
-
-**Eric Gabin Kilama** | 10 mars 2024 | erickilama.com
-
 ---
 
 ## Le pari kényan : une mission sous-dimensionnée face à l'ampleur de la crise
 
 La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels d'Haïti. Avec environ 1 100 agents de sécurité kényans, auxquels s'ajoutent quelques centaines de policiers des Bahamas, de la Jamaïque et d'Antigua-et-Barbuda, la force déployée fait face à un écosystème criminel estimé à 15 000 à 30 000 membres armés. Les gangs contrôlent plus de 85 % de Port-au-Prince, ont tué près de 3 000 personnes depuis 2022, enlevé 1 300 habitants et forcé plus de 360 000 personnes à fuir leur domicile (OIM, mars 2024).
 
-Le déséquilibre des forces est patent. À titre de comparaison, la MINUSTAH — la mission de stabilisation de l'ONU qui a opéré en Haïti de 2004 à 2017 — a compté jusqu'à 12 000 personnels militaires et policiers, et n'est pourtant pas parvenue à éradiquer les structures criminelles ni à construire un appareil sécuritaire national viable. La police nationale haïtienne, forte de 9 000 agents théoriques mais dont la capacité opérationnelle effective est bien inférieure, reste sous-équipée, partiellement corrompue et intimidée par les groupes armés. L'appui d'un contingent étranger réduit ne change pas fondamentalement cette équation.
+Le déséquilibre des forces est patent. À titre de comparaison, la MINUSTAH — la mission de stabilisation de l'ONU qui a opéré en Haïti de 2004 à 2017 — a compté jusqu'à 12 000 personnels militaires et policiers, et n'est pourtant pas parvenue à éradiquer les structures criminelles ni à construire un appareil sécuritaire national viable. La police nationale haïtienne, forte de 9 000 agents théoriques mais dont la capacité opérationnelle effective est bien inférieure, reste sous-équipée, partiellement corrompue et intimidée par les groupes armés. L'appui d'un contingent étranger réduit ne changé pas fondamentalement cette équation.
 
 La Mission multinationale d'appui à la sécurité (MMAS), autorisée par la résolution 2699 du Conseil de sécurité sous chapitre VII de la Charte des Nations Unies, n'est cependant pas une opération de maintien de la paix onusienne : elle ne bénéficie ni du financement, ni de la chaîne de commandement, ni des capacités logistiques d'une mission de casques bleus. Son mandat — soutenir la police haïtienne — et ses moyens restent en deçà de ce qu'exige la confrontation avec des organisations criminelles lourdement armées et profondément enracinées.
 

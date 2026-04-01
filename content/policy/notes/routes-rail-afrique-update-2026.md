@@ -17,12 +17,6 @@ theme: afrique
 author: Eric Gabin Kilama
 ---
 
-# Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
----
-
 ## Introduction
 
 Depuis notre analyse de septembre 2024 sur les investissements optimaux en infrastructures de transport en Afrique, le paysage a significativement évolué. Trois développements structurent la nouvelle donne : l'avancée du corridor de Lobito sous impulsion américaine, la montée en puissance de la ZLECAf avec l'entrée en vigueur progressive des concessions tarifaires, et l'intensification de la compétition géopolitique entre les États-Unis, la Chine et l'Union européenne pour le financement des infrastructures continentales. Cette note actualise le cadre analytique proposé en 2024 et en tire les implications pour la politique d'infrastructure africaine.
@@ -53,7 +47,7 @@ Le corridor de Lobito illustre trois points centraux de notre analyse de 2024. P
 
 La ZLECAf a franchi une étape significative avec le début des échanges sous le régime de concessions tarifaires entre les États membres ayant achevé leurs négociations bilatérales. Bien que les volumes restent modestes — l'essentiel du commerce intra-africain continue de se faire sous les régimes des communautés économiques régionales préexistantes —, le signal politique est important : pour la première fois, un cadre continental de libéralisation commerciale est opérationnel.
 
-Cette avancée renforce la pertinence de notre analyse sur le coût des frictions transfrontalières. Si la ZLECAf parvient à réduire significativement les barrières tarifaires et non tarifaires, la demande de transport intra-africain augmentera mécaniquement, rendant plus urgente la modernisation des corridors et la réduction des temps de passage aux frontières. Selon les projections de la Banque mondiale, la pleine mise en œuvre de l'accord pourrait augmenter le commerce intra-africain de 52 % d'ici 2035.
+Cette avancée renforcé la pertinence de notre analyse sur le coût des frictions transfrontalières. Si la ZLECAf parvient à réduire significativement les barrières tarifaires et non tarifaires, la demande de transport intra-africain augmentera mécaniquement, rendant plus urgente la modernisation des corridors et la réduction des temps de passage aux frontières. Selon les projections de la Banque mondiale, la pleine mise en œuvre de l'accord pourrait augmenter le commerce intra-africain de 52 % d'ici 2035.
 
 ### Les postes-frontières à guichet unique : des progrès inégaux
 

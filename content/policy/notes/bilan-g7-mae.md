@@ -15,13 +15,6 @@ draft: false
 theme: geopolitical
 ---
 
-# Bilan G7 MAE Vaux-de-Cernay : la désescalade conditionnelle comme doctrine française
-
-**Note d'analyse** | 29 mars 2026
-
-
----
-
 ## Résumé analytique
 
 La première réunion ministérielle des Affaires étrangères du G7 sous présidence française, tenue les 26 et 27 mars 2026 à l'abbaye de Vaux-de-Cernay, a révélé une reconfiguration significative des rapports de force au sein du club. L'échec du secrétaire d'État Rubio à obtenir un soutien allié explicite pour la campagne contre l'Iran, conjugué à la déclaration allemande selon laquelle « ce n'est pas la guerre de l'OTAN », dessine un espace stratégique que la diplomatie française a commencé à occuper. La posture choisie — la désescalade conditionnelle — est un pari calculé. La formulation retenue dans le communiqué final — dont les éléments cités dans cette note proviennent de la version transmise aux postes le 27 mars — celle de « préoccupation partagée » plutôt que d'endossement explicite, constitue un précédent diplomatique dont la portée dépasse la seule question iranienne : elle installe la possibilité d'un différentiel transatlantique assumé au sein même du format G7. Pour la France, à six mois du sommet des chefs d'État d'Évian, la question n'est plus de savoir si ce différentiel est souhaitable mais s'il peut être institutionnalisé en doctrine opérationnelle.
@@ -72,7 +65,7 @@ La question qui se pose pour Évian est celle du passage de la tactique à la do
 
 La présidence française du G7 entre dans sa phase décisive avec un atout inattendu : le différentiel transatlantique révélé à Vaux-de-Cernay offre à Paris un rôle de pivot que la diplomatie française n'avait plus occupé depuis le refus de la guerre d'Irak en 2003. Mais l'analogie a ses limites : en 2003, la France s'opposait frontalement à Washington dans une logique de véto ; en 2026, elle propose une alternative qui maintient le cadre collectif tout en refusant l'escalade. Cette nuance est fondamentale pour la suite.
 
-La préparation d'Évian concentre désormais les enjeux. Le plus urgent : consolider la coalition européenne de désescalade. La déclaration allemande, si elle n'est pas suivie d'une coordination franco-allemande explicite, restera une posture isolée — et Washington sait traiter les postures isolées. Vient ensuite l'articulation entre registres sécuritaire et économique, condition de crédibilité auprès des partenaires du Sud invités à Évian. Sans cette cohérence, la désescalade conditionnelle n'est qu'un slogan.[^6] Reste la gestion du calendrier : entre mars et juin, les dynamiques sur le terrain iranien, ukrainien et soudanais évolueront, et la doctrine de désescalade conditionnelle devra démontrer sa capacité d'adaptation sans perte de cohérence.
+La préparation d'Évian concentré désormais les enjeux. Le plus urgent : consolider la coalition européenne de désescalade. La déclaration allemande, si elle n'est pas suivie d'une coordination franco-allemande explicite, restera une posture isolée — et Washington sait traiter les postures isolées. Vient ensuite l'articulation entre registres sécuritaire et économique, condition de crédibilité auprès des partenaires du Sud invités à Évian. Sans cette cohérence, la désescalade conditionnelle n'est qu'un slogan.[^6] Reste la gestion du calendrier : entre mars et juin, les dynamiques sur le terrain iranien, ukrainien et soudanais évolueront, et la doctrine de désescalade conditionnelle devra démontrer sa capacité d'adaptation sans perte de cohérence.
 
 [^6]: Dario Caldara et Matteo Iacoviello, « Geopolitical Risks Raise or Lower Inflation? », *Journal of International Economics*, 2026, quantifient les canaux de transmission du risque géopolitique à l'inflation et à l'activité économique -- un cadre directement applicable à la gestion du risque Ormuz. Voir aussi Pierre-Olivier Gourinchas, « Safe Assets, the Dollar, and Geopolitics », *Journal of International Economics*, 2023, sur le rôle des actifs sûrs dans un contexte de fragmentation géopolitique.
 
@@ -95,6 +88,6 @@ Le conseiller diplomatique du Président devrait intégrer dans la préparation 
 
 [^2]: Voir Dani Rodrik, « Rethinking Global Governance », 2025, sur les limites de la gouvernance restreinte. Voir aussi Matteo Maggiori, « A Framework for Geoeconomics », *Econometrica*, 2026, et Matteo Maggiori, « Putting Economics Back in Geoeconomics », *NBER Macroeconomics Annual*, 2025, sur la théorisation des rapports de force économiques dans les enceintes internationales.
 
-[^3]: Arvind Subramanian et Martin Kessler ont documenté ce qu'ils appellent le « credibility gap » des économies avancées dans les institutions de Bretton Woods, un phénomène transposable aux enceintes de gouvernance sécuritaire. Sur la politique commerciale comme vecteur de crédibilité internationale, voir Donaldson, Adao, Becko et Costinot, « A World Trading System For Whom? Evidence from Global Tariffs », 2024, et Dani Rodrik, « The New Global Order », 2025.
+[^3]: Arvind Subramanian et Martin Kessler ont documenté ce qu'ils appellent le « credibility gap » des économies avancées dans les institutions de Bretton Woods, un phénomène transposable aux enceintes de gouvernance sécuritaire. Sur la politique commerciale comme vecteur de crédibilité internationale, voir Donaldson, Adao, Becko et Costinot, « A World Trading System For Whom? Évidence from Global Tariffs », 2024, et Dani Rodrik, « The New Global Order », 2025.
 
 [^4]: Charles Kindleberger, *The World in Depression, 1929-1939*, University of California Press, 1973, rééd. 2013, sur la nécessité d'un leadership hégémonique compatible avec les institutions multilatérales.

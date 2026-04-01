@@ -17,10 +17,6 @@ theme: commerce
 author: Eric Gabin Kilama
 ---
 
-# Politique commerciale de l'UE et géopolitique : les défis de la nouvelle Commission
-
-**Eric Gabin Kilama** | 15 novembre 2024 | erickilama.com
-
 L'Union européenne a multiplié les instruments commerciaux unilatéraux pour se repositionner dans un environnement de compétition géoéconomique accrue, au moment où la crise climatique s'accélère. Cette reconfiguration, si elle répond à des impératifs légitimes de sécurité économique et de transition environnementale, risque d'aliéner les pays en développement et de compromettre les partenariats dont l'UE a besoin pour peser dans la gouvernance mondiale. L'analyse qui suit examine cette tension à travers la typologie des instruments déployés, leur impact différencié et leurs implications pour la politique extérieure européenne.
 
 ## 1. La prolifération des instruments géoéconomiques européens
@@ -53,7 +49,7 @@ Le risque est que la prolifération des instruments unilatéraux érode cette di
 
 ## 4. La cohérence des politiques au service du développement : un principe en recul
 
-Le Traité de Lisbonne engage l'UE à assurer la cohérence de ses politiques avec les objectifs de développement (article 208 TFUE). Ce principe de « Policy Coherence for Development » (PCD) a longtemps été un marqueur de l'identité internationale européenne. L'analyse de la nouvelle génération d'instruments commerciaux suggère que ce principe perd en substance.
+Le Traité de Lisbonne engage l'UE à assurer la cohérence de ses politiques avec les objectifs de développement (article 208 TFUE). Ce principe de « Policy Cohérence for Development » (PCD) a longtemps été un marqueur de l'identité internationale européenne. L'analyse de la nouvelle génération d'instruments commerciaux suggère que ce principe perd en substance.
 
 La tension est structurelle, non accidentelle. L'UE poursuit simultanément des objectifs qui, dans certaines configurations, sont contradictoires : protéger sa base industrielle, sécuriser ses chaînes d'approvisionnement, accélérer la transition climatique, et maintenir des partenariats avec les pays en développement. Lorsque ces objectifs entrent en conflit — et le CBAM, le règlement déforestation et la CSDDD illustrent ces conflits —, la cohérence développementale tend à être sacrifiée.
 

@@ -14,7 +14,6 @@ draft: false
 theme: geopolitical
 ---
 
-# Iran J+29 : trois lectures d'une pause prolongée
 Note analytique, 29 mars 2026
 
 
@@ -72,7 +71,7 @@ L'accord n'est pas impossible. Mais sa forme est prédéterminée par la contrai
 
 ## Scénarios
 
-Que se passe-t-il après le 6 avril ? La date concentre toutes les incertitudes. Les probabilités ci-dessous sont indicatives et fondées sur le jugement analytique ; elles seront révisées en fonction des développements opérationnels.
+Que se passe-t-il après le 6 avril ? La date concentré toutes les incertitudes. Les probabilités ci-dessous sont indicatives et fondées sur le jugement analytique ; elles seront révisées en fonction des développements opérationnels.
 
 Le scénario central, auquel est attribuée une probabilité de 55 %, est celui de l'extinction de la pause sans accord formel. Les frappes reprennent mais avec un ciblage restreint, évitant les infrastructures énergétiques au profit de cibles militaires résiduelles. Le Brent remonte dans la fourchette 100-110 dollars. Le blocage sélectif d'Ormuz se maintient. La dynamique de négociation indirecte se poursuit à bas bruit, sans résultat formalisé avant plusieurs mois. Ce scénario est le plus cohérent avec les contraintes simultanées de l'administration Trump — gérer l'inflation intérieure — et de Mojtaba Khamenei — démontrer la résilience du régime.
 

@@ -19,12 +19,6 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# Controverse : L'ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce que les spécialistes ne disent pas
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## 1. L'échange — cinq jours, trois camps
 
 Le 25 mars 2026, Jostein Hauge, économiste de l'université de Cambridge spécialiste de politique industrielle, ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs décennies contre la politique industrielle était erronée — ses anciens conseils ont la valeur d'une disquette. »[^1] Le *World Development Report 2025* de la Banque mondiale, consacré à la revitalisation du secteur manufacturier, avait effectivement enterré l'hostilité historique de l'institution envers l'intervention étatique — sans formuler d'excuses pour les décennies de conditionnalité qui avaient imposé le contraire.
@@ -71,7 +65,7 @@ Il faut prendre les critiques de Rutar au sérieux, parce qu'elles sont méthodo
 
 La littérature académique dit plus que ce que Hickel et ses critiques ne le laissent entendre. Easterly (JDE, 2005) ne trouvait aucune relation significative entre programmes du FMI et croissance[^12]. Vreeland (2003) identifiait un effet négatif après correction du biais de sélection par la méthode de Heckman[^15]. Dreher (2006) introduisait une distinction cruciale : le montant du prêt a un effet positif, mais la conditionnalité a un effet négatif ou nul — les deux se compensent[^13]. Stubbs et al. (*Social Science & Medicine*, 2022) montraient que les conditions structurelles augmentent la pauvreté, tandis que la stabilisation macroéconomique n'a pas d'impact significatif[^16]. Apeti (*Economics of Transition*, 2025) trouvait des résultats mixtes sur la relation entre conditionnalité et réformes effectives[^17].
 
-Le travail de Kentikelenis et Stubbs mérite une place à part. Leur cadre conceptuel identifie quatre canaux par lesquels les PAS affectent la santé : réduction des dépenses publiques, libéralisation du marché du travail, privatisation des services, dévaluation monétaire[^14]. Leur livre *A Thousand Cuts* (2023) documente systématiquement l'écart entre la rhétorique du FMI (« nous avons changé ») et la pratique (les conditions structurelles persistent sous d'autres noms). C'est le travail qui *devrait* être au centre de ce débat — et qui en est absent.
+Le travail de Kentikelenis et Stubbs mérite une place à part. Leur cadre conceptuel identifié quatre canaux par lesquels les PAS affectent la santé : réduction des dépenses publiques, libéralisation du marché du travail, privatisation des services, dévaluation monétaire[^14]. Leur livre *A Thousand Cuts* (2023) documente systématiquement l'écart entre la rhétorique du FMI (« nous avons changé ») et la pratique (les conditions structurelles persistent sous d'autres noms). C'est le travail qui *devrait* être au centre de ce débat — et qui en est absent.
 
 L'étude de Druschke et Nievas (WIL 2026/06) ajoute une dimension géopolitique rarement quantifiée : 67 à 70 % des fonds du FMI et de la Banque mondiale sont allés à des pays alignés sur le G7[^3]. Ce chiffre ne dit rien sur l'efficacité des programmes, mais il dit tout sur leur fonction politique.
 
@@ -119,7 +113,7 @@ Le vrai scandale de cette controverse n'est pas que Hickel ait tort sur la méth
 
 [^2]: Hickel J., Keshavjee S., Burkett L. et Richardson E., « Structural adjustment: damages, reparations and pathways to nonrecurrence », *BMJ Global Health*, 2026.
 
-[^3]: Druschke P. et Nievas G., « The geopolitics of multilateral lending: G7 alignment and the allocation of World Bank and IMF funds », *World Inequality Lab Working Paper* 2026/06.
+[^3]: Druschke P. et Nievas G., « The geopolitics of multilatéral lending: G7 alignment and the allocation of World Bank and IMF funds », *World Inequality Lab Working Paper* 2026/06.
 
 [^4]: Rutar T., « Looking under the hood of Hickel's new broadside against neoliberalism », *Political Economy, Stats, and Society* (Substack), 27 mars 2026.
 
@@ -141,13 +135,13 @@ Le vrai scandale de cette controverse n'est pas que Hickel ait tort sur la méth
 
 [^13]: Dreher A., « IMF and economic growth: The effects of programs, loans, and compliance with conditionality », *World Development*, vol. 34, n° 5, 2006, pp. 769-788.
 
-[^14]: Kentikelenis A. et Stubbs T., *A Thousand Cuts: Social Protection in the Age of Austerity*, Oxford University Press, 2023. Le cadre conceptuel à quatre canaux est développé dans Kentikelenis A., « Structural adjustment and health: A conceptual framework and evidence on pathways », *Social Science & Medicine*, vol. 187, 2017, pp. 296-305. Voir aussi Kentikelenis A., Stubbs T. et King L., « IMF conditionality and development policy space, 1985-2014 », *Review of International Political Economy*, vol. 23, n° 4, 2016, pp. 543-582.
+[^14]: Kentikelenis A. et Stubbs T., *A Thousand Cuts: Social Protection in the Age of Austerity*, Oxford University Press, 2023. Le cadre conceptuel à quatre canaux est développé dans Kentikelenis A., « Structural adjustment and health: A conceptual framework and évidence on pathways », *Social Science & Medicine*, vol. 187, 2017, pp. 296-305. Voir aussi Kentikelenis A., Stubbs T. et King L., « IMF conditionality and development policy space, 1985-2014 », *Review of International Political Economy*, vol. 23, n° 4, 2016, pp. 543-582.
 
 [^15]: Vreeland J.R., *The IMF and Economic Development*, Cambridge University Press, 2003.
 
 [^16]: Stubbs T. et al., « Structural adjustment, structural conditions and health outcomes », *Social Science & Medicine*, 2022.
 
-[^17]: Apeti M.E., « Does IMF conditionality promote structural reforms? », *Economics of Transition and Institutional Change*, 2025.
+[^17]: Apeti M.E., « Does IMF conditionality promote structural reforms? », *Economics of Transition and Institutional Changé*, 2025.
 
 [^18]: Independent Evaluation Office (IEO) of the IMF, « Structural Conditionality in IMF-Supported Programs », 2007.
 

@@ -16,10 +16,6 @@ theme: geoeconomics
 author: Eric Gabin Kilama
 ---
 
-# À qui profitent les sanctions ? Leçons du cas iranien
-
-**Eric Gabin Kilama** | 15 novembre 2024 | erickilama.com
-
 Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001, le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus que doublé. L'Union européenne a élargi son propre arsenal, passant de quelques régimes ciblés à plus de quarante cadres restrictifs en vigueur. Cette inflation sanctionnatoire repose sur une hypothèse rarement questionnée : que la coercition économique modifie le comportement des États ciblés dans le sens souhaité par ceux qui l'imposent. Le cas iranien, l'un des régimes de sanctions les plus sévères et les plus durables au monde, offre un test empirique de cette hypothèse — et les résultats sont profondément ambigus.
 
 ## 1. Quatre décennies de coercition : anatomie du régime de sanctions
@@ -44,7 +40,7 @@ Contrairement à l'image d'une économie décimée, l'Iran affiche une résilien
 
 Plusieurs mécanismes expliquent cette résilience. Premièrement, le degré d'ouverture de l'économie iranienne et sa dépendance aux mécanismes de marché ont paradoxalement favorisé l'adaptation entrepreneuriale. La dévaluation du rial a rendu les exportations non pétrolières compétitives, stimulant la diversification. Les exportations de pétrochimie, d'acier et de produits agroalimentaires ont partiellement compensé l'effondrement des recettes pétrolières.
 
-Deuxièmement, les politiques macroéconomiques ont joué un rôle d'amortisseur. Le gouvernement a accepté une inflation élevée — dépassant 40 % en 2019 — pour prévenir les faillites, tout en utilisant un système de taux de change multiples pour subventionner les importations essentielles. La Banque centrale a maintenu des lignes de crédit aux secteurs productifs malgré les pressions sur ses réserves.
+Deuxièmement, les politiques macroéconomiques ont joué un rôle d'amortisseur. Le gouvernement a accepté une inflation élevée — dépassant 40 % en 2019 — pour prévenir les faillites, tout en utilisant un système de taux de changé multiples pour subventionner les importations essentielles. La Banque centrale a maintenu des lignes de crédit aux secteurs productifs malgré les pressions sur ses réserves.
 
 Troisièmement, les transferts monétaires universels instaurés en 2010 dans le cadre de la réforme des subventions aux carburants, combinés à un système de protection sociale relativement robuste (assurance maladie, retraites, aide au logement), ont maintenu les ménages les plus vulnérables au-dessus du seuil de pauvreté. Cette infrastructure redistributive, souvent ignorée dans les analyses occidentales, a constitué un filet de sécurité essentiel.
 

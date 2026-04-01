@@ -16,13 +16,6 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# La France au G7 : présider sous contrainte
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d'État et de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d'Évian est symbolique : la ville avait déjà accueilli le G8 en 2003 sous la présidence de Jacques Chirac, année où la France s'était distinguée par son refus de la guerre en Irak. Vingt-trois ans plus tard, la configuration présente des analogies troublantes : un président américain lancé dans une aventure militaire (cette fois contre l'Iran), des alliés européens réticents à suivre, et une France qui tente de se positionner en médiateur entre fermeté atlantique et ouverture au Sud Global[^1].
 
 Mais les analogies ont leurs limites. En 2003, la France disposait d'une marge budgétaire confortable (déficit à 4,1 % du PIB, dette à 64 % du PIB), d'une position militaire consolidée en Afrique et d'un consensus domestique relatif sur la politique étrangère. En 2026, chacune de ces conditions est inversée. Le déficit public s'est établi à 5,8 % du PIB en 2024. La France est sous procédure de déficit excessif (PDE) depuis juillet 2024. La présence militaire au Sahel s'est effondrée avec les retraits du Mali, du Burkina Faso et du Niger. Le paysage politique intérieur est fragmenté entre une présidence affaiblie, un Parlement sans majorité, et un Rassemblement national dominant dans les sondages à 31-32 %[^2].
@@ -83,7 +76,7 @@ Compte tenu des contraintes identifiées, quatre livrables se distinguent par le
 
 Cette analyse repose sur l'hypothèse que l'administration américaine maintiendra sa ligne actuelle -- protectionnisme, unilatéralisme, guerre en Iran -- jusqu'à Évian. Un revirement, par exemple un cessez-le-feu avec l'Iran ou un accord commercial avec l'UE, modifierait radicalement les termes de la présidence française. La volatilité de la politique étrangère trumpienne rend toute projection fragile au-delà de quelques semaines.
 
-La contrainte budgétaire est présentée comme déterminante, ce qui est politiquement plausible mais non mécaniquement certain. Une hausse inattendue des recettes fiscales ou une renégociation des termes de la PDE pourraient desserrer la contrainte. Inversement, un choc économique négatif lié à la crise d'Ormuz l'aggraverait. Enfin, l'analyse se concentre sur la dimension diplomatique de la présidence en sous-estimant potentiellement sa dimension de politique intérieure : pour le président Macron, dernier sommet G7 de son mandat, Évian est aussi un moment de projection internationale destiné à contrebalancer l'affaiblissement domestique, ce qui crée un risque que la recherche de l'image l'emporte sur la substance.
+La contrainte budgétaire est présentée comme déterminante, ce qui est politiquement plausible mais non mécaniquement certain. Une hausse inattendue des recettes fiscales ou une renégociation des termes de la PDE pourraient desserrer la contrainte. Inversement, un choc économique négatif lié à la crise d'Ormuz l'aggraverait. Enfin, l'analyse se concentré sur la dimension diplomatique de la présidence en sous-estimant potentiellement sa dimension de politique intérieure : pour le président Macron, dernier sommet G7 de son mandat, Évian est aussi un moment de projection internationale destiné à contrebalancer l'affaiblissement domestique, ce qui crée un risque que la recherche de l'image l'emporte sur la substance.
 
 ---
 

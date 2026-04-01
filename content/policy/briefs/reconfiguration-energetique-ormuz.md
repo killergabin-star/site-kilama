@@ -3,7 +3,7 @@ title: 'Reconfiguration des flux énergétiques post-Ormuz : l''avantage structu
 date: '2026-03-29'
 type: brief
 tags:
-- energie
+- énergie
 - petrole
 - ormuz
 - chine
@@ -15,7 +15,6 @@ draft: false
 theme: geopolitical
 ---
 
-# Reconfiguration des flux énergétiques post-Ormuz : l'avantage structurel chinois
 Étude analytique, 29 mars 2026
 
 
@@ -82,7 +81,7 @@ Les travaux respectifs de James Hamilton et de Lutz Kilian permettent d'identifi
 
 Le FMI retient une élasticité moyenne selon laquelle chaque hausse de 10 % du prix du pétrole se traduit par 0,4 point d'inflation headline supplémentaire et 0,2 point de production en moins au niveau mondial.[^17] Appliqué mécaniquement au différentiel actuel -- environ 40 % de hausse par rapport au niveau pré-conflit -- ce coefficient suggérerait 1,6 point d'inflation et 0,8 point de croissance en moins. Ces estimations constituent un plafond : Kilian et Zhou montrent que le passthrough vers l'inflation sous-jacente est significativement plus faible, sauf en zone euro et au Royaume-Uni, et que l'effet dépend de la réponse monétaire et de l'ancrage des anticipations. La croissance tendancielle de la zone euro se situe autour de 1 %. Le risque de récession technique est donc substantiel. L'effet multiplicateur de l'incertitude financière sur l'activité réelle, tel que documenté par Bloom, aggrave cette estimation : en période de choc géopolitique, le report des décisions d'investissement amplifie la contraction au-delà de ce que les seuls canaux de prix prédisent.[^17bis]
 
-Hamilton et Kilian soulignent, dans des travaux distincts, que la probabilité de stagflation dépend moins du niveau absolu des prix que de la durée de la perturbation et de la réponse monétaire.[^18] Si la BCE maintient des taux restrictifs pour contenir l'inflation importée, elle aggrave la contraction de l'activité. Si elle assouplit pour soutenir la croissance, elle risque de désancrer les anticipations d'inflation. Ce dilemme, structurellement analogue à celui de la Réserve fédérale en 1974 et en 1979, n'admet pas de solution technique satisfaisante. Maurice Obstfeld rappelle que le trilemme de politique monétaire -- impossibilité de maintenir simultanément taux de change fixe, mobilité des capitaux et autonomie monétaire -- contraint les banques centrales de la zone euro à absorber le choc d'offre sans pouvoir ajuster le change, concentrant la totalité de l'ajustement sur les taux d'intérêt et l'activité réelle.
+Hamilton et Kilian soulignent, dans des travaux distincts, que la probabilité de stagflation dépend moins du niveau absolu des prix que de la durée de la perturbation et de la réponse monétaire.[^18] Si la BCE maintient des taux restrictifs pour contenir l'inflation importée, elle aggrave la contraction de l'activité. Si elle assouplit pour soutenir la croissance, elle risque de désancrer les anticipations d'inflation. Ce dilemme, structurellement analogue à celui de la Réserve fédérale en 1974 et en 1979, n'admet pas de solution technique satisfaisante. Maurice Obstfeld rappelle que le trilemme de politique monétaire -- impossibilité de maintenir simultanément taux de changé fixe, mobilité des capitaux et autonomie monétaire -- contraint les banques centrales de la zone euro à absorber le choc d'offre sans pouvoir ajuster le changé, concentrant la totalité de l'ajustement sur les taux d'intérêt et l'activité réelle.
 
 ---
 
@@ -90,11 +89,11 @@ Hamilton et Kilian soulignent, dans des travaux distincts, que la probabilité d
 
 Les économies en développement subissent un triple choc dont l'ampleur est inversement proportionnelle à leur responsabilité dans le conflit.
 
-**Le Conseil de coopération du Golfe** présente le paradoxe le plus aigu. Exportateurs majeurs d'hydrocarbures, les pays du GCC tirent des revenus considérables de la hausse des prix, mais la fermeture d'Ormuz bloque simultanément leurs exportations et leurs importations. Goldman Sachs estime les contractions de PIB entre 3 % pour les Émirats arabes unis et 14 % pour le Koweït et le Qatar si le blocage se prolonge.[^19] Plus immédiatement, le GCC importe environ 85 % de ses denrées alimentaires, dont une part substantielle transite par Ormuz. La crise alimentaire déclenchée par la fermeture du détroit constitue, selon les premières évaluations du Programme alimentaire mondial, une urgence de niveau 3.[^20]
+**Le Conseil de coopération du Golfe** présente le paradoxe le plus aigu. Exportateurs majeurs d'hydrocarbures, les pays du GCC tirent des revenus considérables de la hausse des prix, mais la fermeture d'Ormuz bloque simultanément leurs exportations et leurs importations. Goldman Sachs estimé les contractions de PIB entre 3 % pour les Émirats arabes unis et 14 % pour le Koweït et le Qatar si le blocage se prolonge.[^19] Plus immédiatement, le GCC importe environ 85 % de ses denrées alimentaires, dont une part substantielle transite par Ormuz. La crise alimentaire déclenchée par la fermeture du détroit constitue, selon les premières évaluations du Programme alimentaire mondial, une urgence de niveau 3.[^20]
 
 **L'Afrique** est affectée par un canal spécifique rarement évoqué dans les analyses centrées sur les grandes puissances. Environ 70 % du carburant aviation consommé sur le continent transite par le détroit d'Ormuz.[^21] La flambée du kérosène se transmet directement au prix des billets d'avion, renchérissant les coûts de transport dans un continent dont la connectivité aérienne est déjà structurellement déficitaire. Le kérosène domestique, utilisé pour la cuisson et l'éclairage dans de nombreux pays d'Afrique de l'Ouest et de l'Est, subit une hausse symétrique qui affecte directement les ménages les plus pauvres.
 
-Arezki établit un parallèle avec le choc de 1973, mais en souligne les différences structurelles.[^22] En 1973, les pays en développement exportateurs de pétrole — Nigeria, Algérie, Venezuela — avaient partiellement bénéficié du choc. En 2026, le blocage sélectif concentre les bénéfices sur un nombre restreint d'acteurs : Chine, Russie, Iran. Les pays africains, y compris les exportateurs comme le Nigeria et l'Angola, sont pénalisés par la perturbation logistique et la hausse des coûts d'importation de produits raffinés. Le choc est plus régressif que ses prédécesseurs historiques.
+Arezki établit un parallèle avec le choc de 1973, mais en souligne les différences structurelles.[^22] En 1973, les pays en développement exportateurs de pétrole — Nigeria, Algérie, Venezuela — avaient partiellement bénéficié du choc. En 2026, le blocage sélectif concentré les bénéfices sur un nombre restreint d'acteurs : Chine, Russie, Iran. Les pays africains, y compris les exportateurs comme le Nigeria et l'Angola, sont pénalisés par la perturbation logistique et la hausse des coûts d'importation de produits raffinés. Le choc est plus régressif que ses prédécesseurs historiques.
 
 **L'Asie du Sud** constitue un cas intermédiaire. L'Inde et le Pakistan conservent un accès au détroit, mais l'inflation importée par la hausse du brut pèse sur des économies dont les subventions aux carburants sont déjà sous tension budgétaire. Le Bangladesh et le Sri Lanka, importateurs nets sans accès préférentiel, sont les plus exposés.
 
@@ -164,7 +163,7 @@ L'Agence française de développement devrait intégrer dans sa programmation 20
 [^19]: Goldman Sachs, « GCC Economic Impact of Hormuz Disruption », Global Economics Paper, 15 mars 2026.
 [^20]: Programme alimentaire mondial, évaluation préliminaire, région MENA, 20 mars 2026.
 [^21]: IATA, données sur le carburant aviation, allocations régionales, 2025.
-[^22]: Rabah Arezki et Markus Brückner, « Oil Rents, Corruption, and State Stability: Evidence from Panel Data Regressions », *European Economic Review*, vol. 55, n° 7, 2011 .
+[^22]: Rabah Arezki et Markus Brückner, « Oil Rents, Corruption, and State Stability: Évidence from Panel Data Regressions », *European Economic Review*, vol. 55, n° 7, 2011 .
 [^23]: Daniel Yergin, *The Prize: The Epic Quest for Oil, Money and Power*, Free Press, 1991.
 [^24]: IRENA, « Impact of the Hormuz Crisis on Renewable Energy Investment », note préliminaire, mars 2026.
 [^25]: Christiane Baumeister et James D. Hamilton, « Structural Interpretation of Vector Autoregressions with Incomplete Identification: Revisiting the Role of Oil Supply and Demand Shocks », *American Economic Review*, vol. 109, n° 5, 2019.

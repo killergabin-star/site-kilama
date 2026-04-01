@@ -12,14 +12,8 @@ summary: Un an après le déploiement de la Mission multinationale d'appui à la
   de s'aggraver. Les gangs ont accru leur pouvoir et leur contrôle territorial, face à...
 status: ready
 draft: false
-theme: securite
+theme: sécurité
 author: Eric Gabin Kilama
----
-
-# Haïti : sortir de l'impasse sécuritaire, repenser l'action internationale
-
-**Eric Gabin Kilama** | 20 mai 2025 | erickilama.com
-
 ---
 
 ## Introduction
@@ -52,7 +46,7 @@ La logique du state-building qui a guidé les interventions internationales en H
 
 **Premièrement, la technicisation du problème sécuritaire.** Les discussions sur la réforme de la sécurité prennent un ton technique : le contrôle de la violence est d'abord conçu comme une question de capacités — nombre de policiers, équipements, formation. L'expérience des missions passées — la MINUSTAH (2004-2017), avec ses 12 000 personnels, et avant elle la MIPONUH et la MANUH dans les années 1990 — démontre l'échec d'une approche sécuritaire fondée en premier lieu sur une action robuste contre les gangs et un renforcement de la police nationale. Une telle approche suppose que les problèmes sécuritaires peuvent être résolus tout en maintenant le statu quo politique et économique en Haïti (Pingeot, 2018). Or, ce statu quo est précisément la source de l'instabilité.
 
-**Deuxièmement, la réduction du développement à un problème technique.** La présentation du développement économique dans les États fragiles comme un problème technique de gouvernance — accès au financement, infrastructures, atténuation des chocs — sous-estime le fait que la structure de l'économie et la répartition de ses avantages font partie intégrante des processus de négociation entre élites. En Haïti, une poignée de familles contrôle l'essentiel de l'activité économique formelle, en particulier les importations et la distribution. Cette concentration économique est à la fois une cause et une conséquence de la faiblesse institutionnelle.
+**Deuxièmement, la réduction du développement à un problème technique.** La présentation du développement économique dans les États fragiles comme un problème technique de gouvernance — accès au financement, infrastructures, atténuation des chocs — sous-estimé le fait que la structure de l'économie et la répartition de ses avantages font partie intégrante des processus de négociation entre élites. En Haïti, une poignée de familles contrôle l'essentiel de l'activité économique formelle, en particulier les importations et la distribution. Cette concentration économique est à la fois une cause et une conséquence de la faiblesse institutionnelle.
 
 Une crise de l'ampleur de celle qui frappe Haïti est toujours l'occasion de remises en question profondes. Du côté de la société civile haïtienne, le constat que la gouvernance publique devrait être réinventée a permis de mobiliser et d'initier un dialogue national — l'Accord de Montana en est l'illustration la plus aboutie — même si les acteurs politiques haïtiens n'arrivent pas à répondre à cette ambition. Du côté de la communauté internationale, la question demeure : quel doit être aujourd'hui le chemin à suivre ?
 
@@ -70,7 +64,7 @@ Les Nations Unies et les autres acteurs internationaux ont plutôt besoin d'une 
 
 Un accord politique sur la nécessité d'une mission durable à plus long terme pourrait enfin mettre Haïti sur la voie de la stabilité. Cependant, la transition politique, qui devrait être le fer de lance de la sortie de crise, est handicapée par des conflits internes et semble pour le moment incapable de concevoir ou de coordonner la reconstruction institutionnelle, sociale et sécuritaire du pays.
 
-Sans remettre en cause l'architecture de la transition, il est essentiel de la remettre en ordre de marche. Cela passe par le renforcement de la gouvernance, notamment du système judiciaire, et la reconstruction d'un programme commun qui servira de base de coopération avec la communauté internationale.
+Sans remettre en cause l'architecture de la transition, il est essentiel de la remettre en ordre de marché. Cela passe par le renforcement de la gouvernance, notamment du système judiciaire, et la reconstruction d'un programme commun qui servira de base de coopération avec la communauté internationale.
 
 **Vers une administration transitionnelle internationale ou régionale.** La seule voie susceptible d'apporter un certain niveau de stabilité durable en Haïti réside dans un organe soutenu par la communauté internationale, capable d'enquêter et d'agir contre la corruption et les liens des groupes armés avec les acteurs politiques et économiques. Sans un système judiciaire fonctionnel pour cibler l'ensemble de l'écosystème de corruption et de criminalité, les gangs criminels continueront d'opérer en toute impunité.
 

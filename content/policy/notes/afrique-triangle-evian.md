@@ -17,13 +17,6 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# L'Afrique dans le triangle d'Évian : le continent perdant de la présidence française du G7
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
----
-
 Le sommet du G7 d'Évian (15-17 juin 2026) se prépare dans un contexte de compétition budgétaire sans précédent entre trois agendas majeurs de l'Occident : la reconstruction de l'Ukraine (486 milliards de dollars sur dix ans selon la RDNA3 de la Banque mondiale), le réarmement européen (800 milliards d'euros à l'horizon 2030 dans le cadre de ReArm Europe/Readiness 2030), et les partenariats de développement avec l'Afrique[^1]. Cette compétition, que l'on peut qualifier de « triangle d'Évian », n'oppose pas trois priorités abstraites. Elle se traduit dans les budgets nationaux des sept membres par des arbitrages concrets dont l'Afrique sort perdante.
 
 L'aide publique au développement (APD) des pays du Comité d'aide au développement (CAD) de l'OCDE a reculé de manière significative en 2024. Pour la première fois en près de trente ans, la France, l'Allemagne, le Royaume-Uni et les États-Unis ont simultanément réduit leur APD[^2]. Les projections pour 2025 anticipent une contraction supplémentaire de 9 à 17 %, portée par onze pays donateurs qui représentent à eux seuls les trois quarts de l'aide totale[^3]. Les pays d'Afrique subsaharienne pourraient faire face à un déclin de 16 à 28 % de l'APD bilatérale nette, ce qui constituerait le recul le plus sévère en trois décennies[^4].
@@ -76,7 +69,7 @@ Les pays africains ne subissent pas passivement le triangle d'Évian. Plusieurs 
 
 **L'Afrique du Sud** joue un rôle pivot entre le G7 et les BRICS. Membre du G20, hôte du sommet BRICS 2023, Pretoria utilise sa position géostratégique pour obtenir des concessions des deux blocs. La politique sud-africaine à l'égard de la guerre en Ukraine -- refus de condamner la Russie, visites de Lavrov à Pretoria -- complique les relations avec le G7, mais ne les rompt pas. L'Afrique du Sud reste un interlocuteur incontournable pour toute architecture de partenariat crédible avec le continent, en raison de son poids économique, de son système financier développé, et de son influence au sein de l'Union africaine.
 
-**Le Nigeria**, première économie africaine, diversifie rapidement ses partenariats au-delà des acteurs traditionnels. Abuja négocie simultanément avec les fonds souverains émiratis (Mubadala, ADQ), les investisseurs indiens dans le corridor technologique, et les institutions européennes. La réforme du taux de change du naira en 2023 et la suppression partielle des subventions aux carburants signalent une volonté de transformation économique que les partenaires du G7 pourraient soutenir -- à condition de dépasser la logique d'APD classique pour proposer des instruments financiers adaptés à une économie émergente de 477 milliards de dollars de PIB.
+**Le Nigeria**, première économie africaine, diversifie rapidement ses partenariats au-delà des acteurs traditionnels. Abuja négocie simultanément avec les fonds souverains émiratis (Mubadala, ADQ), les investisseurs indiens dans le corridor technologique, et les institutions européennes. La réforme du taux de changé du naira en 2023 et la suppression partielle des subventions aux carburants signalent une volonté de transformation économique que les partenaires du G7 pourraient soutenir -- à condition de dépasser la logique d'APD classique pour proposer des instruments financiers adaptés à une économie émergente de 477 milliards de dollars de PIB.
 
 ## Enjeux pour la France
 
@@ -126,4 +119,4 @@ Cette analyse repose sur l'hypothèse que l'espace budgétaire existe dans les p
 [^24]: BAD, « African Development Bank Group Mobilises Global Private Capital to Close Africa's Financing Gap », 2026.
 [^25]: Songwe, V. et Stern, N., *Finance for Climate Action*, LSE Grantham Institute, 2022.
 [^26]: ONU Info, « Soudan : la plus grande crise humanitaire au monde », avril 2025 ; WFP, « Famine in Sudan », 2026.
-[^27]: Blanchard, O., Leandro, A. et Zettelmeyer, J., « Redesigning EU Fiscal Rules from an Evidence-Based Perspective », *Revue d'économie politique*, 2021.
+[^27]: Blanchard, O., Leandro, A. et Zettelmeyer, J., « Redesigning EU Fiscal Rules from an Évidence-Based Perspective », *Revue d'économie politique*, 2021.

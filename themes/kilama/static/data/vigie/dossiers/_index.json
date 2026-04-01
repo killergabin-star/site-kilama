@@ -3,6 +3,6 @@
   "dossiers": [
     { "id": "polycrisis", "title": "Polycrisis Monitor", "subtitle": "European fiscal stress \u00d7 geopolitical risk \u00d7 trade fragmentation", "status": "active" },
     { "id": "iran-hormuz", "title": "Iran & Strait of Hormuz", "subtitle": "Energy transit disruption \u00d7 sovereign spreads contagion", "status": "active" },
-    { "id": "apd-future", "title": "Future of Development Finance", "subtitle": "ODA trajectories \u00d7 debt sustainability \u00d7 geopolitical competition", "status": "draft" }
+    { "id": "apd-future", "title": "Future of Development Finance", "subtitle": "ODA trajectories \u00d7 debt sustainability \u00d7 geopolitical competition", "status": "active" }
   ]
 }

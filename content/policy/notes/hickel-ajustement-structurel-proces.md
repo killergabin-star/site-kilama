@@ -16,12 +16,6 @@ draft: false
 author: Eric Gabin Kilama
 ---
 
-# L'ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## Contexte du débat
 
 Le 26 mars 2026, Jason Hickel — anthropologue économique à l'Université autonome de Barcelone et figure intellectuelle du mouvement décroissant — a publié sur X : « Nous compilons des preuves sur les préjudices extraordinaires causés par les programmes d'ajustement structurel du FMI et de la Banque mondiale. » Quatre jours plus tard, le 30 mars, il défendait la méthodologie de son étude face aux critiques qui lui reprochaient l'absence d'évaluation causale originale[^1]. L'article en question, « Structural adjustment: damages, reparations and pathways to nonrecurrence », publié dans *BMJ Global Health* en 2026, constitue la tentative la plus ambitieuse à ce jour de synthétiser les preuves empiriques sur les effets sanitaires et économiques des programmes d'ajustement structurel (PAS) et d'en tirer des conséquences juridiques — un appel aux réparations[^2].
@@ -36,7 +30,7 @@ L'enjeu de fond est méthodologique autant que politique : peut-on mesurer de ma
 
 L'article de Hickel et de ses coauteurs procède par méta-revue des études quantitatives existantes et par études de cas nationales. Les conclusions principales sont les suivantes.
 
-Premièrement, les PAS sont associés à une détérioration des indicateurs de santé dans les pays bénéficiaires. La synthèse des études observationnelles identifie des associations négatives entre programmes d'ajustement et mortalité infantile, accès aux soins, dépenses publiques de santé et prévalence de maladies infectieuses. Sur treize études transnationales examinées par une revue de 2017 citée dans l'article, onze montrent des associations négatives entre programmes du FMI et indicateurs de santé[^6].
+Premièrement, les PAS sont associés à une détérioration des indicateurs de santé dans les pays bénéficiaires. La synthèse des études observationnelles identifié des associations négatives entre programmes d'ajustement et mortalité infantile, accès aux soins, dépenses publiques de santé et prévalence de maladies infectieuses. Sur treize études transnationales examinées par une revue de 2017 citée dans l'article, onze montrent des associations négatives entre programmes du FMI et indicateurs de santé[^6].
 
 Deuxièmement, les auteurs documentent des cas nationaux — Kenya, Ghana, Jamaïque, Argentine — où la chronologie de l'ajustement coïncide avec une dégradation mesurable des conditions de vie. Au Kenya, l'augmentation de la mortalité infantile dans les années 1990 est attribuée à l'interaction entre ajustement structurel et épidémie de VIH/SIDA.
 
@@ -54,7 +48,7 @@ L'article a fait l'objet de critiques méthodologiques substantielles, dont la p
 
 **La citation sélective de recherches nuancées.** L'exemple le plus frappant concerne le Kenya. Les auteurs citent une étude de 2005 pour soutenir que l'ajustement structurel a « exacerbé » la transmission du VIH/SIDA. Or la source originale conclut qu'« il n'existe actuellement aucune étude capable de démontrer un lien causal » et que les réformes d'ajustement « peuvent produire des effets mixtes » sur la vulnérabilité au VIH/SIDA[^9].
 
-**La base probante limitée.** Parmi les études citées pour soutenir des effets sur la pauvreté et l'emploi, Rutar identifie seulement deux études quantitatives rigoureuses qui tentent de corriger l'endogénéité — le problème fondamental selon lequel les pays qui entrent dans un programme FMI sont déjà en difficulté. Ces études utilisent des approches par variables instrumentales, mais la validité des instruments reste contestée dans la littérature.
+**La base probante limitée.** Parmi les études citées pour soutenir des effets sur la pauvreté et l'emploi, Rutar identifié seulement deux études quantitatives rigoureuses qui tentent de corriger l'endogénéité — le problème fondamental selon lequel les pays qui entrent dans un programme FMI sont déjà en difficulté. Ces études utilisent des approches par variables instrumentales, mais la validité des instruments reste contestée dans la littérature.
 
 ### La contre-analyse de Rutar
 
@@ -70,7 +64,7 @@ La revue de la conditionnalité de 2018 a trouvé que « le rendement en termes 
 
 ### La littérature académique sur les effets des programmes FMI
 
-Au-delà de Hickel et du FMI, une littérature économétrique substantielle examine cette question. William Easterly (2005) ne trouve aucune relation significative entre participation à un programme FMI et croissance économique[^13]. Vreeland (2003) utilise un modèle de sélection de Heckman pour montrer que, une fois corrigé le biais de sélection, les programmes FMI ont un effet négatif sur la croissance. Dreher (2006) nuance ces résultats en distinguant entre le montant du prêt (effet positif) et la conditionnalité (effet négatif ou nul). Une étude récente d'Apeti (2025) dans *Economics of Transition and Institutional Change* examine les effets de la conditionnalité du FMI sur les réformes structurelles dans les pays en développement, trouvant des résultats mixtes[^14].
+Au-delà de Hickel et du FMI, une littérature économétrique substantielle examine cette question. William Easterly (2005) ne trouve aucune relation significative entre participation à un programme FMI et croissance économique[^13]. Vreeland (2003) utilise un modèle de sélection de Heckman pour montrer que, une fois corrigé le biais de sélection, les programmes FMI ont un effet négatif sur la croissance. Dreher (2006) nuance ces résultats en distinguant entre le montant du prêt (effet positif) et la conditionnalité (effet négatif ou nul). Une étude récente d'Apeti (2025) dans *Economics of Transition and Institutional Changé* examine les effets de la conditionnalité du FMI sur les réformes structurelles dans les pays en développement, trouvant des résultats mixtes[^14].
 
 Sur les effets sanitaires, Stubbs et al. (*PMC*, 2022) trouvent que les prêts avec conditions structurelles tendent à augmenter la pauvreté, tandis que les prêts avec conditions de stabilisation ont généralement peu d'impact mesurable[^15].
 
@@ -138,7 +132,7 @@ L'article de Hickel gagne en force lorsqu'il est lu conjointement avec les trava
 
 Cette note repose sur une lecture de l'article de Hickel et al. à travers ses résumés publics et les critiques publiées, et non sur une analyse ligne par ligne du papier complet. Les conclusions méthodologiques doivent être considérées comme préliminaires.
 
-L'analyse des biais identifie des positions institutionnelles et intellectuelles, mais ne prétend pas à l'exhaustivité. D'autres critiques de l'article existent probablement dans des cercles académiques non couverts par les sources consultées.
+L'analyse des biais identifié des positions institutionnelles et intellectuelles, mais ne prétend pas à l'exhaustivité. D'autres critiques de l'article existent probablement dans des cercles académiques non couverts par les sources consultées.
 
 Les données sur les programmes FMI au Kenya, en Égypte et au Pakistan sont tirées de communiqués de presse du FMI et de sources journalistiques, qui ne reflètent pas nécessairement la complexité des négociations en cours. Les montants et les conditions mentionnés sont susceptibles d'évoluer.
 
@@ -159,9 +153,9 @@ L'évaluation des méthodes causales disponibles (contrôle synthétique, DiD) n
 [^11]: IEO, « Structural Conditionality in IMF-Supported Programs — Evaluation Report », 2007 ; IEO, « Evaluation Update: Structural Conditionality in IMF-Supported Programs », 2018.
 [^12]: FMI, « 2018 Review of Program Design and Conditionality », IMF Policy Paper, 2019.
 [^13]: W. Easterly, « What did structural adjustment adjust? The association of policies and growth with repeated IMF and World Bank adjustment loans », *Journal of Development Economics*, vol. 76, 2005, p. 1-22.
-[^14]: A. Apeti, « International monetary fund conditionality and structural reforms: Evidence from developing countries », *Economics of Transition and Institutional Change*, 2025.
+[^14]: A. Apeti, « International monetary fund conditionality and structural reforms: Évidence from developing countries », *Economics of Transition and Institutional Changé*, 2025.
 [^15]: T. Stubbs et al., « The effects of IMF loan conditions on poverty in the developing world », *Social Science & Medicine*, 2022.
 [^16]: Easterly (2005), op. cit.
 [^17]: Bretton Woods Project, « Kenya's growing youth movement for fiscal justice », octobre 2024 ; FMI, page pays Kenya, février-mars 2026.
 [^18]: ONU, « Fourth International Conference on Financing for Development », juillet 2025. Le Sevilla Borrower's Forum a été lancé lors de la FfD4.
-[^19]: P. Druschke et G. Nievas, « The Global Democratic Deficit: Institutional Asymmetries and the Provision of Global Public Goods », World Inequality Lab Working Paper 2026/06.
+[^19]: P. Druschke et G. Nievas, « The Global Democratic Déficit: Institutional Asymmetries and the Provision of Global Public Goods », World Inequality Lab Working Paper 2026/06.

@@ -13,23 +13,17 @@ summary: 'En juillet 2024, cette note plaidait pour un changement de paradigme d
   (BPD) : passer de la correction des défaillances de marché à la transformation...'
 status: ready
 draft: false
-theme: architecture-financiere
+theme: architecture-financière
 author: Eric Gabin Kilama
----
-
-# Banques de développement en 2026 : l'optimisation ne suffit plus
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Introduction
 
-En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s'appuyant sur l'approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives mais insuffisantes. L'optimisation des bilans recommandée par le G20 Capital Adequacy Framework (CAF) a libéré des capacités de prêt supplémentaires. La Banque mondiale, sous la direction d'Ajay Banga, a engagé une réorientation stratégique. Mais le contexte géopolitique — retrait américain, recul de l'APD, aggravation de la crise de la dette — rend ces progrès dérisoires face à l'ampleur des besoins. Cette note évalue les avancées et les limites des réformes en cours, et identifie les conditions d'une transformation plus ambitieuse.
+En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s'appuyant sur l'approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives mais insuffisantes. L'optimisation des bilans recommandée par le G20 Capital Adequacy Framework (CAF) a libéré des capacités de prêt supplémentaires. La Banque mondiale, sous la direction d'Ajay Banga, a engagé une réorientation stratégique. Mais le contexte géopolitique — retrait américain, recul de l'APD, aggravation de la crise de la dette — rend ces progrès dérisoires face à l'ampleur des besoins. Cette note évalue les avancées et les limites des réformes en cours, et identifié les conditions d'une transformation plus ambitieuse.
 
 ## L'optimisation des bilans : progrès réels, ambition insuffisante
 
-Le G20 Capital Adequacy Framework, lancé en 2022 et enrichi sous les présidences successives, a produit des résultats tangibles. Les BMD ont adopté une série de mesures techniques : révision des ratios prudentiels, introduction d'instruments de capital hybride, mécanismes de transfert de risque vers les marchés (callable capital), utilisation accrue des garanties de portefeuille. La Banque mondiale estime avoir dégagé environ 50 milliards de dollars de capacité de prêt supplémentaire grâce à ces réformes. La Banque interaméricaine de développement a annoncé 20 milliards de dollars supplémentaires. La Banque africaine de développement et la Banque asiatique de développement ont chacune avancé sur des réformes similaires.
+Le G20 Capital Adequacy Framework, lancé en 2022 et enrichi sous les présidences successives, a produit des résultats tangibles. Les BMD ont adopté une série de mesures techniques : révision des ratios prudentiels, introduction d'instruments de capital hybride, mécanismes de transfert de risque vers les marchés (callable capital), utilisation accrue des garanties de portefeuille. La Banque mondiale estimé avoir dégagé environ 50 milliards de dollars de capacité de prêt supplémentaire grâce à ces réformes. La Banque interaméricaine de développement a annoncé 20 milliards de dollars supplémentaires. La Banque africaine de développement et la Banque asiatique de développement ont chacune avancé sur des réformes similaires.
 
 Le total cumulé — entre 80 et 100 milliards de dollars de capacité supplémentaire sur les cinq prochaines années — est significatif mais reste un ordre de grandeur en dessous des besoins. Le déficit de financement des ODD est estimé à 2 500 milliards de dollars par an. L'optimisation des bilans, même poussée à son maximum, ne peut combler qu'une fraction de cet écart.
 
@@ -59,7 +53,7 @@ Le paradigme du dérisquage reste dominant dans la pratique des BMD, malgré les
 
 Le rapport 2025 de l'OCDE sur le financement mixte montre que 70 % des financements mixtes se dirigent vers des pays à revenu intermédiaire, principalement en Asie et en Amérique latine. L'Afrique subsaharienne ne reçoit que 12 % des flux de financement mixte (OCDE, 2023) — une proportion stable depuis cinq ans et sans rapport avec l'ampleur de ses besoins. Le secteur privé reste structurellement réticent à investir dans les marchés les plus risqués, et aucun montant de dérisquage public ne semble suffisant pour modifier cette réalité dans les pays les moins avancés.
 
-Le problème le plus profond est celui du coût du capital. Un projet d'infrastructure identique coûte deux à trois fois plus cher à financer en Afrique subsaharienne qu'en Europe, en raison de primes de risque souvent déconnectées des fondamentaux économiques. Ce différentiel de coût du capital — et non l'absence de projets « investissables » — est le principal obstacle à l'investissement privé sur le continent. Les BMD disposent d'un avantage comparatif spécifique pour le réduire : prêts en monnaie locale, garanties de change, rehaussement de crédit. Cet instrument est distinct du dérisquage et devrait constituer une priorité opérationnelle immédiate, complémentaire de l'approche par les missions.
+Le problème le plus profond est celui du coût du capital. Un projet d'infrastructure identique coûte deux à trois fois plus cher à financer en Afrique subsaharienne qu'en Europe, en raison de primes de risque souvent déconnectées des fondamentaux économiques. Ce différentiel de coût du capital — et non l'absence de projets « investissables » — est le principal obstacle à l'investissement privé sur le continent. Les BMD disposent d'un avantage comparatif spécifique pour le réduire : prêts en monnaie locale, garanties de changé, rehaussement de crédit. Cet instrument est distinct du dérisquage et devrait constituer une priorité opérationnelle immédiate, complémentaire de l'approche par les missions.
 
 Ce constat ne disqualifie pas le dérisquage comme instrument : il en délimite le champ d'application. Le dérisquage peut fonctionner dans les pays à revenu intermédiaire disposant de marchés financiers développés et d'un environnement institutionnel prévisible. Il est structurellement inadapté aux pays à revenu faible où les obstacles à l'investissement sont systémiques — instabilité politique, faiblesse institutionnelle, absence d'infrastructures de base, marchés domestiques étroits. Pour ces pays, l'approche par les missions — investissement public direct, construction des capacités productives, création de marchés — reste la seule voie crédible.
 

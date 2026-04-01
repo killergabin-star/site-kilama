@@ -13,14 +13,8 @@ summary: En juin 2024, cette note diagnostiquait une crise existentielle de l'in
   conjugué de la géopolitisation des flux, du cercle vicieux de...
 status: ready
 draft: false
-theme: developpement
+theme: développement
 author: Eric Gabin Kilama
----
-
-# La crise d'identité de l'aide : ce que 2025-2026 a confirmé et aggravé
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Introduction

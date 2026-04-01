@@ -6,20 +6,14 @@ tags:
 - Haiti
 - Kenya
 - MMAS
-- securite
+- sécurité
 - mercenaires
 summary: Depuis notre analyse de mars 2024 sur les limites structurelles de la mission de sécurité kényane en Haïti, les développements
   sur le terrain ont confirmé, point par point, le diagnostic initial. Les...
 status: ready
 draft: false
-theme: securite
+theme: sécurité
 author: Eric Gabin Kilama
----
-
-# Haïti deux ans après : la mission kényane, les mercenaires et l'impasse qui se confirme
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Introduction
@@ -58,7 +52,7 @@ Les gangs ont perfectionné leur modèle de gouvernance parallèle, mettant en p
 
 L'économie haïtienne a poursuivi sa contraction en 2025, avec un recul estimé du PIB de 3 %. Les recettes fiscales, déjà parmi les plus faibles au monde, ont encore diminué. L'inflation a atteint 35 % en glissement annuel, rendant les produits de première nécessité inaccessibles pour une part croissante de la population. Les transferts de la diaspora — environ 4 milliards de dollars par an — constituent désormais la quasi-totalité des entrées de devises, l'aide internationale étant en déclin et les exportations pratiquement inexistantes.
 
-Le Programme alimentaire mondial estime que plus de 5 millions d'Haïtiens — près de la moitié de la population — souffrent d'insécurité alimentaire aiguë, dont 1,6 million au stade d'urgence (IPC phase 4). La malnutrition infantile atteint des niveaux critiques dans les zones contrôlées par les gangs, où l'accès humanitaire est sévèrement restreint.
+Le Programme alimentaire mondial estimé que plus de 5 millions d'Haïtiens — près de la moitié de la population — souffrent d'insécurité alimentaire aiguë, dont 1,6 million au stade d'urgence (IPC phase 4). La malnutrition infantile atteint des niveaux critiques dans les zones contrôlées par les gangs, où l'accès humanitaire est sévèrement restreint.
 
 ## 3. Ce que les deux années écoulées confirment
 

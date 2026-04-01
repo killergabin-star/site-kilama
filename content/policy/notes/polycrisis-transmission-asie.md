@@ -18,8 +18,6 @@ draft: false
 theme: polycrisis-asie
 ---
 
-# La polycrisis vue d'Asie : canaux de transmission et vulnérabilités différenciées
-
 ## Note d'analyse pour la Fondation France-Asie
 
 
@@ -45,7 +43,7 @@ Or l'Asie n'est pas un récepteur passif de la polycrisis. Elle en est à la foi
 
 Cette note examine cinq canaux de transmission différenciés vers l'Asie-Pacifique, en suivant la taxonomie du rapport intégrateur. Chaque canal est analysé à travers le prisme des quatre variables structurelles (énergie, commerce, finance, sécurité). Les implications pour la diplomatie française font l'objet d'une section conclusive.
 
-[^1]: Eric Kilama, *La convergence des crises : anatomie d'une polycrisis sous administration Trump II*, mars 2026. Le rapport identifie les chaînes causales Tarifs → Énergie (Ch1), Tarifs → Finance (Ch2), Énergie → Migration (Ch3), Finance → Sécurité (Ch4), Migration → Politique intérieure (Ch5) et Sécurité → Développement (Ch6).
+[^1]: Eric Kilama, *La convergence des crises : anatomie d'une polycrisis sous administration Trump II*, mars 2026. Le rapport identifié les chaînes causales Tarifs → Énergie (Ch1), Tarifs → Finance (Ch2), Énergie → Migration (Ch3), Finance → Sécurité (Ch4), Migration → Politique intérieure (Ch5) et Sécurité → Développement (Ch6).
 
 [^2]: Acemoglu, D. et al. (2015). « Networks, Shocks, and Systemic Risk », *American Economic Review*. La topologie du réseau détermine l'ampleur et la direction de la propagation des chocs ; les nœuds centraux transmettent de manière non linéaire.
 
@@ -97,11 +95,11 @@ Le Japon et la Corée du Sud se trouvent dans la position symétrique inverse de
 
 [^12]: Antràs, P. (2025). « The Uncharted Waters of International Trade ». Voir aussi Antràs, P. (2020). « De-Globalization? Global Value Chains in the Post-COVID-19 Age », NBER Working Paper 28115.
 
-[^13]: Bloom, N. (2024). « The China Shock Revisited », *Journal of the Japanese and International Economies*.
+[^13]: Bloom, N. (2024). « The China Shock Revisited », *Journal of the Japanese and International Économies*.
 
 [^14]: L'architecture de sécurité asiatique repose sur un système de *hub-and-spokes* bilatéraux avec Washington, sans mutualisation budgétaire comparable aux mécanismes européens (Facilité européenne pour la paix, ReArm Europe).
 
-[^15]: Jordà, Ò., Schularick, M. et Taylor, A. M. (2016). « Sovereigns versus Banks: Credit, Crises, and Consequences ».
+[^15]: Jordà, Ò., Schularick, M. et Taylor, A. M. (2016). « Sovereigns versus Banks: Credit, Crises, and Conséquences ».
 
 ---
 
@@ -115,7 +113,7 @@ Les économies de l'ASEAN --- Vietnam, Malaisie, Thaïlande, Indonésie, Philipp
 
 **Vulnérabilité énergétique différenciée.** L'Indonésie et les Philippines, importatrices nettes de pétrole, sont directement exposées à la prime Ormuz. L'Indonésie importe environ 600 000 barils par jour ; une hausse de 30 dollars du Brent dégrade sa balance courante d'environ 0,5 point de PIB. La Malaisie et le Brunei, exportateurs nets, bénéficient en revanche de la hausse des prix --- une asymétrie intra-ASEAN qui complique la coordination régionale.
 
-**Fragilité financière latente.** Les niveaux de dette publique restent modérés dans la plupart des économies de l'ASEAN (inférieurs à 60 % du PIB), mais les marchés de capitaux sont peu profonds et l'endettement en dollars expose au risque de change. Les spreads souverains de l'Indonésie et des Philippines se sont élargis de 40 à 60 points de base depuis janvier 2026, reflétant la sensibilité au *risk-off* mondial. Fernández-Villaverde a montré que la fragmentation financière transmet les chocs de manière amplifiée vers les économies dont les marchés de capitaux sont insuffisamment développés pour absorber les flux de portefeuille.[^18]
+**Fragilité financière latente.** Les niveaux de dette publique restent modérés dans la plupart des économies de l'ASEAN (inférieurs à 60 % du PIB), mais les marchés de capitaux sont peu profonds et l'endettement en dollars expose au risque de changé. Les spreads souverains de l'Indonésie et des Philippines se sont élargis de 40 à 60 points de base depuis janvier 2026, reflétant la sensibilité au *risk-off* mondial. Fernández-Villaverde a montré que la fragmentation financière transmet les chocs de manière amplifiée vers les économies dont les marchés de capitaux sont insuffisamment développés pour absorber les flux de portefeuille.[^18]
 
 [^16]: Données UNCTAD, *World Investment Report 2025*. Voir Antràs, P. (2025), op. cit., pour le cadre analytique du friendshoring.
 
@@ -129,7 +127,7 @@ Les économies de l'ASEAN --- Vietnam, Malaisie, Thaïlande, Indonésie, Philipp
 
 L'Inde occupe une position analytiquement irréductible aux catégories précédentes. Ni bénéficiaire structurel comme la Chine, ni exposée au maximum comme le Japon, ni corridor de redirection comme l'ASEAN, elle constitue une variable indéterminée dont le positionnement influencera l'équilibre régional.
 
-**Flexibilité diplomatique, limites opérationnelles.** Le non-alignement assumé de New Delhi confère une flexibilité diplomatique réelle --- accès au pétrole russe à prix décoté, dialogue simultané avec Washington et Pékin, participation aux BRICS et au Quad. Mais cette flexibilité a des limites opérationnelles : elle prive l'Inde de l'accès aux instruments de l'alliance (renseignement, partage technologique, garanties de sécurité) qui amortissent les chocs pour le Japon et la Corée du Sud.[^19]
+**Flexibilité diplomatique, limites opérationnelles.** Le non-alignement assumé de New Delhi confère une flexibilité diplomatique réelle --- accès au pétrole russe à prix décoté, dialogue simultané avec Washington et Pékin, participation aux BRICS et au Quad. Mais cette flexibilité a des limites opérationnelles : elle privé l'Inde de l'accès aux instruments de l'alliance (renseignement, partage technologique, garanties de sécurité) qui amortissent les chocs pour le Japon et la Corée du Sud.[^19]
 
 **Énergie : diversification comme couverture partielle.** L'Inde importe environ 85 % de son pétrole, mais ses sources sont plus diversifiées qu'avant 2022. Les raffineries indiennes traitent du brut russe à prix décoté --- la Russie est devenue le premier fournisseur de l'Inde en 2023, passant de 2 % à 36 % des importations pétrolières. Cette couverture est réelle mais incomplète : une partie du brut indien transite encore par Ormuz (importations en provenance d'Irak et d'Arabie saoudite), et les capacités de raffinage sont optimisées pour un mix spécifique difficile à modifier à court terme.
 
@@ -181,7 +179,7 @@ Antràs, P. (2020). « De-Globalization? Global Value Chains in the Post-COVID-1
 
 Antràs, P. (2025). « The Uncharted Waters of International Trade ».
 
-Bloom, N. (2024). « The China Shock Revisited ». *Journal of the Japanese and International Economies*.
+Bloom, N. (2024). « The China Shock Revisited ». *Journal of the Japanese and International Économies*.
 
 Bown, C. P. (2024). « Reciprocity and the China Shock ».
 
@@ -193,7 +191,7 @@ Eric Kilama (2026). *La convergence des crises : anatomie d'une polycrisis sous 
 
 Fernández-Villaverde, J. et al. (2025). « Oil Sanctions and Dark Shipping ».
 
-Jordà, Ò., Schularick, M. et Taylor, A. M. (2016). « Sovereigns versus Banks: Credit, Crises, and Consequences ».
+Jordà, Ò., Schularick, M. et Taylor, A. M. (2016). « Sovereigns versus Banks: Credit, Crises, and Conséquences ».
 
 Kilian, L. (2009). « Not All Oil Price Shocks Are Alike ». *American Economic Review*, 99 (3), 1053-1069.
 

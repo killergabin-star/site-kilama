@@ -15,14 +15,8 @@ summary: En septembre 2024, une note précédente argumentait que la coordinatio
   mondial sous-produit — qu'elle bénéficiait à la stabilité financière globale,...
 status: ready
 draft: false
-theme: architecture-financiere
+theme: architecture-financière
 author: Eric Gabin Kilama
----
-
-# Le Club des emprunteurs, dix-huit mois plus tard : de l'argument à l'institution
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Ce qui a changé

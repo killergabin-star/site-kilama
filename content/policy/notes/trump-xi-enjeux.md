@@ -4,7 +4,7 @@ date: '2026-03-29'
 type: note
 tags:
 - chine
-- etats-unis
+- états-unis
 - commerce
 - g7
 - section-301
@@ -16,17 +16,9 @@ draft: false
 theme: trade
 ---
 
-# Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert
-
-*Centre d'analyse, de prévision et de stratégie — Note rapide*
-*29 mars 2026*
-
-
----
-
 ## Résumé analytique
 
-Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué sera lu à Pékin comme une tentative de cadrage occidental. Les négociations préparatoires de Paris entre Scott Bessent et He Lifeng ont porté sur l'agriculture, les minéraux critiques et un accord Boeing de 500 appareils, esquissant les contours d'un commerce administré bilatéral qui marginaliserait l'Union européenne. Cette note examine les enjeux du sommet à la lumière du Second China Shock documenté par le PIIE, de l'invalidation par la Cour suprême des tarifs fondés sur l'IEEPA, et de la Section 301 lancée contre soixante pays le 12 mars. Elle identifie trois points de vigilance pour la diplomatie française : la préservation de l'accord de Turnberry, l'articulation entre solidarité G7 et autonomie commerciale européenne, et le risque d'un deal bilatéral sino-américain dont l'Europe supporterait les coûts de détournement.
+Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué sera lu à Pékin comme une tentative de cadrage occidental. Les négociations préparatoires de Paris entre Scott Bessent et He Lifeng ont porté sur l'agriculture, les minéraux critiques et un accord Boeing de 500 appareils, esquissant les contours d'un commerce administré bilatéral qui marginaliserait l'Union européenne. Cette note examine les enjeux du sommet à la lumière du Second China Shock documenté par le PIIE, de l'invalidation par la Cour suprême des tarifs fondés sur l'IEEPA, et de la Section 301 lancée contre soixante pays le 12 mars. Elle identifié trois points de vigilance pour la diplomatie française : la préservation de l'accord de Turnberry, l'articulation entre solidarité G7 et autonomie commerciale européenne, et le risque d'un deal bilatéral sino-américain dont l'Europe supporterait les coûts de détournement.
 
 ---
 
@@ -48,15 +40,15 @@ Le G7 des affaires étrangères de Vaux-de-Cernay (26-27 mars), première réuni
 
 Le surplus commercial chinois a atteint environ 1 200 milliards de dollars en 2025 selon les données douanières chinoises — un record historique —, tandis que les exportations chinoises ont progressé de 21,8 pour cent en glissement annuel sur les deux premiers mois de 2026. Le PIIE Working Paper 26-2 documente ce que ses auteurs qualifient de « Second China Shock », par analogie avec le premier choc identifié par Autor, Dorn et Hanson pour la période 2000-2010, mais d'une ampleur sans commune mesure : le surplus manufacturier chinois dépasse désormais celui du Japon des années 1980 en proportion du PIB mondial.[^3]
 
-La question centrale que le sommet devra, explicitement ou non, arbitrer est celle de la nature de ce surplus. Deux lectures s'affrontent dans la littérature et dans le débat politique. La première, portée notamment par Zongyuan Zoe Liu dans Foreign Affairs, soutient que le surplus manufacturier chinois est un instrument stratégique délibéré, articulé à la politique de substitution aux importations dans les secteurs critiques (semi-conducteurs, véhicules électriques, batteries, panneaux solaires) et à la capture de parts de marché dans les économies du Sud global.[^4] La seconde lecture, plus proche de la tradition néoclassique, y voit le sous-produit d'une politique industrielle mal calibrée, d'une demande intérieure structurellement insuffisante et d'un taux de change administré.
+La question centrale que le sommet devra, explicitement ou non, arbitrer est celle de la nature de ce surplus. Deux lectures s'affrontent dans la littérature et dans le débat politique. La première, portée notamment par Zongyuan Zoe Liu dans Foreign Affairs, soutient que le surplus manufacturier chinois est un instrument stratégique délibéré, articulé à la politique de substitution aux importations dans les secteurs critiques (semi-conducteurs, véhicules électriques, batteries, panneaux solaires) et à la capture de parts de marché dans les économies du Sud global.[^4] La seconde lecture, plus proche de la tradition néoclassique, y voit le sous-produit d'une politique industrielle mal calibrée, d'une demande intérieure structurellement insuffisante et d'un taux de changé administré.
 
-La révision par la Chine de sa loi sur le commerce extérieur en mars 2026, qui codifie les contre-mesures aux sanctions étrangères, suggère que Pékin anticipe une période prolongée de confrontation commerciale et entend disposer d'un arsenal juridique symétrique. L'avantage énergétique chinois renforce cette posture : dans le contexte du blocage sélectif du détroit d'Ormuz, la Chine s'est positionnée comme acheteur exclusif du pétrole iranien, russe et vénézuélien, bénéficiant de décotes substantielles qui constituent un avantage compétitif structurel pour son industrie manufacturière.
+La révision par la Chine de sa loi sur le commerce extérieur en mars 2026, qui codifie les contre-mesures aux sanctions étrangères, suggère que Pékin anticipe une période prolongée de confrontation commerciale et entend disposer d'un arsenal juridique symétrique. L'avantage énergétique chinois renforcé cette posture : dans le contexte du blocage sélectif du détroit d'Ormuz, la Chine s'est positionnée comme acheteur exclusif du pétrole iranien, russe et vénézuélien, bénéficiant de décotes substantielles qui constituent un avantage compétitif structurel pour son industrie manufacturière.
 
 Pol Antràs a montré dans ses travaux sur les chaînes de valeur mondiales que la restructuration des réseaux de production en réponse aux tensions géopolitiques ne s'opère pas par relocalisation mais par « friendshoring » sélectif, dont les bénéfices profitent principalement aux économies déjà intégrées dans les chaînes nord-américaines ou est-asiatiques.[^5] Le sommet Trump-Xi pourrait accélérer cette dynamique en institutionnalisant un commerce administré bilatéral qui, par construction, exclut les tiers -- et en premier lieu l'Union européenne.[^5b]
 
 [^5b]: Sur les effets de la fragmentation géoéconomique sur les chaînes de valeur, voir Thierry Mayer et Isabelle Méjean, « The Fragmentation Paradox: Derisking Trade and Global Safety », 2025. Sur les coûts de la sortie unilatérale du libre-échange, voir Andrei Levchenko, Barthélémy Bonadio et Nitya Pandalai-Nayar, « Falling Dominoes? The Impact of the US Exit from Free Trade on the Sustainability of Trade Cooperation », *SIAM Review*, 2026.
 
-[^3]: PIIE Working Paper 26-2, « Another China Shock », février 2026. Voir aussi Chad P. Bown, « Reciprocity and the China Shock », 2024, et Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Economies*, 2024, pour le cadre analytique.
+[^3]: PIIE Working Paper 26-2, « Another China Shock », février 2026. Voir aussi Chad P. Bown, « Reciprocity and the China Shock », 2024, et Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Économies*, 2024, pour le cadre analytique.
 
 [^4]: Zongyuan Zoe Liu, « China's Trade Surplus Is a Strategic Weapon », Foreign Affairs, janvier 2026.
 

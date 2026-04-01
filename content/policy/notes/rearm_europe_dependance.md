@@ -12,14 +12,7 @@ summary: Les dépenses de défense de l'UE-27 atteignent 381 milliards d'euros e
   symbolique franchi pour la première fois depuis la fin de la Guerre froide. Le plan...
 status: ready
 draft: false
-theme: defense
----
-
-# ReArm Europe : le réarmement européen entre ambition et dépendance américaine
-
-**Eric Gabin Kilama**
-**Mars 2026**
-
+theme: défense
 ---
 
 ### Contexte
@@ -35,7 +28,7 @@ L'accélération est réelle --- +63 % entre 2020 et 2026, sur la base d'une dé
 
 La stratégie de défense nationale américaine (NDS 2026), publiée le 23 janvier 2026, modifie profondément le cadre transatlantique. Le document relègue explicitement l'Europe au second plan au profit d'une posture de sécurité hémisphérique centrée sur la Chine et l'hémisphère occidental[^4]. La rupture n'est plus un risque prospectif mais un fait accompli, formalisé dans un document officiel où le président Trump est cité quarante-sept fois --- un degré de personnalisation sans précédent dans une stratégie de défense nationale. Le *burden-sharing* traditionnel cède la place au *burden-shifting* : Washington ne demande plus aux Européens de contribuer davantage à une architecture commune, mais de financer seuls leur propre sécurité.
 
-[^4]: Department of Defense, *National Defense Strategy*, 23 janvier 2026. Analyse : Allison, G. et al. (2026), « The Greatest Transatlantic Rupture Since 1945 », Belfer Center, Harvard.
+[^4]: Department of Défense, *National Défense Strategy*, 23 janvier 2026. Analyse : Allison, G. et al. (2026), « The Greatest Transatlantic Rupture Since 1945 », Belfer Center, Harvard.
 
 ### Analyse
 
@@ -46,7 +39,7 @@ La stratégie de défense nationale américaine (NDS 2026), publiée le 23 janvi
 
 Les clauses de préférence européenne de SAFE sont assorties de trois exceptions --- urgence opérationnelle, absence de fournisseur européen compétitif, interopérabilité OTAN --- qui couvrent en pratique la quasi-totalité des achats majeurs. L'urgence opérationnelle s'applique dès qu'un État invoque un besoin de livraison dans un délai inférieur à 24 mois, ce qui exclut mécaniquement les systèmes européens dont les délais courent entre 24 et 36 mois. L'absence de fournisseur compétitif est invocable pour les systèmes de défense antimissile, la surveillance spatiale et les systèmes C4ISR de dernière génération, segments où l'industrie américaine conserve un avantage technologique documenté. L'interopérabilité OTAN, enfin, fonctionne comme un standard de facto qui favorise les équipements américains dans toute opération conjointe. On peut estimer qu'au moins 14 milliards sur les 38 milliards de premiers investissements SAFE approuvés concernent des systèmes pour lesquels au moins une de ces exceptions peut être invoquée. La préférence européenne est une fiction juridique adossée à des exceptions qui l'annulent.
 
-Le problème est plus profond encore : SAFE finance les *achats*, pas les *capacités de production*. La structure de prêt oriente les incitations vers l'acquisition de systèmes existants, non vers l'investissement dans les lignes de production européennes. Sans conditionnalité industrielle contraignante, des prêts européens financent des achats américains --- le décalage structurel qui explique le paradoxe du réarmement. À titre de comparaison, le CHIPS and Science Act américain inclut des clauses de *clawback*, des obligations de *profit-sharing* et un volet recherche fondamentale distinct du volet production[^7]. SAFE ne prévoit aucun mécanisme de capture de valeur pour le contribuable européen : ni participations, ni royalties, ni droits de propriété intellectuelle partagés. Le risque est socialisé ; le rendement est privatisé.
+Le problème est plus profond encore : SAFE finance les *achats*, pas les *capacités de production*. La structure de prêt orienté les incitations vers l'acquisition de systèmes existants, non vers l'investissement dans les lignes de production européennes. Sans conditionnalité industrielle contraignante, des prêts européens financent des achats américains --- le décalage structurel qui explique le paradoxe du réarmement. À titre de comparaison, le CHIPS and Science Act américain inclut des clauses de *clawback*, des obligations de *profit-sharing* et un volet recherche fondamentale distinct du volet production[^7]. SAFE ne prévoit aucun mécanisme de capture de valeur pour le contribuable européen : ni participations, ni royalties, ni droits de propriété intellectuelle partagés. Le risque est socialisé ; le rendement est privatisé.
 
 [^7]: CHIPS and Science Act, Pub. L. 117-167 (2022). Les clauses de conditionnalité incluent un plafond sur les rachats d'actions et des restrictions sur l'expansion en Chine pour les bénéficiaires.
 
@@ -58,7 +51,7 @@ Le problème est plus profond encore : SAFE finance les *achats*, pas les *capac
 
 Alesina et Spolaore (2006) montrent que les dépenses de défense et la taille des nations sont co-déterminées, et que la fragmentation politique génère une duplication des coûts de défense qui est l'exact analogue, au niveau étatique, de la fragmentation industrielle européenne[^11]. La conséquence est directe : SAFE sans consolidation industrielle est non seulement inefficient mais potentiellement inflationniste, finançant des séries de production dupliquées à échelle sous-optimale dans vingt-sept marchés nationaux. Conditionner la consolidation d'abord. Décaisser ensuite.
 
-[^11]: Alesina, A. et Spolaore, E. (2006), « Conflict, Defense Spending, and the Number of Nations ».
+[^11]: Alesina, A. et Spolaore, E. (2006), « Conflict, Défense Spending, and the Number of Nations ».
 
 **Le dilemme franco-allemand.** Le clivage entre Paris et Berlin structure l'ensemble de l'architecture de défense européenne. Berlin investit dans un bouclier antimissile (Arrow 3, système israélo-américain déployé dans le cadre de l'European Sky Shield Initiative, ESSI) et une armée conventionnelle lourde insérée dans le cadre OTAN. Paris défend la dissuasion nucléaire comme clé de voûte de la sécurité européenne, l'autonomie stratégique et l'industrie de défense intégrée. Les deux modèles entrent en compétition directe pour les mêmes enveloppes budgétaires.
 
@@ -118,7 +111,7 @@ Les matières premières critiques (lithium, cobalt, terres rares, titane) condi
 1. **Transformer SAFE en instrument de politique industrielle.** La conditionnalité européenne doit passer de l'incitation à la contrainte : ratio intra-européen contraignant de 65 % d'achats européens à l'horizon 2030, avec un mécanisme bonus-malus sur les taux (bonification de 50 points de base pour les États dépassant le seuil, majoration équivalente pour ceux qui ne l'atteignent pas) et un tableau de bord trimestriel public (Mazzucato 2021)[^19]. Un plancher de 15 % de R&D réinvestie dans la base industrielle européenne devrait conditionner les décaissements, conformément aux multiplicateurs estimés par Moretti, Steinwender et Van Reenen (2025, *RES*) qui documentent un *crowding-in* de +0,5 % de la R&D privée par point de R&D militaire[^20]. La gouvernance de SAFE doit être réformée : séparation des fonctions d'émission de dette, d'allocation des fonds et de contrôle de la conditionnalité, avec un comité de conditionnalité indépendant --- ni la Commission ni l'EDA --- doté d'un pouvoir de recommandation publique. Ce seuil de 65 % suppose une montée en capacité dont le rythme reste incertain ; les pays du flanc Est, contraints par l'urgence sécuritaire, pourraient se trouver pénalisés si l'industrie européenne ne livre pas dans les délais. Le risque d'une fracture Est-Ouest sur la BITD doit être anticipé par un mécanisme de transition graduée (50 % en 2027, 57 % en 2028, 65 % en 2030).
 
 [^19]: Mazzucato, M. (2021), *Mission Economy: A Moonshot Guide to Changing Capitalism*, Allen Lane.
-[^20]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025), « Intellectual Spoils of War? Defense R&D, Productivity, and International Spillovers », *Review of Economic Studies* (à paraître).
+[^20]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025), « Intellectual Spoils of War? Défense R&D, Productivity, and International Spillovers », *Review of Economic Studies* (à paraître).
 
 2. **Piloter la consolidation industrielle.** La consolidation par segment est la condition nécessaire de la baisse des coûts unitaires. L'approche doit être séquencée : procurement conjoint volontaire pour les items non sensibles (munitions, logistique, équipements d'entraînement) dès 2027, extension progressive aux systèmes d'armes à partir de 2030. L'article 346 TFUE doit être réinterprété pour autoriser, et non empêcher, l'agrégation européenne de la demande. Un instrument de co-investissement en capital dans les PME de la BITD de rang 2 et 3, sur le modèle du programme américain SBIC (*Small Business Investment Company*), est nécessaire pour éviter que la montée en cadence ne se traduise par une accélération des défaillances dans le tissu industriel de sous-traitance.
 

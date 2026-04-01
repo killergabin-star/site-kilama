@@ -4,21 +4,15 @@ date: '2024-06-15'
 type: note
 tags:
 - JETP
-- transition energetique
+- transition énergétique
 - climat
-- finance developpement
+- finance développement
 summary: Pour respecter l'ambition de limiter le réchauffement climatique à 1,5 degré Celsius, une action urgente est nécessaire
   pour décarboner les systèmes énergétiques des principales économies émergentes....
 status: ready
 draft: false
-theme: energie
+theme: énergie
 author: Eric Gabin Kilama
----
-
-# Just Energy Transition Partnerships : ce que les donateurs doivent faire pour relancer la dynamique
-
-**Eric Gabin Kilama** | 15 juin 2024 | erickilama.com
-
 ---
 
 ## Un modèle prometteur en panne
@@ -37,7 +31,7 @@ Les JETP sont cruciaux à la fois pour la stabilité géopolitique et la protect
 
 **Deuxièmement, un échec des JETP aurait des conséquences géopolitiques directes.** Il pourrait pousser les pays partenaires vers des accords d'infrastructure alternatifs — notamment avec la Chine dans le cadre de la Belt and Road Initiative — potentiellement dépourvus du modèle de transition économique globale et de partenariat étroit que les JETP poursuivent. Un tel scénario compromettrait non seulement les objectifs climatiques mais aussi les relations diplomatiques et économiques du Nord global dans ces pays.
 
-**Troisièmement, les leçons des JETP sont transposables.** L'intérêt croissant pour les « plateformes pays » — qui étaient au centre des discussions lors des réunions de printemps du FMI et de la Banque mondiale en 2024 — renforce la pertinence des enseignements tirés des JETP. Les solutions à leurs défis peuvent éclairer la conception de ces plateformes et, plus largement, l'architecture future du financement climatique dans les pays en développement.
+**Troisièmement, les leçons des JETP sont transposables.** L'intérêt croissant pour les « plateformes pays » — qui étaient au centre des discussions lors des réunions de printemps du FMI et de la Banque mondiale en 2024 — renforcé la pertinence des enseignements tirés des JETP. Les solutions à leurs défis peuvent éclairer la conception de ces plateformes et, plus largement, l'architecture future du financement climatique dans les pays en développement.
 
 ## Diagnostic : cinq défaillances structurelles
 
@@ -47,7 +41,7 @@ L'analyse des quatre JETP existants révèle des défaillances qui ne relèvent 
 
 Le financement alloué aux JETP est significativement inférieur au soutien nécessaire pour la transition. En Afrique du Sud, sur les 8,5 milliards annoncés, seule une fraction a été décaissée, et une part importante consiste en prêts aux taux du marché qui alourdissent la dette publique plutôt qu'en dons ou prêts concessionnels. L'accès au capital implique en outre des charges administratives lourdes, les pays partenaires devant souvent négocier séparément avec chaque donateur bilatéral, chacun appliquant ses propres procédures et conditionnalités.
 
-Le Global Development Policy Center de l'Université de Boston estime que les besoins réels de financement pour la transition énergétique en Afrique du Sud se situent entre 60 et 80 milliards de dollars sur la prochaine décennie — soit un ordre de grandeur supérieur aux montants annoncés. L'écart est similaire en Indonésie, où le plan d'investissement prévoit des besoins de 97 milliards de dollars sur dix ans.
+Le Global Development Policy Center de l'Université de Boston estimé que les besoins réels de financement pour la transition énergétique en Afrique du Sud se situent entre 60 et 80 milliards de dollars sur la prochaine décennie — soit un ordre de grandeur supérieur aux montants annoncés. L'écart est similaire en Indonésie, où le plan d'investissement prévoit des besoins de 97 milliards de dollars sur dix ans.
 
 ### Une coordination défaillante entre donateurs
 

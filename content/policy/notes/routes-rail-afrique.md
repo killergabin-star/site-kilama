@@ -7,19 +7,13 @@ tags:
 - infrastructure
 - transport
 - ZLECAf
-- developpement
+- développement
 summary: Malgré une croissance économique notable sur les deux dernières décennies, le déficit infrastructurel persistant
   du continent africain — particulièrement dans les réseaux routiers — demeure une...
 status: ready
 draft: false
 theme: afrique
 author: Eric Gabin Kilama
----
-
-# Routes, rail et développement africain : une analyse des investissements optimaux
-
-**Eric Gabin Kilama** | 5 septembre 2024 | erickilama.com
-
 ---
 
 ## Introduction
@@ -66,7 +60,7 @@ Ces montants sont macroéconomiquement réalisables : le paquet le plus ambitieu
 
 Les modèles d'équilibre général spatial développés par Fajgelbaum et Schaal (2020) transforment le débat sur les infrastructures d'un problème technique en un choix politique explicite. Le réseau « optimal » dépend entièrement de la fonction de bien-être social retenue par le planificateur.
 
-**Un planificateur utilitariste** — maximisant la somme des bien-être individuels — concentre les investissements dans les pôles régionaux existants : la côte ouest-africaine (axe Lagos-Accra-Abidjan), la vallée du Nil (Le Caire-Khartoum-Addis-Abeba), les Grands Lacs (Kampala-Kigali-Bujumbura). Cette stratégie maximise la croissance agrégée en renforçant les effets d'agglomération dans les zones les plus productives.
+**Un planificateur utilitariste** — maximisant la somme des bien-être individuels — concentré les investissements dans les pôles régionaux existants : la côte ouest-africaine (axe Lagos-Accra-Abidjan), la vallée du Nil (Le Caire-Khartoum-Addis-Abeba), les Grands Lacs (Kampala-Kigali-Bujumbura). Cette stratégie maximise la croissance agrégée en renforçant les effets d'agglomération dans les zones les plus productives.
 
 **Un planificateur soucieux d'équité** — accordant un poids supérieur aux régions les plus pauvres — réoriente les budgets vers le corridor sud-centrafricain reliant Luanda et Kinshasa à Mombasa et Dar es Salaam. Ce corridor traverse certaines des régions les plus enclavées et les plus pauvres du continent — la République démocratique du Congo, la Zambie, la Tanzanie intérieure — et son développement réduirait significativement les inégalités spatiales.
 

@@ -22,21 +22,15 @@ draft: false
 theme: polycrisis
 ---
 
-# La convergence des crises : anatomie d'une polycrisis sous administration Trump II
-
-**Eric Gabin Kilama** | Mars 2026
-
----
-
 ## Résumé
 
-L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière, d'une crise migratoire et d'une crise énergétique dont la convergence vers un nœud causal commun — la weaponisation de l'interdépendance économique par la première puissance mondiale — transforme la nature du risque international. Ce rapport identifie six chaînes causales inter-domaines et neuf boucles de rétroaction, dont sept amplificatrices et zéro stabilisatrice. L'absence complète de mécanisme correcteur endogène constitue le résultat le plus préoccupant de l'analyse.
+L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière, d'une crise migratoire et d'une crise énergétique dont la convergence vers un nœud causal commun — la weaponisation de l'interdépendance économique par la première puissance mondiale — transforme la nature du risque international. Ce rapport identifié six chaînes causales inter-domaines et neuf boucles de rétroaction, dont sept amplificatrices et zéro stabilisatrice. L'absence complète de mécanisme correcteur endogène constitue le résultat le plus préoccupant de l'analyse.
 
 La quantification par simulation de Monte Carlo produit cinq scénarios. Le plus probable, le Découplage Ordonné (27,5 %), décrit un accord sino-américain marginalisant l'Europe. Le résultat décisif concerne le gradient vers l'Embrasement (17,5 %) : la croissance mondiale chute de 2,3 % à 0,9 %, soit 1 200 milliards de dollars de PIB, non par dégradation linéaire mais par effet de seuil. Dès que trois boucles amplificatrices s'activent simultanément, les multiplicateurs se démultiplient d'un facteur 1,7 à 2,3.
 
-L'analyse thématique couvre six domaines — énergie, commerce, finance, sécurité, développement, migration — en documentant les mécanismes de transmission et les asymétries Nord-Sud. L'Europe se révèle exposée sur un flanc contre-intuitif : les portefeuilles, avec 827 milliards de dollars d'actifs américains concentrés sur les nœuds de compensation belges et luxembourgeois. Le financement de ReArm Europe (800 milliards d'euros) s'opère dans le pire environnement macrofinancier possible. La contraction de l'aide au développement (jusqu'à -17 % projetés pour 2025) prive les États fragiles de leur infrastructure de prévention.
+L'analyse thématique couvre six domaines — énergie, commerce, finance, sécurité, développement, migration — en documentant les mécanismes de transmission et les asymétries Nord-Sud. L'Europe se révèle exposée sur un flanc contre-intuitif : les portefeuilles, avec 827 milliards de dollars d'actifs américains concentrés sur les nœuds de compensation belges et luxembourgeois. Le financement de ReArm Europe (800 milliards d'euros) s'opère dans le pire environnement macrofinancier possible. La contraction de l'aide au développement (jusqu'à -17 % projetés pour 2025) privé les États fragiles de leur infrastructure de prévention.
 
-Le rapport identifie trois options pour la présidence française du G7 à Évian : un mécanisme de coordination conditionnelle à seuils automatiques, un moratoire tarifaire lié à l'expiration de la Section 122, et une initiative humanitaire pour le Soudan. Douze signposts quantifiés structurent la veille stratégique.
+Le rapport identifié trois options pour la présidence française du G7 à Évian : un mécanisme de coordination conditionnelle à seuils automatiques, un moratoire tarifaire lié à l'expiration de la Section 122, et une initiative humanitaire pour le Soudan. Douze signposts quantifiés structurent la veille stratégique.
 
 ---
 

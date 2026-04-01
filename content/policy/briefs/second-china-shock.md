@@ -16,14 +16,6 @@ draft: false
 theme: trade
 ---
 
-# Le Second China Shock : anatomie d'un surplus de 1 200 milliards de dollars et ses conséquences européennes
-
-*Centre d'analyse, de prévision et de stratégie — Étude*
-*29 mars 2026*
-
-
----
-
 ## Table des matières
 
 1. [Résumé](#résumé)
@@ -66,7 +58,7 @@ Le premier choc chinois a été identifié par Autor, Dorn et Hanson dans leur a
 
 Le second choc diffère du premier sur au moins quatre dimensions. La rupture est profonde.[^4b]
 
-[^4b]: Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Economies*, 2024, réévalue l'ampleur du premier choc et documente la transformation des mécanismes de transmission.
+[^4b]: Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Économies*, 2024, réévalue l'ampleur du premier choc et documente la transformation des mécanismes de transmission.
 
 La composition sectorielle a radicalement changé. Le premier choc portait sur des biens à faible et moyenne technologie (textile, meubles, jouets, électronique assemblée) ; le second porte sur des secteurs stratégiques à forte intensité technologique -- véhicules électriques, batteries lithium-ion, panneaux solaires, composants de télécommunications -- où la Chine occupe désormais la frontière technologique et non plus la position de suiveur à bas coûts.
 
@@ -82,7 +74,7 @@ Comme le relève Autor, le premier choc a démontré que les marchés du travail
 
 [^5]: Zongyuan Zoe Liu, « China's Manufacturing Surplus Is a Feature, Not a Bug », *Foreign Affairs*, mars 2026.
 
-[^6]: David H. Autor, David Dorn et Gordon H. Hanson, « When Work Disappears: Manufacturing Decline and the Falling Marriage Market Value of Young Men », *American Economic Review: Insights*, vol. 1, n° 2, 2019, pp. 161-178.
+[^6]: David H. Autor, David Dorn et Gordon H. Hanson, « When Work Disappears: Manufacturing Décliné and the Falling Marriage Market Value of Young Men », *American Economic Review: Insights*, vol. 1, n° 2, 2019, pp. 161-178.
 
 ---
 
@@ -90,7 +82,7 @@ Comme le relève Autor, le premier choc a démontré que les marchés du travail
 
 Le surplus de 1 200 milliards de dollars fait l'objet de trois interprétations concurrentes qui structurent les réponses politiques envisageables.
 
-**La grille mercantiliste** considère le surplus comme le produit d'une manipulation délibérée des termes de l'échange : taux de change administré, subventions à l'exportation, dumping social et environnemental, vol de propriété intellectuelle. Cette lecture, dominante dans le discours de l'administration Trump, justifie une réponse symétrique par les tarifs et les restrictions d'accès. Son mérite est la clarté politique, mais elle souffre de deux faiblesses analytiques : elle sous-estime le rôle de la demande intérieure déprimée dans la génération du surplus, et elle ignore que les tarifs américains fonctionnent comme un impôt régressif sur les consommateurs.
+**La grille mercantiliste** considère le surplus comme le produit d'une manipulation délibérée des termes de l'échange : taux de changé administré, subventions à l'exportation, dumping social et environnemental, vol de propriété intellectuelle. Cette lecture, dominante dans le discours de l'administration Trump, justifie une réponse symétrique par les tarifs et les restrictions d'accès. Son mérite est la clarté politique, mais elle souffre de deux faiblesses analytiques : elle sous-estimé le rôle de la demande intérieure déprimée dans la génération du surplus, et elle ignore que les tarifs américains fonctionnent comme un impôt régressif sur les consommateurs.
 
 **La grille structurelle**, portée par les économistes du FMI et de la Banque mondiale, interprète le surplus comme le symptôme d'un déséquilibre macroéconomique interne : excès d'épargne, insuffisance de la protection sociale, contraction de l'investissement immobilier non compensée par la consommation. Cette lecture appelle des réformes internes chinoises -- renforcement du filet social, rééquilibrage vers la consommation -- plutôt que des mesures coercitives externes. Son point aveugle est qu'elle traite le surplus comme un problème à résoudre alors que, pour une partie de l'appareil d'État chinois, il constitue un objectif.
 
@@ -112,7 +104,7 @@ Lecture plus inquiétante pour Paris : l'enquête vise autant l'UE que la Chine,
 
 [^7b]: Adrien Auclert et al., « The Macroeconomics of Tariff Shocks », 2025, modélisent les effets d'équilibre général des chocs tarifaires sur l'inflation et la production. Stefanie Stantcheva, « The 2025 US Tariffs: Perceptions, Understanding, and Policy Views », 2025, documente les perceptions et effets distributifs.
 
-La contrainte temporelle renforce la pression. L'USTR vise une conclusion pour le 24 juillet 2026, date d'expiration de la Section 122 du Trade Act utilisée comme fondement juridique de substitution après l'invalidation de l'IEEPA par la Cour suprême.[^8] L'architecture tarifaire repose donc sur une base juridique fragile. La pression combinée de la Section 122 (tarif de 10 puis 15 pour cent), des tarifs liés au Groenland sur huit pays européens, et de la Section 301 crée une incertitude maximale pour les exportateurs européens.
+La contrainte temporelle renforcé la pression. L'USTR vise une conclusion pour le 24 juillet 2026, date d'expiration de la Section 122 du Trade Act utilisée comme fondement juridique de substitution après l'invalidation de l'IEEPA par la Cour suprême.[^8] L'architecture tarifaire repose donc sur une base juridique fragile. La pression combinée de la Section 122 (tarif de 10 puis 15 pour cent), des tarifs liés au Groenland sur huit pays européens, et de la Section 301 crée une incertitude maximale pour les exportateurs européens.
 
 Comme le souligne Antràs, cette incertitude est en elle-même un facteur de restructuration des chaînes de valeur.[^9] Les entreprises ne répondent pas seulement aux tarifs effectifs, mais à la variance anticipée de la politique commerciale. Le raccourcissement des chaînes et la régionalisation s'en trouvent favorisés, au détriment des économies les plus dépendantes du commerce intercontinental.
 
@@ -140,7 +132,7 @@ L'industrie automobile allemande dépend du marché chinois pour un tiers de ses
 
 ## Le lien risque géopolitique-PME : une vulnérabilité sous-estimée {#lien-géopolitique-pme}
 
-L'analyse conventionnelle des chocs commerciaux se concentre sur les effets macroéconomiques et les grandes entreprises exposées au commerce international, sous-estimant un canal de transmission essentiel : l'impact du risque géopolitique sur les PME, qui constituent en Europe 99 pour cent du tissu productif et 65 pour cent de l'emploi manufacturier.
+L'analyse conventionnelle des chocs commerciaux se concentré sur les effets macroéconomiques et les grandes entreprises exposées au commerce international, sous-estimant un canal de transmission essentiel : l'impact du risque géopolitique sur les PME, qui constituent en Europe 99 pour cent du tissu productif et 65 pour cent de l'emploi manufacturier.
 
 Les travaux récents identifient plusieurs canaux de transmission du second choc aux PME.[^10]
 

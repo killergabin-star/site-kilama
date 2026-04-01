@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "id": "apd-future",
+    "title": "Future of Development Finance",
+    "subtitle": "ODA trajectories \u00d7 debt sustainability \u00d7 geopolitical competition",
+    "status": "active",
+    "last_update": "2026-03-31",
+    "data_mode": "hybrid"
+  },
+
+  "alert": {
+    "indicator_id": "oda-gni",
+    "label": "ODA/GNI Ratio",
+    "value": 0.33,
+    "threshold": 0.38,
+    "threshold_label": "5-year average",
+    "text": "DAC ODA fell <strong>7.1%</strong> in real terms in 2024 to $212.1bn (0.33% GNI). OECD projects further <strong>9-17%</strong> contraction in 2025 \u2014 steepest decline since 1990s",
+    "timestamp": "2026-03-31T09:00:00+01:00"
+  },
+
+  "sparklines": {
+    "header": "Key Indicators \u2014 Development Finance",
+    "subtitle": "ODA flows, debt sustainability & geopolitical competition dashboard",
+    "cards": [
+      { "ticker": "ODA:DAC", "label": "DAC ODA (bn$)", "value": 212.1, "change": -11.6, "pct": -7.1 },
+      { "ticker": "ODA:GNI", "label": "ODA/GNI Ratio", "value": 0.33, "change": -0.04, "pct": -10.8 },
+      { "ticker": "IDA:21", "label": "IDA-21 (bn$)", "value": 100.0, "change": 7.0, "pct": 7.5 },
+      { "ticker": "DEF:NATO", "label": "NATO Defence/GDP", "value": 2.02, "change": 0.18, "pct": 9.8 },
+      { "ticker": "DEBT:LIC", "label": "LICs in Distress", "value": 54, "change": 3, "pct": 5.9 },
+      { "ticker": "DTS:RECH", "label": "SDR Rechanneling (bn$)", "value": 42.3, "change": 5.1, "pct": 13.7 }
+    ]
+  },
+
+  "scenarios": [
+    { "name": "Reform Surge",     "color": "#228833", "prob": 10, "gdp": "+0.8%", "fan_base": 0.8, "fan_trend": 0.10 },
+    { "name": "Gradual Recovery",  "color": "#4477AA", "prob": 25, "gdp": "+0.5%", "fan_base": 0.5, "fan_trend": 0.05 },
+    { "name": "Status Quo",        "color": "#CCBB44", "prob": 35, "gdp": "+0.2%", "fan_base": 0.2, "fan_trend": 0.0 },
+    { "name": "Erosion",           "color": "#EE6677", "prob": 20, "gdp": "-0.3%", "fan_base": -0.3, "fan_trend": -0.10 },
+    { "name": "Collapse",          "color": "#AA3377", "prob": 10, "gdp": "-1.0%", "fan_base": -1.0, "fan_trend": -0.25 }
+  ],
+
+  "featured_chart": {
+    "indicator_id": "oda-gni",
+    "title": "DAC ODA as % of GNI",
+    "meta": "OECD DAC \u00b7 Annual",
+    "source": "OECD Development Co-operation Statistics \u00b7 2024 preliminary",
+    "latest_value": 0.33,
+    "latest_label": "2024",
+    "dates": ["2010-01-01","2011-01-01","2012-01-01","2013-01-01","2014-01-01","2015-01-01","2016-01-01","2017-01-01","2018-01-01","2019-01-01","2020-01-01","2021-01-01","2022-01-01","2023-01-01","2024-01-01"],
+    "values": [0.32, 0.31, 0.29, 0.30, 0.29, 0.30, 0.32, 0.31, 0.31, 0.30, 0.32, 0.33, 0.36, 0.37, 0.33]
+  },
+
+  "fan_chart": {
+    "title": "ODA/GNI Projections \u2014 Development Finance Scenarios",
+    "meta": "5 scenarios \u00b7 2025-2030 projections",
+    "source": "FPSQ Lab \u00b7 APD-specific calibration",
+    "years": [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030],
+    "historical": [0.31, 0.30, 0.32, 0.33, 0.36, 0.37, 0.33]
+  },
+
+  "spreads": {
+    "title": "Sovereign Spreads \u2014 Largest Bilateral ODA Recipients",
+    "meta": "10Y Government Bonds \u00b7 Basis points",
+    "countries": [
+      { "name": "Ethiopia",    "base": 850, "color": "#E86850", "chg": 45,  "m1": 60,  "y1": -120 },
+      { "name": "Ghana",       "base": 620, "color": "#9B6DC8", "chg": -35, "m1": -50, "y1": -180 },
+      { "name": "Zambia",      "base": 540, "color": "#E8A848", "chg": -20, "m1": -30, "y1": -200 },
+      { "name": "Kenya",       "base": 380, "color": "#5BA8E6", "chg": 15,  "m1": 8,   "y1": -45 },
+      { "name": "C\u00f4te d'Ivoire", "base": 280, "color": "#4AAA6A", "chg": -5, "m1": -12, "y1": -35 }
+    ]
+  },
+
+  "comparison_table": {
+    "title": "Scenario Comparison \u2014 Future of Development Finance",
+    "subtitle": "Key variables by scenario \u2014 2025-2028 projections",
+    "variables": ["ODA/GNI (%)", "ODA Real Growth (%)", "LICs in Debt Distress", "IDA Disbursements (bn$)", "Defence/ODA Ratio", "SDR Rechanneling (bn$)", "Africa ODA Share (%)", "Probability (%)"],
+    "data": {
+      "Reform Surge":     ["0.38", "+5.0", "45", "32", "3.2", "80", "32", "10"],
+      "Gradual Recovery":  ["0.35", "+2.0", "48", "28", "3.8", "60", "29", "25"],
+      "Status Quo":        ["0.33", "+0.0", "54", "25", "4.5", "45", "26", "35"],
+      "Erosion":           ["0.28", "-5.0", "62", "22", "5.5", "35", "22", "20"],
+      "Collapse":          ["0.22", "-12.0", "70", "18", "7.0", "25", "18", "10"]
+    }
+  }
+}

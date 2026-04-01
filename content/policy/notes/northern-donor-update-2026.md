@@ -13,14 +13,8 @@ summary: 'En septembre 2024, cette note posait une question que beaucoup jugeaie
   encore sa place au XXIe siècle ? Dix-huit mois plus tard, la question n''est plus...'
 status: ready
 draft: false
-theme: developpement
+theme: développement
 author: Eric Gabin Kilama
----
-
-# Le donateur du Nord en 2026 : entre retrait américain et quête d'un nouveau mandat
-
-**Eric Gabin Kilama** | 31 mars 2026 | erickilama.com
-
 ---
 
 ## Introduction
@@ -51,7 +45,7 @@ Pendant que les donateurs du Nord se contractent, d'autres acteurs montent en pu
 
 Ces financeurs opèrent selon des logiques différentes de celles des donateurs traditionnels. Ils imposent moins de conditionnalités politiques, privilégient les projets d'infrastructure à haute visibilité, et lient souvent leur financement à des accords commerciaux ou à l'accès aux ressources naturelles. Cette approche, critiquée par les donateurs traditionnels comme insuffisamment transparente et potentiellement génératrice de dette insoutenable, trouve un écho favorable auprès de nombreux gouvernements du Sud qui y voient une alternative au paternalisme perçu de l'aide occidentale.
 
-La coexistence de ces deux modèles — coopération conditionnelle du Nord et financement transactionnel du Sud-Sud et des pays du Golfe — fragmente l'architecture de l'aide sans qu'un cadre de cohérence n'émerge. Le risque est une course au moins-disant en matière de gouvernance et de standards environnementaux et sociaux.
+La coexistence de ces deux modèles — coopération conditionnelle du Nord et financement transactionnel du Sud-Sud et des pays du Golfe — fragmenté l'architecture de l'aide sans qu'un cadre de cohérence n'émerge. Le risque est une course au moins-disant en matière de gouvernance et de standards environnementaux et sociaux.
 
 ## L'après-Séville : le récit de la coopération peut-il être réécrit ?
 

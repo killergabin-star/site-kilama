@@ -12,14 +12,8 @@ summary: 'L''aide publique au développement (APD) a été introduite dans les a
   à un moment particulier de l''histoire : décolonisation, Guerre froide,...'
 status: ready
 draft: false
-theme: developpement
+theme: développement
 author: Eric Gabin Kilama
----
-
-# Un donateur du Nord a-t-il encore sa place au XXIe siècle ?
-
-**Eric Gabin Kilama** | 20 septembre 2024 | erickilama.com
-
 ---
 
 ## Une légitimité en question
@@ -56,7 +50,7 @@ Deuxièmement, la part croissante de la finance concessionnelle est absorbée pa
 
 Troisièmement, les pressions s'intensifient pour s'engager sur un objectif ambitieux d'investissement climatique mondial — le Nouvel objectif collectif quantifié (NCQG) adopté à la COP29 de Bakou fixe une cible de 300 milliards de dollars par an de la part des pays développés, avec une aspiration à mobiliser 1 300 milliards de toutes sources — sans amputer les budgets d'APD existants. L'arithmétique est impitoyable : sans nouvelles sources de financement, l'engagement climatique se fait nécessairement au détriment d'autres priorités.
 
-Le Groupe d'experts indépendants du G20 estime que 180 milliards de dollars supplémentaires par an de finance concessionnelle seront nécessaires d'ici 2030 pour que le système bilatéral et multilatéral atteigne les ODD et investisse adéquatement dans les biens publics mondiaux (Songwe, Stern et Bhattacharya, 2022). Avec peu d'appétit politique pour augmenter les dépenses publiques, la mobilisation de fonds concessionnels pour attirer et dérisquer l'investissement privé est devenue le principal vecteur de croissance du capital de développement, bien que ce « consensus de Wall Street » (Gabor, 2021) ait produit des résultats mitigés.
+Le Groupe d'experts indépendants du G20 estimé que 180 milliards de dollars supplémentaires par an de finance concessionnelle seront nécessaires d'ici 2030 pour que le système bilatéral et multilatéral atteigne les ODD et investisse adéquatement dans les biens publics mondiaux (Songwe, Stern et Bhattacharya, 2022). Avec peu d'appétit politique pour augmenter les dépenses publiques, la mobilisation de fonds concessionnels pour attirer et dérisquer l'investissement privé est devenue le principal vecteur de croissance du capital de développement, bien que ce « consensus de Wall Street » (Gabor, 2021) ait produit des résultats mitigés.
 
 ## Vers un nouveau récit pour la coopération
 
