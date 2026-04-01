@@ -14,7 +14,7 @@
     "threshold": 147.2,
     "threshold_label": "1-year moving average",
     "text": "GPR Index elevated at <strong>{value}</strong> — above {threshold_label} ({threshold}). Fragmentation scenario probability raised to <strong>25%</strong>",
-    "timestamp": "2026-04-01T02:21:48+01:00"
+    "timestamp": "2026-04-01T02:24:44+01:00"
   },
   "sparklines": {
     "header": "Key Indicators",
@@ -55,7 +55,7 @@
       {
         "ticker": "STRESS:FPSQ",
         "label": "Stress Index",
-        "value": 42,
+        "value": 25,
         "change": -5,
         "pct": -10.6,
         "indicator_id": "fiscal-stress",
@@ -74,42 +74,42 @@
     {
       "name": "Reform",
       "color": "#228833",
-      "prob": 15,
-      "gdp": "+2.3%",
-      "fan_base": 2.3,
-      "fan_trend": 0.15
+      "prob": 18,
+      "gdp": "+1.0%",
+      "fan_base": 1.0,
+      "fan_trend": -0.01
     },
     {
       "name": "Cooperative",
       "color": "#4477AA",
-      "prob": 25,
-      "gdp": "+1.9%",
-      "fan_base": 1.9,
-      "fan_trend": 0.05
+      "prob": 28,
+      "gdp": "+0.8%",
+      "fan_base": 0.8,
+      "fan_trend": -0.03
     },
     {
       "name": "Status Quo",
       "color": "#CCBB44",
-      "prob": 35,
-      "gdp": "+1.1%",
-      "fan_base": 1.1,
-      "fan_trend": -0.05
+      "prob": 22,
+      "gdp": "+1.3%",
+      "fan_base": 1.3,
+      "fan_trend": 0.02
     },
     {
       "name": "Fragmentation",
       "color": "#EE6677",
-      "prob": 15,
-      "gdp": "+0.4%",
-      "fan_base": 0.4,
-      "fan_trend": -0.15
+      "prob": 18,
+      "gdp": "-0.8%",
+      "fan_base": -0.8,
+      "fan_trend": -0.19
     },
     {
       "name": "Crisis",
       "color": "#AA3377",
-      "prob": 10,
-      "gdp": "-1.2%",
-      "fan_base": -1.2,
-      "fan_trend": -0.25
+      "prob": 8,
+      "gdp": "-1.8%",
+      "fan_base": -1.8,
+      "fan_trend": -0.29
     }
   ],
   "featured_chart": {
@@ -572,54 +572,54 @@
     ],
     "data": {
       "Reform": [
-        "+2.3",
-        "1.8",
-        "28",
-        "108.2",
-        "6.8",
-        "0.42",
-        "18",
-        "15"
+        "+1.0",
+        "5.0",
+        "447",
+        "73.8",
+        "—",
+        "—",
+        "36",
+        "18"
       ],
       "Cooperative": [
-        "+1.9",
-        "2.1",
-        "42",
-        "110.5",
-        "7.2",
-        "0.38",
-        "25",
-        "25"
+        "+0.8",
+        "4.6",
+        "502",
+        "77.7",
+        "—",
+        "—",
+        "45",
+        "28"
       ],
       "Status Quo": [
-        "+1.1",
-        "2.4",
-        "65",
-        "112.8",
-        "7.5",
-        "0.33",
-        "42",
-        "35"
+        "+1.3",
+        "3.8",
+        "346",
+        "70.3",
+        "—",
+        "—",
+        "25",
+        "22"
       ],
       "Fragmentation": [
-        "+0.4",
-        "3.6",
-        "145",
-        "118.4",
-        "8.4",
-        "0.28",
-        "68",
-        "15"
+        "-0.8",
+        "9.4",
+        "2500",
+        "100.2",
+        "—",
+        "—",
+        "80",
+        "18"
       ],
       "Crisis": [
-        "-1.2",
-        "5.2",
-        "320",
-        "126.1",
-        "10.1",
-        "0.21",
-        "89",
-        "10"
+        "-1.8",
+        "12.3",
+        "2500",
+        "119.4",
+        "—",
+        "—",
+        "100",
+        "8"
       ]
     }
   },
