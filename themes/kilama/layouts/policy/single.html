@@ -1,0 +1,545 @@
+{{ define "styles" }}
+<style>
+/* ═══════════════════════════════════════════════════
+   POLICY SINGLE — Economist editorial reading
+   Clean, focused, typographically rigorous
+   ═══════════════════════════════════════════════════ */
+
+/* --- Article header bar --- */
+.article-header-bar {
+  background: var(--ivory-deep);
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+  padding: 0 40px;
+}
+.article-header-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  flex-wrap: wrap;
+}
+.article-type-badge {
+  font-family: var(--font-data);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  display: inline-block;
+  white-space: nowrap;
+}
+/* Badge color variants — default blue-fpsq */
+.article-type-badge--note {
+  background: rgba(44, 95, 138, 0.12);
+  color: var(--blue-fpsq);
+}
+.article-type-badge--rapport {
+  background: rgba(5, 28, 44, 0.1);
+  color: var(--navy);
+}
+.article-type-badge--brief {
+  background: rgba(212, 160, 23, 0.12);
+  color: #9A7B0A;
+}
+.article-type-badge--controverse {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--red-analytical);
+}
+.article-type-badge--scenario {
+  background: rgba(46, 125, 50, 0.1);
+  color: var(--vert-dev);
+}
+.article-meta-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(27, 42, 74, 0.15);
+  flex-shrink: 0;
+}
+.article-meta-date,
+.article-meta-reading {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray-500);
+}
+.article-meta-author {
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--anthracite);
+}
+
+/* --- Article container --- */
+.article-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* --- Title --- */
+.article-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+/* --- Chapeau / summary --- */
+.article-chapeau {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--anthracite-light);
+  line-height: 1.65;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+/* --- Article body typography --- */
+.article-body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--anthracite);
+  line-height: 1.7;
+  padding-bottom: 48px;
+}
+
+.article-body p {
+  margin-bottom: 1.4em;
+}
+
+.article-body h2 {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+.article-body h4 {
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--anthracite);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Strong and emphasis */
+.article-body strong {
+  font-weight: 700;
+  color: var(--navy);
+}
+.article-body em {
+  font-style: italic;
+}
+
+/* Links within body */
+.article-body a {
+  color: var(--blue-fpsq);
+  text-decoration: underline;
+  text-decoration-color: rgba(44, 95, 138, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast);
+}
+.article-body a:hover {
+  text-decoration-color: var(--blue-fpsq);
+  color: var(--navy);
+}
+
+/* Blockquotes — navy border + Playfair italic */
+.article-body blockquote {
+  margin: 2em 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--navy);
+  background: transparent;
+}
+.article-body blockquote p {
+  font-family: var(--font-citation);
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+.article-body blockquote p + p {
+  margin-top: 0.8em;
+}
+.article-body blockquote cite,
+.article-body blockquote footer {
+  font-family: var(--font-title);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  display: block;
+  margin-top: 8px;
+}
+
+/* Lists */
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.4em;
+  padding-left: 1.5em;
+}
+.article-body li {
+  margin-bottom: 0.4em;
+}
+.article-body li::marker {
+  color: var(--blue-fpsq);
+}
+
+/* Code */
+.article-body code {
+  font-family: var(--font-data);
+  font-size: 0.85em;
+  background: var(--ivory-deep);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.article-body pre {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 20px 24px;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-radius: 0;
+}
+.article-body pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Tables */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-family: var(--font-title);
+  font-size: 0.9375rem;
+}
+.article-body thead th {
+  font-weight: 600;
+  color: var(--navy);
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--navy);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.article-body tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+  color: var(--anthracite);
+}
+.article-body tbody tr:hover {
+  background: var(--ivory-deep);
+}
+
+/* Images */
+.article-body img {
+  margin: 2em auto;
+  display: block;
+  max-width: 100%;
+}
+.article-body figure {
+  margin: 2em 0;
+}
+.article-body figcaption {
+  font-family: var(--font-title);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Horizontal rule */
+.article-body hr {
+  border: none;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+  margin: 2.5em 0;
+}
+
+/* Footnotes */
+.article-body .footnotes {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+}
+.article-body .footnotes ol {
+  padding-left: 1.2em;
+}
+.article-body .footnotes li {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-500);
+  margin-bottom: 0.5em;
+}
+.article-body .footnotes li p {
+  margin-bottom: 0.3em;
+}
+.article-body sup a,
+.article-body .footnote-ref {
+  font-family: var(--font-data);
+  font-size: 0.7em;
+  color: var(--blue-fpsq);
+  text-decoration: none;
+  vertical-align: super;
+}
+.article-body .footnote-backref {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--blue-fpsq);
+}
+
+/* --- Theme-colored top accent --- */
+.article-theme-accent {
+  height: 3px;
+  width: 60px;
+  margin-bottom: 24px;
+  margin-top: 48px;
+}
+.article-theme-accent--blue { background: var(--blue-fpsq); }
+.article-theme-accent--navy { background: var(--navy); }
+.article-theme-accent--gold { background: var(--gold-caps); }
+.article-theme-accent--red { background: var(--red-analytical); }
+.article-theme-accent--green { background: var(--vert-dev); }
+
+/* --- Tags --- */
+.article-tags {
+  padding: 32px 0 48px;
+  border-top: 1px solid rgba(27, 42, 74, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.article-tags-label {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  margin-right: 8px;
+}
+.article-tag-pill {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blue-fpsq);
+  background: rgba(44, 95, 138, 0.08);
+  padding: 5px 12px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.article-tag-pill:hover {
+  background: rgba(44, 95, 138, 0.15);
+  color: var(--navy);
+}
+
+/* --- Back navigation --- */
+.article-back-nav {
+  padding: 0 0 64px;
+}
+.article-back-link {
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue-fpsq);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast);
+}
+.article-back-link:hover {
+  color: var(--navy);
+}
+.article-back-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+.article-back-link:hover svg {
+  transform: translateX(-3px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .article-header-bar {
+    padding: 0 20px;
+  }
+  .article-header-bar-inner {
+    gap: 10px;
+    padding: 12px 0;
+  }
+  .article-meta-author {
+    display: none;
+  }
+  .article-container {
+    padding: 0 20px;
+  }
+  .article-title {
+    font-size: 1.6rem;
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+  .article-chapeau {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+  }
+  .article-body {
+    font-size: 16px;
+  }
+  .article-body h2 {
+    font-size: 1.3rem;
+  }
+  .article-body h3 {
+    font-size: 1.1rem;
+  }
+  .article-body blockquote {
+    padding: 16px 20px;
+  }
+  .article-body blockquote p {
+    font-size: 1rem;
+  }
+  .article-body table {
+    font-size: 0.8125rem;
+  }
+  .article-body thead th,
+  .article-body tbody td {
+    padding: 8px;
+  }
+  .article-theme-accent {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-header-bar-inner {
+    gap: 8px;
+  }
+  .article-type-badge {
+    font-size: 0.625rem;
+    padding: 3px 8px;
+  }
+  .article-meta-date,
+  .article-meta-reading {
+    font-size: 12px;
+  }
+  /* Hide separators on very small screens */
+  .article-meta-sep:last-of-type {
+    display: none;
+  }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<main>
+  {{/* --- Header bar with type badge, date, reading time --- */}}
+  <div class="article-header-bar" style="margin-top: var(--nav-height);">
+    <div class="article-header-bar-inner">
+      {{/* Type badge — derive from .Params.type */}}
+      {{ $type := .Params.type | default "note" }}
+      {{ $badgeText := "Note analytique" }}
+      {{ $badgeClass := "article-type-badge--note" }}
+      {{ $accentClass := "article-theme-accent--blue" }}
+      {{ if eq $type "rapport" }}
+        {{ $badgeText = "Rapport" }}
+        {{ $badgeClass = "article-type-badge--rapport" }}
+        {{ $accentClass = "article-theme-accent--navy" }}
+      {{ else if eq $type "brief" }}
+        {{ $badgeText = "Policy Brief" }}
+        {{ $badgeClass = "article-type-badge--brief" }}
+        {{ $accentClass = "article-theme-accent--gold" }}
+      {{ else if eq $type "controverse" }}
+        {{ $badgeText = "Controverse" }}
+        {{ $badgeClass = "article-type-badge--controverse" }}
+        {{ $accentClass = "article-theme-accent--red" }}
+      {{ else if eq $type "scenario" }}
+        {{ $badgeText = "Scénario" }}
+        {{ $badgeClass = "article-type-badge--scenario" }}
+        {{ $accentClass = "article-theme-accent--green" }}
+      {{ end }}
+      <span class="article-type-badge {{ $badgeClass }}">{{ $badgeText }}</span>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-date">{{ .Date.Format "2 janvier 2006" }}</span>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-reading">{{ .ReadingTime }} min de lecture</span>
+      <span class="article-meta-sep"></span>
+      <span class="article-meta-author">Eric Gabin Kilama</span>
+    </div>
+  </div>
+
+  {{/* --- Article content --- */}}
+  <article class="article-container">
+    {{/* Theme accent bar */}}
+    <div class="article-theme-accent {{ $accentClass }}"></div>
+
+    {{/* Title */}}
+    <h1 class="article-title">{{ .Title }}</h1>
+
+    {{/* Chapeau / summary */}}
+    {{ with .Params.summary }}
+    <p class="article-chapeau">{{ . }}</p>
+    {{ end }}
+
+    {{/* Body content */}}
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+
+    {{/* Tags */}}
+    {{ with .Params.tags }}
+    <div class="article-tags">
+      <span class="article-tags-label">Thèmes</span>
+      {{ range . }}
+      <a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="article-tag-pill">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Back navigation */}}
+    <div class="article-back-nav">
+      <a href="{{ "policy/" | relURL }}" class="article-back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Retour aux analyses
+      </a>
+    </div>
+  </article>
+</main>
+{{ end }}

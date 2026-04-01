@@ -35,3 +35,6 @@ site-bridge/
 
 # Claude
 .claude/
+
+# Local Netlify folder
+.netlify
