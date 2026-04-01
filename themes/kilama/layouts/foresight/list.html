@@ -27,7 +27,7 @@
 
   background: var(--bb-bg);
   color: var(--bb-text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-family: var(--font-title);
   font-size: 14px;
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
@@ -407,9 +407,10 @@
 }
 #tab-data .bb-section-title {
   color: #070E46;
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 28px;
   font-weight: 500;
+  letter-spacing: -0.02em;
 }
 #tab-data .bb-section-subtitle {
   color: #666666;
@@ -551,7 +552,8 @@
   font-size: 24px;
   font-weight: 500;
   color: #070E46;
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: var(--font-title);
+  letter-spacing: -0.02em;
   margin-bottom: 4px;
   line-height: 1.3;
 }
@@ -846,7 +848,7 @@
 }
 .data-compare-stat-value {
   font-size: 22px; font-weight: 300; color: #070E46;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-data);
 }
 .data-compare-stat-label {
   font-size: 10px; color: #666666; margin-top: 2px;
@@ -1087,21 +1089,125 @@
     <!-- DATA TAB SECTION -->
     <div class="tab-section hidden" id="tab-data">
 
-      <div style="max-width:680px;margin:40px auto;text-align:center;">
-        <div style="font-size:48px;margin-bottom:16px;opacity:0.3;">&#x1F4CA;</div>
-        <div style="font-family:'Source Serif 4',Georgia,serif;font-size:24px;font-weight:500;color:#070E46;margin-bottom:12px;">FPSQ Data Explorer</div>
-        <p style="font-size:15px;color:#6B7280;line-height:1.7;margin-bottom:24px;">
-          L'explorateur de données FPSQ permettra d'interroger directement les 11 indicateurs de stress fiscal et géopolitique
-          (Fiscal Stress Index, Sovereign Spreads, GPR, Trade Uncertainty...) avec séries temporelles, heatmaps et comparaisons par pays.
-        </p>
-        <div style="background:#F7F8F8;border-radius:12px;padding:20px;text-align:left;margin-bottom:24px;">
-          <div style="font-size:13px;font-weight:600;color:#070E46;margin-bottom:8px;">Methodology</div>
-          <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0;">
-            FPSQ indicators are constructed using daily data from multiple sources (ECB SDW, Caldara &amp; Iacoviello GPR, Baker/Bloom/Davis EPU, GDELT sentiment analysis). Raw indices are normalized by each country's historical distribution (2018–present) and smoothed using a 28-day exponentially weighted moving average. Full methodology: see <a href="/research/" style="color:#001391;">Research section</a>.
-          </p>
+      <!-- Indicator Overview Grid -->
+      <div class="bb-section-header">
+        <div class="bb-section-title">FPSQ Indicators</div>
+        <div class="bb-section-subtitle">Geopolitical &amp; fiscal stress quantification — Select an indicator for detail</div>
+      </div>
+
+      <div class="data-indicator-grid" id="data-ind-grid">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Detail View: Side Nav + Chart Panel -->
+      <div class="data-detail-layout">
+        <nav class="data-side-nav" id="data-side-nav">
+          <div class="data-side-group">Fiscal Stress</div>
+          <a class="data-side-link active" data-ind="fiscal-stress" onclick="selectIndicator('fiscal-stress',this)">Fiscal Stress Index</a>
+          <a class="data-side-link" data-ind="debt-sustainability" onclick="selectIndicator('debt-sustainability',this)">Debt Sustainability</a>
+          <a class="data-side-link" data-ind="primary-balance" onclick="selectIndicator('primary-balance',this)">Primary Balance Gap</a>
+          <a class="data-side-link" data-ind="interest-growth" onclick="selectIndicator('interest-growth',this)">Interest-Growth Differential</a>
+          <div class="data-side-group">Market Stress</div>
+          <a class="data-side-link" data-ind="sovereign-spreads" onclick="selectIndicator('sovereign-spreads',this)">Sovereign Spreads</a>
+          <a class="data-side-link" data-ind="cds-spreads" onclick="selectIndicator('cds-spreads',this)">CDS Spreads</a>
+          <a class="data-side-link" data-ind="yield-curve" onclick="selectIndicator('yield-curve',this)">Yield Curve Slope</a>
+          <div class="data-side-group">Geopolitical</div>
+          <a class="data-side-link" data-ind="gpr-index" onclick="selectIndicator('gpr-index',this)">GPR Index</a>
+          <a class="data-side-link" data-ind="trade-uncertainty" onclick="selectIndicator('trade-uncertainty',this)">Trade Policy Uncertainty</a>
+          <a class="data-side-link" data-ind="economic-sentiment" onclick="selectIndicator('economic-sentiment',this)">Economic Sentiment</a>
+          <div class="data-side-group">Cross-Section</div>
+          <a class="data-side-link" data-ind="country-comparison" onclick="selectIndicator('country-comparison',this)">Country Comparison</a>
+        </nav>
+
+        <div class="data-chart-panel">
+          <div class="data-chart-top">
+            <div class="data-chart-name" id="data-detail-title">Fiscal Stress Index</div>
+            <div class="data-chart-desc" id="data-detail-desc">Composite index measuring fiscal vulnerability across G7 economies. 28-day weighted moving average, normalized by country history (2018–present). Positive values indicate elevated fiscal stress relative to historical norm.</div>
+            <div class="data-chart-readout" id="data-readout">
+              <div class="data-readout-item">
+                <span class="data-readout-label">France</span>
+                <span class="data-readout-value" id="data-val-fra">0.42</span>
+              </div>
+              <div class="data-readout-item">
+                <span class="data-readout-label">Germany</span>
+                <span class="data-readout-value" id="data-val-deu">-0.18</span>
+              </div>
+              <div class="data-readout-item">
+                <span class="data-readout-label">United States</span>
+                <span class="data-readout-value" id="data-val-usa">0.67</span>
+              </div>
+              <div class="data-readout-item">
+                <span class="data-readout-label">As of</span>
+                <span class="data-readout-value" style="font-size:14px;color:#666666;" id="data-val-date">26 Mar 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- View toggle: Time Series / Heatmap -->
+          <div class="data-view-toggle">
+            <button class="data-view-btn active" onclick="switchDataView('timeseries',this)">Time Series</button>
+            <button class="data-view-btn" onclick="switchDataView('heatmap',this)">Heatmap</button>
+          </div>
+
+          <!-- Range pills -->
+          <div class="data-range-pills" id="data-range-pills">
+            <button class="data-range-pill" data-range="1m" onclick="setDataRange('1m',this)">1m</button>
+            <button class="data-range-pill" data-range="3m" onclick="setDataRange('3m',this)">3m</button>
+            <button class="data-range-pill" data-range="6m" onclick="setDataRange('6m',this)">6m</button>
+            <button class="data-range-pill active" data-range="1y" onclick="setDataRange('1y',this)">1y</button>
+            <button class="data-range-pill" data-range="all" onclick="setDataRange('all',this)">All</button>
+            <span class="data-date-range" id="data-date-range"></span>
+          </div>
+
+          <!-- Country selector for multi-country indicators -->
+          <div class="data-country-picker" id="data-country-picker" style="display:none;">
+            <div class="data-country-picker-header">
+              <span style="font-size:12px;color:#666666;">Select up to <strong>6</strong> countries</span>
+              <span class="data-country-picker-count" id="data-picker-count">3 selected</span>
+            </div>
+            <div class="data-country-picker-tags" id="data-picker-tags"></div>
+            <div class="data-country-picker-regions" id="data-picker-regions"></div>
+          </div>
+
+          <!-- Chart containers -->
+          <div class="data-chart-body">
+            <div id="data-ts-chart" style="height:525px;"></div>
+            <div id="data-hm-chart" style="height:500px;display:none;"></div>
+            <!-- Country Comparison Panel -->
+            <div class="data-compare-panel" id="data-compare-panel">
+              <div style="font-size:12px;color:#666666;margin-bottom:10px;">Select countries to compare across all FPSQ indicators:</div>
+              <div class="data-compare-country-selector" id="data-compare-selector"></div>
+              <div class="data-compare-summary" id="data-compare-summary"></div>
+              <div class="data-compare-grid" id="data-compare-grid"></div>
+            </div>
+          </div>
+
+          <!-- Risk zone legend -->
+          <div class="data-risk-legend">
+            <div class="data-risk-item"><span class="data-risk-dot" style="background:#228833;"></span> Low (x &lt; -1)</div>
+            <div class="data-risk-item"><span class="data-risk-dot" style="background:#CCBB44;"></span> Neutral (-1 &le; x &le; 1)</div>
+            <div class="data-risk-item"><span class="data-risk-dot" style="background:#EE6677;"></span> High (1 &lt; x &le; 3)</div>
+            <div class="data-risk-item"><span class="data-risk-dot" style="background:#AA3377;"></span> Extreme (x &gt; 3)</div>
+          </div>
+
+          <!-- Footer: source + downloads -->
+          <div class="data-chart-footer">
+            <div class="data-chart-source" id="data-source">Source: FPSQ Pipeline v1.4.0 — erickilama.com</div>
+            <div class="data-download-btns">
+              <button class="data-dl-btn">CSV</button>
+              <button class="data-dl-btn">XLSX</button>
+              <button class="data-dl-btn">PNG</button>
+              <button class="data-dl-btn">PDF</button>
+            </div>
+          </div>
         </div>
-        <p style="font-size:13px;color:#8B8FA0;">
-          Pour accéder aux données ou à la documentation technique : <a href="mailto:eric@erickilama.com" style="color:#001391;">eric@erickilama.com</a>
+      </div>
+
+      <!-- Methodology note -->
+      <div style="background:#FFFFFF;border:1px solid #E0E0E6;border-radius:8px;padding:20px;margin-bottom:24px;">
+        <div style="font-size:13px;font-weight:600;color:#001391;margin-bottom:8px;">Methodology</div>
+        <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0;">
+          FPSQ indicators are constructed using daily data from multiple sources (ECB SDW, Caldara &amp; Iacoviello GPR, Baker/Bloom/Davis EPU, GDELT sentiment analysis). Raw indices are normalized by each country's historical distribution (2018–present) and smoothed using a 28-day exponentially weighted moving average. Positive (negative) values indicate higher (lower) stress relative to the country's historical mean. Risk zones follow the convention: Low (&lt;-1&sigma;), Neutral (&plusmn;1&sigma;), High (1-3&sigma;), Extreme (&gt;3&sigma;). Full methodology: <a href="/research/" style="color:#001391;">FPSQ Technical Report v1.4</a>.
         </p>
       </div>
 

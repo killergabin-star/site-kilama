@@ -8,8 +8,8 @@
   /* Palette partagée — McKinsey exact depth */
   --navy: #051C2C;
   --navy-light: #0F1D32;
-  --blue-fpsq: #2C5F8A;
-  --blue-fpsq-light: #3A7AB5;
+  --blue-fpsq: #2251FF;
+  --blue-fpsq-light: #4A6FFF;
   --red-analytical: #C0392B;
   --gold-caps: #D4A017;
   --gold-caps-light: #E8BD3A;
@@ -43,7 +43,7 @@
   --white: #FFFFFF;
 
   /* Typography */
-  --font-title: 'Inter', -apple-system, sans-serif;
+  --font-title: 'DM Sans', 'Inter', -apple-system, sans-serif;
   --font-body: 'Source Serif 4', 'Georgia', serif;
   --font-citation: 'Playfair Display', serif;
   --font-data: 'JetBrains Mono', 'Fira Code', monospace;
@@ -293,14 +293,14 @@ img { max-width: 100%; display: block; }
   padding-top: var(--nav-height);
 }
 
-/* === HERO (HOMEPAGE) === */
+/* === HERO (HOMEPAGE) — overridden in index.html <style> === */
 .hero {
   position: relative;
   min-height: 85vh;
   display: flex;
   align-items: center;
-  background: var(--navy);
   overflow: hidden;
+  /* background set in page-level override */
 }
 
 .hero-content {
@@ -309,7 +309,6 @@ img { max-width: 100%; display: block; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-2xl) var(--space-lg);
-  color: var(--white);
 }
 
 .hero-label {
@@ -1074,7 +1073,7 @@ body.page-policy {
 }
 
 .note-theme-tag--energie { background: rgba(212,160,23,0.12); color: var(--gold-caps); }
-.note-theme-tag--commerce { background: rgba(44,95,138,0.1); color: var(--blue-fpsq); }
+.note-theme-tag--commerce { background: rgba(34,81,255,0.1); color: var(--blue-fpsq); }
 .note-theme-tag--defense { background: rgba(27,42,74,0.1); color: var(--navy); }
 .note-theme-tag--developpement { background: rgba(46,125,50,0.1); color: var(--vert-dev); }
 .note-theme-tag--gouvernance { background: rgba(45,45,45,0.08); color: var(--anthracite); }

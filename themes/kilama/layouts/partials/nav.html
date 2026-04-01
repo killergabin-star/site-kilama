@@ -1,5 +1,5 @@
 <!-- Navigation — Mazzucato dropdown pattern -->
-<nav class="site-nav{{ if .IsHome }} site-nav--home{{ end }}" id="mainNav">
+<nav class="site-nav{{ if or .IsHome (eq .Section "about") }} site-nav--light{{ end }}" id="mainNav">
   <a href="{{ "/" | relURL }}" class="wordmark">
     <span class="first-name">ERIC</span>
     <span class="last-name">KILAMA</span>

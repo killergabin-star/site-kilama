@@ -16,17 +16,20 @@
 }
 .policy-vision .section-label {
   font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--electric-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   margin-bottom: 24px;
 }
 .policy-vision h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-title);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 300;
+  font-weight: 400;
   color: var(--white);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   max-width: 700px;
   margin-bottom: 24px;
 }
@@ -127,11 +130,23 @@
 }
 .featured-cover {
   background: linear-gradient(145deg, var(--navy) 0%, #0d2840 100%);
+  background-size: cover;
+  background-position: center;
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   min-height: 360px;
+  position: relative;
+}
+.featured-cover.has-image {
+  background-blend-mode: overlay;
+}
+.featured-cover.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(5,28,44,0.85) 100%);
 }
 .featured-cover-label {
   font-family: var(--font-data);
@@ -386,17 +401,8 @@
   {{ $debates := where $allPages ".Params.doc_type" "controverse" }}
   {{ $recent := after 1 $allPages | first 6 }}
 
-  {{/* Theme groupings for catalog */}}
-  {{ $themes := dict
-    "geopolitique" "Risque géopolitique"
-    "commerce" "Commerce & Sanctions"
-    "developpement" "Finance du développement"
-    "energie" "Énergie & Climat"
-    "defense" "Défense & Industrie"
-    "afrique" "Afrique"
-    "asie" "Asie-Pacifique"
-    "europe" "Europe"
-  }}
+  {{/* Theme groupings for catalog — maps tab key → (label, matching theme values) */}}
+  {{/* Each tab matches multiple theme values from content frontmatter */}}
 
   <div class="page-body">
 
@@ -440,10 +446,12 @@
             <span>{{ .ReadingTime }} min de lecture</span>
           </div>
         </div>
-        <div class="featured-cover">
-          <div class="featured-cover-label">{{ .Date.Format "2006" }}</div>
-          <div class="featured-cover-title">{{ .Title }}</div>
-          <div class="featured-cover-author">Eric Kilama</div>
+        <div class="featured-cover{{ with .Params.cover }} has-image{{ end }}"{{ with .Params.cover }} style="background-image: linear-gradient(145deg, rgba(5,28,44,0.6) 0%, rgba(13,40,64,0.7) 100%), url('{{ . | relURL }}')"{{ end }}>
+          <div style="position:relative;z-index:1;">
+            <div class="featured-cover-label">{{ .Date.Format "2006" }}</div>
+            <div class="featured-cover-title">{{ .Title }}</div>
+            <div class="featured-cover-author">Eric Kilama</div>
+          </div>
         </div>
       </div>
     </div>
@@ -556,23 +564,163 @@
         <hr class="rule-section">
         <h2 class="section-heading-econ" style="margin-bottom: 24px;">Catalogue des notes</h2>
 
-        {{ range $theme, $label := $themes }}
-          {{ $themePages := where $allPages ".Params.theme" $theme }}
-          {{ if gt (len $themePages) 0 }}
-          <div class="catalog-panel" data-theme="{{ $theme }}">
-            <div class="catalog-count">{{ len $themePages }} {{ if eq (len $themePages) 1 }}note{{ else }}notes{{ end }} · {{ $label }}</div>
-            <ul class="catalog-list">
-              {{ range $themePages }}
-              <li>
-                <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-                <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-                <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-                <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-              </li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ end }}
+        <!-- ALL — default visible panel -->
+        <div class="catalog-panel active" data-theme="all">
+          <div class="catalog-count">{{ len $allPages }} publications</div>
+          <ul class="catalog-list">
+            {{ range $allPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <!-- Risque géopolitique -->
+        {{ $geoPages := where $allPages ".Params.theme" "in" (slice "geopolitical" "polycrisis" "polycrisis-asie" "iran" "sécurité" "geoeconomics") }}
+        {{ if gt (len $geoPages) 0 }}
+        <div class="catalog-panel" data-theme="geopolitique">
+          <div class="catalog-count">{{ len $geoPages }} notes · Risque géopolitique</div>
+          <ul class="catalog-list">
+            {{ range $geoPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Commerce & Sanctions -->
+        {{ $tradePages := where $allPages ".Params.theme" "in" (slice "commerce" "trade" "geoeconomics") }}
+        {{ if gt (len $tradePages) 0 }}
+        <div class="catalog-panel" data-theme="commerce">
+          <div class="catalog-count">{{ len $tradePages }} notes · Commerce &amp; Sanctions</div>
+          <ul class="catalog-list">
+            {{ range $tradePages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Finance du développement -->
+        {{ $devPages := where $allPages ".Params.theme" "in" (slice "développement" "development" "architecture-financière" "g7") }}
+        {{ if gt (len $devPages) 0 }}
+        <div class="catalog-panel" data-theme="developpement">
+          <div class="catalog-count">{{ len $devPages }} notes · Finance du développement</div>
+          <ul class="catalog-list">
+            {{ range $devPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Énergie & Climat -->
+        {{ $energyPages := where $allPages ".Params.theme" "in" (slice "énergie" "energy") }}
+        {{ if gt (len $energyPages) 0 }}
+        <div class="catalog-panel" data-theme="energie">
+          <div class="catalog-count">{{ len $energyPages }} notes · Énergie &amp; Climat</div>
+          <ul class="catalog-list">
+            {{ range $energyPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Défense & Industrie -->
+        {{ $defPages := where $allPages ".Params.theme" "in" (slice "défense" "sécurité" "defense") }}
+        {{ if gt (len $defPages) 0 }}
+        <div class="catalog-panel" data-theme="defense">
+          <div class="catalog-count">{{ len $defPages }} notes · Défense &amp; Industrie</div>
+          <ul class="catalog-list">
+            {{ range $defPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Afrique -->
+        {{ $afriquePages := where $allPages ".Params.theme" "in" (slice "afrique" "africa") }}
+        {{ if gt (len $afriquePages) 0 }}
+        <div class="catalog-panel" data-theme="afrique">
+          <div class="catalog-count">{{ len $afriquePages }} notes · Afrique</div>
+          <ul class="catalog-list">
+            {{ range $afriquePages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Asie-Pacifique -->
+        {{ $asiaPages := where $allPages ".Params.theme" "in" (slice "polycrisis-asie" "asie" "asia") }}
+        {{ if gt (len $asiaPages) 0 }}
+        <div class="catalog-panel" data-theme="asie">
+          <div class="catalog-count">{{ len $asiaPages }} notes · Asie-Pacifique</div>
+          <ul class="catalog-list">
+            {{ range $asiaPages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <!-- Europe -->
+        {{ $europePages := where $allPages ".Params.theme" "in" (slice "europe" "european") }}
+        {{ if gt (len $europePages) 0 }}
+        <div class="catalog-panel" data-theme="europe">
+          <div class="catalog-count">{{ len $europePages }} notes · Europe</div>
+          <ul class="catalog-list">
+            {{ range $europePages }}
+            <li>
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
+              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
         {{ end }}
 
       </div>
@@ -588,15 +736,11 @@ document.querySelectorAll('.filter-btn').forEach(function(btn) {
     document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     var filter = btn.dataset.filter;
-    if (filter === 'all') {
-      document.querySelectorAll('.catalog-panel').forEach(function(p) { p.classList.remove('active'); });
-      return;
-    }
     document.querySelectorAll('.catalog-panel').forEach(function(p) {
-      if (p.dataset.theme === filter) {
-        p.classList.add('active');
+      if (filter === 'all') {
+        p.classList.toggle('active', p.dataset.theme === 'all');
       } else {
-        p.classList.remove('active');
+        p.classList.toggle('active', p.dataset.theme === filter);
       }
     });
     document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth', block: 'start' });
