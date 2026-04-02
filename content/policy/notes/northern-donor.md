@@ -10,12 +10,14 @@ tags:
 - coopération
 summary: 'L''aide publique au développement (APD) a été introduite dans les années 1960 comme un instrument temporaire répondant
   à un moment particulier de l''histoire : décolonisation, Guerre froide, industrialisation et efforts de réduction de la
-  pauvreté dans le « Sud global ».'
+  pauvreté dans le « Sud global ». Soixante ans plus tard, le monde a profondément changé, mais l''architecture institutionnelle
+  de l''aide est restée remarquablement...'
 status: ready
 draft: false
 theme: développement
 author: Eric Gabin Kilama
 ---
+
 ## Une légitimité en question
 
 L'aide publique au développement (APD) a été introduite dans les années 1960 comme un instrument temporaire répondant à un moment particulier de l'histoire : décolonisation, Guerre froide, industrialisation et efforts de réduction de la pauvreté dans le « Sud global ». Soixante ans plus tard, le monde a profondément changé, mais l'architecture institutionnelle de l'aide est restée remarquablement stable dans ses structures fondamentales. Dans un contexte où les frontières entre pays « développés » et « en développement » s'estompent, où les budgets de développement stagnent face à des besoins croissants, où la polarisation géopolitique entre Nord et Sud atteint des niveaux historiques de méfiance, et où le modèle donateur-bénéficiaire est de plus en plus rejeté, la justification traditionnelle de l'aide a atteint ses limites.
@@ -44,11 +46,11 @@ Face à la multiplication des demandes, les donateurs manquent de l'armature d'u
 
 ## Les conséquences de la dispersion
 
-Cette situation crée des problèmes concrets dans plusieurs domaines. Premièrement, les reconstitutions multilatérales prévues en 2024 — l'AID-21, le Fonds vert pour le climat, Gavi, le Fonds mondial, entre autres — mobilisent un effort diplomatique et financier considérable, chaque reconstitution requérant des mois de négociations pour un résultat budgétaire souvent en deçà des besoins identifiés.
+Cette situation crée des problèmes concrets dans plusieurs domaines. Premièrement, les reconstitutions multilatérales de 2024 — l'AID-21 seule a atteint un montant record de 100 milliards de dollars, auxquels s'ajoutent les reconstitutions du Fonds vert pour le climat, de Gavi, du Fonds mondial, entre autres — mobilisent un effort diplomatique et financier considérable, chaque reconstitution requérant des mois de négociations pour un résultat budgétaire souvent en deçà des besoins identifiés.
 
 Deuxièmement, la part croissante de la finance concessionnelle est absorbée par la gestion des retombées humanitaires des conflits à Gaza et en Ukraine, réduisant les ressources disponibles pour le développement structurel. L'effet d'éviction est documenté : chaque crise humanitaire majeure provoque une réallocation de budgets initialement prévus pour des programmes de développement (Global Humanitarian Overview, OCHA, 2024).
 
-Troisièmement, les pressions s'intensifient pour s'engager sur un objectif ambitieux d'investissement climatique mondial — le Nouvel objectif collectif quantifié (NCQG), dont la négociation doit aboutir à la COP29 de Bakou en novembre 2024, pourrait fixer une cible de plusieurs centaines de milliards de dollars par an de la part des pays développés — sans amputer les budgets d'APD existants. L'arithmétique est impitoyable : sans nouvelles sources de financement, l'engagement climatique se fait nécessairement au détriment d'autres priorités.
+Troisièmement, les pressions s'intensifient pour s'engager sur un objectif ambitieux d'investissement climatique mondial — le Nouvel objectif collectif quantifié (NCQG) adopté à la COP29 de Bakou fixe une cible de 300 milliards de dollars par an de la part des pays développés, avec une aspiration à mobiliser 1 300 milliards de toutes sources — sans amputer les budgets d'APD existants. L'arithmétique est impitoyable : sans nouvelles sources de financement, l'engagement climatique se fait nécessairement au détriment d'autres priorités.
 
 Le Groupe d'experts indépendants du G20 estimé que 180 milliards de dollars supplémentaires par an de finance concessionnelle seront nécessaires d'ici 2030 pour que le système bilatéral et multilatéral atteigne les ODD et investisse adéquatement dans les biens publics mondiaux (Songwe, Stern et Bhattacharya, 2022). Avec peu d'appétit politique pour augmenter les dépenses publiques, la mobilisation de fonds concessionnels pour attirer et dérisquer l'investissement privé est devenue le principal vecteur de croissance du capital de développement, bien que ce « consensus de Wall Street » (Gabor, 2021) ait produit des résultats mitigés.
 

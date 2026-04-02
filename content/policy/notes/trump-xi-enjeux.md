@@ -1,6 +1,6 @@
 ---
 title: 'Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert'
-date: '2026-03-28'
+date: '2026-03-29'
 doc_type: note
 tags:
 - chine
@@ -11,7 +11,8 @@ tags:
 - tarifs
 summary: Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent
   depuis les années 1930, quatre jours après un G7 ministériel dont le communiqué sera lu à Pékin comme une tentative de cadrage
-  occidental.
+  occidental. Les négociations préparatoires de Paris entre Scott Bessent et He Lifeng ont porté sur l'agriculture, les minéraux
+  critiques et un accord Boeing...
 status: ready
 draft: false
 theme: trade
@@ -97,7 +98,7 @@ En priorité, le ministère de l'Europe et des Affaires étrangères devrait man
 
 Sur le plan multilatéral, la présidence française du G7 devrait inscrire à l'agenda du sommet d'Évian un point spécifique sur la coordination des politiques commerciales vis-à-vis de la Chine, en s'appuyant sur les travaux du PIIE sur le Second China Shock et sur les conclusions de la MC14 de Yaoundé. L'objectif serait de dépasser la logique de cadrage rhétorique (le communiqué de Vaux-de-Cernay) pour proposer un mécanisme de concertation opérationnel entre le G7 et l'Union européenne sur les instruments de défense commerciale.
 
-Le Quai d'Orsay devrait engager, dans les quarante-huit heures suivant le sommet de Pékin, une consultation bilatérale avec la Commission européenne (DG Trade) et avec le USTR pour évaluer les implications de tout accord sino-américain sur l'accord de Turnberry. Le commissaire Dombrovskis et le représentant américain au commerce Jamieson Greer devraient être les interlocuteurs prioritaires de cette démarche.
+Le Quai d'Orsay devrait engager, dans les quarante-huit heures suivant le sommet de Pékin, une consultation bilatérale avec la Commission européenne (DG Trade) et avec le USTR pour évaluer les implications de tout accord sino-américain sur l'accord de Turnberry. Le commissaire Šefčovič (Commerce et Sécurité économique) et le représentant américain au commerce Jamieson Greer devraient être les interlocuteurs prioritaires de cette démarche.
 
 Enfin, il conviendrait de produire avant le 10 avril une note approfondie sur les implications de la nouvelle loi chinoise sur le commerce extérieur (mars 2026) pour les entreprises françaises exposées au marché chinois, en consultation avec le Service économique régional de Pékin et la Direction des entreprises du Quai d'Orsay.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Réforme de l''architecture financière internationale : bilan d''étape et enjeux de 2026'
-date: '2026-03-23'
+date: '2026-03-31'
 doc_type: note
 tags:
 - architecture financière
@@ -11,12 +11,14 @@ tags:
 - réforme
 summary: 'En septembre 2024, cette note identifiait trois conditions minimales pour une réforme ambitieuse de l''architecture
   financière internationale : un Nouvel objectif collectif quantifié (NCQG) opérationnel, des contributions déterminées au
-  niveau national (CDN) adossées à des plans de financement, et une Feuille de route du G20 assortie de mécanismes de redevabilité.'
+  niveau national (CDN) adossées à des plans de financement, et une Feuille de route du G20 assortie de mécanismes de redevabilité.
+  Dix-huit mois plus tard, le bilan...'
 status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 En septembre 2024, cette note identifiait trois conditions minimales pour une réforme ambitieuse de l'architecture financière internationale : un Nouvel objectif collectif quantifié (NCQG) opérationnel, des contributions déterminées au niveau national (CDN) adossées à des plans de financement, et une Feuille de route du G20 assortie de mécanismes de redevabilité. Dix-huit mois plus tard, le bilan est contrasté. La COP29 de Bakou a produit un NCQG chiffré, le G20 sous présidence brésilienne a avancé sur la taxation internationale, mais la mise en œuvre reste largement en deçà des ambitions affichées. Surtout, le contexte géopolitique s'est durci, rendant la coopération multilatérale plus difficile que jamais. Cette note actualise le diagnostic à la lumière de FfD4 Séville (juin-juillet 2025), dont le Sevilla Commitment pose un cadre ambitieux mais dont la mise en œuvre reste incertaine, et à l'approche des rendez-vous de 2026 : Spring Meetings FMI/Banque mondiale et G7 Évian.

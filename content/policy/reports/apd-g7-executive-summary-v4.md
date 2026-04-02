@@ -10,7 +10,8 @@ tags:
 - réformes
 summary: Quatre décennies de programmes de développement, des centaines de milliards d'APD déboursées, des réformes institutionnelles
   successives — et pourtant, à chaque choc systémique (1997, 2008, 2014, 2020), les mêmes pays s'effondrent, les mêmes mécanismes
-  d'urgence sont activés, les mêmes promesses sont formulées. Le bilan structurel est sévère.
+  d'urgence sont activés, les mêmes promesses sont formulées. Le bilan structurel est sévère. L'aide n'a pas, à elle seule,
+  modifié les trajectoires...
 status: ready
 draft: false
 theme: development

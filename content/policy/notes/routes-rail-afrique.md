@@ -11,12 +11,13 @@ tags:
 summary: Malgré une croissance économique notable sur les deux dernières décennies, le déficit infrastructurel persistant
   du continent africain — particulièrement dans les réseaux routiers — demeure une contrainte fondamentale à la transformation
   économique, à la réduction de la pauvreté et à l'intégration régionale dans le cadre de la Zone de libre-échange continentale
-  africaine (ZLECAf).
+  africaine (ZLECAf). La densité...
 status: ready
 draft: false
 theme: afrique
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 Malgré une croissance économique notable sur les deux dernières décennies, le déficit infrastructurel persistant du continent africain — particulièrement dans les réseaux routiers — demeure une contrainte fondamentale à la transformation économique, à la réduction de la pauvreté et à l'intégration régionale dans le cadre de la Zone de libre-échange continentale africaine (ZLECAf). La densité routière de l'Afrique est la plus faible au monde et a diminué relativement à la croissance démographique. Ce déficit se traduit par des coûts de transport parmi les plus élevés au monde, érodant la compétitivité et isolant les marchés.

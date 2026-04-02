@@ -1,6 +1,6 @@
 ---
 title: 'Banques de développement en 2026 : l''optimisation ne suffit plus'
-date: '2026-03-19'
+date: '2026-03-31'
 doc_type: note
 tags:
 - BMD
@@ -12,12 +12,13 @@ tags:
 summary: 'En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement
   (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s''appuyant
   sur l''approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives
-  mais insuffisantes.'
+  mais insuffisantes....'
 status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement (BPD) : passer de la correction des défaillances de marché à la transformation structurelle des économies, en s'appuyant sur l'approche par les missions. Depuis, les banques multilatérales de développement (BMD) ont connu des réformes significatives mais insuffisantes. L'optimisation des bilans recommandée par le G20 Capital Adequacy Framework (CAF) a libéré des capacités de prêt supplémentaires. La Banque mondiale, sous la direction d'Ajay Banga, a engagé une réorientation stratégique. Mais le contexte géopolitique — retrait américain, recul de l'APD, aggravation de la crise de la dette — rend ces progrès dérisoires face à l'ampleur des besoins. Cette note évalue les avancées et les limites des réformes en cours, et identifié les conditions d'une transformation plus ambitieuse.
@@ -40,13 +41,13 @@ Le risque le plus immédiat n'est d'ailleurs pas le rejet de l'approche par les 
 
 La question de la gouvernance reste le point aveugle. La seizième révision générale des quotes-parts du FMI, achevée en 2023, n'a produit qu'un réalignement marginal du pouvoir de vote. À la Banque mondiale, les pays en développement et émergents disposent toujours d'une minorité de voix alors qu'ils représentent la quasi-totalité des emprunteurs. Cette asymétrie mine la légitimité de l'institution et alimente la demande d'alternatives. L'émergence d'institutions financières alternatives — l'AIIB (111 membres, près de 70 milliards de dollars d'engagements cumulés), la Nouvelle banque de développement des BRICS élargie, les banques de développement nationales du Sud qui représentent collectivement plus de 2 000 milliards de dollars d'actifs — constitue une pression concurrentielle qui, paradoxalement, pourrait accélérer la réforme des BMD traditionnelles plus efficacement que les appels des réformateurs. Les pays emprunteurs disposent désormais d'un pouvoir de sortie (*exit option*) qui modifie fondamentalement la dynamique de négociation avec les institutions de Bretton Woods. La Chine, premier créancier bilatéral des pays en développement et principal actionnaire de l'AIIB, est un acteur incontournable de toute restructuration — et sa concurrence avec le système de Bretton Woods est le facteur géopolitique le plus structurant de la réforme de l'architecture financière.
 
-## La reconstitution ADF-17 : un test décisif
+## La reconstitution ADF-17 : un succès à consolider
 
-La reconstitution de l'Association de développement de l'Afrique (ADF-17), le guichet concessionnel de la Banque africaine de développement, constitue un test décisif de la volonté des donateurs de maintenir leurs engagements envers les pays africains les plus pauvres. L'ADF fournit des dons et des prêts à conditions très favorables aux pays à revenu faible qui n'ont pas accès au guichet non concessionnel de la BAD.
+La reconstitution de l'Association de développement de l'Afrique (ADF-17), le guichet concessionnel de la Banque africaine de développement, conclue à Londres les 15-16 décembre 2025, a mobilisé 11 milliards de dollars — un record historique, en hausse de 23 % par rapport à l'ADF-16. Quarante-trois partenaires ont contribué, dont dix-neuf pays africains comme nouveaux contributeurs, un signal politique majeur de l'appropriation continentale du financement du développement. Le cycle 2026-2028 est le plus ambitieux de l'histoire de l'ADF.
 
-Le contexte est défavorable. Le retrait américain de l'aide au développement réduit la base des contributeurs traditionnels. Les pays européens, sous pression budgétaire, sont réticents à augmenter leurs contributions. La reconstitution précédente (ADF-16) avait mobilisé 8,9 milliards de dollars — un montant que de nombreux observateurs jugent déjà insuffisant face aux besoins du continent.
+Ce succès ne doit cependant pas masquer les contraintes structurelles. Le retrait américain de l'aide au développement réduit la base des contributeurs traditionnels. Les pays européens, sous pression budgétaire, devront maintenir leurs engagements sur la durée du cycle. Le montant de 11 milliards de dollars, aussi significatif soit-il, reste un ordre de grandeur en dessous des besoins du continent — le déficit de financement des ODD en Afrique subsaharienne dépasse 200 milliards de dollars par an.
 
-La BAD, sous la présidence d'Akinwumi Adesina, tente de compenser partiellement en innovant sur le plan financier : instruments de capital hybride, mécanismes de transfert de risque, mobilisation de ressources sur les marchés de capitaux africains. Ces innovations sont nécessaires mais ne peuvent se substituer au financement concessionnel pour les pays les plus pauvres et les plus fragiles du continent — ceux qui, précisément, en ont le plus besoin. Un échec de la reconstitution ADF-17 enverrait un signal dévastateur : celui que les réformes de l'architecture financière bénéficient aux pays à revenu intermédiaire capables d'attirer le secteur privé, tandis que les pays les plus fragiles — Sahel, Corne de l'Afrique, Grands Lacs — sont laissés pour compte.
+La BAD, sous la nouvelle présidence de Sidi Ould Tah (investi en septembre 2025), poursuit l'innovation financière engagée par son prédécesseur : instruments de capital hybride, mécanismes de transfert de risque, mobilisation de ressources sur les marchés de capitaux africains. Le profil de Sidi Ould Tah — francophone, ancien président de la BADEA — crée un pont entre les financements arabes et les besoins africains, comme en témoigne la signature d'un accord de 2 milliards de dollars entre la BAD et le Fonds de l'OPEP pour le développement international. Ces innovations sont nécessaires mais ne peuvent se substituer au financement concessionnel pour les pays les plus pauvres et les plus fragiles du continent — ceux qui, précisément, en ont le plus besoin. Le défi pour l'ADF-17 n'est plus la mobilisation mais l'exécution : s'assurer que les décaissements atteignent les pays les plus fragiles — Sahel, Corne de l'Afrique, Grands Lacs — et ne reproduisent pas le biais structurel en faveur des pays à revenu intermédiaire.
 
 ## Le dérisquage : toujours dominant, toujours insuffisant
 

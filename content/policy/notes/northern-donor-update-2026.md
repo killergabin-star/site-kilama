@@ -1,6 +1,6 @@
 ---
 title: 'Le donateur du Nord en 2026 : entre retrait américain et quête d''un nouveau mandat'
-date: '2026-03-14'
+date: '2026-03-31'
 doc_type: note
 tags:
 - aide
@@ -18,6 +18,7 @@ draft: false
 theme: développement
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 En septembre 2024, cette note posait une question que beaucoup jugeaient prématurée : un donateur du Nord a-t-il encore sa place au XXIe siècle ? Dix-huit mois plus tard, la question n'est plus théorique. La dissolution partielle de l'USAID sous l'administration Trump, le recul de l'APD des principales économies avancées et la montée en puissance des financeurs non traditionnels ont précipité une recomposition du paysage de la coopération internationale. Cette note examine ce que la période 2025-2026 révèle sur l'avenir du donateur du Nord et les contours possibles d'un nouveau mandat.

@@ -10,12 +10,14 @@ tags:
 - crise
 summary: Un an après le déploiement de la Mission multinationale d'appui à la sécurité (MMAS) en Haïti, la crise continue
   de s'aggraver. Les gangs ont accru leur pouvoir et leur contrôle territorial, face à une MMAS dont la conception n'a jamais
-  reflété la réalité de la situation sur le terrain.
+  reflété la réalité de la situation sur le terrain. En réponse à la frustration des Haïtiens face à l'échec des alliés internationaux
+  et des Nations Unies à...
 status: ready
 draft: false
 theme: sécurité
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 Un an après le déploiement de la Mission multinationale d'appui à la sécurité (MMAS) en Haïti, la crise continue de s'aggraver. Les gangs ont accru leur pouvoir et leur contrôle territorial, face à une MMAS dont la conception n'a jamais reflété la réalité de la situation sur le terrain. En réponse à la frustration des Haïtiens face à l'échec des alliés internationaux et des Nations Unies à stabiliser efficacement le pays, le gouvernement haïtien a eu recours à l'embauche de contractuels militaires privés — un aveu d'impuissance qui soulève autant de questions qu'il n'apporte de réponses.

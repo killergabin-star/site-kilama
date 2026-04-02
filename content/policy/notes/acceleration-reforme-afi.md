@@ -9,16 +9,18 @@ tags:
 - climat
 - NCQG
 summary: Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous
-  présidence brésilienne, COP29 à Bakou — offrent une fenêtre d'opportunité pour faire avancer la réforme de l'architecture
-  financière internationale.
+  présidence brésilienne, COP29 à Bakou — offraient une fenêtre d'opportunité pour faire avancer la réforme de l'architecture
+  financière internationale. Cette accélération est nécessaire pour opérer le changement d'échelle radical qu'exige le financement
+  de la transition climatique et,...
 status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 ---
+
 ## Introduction : une fenêtre d'opportunité
 
-Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous présidence brésilienne, COP29 à Bakou — offrent une fenêtre d'opportunité pour faire avancer la réforme de l'architecture financière internationale. Cette accélération est nécessaire pour opérer le changement d'échelle radical qu'exige le financement de la transition climatique et, plus largement, la réalisation des Objectifs de développement durable.
+Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous présidence brésilienne, COP29 à Bakou — offraient une fenêtre d'opportunité pour faire avancer la réforme de l'architecture financière internationale. Cette accélération est nécessaire pour opérer le changement d'échelle radical qu'exige le financement de la transition climatique et, plus largement, la réalisation des Objectifs de développement durable.
 
 L'urgence est documentée. En 2022, les pays développés ont atteint pour la première fois l'objectif de 100 milliards de dollars de financement climatique par an en faveur des pays en développement, fixé en 2009 à Copenhague (données publiées par l'OCDE en 2023). À peine deux ans plus tard, cet objectif est déjà obsolète : les besoins d'investissement total des économies émergentes et en développement, hors Chine, sont estimés à environ 2 400 milliards de dollars par an d'ici 2030, dont environ 1 000 milliards de financement externe (Songwe, Stern et Bhattacharya, 2022). Ce chiffre global masque des besoins sectoriels différenciés : environ 1 600 milliards pour la transformation des systèmes énergétiques et la transition juste, 300 milliards pour le capital naturel et l'agriculture durable, 250 milliards pour l'adaptation au changement climatique (Songwe, Stern et Bhattacharya, 2022). Cette décomposition est essentielle : elle seule permet d'évaluer si les instruments proposés — optimisation des bilans, financement mixte, finance climatique — sont dimensionnés pour les secteurs ciblés. L'écart entre les flux actuels et les besoins identifiés est d'un ordre de grandeur qui ne peut être comblé par les seuls ajustements incrémentaux du système existant.
 

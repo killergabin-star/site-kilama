@@ -1,6 +1,6 @@
 ---
 title: 'Le triangle impossible d''Évian : Ukraine, réarmement et Afrique sous présidence française'
-date: '2026-03-05'
+date: '2026-03-31'
 doc_type: note
 tags:
 - G7
@@ -18,6 +18,7 @@ status: ready
 draft: false
 theme: g7
 ---
+
 ### Contexte
 
 La présidence française du G7 repose sur trois piliers affichés par Barrot à Munich (14 février 2026) : sécurité euro-atlantique et Ukraine, partenariats et développement, réduction des déséquilibres mondiaux. Derrière ces formules, trois agendas budgétaires massifs se disputent les mêmes enveloppes : la reconstruction de l'Ukraine (486 milliards de dollars sur dix ans, RDNA3 Banque mondiale, février 2024), le réarmement européen (381 milliards d'euros en 2025, projection EDA/IISS), et les partenariats Afrique-développement (Summit Africa Forward, Nairobi, 11-12 mai). L'addition brute des engagements 2026-2030 se situe entre 900 et 1 400 milliards d'euros.

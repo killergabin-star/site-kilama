@@ -1,6 +1,6 @@
 ---
 title: 'Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7'
-date: '2026-03-13'
+date: '2026-03-31'
 doc_type: note
 tags:
 - Ormuz
@@ -15,6 +15,7 @@ status: ready
 draft: false
 theme: énergie
 ---
+
 ### Contexte
 
 La fermeture du détroit d'Ormuz (5 mars 2026) a provoqué un choc pétrolier immédiat : Brent à 127 dollars (+51 % en 48 heures), quelque 150 navires bloqués (estimations Lloyd's), 21 % du commerce mondial de pétrole interrompu. Cette note analyse les restructurations durables que la crise révèle.

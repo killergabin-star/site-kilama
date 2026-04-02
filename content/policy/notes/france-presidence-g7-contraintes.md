@@ -1,6 +1,6 @@
 ---
 title: 'La France au G7 : présider sous contrainte'
-date: '2026-03-18'
+date: 2026-03-31
 doc_type: note
 tags:
 - France
@@ -12,11 +12,12 @@ tags:
 summary: 'La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d''État
   et de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d''Évian est symbolique : la ville avait déjà accueilli
   le G8 en 2003 sous la présidence de Jacques Chirac, année où la France s''était distinguée par son refus de la guerre en
-  Irak.'
+  Irak. Vingt-trois ans plus tard, la configuration...'
 status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d'État et de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d'Évian est symbolique : la ville avait déjà accueilli le G8 en 2003 sous la présidence de Jacques Chirac, année où la France s'était distinguée par son refus de la guerre en Irak. Vingt-trois ans plus tard, la configuration présente des analogies troublantes : un président américain lancé dans une aventure militaire (cette fois contre l'Iran), des alliés européens réticents à suivre, et une France qui tente de se positionner en médiateur entre fermeté atlantique et ouverture au Sud Global[^1].
 
 Mais les analogies ont leurs limites. En 2003, la France disposait d'une marge budgétaire confortable (déficit à 4,1 % du PIB, dette à 64 % du PIB), d'une position militaire consolidée en Afrique et d'un consensus domestique relatif sur la politique étrangère. En 2026, chacune de ces conditions est inversée. Le déficit public s'est établi à 5,8 % du PIB en 2024. La France est sous procédure de déficit excessif (PDE) depuis juillet 2024. La présence militaire au Sahel s'est effondrée avec les retraits du Mali, du Burkina Faso et du Niger. Le paysage politique intérieur est fragmenté entre une présidence affaiblie, un Parlement sans majorité, et un Rassemblement national dominant dans les sondages à 31-32 %[^2].

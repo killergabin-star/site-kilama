@@ -1,6 +1,6 @@
 ---
 title: 'Controverse : Le dollar condamne-t-il l''Amérique au déficit ? Gopinath, Pettis, et ce que la littérature dit vraiment'
-date: '2026-04-01'
+date: 2026-03-31
 doc_type: controverse
 tags:
 - macroéconomie internationale
@@ -13,11 +13,13 @@ tags:
 - controverse
 summary: 'Le 23 mars 2026, Pan Gongsheng, gouverneur de la Banque populaire de Chine, prend la parole au China Development
   Forum : « les principaux pays déficitaires sont les mêmes qu''il y a quarante ans en raison des failles inhérentes du système
-  monétaire international.'
+  monétaire international. Les pays émetteurs de monnaie de réserve peuvent maintenir des déficits budgétaires à faible coût
+  et fournir leur monnaie à l''étranger...'
 status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 ## 1. L'échange
 
 Le 23 mars 2026, Pan Gongsheng, gouverneur de la Banque populaire de Chine, prend la parole au China Development Forum : « les principaux pays déficitaires sont les mêmes qu'il y a quarante ans en raison des failles inhérentes du système monétaire international. Les pays émetteurs de monnaie de réserve peuvent maintenir des déficits budgétaires à faible coût et fournir leur monnaie à l'étranger via des déficits courants. »[^1] C'est le cadre analytique que Michael Pettis développe depuis deux décennies, transformé en position de négociation géopolitique.

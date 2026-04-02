@@ -1,6 +1,6 @@
 ---
 title: 'La crise d''identité de l''aide : ce que 2025-2026 a confirmé et aggravé'
-date: '2026-03-21'
+date: '2026-03-31'
 doc_type: note
 tags:
 - aide
@@ -12,11 +12,13 @@ tags:
 summary: En juin 2024, cette note diagnostiquait une crise existentielle de l'industrie de l'aide au développement, sous l'effet
   conjugué de la géopolitisation des flux, du cercle vicieux de l'humanitarisation et de la crise de la dette souveraine.
   Depuis cette publication, les événements ont non seulement confirmé ce diagnostic, mais l'ont considérablement aggravé.
+  Le retour de Donald Trump à la Maison...
 status: ready
 draft: false
 theme: développement
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 En juin 2024, cette note diagnostiquait une crise existentielle de l'industrie de l'aide au développement, sous l'effet conjugué de la géopolitisation des flux, du cercle vicieux de l'humanitarisation et de la crise de la dette souveraine. Depuis cette publication, les événements ont non seulement confirmé ce diagnostic, mais l'ont considérablement aggravé. Le retour de Donald Trump à la Maison Blanche en janvier 2025, les coupes massives dans l'aide américaine, la dissolution partielle de l'USAID et le recul généralisé de l'APD des pays du G7 au profit des dépenses de défense constituent un choc systémique pour l'architecture de l'aide. Cette note actualise le diagnostic et évalue les marges de manœuvre restantes, à la lumière de la quatrième Conférence sur le financement du développement (FfD4) tenue à Séville en juin-juillet 2025 et dont la mise en œuvre reste en suspens.

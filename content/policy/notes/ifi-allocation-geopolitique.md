@@ -1,6 +1,6 @@
 ---
 title: 'L''allocation géopolitique des IFI : quand les données confirment le soupçon'
-date: '2026-03-24'
+date: 2026-03-31
 doc_type: note
 tags:
 - IFI
@@ -18,6 +18,7 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 Le soupçon est aussi vieux que les institutions elles-mêmes. Depuis la création du Fonds monétaire international et de la Banque mondiale à Bretton Woods en 1944, les pays en développement contestent l'impartialité de l'allocation des ressources multilatérales. Pendant longtemps, cette contestation relevait du registre politique. Désormais, elle dispose d'une base empirique substantielle.

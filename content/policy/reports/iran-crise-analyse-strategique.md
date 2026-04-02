@@ -15,11 +15,13 @@ tags:
 - désescalade
 summary: L'assassinat de l'ayatollah Ali Khamenei le 28 février 2026 a ouvert la séquence la plus conséquente pour la sécurité
   internationale depuis l'invasion russe de l'Ukraine. Les frappes américaines et israéliennes constituent la première campagne
-  militaire directe contre l'Iran depuis la guerre Iran-Irak.
+  militaire directe contre l'Iran depuis la guerre Iran-Irak. Le blocage sélectif du détroit d'Ormuz qui s'en est suivi retire
+  environ 20 % du pétrole...
 status: ready
 draft: false
 theme: geopolitical
 ---
+
 ## Résumé
 
 L'assassinat de l'ayatollah Ali Khamenei le 28 février 2026 a ouvert la séquence la plus conséquente pour la sécurité internationale depuis l'invasion russe de l'Ukraine. Les frappes américaines et israéliennes constituent la première campagne militaire directe contre l'Iran depuis la guerre Iran-Irak. Le blocage sélectif du détroit d'Ormuz qui s'en est suivi retire environ 20 % du pétrole transporté par voie maritime selon une logique de discrimination géopolitique inédite : la Chine et l'Inde conservent un accès tandis que les navires occidentaux sont interdits de transit.

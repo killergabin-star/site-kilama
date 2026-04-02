@@ -1,7 +1,7 @@
 ---
 title: 'Controverse : L''ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce
   que les spécialistes ne disent pas'
-date: '2026-04-01'
+date: 2026-03-31
 doc_type: controverse
 tags:
 - ajustement structurel
@@ -14,11 +14,13 @@ tags:
 - controverse
 summary: 'Le 25 mars 2026, Jostein Hauge, économiste de l''université de Cambridge spécialiste de politique industrielle,
   ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs décennies contre la politique industrielle
-  était erronée — ses anciens conseils ont la valeur d''une disquette.'
+  était erronée — ses anciens conseils ont la valeur d''une disquette. »[^1] Le *World Development Report 2025* de la Banque
+  mondiale, consacré à la...'
 status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 ## 1. L'échange — cinq jours, trois camps
 
 Le 25 mars 2026, Jostein Hauge, économiste de l'université de Cambridge spécialiste de politique industrielle, ouvre les hostilités sur X : « La Banque mondiale a reconnu que sa guerre de plusieurs décennies contre la politique industrielle était erronée — ses anciens conseils ont la valeur d'une disquette. »[^1] Le *World Development Report 2025* de la Banque mondiale, consacré à la revitalisation du secteur manufacturier, avait effectivement enterré l'hostilité historique de l'institution envers l'intervention étatique — sans formuler d'excuses pour les décennies de conditionnalité qui avaient imposé le contraire.

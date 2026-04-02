@@ -1,6 +1,6 @@
 ---
 title: 'Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026'
-date: '2026-03-26'
+date: '2026-03-31'
 doc_type: note
 tags:
 - UE
@@ -14,12 +14,13 @@ tags:
 summary: 'Depuis la publication de cette analyse en novembre 2024, le contexte de la politique commerciale européenne a été
   bouleversé. Le retour de l''administration Trump, avec une politique tarifaire d''une ampleur inédite, a placé l''UE dans
   une position de double contrainte : défendre ses intérêts face à Washington tout en préservant ses relations avec les pays
-  en développement.'
+  en développement. Cette note actualise le...'
 status: ready
 draft: false
 theme: commerce
 author: Eric Gabin Kilama
 ---
+
 Depuis la publication de cette analyse en novembre 2024, le contexte de la politique commerciale européenne a été bouleversé. Le retour de l'administration Trump, avec une politique tarifaire d'une ampleur inédite, a placé l'UE dans une position de double contrainte : défendre ses intérêts face à Washington tout en préservant ses relations avec les pays en développement. Cette note actualise le diagnostic et les recommandations à la lumière des développements de 2025-2026.
 
 ## 1. Le choc tarifaire américain : ampleur et conséquences

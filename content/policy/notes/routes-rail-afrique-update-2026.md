@@ -1,6 +1,6 @@
 ---
 title: 'Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport'
-date: '2026-03-27'
+date: '2026-03-31'
 doc_type: note
 tags:
 - Afrique
@@ -18,6 +18,7 @@ draft: false
 theme: afrique
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 Depuis notre analyse de septembre 2024 sur les investissements optimaux en infrastructures de transport en Afrique, le paysage a significativement évolué. Trois développements structurent la nouvelle donne : l'avancée du corridor de Lobito sous impulsion américaine, la montée en puissance de la ZLECAf avec l'entrée en vigueur progressive des concessions tarifaires, et l'intensification de la compétition géopolitique entre les États-Unis, la Chine et l'Union européenne pour le financement des infrastructures continentales. Cette note actualise le cadre analytique proposé en 2024 et en tire les implications pour la politique d'infrastructure africaine.

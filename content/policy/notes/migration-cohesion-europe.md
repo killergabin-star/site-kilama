@@ -1,6 +1,6 @@
 ---
 title: 'Migration et cohésion politique européenne : la boucle la plus dangereuse'
-date: '2026-03-25'
+date: 2026-03-31
 doc_type: note
 tags:
 - migration
@@ -12,11 +12,12 @@ tags:
 summary: L'Union européenne entre dans une phase où la question migratoire ne fonctionne plus comme un dossier sectoriel parmi
   d'autres, mais comme un amplificateur de toutes les tensions existantes. La convergence entre crise migratoire, choc énergétique
   lié à la fermeture partielle du détroit d'Ormuz, et montée des forces populistes crée une boucle de rétroaction dont la
-  dynamique est auto-renforçante.
+  dynamique est auto-renforçante....
 status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 L'Union européenne entre dans une phase où la question migratoire ne fonctionne plus comme un dossier sectoriel parmi d'autres, mais comme un amplificateur de toutes les tensions existantes. La convergence entre crise migratoire, choc énergétique lié à la fermeture partielle du détroit d'Ormuz, et montée des forces populistes crée une boucle de rétroaction dont la dynamique est auto-renforçante. Chaque composante aggrave les deux autres. L'enjeu n'est plus seulement humanitaire ou sécuritaire : il est institutionnel. La capacité de l'Union européenne à fonctionner comme espace politique intégré est directement menacée par cette boucle.
 
 ## Les flux 2025-2026 : stabilisation apparente, recomposition réelle

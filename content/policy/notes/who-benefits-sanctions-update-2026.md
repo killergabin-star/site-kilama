@@ -1,6 +1,6 @@
 ---
 title: À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire
-date: '2026-03-12'
+date: '2026-03-31'
 doc_type: note
 tags:
 - sanctions
@@ -12,11 +12,13 @@ tags:
 summary: Depuis la publication de cette note en novembre 2024, le régime de sanctions contre l'Iran a connu une escalade sans
   précédent. La crise de mars 2026 — tensions dans le détroit d'Ormuz, menaces iraniennes sur les flux pétroliers, renforcement
   des sanctions américaines et européennes — a mis en lumière les contradictions structurelles que l'analyse initiale identifiait.
+  Cette actualisation examine...
 status: ready
 draft: false
 theme: geoeconomics
 author: Eric Gabin Kilama
 ---
+
 Depuis la publication de cette note en novembre 2024, le régime de sanctions contre l'Iran a connu une escalade sans précédent. La crise de mars 2026 — tensions dans le détroit d'Ormuz, menaces iraniennes sur les flux pétroliers, renforcement des sanctions américaines et européennes — a mis en lumière les contradictions structurelles que l'analyse initiale identifiait. Cette actualisation examine ce qui a changé, ce qui a été confirmé, et les nouvelles questions que pose l'évolution de la coercition économique internationale.
 
 ## 1. L'escalade de mars 2026 : le détroit d'Ormuz comme levier

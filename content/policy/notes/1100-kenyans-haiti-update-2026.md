@@ -1,6 +1,6 @@
 ---
 title: 'Haïti deux ans après : la mission kényane, les mercenaires et l''impasse qui se confirme'
-date: '2026-03-28'
+date: '2026-03-31'
 doc_type: note
 tags:
 - Haiti
@@ -11,12 +11,13 @@ tags:
 summary: Depuis notre analyse de mars 2024 sur les limites structurelles de la mission de sécurité kényane en Haïti, les développements
   sur le terrain ont confirmé, point par point, le diagnostic initial. Les 1 100 policiers kényans n'ont pas sauvé Haïti.
   La Mission multinationale d'appui à la sécurité (MMAS) a produit des résultats marginaux face à une crise qui a continué
-  de s'aggraver.
+  de s'aggraver. Le gouvernement...
 status: ready
 draft: false
 theme: sécurité
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 Depuis notre analyse de mars 2024 sur les limites structurelles de la mission de sécurité kényane en Haïti, les développements sur le terrain ont confirmé, point par point, le diagnostic initial. Les 1 100 policiers kényans n'ont pas sauvé Haïti. La Mission multinationale d'appui à la sécurité (MMAS) a produit des résultats marginaux face à une crise qui a continué de s'aggraver. Le gouvernement haïtien, face à l'échec de la mission internationale, a franchi un seuil en recourant à des contractuels militaires privés. Cette note actualise l'analyse à la lumière de deux années d'opérations et tire les implications pour la suite.

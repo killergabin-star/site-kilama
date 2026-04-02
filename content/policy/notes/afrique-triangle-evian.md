@@ -1,6 +1,6 @@
 ---
 title: 'L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7'
-date: '2026-03-06'
+date: 2026-03-31
 doc_type: note
 tags:
 - Afrique
@@ -18,6 +18,7 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 Le sommet du G7 d'Évian (15-17 juin 2026) se prépare dans un contexte de compétition budgétaire sans précédent entre trois agendas majeurs de l'Occident : la reconstruction de l'Ukraine (486 milliards de dollars sur dix ans selon la RDNA3 de la Banque mondiale), le réarmement européen (800 milliards d'euros à l'horizon 2030 dans le cadre de ReArm Europe/Readiness 2030), et les partenariats de développement avec l'Afrique[^1]. Cette compétition, que l'on peut qualifier de « triangle d'Évian », n'oppose pas trois priorités abstraites. Elle se traduit dans les budgets nationaux des sept membres par des arbitrages concrets dont l'Afrique sort perdante.
 
 L'aide publique au développement (APD) des pays du Comité d'aide au développement (CAD) de l'OCDE a reculé de manière significative en 2024. Pour la première fois en près de trente ans, la France, l'Allemagne, le Royaume-Uni et les États-Unis ont simultanément réduit leur APD[^2]. Les projections pour 2025 anticipent une contraction supplémentaire de 9 à 17 %, portée par onze pays donateurs qui représentent à eux seuls les trois quarts de l'aide totale[^3]. Les pays d'Afrique subsaharienne pourraient faire face à un déclin de 16 à 28 % de l'APD bilatérale nette, ce qui constituerait le recul le plus sévère en trois décennies[^4].

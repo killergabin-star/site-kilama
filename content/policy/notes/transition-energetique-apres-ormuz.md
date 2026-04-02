@@ -1,6 +1,6 @@
 ---
 title: 'La transition énergétique après Ormuz : accélération ou régression ?'
-date: '2026-03-22'
+date: 2026-03-31
 doc_type: note
 tags:
 - transition énergétique
@@ -17,6 +17,7 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 ---
+
 ## Introduction
 
 La fermeture partielle du détroit d'Ormuz, consécutive aux frappes américano-israéliennes sur l'Iran lancées le 28 février 2026, a provoqué le choc pétrolier le plus brutal depuis l'invasion russe de l'Ukraine. Le Brent, qui oscillait autour de 86 dollars le baril en janvier, a franchi la barre des 126 dollars à son pic de mars avant de se stabiliser autour de 112 dollars fin mars, tandis que le brut de Dubaï atteignait un record historique de 166 dollars le 19 mars[^1]. La prime de risque géopolitique, estimée entre 15 et 20 dollars par baril par les analystes de Goldman Sachs et de JP Morgan, s'est installée durablement dans la structure des prix, signalant que le marché anticipe une perturbation prolongée[^2].
