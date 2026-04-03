@@ -1673,43 +1673,357 @@ body.page-about {
   transition: width 50ms linear;
 }
 
-/* === RESPONSIVE === */
+/* ============================================================
+   MOBILE HAMBURGER BUTTON
+   ============================================================ */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  margin-right: -12px;
+  z-index: 1010;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+  margin: 5px 0;
+  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 1px;
+}
+
+/* Light nav variant */
+.site-nav--light .nav-hamburger span,
+.site-nav--home .nav-hamburger span { background: var(--navy); }
+.site-nav--vigie .nav-hamburger span { background: var(--vigie-text); }
+
+/* Hamburger → X animation */
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body.nav-open .nav-overlay {
+  display: block;
+  opacity: 1;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+
+  .vigie-dashboard { grid-template-columns: 1fr 1fr; }
+  .vigie-panel--full { grid-column: span 2; }
+
+  .notes-grid { grid-template-columns: repeat(2, 1fr); }
+  .vigie-kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .vigie-indicators { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --space-lg: 1.5rem;
-    --space-xl: 2.5rem;
-    --space-2xl: 3.5rem;
+    --space-lg: 1.25rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --nav-height: 60px;
   }
 
-  .flagships-grid,
-  .section-preview,
-  .notes-grid,
-  .course-grid,
-  .vigie-dashboard,
-  .vigie-indicators,
-  .vigie-kpi-row,
-  .geo-officer-modules {
-    grid-template-columns: 1fr;
+  /* --- NAV: hamburger + full-screen drawer --- */
+  .nav-hamburger { display: block; }
+
+  .site-nav {
+    height: 60px;
+    padding: 0 20px;
   }
 
-  .featured-note {
-    grid-template-columns: 1fr;
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 24px 32px;
+    gap: 0;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.12);
   }
 
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  /* Vigie dark drawer variant */
+  .site-nav--vigie ~ .nav-overlay + script + .nav-links,
+  .site-nav--vigie + .nav-overlay ~ .nav-links { background: var(--vigie-bg); }
+
+  .nav-item {
+    height: auto;
+    padding: 0;
+    flex-direction: column;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .nav-item > a {
+    display: block;
+    padding: 16px 0;
+    font-size: 17px;
+    font-weight: 500;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Hide desktop chevron on mobile */
+  .nav-item > a::after { display: none; }
+
+  /* Mobile dropdown: accordion style */
+  .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-item.mobile-expanded .dropdown {
+    max-height: 300px;
+  }
+
+  .dropdown-links {
+    background: var(--gray-100);
+    border-bottom: none;
+    padding: 8px 16px 12px;
+    white-space: normal;
+  }
+
+  .dropdown-links a {
+    color: var(--anthracite);
+    font-size: 15px;
+    padding: 10px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-links a:hover { color: var(--blue-fpsq); }
+
+  .nav-lang {
+    margin: 16px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+    font-size: 15px;
+  }
+
+  /* --- HERO --- */
+  .hero { min-height: 65vh; }
+
+  .hero-content {
+    padding: var(--space-xl) 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    max-width: 100%;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  /* --- LAYOUT --- */
+  .container {
+    padding: 0 20px;
+  }
+
+  .page-body {
+    padding-top: 60px;
+  }
+
+  /* --- FLAGSHIPS --- */
+  .flagships { padding: var(--space-xl) 0; }
+  .flagships-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .flagship-card { padding: var(--space-md); }
+
+  .sparklines { flex-wrap: wrap; }
+  .sparkline-item { min-width: calc(50% - 0.5rem); }
+
+  /* --- SECTION DROPDOWNS --- */
+  .section-toggle { padding: var(--space-md) 0; }
+
+  .section-title { font-size: 1.25rem; }
+
+  .section-preview { grid-template-columns: 1fr; }
+
+  .section-content.expanded { max-height: 800px; }
+
+  /* --- LATEST PUB --- */
+  .latest-pub { padding: var(--space-xl) 20px; }
+  .pub-card { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  /* --- VIGIE TEASER --- */
+  .vigie-indicators { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- CREDENTIALS --- */
+  .credentials { padding: var(--space-xl) 20px; }
+  .credentials blockquote { font-size: 1.125rem; }
+  .credentials-affiliations { font-size: 0.75rem; }
+  .credentials-affiliations span { margin: 0 0.375rem; }
+
+  /* --- PAGE HEADER --- */
+  .page-header {
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  /* --- RESEARCH --- */
+  .featured-paper { padding: var(--space-md); }
+  .featured-paper h2 { font-size: 1.125rem; }
+
+  /* --- POLICY --- */
+  .theme-filters { gap: 0.375rem; }
+  .theme-tag {
+    font-size: 0.6875rem;
+    padding: 8px 12px;
+    min-height: 40px;
+  }
+
+  .featured-note { grid-template-columns: 1fr; }
+  .featured-note-visual { min-height: 160px; }
+  .featured-note-content h2 { font-size: 1.375rem; }
+
+  .notes-grid { grid-template-columns: 1fr; }
+  .note-card { padding: var(--space-md) 0; }
+
+  /* --- VIGIE DASHBOARD --- */
+  .vigie-dashboard { grid-template-columns: 1fr; }
+  .vigie-panel--wide,
+  .vigie-panel--full { grid-column: span 1; }
+
+  .vigie-kpi-row { grid-template-columns: repeat(2, 1fr); }
+
+  .vigie-alert-bar { flex-direction: column; }
+
+  .vigie-scenario-table { font-size: 0.75rem; }
+  .vigie-scenario-table th,
+  .vigie-scenario-table td { padding: 8px 6px; }
+
+  /* --- TEACHING --- */
+  .course-grid { grid-template-columns: 1fr; }
+
+  .geo-officer { padding: var(--space-lg); border-radius: 8px; }
+  .geo-officer h2 { font-size: 1.25rem; }
+  .geo-officer-modules { grid-template-columns: 1fr; }
+
+  /* --- ABOUT --- */
   .about-hero {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   .about-photo {
-    width: 200px;
-    height: 240px;
+    width: 180px;
+    height: 220px;
     margin: 0 auto;
   }
 
-  .vigie-panel--wide,
-  .vigie-panel--full {
-    grid-column: span 1;
+  .about-intro h1 { font-size: 1.75rem; }
+
+  .timeline-item {
+    grid-template-columns: 70px 1fr;
+    gap: var(--space-sm);
   }
 
-  .hero { min-height: 70vh; }
+  .pull-quote {
+    font-size: 1.125rem;
+    padding-left: var(--space-sm);
+  }
+
+  /* --- FOOTER --- */
+  .site-footer-full { padding: 32px 20px 24px; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .site-nav { padding: 0 16px; }
+
+  .wordmark { font-size: 14px; }
+
+  .hero { min-height: 55vh; }
+
+  .flagship-card h3 { font-size: 1.0625rem; }
+
+  .section-title { font-size: 1.125rem; }
+
+  .vigie-kpi-value { font-size: 1.375rem; }
+
+  .vigie-indicators { grid-template-columns: 1fr; }
+
+  .credentials-affiliations span { display: block; margin: 4px 0; }
+
+  .featured-note-content h2 { font-size: 1.125rem; }
 }

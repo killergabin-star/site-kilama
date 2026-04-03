@@ -77,7 +77,7 @@ Les raisons sont structurelles, pas circonstancielles. L'interopérabilité OTAN
 
 Alesina et Spolaore (2006) montrent que les dépenses de défense et la taille des nations sont co-déterminées, et que la fragmentation politique génère une duplication des coûts de défense qui est l'exact analogue, au niveau étatique, de la fragmentation industrielle européenne[^8b]. La conséquence dynamique est importante : SAFE sans consolidation industrielle est non seulement inefficient mais potentiellement inflationniste.
 
-[^8b]: Alesina, A. et Spolaore, E. (2006). « Conflict, Défense Spending, and the Number of Nations. »
+[^8b]: Alesina, A. et Spolaore, E. (2006). « Conflict, Defense Spending, and the Number of Nations. »
 
 La conséquence dynamique est directe : si l'instrument stimule la demande tout en maintenant la fragmentation de l'offre, les coûts unitaires ne baisseront pas — ils risquent d'augmenter, parce que SAFE finance des séries de production dupliquées à échelle sous-optimale dans vingt-sept marchés nationaux. L'élasticité d'échelle est le warrant quantitatif pour faire de la consolidation industrielle une condition préalable au décaissement des fonds SAFE, et non un objectif parallèle. Conditionner d'abord. Décaisser ensuite.
 
@@ -85,7 +85,7 @@ La conséquence dynamique est directe : si l'instrument stimule la demande tout 
 
 ## 4. La doctrine nucléaire : la proposition Macron
 
-La publication de la National Défense Strategy américaine 2026 a modifié les termes du débat européen de manière durable. Le document abandonne explicitement la priorité européenne au profit d'une posture de sécurité hémisphérique, et l'analyse de Harvard qualifie cette rupture de « greatest transatlantic rupture since 1945 »[^9]. La formulation est significative : il ne s'agit plus d'un désengagement progressif mais d'une réorientation doctrinale formalisée, dans laquelle le président Trump est cité quarante-sept fois — un degré de personnalisation sans précédent dans un document de stratégie nationale.
+La publication de la National Defense Strategy américaine 2026 a modifié les termes du débat européen de manière durable. Le document abandonne explicitement la priorité européenne au profit d'une posture de sécurité hémisphérique, et l'analyse de Harvard qualifie cette rupture de « greatest transatlantic rupture since 1945 »[^9]. La formulation est significative : il ne s'agit plus d'un désengagement progressif mais d'une réorientation doctrinale formalisée, dans laquelle le président Trump est cité quarante-sept fois — un degré de personnalisation sans précédent dans un document de stratégie nationale.
 
 [^9]: La NDS 2026 a été publiée le 23 janvier 2026. L'analyse de Harvard à laquelle il est fait référence porte sur les implications stratégiques du « burden-shifting » — par opposition au traditionnel « burden-sharing » — pour l'architecture de sécurité transatlantique.
 
@@ -126,7 +126,7 @@ La Commission européenne devrait réformer la gouvernance de SAFE en séparant 
 
 L'Agence européenne de défense devrait piloter un programme de consolidation industrielle séquencée, en commençant par le procurement conjoint volontaire pour les items non sensibles (munitions, logistique, équipements d'entraînement) dès 2027, avec extension progressive aux systèmes d'armes à partir de 2030, et assortir les décaissements SAFE d'un plancher de 15 % de R&D réinvestie dans la base industrielle européenne, conformément aux multiplicateurs estimés par Moretti, Steinwender et Van Reenen (2025)[^12] et Antolin-Diaz et Surico (2025)[^13].
 
-[^12]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025). « Intellectual Spoils of War? Défense R&D, Productivity, and International Spillovers. » *Review of Economic Studies* (à paraître). Les auteurs estiment un crowding-in de +0,5 % de la R&D privée par point de R&D militaire.
+[^12]: Moretti, E., Steinwender, C. et Van Reenen, J. (2025). « Intellectual Spoils of War? Defense R&D, Productivity, and International Spillovers. » *Review of Economic Studies* (à paraître). Les auteurs estiment un crowding-in de +0,5 % de la R&D privée par point de R&D militaire.
 [^13]: Antolin-Diaz, J. et Surico, P. (2025). « Long-Run Effects of Government Spending. » *American Economic Review* (à paraître). Multiplicateur de la dépense militaire estimé entre 1,7 et 2,0 sur un horizon de quinze ans.
 
 ---

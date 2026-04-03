@@ -325,7 +325,7 @@
   .hero-home .hero-bg {
     background-position: center top 15%;
     background-size: cover;
-    opacity: 0.35;
+    opacity: 0.3;
   }
   .hero-home .hero-text { max-width: 100%; }
   .hero-home .hero-headline { font-size: 32px; }
@@ -333,10 +333,30 @@
   .hero-home .hero-credentials-inner span { font-size: 13px; }
   .pub-card { grid-template-columns: 1fr; }
 }
-@media (max-width: 600px) {
-  .hero-home .hero-content { padding: 120px 20px 60px; }
-  .hero-home .hero-headline { font-size: 26px; }
-  .hero-home .hero-credentials { left: 20px; right: 20px; bottom: 24px; }
+@media (max-width: 768px) {
+  .hero-home.hero { min-height: 65vh; }
+  .hero-home .hero-content { padding: 100px 20px 60px; }
+  .hero-home .hero-headline { font-size: clamp(24px, 7vw, 32px); }
+  .hero-home .hero-subline { font-size: 15px; margin-bottom: 24px; }
+  .hero-home .hero-ctas { flex-direction: column; }
+  .hero-home .hero-ctas .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .hero-home .hero-credentials { left: 20px; right: 20px; bottom: 20px; }
+  .hero-home .hero-credentials-inner span { font-size: 11px; letter-spacing: 1px; }
+  .analysis-item { grid-template-columns: 1fr; gap: 6px; }
+  .analysis-date { padding-top: 0; }
+  .section-title-mazz { font-size: 22px; }
+}
+@media (max-width: 480px) {
+  .hero-home.hero { min-height: 55vh; }
+  .hero-home .hero-headline { font-size: 22px; }
+  .hero-home .hero-bg { opacity: 0.2; }
+  .hero-home .hero-credentials-inner { gap: 4px; }
+  .hero-home .hero-credentials-inner span { font-size: 10px; }
 }
 </style>
 {{ end }}
@@ -544,7 +564,7 @@
   <div class="container">
     <blockquote>La géopolitique est redevenue une variable structurelle de l'économie mondiale. La mesurer rigoureusement, c'est donner aux décideurs une prise sur l'incertitude.</blockquote>
     <div class="credentials-affiliations">
-      CAPS-MEAE <span>&middot;</span> CERDI <span>&middot;</span> FERDI <span>&middot;</span> European Economic Review <span>&middot;</span> Journal of Comparative Economics <span>&middot;</span> China Economic Review
+      CAPS-MEAE <span>&middot;</span> EconomiX <span>&middot;</span> CERDI <span>&middot;</span> FERDI <span>&middot;</span> European Economic Review <span>&middot;</span> Journal of Comparative Economics <span>&middot;</span> China Economic Review
     </div>
   </div>
 </section>

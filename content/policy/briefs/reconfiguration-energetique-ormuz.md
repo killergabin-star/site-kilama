@@ -163,7 +163,7 @@ L'Agence française de développement devrait intégrer dans sa programmation 20
 [^19]: Goldman Sachs, « GCC Economic Impact of Hormuz Disruption », Global Economics Paper, 15 mars 2026.
 [^20]: Programme alimentaire mondial, évaluation préliminaire, région MENA, 20 mars 2026.
 [^21]: IATA, données sur le carburant aviation, allocations régionales, 2025.
-[^22]: Rabah Arezki et Markus Brückner, « Oil Rents, Corruption, and State Stability: Évidence from Panel Data Regressions », *European Economic Review*, vol. 55, n° 7, 2011 .
+[^22]: Rabah Arezki et Markus Brückner, « Oil Rents, Corruption, and State Stability: Evidence from Panel Data Regressions », *European Economic Review*, vol. 55, n° 7, 2011 .
 [^23]: Daniel Yergin, *The Prize: The Epic Quest for Oil, Money and Power*, Free Press, 1991.
 [^24]: IRENA, « Impact of the Hormuz Crisis on Renewable Energy Investment », note préliminaire, mars 2026.
 [^25]: Christiane Baumeister et James D. Hamilton, « Structural Interpretation of Vector Autoregressions with Incomplete Identification: Revisiting the Role of Oil Supply and Demand Shocks », *American Economic Review*, vol. 109, n° 5, 2019.

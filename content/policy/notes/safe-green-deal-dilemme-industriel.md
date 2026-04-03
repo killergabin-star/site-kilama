@@ -163,17 +163,17 @@ La voie étroite passe par le dual-use, la formation polyvalente et la disciplin
 
 [^4]: Deloitte Legal, « EU Council commits EUR 150 billion to joint EU security and defence procurement ». Prêts à maturité jusqu'à 45 ans, différé de 10 ans.
 
-[^5]: The Défense Post, « EU Clears Nearly $20B in Défense Funding for France, Czechia », 30 mars 2026 ; Commission européenne, IP/26/111.
+[^5]: The Defense Post, « EU Clears Nearly $20B in Defense Funding for France, Czechia », 30 mars 2026 ; Commission européenne, IP/26/111.
 
 [^6]: Commission européenne, SAFE — Defence Industry and Space. Deux catégories de produits de défense éligibles.
 
-[^7]: Euronews, « Skilled workers wanted: The EU's defence industry struggles to find the right talent », 26 février 2025 ; Oliver Wyman, « How Europe Can Meet Its Défense Readiness Challenge », février 2026.
+[^7]: Euronews, « Skilled workers wanted: The EU's defence industry struggles to find the right talent », 26 février 2025 ; Oliver Wyman, « How Europe Can Meet Its Defense Readiness Challenge », février 2026.
 
-[^8]: Technology.org, « European Défense Firms Face Critical Worker Shortage », 27 mai 2025.
+[^8]: Technology.org, « European Defense Firms Face Critical Worker Shortage », 27 mai 2025.
 
 [^9]: Fortune, « Europe's défense buildup faces workforce shortage: Randstad CEO », 5 juin 2025.
 
-[^10]: Defence Magazine, « The EU Wants to Train and Retrain 600,000 Défense Industry Workers by 2030 ». Plan d'action pour les compétences de défense, mars 2025.
+[^10]: Defence Magazine, « The EU Wants to Train and Retrain 600,000 Defense Industry Workers by 2030 ». Plan d'action pour les compétences de défense, mars 2025.
 
 [^11]: Commission européenne, « Net-Zero Industry Act » ; Parlement européen, adoption formelle le 25 avril 2024. 19 technologies net-zero identifiées, objectif de 40 % de capacité manufacturière domestique d'ici 2030.
 
@@ -213,7 +213,7 @@ La voie étroite passe par le dual-use, la formation polyvalente et la disciplin
 
 [^29]: Commission européenne, Communication de juin 2025 sur l'application du cadre de finance durable à la défense ; A&O Shearman, « EU Defence Readiness Omnibus: Security, industry and ESG ».
 
-[^30]: Sustainalytics, « EU ESG Funds' Exposure to Défense Continues to Increase ».
+[^30]: Sustainalytics, « EU ESG Funds' Exposure to Defense Continues to Increase ».
 
 [^31]: Commission européenne, Fonds européen de défense, 7,3 milliards d'euros (2021-2027). Euro Funding, « Energy security & sustainability in defence: dual-use innovations in EDF 2025 ».
 
@@ -225,11 +225,11 @@ La voie étroite passe par le dual-use, la formation polyvalente et la disciplin
 
 [^35]: Airbus, Leonardo, Thales : protocole d'accord d'octobre 2025 (« Project Bromo »). Via Satellite ; SpaceNews.
 
-[^36]: Breaking Défense, « 'SCAF is dead': Sixth-gen Franco-German fighter is all but over, officials and analysts say », février 2026.
+[^36]: Breaking Defense, « 'SCAF is dead': Sixth-gen Franco-German fighter is all but over, officials and analysts say », février 2026.
 
 [^37]: European Security & Defence, « Goodbye SCAF? Is this the end of the road for the Franco-German-Spanish fighter dream? », février 2026.
 
-[^38]: PBS, Défense News. Budget défense 2026 : environ 57,2 milliards d'euros (53,7 LPM + 3,5 exceptionnel).
+[^38]: PBS, Defense News. Budget défense 2026 : environ 57,2 milliards d'euros (53,7 LPM + 3,5 exceptionnel).
 
 [^39]: OFCE ; Bercy ; FMI. Déficit 5,8 % (2024), cible 5,0 % (2026), retour sous 3 % en 2029.
 

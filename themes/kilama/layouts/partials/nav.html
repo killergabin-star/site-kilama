@@ -1,10 +1,17 @@
-<!-- Navigation — Mazzucato dropdown pattern -->
+<!-- Navigation — Mazzucato dropdown + mobile drawer -->
 <nav class="site-nav{{ if or .IsHome (eq .Section "about") }} site-nav--light{{ end }}" id="mainNav">
   <a href="{{ "/" | relURL }}" class="wordmark">
     <span class="first-name">ERIC</span>
     <span class="last-name">KILAMA</span>
   </a>
-  <div class="nav-links">
+
+  <!-- Hamburger (mobile only) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Desktop nav + mobile drawer -->
+  <div class="nav-links" id="navLinks">
     <div class="nav-item{{ if eq .Section "research" }} active{{ end }}">
       <a href="{{ "research/" | relURL }}">Research</a>
       <div class="dropdown">
@@ -64,3 +71,49 @@
     </span>
   </div>
 </nav>
+
+<!-- Mobile drawer overlay -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<script>
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var links = document.getElementById('navLinks');
+  var overlay = document.getElementById('navOverlay');
+  var nav = document.getElementById('mainNav');
+
+  function toggle() {
+    var open = links.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+  }
+
+  function close() {
+    links.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+
+  btn.addEventListener('click', toggle);
+  overlay.addEventListener('click', close);
+
+  // Mobile accordion for dropdowns
+  links.addEventListener('click', function(e) {
+    if (window.innerWidth > 768) return;
+    var item = e.target.closest('.nav-item > a');
+    if (!item) return;
+    var navItem = item.parentElement;
+    var dropdown = navItem.querySelector('.dropdown');
+    if (!dropdown) return;
+    e.preventDefault();
+    navItem.classList.toggle('mobile-expanded');
+  });
+
+  // Close on sub-link click
+  links.querySelectorAll('.dropdown-links a').forEach(function(a) {
+    a.addEventListener('click', close);
+  });
+})();
+</script>

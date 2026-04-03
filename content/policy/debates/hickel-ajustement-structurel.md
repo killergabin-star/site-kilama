@@ -143,7 +143,7 @@ Le vrai scandale de cette controverse n'est pas que Hickel ait tort sur la méth
 
 [^16]: Stubbs T. et al., « Structural adjustment, structural conditions and health outcomes », *Social Science & Medicine*, 2022.
 
-[^17]: Apeti M.E., « Does IMF conditionality promote structural reforms? », *Economics of Transition and Institutional Changé*, 2025.
+[^17]: Apeti M.E., « Does IMF conditionality promote structural reforms? », *Economics of Transition and Institutional Change*, 2025.
 
 [^18]: Independent Evaluation Office (IEO) of the IMF, « Structural Conditionality in IMF-Supported Programs », 2007.
 
