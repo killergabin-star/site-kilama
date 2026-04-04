@@ -121,4 +121,4 @@ Cette analyse repose sur l'hypothèse que l'espace budgétaire existe dans les p
 [^24]: BAD, « African Development Bank Group Mobilises Global Private Capital to Close Africa's Financing Gap », 2026.
 [^25]: Songwe, V. et Stern, N., *Finance for Climate Action*, LSE Grantham Institute, 2022.
 [^26]: ONU Info, « Soudan : la plus grande crise humanitaire au monde », avril 2025 ; WFP, « Famine in Sudan », 2026.
-[^27]: Blanchard, O., Leandro, A. et Zettelmeyer, J., « Redesigning EU Fiscal Rules from an Evidence-Based Perspective », *Revue d'économie politique*, 2021.
+[^27]: Blanchard, O., Leandro, A. et Zettelmeyer, J., « Redesigning EU Fiscal Rules from an Évidence-Based Perspective », *Revue d'économie politique*, 2021.

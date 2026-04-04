@@ -66,7 +66,7 @@ La revue de la conditionnalité de 2018 a trouvé que « le rendement en termes 
 
 ### La littérature académique sur les effets des programmes FMI
 
-Au-delà de Hickel et du FMI, une littérature économétrique substantielle examine cette question. William Easterly (2005) ne trouve aucune relation significative entre participation à un programme FMI et croissance économique[^13]. Vreeland (2003) utilise un modèle de sélection de Heckman pour montrer que, une fois corrigé le biais de sélection, les programmes FMI ont un effet négatif sur la croissance. Dreher (2006) nuance ces résultats en distinguant entre le montant du prêt (effet positif) et la conditionnalité (effet négatif ou nul). Une étude récente d'Apeti (2025) dans *Economics of Transition and Institutional Change* examine les effets de la conditionnalité du FMI sur les réformes structurelles dans les pays en développement, trouvant des résultats mixtes[^14].
+Au-delà de Hickel et du FMI, une littérature économétrique substantielle examine cette question. William Easterly (2005) ne trouve aucune relation significative entre participation à un programme FMI et croissance économique[^13]. Vreeland (2003) utilise un modèle de sélection de Heckman pour montrer que, une fois corrigé le biais de sélection, les programmes FMI ont un effet négatif sur la croissance. Dreher (2006) nuance ces résultats en distinguant entre le montant du prêt (effet positif) et la conditionnalité (effet négatif ou nul). Une étude récente d'Apeti (2025) dans *Economics of Transition and Institutional Changé* examine les effets de la conditionnalité du FMI sur les réformes structurelles dans les pays en développement, trouvant des résultats mixtes[^14].
 
 Sur les effets sanitaires, Stubbs et al. (*PMC*, 2022) trouvent que les prêts avec conditions structurelles tendent à augmenter la pauvreté, tandis que les prêts avec conditions de stabilisation ont généralement peu d'impact mesurable[^15].
 
@@ -155,7 +155,7 @@ L'évaluation des méthodes causales disponibles (contrôle synthétique, DiD) n
 [^11]: IEO, « Structural Conditionality in IMF-Supported Programs — Evaluation Report », 2007 ; IEO, « Evaluation Update: Structural Conditionality in IMF-Supported Programs », 2018.
 [^12]: FMI, « 2018 Review of Program Design and Conditionality », IMF Policy Paper, 2019.
 [^13]: W. Easterly, « What did structural adjustment adjust? The association of policies and growth with repeated IMF and World Bank adjustment loans », *Journal of Development Economics*, vol. 76, 2005, p. 1-22.
-[^14]: A. Apeti, « International monetary fund conditionality and structural reforms: Evidence from developing countries », *Economics of Transition and Institutional Change*, 2025.
+[^14]: A. Apeti, « International monetary fund conditionality and structural reforms: Évidence from developing countries », *Economics of Transition and Institutional Changé*, 2025.
 [^15]: T. Stubbs et al., « The effects of IMF loan conditions on poverty in the developing world », *Social Science & Medicine*, 2022.
 [^16]: Easterly (2005), op. cit.
 [^17]: Bretton Woods Project, « Kenya's growing youth movement for fiscal justice », octobre 2024 ; FMI, page pays Kenya, février-mars 2026.

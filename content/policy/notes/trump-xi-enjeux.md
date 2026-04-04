@@ -56,7 +56,7 @@ Pol Antràs a montré dans ses travaux sur les chaînes de valeur mondiales que 
 
 [^5b]: Sur les effets de la fragmentation géoéconomique sur les chaînes de valeur, voir Thierry Mayer et Isabelle Méjean, « The Fragmentation Paradox: Derisking Trade and Global Safety », 2025. Sur les coûts de la sortie unilatérale du libre-échange, voir Andrei Levchenko, Barthélémy Bonadio et Nitya Pandalai-Nayar, « Falling Dominoes? The Impact of the US Exit from Free Trade on the Sustainability of Trade Cooperation », *SIAM Review*, 2026.
 
-[^3]: PIIE Working Paper 26-2, « Another China Shock », février 2026. Voir aussi Chad P. Bown, « Reciprocity and the China Shock », 2024, et Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Economies*, 2024, pour le cadre analytique.
+[^3]: PIIE Working Paper 26-2, « Another China Shock », février 2026. Voir aussi Chad P. Bown, « Reciprocity and the China Shock », 2024, et Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Économies*, 2024, pour le cadre analytique.
 
 [^4]: Zongyuan Zoe Liu, « China's Trade Surplus Is a Strategic Weapon », Foreign Affairs, janvier 2026.
 

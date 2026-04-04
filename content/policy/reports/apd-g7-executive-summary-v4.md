@@ -99,14 +99,14 @@ Le calendrier crée une séquence d'action identifiable. La publication des donn
 
 [^4]: Easterly, W., *The White Man's Burden: Why the West's Efforts to Aid the Rest Have Done So Much Ill and So Little Good*, Penguin, 2006 ; Easterly, W., *The Tyranny of Experts: Economists, Dictators, and the Forgotten Rights of the Poor*, Basic Books, 2014. La position radicale d'Easterly constitue une contradiction frontale au système, pas une proposition de réforme. La contraction de l'aide sans alternative crédible ne produit pas l'émergence — elle produit l'effondrement.
 
-[^5]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025.
+[^5]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Évidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025.
 
 [^6]: Gill, « Development Finance in a Changing World », NBER Working Paper 27641, 2020.
 
-[^7]: Rajan, « Has Finance Made the World Riskier? », *Jackson Hole Symposium*, 2005 ; Rajan, *Fault Lines: How Hidden Fractures Still Threaten the World Economy*, 2010. Sur le lien conditionnel entre finance et croissance, voir Levine, « Finance and Growth: Theory and Evidence », *Handbook of Economic Growth*, 2005. Voir aussi Obstfeld, « International Finance and Growth in Developing Countries: What Have We Learned? », *IMF Economic Review*, 2009.
+[^7]: Rajan, « Has Finance Made the World Riskier? », *Jackson Hole Symposium*, 2005 ; Rajan, *Fault Lines: How Hidden Fractures Still Threaten the World Economy*, 2010. Sur le lien conditionnel entre finance et croissance, voir Levine, « Finance and Growth: Theory and Évidence », *Handbook of Economic Growth*, 2005. Voir aussi Obstfeld, « International Finance and Growth in Developing Countries: What Have We Learned? », *IMF Economic Review*, 2009.
 
 [^8]: Reinhart et Rogoff, « From Financial Crash to Debt Crisis », *American Economic Review*, 2011 ; Reinhart et Rogoff, « Growth in a Time of Debt », *AER Papers & Proceedings*, 2010. Pour le contexte post-pandémique, voir Reinhart, « COVID and the Debt Crisis », NBER Working Paper 26940, 2020.
 
 [^9]: Zucman, « Global Offshore Wealth 2001-2023 », 2025.
 
-[^10]: Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025 ; Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.
+[^10]: Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Évidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025 ; Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.

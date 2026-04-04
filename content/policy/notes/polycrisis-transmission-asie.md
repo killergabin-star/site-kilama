@@ -96,7 +96,7 @@ Le Japon et la Corée du Sud se trouvent dans la position symétrique inverse de
 
 [^12]: Antràs, P. (2025). « The Uncharted Waters of International Trade ». Voir aussi Antràs, P. (2020). « De-Globalization? Global Value Chains in the Post-COVID-19 Age », NBER Working Paper 28115.
 
-[^13]: Bloom, N. (2024). « The China Shock Revisited », *Journal of the Japanese and International Economies*.
+[^13]: Bloom, N. (2024). « The China Shock Revisited », *Journal of the Japanese and International Économies*.
 
 [^14]: L'architecture de sécurité asiatique repose sur un système de *hub-and-spokes* bilatéraux avec Washington, sans mutualisation budgétaire comparable aux mécanismes européens (Facilité européenne pour la paix, ReArm Europe).
 
@@ -180,7 +180,7 @@ Antràs, P. (2020). « De-Globalization? Global Value Chains in the Post-COVID-1
 
 Antràs, P. (2025). « The Uncharted Waters of International Trade ».
 
-Bloom, N. (2024). « The China Shock Revisited ». *Journal of the Japanese and International Economies*.
+Bloom, N. (2024). « The China Shock Revisited ». *Journal of the Japanese and International Économies*.
 
 Bown, C. P. (2024). « Reciprocity and the China Shock ».
 

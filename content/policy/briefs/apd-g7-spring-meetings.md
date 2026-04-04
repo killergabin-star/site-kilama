@@ -120,13 +120,13 @@ Le troisième pilier de la position française à Évian doit être le Nairobi P
 
 ---
 
-[^1]: Dreher et al., « Aid, China, and Growth: Evidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Banking on Beijing », 2022. Pour un traitement plus large des flux chinois en Afrique, voir Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
+[^1]: Dreher et al., « Aid, China, and Growth: Évidence from a New Global Development Finance Dataset », *American Economic Journal: Economic Policy*, 2021 ; Dreher et al., « Banking on Beijing », 2022. Pour un traitement plus large des flux chinois en Afrique, voir Dreher et al., « Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa », *International Studies Quarterly*, 2018.
 
 [^2]: Dreher et al., « When Aid Misses Target », 2025 ; Dreher et al., « Aid Fragmentation and Effectiveness », 2017.
 
 [^3]: Zucman, « Global Offshore Wealth 2001-2023 », 2025.
 
-[^4]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025. Voir aussi Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.
+[^4]: Rodrik, « Premature Deindustrialization », *Journal of Economic Growth*, 2016 ; Diao, Ellis, McMillan et Rodrik, « Africa's Manufacturing Puzzle: Évidence from Tanzanian and Ethiopian Firms », *World Bank Economic Review*, 39(2), 2025. Voir aussi Rodrik, « A New Growth Strategy for Developing Nations », *World Development*, 2025.
 
 [^5]: Fontagne, « Greening the AfCFTA », 2024.
 

@@ -66,7 +66,7 @@ Le premier choc chinois a été identifié par Autor, Dorn et Hanson dans leur a
 
 Le second choc diffère du premier sur au moins quatre dimensions. La rupture est profonde.[^4b]
 
-[^4b]: Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Economies*, 2024, réévalue l'ampleur du premier choc et documente la transformation des mécanismes de transmission.
+[^4b]: Nicholas Bloom, « The China Shock Revisited », *Journal of the Japanese and International Économies*, 2024, réévalue l'ampleur du premier choc et documente la transformation des mécanismes de transmission.
 
 La composition sectorielle a radicalement changé. Le premier choc portait sur des biens à faible et moyenne technologie (textile, meubles, jouets, électronique assemblée) ; le second porte sur des secteurs stratégiques à forte intensité technologique -- véhicules électriques, batteries lithium-ion, panneaux solaires, composants de télécommunications -- où la Chine occupe désormais la frontière technologique et non plus la position de suiveur à bas coûts.
 
