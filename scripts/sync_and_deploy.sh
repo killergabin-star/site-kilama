@@ -18,6 +18,10 @@ python3 scripts/ingest_staging.py 2>&1 | tail -5
 echo "→ Updating Vigie data..."
 python3 scripts/update_vigie_data.py 2>&1 | tail -5
 
+# 2b. Regenerate trust page with live TLS fingerprint
+echo "→ Regenerating trust page..."
+bash scripts/generate_trust_page.sh 2>&1 | tail -2 || echo "  (skipped: cert fetch failed, keeping previous trust.md)"
+
 # 3. Check if anything changed
 if git diff --quiet && git diff --cached --quiet; then
     echo "[$(date '+%Y-%m-%d %H:%M')] No changes detected. Skipping deploy."
