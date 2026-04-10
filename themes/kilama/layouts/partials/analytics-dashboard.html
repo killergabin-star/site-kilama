@@ -1,0 +1,218 @@
+{{/* Analytics Dashboard — accessible uniquement via /analytics/
+     Page protégée : visible seulement si on connaît l'URL */}}
+
+<style>
+.ek-dash { max-width: 900px; margin: 2rem auto; font-family: Inter, sans-serif; }
+.ek-dash h2 { color: var(--navy, #1B2A4A); border-bottom: 2px solid var(--blue-fpsq, #2C5F8A); padding-bottom: 0.5rem; }
+.ek-dash table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.ek-dash th { background: var(--navy, #1B2A4A); color: white; padding: 0.6rem; text-align: left; }
+.ek-dash td { padding: 0.5rem 0.6rem; border-bottom: 1px solid #eee; }
+.ek-dash tr:hover { background: #f5f5f0; }
+.ek-dash .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; font-weight: 600; }
+.ek-dash .badge-institution { background: #2C5F8A; color: white; }
+.ek-dash .badge-gov_fr { background: #C0392B; color: white; }
+.ek-dash .badge-thinktank { background: #D4A017; color: #1B2A4A; }
+.ek-dash .badge-consulting { background: #8E44AD; color: white; }
+.ek-dash .badge-academic { background: #27AE60; color: white; }
+.ek-dash .badge-recruitment { background: #E74C3C; color: white; }
+.ek-dash .badge-social { background: #3498DB; color: white; }
+.ek-dash .badge-media { background: #E67E22; color: white; }
+.ek-dash .badge-search { background: #95A5A6; color: white; }
+.ek-dash .badge-direct { background: #BDC3C7; color: #2D2D2D; }
+.ek-dash .badge-other { background: #ECF0F1; color: #2D2D2D; }
+.ek-dash .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.ek-dash .stat-card { background: var(--ivory-deep, #F0EDE8); padding: 1.2rem; border-radius: 6px; text-align: center; }
+.ek-dash .stat-card .number { font-size: 2rem; font-weight: 700; color: var(--navy, #1B2A4A); }
+.ek-dash .stat-card .label { font-size: 0.8rem; color: var(--text-secondary, #5A6068); margin-top: 0.3rem; }
+.ek-dash .controls { margin: 1rem 0; display: flex; gap: 1rem; }
+.ek-dash button { padding: 0.5rem 1rem; background: var(--navy, #1B2A4A); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+.ek-dash button:hover { background: var(--blue-fpsq, #2C5F8A); }
+.ek-dash .alert { background: #FFF3CD; border-left: 4px solid #D4A017; padding: 1rem; margin: 1rem 0; font-size: 0.9rem; }
+</style>
+
+<div class="ek-dash" id="ekDash">
+  <h2>Tableau de bord visiteurs</h2>
+  <p style="color: var(--text-secondary); font-size: 0.85rem;">
+    Données stockées localement dans le navigateur. Visible uniquement par vous.
+  </p>
+
+  <div class="stat-grid" id="statsGrid"></div>
+
+  <div class="controls">
+    <button onclick="showAll()">Toutes les visites</button>
+    <button onclick="filterType('institution')">Institutions</button>
+    <button onclick="filterType('gov_fr')">Gouvernement FR</button>
+    <button onclick="filterType('thinktank')">Think tanks</button>
+    <button onclick="filterType('consulting')">Conseil</button>
+    <button onclick="filterType('academic')">Académique</button>
+    <button onclick="filterType('recruitment')">Recrutement</button>
+    <button onclick="exportCSV()">Exporter CSV</button>
+    <button onclick="clearData()" style="background: #C0392B;">Purger</button>
+  </div>
+
+  <div id="alertBox"></div>
+
+  <h2>Visites récentes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Page</th>
+        <th>Profil</th>
+        <th>Organisation</th>
+        <th>Source</th>
+        <th>Campagne</th>
+        <th>Scroll</th>
+        <th>Durée</th>
+      </tr>
+    </thead>
+    <tbody id="visitsTable"></tbody>
+  </table>
+
+  <h2>Pages les plus vues</h2>
+  <table>
+    <thead><tr><th>Page</th><th>Visites</th><th>Scroll moyen</th><th>Durée moyenne</th></tr></thead>
+    <tbody id="pagesTable"></tbody>
+  </table>
+
+  <h2>Profils visiteurs</h2>
+  <table>
+    <thead><tr><th>Type</th><th>Visites</th><th>%</th></tr></thead>
+    <tbody id="profilesTable"></tbody>
+  </table>
+</div>
+
+<script>
+(function() {
+  var visits = [];
+  try { visits = JSON.parse(localStorage.getItem('ek_visits') || '[]'); } catch(e) {}
+
+  // Stats
+  function renderStats(data) {
+    var total = data.length;
+    var engaged = data.filter(function(v) { return v.scroll > 75 && v.duration > 30; }).length;
+    var institutional = data.filter(function(v) {
+      return ['institution','gov_fr','thinktank','consulting'].indexOf(v.type) > -1;
+    }).length;
+    var avgScroll = total ? Math.round(data.reduce(function(s,v) { return s + (v.scroll||0); }, 0) / total) : 0;
+
+    document.getElementById('statsGrid').innerHTML =
+      '<div class="stat-card"><div class="number">' + total + '</div><div class="label">Visites totales</div></div>' +
+      '<div class="stat-card"><div class="number">' + institutional + '</div><div class="label">Institutionnels</div></div>' +
+      '<div class="stat-card"><div class="number">' + engaged + '</div><div class="label">Lecteurs engagés</div></div>' +
+      '<div class="stat-card"><div class="number">' + avgScroll + '%</div><div class="label">Scroll moyen</div></div>';
+  }
+
+  // Visits table
+  function renderVisits(data) {
+    var sorted = data.slice().reverse().slice(0, 100);
+    var html = '';
+    sorted.forEach(function(v) {
+      var d = new Date(v.ts);
+      var dateStr = d.toLocaleDateString('fr-FR') + ' ' + d.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+      html += '<tr>' +
+        '<td>' + dateStr + '</td>' +
+        '<td>' + (v.path || '/') + '</td>' +
+        '<td><span class="badge badge-' + (v.type || 'other') + '">' + (v.type || '?') + '</span></td>' +
+        '<td>' + (v.org || '-') + '</td>' +
+        '<td>' + (v.utm_source || v.ref || 'direct').substring(0, 30) + '</td>' +
+        '<td>' + (v.utm_campaign || '-') + '</td>' +
+        '<td>' + (v.scroll || 0) + '%</td>' +
+        '<td>' + (v.duration || 0) + 's</td>' +
+        '</tr>';
+    });
+    document.getElementById('visitsTable').innerHTML = html || '<tr><td colspan="8">Aucune visite enregistrée</td></tr>';
+  }
+
+  // Pages table
+  function renderPages(data) {
+    var pages = {};
+    data.forEach(function(v) {
+      var p = v.path || '/';
+      if (!pages[p]) pages[p] = {count: 0, scrollSum: 0, durSum: 0};
+      pages[p].count++;
+      pages[p].scrollSum += (v.scroll || 0);
+      pages[p].durSum += (v.duration || 0);
+    });
+    var sorted = Object.keys(pages).sort(function(a,b) { return pages[b].count - pages[a].count; });
+    var html = '';
+    sorted.forEach(function(p) {
+      var d = pages[p];
+      html += '<tr><td>' + p + '</td><td>' + d.count + '</td>' +
+        '<td>' + Math.round(d.scrollSum / d.count) + '%</td>' +
+        '<td>' + Math.round(d.durSum / d.count) + 's</td></tr>';
+    });
+    document.getElementById('pagesTable').innerHTML = html;
+  }
+
+  // Profiles table
+  function renderProfiles(data) {
+    var types = {};
+    data.forEach(function(v) {
+      var t = v.type || 'other';
+      types[t] = (types[t] || 0) + 1;
+    });
+    var sorted = Object.keys(types).sort(function(a,b) { return types[b] - types[a]; });
+    var html = '';
+    sorted.forEach(function(t) {
+      var pct = data.length ? Math.round(types[t] / data.length * 100) : 0;
+      html += '<tr><td><span class="badge badge-' + t + '">' + t + '</span></td>' +
+        '<td>' + types[t] + '</td><td>' + pct + '%</td></tr>';
+    });
+    document.getElementById('profilesTable').innerHTML = html;
+  }
+
+  // Alerts
+  function checkAlerts(data) {
+    var html = '';
+    var recent = data.filter(function(v) {
+      return Date.now() - new Date(v.ts).getTime() < 86400000;
+    });
+    var highValue = recent.filter(function(v) {
+      return ['institution','gov_fr','consulting','recruitment'].indexOf(v.type) > -1;
+    });
+    if (highValue.length > 0) {
+      html += '<div class="alert"><strong>Visiteurs à haute valeur (24h) :</strong> ';
+      var orgs = {};
+      highValue.forEach(function(v) { orgs[v.org] = (orgs[v.org] || 0) + 1; });
+      html += Object.keys(orgs).map(function(o) { return o + ' (' + orgs[o] + ')'; }).join(', ');
+      html += '</div>';
+    }
+    document.getElementById('alertBox').innerHTML = html;
+  }
+
+  function renderAll(data) {
+    renderStats(data);
+    renderVisits(data);
+    renderPages(data);
+    renderProfiles(data);
+    checkAlerts(data);
+  }
+
+  // Filters
+  window.showAll = function() { renderAll(visits); };
+  window.filterType = function(type) {
+    renderAll(visits.filter(function(v) { return v.type === type; }));
+  };
+  window.exportCSV = function() {
+    var csv = 'date,page,type,org,utm_source,utm_campaign,scroll,duration,referrer\n';
+    visits.forEach(function(v) {
+      csv += [v.ts, v.path, v.type, v.org, v.utm_source, v.utm_campaign, v.scroll, v.duration, v.ref].join(',') + '\n';
+    });
+    var blob = new Blob([csv], {type: 'text/csv'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'erickilama_visits_' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  };
+  window.clearData = function() {
+    if (confirm('Supprimer toutes les données de visite ?')) {
+      localStorage.removeItem('ek_visits');
+      visits = [];
+      renderAll([]);
+    }
+  };
+
+  renderAll(visits);
+})();
+</script>

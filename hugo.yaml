@@ -218,6 +218,13 @@ languages:
 ## PARAMS
 ############################
 params:
+  analytics:
+    # Microsoft Clarity — heatmaps, session recordings, behavioral analytics
+    # 1. Go to https://clarity.microsoft.com → Sign up (Microsoft/Google/Facebook account)
+    # 2. Create project → name: "erickilama.com", URL: https://erickilama.com
+    # 3. Copy the project ID (alphanumeric string from the tracking code)
+    # 4. Paste below and redeploy
+    clarity_id: "w9edchhwok"
   marketing:
     seo:
       site_type: Person

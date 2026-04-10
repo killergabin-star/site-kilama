@@ -1,0 +1,237 @@
+{{/* Analytics — erickilama.com
+     Stack: Microsoft Clarity (behavioral) + Visitor Intelligence (custom)
+     RGPD: Clarity = cookieless mode, no personal data collected
+     Setup: set clarity_id in hugo.yaml params.analytics */}}
+
+{{ with .Site.Params.analytics }}
+
+{{/* ── Microsoft Clarity ── */}}
+{{ with .clarity_id }}
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "{{ . }}");
+</script>
+{{ end }}
+
+{{/* ── Visitor Intelligence Layer ── */}}
+<script>
+(function() {
+  'use strict';
+
+  // ── 1. Referrer domain classification ──
+  var DOMAIN_PROFILES = {
+    // Institutions internationales
+    'worldbank.org':      {type: 'institution', org: 'World Bank'},
+    'imf.org':            {type: 'institution', org: 'IMF'},
+    'oecd.org':           {type: 'institution', org: 'OECD'},
+    'afd.fr':             {type: 'institution', org: 'AFD'},
+    'afdb.org':           {type: 'institution', org: 'AfDB'},
+    'undp.org':           {type: 'institution', org: 'UNDP'},
+    'europa.eu':          {type: 'institution', org: 'EU'},
+    'eib.org':            {type: 'institution', org: 'EIB'},
+    'ebrd.com':           {type: 'institution', org: 'EBRD'},
+    'g7germany.de':       {type: 'institution', org: 'G7'},
+    'g7italy.it':         {type: 'institution', org: 'G7'},
+    'elysee.fr':          {type: 'institution', org: 'Elysee'},
+    // Gouvernement FR
+    'diplomatie.gouv.fr': {type: 'gov_fr', org: 'MEAE'},
+    'gouv.fr':            {type: 'gov_fr', org: 'Govt FR'},
+    'defense.gouv.fr':    {type: 'gov_fr', org: 'MinArm'},
+    'economie.gouv.fr':   {type: 'gov_fr', org: 'DG Tresor'},
+    'sgdsn.gouv.fr':      {type: 'gov_fr', org: 'SGDSN'},
+    'assemblee-nationale.fr': {type: 'gov_fr', org: 'AN'},
+    'senat.fr':           {type: 'gov_fr', org: 'Senat'},
+    // Think tanks
+    'bruegel.org':        {type: 'thinktank', org: 'Bruegel'},
+    'piie.com':           {type: 'thinktank', org: 'PIIE'},
+    'ifri.org':           {type: 'thinktank', org: 'IFRI'},
+    'irsem.fr':           {type: 'thinktank', org: 'IRSEM'},
+    'ecfr.eu':            {type: 'thinktank', org: 'ECFR'},
+    'cgdev.org':          {type: 'thinktank', org: 'CGD'},
+    'odi.org':            {type: 'thinktank', org: 'ODI'},
+    'ferdi.fr':           {type: 'thinktank', org: 'FERDI'},
+    'cerdi.uca.fr':       {type: 'thinktank', org: 'CERDI'},
+    'fondapol.org':       {type: 'thinktank', org: 'Fondapol'},
+    'iddri.org':          {type: 'thinktank', org: 'IDDRI'},
+    'iris-france.org':    {type: 'thinktank', org: 'IRIS'},
+    'csis.org':           {type: 'thinktank', org: 'CSIS'},
+    'chathamhouse.org':   {type: 'thinktank', org: 'Chatham House'},
+    // Conseil
+    'mckinsey.com':       {type: 'consulting', org: 'McKinsey'},
+    'bcg.com':            {type: 'consulting', org: 'BCG'},
+    'deloitte.com':       {type: 'consulting', org: 'Deloitte'},
+    'oliverwyman.com':    {type: 'consulting', org: 'Oliver Wyman'},
+    'rolandberger.com':   {type: 'consulting', org: 'Roland Berger'},
+    // Academique
+    'edu':                {type: 'academic', org: 'University'},
+    'ac.uk':              {type: 'academic', org: 'UK University'},
+    'univ-':              {type: 'academic', org: 'FR University'},
+    'cnrs.fr':            {type: 'academic', org: 'CNRS'},
+    'nber.org':           {type: 'academic', org: 'NBER'},
+    'cepr.org':           {type: 'academic', org: 'CEPR'},
+    'ssrn.com':           {type: 'academic', org: 'SSRN'},
+    'repec.org':          {type: 'academic', org: 'RePEc'},
+    // Recrutement
+    'galaxie.enseignementsup-recherche.gouv.fr': {type: 'recruitment', org: 'Galaxie MCF'},
+    'emploi-territorial.fr': {type: 'recruitment', org: 'FPT'},
+    'place-emploi-public.gouv.fr': {type: 'recruitment', org: 'FP Emploi'},
+    // Media
+    'ft.com':             {type: 'media', org: 'Financial Times'},
+    'lemonde.fr':         {type: 'media', org: 'Le Monde'},
+    'economist.com':      {type: 'media', org: 'The Economist'},
+    'bloomberg.com':      {type: 'media', org: 'Bloomberg'},
+    // Social
+    'linkedin.com':       {type: 'social', org: 'LinkedIn'},
+    'twitter.com':        {type: 'social', org: 'X/Twitter'},
+    'x.com':              {type: 'social', org: 'X/Twitter'},
+    't.co':               {type: 'social', org: 'X/Twitter'}
+  };
+
+  function classifyReferrer(ref) {
+    if (!ref) return {type: 'direct', org: 'Direct'};
+    try {
+      var hostname = new URL(ref).hostname.toLowerCase();
+      // Exact match first
+      for (var domain in DOMAIN_PROFILES) {
+        if (hostname === domain || hostname.endsWith('.' + domain)) {
+          return DOMAIN_PROFILES[domain];
+        }
+      }
+      // Partial match (edu, ac.uk, univ-)
+      for (var pattern in DOMAIN_PROFILES) {
+        if (hostname.includes(pattern)) {
+          return DOMAIN_PROFILES[pattern];
+        }
+      }
+      // Search engines
+      if (hostname.includes('google') || hostname.includes('bing') || hostname.includes('duckduckgo')) {
+        return {type: 'search', org: 'Search'};
+      }
+      return {type: 'other', org: hostname};
+    } catch(e) {
+      return {type: 'unknown', org: 'Unknown'};
+    }
+  }
+
+  // ── 2. UTM parameter extraction ──
+  function getUTM() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      source:   params.get('utm_source')   || '',
+      medium:   params.get('utm_medium')   || '',
+      campaign: params.get('utm_campaign') || '',
+      content:  params.get('utm_content')  || '',
+      term:     params.get('utm_term')     || ''
+    };
+  }
+
+  // ── 3. Content engagement tracking ──
+  var engagement = {
+    startTime: Date.now(),
+    maxScroll: 0,
+    section: document.title,
+    path: window.location.pathname
+  };
+
+  window.addEventListener('scroll', function() {
+    var scrollPct = Math.round(
+      (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+    if (scrollPct > engagement.maxScroll) {
+      engagement.maxScroll = scrollPct;
+    }
+  });
+
+  // ── 4. Send tags to Clarity ──
+  function tagClarity(visitor, utm) {
+    if (typeof clarity !== 'function') return;
+
+    // Visitor profile
+    clarity('set', 'visitor_type', visitor.type);
+    clarity('set', 'visitor_org', visitor.org);
+
+    // UTM tags
+    if (utm.source)   clarity('set', 'utm_source', utm.source);
+    if (utm.campaign) clarity('set', 'utm_campaign', utm.campaign);
+    if (utm.medium)   clarity('set', 'utm_medium', utm.medium);
+    if (utm.content)  clarity('set', 'utm_content', utm.content);
+
+    // Page context
+    clarity('set', 'page_section', engagement.path.split('/')[1] || 'home');
+  }
+
+  // ── 5. Log visit to localStorage (offline dashboard) ──
+  function logVisit(visitor, utm) {
+    try {
+      var visits = JSON.parse(localStorage.getItem('ek_visits') || '[]');
+      visits.push({
+        ts: new Date().toISOString(),
+        path: engagement.path,
+        ref: document.referrer,
+        type: visitor.type,
+        org: visitor.org,
+        utm_source: utm.source,
+        utm_campaign: utm.campaign,
+        scroll: engagement.maxScroll,
+        duration: 0
+      });
+      // Keep last 500 visits
+      if (visits.length > 500) visits = visits.slice(-500);
+      localStorage.setItem('ek_visits', JSON.stringify(visits));
+    } catch(e) { /* localStorage unavailable */ }
+  }
+
+  // ── 6. Send engagement on page exit ──
+  function sendEngagement() {
+    var duration = Math.round((Date.now() - engagement.startTime) / 1000);
+    if (typeof clarity === 'function') {
+      clarity('set', 'scroll_depth', String(engagement.maxScroll));
+      clarity('set', 'time_on_page', String(duration));
+      if (engagement.maxScroll > 75 && duration > 30) {
+        clarity('set', 'engaged_reader', 'true');
+      }
+    }
+    // Update localStorage with final duration
+    try {
+      var visits = JSON.parse(localStorage.getItem('ek_visits') || '[]');
+      if (visits.length > 0) {
+        visits[visits.length - 1].duration = duration;
+        visits[visits.length - 1].scroll = engagement.maxScroll;
+        localStorage.setItem('ek_visits', JSON.stringify(visits));
+      }
+    } catch(e) {}
+  }
+
+  // ── 7. PDF download tracking ──
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (link && link.href && link.href.match(/\.(pdf|docx|xlsx)$/i)) {
+      if (typeof clarity === 'function') {
+        clarity('set', 'download', link.href.split('/').pop());
+      }
+    }
+  });
+
+  // ── Initialize ──
+  var visitor = classifyReferrer(document.referrer);
+  var utm = getUTM();
+
+  // Tag after Clarity loads (slight delay)
+  setTimeout(function() {
+    tagClarity(visitor, utm);
+    logVisit(visitor, utm);
+  }, 1500);
+
+  // Engagement on exit
+  window.addEventListener('beforeunload', sendEngagement);
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') sendEngagement();
+  });
+
+})();
+</script>
+
+{{ end }}
