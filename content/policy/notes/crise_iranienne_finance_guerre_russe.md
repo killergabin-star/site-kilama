@@ -23,6 +23,24 @@ L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a pas encore
 
 ---
 
+> **[Mise à jour — 12 avril 2026 — J+43]**
+>
+> Cette note a été rédigée le 31 mars 2026 (J+31 de la crise). Elle reste valide dans son cadrage analytique — le paradoxe Ormuz-Russie-Ukraine, la quantification des transferts, les recommandations G7. Les éléments suivants ont évolué depuis :
+>
+> **Brent** : Pic à **~$126-127/bbl** fin mars → cessez-le-feu Trump du 7 avril 2026 → chute à **$94.75** (–13 % en une journée, plus forte baisse depuis Covid-avril 2020). **Rebond probable** après l'effondrement des négociations d'Islamabad (voir ci-dessous). Les chiffres de l'Annexe A2/A3 (Brent 73 $ pré-crise, scénarios S1/S2/S3) sont dépassés — le pic et la volatilité excèdent le scénario S3 (120 $).
+>
+> **Fenêtre diplomatique** : La fenêtre J+5/J+15 identifiée dans la section 3 est fermée depuis fin mars. Nous sommes à J+43. L'IRGC a marginalisé les pragmatiques iraniens comme anticipé. La divergence Moscou-Téhéran sur le *timing* s'est résorbée.
+>
+> **Islamabad — effondrement (12 avril 2026)** : Les négociations américano-iraniennes de face-à-face à Islamabad (VP Vance, 21+ heures) se sont conclues sans accord. Point de blocage principal : engagement nucléaire iranien + contrôle du Hormuz. Trump a immédiatement annoncé un **blocus naval américain** du détroit d'Ormuz. Analystes : un blocus US pourrait être perçu par l'Iran comme un acte de guerre.
+>
+> **Infrastructure** : Ras Laffan (Qatar) détruit — **–17 % de la capacité LNG mondiale**, réparation estimée à 3-5 ans. Pipeline Yanbu frappé le 8 avril (7 Mb/j, dernière route saoudienne hors Hormuz). 715 navires piégés dans le Golfe. Dommages totaux estimés à **25 Mds USD** (Rystad). Le canal GNL → Europe identifié en section 2 est désormais structurellement compromis au-delà de la crise elle-même.
+>
+> **Scénario en cours** : Le scénario S3 (fermeture durable, 90 jours) est atteint. Le transfert vers la Russie dépasse les estimations centrales. Les recommandations G7 de la section 3 restent valides mais la fenêtre de timing identifiée (J+5/J+15) doit être réévaluée dans le contexte post-Islamabad.
+>
+> *Sources : CNBC 07-08/04/2026 ; NPR 08/04/2026 ; NBC News 07-08/04/2026 ; NPR 12/04/2026 ; CNBC 12/04/2026 ; Economist 8/04/2026 ; Bloomberg 12/04/2026.*
+
+---
+
 ### 1. Le paradoxe stratégique
 
 Depuis le 28 février 2026, le détroit d'Ormuz est fermé. Environ 20 % de l'approvisionnement pétrolier mondial et 25 % du GNL sont bloqués. Le Brent est passé de 73 à 83 dollars en cinq jours. Ce n'est pas un choc de demande — l'économie mondiale n'est pas en surchauffe. C'est un choc d'offre pur, le type le plus délétère pour les économies importatrices : stagflationnaire, sans facteur de compensation[^1].

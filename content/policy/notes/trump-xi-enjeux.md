@@ -38,7 +38,7 @@ Les talks préparatoires de Paris entre le secrétaire au Trésor Bessent et le 
 
 Le G7 des affaires étrangères de Vaux-de-Cernay (26-27 mars), première réunion ministérielle sous présidence française, a produit un communiqué dont les paragraphes sur la Chine -- commerce, Taïwan, mer de Chine méridionale -- constituent un cadrage pré-sommet que Pékin ne manquera pas de relever. La présidence française a opté pour une formulation de « préoccupation partagée » plutôt que de confrontation directe, préservant ainsi une marge de manoeuvre diplomatique que le sommet de Pékin mettra immédiatement à l'épreuve.
 
-[^1]: La décision de la Cour suprême dans l'affaire *United States Chamber of Commerce v. Trump* (mars 2026) a invalidé l'utilisation de l'IEEPA à des fins tarifaires, considérant qu'il ne s'agissait pas d'une « urgence nationale » au sens du statut.
+[^1]: La décision de la Cour suprême dans l'affaire *Learning Resources, Inc. v. Trump*, 607 U.S. ___ (20 février 2026) a invalidé l'utilisation de l'IEEPA à des fins tarifaires, considérant qu'il ne s'agissait pas d'une « urgence nationale » au sens du statut. Décision 6-3, Chief Justice Roberts rédacteur. Invalidation effective le 24 février 2026.
 
 [^2]: Chad P. Bown, « US-China Phase One Tracker: China's Purchases of US Goods », Peterson Institute for International Economics, mise à jour 2022.
 
