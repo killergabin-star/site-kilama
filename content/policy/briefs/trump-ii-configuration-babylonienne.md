@@ -2,7 +2,7 @@
 title: 'La configuration babylonienne : Trump II et la polycrisis 2026'
 date: '2026-04-15'
 doc_type: brief
-theme: géopolitique
+theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama

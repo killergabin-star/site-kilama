@@ -383,13 +383,123 @@
   margin-bottom: 20px;
 }
 
+/* ═══ DOSSIERS EN LUMIÈRE — rail 3 sections ═══ */
+.dossiers-rail {
+  background: var(--ivory);
+  padding: 48px 40px 8px;
+}
+.dossiers-rail-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.dossier-bloc {
+  padding: 36px 0 40px;
+  border-top: 2px solid var(--navy);
+}
+.dossier-bloc:first-child { border-top: none; padding-top: 8px; }
+.dossier-bloc-head {
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+.dossier-eyebrow {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--red-analytical);
+  margin-bottom: 8px;
+}
+.dossier-bloc-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.dossier-bloc-lede {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--anthracite);
+  line-height: 1.55;
+  margin-bottom: 12px;
+  max-width: 720px;
+}
+.dossier-bloc-cta {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.dossier-bloc-cta a {
+  color: var(--blue-fpsq, #2C5F8A);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+.dossier-bloc-cta a:hover { border-bottom-color: var(--blue-fpsq, #2C5F8A); color: var(--red-analytical); }
+.dossier-bloc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--gray-200);
+}
+.rail-card {
+  padding-right: 8px;
+  border-left: 2px solid var(--navy);
+  padding-left: 14px;
+}
+.rail-card .fly-title {
+  font-family: var(--font-title);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red-analytical);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.rail-card .note-title {
+  font-family: var(--font-title);
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.28;
+  margin-bottom: 8px;
+}
+.rail-card .note-title a { color: var(--navy); text-decoration: none; }
+.rail-card .note-title a:hover { color: var(--red-analytical); }
+.rail-card .note-meta {
+  font-family: var(--font-data);
+  font-size: 10px;
+  color: var(--gray-500);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* ═══ RESPONSIVE ═══ */
+@media (max-width: 1100px) {
+  .dossier-bloc-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 900px) {
   .policy-featured-inner { grid-template-columns: 1fr; }
   .dossier-cards { grid-template-columns: 1fr; }
   .graphic-detail-grid { grid-template-columns: 1fr; }
   .en-bref-grid { grid-template-columns: 1fr; }
   .debats-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .dossier-bloc-grid { grid-template-columns: 1fr; }
 }
 </style>
 {{ end }}
@@ -433,30 +543,79 @@
       </div>
     </div>
 
-    <!-- ═══ À LA UNE — featured note (latest publication) ═══ -->
-    {{ with $featured }}
-    <div class="policy-featured">
-      <div class="policy-featured-inner">
-        <div class="featured-content">
-          <div class="featured-format">{{ with .Params.doc_type }}{{ . | upper }}{{ else }}NOTE ANALYTIQUE{{ end }} · {{ .ReadingTime }} min</div>
-          <h2 class="featured-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="featured-excerpt">{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-          <div class="featured-meta">
-            <span>{{ with .Params.theme }}{{ . }}{{ end }}</span>
-            <span>{{ .Date.Format "Janvier 2006" }}</span>
-            <span>{{ .ReadingTime }} min de lecture</span>
+    <!-- ═══ DOSSIERS EN LUMIÈRE — rail 3 sections thématiques ═══ -->
+    {{ $polycrisisPages := where $allPages ".Params.theme" "in" (slice "polycrisis" "polycrisis-asie") }}
+    {{ $geopoliticsPages := where $allPages ".Params.theme" "in" (slice "geopolitical" "géopolitique" "iran" "sécurité") }}
+    {{ $springPages := where $allPages ".Params.theme" "in" (slice "spring-meetings") }}
+    <div class="dossiers-rail">
+      <div class="dossiers-rail-inner">
+
+        {{ if gt (len $polycrisisPages) 0 }}
+        <section class="dossier-bloc">
+          <div class="dossier-bloc-head">
+            <div class="dossier-eyebrow">Dossier · Polycrisis 2026</div>
+            <h2 class="dossier-bloc-title">La convergence des crises</h2>
+            <p class="dossier-bloc-lede">Six chaînes causales, neuf boucles de rétroaction dont sept amplificatrices, cinq scénarios probabilisés : la cartographie intégrée des chocs qui se conjuguent en 2026 et la série Vigie qui en tire les leçons opérationnelles pour Évian.</p>
+            <div class="dossier-bloc-cta">
+              <a href="/policy/briefs/polycrisis-serie-vigie/">Série Vigie Polycrisis →</a>
+              <a href="/policy/reports/convergence-polycrisis/">Rapport intégrateur →</a>
+            </div>
           </div>
-        </div>
-        <div class="featured-cover{{ with .Params.cover }} has-image{{ end }}"{{ with .Params.cover }} style="background-image: linear-gradient(145deg, rgba(5,28,44,0.6) 0%, rgba(13,40,64,0.7) 100%), url('{{ . | relURL }}')"{{ end }}>
-          <div style="position:relative;z-index:1;">
-            <div class="featured-cover-label">{{ .Date.Format "2006" }}</div>
-            <div class="featured-cover-title">{{ .Title }}</div>
-            <div class="featured-cover-author">Eric Kilama</div>
+          <div class="dossier-bloc-grid">
+            {{ range first 4 $polycrisisPages }}
+            <article class="rail-card">
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </article>
+            {{ end }}
           </div>
-        </div>
+        </section>
+        {{ end }}
+
+        {{ if gt (len $geopoliticsPages) 0 }}
+        <section class="dossier-bloc">
+          <div class="dossier-bloc-head">
+            <div class="dossier-eyebrow">Dossier · Géopolitique & sécurité</div>
+            <h2 class="dossier-bloc-title">Chocs stratégiques et architecture de sécurité</h2>
+            <p class="dossier-bloc-lede">Configuration Trump II, Moyen-Orient après Ormuz, crise iranienne, recours souverain du Vatican, impasse Haïti : les chaînes de transmission des chocs géopolitiques à l'économie et aux architectures de coopération.</p>
+          </div>
+          <div class="dossier-bloc-grid">
+            {{ range first 4 $geopoliticsPages }}
+            <article class="rail-card">
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </article>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+
+        {{ if gt (len $springPages) 0 }}
+        <section class="dossier-bloc">
+          <div class="dossier-bloc-head">
+            <div class="dossier-eyebrow">Dossier · Spring Meetings 2026</div>
+            <h2 class="dossier-bloc-title">Vigie FMI–Banque mondiale, Washington avril 2026</h2>
+            <p class="dossier-bloc-lede">Lecture quotidienne des réunions de printemps : <em>World Economic Outlook</em>, <em>Global Financial Stability Report</em>, communiqué IMFC, Development Committee. Chaque jour, une ligne de rupture lue au prisme de la polycrisis.</p>
+            <div class="dossier-bloc-cta">
+              <a href="/policy/briefs/spring-meetings-2026/">Kit complet Spring Meetings →</a>
+            </div>
+          </div>
+          <div class="dossier-bloc-grid">
+            {{ range first 4 $springPages }}
+            <article class="rail-card">
+              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
+              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
+            </article>
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+
       </div>
     </div>
-    {{ end }}
 
     <!-- ═══ GRAPHIQUE DE LA SEMAINE ═══ -->
     <div class="graphic-detail">
@@ -495,26 +654,6 @@
             <div class="note-excerpt" style="margin-top: 12px;">Notre indicateur composite GPR/SME, qui mesure les tensions géopolitiques à partir de l'analyse textuelle et des flux commerciaux, signale une escalade structurelle.</div>
             <div class="note-meta" style="margin-top: 16px;"><span>Mise à jour continue</span><span class="note-format-tag">Données · Vigie</span></div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ DOSSIER SPECIAL ═══ -->
-    <div class="dossier-special" id="dossier">
-      <div class="dossier-special-inner">
-        <div class="dossier-label">Dossier spécial</div>
-        <h2 class="dossier-title">Polycrises : comment la convergence des chocs redéfinit l'ordre économique mondial</h2>
-        <p class="dossier-excerpt">Énergie, dette, démographie, climat : quatre trajectoires qui se croisent. Notre cadre d'analyse FPSQ permet de quantifier leur interaction et d'en déduire des scénarios opérationnels pour les décideurs.</p>
-        <div class="dossier-cards">
-          {{ $dossierTags := slice "ormuz" "polycrisis" "convergence" }}
-          {{ $dossierPages := where $allPages ".Params.theme" "in" (slice "polycrisis" "geopolitical" "energy") }}
-          {{ range first 3 $dossierPages }}
-          <div class="dossier-card">
-            <div class="fly-title">{{ with .Params.theme }}{{ . }}{{ end }}</div>
-            <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-            <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</div>
-          </div>
-          {{ end }}
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ date: '2026-04-14'
 doc_type: brief
 theme: polycrisis
 status: ready
-draft: true
+draft: false
 author: Eric Gabin Kilama
 tags:
 - polycrisis
@@ -15,31 +15,36 @@ tags:
 - soudan
 - migration
 - developpement
-summary: L'aide publique au développement est projetée en baisse de 17 % pour 2025, au moment précis où les chocs commerciaux, énergétiques et sécuritaires convergent sur les États fragiles. Le développement n'est pas un poste charitable ; c'est l'infrastructure de prévention des crises en amont — migration, fragilité politique, sécurité alimentaire. La contraction prive les PMA de leur capacité de résilience. Le Soudan constitue le cas-test de l'agenda G7 d'Évian.
+summary: >
+  La semaine dernière, le Comité d'aide au développement de l'OCDE a publié ses projections 2025 : l'aide publique au développement recule entre 9 et 17 % — contraction sans précédent hors période de guerre mondiale. Cette semaine, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : un Soudan avec 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine, un appel humanitaire financé à 12 %. Les deux événements ne sont pas lus ensemble. Ils devraient l'être. Le brief documente pourquoi la contraction actuelle est un démantèlement d'infrastructure de prévention — pas une pause — et ce que le cas soudanais impose à l'agenda du G7 d'Évian.
 ---
 
 ## Numéro spécial Vigie — Polycrisis
 
 **Série Vigie · Avril 2026 · Épisode 3 sur 4**
 
-> Cette série prolonge le rapport *[La convergence des crises](/policy/reports/convergence-polycrisis/)* en quatre épisodes thématiques : (1) [la topologie des stabilisateurs](/policy/briefs/polycrisis-stabilisateurs-qui-cede/), (2) [l'effet de seuil B9](/policy/briefs/polycrisis-cinq-mondes-gradient/), (3) la contraction silencieuse Afrique / PMA, (4) [le flanc financier européen](/policy/briefs/polycrisis-europe-flanc-contre-intuitif/).
+*Cette note est extraite du rapport [La convergence des crises](/policy/reports/convergence-polycrisis/), qui cartographie **six chaînes causales**, **neuf boucles de rétroaction dont sept amplificatrices** et **cinq scénarios probabilisés** pour 2026 à partir du cadre FPSQ (Flux, Prix, Stocks, Qualitatif). Le présent épisode se concentre sur la contraction silencieuse de l'aide publique au développement et le cas-test soudanais. Pour la cartographie complète et les asymétries Nord-Sud, se reporter au rapport mère.*
 
 ---
 
-Ce numéro spécial de **Vigie** revient sur le chapitre le moins visible du rapport *La convergence des crises* : la contraction de l'aide au développement et ses implications pour les États fragiles. Là où le rapport mère cartographie six chaînes causales affectant tous les acteurs, cet épisode se concentre sur l'asymétrie Nord-Sud — l'hypothèse étant que la boucle migration / cohésion politique intérieure, identifiée comme la plus dangereuse par le rapport mère, se déclenche en amont, dans les États dont les capacités d'absorption des chocs sont silencieusement détruites.
+**La semaine dernière**, le Comité d'aide au développement de l'OCDE a publié ses projections 2025 : l'aide publique au développement des pays donateurs recule entre 9 et 17 % — contraction sans précédent hors période de guerre mondiale.[^0] **Cette semaine**, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : 10,7 millions de déplacés internes au Soudan, 25 millions de personnes en risque de famine, appel humanitaire des Nations unies financé à 12 %.
+
+Les deux événements se succèdent à quatre jours d'intervalle sans être lus ensemble. Ils devraient l'être. Les chocs commerciaux, énergétiques et sécuritaires qui dominent l'agenda macrofinancier du Nord convergent, en aval, sur les États fragiles du Sud ; c'est précisément au même moment que leurs capacités d'absorption sont démantelées. La contraction de l'aide n'est pas un ralentissement conjoncturel. C'est le retrait d'une infrastructure de prévention dont l'absence produit des externalités — migrations de masse, effondrement alimentaire, conflits régionaux — dont le coût remonte, mécaniquement, vers les budgets et les politiques du Nord.
+
+[^0]: OCDE, *Preliminary ODA data 2025 — Projections*, webinaire données CAD du 9 avril 2026. La fourchette 9-17 % correspond aux bornes basse et haute de la projection préliminaire ; la donnée consolidée est attendue à l'automne 2026.
 
 ### Quatre points saillants
 
-- **APD G7 projetée à -17 % pour 2025**, sous l'effet cumulé du retrait américain et des réallocations nationales vers la défense.
-- **Soudan : 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine**, appel consolidé financé à 12 %.
-- **Développement = infrastructure de prévention**, pas poste budgétaire charitable. Son démantèlement a des externalités mesurables sur migration, sécurité alimentaire, stabilité régionale.
-- **Évian 2026** peut transformer la crise soudanaise en cas-test : humanitaire, sécurité, dette, dans un paquet cohérent.
+- **Aide publique au développement projetée entre -9 % et -17 % pour 2025** par l'OCDE (fourchette préliminaire, webinaire CAD du 9 avril), sous l'effet cumulé du retrait américain (liquidation de l'USAID), des réallocations européennes vers le réarmement et de l'effet d'éviction par les besoins exceptionnels (Ukraine, Gaza).
+- **Soudan, cas-test** : 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine (Phase 3 ou plus du Cadre intégré de classification de la sécurité alimentaire), appel humanitaire des Nations unies financé à 12 %.
+- **L'aide au développement fonctionne comme infrastructure de prévention**, pas comme ligne budgétaire charitable. Son démantèlement a des externalités mesurables sur les migrations, la sécurité alimentaire et la stabilité régionale ; ces externalités remontent vers les budgets du Nord sous des formes politiquement coûteuses (frontex, sécurité intérieure, cohésion électorale).
+- **Évian 2026** peut transformer la crise soudanaise en cas-test d'un paquet cohérent qui articule humanitaire, sécurité et traitement de la dette — ou la laisser se dissoudre dans la fragmentation des guichets.
 
 ---
 
 ## L'essentiel en 30 secondes
 
-La polycrisis 2026 est souvent lue depuis le Nord : tarifs, spreads, réarmement. Sa face la plus dangereuse se joue ailleurs — dans les États fragiles où les chocs convergent au moment précis où leurs capacités d'absorption se contractent. L'aide publique au développement est projetée à -17 % pour 2025, cumulant le retrait américain (liquidation de l'USAID, absorption partielle par le Département d'État) et les réallocations européennes vers le réarmement. Le Soudan, avec 10,7 millions de déplacés internes et un appel humanitaire financé à 12 %, concentre toutes les chaînes causales identifiées par le rapport mère. **L'APD n'est pas un poste charitable, c'est l'infrastructure de prévention des crises en amont.** Sa contraction silencieuse alimente la boucle de rétroaction la plus dangereuse du système 2026.
+La polycrisis 2026 est le plus souvent lue depuis le Nord : tarifs, écarts de taux souverains, réarmement, prix de l'énergie. Sa face la plus dangereuse se joue ailleurs — dans les États fragiles où les chocs convergent au moment précis où leurs capacités d'absorption se contractent. L'aide publique au développement projetée entre -9 % et -17 % pour 2025 combine trois mouvements : le retrait américain (la liquidation de l'USAID et son absorption partielle par le Département d'État réduisent les flux américains de 25 à 40 % selon les fourchettes disponibles), les réallocations européennes vers le réarmement (plusieurs États membres ont ajusté à la baisse leur ratio aide / revenu national brut) et l'effet d'éviction par les besoins exceptionnels ukrainiens et gazaouis. Le Soudan, avec 10,7 millions de déplacés internes et un appel humanitaire financé à 12 %, concentre cinq des six chaînes causales identifiées par le rapport mère. **L'aide au développement n'est pas un poste charitable, c'est l'infrastructure de prévention des crises en amont.** Sa contraction silencieuse alimente l'enchaînement le plus dangereux du système 2026 : celui qui relie la fragilité du Sud à la cohésion politique intérieure du Nord.
 
 ---
 
@@ -57,15 +62,15 @@ Cette lecture n'est pas une justification a posteriori ; elle est empiriquement 
 
 ## L'arithmétique du retrait
 
-Trois mouvements simultanés produisent la contraction projetée de 17 % pour 2025.[^2]
+Trois mouvements simultanés produisent la contraction projetée entre 9 et 17 % pour 2025.[^2]
 
 **Premièrement, le retrait américain.** La liquidation de l'USAID amorcée début 2025 a transféré une partie des programmes au Département d'État, tout en réduisant significativement les enveloppes globales. Les ordres de grandeur préliminaires suggèrent une réduction de l'ordre de 30 à 40 % des flux américains d'APD sur l'exercice 2025-2026, avec des effets différenciés par région et par secteur. Les programmes de santé globale (PEPFAR, Gavi, Fonds mondial) ont été partiellement préservés par arbitrages politiques ciblés ; les programmes de résilience climatique et de gouvernance ont été les plus durement touchés.
 
-**Deuxièmement, les réallocations européennes.** Plusieurs pays de l'UE27 et d'Europe occidentale ont ajusté à la baisse leurs engagements d'APD pour libérer des marges budgétaires vers la défense. Plusieurs États membres ont annoncé des réductions significatives de leur ratio APD/RNB, tandis que l'Allemagne a programmé une révision à la baisse de ses projections 2025-2027 de l'ordre de 8 %. Le total des réductions européennes annoncées ou projetées représente environ 8 milliards d'euros annuels par rapport à la trajectoire 2024.[^3]
+**Deuxièmement, les réallocations européennes.** Plusieurs pays de l'UE27 et d'Europe occidentale ont ajusté à la baisse leurs engagements d'APD pour libérer des marges budgétaires vers la défense. Plusieurs États membres ont annoncé des réductions significatives de leur ratio APD/RNB. Le total des réductions européennes annoncées ou projetées représente, en ordre de grandeur, plusieurs milliards d'euros annuels par rapport au niveau 2024 — l'estimation agrégée dépend des données finales attendues à l'automne.[^3]
 
 **Troisièmement, l'effet d'éviction par les besoins exceptionnels.** Les engagements humanitaires sur l'Ukraine et sur Gaza mobilisent une part croissante des enveloppes disponibles, au détriment des crises plus anciennes (Sahel, Corne de l'Afrique, Venezuela). L'éviction cognitive — mécanisme par lequel les crises où les intérêts directs des grandes puissances sont engagés saturent l'agenda international — se double d'une éviction budgétaire mesurable.
 
-Le résultat cumulé, projeté par l'OCDE à partir des annonces disponibles et des trajectoires budgétaires nationales, est une contraction de 17 % de l'APD totale des pays du CAD sur 2025. La réduction est de surcroît concentrée sur les PMA — qui recevaient en 2023 environ 32 % des flux bilatéraux et qui absorbent une part disproportionnée de la contraction.
+Le résultat cumulé, projeté par l'OCDE à partir des annonces disponibles et des trajectoires budgétaires nationales, est une contraction comprise entre 9 et 17 % de l'APD totale des pays du CAD sur 2025, la borne haute dépendant de la trajectoire effective des engagements américains et européens. La réduction est de surcroît concentrée sur les PMA — qui recevaient en 2023 environ 32 % des flux bilatéraux et qui absorbent une part disproportionnée de la contraction.
 
 ---
 
@@ -75,7 +80,7 @@ Parmi les crises qui concentrent la convergence des chaînes causales identifié
 
 **Échelle humanitaire.** 10,7 millions de déplacés internes, 2,1 millions de réfugiés dans les pays voisins (principalement Tchad, Égypte, Soudan du Sud), 25 millions de personnes en risque de famine (Phase 3+ du cadre IPC). L'appel consolidé des Nations unies pour 2025 s'élève à 4,1 milliards de dollars, financé à 12 % au 31 mars 2026.
 
-**Convergence des chaînes causales.** Le Soudan active simultanément cinq des six chaînes cartographiées par le rapport mère. Chaîne énergie-migration (contraction agricole, pression sur les migrations intérieures). Chaîne finance-sécurité (État en défaut partiel, incapacité de financer les services publics de base). Chaîne migration-politique intérieure (les réfugiés pesant sur la cohésion sociale au Tchad et en Égypte). Chaîne sécurité-développement (conflit réduisant les capacités d'absorption de l'aide). Chaîne tarifs-finance indirecte (via la dépréciation des monnaies régionales et l'élargissement des spreads souverains). Seule la chaîne tarifs-énergie n'est pas directement activée.
+**Convergence des chaînes causales.** Le Soudan active simultanément, à des degrés divers, la majorité des chaînes cartographiées par le rapport mère : Ch3 *Énergie → Migration* (contraction agricole, pression sur les migrations intérieures) ; Ch4 *Finance → Sécurité* (État en défaut partiel, incapacité de financer les services publics de base) ; Ch5 *Migration → Politique intérieure* (les réfugiés pesant sur la cohésion sociale au Tchad et en Égypte) ; Ch6 *Sécurité → Développement* (conflit réduisant les capacités d'absorption de l'aide) ; et Ch2 *Tarifs → Finance* par contagion secondaire (dépréciation des monnaies régionales, élargissement des spreads souverains voisins). Seule Ch1 *Tarifs → Énergie* n'est pas directement activée.
 
 **Contagion régionale documentée.** Le Tchad accueille 1,2 million de réfugiés soudanais, l'Éthiopie 400 000, la République centrafricaine environ 50 000. L'Égypte, qui compte plus de 500 000 Soudanais enregistrés sur son territoire, affronte simultanément une pression budgétaire et une fragilité sécuritaire sur sa frontière sud. La contagion ne se mesure pas uniquement en flux de réfugiés ; elle se mesure en charges pesant sur des budgets publics déjà contraints.
 
@@ -85,7 +90,7 @@ Parmi les crises qui concentrent la convergence des chaînes causales identifié
 
 ## Pourquoi la boucle migration-politique intérieure est la plus dangereuse
 
-Le rapport mère identifie parmi ses neuf boucles de rétroaction une boucle spécifique, notée comme la plus dangereuse : migration → polarisation politique intérieure → contraction de l'aide externe → aggravation des conditions d'émigration. Trois mécanismes rendent cette boucle particulièrement préoccupante.[^5]
+Le rapport mère identifie, parmi ses neuf boucles de rétroaction (dont sept amplificatrices), la boucle B5 — *contraction de l'aide → fragilité étatique → flux migratoires → polarisation politique intérieure → contraction de l'aide* — comme l'une des plus dangereuses, parce qu'elle se verrouille sur elle-même sans mécanisme endogène de rappel. Trois mécanismes rendent cette boucle particulièrement préoccupante.[^5]
 
 **Premièrement, la temporalité asymétrique.** Les flux migratoires répondent aux chocs d'origine avec un délai de 6 à 18 mois. Les réactions politiques intérieures en Europe suivent avec un délai plus court — les cycles électoraux donnent aux effets politiques une saillance disproportionnée par rapport aux flux réels. Cette asymétrie temporelle conduit à des sur-réactions budgétaires immédiates (contraction d'APD) qui aggravent les conditions d'émigration future, avec un délai qui masque la causalité.
 
@@ -134,7 +139,17 @@ Quatre indicateurs permettent de suivre la dynamique de la contraction silencieu
 
 ## Prolongement
 
-Ce numéro spécial prolonge le chapitre 5 (Développement — la contraction silencieuse) et le chapitre 6 (Migration et cohésion politique) du rapport *La convergence des crises*. Le rapport mère présente par ailleurs les options pour Évian, la cartographie complète des asymétries Nord-Sud et les signposts quantifiés. Pour la cartographie complète, voir [le rapport mère](/policy/reports/convergence-polycrisis/).
+Ce numéro spécial prolonge le chapitre 5 (Développement — la contraction silencieuse) et le chapitre 6 (Migration et cohésion politique) du rapport *La convergence des crises*. Le rapport mère présente par ailleurs les options pour Évian, la cartographie complète des asymétries Nord-Sud et la batterie d'indicateurs de suivi quantifiés. Pour la cartographie complète, voir [le rapport mère](/policy/reports/convergence-polycrisis/).
+
+---
+
+## Autres notes de cette série
+
+- **Épisode 1** — [Polycrisis 2026 : les stabilisateurs qui ont cédé](/policy/briefs/polycrisis-stabilisateurs-qui-cede/)
+- **Épisode 2** — [3,1 % : la moyenne que le monde ne visitera pas](/policy/briefs/polycrisis-cinq-mondes-gradient/)
+- **Épisode 4** — [Europe : la souveraineté à l'épreuve des dépendances](/policy/briefs/polycrisis-europe-compensation-financiere/)
+
+→ [Rapport mère — *La convergence des crises*](/policy/reports/convergence-polycrisis/)
 
 ---
 
