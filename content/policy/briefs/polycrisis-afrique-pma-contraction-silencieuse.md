@@ -4,7 +4,7 @@ date: '2026-04-14'
 doc_type: brief
 theme: polycrisis
 status: ready
-draft: false
+draft: true
 author: Eric Gabin Kilama
 tags:
 - polycrisis

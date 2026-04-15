@@ -16,7 +16,7 @@ tags:
 summary: >
   Premier acte, début avril 2026 : le Pentagone convoque le nonce apostolique après un discours de Léon XIV contre la « diplomatie fondée sur la force ». Acte II : l'épisode se sédimente en configuration structurelle. Cette note quantifie trois dimensions que le premier article avait laissées ouvertes. D'abord le poids réel du signal magistériel dans l'électorat américain à l'approche des mid-terms 2026 et de la présidentielle 2028. Ensuite l'arrière-plan économique du conflit : extraterritorialité du dollar, sanctions secondaires, diplomatie vaticane de la dette. Enfin trois scénarios à 18-36 mois, assortis d'indicateurs d'invalidation observables. Le recours souverain du Vatican n'est pas une posture morale abstraite : c'est un levier mesurable que la stratégie américaine peine à neutraliser sans l'amplifier.
 status: ready
-draft: false
+draft: true
 theme: géopolitique
 author: Eric Gabin Kilama
 ---

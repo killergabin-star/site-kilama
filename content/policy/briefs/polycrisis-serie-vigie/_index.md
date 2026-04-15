@@ -16,7 +16,7 @@ tags:
 summary: >
   Quatre épisodes thématiques qui prolongent le rapport *La convergence des crises* sous format brief. Chaque épisode isole un mécanisme que le rapport intégrateur mentionne sans en tirer toutes les implications opérationnelles : la topologie des stabilisateurs, l'effet de seuil B9, la contraction silencieuse en Afrique et dans les PMA, le flanc financier européen. L'ensemble est pensé comme un parcours de lecture de quatre jours — et peut être parcouru dans n'importe quel ordre.
 status: ready
-draft: false
+draft: true
 author: Eric Gabin Kilama
 ---
 
