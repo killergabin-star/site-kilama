@@ -146,7 +146,7 @@ Ce numéro spécial prolonge le chapitre 5 (Développement — la contraction si
 ## Autres notes de cette série
 
 - **Épisode 1** — [Polycrisis 2026 : les stabilisateurs qui ont cédé](/policy/briefs/polycrisis-stabilisateurs-qui-cede/)
-- **Épisode 2** — [3,1 % : la moyenne que le monde ne visitera pas](/policy/briefs/polycrisis-cinq-mondes-gradient/)
+- **Épisode 2** — [Le soft landing déclassé : deux régimes pour la croissance 2026](/policy/briefs/polycrisis-cinq-mondes-gradient/)
 - **Épisode 4** — [Europe : la souveraineté à l'épreuve des dépendances](/policy/briefs/polycrisis-europe-compensation-financiere/)
 
 → [Rapport mère — *La convergence des crises*](/policy/reports/convergence-polycrisis/)

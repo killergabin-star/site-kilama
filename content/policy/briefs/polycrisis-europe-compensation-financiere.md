@@ -128,7 +128,7 @@ Ce numéro spécial prolonge les chapitres 3 (Finance) et 4 (Sécurité et allia
 ## Autres notes de cette série
 
 - **Épisode 1** — [Polycrisis 2026 : les stabilisateurs qui ont cédé](/policy/briefs/polycrisis-stabilisateurs-qui-cede/)
-- **Épisode 2** — [3,1 % : la moyenne que le monde ne visitera pas](/policy/briefs/polycrisis-cinq-mondes-gradient/)
+- **Épisode 2** — [Le soft landing déclassé : deux régimes pour la croissance 2026](/policy/briefs/polycrisis-cinq-mondes-gradient/)
 - **Épisode 3** — [Afrique et PMA : la contraction silencieuse](/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/)
 
 → [Rapport mère — *La convergence des crises*](/policy/reports/convergence-polycrisis/)

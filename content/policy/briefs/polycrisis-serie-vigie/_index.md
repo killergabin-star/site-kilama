@@ -33,7 +33,7 @@ Toutes les polycrises récentes — 2008, 2015, 2022 — disposaient d'un frein 
 
 → [Lire l'épisode 1](/policy/briefs/polycrisis-stabilisateurs-qui-cede/)
 
-### Épisode 2 / 4 — 3,1 % : la moyenne que le monde ne visitera pas
+### Épisode 2 / 4 — Le soft landing déclassé : deux régimes pour la croissance 2026
 Le FMI publie le 14 avril une croissance mondiale 2026 à 3,1 %. Derrière ce chiffre unique, deux régimes distincts concentrent 92,5 % des trajectoires plausibles — autour de 2,3 % (Découplage Ordonné) et autour de 0,9 % (Embrasement). La zone intermédiaire que suggère la moyenne est quasi vide. Le système ne glisse pas d'un régime à l'autre, il bascule ; 1 200 milliards de dollars séparent les deux mondes.
 
 → [Lire l'épisode 2](/policy/briefs/polycrisis-cinq-mondes-gradient/)

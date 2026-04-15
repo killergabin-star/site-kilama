@@ -1,6 +1,6 @@
 ---
-title: "3,1 % : la moyenne que le monde ne visitera pas"
-subtitle: 'Deux régimes de croissance pour 2026, et pourquoi la moyenne publiée par le FMI décrit un état que le système ne visite presque jamais'
+title: "Le soft landing déclassé : deux régimes pour la croissance 2026"
+subtitle: 'Ce que cache le 3,1 % publié par le FMI le 14 avril, et pourquoi la moyenne décrit un état que le système ne visite presque jamais'
 date: '2026-04-14'
 doc_type: brief
 theme: polycrisis

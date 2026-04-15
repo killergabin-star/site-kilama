@@ -133,7 +133,7 @@ Ce numéro spécial prolonge la Partie I du rapport *La convergence des crises* 
 
 ## Autres notes de cette série
 
-- **Épisode 2** — [3,1 % : la moyenne que le monde ne visitera pas](/policy/briefs/polycrisis-cinq-mondes-gradient/)
+- **Épisode 2** — [Le soft landing déclassé : deux régimes pour la croissance 2026](/policy/briefs/polycrisis-cinq-mondes-gradient/)
 - **Épisode 3** — [Afrique et PMA : la contraction silencieuse](/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/)
 - **Épisode 4** — [Europe : la souveraineté à l'épreuve des dépendances](/policy/briefs/polycrisis-europe-compensation-financiere/)
 
