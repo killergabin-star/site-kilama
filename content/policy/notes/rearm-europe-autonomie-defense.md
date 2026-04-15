@@ -131,6 +131,3 @@ L'Agence européenne de défense devrait piloter un programme de consolidation i
 
 ---
 
----
-
-*Les opinions exprimées dans cette note n'engagent que leur auteur.*
