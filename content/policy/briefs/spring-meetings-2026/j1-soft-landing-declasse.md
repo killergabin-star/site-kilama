@@ -30,7 +30,7 @@ author: Eric Gabin Kilama
 
 ## L'essentiel en 30 secondes
 
-Le WEO d'avril n'ajuste pas une prévision ; il acte le passage d'un régime à un autre. Un paramètre supposé exogène — le choc énergétique provoqué par la guerre — est devenu le paramètre central de la projection. La conférence de presse de la directrice générale, le 9 avril en *curtain raiser*, avait posé le cadre : « dégradation même dans le scénario le plus optimiste ». Trois jours plus tard, le document principal le confirme. Ce glissement n'est plus rattrapable par une seule baisse de taux ou une seule trêve.
+Le WEO d'avril n'ajuste pas une prévision ; il acte le passage d'un régime à un autre. Un paramètre supposé exogène — le choc énergétique provoqué par la guerre — est devenu le paramètre central de la projection. La conférence de presse de la directrice générale, le 9 avril en discours de cadrage, avait posé le cadre : « dégradation même dans le scénario le plus optimiste ». Trois jours plus tard, le document principal le confirme. Ce glissement n'est plus rattrapable par une seule baisse de taux ou une seule trêve.
 
 ## Trois observations du jour
 
@@ -68,5 +68,5 @@ Le rapport *[La convergence des crises](/policy/reports/convergence-polycrisis/)
 
 - FMI, WEO avril 2026, chapitre 1 : <https://www.imf.org/en/publications/weo/issues/2026/04/14/world-economic-outlook-april-2026>
 - FMI, GFSR avril 2026 : <https://www.imf.org/en/publications/gfsr/issues/2026/04/14/global-financial-stability-report-april-2026>
-- Discours *curtain raiser* de la directrice générale, 9 avril 2026 : <https://www.imf.org/en/news/articles/2026/04/09/sp040926-spring-meetings-2026-curtain-raiser>
+- Discours discours de cadrage de la directrice générale, 9 avril 2026 : <https://www.imf.org/en/news/articles/2026/04/09/sp040926-spring-meetings-2026-curtain-raiser>
 - Atlantic Council, *Inside the IMF-World Bank Spring Meetings*, avril 2026.
