@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto F — Topographic Contours (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .topo-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  /* Canvas container */
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Zone labels overlay */
+  .zone-labels {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .zone-label {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(27, 42, 74, 0.75);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+  }
+  .zone-label.z1 { left: 10%; color: #C0392B; }
+  .zone-label.z2 { left: 32%; color: #2C5F8A; }
+  .zone-label.z3 { left: 53%; color: #D4A017; }
+  .zone-label.z4 { left: 74%; color: rgba(200,210,220,0.9); }
+
+  /* Elevation legend */
+  .elevation-legend {
+    position: absolute;
+    top: 16px; right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+  }
+  .elev-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .elev-swatch {
+    width: 20px;
+    height: 3px;
+  }
+
+  /* Controls */
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO F — <span>P5.JS CANVAS — Topographic Contours — Terrain Intelligence</span></div>
+
+<section class="topo-section">
+  <div class="container">
+    <div class="section-label">Research — Programmes de recherche</div>
+    <div class="section-title">Cartographie du relief intellectuel</div>
+    <div class="section-sub">Quatre massifs de recherche. Le terrain se déforme en temps réel. Chaque crête est une question ouverte, chaque vallée un espace à explorer.</div>
+
+    <div class="canvas-wrapper" id="topo-container">
+      <!-- p5 canvas injected here -->
+      <div class="zone-labels">
+        <div class="zone-label z1">États fragiles</div>
+        <div class="zone-label z2">Entreprises & BITD</div>
+        <div class="zone-label z3">Système international</div>
+        <div class="zone-label z4">Prospectif</div>
+      </div>
+      <div class="elevation-legend" id="elev-legend"></div>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="regenerateTerrain()">Régénérer</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" onclick="adjustRelief(1)">Relief +</button>
+      <button class="ctrl-btn" onclick="adjustRelief(-1)">Relief −</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = déformation du terrain · Le relief respire · Chaque régénération est unique
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question de design</div>
+      <div class="q-text">
+        La carte topographique comme métaphore du programme de recherche : le relief rend-il les zones d'expertise plus lisibles qu'une grille de cards ?
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// PROTO F — TOPOGRAPHIC CONTOUR MAP
+// Marching squares on a Perlin noise + Gaussian peaks height field
+// Mouse interaction deforms terrain in real time
+// ═══════════════════════════════════════════════════════════════
+
+let canvasW, canvasH;
+let isAnimating = true;
+let zOff = 0;
+let noiseBaseSeed;
+let reliefMultiplier = 1.0;
+
+// Smoothed mouse position (lerp)
+let smoothMouseX = -9999;
+let smoothMouseY = -9999;
+let mouseInCanvas = false;
+
+// Grid parameters for marching squares
+const GRID_STEP = 9;
+let gridCols, gridRows;
+let heightField; // 2D array
+
+// Contour levels
+const NUM_LEVELS = 10;
+
+// Zone definitions: 4 peaks
+const peaks = [
+  { xRatio: 0.20, yRatio: 0.50, weight: 0.40, sigma: 0.14 }, // États fragiles
+  { xRatio: 0.40, yRatio: 0.45, weight: 0.50, sigma: 0.13 }, // Entreprises
+  { xRatio: 0.60, yRatio: 0.55, weight: 0.35, sigma: 0.15 }, // Système Int.
+  { xRatio: 0.80, yRatio: 0.50, weight: 0.45, sigma: 0.13 }, // Prospectif
+];
+
+// Zone colors (RGBA base)
+const zoneColors = [
+  { r: 192, g: 57,  b: 43  }, // red — États
+  { r: 44,  g: 95,  b: 138 }, // blue — Entreprises
+  { r: 212, g: 160, b: 23  }, // gold — Système Int.
+  { r: 200, g: 210, b: 220 }, // silver — Prospectif
+];
+
+// Zone boundaries (x-ratio)
+const zoneBounds = [0, 0.25, 0.50, 0.75, 1.0];
+
+function setup() {
+  const container = document.getElementById('topo-container');
+  canvasW = container.offsetWidth;
+  canvasH = container.offsetHeight;
+
+  const cnv = createCanvas(canvasW, canvasH);
+  cnv.parent('topo-container');
+
+  gridCols = Math.floor(canvasW / GRID_STEP) + 1;
+  gridRows = Math.floor(canvasH / GRID_STEP) + 1;
+  heightField = new Array(gridCols);
+  for (let i = 0; i < gridCols; i++) {
+    heightField[i] = new Array(gridRows);
+  }
+
+  noiseBaseSeed = random(1000);
+  noiseSeed(Math.floor(noiseBaseSeed));
+  noiseDetail(4, 0.5);
+
+  // Build elevation legend
+  buildLegend();
+}
+
+function draw() {
+  background(27, 42, 74);
+
+  // Update smoothed mouse
+  if (mouseInCanvas) {
+    smoothMouseX = lerp(smoothMouseX, mouseX, 0.08);
+    smoothMouseY = lerp(smoothMouseY, mouseY, 0.08);
+  } else {
+    // Drift away when mouse leaves
+    smoothMouseX = lerp(smoothMouseX, -500, 0.03);
+    smoothMouseY = lerp(smoothMouseY, -500, 0.03);
+  }
+
+  // Animate z-offset
+  if (isAnimating) {
+    zOff += 0.003;
+  }
+
+  // Compute height field
+  computeHeightField();
+
+  // Draw contour lines via marching squares
+  drawContours();
+
+  // Draw subtle grid dots at peak centers
+  drawPeakMarkers();
+}
+
+// ═══ HEIGHT FIELD COMPUTATION ═══
+function computeHeightField() {
+  const noiseScale = 0.008;
+  const mouseRadius = 120;
+  const mouseWeight = 0.35 * reliefMultiplier;
+
+  for (let i = 0; i < gridCols; i++) {
+    for (let j = 0; j < gridRows; j++) {
+      const x = i * GRID_STEP;
+      const y = j * GRID_STEP;
+
+      // Base Perlin noise (3D for animation)
+      let h = noise(x * noiseScale + noiseBaseSeed, y * noiseScale + noiseBaseSeed, zOff) * 0.5;
+
+      // Add 4 Gaussian peaks
+      for (let p = 0; p < peaks.length; p++) {
+        const pk = peaks[p];
+        const px = pk.xRatio * canvasW;
+        const py = pk.yRatio * canvasH;
+        const sigmaPixels = pk.sigma * canvasW;
+        const dx = x - px;
+        const dy = y - py;
+        const distSq = dx * dx + dy * dy;
+        const gaussVal = pk.weight * reliefMultiplier * Math.exp(-distSq / (2 * sigmaPixels * sigmaPixels));
+        h += gaussVal;
+      }
+
+      // Mouse interaction: additional gaussian peak
+      if (smoothMouseX > -100) {
+        const mdx = x - smoothMouseX;
+        const mdy = y - smoothMouseY;
+        const mDistSq = mdx * mdx + mdy * mdy;
+        const mouseGauss = mouseWeight * Math.exp(-mDistSq / (2 * mouseRadius * mouseRadius));
+        h += mouseGauss;
+      }
+
+      heightField[i][j] = h;
+    }
+  }
+}
+
+// ═══ MARCHING SQUARES CONTOUR RENDERING ═══
+function drawContours() {
+  // Determine min/max of height field for dynamic leveling
+  let hMin = Infinity, hMax = -Infinity;
+  for (let i = 0; i < gridCols; i++) {
+    for (let j = 0; j < gridRows; j++) {
+      const v = heightField[i][j];
+      if (v < hMin) hMin = v;
+      if (v > hMax) hMax = v;
+    }
+  }
+
+  // Create contour levels evenly spaced
+  const levels = [];
+  const range = hMax - hMin;
+  if (range < 0.001) return;
+
+  for (let l = 1; l <= NUM_LEVELS; l++) {
+    levels.push(hMin + (range * l) / (NUM_LEVELS + 1));
+  }
+
+  noFill();
+
+  for (let li = 0; li < levels.length; li++) {
+    const threshold = levels[li];
+    const elevFrac = (li + 1) / (NUM_LEVELS + 1); // 0..1 normalized elevation
+
+    // Opacity: higher elevation = more opaque
+    const alpha = map(elevFrac, 0, 1, 0.12, 0.7);
+
+    // Line weight: slightly thicker every 3rd level
+    const sw = (li % 3 === 2) ? 1.5 : 1.0;
+    strokeWeight(sw);
+
+    // March through the grid
+    for (let i = 0; i < gridCols - 1; i++) {
+      for (let j = 0; j < gridRows - 1; j++) {
+        const x = i * GRID_STEP;
+        const y = j * GRID_STEP;
+
+        const v0 = heightField[i][j];
+        const v1 = heightField[i + 1][j];
+        const v2 = heightField[i + 1][j + 1];
+        const v3 = heightField[i][j + 1];
+
+        // Determine case index
+        let caseIndex = 0;
+        if (v0 >= threshold) caseIndex |= 8;
+        if (v1 >= threshold) caseIndex |= 4;
+        if (v2 >= threshold) caseIndex |= 2;
+        if (v3 >= threshold) caseIndex |= 1;
+
+        // Skip empty/full cells
+        if (caseIndex === 0 || caseIndex === 15) continue;
+
+        // Interpolation along edges
+        // Edge midpoints (linear interpolation)
+        // Top edge: v0 -> v1
+        const topX = x + GRID_STEP * interp(v0, v1, threshold);
+        const topY = y;
+        // Right edge: v1 -> v2
+        const rightX = x + GRID_STEP;
+        const rightY = y + GRID_STEP * interp(v1, v2, threshold);
+        // Bottom edge: v3 -> v2
+        const bottomX = x + GRID_STEP * interp(v3, v2, threshold);
+        const bottomY = y + GRID_STEP;
+        // Left edge: v0 -> v3
+        const leftX = x;
+        const leftY = y + GRID_STEP * interp(v0, v3, threshold);
+
+        // Determine color based on x-position (zone center)
+        const cellCenterX = x + GRID_STEP * 0.5;
+        const zoneIdx = getZoneIndex(cellCenterX);
+        const c = zoneColors[zoneIdx];
+        stroke(c.r, c.g, c.b, alpha * 255);
+
+        // Draw segments for each marching squares case
+        switch (caseIndex) {
+          case 1:  drawSeg(leftX, leftY, bottomX, bottomY); break;
+          case 2:  drawSeg(bottomX, bottomY, rightX, rightY); break;
+          case 3:  drawSeg(leftX, leftY, rightX, rightY); break;
+          case 4:  drawSeg(topX, topY, rightX, rightY); break;
+          case 5:
+            // Saddle: disambiguate using center value
+            const center5 = (v0 + v1 + v2 + v3) * 0.25;
+            if (center5 >= threshold) {
+              drawSeg(leftX, leftY, topX, topY);
+              drawSeg(bottomX, bottomY, rightX, rightY);
+            } else {
+              drawSeg(topX, topY, rightX, rightY);
+              drawSeg(leftX, leftY, bottomX, bottomY);
+            }
+            break;
+          case 6:  drawSeg(topX, topY, bottomX, bottomY); break;
+          case 7:  drawSeg(leftX, leftY, topX, topY); break;
+          case 8:  drawSeg(topX, topY, leftX, leftY); break;
+          case 9:  drawSeg(topX, topY, bottomX, bottomY); break;
+          case 10:
+            // Saddle: disambiguate
+            const center10 = (v0 + v1 + v2 + v3) * 0.25;
+            if (center10 >= threshold) {
+              drawSeg(topX, topY, rightX, rightY);
+              drawSeg(leftX, leftY, bottomX, bottomY);
+            } else {
+              drawSeg(leftX, leftY, topX, topY);
+              drawSeg(bottomX, bottomY, rightX, rightY);
+            }
+            break;
+          case 11: drawSeg(topX, topY, rightX, rightY); break;
+          case 12: drawSeg(leftX, leftY, rightX, rightY); break;
+          case 13: drawSeg(bottomX, bottomY, rightX, rightY); break;
+          case 14: drawSeg(leftX, leftY, bottomX, bottomY); break;
+        }
+      }
+    }
+  }
+}
+
+function drawSeg(x1, y1, x2, y2) {
+  line(x1, y1, x2, y2);
+}
+
+function interp(v1, v2, threshold) {
+  if (Math.abs(v2 - v1) < 0.00001) return 0.5;
+  return (threshold - v1) / (v2 - v1);
+}
+
+function getZoneIndex(x) {
+  const ratio = x / canvasW;
+  if (ratio < 0.25) return 0;
+  if (ratio < 0.50) return 1;
+  if (ratio < 0.75) return 2;
+  return 3;
+}
+
+// ═══ PEAK MARKERS ═══
+function drawPeakMarkers() {
+  noStroke();
+  for (let p = 0; p < peaks.length; p++) {
+    const pk = peaks[p];
+    const px = pk.xRatio * canvasW;
+    const py = pk.yRatio * canvasH;
+    const c = zoneColors[p];
+
+    // Small crosshair
+    stroke(c.r, c.g, c.b, 60);
+    strokeWeight(0.5);
+    line(px - 8, py, px + 8, py);
+    line(px, py - 8, px, py + 8);
+
+    // Tiny dot at center
+    noStroke();
+    fill(c.r, c.g, c.b, 100);
+    ellipse(px, py, 4, 4);
+  }
+}
+
+// ═══ ELEVATION LEGEND ═══
+function buildLegend() {
+  const legend = document.getElementById('elev-legend');
+  legend.innerHTML = '<div style="margin-bottom:4px; font-weight:500;">ÉLÉVATION</div>';
+  for (let i = NUM_LEVELS; i >= 1; i--) {
+    const frac = i / (NUM_LEVELS + 1);
+    const alpha = 0.12 + (0.7 - 0.12) * frac;
+    const bar = document.createElement('div');
+    bar.className = 'elev-bar';
+    bar.innerHTML = `<span class="elev-swatch" style="background:rgba(255,255,255,${alpha});"></span><span>${Math.round(frac * 100)}%</span>`;
+    legend.appendChild(bar);
+  }
+}
+
+// ═══ MOUSE TRACKING ═══
+function mouseMoved() {
+  const container = document.getElementById('topo-container');
+  const rect = container.getBoundingClientRect();
+  if (
+    mouseX >= 0 && mouseX <= canvasW &&
+    mouseY >= 0 && mouseY <= canvasH
+  ) {
+    mouseInCanvas = true;
+  } else {
+    mouseInCanvas = false;
+  }
+}
+
+function mouseEntered() {
+  mouseInCanvas = true;
+}
+
+function mouseExited() {
+  mouseInCanvas = false;
+}
+
+// ═══ CONTROLS ═══
+function regenerateTerrain() {
+  noiseBaseSeed = random(1000);
+  noiseSeed(Math.floor(noiseBaseSeed));
+  zOff = 0;
+}
+
+function toggleAnimation() {
+  isAnimating = !isAnimating;
+  const btn = document.getElementById('btn-anim');
+  if (isAnimating) {
+    btn.classList.remove('active');
+  } else {
+    btn.classList.add('active');
+  }
+}
+
+function adjustRelief(dir) {
+  reliefMultiplier = constrain(reliefMultiplier + dir * 0.15, 0.3, 2.5);
+}
+
+// ═══ WINDOW RESIZE ═══
+function windowResized() {
+  const container = document.getElementById('topo-container');
+  canvasW = container.offsetWidth;
+  canvasH = container.offsetHeight;
+  resizeCanvas(canvasW, canvasH);
+  gridCols = Math.floor(canvasW / GRID_STEP) + 1;
+  gridRows = Math.floor(canvasH / GRID_STEP) + 1;
+  heightField = new Array(gridCols);
+  for (let i = 0; i < gridCols; i++) {
+    heightField[i] = new Array(gridRows);
+  }
+}
+</script>
+</body>
+</html>

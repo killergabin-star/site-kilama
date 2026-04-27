@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto I — Radial Data Portrait (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+    --silver: #C8D0D8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--navy); font-family: 'Inter', sans-serif; color: white; }
+
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--red-analytical); color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em; font-weight: 700;
+  }
+  .engine-tag span { color: rgba(255,255,255,0.7); }
+
+  .sunburst-section {
+    padding: 5rem 0 4rem;
+    margin-top: 40px;
+  }
+  .container {
+    max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    position: relative; z-index: 2;
+  }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-caps); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem; font-weight: 700; color: white;
+    margin-bottom: 0.8rem; max-width: 600px; line-height: 1.2;
+  }
+  .section-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; max-width: 550px;
+  }
+
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .canvas-wrapper canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+  }
+  .ctrl-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.04);
+  }
+  .ctrl-btn.active {
+    border-color: var(--gold-caps);
+    color: var(--gold-caps);
+  }
+
+  .hint-line {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  .question-block {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+  .question-block .q-label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red-analytical); margin-bottom: 0.8rem;
+  }
+  .question-block .q-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO I — <span>P5.JS CANVAS — Radial Data Portrait — Sunburst Encoding</span></div>
+
+<section class="sunburst-section">
+  <div class="container">
+    <div class="section-label">Research — Portrait de données radial</div>
+    <div class="section-title">Empreinte d'un programme de recherche</div>
+    <div class="section-sub">Chaque rayon encode une dimension. Les marques varient selon la distance au centre : points, tirets, losanges, cercles. Quatre quadrants, quatre axes de recherche.</div>
+
+    <div class="canvas-wrapper" id="sunburst-container">
+      <!-- p5 canvas injected here -->
+    </div>
+
+    <div class="controls">
+      <button class="ctrl-btn" onclick="regenerate()">Régénérer</button>
+      <button class="ctrl-btn" id="btn-anim" onclick="toggleAnimation()">Animer / Pause</button>
+      <button class="ctrl-btn" onclick="triggerPulse()">Pulse</button>
+    </div>
+    <div class="hint-line">
+      SOURIS = déformation directionnelle · CLIC = onde de pulse · Chaque régénération est unique
+    </div>
+
+    <div class="question-block">
+      <div class="q-label">Question de design</div>
+      <div class="q-text">Un portrait de données radial peut-il encoder la complexité d'un programme de recherche tout en restant lisible comme une composition visuelle ?</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ─── Global state ───────────────────────────────────────────
+let rays = [];
+let particles = [];
+let isAnimating = true;
+let globalRotation = 0;
+let pulseTime = -100; // seconds since last pulse
+let cw, ch, cx, cy;
+let noiseOffset;
+
+const NUM_RAYS = 60;
+const MARK_SPACING = 12;
+const RING_RADII = [60, 120, 180, 240];
+
+// Quadrant colors
+const COLORS = {
+  red:    [192, 57, 43],
+  blue:   [44, 95, 138],
+  gold:   [212, 160, 23],
+  silver: [200, 208, 216]
+};
+
+// Label data: angle in degrees, text
+const LABELS = [
+  { angle: 180, text: "ÉTATS" },
+  { angle: 90,  text: "ENTREPRISES" },
+  { angle: 0,   text: "SYSTÈME INT." },
+  { angle: 270, text: "PROSPECTIF" }
+];
+
+// ─── p5.js sketch ───────────────────────────────────────────
+const sketch = (p) => {
+
+  p.setup = () => {
+    const container = document.getElementById('sunburst-container');
+    cw = container.offsetWidth;
+    ch = container.offsetHeight;
+    const canvas = p.createCanvas(cw, ch);
+    canvas.parent('sunburst-container');
+
+    cx = cw * 0.45;
+    cy = ch * 0.5;
+
+    noiseOffset = p.random(1000);
+    generateRays(p);
+  };
+
+  p.draw = () => {
+    if (!isAnimating && pulseTime < -50) {
+      return; // skip draw when paused and no active pulse
+    }
+
+    p.background(27, 42, 74);
+    let t = p.millis() / 1000;
+
+    if (isAnimating) {
+      globalRotation += 0.0005;
+    }
+
+    // Pulse timing
+    let pulseElapsed = t - pulseTime;
+    let pulseActive = pulseElapsed < 2.5;
+    // Auto-pulse every 8 seconds
+    if (isAnimating && t - pulseTime > 8) {
+      pulseTime = t;
+    }
+
+    // Mouse angle and distance for interaction
+    let mx = p.mouseX;
+    let my = p.mouseY;
+    let mouseAngle = p.atan2(my - cy, mx - cx);
+    let mouseDist = p.dist(mx, my, cx, cy);
+    let mouseInCanvas = mx > 0 && mx < cw && my > 0 && my < ch;
+
+    p.push();
+    p.translate(cx, cy);
+    p.rotate(globalRotation);
+
+    // ─── Background guides ───────────────────────────
+    // Concentric ring guides
+    p.noFill();
+    p.strokeWeight(0.5);
+    for (let r of RING_RADII) {
+      p.stroke(255, 255, 255, 255 * 0.03);
+      p.ellipse(0, 0, r * 2, r * 2);
+    }
+
+    // Axis lines
+    p.strokeWeight(0.5);
+    p.stroke(255, 255, 255, 255 * 0.05);
+    for (let i = 0; i < 4; i++) {
+      let a = i * p.HALF_PI;
+      p.line(0, 0, p.cos(a) * 260, p.sin(a) * 260);
+    }
+
+    // ─── Draw rays ───────────────────────────────────
+    for (let i = 0; i < rays.length; i++) {
+      let ray = rays[i];
+      let angle = ray.baseAngle + globalRotation;
+
+      // Mouse interaction: elongate rays near mouse angle
+      let rayLen = ray.length;
+      if (mouseInCanvas) {
+        let angleDiff = angleDiffSigned(ray.baseAngle, mouseAngle - globalRotation);
+        let proximity = Math.max(0, 1 - Math.abs(angleDiff) / (p.PI * 0.3));
+        proximity = proximity * proximity; // quadratic falloff
+        rayLen += proximity * 60 * Math.min(1, mouseDist / 150);
+      }
+
+      // Quadrant hover: check which quadrant mouse is in
+      let mouseQuadrant = -1;
+      if (mouseInCanvas) {
+        let mqa = ((mouseAngle - globalRotation) % p.TWO_PI + p.TWO_PI) % p.TWO_PI;
+        mouseQuadrant = Math.floor(mqa / p.HALF_PI);
+      }
+      let rayQuadrant = Math.floor(((ray.baseAngle % p.TWO_PI) + p.TWO_PI) % p.TWO_PI / p.HALF_PI);
+      let quadrantHover = (mouseInCanvas && mouseQuadrant === rayQuadrant) ? 1.0 : 0.0;
+
+      // Color for this ray
+      let col = getColorForAngle(p, ray.baseAngle);
+
+      // Draw marks along the ray
+      let numMarks = Math.floor(rayLen / MARK_SPACING);
+      for (let m = 1; m <= numMarks; m++) {
+        let dist = m * MARK_SPACING;
+        let px = p.cos(ray.baseAngle) * dist;
+        let py = p.sin(ray.baseAngle) * dist;
+
+        // Base opacity: higher near center, fading outward
+        let distRatio = dist / 240;
+        let baseOpacity = p.lerp(0.7, 0.15, Math.min(1, distRatio));
+
+        // Pulsing opacity
+        if (isAnimating) {
+          let pulseOsc = p.sin(t * 1.5 + dist * 0.03 + ray.noisePhase) * 0.15;
+          baseOpacity += pulseOsc;
+        }
+
+        // Pulse wave brightness
+        if (pulseActive) {
+          let waveFront = pulseElapsed * 140; // pixels per second
+          let waveWidth = 40;
+          let waveBright = Math.max(0, 1 - Math.abs(dist - waveFront) / waveWidth);
+          baseOpacity += waveBright * 0.5;
+        }
+
+        // Quadrant hover: make brighter and larger
+        let scaleFactor = 1.0;
+        if (quadrantHover > 0) {
+          baseOpacity = p.lerp(baseOpacity, Math.min(1, baseOpacity + 0.25), quadrantHover);
+          scaleFactor = p.lerp(1.0, 1.5, quadrantHover);
+        }
+
+        baseOpacity = p.constrain(baseOpacity, 0, 1);
+
+        // Perlin noise for organic size variation
+        let noiseSz = p.noise(ray.noiseSeed + m * 0.2 + noiseOffset);
+        let sizeMult = p.lerp(0.6, 1.4, noiseSz) * scaleFactor;
+
+        // Determine mark type by distance from center
+        let cr = p.red(col);
+        let cg = p.green(col);
+        let cb = p.blue(col);
+
+        if (dist <= 60) {
+          // Dots: filled circles 2-3px
+          let sz = p.lerp(2, 3, noiseSz) * sizeMult;
+          p.noStroke();
+          p.fill(cr, cg, cb, 255 * baseOpacity);
+          p.ellipse(px, py, sz, sz);
+        } else if (dist <= 120) {
+          // Tick marks: short perpendicular lines
+          let tickLen = p.lerp(4, 8, noiseSz) * sizeMult * 0.5;
+          let perpAngle = ray.baseAngle + p.HALF_PI;
+          p.stroke(cr, cg, cb, 255 * baseOpacity);
+          p.strokeWeight(p.lerp(0.8, 1.2, noiseSz));
+          p.line(
+            px - p.cos(perpAngle) * tickLen,
+            py - p.sin(perpAngle) * tickLen,
+            px + p.cos(perpAngle) * tickLen,
+            py + p.sin(perpAngle) * tickLen
+          );
+        } else if (dist <= 180) {
+          // Diamonds: small rotated squares
+          let sz = p.lerp(3, 5, noiseSz) * sizeMult;
+          p.push();
+          p.translate(px, py);
+          p.rotate(p.QUARTER_PI);
+          p.noStroke();
+          p.fill(cr, cg, cb, 255 * baseOpacity);
+          p.rectMode(p.CENTER);
+          p.rect(0, 0, sz, sz);
+          p.pop();
+        } else {
+          // Circles: unfilled, stroke only
+          let radius = p.lerp(3, 6, noiseSz) * sizeMult;
+          p.noFill();
+          p.stroke(cr, cg, cb, 255 * baseOpacity);
+          p.strokeWeight(p.lerp(0.6, 1.0, noiseSz));
+          p.ellipse(px, py, radius * 2, radius * 2);
+        }
+
+        // Tip particles: occasionally spawn from last mark
+        if (isAnimating && m === numMarks && p.random() < 0.003) {
+          particles.push({
+            x: px, y: py,
+            vx: p.cos(ray.baseAngle) * p.random(0.2, 0.6),
+            vy: p.sin(ray.baseAngle) * p.random(0.2, 0.6),
+            life: 1.0,
+            col: [cr, cg, cb],
+            size: p.random(1.5, 3)
+          });
+        }
+      }
+    }
+
+    // ─── Draw particles ──────────────────────────────
+    for (let i = particles.length - 1; i >= 0; i--) {
+      let pt = particles[i];
+      pt.x += pt.vx;
+      pt.y += pt.vy;
+      pt.life -= 0.008;
+      if (pt.life <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+      p.noStroke();
+      p.fill(pt.col[0], pt.col[1], pt.col[2], 255 * pt.life * 0.5);
+      p.ellipse(pt.x, pt.y, pt.size, pt.size);
+    }
+
+    p.pop();
+
+    // ─── Labels (outside rotation) ──────────────────
+    p.push();
+    p.textFont('JetBrains Mono');
+    p.textSize(10);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.noStroke();
+
+    for (let label of LABELS) {
+      let a = label.angle * p.PI / 180 + globalRotation;
+      let labelDist = 275;
+      let lx = cx + p.cos(a) * labelDist;
+      let ly = cy + p.sin(a) * labelDist;
+
+      // Check which quadrant mouse is in for highlight
+      let labelQuad = Math.floor(((label.angle * p.PI / 180) % p.TWO_PI + p.TWO_PI) % p.TWO_PI / p.HALF_PI);
+      let mqa2 = -1;
+      if (mouseInCanvas) {
+        let mqa2angle = ((mouseAngle - globalRotation) % p.TWO_PI + p.TWO_PI) % p.TWO_PI;
+        mqa2 = Math.floor(mqa2angle / p.HALF_PI);
+      }
+      let labelOpacity = (mouseInCanvas && mqa2 === labelQuad) ? 0.65 : 0.35;
+
+      p.fill(255, 255, 255, 255 * labelOpacity);
+      // Draw with letter spacing simulation
+      drawSpacedText(p, label.text, lx, ly, 2.2);
+    }
+    p.pop();
+
+    // Force redraw during active pulse even when paused
+    if (!isAnimating && pulseActive) {
+      // keep drawing
+    } else if (!isAnimating) {
+      p.noLoop();
+    }
+  };
+
+  p.mousePressed = () => {
+    if (p.mouseX > 0 && p.mouseX < cw && p.mouseY > 0 && p.mouseY < ch) {
+      pulseTime = p.millis() / 1000;
+      if (!isAnimating) {
+        p.loop();
+      }
+    }
+  };
+
+  p.windowResized = () => {
+    const container = document.getElementById('sunburst-container');
+    cw = container.offsetWidth;
+    ch = container.offsetHeight;
+    p.resizeCanvas(cw, ch);
+    cx = cw * 0.45;
+    cy = ch * 0.5;
+  };
+};
+
+// ─── Helper: generate ray data ──────────────────────────────
+function generateRays(p) {
+  rays = [];
+  particles = [];
+
+  for (let i = 0; i < NUM_RAYS; i++) {
+    let angle = (i / NUM_RAYS) * p.TWO_PI;
+
+    // Create 4 lobes: longer rays near 0, PI/2, PI, 3PI/2
+    let lobeLength = 0;
+    for (let l = 0; l < 4; l++) {
+      let lobeCenter = l * p.HALF_PI;
+      let diff = angleDiffAbs(angle, lobeCenter);
+      // Gaussian falloff: sigma ~0.5 radians
+      let contrib = Math.exp(-(diff * diff) / (2 * 0.5 * 0.5));
+      lobeLength += contrib * 70; // extra length from lobe
+    }
+
+    let baseLen = p.random(80, 140);
+    let totalLen = baseLen + lobeLength + p.random(-20, 20);
+    totalLen = p.constrain(totalLen, 80, 260);
+
+    rays.push({
+      baseAngle: angle,
+      length: totalLen,
+      noiseSeed: p.random(1000),
+      noisePhase: p.random(p.TWO_PI)
+    });
+  }
+}
+
+// ─── Helper: color by angle ─────────────────────────────────
+function getColorForAngle(p, angle) {
+  // Normalize angle to 0..TWO_PI
+  let a = ((angle % p.TWO_PI) + p.TWO_PI) % p.TWO_PI;
+  let sector = a / p.HALF_PI; // 0..4
+
+  let c1, c2;
+  let frac;
+
+  if (sector < 1) {
+    // 0 to PI/2: RED -> BLUE
+    c1 = p.color(COLORS.red[0], COLORS.red[1], COLORS.red[2]);
+    c2 = p.color(COLORS.blue[0], COLORS.blue[1], COLORS.blue[2]);
+    frac = sector;
+  } else if (sector < 2) {
+    // PI/2 to PI: BLUE -> GOLD
+    c1 = p.color(COLORS.blue[0], COLORS.blue[1], COLORS.blue[2]);
+    c2 = p.color(COLORS.gold[0], COLORS.gold[1], COLORS.gold[2]);
+    frac = sector - 1;
+  } else if (sector < 3) {
+    // PI to 3PI/2: GOLD -> SILVER
+    c1 = p.color(COLORS.gold[0], COLORS.gold[1], COLORS.gold[2]);
+    c2 = p.color(COLORS.silver[0], COLORS.silver[1], COLORS.silver[2]);
+    frac = sector - 2;
+  } else {
+    // 3PI/2 to 2PI: SILVER -> RED
+    c1 = p.color(COLORS.silver[0], COLORS.silver[1], COLORS.silver[2]);
+    c2 = p.color(COLORS.red[0], COLORS.red[1], COLORS.red[2]);
+    frac = sector - 3;
+  }
+
+  return p.lerpColor(c1, c2, frac);
+}
+
+// ─── Helper: angle difference (absolute) ────────────────────
+function angleDiffAbs(a, b) {
+  let d = Math.abs(a - b) % (Math.PI * 2);
+  if (d > Math.PI) d = Math.PI * 2 - d;
+  return d;
+}
+
+// ─── Helper: signed angle difference ────────────────────────
+function angleDiffSigned(a, b) {
+  let d = b - a;
+  while (d > Math.PI) d -= Math.PI * 2;
+  while (d < -Math.PI) d += Math.PI * 2;
+  return d;
+}
+
+// ─── Helper: draw text with letter spacing ──────────────────
+function drawSpacedText(p, text, x, y, spacing) {
+  let totalWidth = 0;
+  for (let i = 0; i < text.length; i++) {
+    totalWidth += p.textWidth(text[i]) + (i < text.length - 1 ? spacing : 0);
+  }
+  let startX = x - totalWidth / 2;
+  for (let i = 0; i < text.length; i++) {
+    p.text(text[i], startX, y);
+    startX += p.textWidth(text[i]) + spacing;
+  }
+}
+
+// ─── Controls ───────────────────────────────────────────────
+function regenerate() {
+  // Access p5 instance to regenerate
+  if (window._p5Instance) {
+    generateRays(window._p5Instance);
+    if (!isAnimating) {
+      window._p5Instance.loop();
+      window._p5Instance.redraw();
+    }
+  }
+}
+
+function toggleAnimation() {
+  isAnimating = !isAnimating;
+  let btn = document.getElementById('btn-anim');
+  if (isAnimating) {
+    btn.classList.remove('active');
+    if (window._p5Instance) window._p5Instance.loop();
+  } else {
+    btn.classList.add('active');
+  }
+}
+
+function triggerPulse() {
+  if (window._p5Instance) {
+    pulseTime = window._p5Instance.millis() / 1000;
+    if (!isAnimating) {
+      window._p5Instance.loop();
+    }
+  }
+}
+
+// ─── Launch ─────────────────────────────────────────────────
+window._p5Instance = new p5(sketch, 'sunburst-container');
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Proto Q — Voronoi Fracture</title>
+<style>
+*{margin:0;padding:0}
+body{background:#060a12;overflow:hidden;cursor:crosshair}
+canvas{display:block}
+#info{position:fixed;top:20px;left:20px;color:rgba(255,255,255,.3);font:11px/1.6 'SF Mono',monospace;z-index:10;pointer-events:none}
+#info span{color:rgba(255,255,255,.6)}
+.ctrl{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.ctrl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font:10px/1 'SF Mono',monospace;padding:8px 16px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .2s}
+.ctrl button:hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+</style>
+</head>
+<body>
+<div id="info">
+  PROTO Q — VORONOI FRACTURE<br>
+  Moteur : tessellation dynamique<br>
+  Rendu : aretes uniquement, zero formes pleines<br>
+  <span id="sc">80</span> cellules · <span id="shk">0</span> fractures
+</div>
+<div class="ctrl">
+  <button onclick="doShock()">Fracture !</button>
+  <button onclick="heal()">Reparer</button>
+  <button onclick="regen()">Regenerer</button>
+</div>
+<canvas id="c"></canvas>
+<script>
+'use strict';
+
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+let W, H;
+let needUpdate = true;
+let shockCount = 0;
+let seeds = [];
+let pendingFractures = [];
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  needUpdate = true;
+}
+resize();
+window.addEventListener('resize', resize);
+
+// ===== ZONES =====
+const ZONES = [
+  {x:.20, y:.30, r:200, g:55,  b:55,  name:'CHOC'},
+  {x:.75, y:.25, r:55,  g:110, b:220, name:'TRANSMISSION'},
+  {x:.55, y:.72, r:210, g:175, b:45,  name:'MESURE'},
+  {x:.28, y:.78, r:175, g:180, b:200, name:'IMPACT'}
+];
+
+function getZone(nx, ny) {
+  let minD = Infinity, z = 0;
+  for (let i = 0; i < ZONES.length; i++) {
+    let dx = nx - ZONES[i].x, dy = ny - ZONES[i].y;
+    let d = dx*dx + dy*dy;
+    if (d < minD) { minD = d; z = i; }
+  }
+  return z;
+}
+
+function zoneBlend(nx, ny) {
+  let tw = 0, r = 0, g = 0, b = 0;
+  for (let z of ZONES) {
+    let dx = nx - z.x, dy = ny - z.y;
+    let w = 1 / (dx*dx + dy*dy + 0.01);
+    r += z.r*w; g += z.g*w; b += z.b*w; tw += w;
+  }
+  return [r/tw, g/tw, b/tw];
+}
+
+// ===== SEEDS =====
+const INIT_COUNT = 80;
+
+function initSeeds() {
+  seeds = [];
+  for (let i = 0; i < INIT_COUNT; i++) {
+    let x = Math.random(), y = Math.random();
+    seeds.push({
+      x: x*W, y: y*H,
+      ox: x*W, oy: y*H, // original position
+      vx: 0, vy: 0,
+      zone: getZone(x, y),
+      original: true,
+      crackAge: -1, // -1 = not a crack seed
+      birth: 0
+    });
+  }
+  needUpdate = true;
+}
+initSeeds();
+
+// ===== SPATIAL HASH =====
+const MACRO = 12;
+let buckets;
+
+function hashSeeds() {
+  buckets = new Array(MACRO * MACRO);
+  for (let i = 0; i < buckets.length; i++) buckets[i] = [];
+  for (let s = 0; s < seeds.length; s++) {
+    let bx = Math.floor(seeds[s].x / W * MACRO);
+    let by = Math.floor(seeds[s].y / H * MACRO);
+    bx = Math.max(0, Math.min(MACRO-1, bx));
+    by = Math.max(0, Math.min(MACRO-1, by));
+    buckets[by * MACRO + bx].push(s);
+  }
+}
+
+function findNearest2(px, py) {
+  let bx = Math.floor(px / W * MACRO);
+  let by = Math.floor(py / H * MACRO);
+  let d1 = 1e18, d2 = 1e18, n1 = 0, n2 = 0;
+
+  for (let dy = -2; dy <= 2; dy++) {
+    for (let dx = -2; dx <= 2; dx++) {
+      let nx = bx + dx, ny = by + dy;
+      if (nx < 0 || nx >= MACRO || ny < 0 || ny >= MACRO) continue;
+      let bucket = buckets[ny * MACRO + nx];
+      for (let i = 0; i < bucket.length; i++) {
+        let s = bucket[i];
+        let ddx = px - seeds[s].x, ddy = py - seeds[s].y;
+        let d = ddx*ddx + ddy*ddy;
+        if (d < d1) { d2 = d1; n2 = n1; d1 = d; n1 = s; }
+        else if (d < d2) { d2 = d; n2 = s; }
+      }
+    }
+  }
+  return { n1, n2, d1: Math.sqrt(d1), d2: Math.sqrt(d2) };
+}
+
+// ===== VORONOI RENDER =====
+const GRID = 250;
+let imgData;
+let offCanvas, offCtx;
+
+function initOffscreen() {
+  offCanvas = document.createElement('canvas');
+  offCanvas.width = GRID;
+  offCanvas.height = GRID;
+  offCtx = offCanvas.getContext('2d');
+  imgData = offCtx.createImageData(GRID, GRID);
+}
+initOffscreen();
+
+function computeAndRender() {
+  hashSeeds();
+  const data = imgData.data;
+  const gw = W / GRID, gh = H / GRID;
+
+  for (let gy = 0; gy < GRID; gy++) {
+    let py = (gy + 0.5) * gh;
+    for (let gx = 0; gx < GRID; gx++) {
+      let px = (gx + 0.5) * gw;
+      let res = findNearest2(px, py);
+      let edgeDist = res.d2 - res.d1;
+      let edgeThreshold = Math.min(gw, gh) * 3.0;
+
+      let pi = (gy * GRID + gx) * 4;
+      let s = seeds[res.n1];
+      let col = zoneBlend(s.x/W, s.y/H);
+
+      // Edge proximity → crack line
+      let edgeFactor = 1.0 - Math.min(edgeDist / edgeThreshold, 1.0);
+      edgeFactor = edgeFactor * edgeFactor * edgeFactor; // sharpen
+
+      // Crack glow for fresh cracks
+      let crackGlow = 0;
+      if (s.crackAge >= 0) {
+        crackGlow = Math.max(0, 1 - s.crackAge * 0.008);
+      }
+      let s2 = seeds[res.n2];
+      if (s2 && s2.crackAge >= 0) {
+        crackGlow = Math.max(crackGlow, Math.max(0, 1 - s2.crackAge * 0.008));
+      }
+
+      // Interior: subtle zone tint (visible)
+      let ir = col[0] * 0.18 + 8;
+      let ig = col[1] * 0.18 + 8;
+      let ib = col[2] * 0.18 + 8;
+
+      // Edge: bright crack
+      let er = 160 + 95 * crackGlow;
+      let eg = 155 + 100 * crackGlow;
+      let eb = 140 + 115 * crackGlow;
+
+      data[pi]     = ir + (er - ir) * edgeFactor;
+      data[pi + 1] = ig + (eg - ig) * edgeFactor;
+      data[pi + 2] = ib + (eb - ib) * edgeFactor;
+      data[pi + 3] = 255;
+    }
+  }
+
+  offCtx.putImageData(imgData, 0, 0);
+}
+
+// ===== SHOCK / FRACTURE =====
+
+function doShock(x, y) {
+  if (x === undefined) {
+    x = W * (0.2 + Math.random() * 0.6);
+    y = H * (0.2 + Math.random() * 0.6);
+  }
+  shockCount++;
+
+  // Propagating fracture: add seeds in waves
+  let affected = [];
+  for (let s = 0; s < seeds.length; s++) {
+    let dx = seeds[s].x - x, dy = seeds[s].y - y;
+    let d = Math.sqrt(dx*dx + dy*dy);
+    if (d < Math.min(W, H) * 0.35) {
+      affected.push({ s, d });
+    }
+  }
+  affected.sort((a, b) => a.d - b.d);
+
+  // Split seeds with delay proportional to distance
+  for (let a of affected) {
+    let delay = a.d * 0.5; // ms per pixel
+    pendingFractures.push({
+      seed: a.s,
+      time: performance.now() + delay,
+      epicenter: { x, y }
+    });
+  }
+}
+
+function processFractures() {
+  let now = performance.now();
+  let changed = false;
+
+  for (let i = pendingFractures.length - 1; i >= 0; i--) {
+    if (now >= pendingFractures[i].time) {
+      let pf = pendingFractures[i];
+      let s = seeds[pf.seed];
+      if (s && s.original) {
+        // Split: create 2-3 new seeds nearby
+        let n = 2 + Math.floor(Math.random() * 2);
+        for (let j = 0; j < n; j++) {
+          let angle = Math.random() * Math.PI * 2;
+          let dist = 15 + Math.random() * 25;
+          seeds.push({
+            x: s.x + Math.cos(angle) * dist,
+            y: s.y + Math.sin(angle) * dist,
+            ox: s.x, oy: s.y,
+            vx: Math.cos(angle) * 0.3,
+            vy: Math.sin(angle) * 0.3,
+            zone: s.zone,
+            original: false,
+            crackAge: 0,
+            birth: now
+          });
+        }
+        changed = true;
+      }
+      pendingFractures.splice(i, 1);
+    }
+  }
+  return changed;
+}
+
+function heal() {
+  // Remove all non-original seeds
+  seeds = seeds.filter(s => s.original);
+  needUpdate = true;
+}
+
+function regen() {
+  pendingFractures = [];
+  shockCount = 0;
+  initSeeds();
+}
+
+// ===== ANIMATION =====
+let frame = 0;
+let lastUpdate = 0;
+
+function animate() {
+  requestAnimationFrame(animate);
+  frame++;
+
+  // Process pending fractures
+  let fractureChanged = processFractures();
+
+  // Age crack seeds
+  let now = performance.now();
+  for (let s of seeds) {
+    if (s.crackAge >= 0) {
+      s.crackAge = (now - s.birth) * 0.001;
+    }
+    // Gentle drift
+    s.x += s.vx;
+    s.y += s.vy;
+    s.vx *= 0.98;
+    s.vy *= 0.98;
+    // Boundary
+    s.x = Math.max(5, Math.min(W-5, s.x));
+    s.y = Math.max(5, Math.min(H-5, s.y));
+  }
+
+  // Remove very old crack seeds (heal over time: >12 seconds)
+  let before = seeds.length;
+  seeds = seeds.filter(s => s.original || s.crackAge < 12);
+  if (seeds.length !== before) needUpdate = true;
+
+  // Mouse influence: push seeds near cursor
+  if (mouseX > 0 && mouseX < W && mouseY > 0 && mouseY < H) {
+    for (let s of seeds) {
+      let dx = s.x - mouseX, dy = s.y - mouseY;
+      let d = Math.sqrt(dx*dx + dy*dy);
+      if (d < 80 && d > 1) {
+        let force = 0.3 / d;
+        s.vx += dx * force;
+        s.vy += dy * force;
+        needUpdate = true;
+      }
+    }
+  }
+
+  // Recompute voronoi when needed
+  if (fractureChanged || needUpdate || frame % 3 === 0) {
+    computeAndRender();
+    needUpdate = false;
+  }
+
+  // Draw to screen
+  ctx.fillStyle = '#060a12';
+  ctx.fillRect(0, 0, W, H);
+
+  // Main voronoi (crisp edges)
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(offCanvas, 0, 0, W, H);
+
+  // Glow layer (blurred pass for bloom)
+  ctx.save();
+  ctx.filter = 'blur(4px)';
+  ctx.globalAlpha = 0.3;
+  ctx.drawImage(offCanvas, 0, 0, W, H);
+  ctx.restore();
+
+  // Auto-shock
+  if (frame % 600 === 300 && frame > 60) {
+    doShock();
+  }
+
+  // HUD
+  if (frame % 15 === 0) {
+    document.getElementById('sc').textContent = seeds.length;
+    document.getElementById('shk').textContent = shockCount;
+  }
+}
+
+// ===== MOUSE =====
+let mouseX = -100, mouseY = -100;
+canvas.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; needUpdate = true; });
+canvas.addEventListener('mousedown', e => { doShock(e.clientX, e.clientY); });
+
+animate();
+</script>
+</body>
+</html>

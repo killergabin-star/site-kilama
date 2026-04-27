@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Effet-Seuil — Eric Gabin Kilama</title>
+<meta name="description" content="Eric Gabin Kilama — Macroéconomiste, Conseiller stratégique, Chercheur">
+<meta name="author" content="Eric Gabin Kilama">
+
+
+<meta property="og:title" content="Effet-Seuil">
+<meta property="og:description" content="Eric Gabin Kilama — Macroéconomiste, Conseiller stratégique, Chercheur">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tags/effet-seuil/">
+<meta property="og:image" content="http://localhost:1313/images/avatar_kilama.webp">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css?v=1776251875">
+
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w9edchhwok");
+</script>
+
+
+
+<script>
+(function() {
+  'use strict';
+
+  
+  var DOMAIN_PROFILES = {
+    
+    'worldbank.org':      {type: 'institution', org: 'World Bank'},
+    'imf.org':            {type: 'institution', org: 'IMF'},
+    'oecd.org':           {type: 'institution', org: 'OECD'},
+    'afd.fr':             {type: 'institution', org: 'AFD'},
+    'afdb.org':           {type: 'institution', org: 'AfDB'},
+    'undp.org':           {type: 'institution', org: 'UNDP'},
+    'europa.eu':          {type: 'institution', org: 'EU'},
+    'eib.org':            {type: 'institution', org: 'EIB'},
+    'ebrd.com':           {type: 'institution', org: 'EBRD'},
+    'g7germany.de':       {type: 'institution', org: 'G7'},
+    'g7italy.it':         {type: 'institution', org: 'G7'},
+    'elysee.fr':          {type: 'institution', org: 'Elysee'},
+    
+    'diplomatie.gouv.fr': {type: 'gov_fr', org: 'MEAE'},
+    'gouv.fr':            {type: 'gov_fr', org: 'Govt FR'},
+    'defense.gouv.fr':    {type: 'gov_fr', org: 'MinArm'},
+    'economie.gouv.fr':   {type: 'gov_fr', org: 'DG Tresor'},
+    'sgdsn.gouv.fr':      {type: 'gov_fr', org: 'SGDSN'},
+    'assemblee-nationale.fr': {type: 'gov_fr', org: 'AN'},
+    'senat.fr':           {type: 'gov_fr', org: 'Senat'},
+    
+    'bruegel.org':        {type: 'thinktank', org: 'Bruegel'},
+    'piie.com':           {type: 'thinktank', org: 'PIIE'},
+    'ifri.org':           {type: 'thinktank', org: 'IFRI'},
+    'irsem.fr':           {type: 'thinktank', org: 'IRSEM'},
+    'ecfr.eu':            {type: 'thinktank', org: 'ECFR'},
+    'cgdev.org':          {type: 'thinktank', org: 'CGD'},
+    'odi.org':            {type: 'thinktank', org: 'ODI'},
+    'ferdi.fr':           {type: 'thinktank', org: 'FERDI'},
+    'cerdi.uca.fr':       {type: 'thinktank', org: 'CERDI'},
+    'fondapol.org':       {type: 'thinktank', org: 'Fondapol'},
+    'iddri.org':          {type: 'thinktank', org: 'IDDRI'},
+    'iris-france.org':    {type: 'thinktank', org: 'IRIS'},
+    'csis.org':           {type: 'thinktank', org: 'CSIS'},
+    'chathamhouse.org':   {type: 'thinktank', org: 'Chatham House'},
+    
+    'mckinsey.com':       {type: 'consulting', org: 'McKinsey'},
+    'bcg.com':            {type: 'consulting', org: 'BCG'},
+    'deloitte.com':       {type: 'consulting', org: 'Deloitte'},
+    'oliverwyman.com':    {type: 'consulting', org: 'Oliver Wyman'},
+    'rolandberger.com':   {type: 'consulting', org: 'Roland Berger'},
+    
+    'edu':                {type: 'academic', org: 'University'},
+    'ac.uk':              {type: 'academic', org: 'UK University'},
+    'univ-':              {type: 'academic', org: 'FR University'},
+    'cnrs.fr':            {type: 'academic', org: 'CNRS'},
+    'nber.org':           {type: 'academic', org: 'NBER'},
+    'cepr.org':           {type: 'academic', org: 'CEPR'},
+    'ssrn.com':           {type: 'academic', org: 'SSRN'},
+    'repec.org':          {type: 'academic', org: 'RePEc'},
+    
+    'galaxie.enseignementsup-recherche.gouv.fr': {type: 'recruitment', org: 'Galaxie MCF'},
+    'emploi-territorial.fr': {type: 'recruitment', org: 'FPT'},
+    'place-emploi-public.gouv.fr': {type: 'recruitment', org: 'FP Emploi'},
+    
+    'ft.com':             {type: 'media', org: 'Financial Times'},
+    'lemonde.fr':         {type: 'media', org: 'Le Monde'},
+    'economist.com':      {type: 'media', org: 'The Economist'},
+    'bloomberg.com':      {type: 'media', org: 'Bloomberg'},
+    
+    'linkedin.com':       {type: 'social', org: 'LinkedIn'},
+    'twitter.com':        {type: 'social', org: 'X/Twitter'},
+    'x.com':              {type: 'social', org: 'X/Twitter'},
+    't.co':               {type: 'social', org: 'X/Twitter'}
+  };
+
+  function classifyReferrer(ref) {
+    if (!ref) return {type: 'direct', org: 'Direct'};
+    try {
+      var hostname = new URL(ref).hostname.toLowerCase();
+      
+      for (var domain in DOMAIN_PROFILES) {
+        if (hostname === domain || hostname.endsWith('.' + domain)) {
+          return DOMAIN_PROFILES[domain];
+        }
+      }
+      
+      for (var pattern in DOMAIN_PROFILES) {
+        if (hostname.includes(pattern)) {
+          return DOMAIN_PROFILES[pattern];
+        }
+      }
+      
+      if (hostname.includes('google') || hostname.includes('bing') || hostname.includes('duckduckgo')) {
+        return {type: 'search', org: 'Search'};
+      }
+      return {type: 'other', org: hostname};
+    } catch(e) {
+      return {type: 'unknown', org: 'Unknown'};
+    }
+  }
+
+  
+  function getUTM() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      source:   params.get('utm_source')   || '',
+      medium:   params.get('utm_medium')   || '',
+      campaign: params.get('utm_campaign') || '',
+      content:  params.get('utm_content')  || '',
+      term:     params.get('utm_term')     || ''
+    };
+  }
+
+  
+  var engagement = {
+    startTime: Date.now(),
+    maxScroll: 0,
+    section: document.title,
+    path: window.location.pathname
+  };
+
+  window.addEventListener('scroll', function() {
+    var scrollPct = Math.round(
+      (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+    if (scrollPct > engagement.maxScroll) {
+      engagement.maxScroll = scrollPct;
+    }
+  });
+
+  
+  function tagClarity(visitor, utm) {
+    if (typeof clarity !== 'function') return;
+
+    
+    clarity('set', 'visitor_type', visitor.type);
+    clarity('set', 'visitor_org', visitor.org);
+
+    
+    if (utm.source)   clarity('set', 'utm_source', utm.source);
+    if (utm.campaign) clarity('set', 'utm_campaign', utm.campaign);
+    if (utm.medium)   clarity('set', 'utm_medium', utm.medium);
+    if (utm.content)  clarity('set', 'utm_content', utm.content);
+
+    
+    clarity('set', 'page_section', engagement.path.split('/')[1] || 'home');
+  }
+
+  
+  function logVisit(visitor, utm) {
+    try {
+      var visits = JSON.parse(localStorage.getItem('ek_visits') || '[]');
+      visits.push({
+        ts: new Date().toISOString(),
+        path: engagement.path,
+        ref: document.referrer,
+        type: visitor.type,
+        org: visitor.org,
+        utm_source: utm.source,
+        utm_campaign: utm.campaign,
+        scroll: engagement.maxScroll,
+        duration: 0
+      });
+      
+      if (visits.length > 500) visits = visits.slice(-500);
+      localStorage.setItem('ek_visits', JSON.stringify(visits));
+    } catch(e) {   }
+  }
+
+  
+  function sendEngagement() {
+    var duration = Math.round((Date.now() - engagement.startTime) / 1000);
+    if (typeof clarity === 'function') {
+      clarity('set', 'scroll_depth', String(engagement.maxScroll));
+      clarity('set', 'time_on_page', String(duration));
+      if (engagement.maxScroll > 75 && duration > 30) {
+        clarity('set', 'engaged_reader', 'true');
+      }
+    }
+    
+    try {
+      var visits = JSON.parse(localStorage.getItem('ek_visits') || '[]');
+      if (visits.length > 0) {
+        visits[visits.length - 1].duration = duration;
+        visits[visits.length - 1].scroll = engagement.maxScroll;
+        localStorage.setItem('ek_visits', JSON.stringify(visits));
+      }
+    } catch(e) {}
+  }
+
+  
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (link && link.href && link.href.match(/\.(pdf|docx|xlsx)$/i)) {
+      if (typeof clarity === 'function') {
+        clarity('set', 'download', link.href.split('/').pop());
+      }
+    }
+  });
+
+  
+  var visitor = classifyReferrer(document.referrer);
+  var utm = getUTM();
+
+  
+  setTimeout(function() {
+    tagClarity(visitor, utm);
+    logVisit(visitor, utm);
+  }, 1500);
+
+  
+  window.addEventListener('beforeunload', sendEngagement);
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') sendEngagement();
+  });
+
+})();
+</script>
+
+
+
+
+  
+</head>
+<body class="">
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+
+<nav class="site-nav" id="mainNav">
+  <a href="/" class="wordmark">
+    <span class="first-name">ERIC</span>
+    <span class="last-name">KILAMA</span>
+  </a>
+
+  
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  
+  <div class="nav-links" id="navLinks">
+    <div class="nav-item">
+      <a href="/research/">Research</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="/research/#axes">Axes de recherche</a>
+          <a href="/research/#publications">Publications &amp; Working Papers</a>
+          <a href="/research/#data">Données &amp; réplication</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/policy/">Policy</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="/policy/">À la une</a>
+          <a href="/policy/#dossier">Dossier spécial</a>
+          <a href="/policy/#debats">Débats &amp; Controverses</a>
+          <a href="/policy/#catalogue">Catalogue des notes</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/foresight/">Foresight</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="/foresight/">Vigie — Dashboard</a>
+          <a href="/foresight/#scenarios">Polycrisis Monitor</a>
+          <a href="/foresight/#gpr">GPR Tracker</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/teaching/">Teaching</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="/teaching/">Cours &amp; séminaires</a>
+          <a href="/teaching/#officer">Geopolitical Officer</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="/about/">About</a>
+      <div class="dropdown">
+        <div class="dropdown-links">
+          <a href="/about/">Parcours &amp; philosophie</a>
+          <a href="/about/#publications">Publications</a>
+          <a href="mailto:eric@erickilama.com">Contact</a>
+        </div>
+      </div>
+    </div>
+    <span class="nav-lang">
+      
+        <a href="#" class="active">FR</a> / <a href="http://localhost:1313/tags/effet-seuil/">EN</a>
+      
+    </span>
+  </div>
+</nav>
+
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<script>
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var links = document.getElementById('navLinks');
+  var overlay = document.getElementById('navOverlay');
+  var nav = document.getElementById('mainNav');
+
+  function toggle() {
+    var open = links.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('nav-open', open);
+  }
+
+  function close() {
+    links.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+
+  btn.addEventListener('click', toggle);
+  overlay.addEventListener('click', close);
+
+  
+  links.addEventListener('click', function(e) {
+    if (window.innerWidth > 768) return;
+    var item = e.target.closest('.nav-item > a');
+    if (!item) return;
+    var navItem = item.parentElement;
+    var dropdown = navItem.querySelector('.dropdown');
+    if (!dropdown) return;
+    e.preventDefault();
+    navItem.classList.toggle('mobile-expanded');
+  });
+
+  
+  links.querySelectorAll('.dropdown-links a').forEach(function(a) {
+    a.addEventListener('click', close);
+  });
+})();
+</script>
+
+
+
+<main class="container" style="padding-top: 120px; padding-bottom: 80px;">
+  <h1>Effet-Seuil</h1>
+  
+  
+</main>
+
+
+
+<footer class="site-footer-full">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">ERIC <em>KILAMA</em></div>
+        <p>Intelligence géopolitique quantifiée. Recherche appliquée, prospective et conseil stratégique.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="/research/">Publications</a>
+        <a href="/research/#working-papers">Working Papers</a>
+        <a href="/research/#data">Données</a>
+      </div>
+      <div class="footer-col">
+        <h4>Policy</h4>
+        <a href="/policy/">Notes stratégiques</a>
+        <a href="/policy/#briefs">Policy Briefs</a>
+        <a href="/policy/#rapports">Rapports</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:eric@erickilama.com">eric@erickilama.com</a>
+        <a href="https://www.linkedin.com/in/eric-gabin-kilama-aa4b4941" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Eric Kilama — erickilama.com</span>
+      <span><a href="/trust/">Authenticité &amp; sécurité</a> — Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+
+window.addEventListener('scroll', () => {
+  const prog = document.getElementById('scrollProgress');
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  if (h > 0) prog.style.width = (window.scrollY / h * 100) + '%';
+});
+
+
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "id": "iran-hormuz",
+    "title": "Iran & Strait of Hormuz",
+    "subtitle": "Energy transit disruption \u00d7 sovereign spreads contagion",
+    "status": "active",
+    "last_update": "2026-03-28",
+    "data_mode": "hybrid"
+  },
+
+  "alert": {
+    "indicator_id": "gpr-index",
+    "label": "GPR Index",
+    "value": 116.7,
+    "threshold": 108.2,
+    "threshold_label": "1-year moving average",
+    "text": "Hormuz transit risk <strong>elevated</strong> \u2014 Iranian naval exercises + IRGC rhetoric. Oil price sensitivity: +$12-18/bbl if closure >72h",
+    "timestamp": "2026-03-28T10:41:00+01:00"
+  },
+
+  "sparklines": {
+    "header": "Key Indicators \u2014 Hormuz Focus",
+    "subtitle": "Energy transit disruption macro-financial dashboard",
+    "cards": [
+      { "ticker": "BRENT:OIL", "label": "Brent Crude", "value": 86.4, "change": 3.2, "pct": 3.8 },
+      { "ticker": "GPR:IND", "label": "Geopolitical Risk", "value": 116.7, "change": -9.4, "pct": -7.5, "indicator_id": "gpr-index", "country": "Global" },
+      { "ticker": "SPRD:ITA", "label": "BTP-Bund Spread", "value": 168, "change": 12, "pct": 7.7, "indicator_id": "sovereign-spreads", "country": "Italy" },
+      { "ticker": "CDS:TUR", "label": "Turkey CDS 5Y", "value": 312, "change": 28, "pct": 9.9, "indicator_id": "cds-spreads", "country": "Turkey" },
+      { "ticker": "HICP:EUR", "label": "Inflation YoY", "value": 2.3, "change": 0.1, "pct": 4.5 },
+      { "ticker": "TRADE:UNC", "label": "Trade Uncertainty", "value": 184, "change": 15, "pct": 8.9, "indicator_id": "trade-uncertainty", "country": "Global" }
+    ]
+  },
+
+  "scenarios": [
+    { "name": "De-escalation",    "color": "#228833", "prob": 20, "gdp": "+1.8%", "fan_base": 1.8, "fan_trend": 0.10 },
+    { "name": "Contained",        "color": "#4477AA", "prob": 35, "gdp": "+1.2%", "fan_base": 1.2, "fan_trend": 0.0 },
+    { "name": "Partial Closure",  "color": "#CCBB44", "prob": 25, "gdp": "+0.3%", "fan_base": 0.3, "fan_trend": -0.10 },
+    { "name": "Full Blockade",    "color": "#EE6677", "prob": 15, "gdp": "-0.8%", "fan_base": -0.8, "fan_trend": -0.20 },
+    { "name": "Regional War",     "color": "#AA3377", "prob": 5,  "gdp": "-2.5%", "fan_base": -2.5, "fan_trend": -0.35 }
+  ],
+
+  "featured_chart": {
+    "indicator_id": "gpr-index",
+    "title": "Geopolitical Risk Index",
+    "meta": "Caldara & Iacoviello \u00b7 Monthly",
+    "source": "matteoiacoviello.com/gpr.htm \u00b7 CC BY",
+    "latest_value": 116.7,
+    "latest_label": "Feb 2026",
+    "dates": ["2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01","2021-12-01","2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01"],
+    "values": [82.3,79.3,106.5,106.6,93.5,103.4,90.4,97.8,73.1,74.3,138.4,76.0,81.5,69.3,68.5,71.2,66.5,65.5,80.4,76.1,70.1,64.1,77.4,74.0,78.6,88.2,93.0,74.1,58.4,89.5,80.7,79.0,86.6,105.3,138.7,216.2,319.0,191.1,142.3,130.7,117.2,132.9,132.0,143.2,116.7,111.2,104.3,121.0,105.4,106.8,108.5,110.5,107.4,101.1,98.6,197.9,156.7,142.3,160.4,146.6,133.2,163.9,130.5,113.1,92.4,141.0,130.4,130.7,128.9,142.4,112.3,136.4,172.7,140.9,164.2,221.7,134.3,136.2,122.9,154.4,104.4,130.9,167.7,116.7]
+  },
+
+  "fan_chart": {
+    "title": "GDP Growth Projections \u2014 Hormuz Scenarios",
+    "meta": "5 scenarios \u00b7 p10\u2013p90 bands",
+    "source": "FPSQ Lab \u00b7 Hormuz-specific calibration",
+    "years": [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028],
+    "historical": [-7.5, 6.4, 2.5, 0.9, 0.8]
+  },
+
+  "spreads": {
+    "title": "Sovereign Spreads \u2014 Energy-Dependent Economies",
+    "meta": "10Y Government Bonds \u00b7 Basis points",
+    "countries": [
+      { "name": "Italy",    "base": 160, "color": "#E86850", "chg": 12, "m1": 18, "y1": -15 },
+      { "name": "Greece",   "base": 135, "color": "#9B6DC8", "chg": -8, "m1": -12, "y1": -45 },
+      { "name": "Spain",    "base": 100, "color": "#E8A848", "chg": 5,  "m1": 2,  "y1": -22 },
+      { "name": "France",   "base": 40,  "color": "#5BA8E6", "chg": -3, "m1": -8, "y1": 12 },
+      { "name": "Portugal", "base": 65,  "color": "#4AAA6A", "chg": 2,  "m1": -1, "y1": -18 }
+    ]
+  },
+
+  "comparison_table": {
+    "title": "Scenario Comparison \u2014 Hormuz Disruption",
+    "subtitle": "Key macro variables by scenario \u2014 2026-2027 projections",
+    "variables": ["GDP Growth (%)", "Inflation (HICP %)", "Oil Price ($/bbl)", "Spread vs Bund (bp)", "Debt/GDP (%)", "Trade Balance (\u0394bn\u20ac)", "Stress Index", "Probability (%)"],
+    "data": {
+      "De-escalation":  ["+1.8", "2.0", "78",  "35",  "110.2", "-2",  "22", "20"],
+      "Contained":      ["+1.2", "2.4", "88",  "55",  "111.8", "-8",  "38", "35"],
+      "Partial Closure": ["+0.3", "3.8", "115", "95",  "114.5", "-22", "58", "25"],
+      "Full Blockade":  ["-0.8", "5.5", "145", "180", "118.8", "-45", "78", "15"],
+      "Regional War":   ["-2.5", "7.2", "185", "350", "125.5", "-80", "95", "5"]
+    }
+  },
+
+  "analysis_notes": {
+    "section_label": "Analyses & Notes",
+    "title": "Notes d'analyse Vigie \u2014 D\u00e9troit d'Ormuz",
+    "notes": [
+      {
+        "tag": "Analyse Vigie",
+        "title": "Hormuz 2026 : canaux de transmission aux spreads europ\u00e9ens",
+        "summary": "Mod\u00e9lisation des effets de contagion d'un blocage du d\u00e9troit sur les march\u00e9s obligataires de la zone euro. Trois canaux : prix \u00e9nergie, risk-off, balance courante."
+      },
+      {
+        "tag": "Sc\u00e9nario",
+        "title": "Impact sur les PME de la BITD fran\u00e7aise",
+        "summary": "Le choc p\u00e9trolier frappe la cha\u00eene d'approvisionnement d\u00e9fense. Estimation des surco\u00fbts logistiques pour les PME strat\u00e9giques."
+      },
+      {
+        "tag": "Note m\u00e9thodologique",
+        "title": "Calibration du sc\u00e9nario Full Blockade",
+        "summary": "Param\u00e9trage bas\u00e9 sur les pr\u00e9c\u00e9dents (1984 guerre des tankers, 2019 attaques Fujairah). Ajustement pour la d\u00e9pendance gaz\u00e9ifi\u00e9."
+      }
+    ]
+  },
+
+  "outreach": [
+    {
+      "icon": "\ud83d\udcca",
+      "label": "Donn\u00e9es",
+      "title": "T\u00e9l\u00e9charger les donn\u00e9es FPSQ Hormuz (CSV/JSON)",
+      "desc": "Sc\u00e9narios Ormuz, sensibilit\u00e9s p\u00e9trole, spreads"
+    },
+    {
+      "icon": "\ud83d\udcc4",
+      "label": "Documentation",
+      "title": "M\u00e9thodologie Sc\u00e9narios Hormuz \u2014 Note technique",
+      "desc": "Hypoth\u00e8ses, calibration, limites"
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto D — Data Constellation (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ivory); font-family: 'Inter', sans-serif; }
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #C0392B; color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em;
+  }
+  .engine-tag span { color: #F8F7F4; font-weight: 700; }
+
+  .programmes { padding: 6rem 0 5rem; margin-top: 40px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue-fpsq); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 2.5rem; max-width: 600px; line-height: 1.25;
+  }
+
+  /* Canvas container */
+  #canvas-container {
+    width: 100%; height: 500px;
+    background: var(--navy);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(27, 42, 74, 0.20);
+    margin-bottom: 3rem;
+  }
+  #canvas-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Labels overlay */
+  .canvas-labels {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: flex; justify-content: space-around;
+    padding: 20px 40px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .canvas-label {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+  }
+  .canvas-label strong {
+    display: block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .canvas-label small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; opacity: 0.6;
+  }
+  .canvas-label .label-dot {
+    display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%;
+    margin-right: 4px; vertical-align: middle;
+  }
+
+  /* Controls */
+  .controls {
+    display: flex; gap: 1rem; margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .controls button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; padding: 8px 20px;
+    border: 1px solid var(--navy);
+    background: transparent; color: var(--navy);
+    cursor: pointer; letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+  .controls button:hover {
+    background: var(--navy); color: white;
+  }
+  .controls button.active {
+    background: var(--navy); color: white;
+  }
+
+  .question {
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--anthracite);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO D — <span>P5.JS CANVAS</span> — Data Constellation — Network Intelligence</div>
+
+<section class="programmes">
+<div class="container">
+  <div class="section-label">Programme de recherche</div>
+  <div class="section-title">Quatre échelles d'analyse, un système de transmission</div>
+
+  <div id="canvas-container">
+    <div class="canvas-labels">
+      <div class="canvas-label">
+        <span class="label-dot" style="background:#C0392B;"></span>
+        <strong>États</strong><small>disruption</small>
+      </div>
+      <div class="canvas-label">
+        <span class="label-dot" style="background:#2C5F8A;"></span>
+        <strong>Entreprises</strong><small>337k firmes</small>
+      </div>
+      <div class="canvas-label">
+        <span class="label-dot" style="background:#D4A017;"></span>
+        <strong>Système Int.</strong><small>alliances · G7</small>
+      </div>
+      <div class="canvas-label">
+        <span class="label-dot" style="background:rgba(200,210,220,0.8);"></span>
+        <strong>Prospectif</strong><small>scénarios</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="regenerate()">Régénérer</button>
+    <button onclick="toggleAnimate()">Animer / Pause</button>
+    <button onclick="addDensity()">Densité +</button>
+    <button onclick="removeDensity()">Densité −</button>
+  </div>
+
+  <div class="question">
+    Comment les chocs géopolitiques se transmettent-ils à l'économie, et peut-on les mesurer ?
+  </div>
+</div>
+</section>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// PROTO D — DATA CONSTELLATION
+// Orbital network graph inspired by Pentagram / Giorgia Lupi
+// Each cluster orbits a zone; connections glow by proximity
+// ═══════════════════════════════════════════════════════════
+
+const CLUSTER_COLORS = [
+  { r: 192, g: 57,  b: 43  },  // États — red
+  { r: 44,  g: 95,  b: 138 },  // Entreprises — blue
+  { r: 212, g: 160, b: 23  },  // Système Int. — gold
+  { r: 200, g: 210, b: 220 }   // Prospectif — silver
+];
+
+// Cluster anchor zones (normalized 0-1, mapped to canvas in setup)
+const CLUSTER_ANCHORS = [
+  { x: 0.25, y: 0.32 },  // upper-left
+  { x: 0.75, y: 0.32 },  // upper-right
+  { x: 0.25, y: 0.68 },  // lower-left
+  { x: 0.75, y: 0.68 }   // lower-right
+];
+
+let nodes = [];
+let animating = true;
+let cnv;
+let cW, cH;
+let shockwaves = [];
+let centralAnchor;
+let nodesPerCluster = 22; // ~88 total
+
+// ─── Node class ───
+class Node {
+  constructor(cluster, cx, cy) {
+    this.cluster = cluster;
+    this.color = CLUSTER_COLORS[cluster];
+
+    // Position near cluster center with spread
+    const spread = min(cW, cH) * 0.18;
+    this.x = cx + random(-spread, spread);
+    this.y = cy + random(-spread, spread);
+
+    // Orbital parameters
+    this.orbitRadius = random(20, spread);
+    this.orbitSpeed = random(0.0003, 0.0012) * (random() > 0.5 ? 1 : -1);
+    this.orbitAngle = random(TWO_PI);
+    this.orbitCenterX = cx;
+    this.orbitCenterY = cy;
+
+    // Drift toward central anchor
+    this.driftFactor = random(0.0001, 0.0004);
+
+    // Visual
+    this.baseRadius = random(3, 8);
+    this.radius = this.baseRadius;
+    this.pulsePhase = random(TWO_PI);
+    this.pulseSpeed = random(0.8, 2.0);
+
+    // Velocity for shockwave displacement
+    this.vx = 0;
+    this.vy = 0;
+  }
+
+  update(t) {
+    if (!animating) return;
+
+    // Orbital motion
+    this.orbitAngle += this.orbitSpeed;
+
+    // Target position: orbit around cluster center
+    let targetX = this.orbitCenterX + cos(this.orbitAngle) * this.orbitRadius;
+    let targetY = this.orbitCenterY + sin(this.orbitAngle) * this.orbitRadius;
+
+    // Gentle pull toward central anchor
+    targetX += (centralAnchor.x - targetX) * this.driftFactor * 8;
+    targetY += (centralAnchor.y - targetY) * this.driftFactor * 8;
+
+    // Mouse attraction (lens effect)
+    if (mouseIsPressed === false) {
+      const mxLocal = mouseX;
+      const myLocal = mouseY;
+      if (mxLocal > 0 && mxLocal < cW && myLocal > 0 && myLocal < cH) {
+        const dx = mxLocal - this.x;
+        const dy = myLocal - this.y;
+        const dist = sqrt(dx * dx + dy * dy);
+        if (dist < 200 && dist > 1) {
+          const force = map(dist, 0, 200, 0.015, 0);
+          targetX += dx * force;
+          targetY += dy * force;
+        }
+      }
+    }
+
+    // Apply shockwave velocity (decays)
+    this.vx *= 0.96;
+    this.vy *= 0.96;
+
+    // Smooth interpolation toward target
+    this.x += (targetX - this.x) * 0.02 + this.vx;
+    this.y += (targetY - this.y) * 0.02 + this.vy;
+
+    // Keep within bounds with soft bounce
+    const margin = 20;
+    if (this.x < margin) { this.x = margin; this.vx *= -0.5; }
+    if (this.x > cW - margin) { this.x = cW - margin; this.vx *= -0.5; }
+    if (this.y < margin) { this.y = margin; this.vy *= -0.5; }
+    if (this.y > cH - margin) { this.y = cH - margin; this.vy *= -0.5; }
+
+    // Pulse animation
+    const pulse = sin(t * this.pulseSpeed + this.pulsePhase) * 0.25;
+    this.radius = this.baseRadius * (1 + pulse);
+  }
+
+  draw() {
+    const c = this.color;
+    const alpha = map(this.baseRadius, 3, 8, 140, 220);
+
+    // Outer glow
+    noStroke();
+    fill(c.r, c.g, c.b, alpha * 0.15);
+    ellipse(this.x, this.y, this.radius * 4, this.radius * 4);
+
+    // Core
+    fill(c.r, c.g, c.b, alpha);
+    ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
+
+    // Bright center dot
+    fill(c.r + 40, c.g + 40, c.b + 40, min(255, alpha + 60));
+    ellipse(this.x, this.y, this.radius * 0.8, this.radius * 0.8);
+  }
+}
+
+// ─── Shockwave class ───
+class Shockwave {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.radius = 0;
+    this.maxRadius = 300;
+    this.speed = 6;
+    this.alpha = 180;
+  }
+
+  update() {
+    this.radius += this.speed;
+    this.alpha = map(this.radius, 0, this.maxRadius, 180, 0);
+    return this.radius < this.maxRadius;
+  }
+
+  draw() {
+    noFill();
+    stroke(255, 255, 255, this.alpha * 0.5);
+    strokeWeight(2);
+    ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
+
+    stroke(255, 255, 255, this.alpha * 0.2);
+    strokeWeight(1);
+    ellipse(this.x, this.y, this.radius * 2.3, this.radius * 2.3);
+    noStroke();
+  }
+}
+
+// ─── p5.js lifecycle ───
+
+function setup() {
+  const container = document.getElementById('canvas-container');
+  cW = container.offsetWidth;
+  cH = container.offsetHeight;
+  cnv = createCanvas(cW, cH);
+  cnv.parent('canvas-container');
+
+  centralAnchor = { x: cW * 0.5, y: cH * 0.5 };
+
+  generateConstellation();
+}
+
+function windowResized() {
+  const container = document.getElementById('canvas-container');
+  cW = container.offsetWidth;
+  cH = container.offsetHeight;
+  resizeCanvas(cW, cH);
+  centralAnchor = { x: cW * 0.5, y: cH * 0.5 };
+  generateConstellation();
+}
+
+function generateConstellation() {
+  nodes = [];
+  for (let c = 0; c < 4; c++) {
+    const cx = CLUSTER_ANCHORS[c].x * cW;
+    const cy = CLUSTER_ANCHORS[c].y * cH;
+    for (let i = 0; i < nodesPerCluster; i++) {
+      nodes.push(new Node(c, cx, cy));
+    }
+  }
+}
+
+function draw() {
+  // Navy background with slight transparency for trailing effect
+  background(27, 42, 74);
+
+  const t = millis() * 0.001;
+
+  // Update nodes
+  for (let node of nodes) {
+    node.update(t);
+  }
+
+  // Draw connections first (behind nodes)
+  drawConnections();
+
+  // Draw subtle cluster zone indicators
+  drawZoneIndicators(t);
+
+  // Draw nodes
+  for (let node of nodes) {
+    node.draw();
+  }
+
+  // Draw and update shockwaves
+  for (let i = shockwaves.length - 1; i >= 0; i--) {
+    shockwaves[i].draw();
+    if (!shockwaves[i].update()) {
+      shockwaves.splice(i, 1);
+    }
+  }
+
+  // Central anchor glow — breathing
+  const centralPulse = sin(t * 0.4) * 0.3 + 0.7;
+  noStroke();
+  fill(255, 255, 255, 6 * centralPulse);
+  ellipse(centralAnchor.x, centralAnchor.y, 120, 120);
+  fill(255, 255, 255, 3 * centralPulse);
+  ellipse(centralAnchor.x, centralAnchor.y, 200, 200);
+}
+
+function drawConnections() {
+  const connectionDist = 120;
+  const connectionDistSq = connectionDist * connectionDist;
+
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const distSq = dx * dx + dy * dy;
+
+      if (distSq < connectionDistSq) {
+        const dist = sqrt(distSq);
+        // Opacity: closer = brighter, with cluster color blending
+        const alpha = map(dist, 0, connectionDist, 70, 0);
+
+        // Color: blend the two node colors
+        const c1 = nodes[i].color;
+        const c2 = nodes[j].color;
+        const mr = (c1.r + c2.r) * 0.5;
+        const mg = (c1.g + c2.g) * 0.5;
+        const mb = (c1.b + c2.b) * 0.5;
+
+        stroke(mr, mg, mb, alpha);
+        strokeWeight(map(dist, 0, connectionDist, 1.2, 0.3));
+        line(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+      }
+    }
+  }
+  noStroke();
+}
+
+function drawZoneIndicators(t) {
+  // Very subtle pulsing circles at cluster anchors
+  for (let c = 0; c < 4; c++) {
+    const cx = CLUSTER_ANCHORS[c].x * cW;
+    const cy = CLUSTER_ANCHORS[c].y * cH;
+    const col = CLUSTER_COLORS[c];
+    const pulse = sin(t * 0.3 + c * HALF_PI) * 0.3 + 0.7;
+
+    noFill();
+    stroke(col.r, col.g, col.b, 12 * pulse);
+    strokeWeight(1);
+    ellipse(cx, cy, 160, 160);
+
+    stroke(col.r, col.g, col.b, 6 * pulse);
+    ellipse(cx, cy, 240, 240);
+    noStroke();
+  }
+}
+
+function mousePressed() {
+  // Only trigger if click is within canvas
+  if (mouseX > 0 && mouseX < cW && mouseY > 0 && mouseY < cH) {
+    // Create shockwave
+    shockwaves.push(new Shockwave(mouseX, mouseY));
+
+    // Push nodes away from click point
+    for (let node of nodes) {
+      const dx = node.x - mouseX;
+      const dy = node.y - mouseY;
+      const dist = sqrt(dx * dx + dy * dy);
+      if (dist < 250 && dist > 1) {
+        const force = map(dist, 0, 250, 12, 0);
+        node.vx += (dx / dist) * force;
+        node.vy += (dy / dist) * force;
+      }
+    }
+  }
+}
+
+// ─── Control functions ───
+
+function regenerate() {
+  generateConstellation();
+  shockwaves = [];
+}
+
+function toggleAnimate() {
+  animating = !animating;
+}
+
+function addDensity() {
+  // Add 5 nodes per cluster (20 total)
+  for (let c = 0; c < 4; c++) {
+    const cx = CLUSTER_ANCHORS[c].x * cW;
+    const cy = CLUSTER_ANCHORS[c].y * cH;
+    for (let i = 0; i < 5; i++) {
+      nodes.push(new Node(c, cx, cy));
+    }
+  }
+  nodesPerCluster += 5;
+}
+
+function removeDensity() {
+  if (nodesPerCluster <= 5) return;
+  // Remove 5 nodes per cluster (20 total) — from the end of each cluster group
+  let toRemove = [];
+  let counts = [0, 0, 0, 0];
+
+  // Walk backwards and mark 5 per cluster for removal
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const c = nodes[i].cluster;
+    if (counts[c] < 5) {
+      toRemove.push(i);
+      counts[c]++;
+    }
+    if (counts.every(ct => ct >= 5)) break;
+  }
+
+  // Remove marked nodes (sorted descending to preserve indices)
+  toRemove.sort((a, b) => b - a);
+  for (let idx of toRemove) {
+    nodes.splice(idx, 1);
+  }
+  nodesPerCluster = max(5, nodesPerCluster - 5);
+}
+</script>
+</body>
+</html>

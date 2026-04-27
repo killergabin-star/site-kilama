@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto B — Graphcore Quadtree (p5.js Canvas)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue-fpsq: #2C5F8A;
+    --red-analytical: #C0392B;
+    --gold-caps: #D4A017;
+    --ivory: #F8F7F4;
+    --anthracite: #2D2D2D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--ivory); font-family: 'Inter', sans-serif; }
+  .engine-tag {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #C0392B; color: white; text-align: center;
+    padding: 8px; font-size: 12px; font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.15em;
+  }
+  .engine-tag span { color: #F8F7F4; font-weight: 700; }
+
+  .programmes { padding: 6rem 0 5rem; margin-top: 40px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue-fpsq); margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 2.5rem; max-width: 600px; line-height: 1.25;
+  }
+
+  /* Canvas container — full width, dark background */
+  #canvas-container {
+    width: 100%; height: 500px;
+    background: var(--navy);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(27, 42, 74, 0.20);
+    margin-bottom: 3rem;
+  }
+  #canvas-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Labels overlay */
+  .canvas-labels {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: flex; justify-content: space-around;
+    padding: 20px 40px;
+    pointer-events: none;
+  }
+  .canvas-label {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+  }
+  .canvas-label strong {
+    display: block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .canvas-label small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; opacity: 0.6;
+  }
+
+  /* Controls */
+  .controls {
+    display: flex; gap: 1rem; margin-bottom: 2rem;
+    justify-content: center;
+  }
+  .controls button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; padding: 8px 20px;
+    border: 1px solid var(--navy);
+    background: transparent; color: var(--navy);
+    cursor: pointer; letter-spacing: 0.1em;
+    transition: all 0.2s;
+  }
+  .controls button:hover {
+    background: var(--navy); color: white;
+  }
+  .controls button.active {
+    background: var(--navy); color: white;
+  }
+
+  .question {
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--anthracite);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+<div class="engine-tag">PROTO B — <span>P5.JS CANVAS</span> — Graphcore Quadtree — Weighted Pattern Generation</div>
+
+<section class="programmes">
+<div class="container">
+  <div class="section-label">Programme de recherche</div>
+  <div class="section-title">Quatre échelles d'analyse, un système de transmission</div>
+
+  <div id="canvas-container">
+    <div class="canvas-labels">
+      <div class="canvas-label"><strong>États</strong><small>disruption</small></div>
+      <div class="canvas-label"><strong>Entreprises</strong><small>337k firmes</small></div>
+      <div class="canvas-label"><strong>Système Int.</strong><small>alliances · G7</small></div>
+      <div class="canvas-label"><strong>Prospectif</strong><small>scénarios</small></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="active" onclick="regenerate()">Régénérer</button>
+    <button onclick="toggleAnimate()">Animer / Pause</button>
+    <button onclick="changeMode()">Mode suivant</button>
+  </div>
+
+  <div class="question">
+    Comment les chocs géopolitiques se transmettent-ils à l'économie, et peut-on les mesurer ?
+  </div>
+</div>
+</section>
+
+<script>
+// ═══ GRAPHCORE-INSPIRED QUADTREE GENERATIVE PATTERN ═══
+// Weighted subdivision + geometric shape placement
+// Each zone gets its own color from the Kilama palette
+
+const COLORS = {
+  red: { r: 192, g: 57, b: 43 },    // États
+  blue: { r: 44, g: 95, b: 138 },    // Entreprises
+  gold: { r: 212, g: 160, b: 23 },   // Système Int.
+  white: { r: 200, g: 210, b: 220 }  // Prospectif
+};
+
+let cells = [];
+let animating = true;
+let mode = 0; // 0=quadtree, 1=hexgrid, 2=voronoi-ish
+let cnv;
+let containerW, containerH;
+
+function setup() {
+  const container = document.getElementById('canvas-container');
+  containerW = container.offsetWidth;
+  containerH = container.offsetHeight;
+  cnv = createCanvas(containerW, containerH);
+  cnv.parent('canvas-container');
+  noStroke();
+  generatePattern();
+}
+
+function windowResized() {
+  const container = document.getElementById('canvas-container');
+  containerW = container.offsetWidth;
+  containerH = container.offsetHeight;
+  resizeCanvas(containerW, containerH);
+  generatePattern();
+}
+
+function getZoneColor(x) {
+  const ratio = x / containerW;
+  if (ratio < 0.25) return COLORS.red;
+  if (ratio < 0.50) return COLORS.blue;
+  if (ratio < 0.75) return COLORS.gold;
+  return COLORS.white;
+}
+
+function generatePattern() {
+  cells = [];
+  randomSeed(millis());
+
+  if (mode === 0) {
+    // QUADTREE SUBDIVISION — Graphcore-style
+    subdivide(0, 0, containerW, containerH, 0);
+  } else if (mode === 1) {
+    // ISOMETRIC GRID
+    generateIsoGrid();
+  } else {
+    // SCATTERED GEOMETRIC
+    generateScattered();
+  }
+}
+
+function subdivide(x, y, w, h, depth) {
+  const minSize = 20;
+  const maxDepth = 7;
+
+  // Probability of further subdivision decreases with depth
+  // But increases near zone boundaries (more detail at transitions)
+  const zoneBoundary = isNearBoundary(x + w/2);
+  const splitProb = zoneBoundary ? 0.85 : max(0.3, 0.9 - depth * 0.12);
+
+  if (depth >= maxDepth || w < minSize || h < minSize || random() > splitProb) {
+    // Place a shape in this cell
+    cells.push({
+      x: x, y: y, w: w, h: h,
+      color: getZoneColor(x + w/2),
+      shape: floor(random(4)), // 0=rect, 1=diamond, 2=triangle, 3=circle
+      opacity: map(depth, 0, maxDepth, 0.6, 0.15),
+      rotation: random(-0.1, 0.1),
+      phase: random(TWO_PI),
+      depth: depth
+    });
+    return;
+  }
+
+  // Subdivide into 4 quadrants with slight randomness
+  const splitX = x + w * random(0.35, 0.65);
+  const splitY = y + h * random(0.35, 0.65);
+
+  subdivide(x, y, splitX - x, splitY - y, depth + 1);
+  subdivide(splitX, y, x + w - splitX, splitY - y, depth + 1);
+  subdivide(x, splitY, splitX - x, y + h - splitY, depth + 1);
+  subdivide(splitX, splitY, x + w - splitX, y + h - splitY, depth + 1);
+}
+
+function generateIsoGrid() {
+  const size = 40;
+  for (let row = 0; row < containerH / (size * 0.75); row++) {
+    for (let col = 0; col < containerW / size + 1; col++) {
+      const offsetX = (row % 2) * size * 0.5;
+      const x = col * size + offsetX;
+      const y = row * size * 0.75;
+      const c = getZoneColor(x);
+      if (random() > 0.3) {
+        cells.push({
+          x: x, y: y, w: size * 0.9, h: size * 0.9,
+          color: c,
+          shape: floor(random(4)),
+          opacity: random(0.1, 0.5),
+          rotation: 0,
+          phase: random(TWO_PI),
+          depth: 3
+        });
+      }
+    }
+  }
+}
+
+function generateScattered() {
+  for (let i = 0; i < 200; i++) {
+    const x = random(containerW);
+    const y = random(containerH);
+    const size = random(15, 80);
+    // Weighted: more shapes near existing shapes
+    const c = getZoneColor(x);
+    cells.push({
+      x: x - size/2, y: y - size/2, w: size, h: size,
+      color: c,
+      shape: floor(random(4)),
+      opacity: random(0.05, 0.4),
+      rotation: random(-0.3, 0.3),
+      phase: random(TWO_PI),
+      depth: 2
+    });
+  }
+}
+
+function isNearBoundary(x) {
+  const boundaries = [containerW * 0.25, containerW * 0.5, containerW * 0.75];
+  return boundaries.some(b => abs(x - b) < containerW * 0.05);
+}
+
+function draw() {
+  background(27, 42, 74); // --navy
+
+  // Subtle grid lines
+  stroke(255, 255, 255, 8);
+  strokeWeight(0.5);
+  for (let x = containerW * 0.25; x < containerW; x += containerW * 0.25) {
+    line(x, 0, x, containerH);
+  }
+  noStroke();
+
+  const t = millis() * 0.001;
+
+  for (let cell of cells) {
+    const c = cell.color;
+    const breathe = animating ? sin(t * 0.5 + cell.phase) * 0.1 : 0;
+    const a = (cell.opacity + breathe) * 255;
+
+    push();
+    translate(cell.x + cell.w/2, cell.y + cell.h/2);
+    rotate(cell.rotation + (animating ? sin(t * 0.3 + cell.phase) * 0.02 : 0));
+
+    fill(c.r, c.g, c.b, a);
+
+    const margin = 1.5;
+    const sw = cell.w - margin * 2;
+    const sh = cell.h - margin * 2;
+
+    switch(cell.shape) {
+      case 0: // Rectangle
+        rectMode(CENTER);
+        rect(0, 0, sw, sh);
+        break;
+      case 1: // Diamond (isometric)
+        beginShape();
+        vertex(0, -sh/2);
+        vertex(sw/2, 0);
+        vertex(0, sh/2);
+        vertex(-sw/2, 0);
+        endShape(CLOSE);
+        break;
+      case 2: // Triangle
+        beginShape();
+        vertex(0, -sh/2);
+        vertex(sw/2, sh/2);
+        vertex(-sw/2, sh/2);
+        endShape(CLOSE);
+        break;
+      case 3: // Circle/hex
+        ellipse(0, 0, sw * 0.85, sh * 0.85);
+        break;
+    }
+    pop();
+  }
+
+  // Zone boundary emphasis — bright accent lines
+  stroke(255, 255, 255, 25);
+  strokeWeight(2);
+  line(containerW * 0.25, 0, containerW * 0.25, containerH);
+  line(containerW * 0.50, 0, containerW * 0.50, containerH);
+  line(containerW * 0.75, 0, containerW * 0.75, containerH);
+  noStroke();
+}
+
+function regenerate() {
+  generatePattern();
+}
+
+function toggleAnimate() {
+  animating = !animating;
+}
+
+function changeMode() {
+  mode = (mode + 1) % 3;
+  generatePattern();
+}
+</script>
+</body>
+</html>

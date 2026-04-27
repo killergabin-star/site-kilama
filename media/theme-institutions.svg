@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c1654"/>
+      <stop offset="100%" style="stop-color:#4a1a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Abstract scales/balance pattern -->
+  <!-- Vertical pillar -->
+  <rect x="395" y="100" width="10" height="250" fill="#d8b4fe" opacity="0.15" rx="2"/>
+  <!-- Balance beam -->
+  <rect x="250" y="140" width="300" height="4" fill="#d8b4fe" opacity="0.2" rx="2" transform="rotate(-3 400 142)"/>
+  <!-- Left pan -->
+  <path d="M 270 150 Q 260 220 300 220 Q 340 220 330 150" fill="none" stroke="#d8b4fe" stroke-width="1.5" opacity="0.2"/>
+  <!-- Right pan -->
+  <path d="M 470 145 Q 460 200 500 200 Q 540 200 530 145" fill="none" stroke="#d8b4fe" stroke-width="1.5" opacity="0.2"/>
+  <!-- Columns pattern (institutions) -->
+  <rect x="120" y="280" width="12" height="120" fill="#d8b4fe" opacity="0.08" rx="2"/>
+  <rect x="155" y="260" width="12" height="140" fill="#d8b4fe" opacity="0.06" rx="2"/>
+  <rect x="190" y="290" width="12" height="110" fill="#d8b4fe" opacity="0.05" rx="2"/>
+  <rect x="600" y="270" width="12" height="130" fill="#d8b4fe" opacity="0.08" rx="2"/>
+  <rect x="635" y="250" width="12" height="150" fill="#d8b4fe" opacity="0.06" rx="2"/>
+  <rect x="670" y="285" width="12" height="115" fill="#d8b4fe" opacity="0.05" rx="2"/>
+  <!-- Decorative dots -->
+  <circle cx="200" cy="150" r="2" fill="#d8b4fe" opacity="0.3"/>
+  <circle cx="600" cy="160" r="2" fill="#d8b4fe" opacity="0.25"/>
+  <circle cx="150" cy="200" r="1.5" fill="#d8b4fe" opacity="0.2"/>
+  <circle cx="650" cy="190" r="1.5" fill="#d8b4fe" opacity="0.2"/>
+  <!-- Triangle pediment -->
+  <path d="M 340 100 L 400 60 L 460 100" fill="none" stroke="#d8b4fe" stroke-width="1" opacity="0.15"/>
+</svg>

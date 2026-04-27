@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proto N — Transmission Field (Data-Driven Particle Dynamics)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a1628; font-family: 'Inter', sans-serif; color: white; overflow-x: hidden; }
+
+  .canvas-full {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+  }
+  .canvas-full canvas {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  .overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none; z-index: 10;
+  }
+  .overlay-top {
+    position: absolute; top: 30px; left: 40px;
+  }
+  .overlay-top .label {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #D4A017; margin-bottom: 0.5rem;
+  }
+  .overlay-top h1 {
+    font-size: 1.6rem; font-weight: 700; color: rgba(255,255,255,0.85);
+    line-height: 1.2; margin-bottom: 0.4rem; max-width: 450px;
+  }
+  .overlay-top .sub {
+    font-family: 'Source Serif 4', serif; font-size: 0.9rem;
+    color: rgba(255,255,255,0.35); max-width: 400px;
+  }
+
+  .shock-panel {
+    position: absolute; bottom: 30px; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 12px;
+    pointer-events: all; flex-wrap: wrap; padding: 0 20px;
+  }
+  .shock-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(10,22,40,0.7); color: rgba(255,255,255,0.45);
+    cursor: pointer; letter-spacing: 0.08em; transition: all 0.3s;
+    backdrop-filter: blur(8px);
+  }
+  .shock-btn:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    background: rgba(10,22,40,0.9);
+  }
+  .shock-btn.red { border-color: rgba(192,57,43,0.3); }
+  .shock-btn.red:hover { border-color: #C0392B; color: #C0392B; }
+  .shock-btn.poly { border-color: rgba(212,160,23,0.3); }
+  .shock-btn.poly:hover { border-color: #D4A017; color: #D4A017; }
+
+  .status-bar {
+    position: absolute; top: 30px; right: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: rgba(255,255,255,0.3);
+    text-align: right; letter-spacing: 0.05em;
+  }
+  .status-bar .val { color: rgba(255,255,255,0.6); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="canvas-full" id="field-container">
+  <div class="overlay">
+    <div class="overlay-top">
+      <div class="label">Transmission dynamics</div>
+      <h1>Comment les chocs se transmettent</h1>
+      <div class="sub">Chaque particule suit les courants de transmission. Déclenchez un choc et observez sa propagation à travers le système.</div>
+    </div>
+    <div class="status-bar" id="status">
+      <div>PARTICULES <span class="val" id="st-particles">0</span></div>
+      <div>FLUX ACTIFS <span class="val" id="st-flows">0</span></div>
+      <div>DISRUPTION <span class="val" id="st-disruption">0%</span></div>
+    </div>
+    <div class="shock-panel">
+      <button class="shock-btn red" onclick="fireShock('gpr')">GPR Spike</button>
+      <button class="shock-btn red" onclick="fireShock('trade')">Trade War</button>
+      <button class="shock-btn red" onclick="fireShock('sanctions')">Sanctions</button>
+      <button class="shock-btn red" onclick="fireShock('financial')">Financial Contagion</button>
+      <button class="shock-btn poly" onclick="firePolycrisis()">Polycrisis</button>
+      <button class="shock-btn" onclick="resetField()">Calm</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// PROTO N — TRANSMISSION FIELD
+// ═══════════════════════════════════════════════════════════
+// No nodes. No edges. Just particles and physics.
+// Shocks create flow currents. The network EMERGES from dynamics.
+// Particles are pulled along transmission paths like fluid.
+
+let W, H;
+let particles = [];
+const NUM_PARTICLES = 700;
+
+// ─── ZONES (gravitational wells) ───────────────────────────
+// Each zone is a region of the field with its own attractor
+let zones = [];
+
+function defineZones() {
+  zones = [
+    // Shocks (left edge)
+    { id: 'gpr',        x: W*0.08,  y: H*0.22, r: 45, cr: 192, cg: 57,  cb: 43,  label: 'GPR',           type: 'shock',  strength: 0.6 },
+    { id: 'trade_war',  x: W*0.08,  y: H*0.44, r: 40, cr: 192, cg: 57,  cb: 43,  label: 'Trade War',     type: 'shock',  strength: 0.6 },
+    { id: 'sanctions',  x: W*0.08,  y: H*0.64, r: 38, cr: 192, cg: 57,  cb: 43,  label: 'Sanctions',     type: 'shock',  strength: 0.6 },
+    { id: 'financial',  x: W*0.08,  y: H*0.82, r: 42, cr: 192, cg: 57,  cb: 43,  label: 'Contagion',     type: 'shock',  strength: 0.6 },
+
+    // Channels (center-left)
+    { id: 'commerce',   x: W*0.30,  y: H*0.18, r: 50, cr: 44,  cg: 95,  cb: 138, label: 'Commerce',      type: 'channel', strength: 0.8 },
+    { id: 'fdi',        x: W*0.30,  y: H*0.40, r: 45, cr: 44,  cg: 95,  cb: 138, label: 'IDE',            type: 'channel', strength: 0.8 },
+    { id: 'confidence', x: W*0.30,  y: H*0.60, r: 48, cr: 44,  cg: 95,  cb: 138, label: 'Confiance',      type: 'channel', strength: 0.8 },
+    { id: 'supply',     x: W*0.28,  y: H*0.80, r: 44, cr: 44,  cg: 95,  cb: 138, label: 'Supply Chain',   type: 'channel', strength: 0.8 },
+
+    // Indicators (center-right)
+    { id: 'exports',    x: W*0.55,  y: H*0.20, r: 46, cr: 212, cg: 160, cb: 23,  label: 'Exports',       type: 'indicator', strength: 0.7 },
+    { id: 'invest',     x: W*0.55,  y: H*0.42, r: 44, cr: 212, cg: 160, cb: 23,  label: 'Investissement', type: 'indicator', strength: 0.7 },
+    { id: 'emploi',     x: W*0.55,  y: H*0.62, r: 42, cr: 212, cg: 160, cb: 23,  label: 'Emploi PME',     type: 'indicator', strength: 0.7 },
+    { id: 'prix',       x: W*0.53,  y: H*0.82, r: 40, cr: 212, cg: 160, cb: 23,  label: 'Prix',           type: 'indicator', strength: 0.7 },
+
+    // Outcomes (right)
+    { id: 'pib',        x: W*0.78,  y: H*0.25, r: 52, cr: 200, cg: 210, cb: 225, label: 'PIB',           type: 'outcome', strength: 0.9 },
+    { id: 'stabilite',  x: W*0.78,  y: H*0.50, r: 48, cr: 200, cg: 210, cb: 225, label: 'Stabilité',     type: 'outcome', strength: 0.9 },
+    { id: 'resilience', x: W*0.78,  y: H*0.75, r: 46, cr: 200, cg: 210, cb: 225, label: 'Résilience',    type: 'outcome', strength: 0.9 },
+
+    // Scenarios (far right)
+    { id: 'scen_coop',  x: W*0.93,  y: H*0.28, r: 35, cr: 46,  cg: 125, cb: 50,  label: '0.25',         type: 'scenario', strength: 0.5 },
+    { id: 'scen_base',  x: W*0.93,  y: H*0.50, r: 38, cr: 212, cg: 160, cb: 23,  label: '0.45',         type: 'scenario', strength: 0.5 },
+    { id: 'scen_adv',   x: W*0.93,  y: H*0.72, r: 36, cr: 192, cg: 57,  cb: 43,  label: '0.30',         type: 'scenario', strength: 0.5 },
+  ];
+
+  // Activation state
+  for (let z of zones) {
+    z.activation = 0;
+    z.pulse = 0;
+  }
+}
+
+// ─── TRANSMISSION PATHS (flow currents) ────────────────────
+// When active, particles near path are pulled along it
+const PATHS = [
+  // Shock → Channels
+  { from: 'gpr',       to: 'commerce',   coeff: 0.82, shock: 'gpr' },
+  { from: 'gpr',       to: 'fdi',        coeff: 0.65, shock: 'gpr' },
+  { from: 'gpr',       to: 'confidence', coeff: 0.91, shock: 'gpr' },
+  { from: 'gpr',       to: 'supply',     coeff: 0.58, shock: 'gpr' },
+  { from: 'trade_war', to: 'commerce',   coeff: 0.95, shock: 'trade' },
+  { from: 'trade_war', to: 'supply',     coeff: 0.78, shock: 'trade' },
+  { from: 'sanctions',  to: 'commerce',  coeff: 0.70, shock: 'sanctions' },
+  { from: 'sanctions',  to: 'fdi',       coeff: 0.85, shock: 'sanctions' },
+  { from: 'financial', to: 'fdi',        coeff: 0.88, shock: 'financial' },
+  { from: 'financial', to: 'confidence', coeff: 0.93, shock: 'financial' },
+
+  // Channels → Indicators
+  { from: 'commerce',   to: 'exports',   coeff: 0.90, shock: '*' },
+  { from: 'commerce',   to: 'prix',      coeff: 0.55, shock: '*' },
+  { from: 'fdi',        to: 'invest',    coeff: 0.85, shock: '*' },
+  { from: 'fdi',        to: 'emploi',    coeff: 0.50, shock: '*' },
+  { from: 'confidence', to: 'invest',    coeff: 0.72, shock: '*' },
+  { from: 'confidence', to: 'emploi',    coeff: 0.68, shock: '*' },
+  { from: 'supply',     to: 'exports',   coeff: 0.60, shock: '*' },
+  { from: 'supply',     to: 'prix',      coeff: 0.75, shock: '*' },
+
+  // Indicators → Outcomes
+  { from: 'exports',  to: 'pib',        coeff: 0.80, shock: '*' },
+  { from: 'invest',   to: 'pib',        coeff: 0.85, shock: '*' },
+  { from: 'emploi',   to: 'pib',        coeff: 0.65, shock: '*' },
+  { from: 'emploi',   to: 'stabilite',  coeff: 0.60, shock: '*' },
+  { from: 'prix',     to: 'stabilite',  coeff: 0.55, shock: '*' },
+  { from: 'exports',  to: 'resilience', coeff: 0.45, shock: '*' },
+  { from: 'invest',   to: 'resilience', coeff: 0.50, shock: '*' },
+
+  // Outcomes → Scenarios
+  { from: 'pib',       to: 'scen_coop', coeff: 0.40, shock: '*' },
+  { from: 'pib',       to: 'scen_base', coeff: 0.60, shock: '*' },
+  { from: 'pib',       to: 'scen_adv',  coeff: 0.35, shock: '*' },
+  { from: 'stabilite', to: 'scen_adv',  coeff: 0.75, shock: '*' },
+  { from: 'stabilite', to: 'scen_base', coeff: 0.50, shock: '*' },
+  { from: 'resilience',to: 'scen_coop', coeff: 0.70, shock: '*' },
+];
+
+// Runtime: active currents (subset of PATHS currently flowing)
+let activePaths = [];
+
+// ─── Particle class ────────────────────────────────────────
+class Particle {
+  constructor() {
+    this.x = random(W);
+    this.y = random(H);
+    this.vx = 0;
+    this.vy = 0;
+    this.homeZone = null;
+    this.cr = 100; this.cg = 110; this.cb = 130;
+    this.size = 1.5 + random(1.5);
+    this.trail = [];
+    this.maxTrail = 12;
+    this.inCurrent = false;
+    this.currentIntensity = 0;
+
+    // Assign to nearest zone
+    this.findHome();
+  }
+
+  findHome() {
+    let minD = Infinity;
+    for (let z of zones) {
+      let d = dist(this.x, this.y, z.x, z.y);
+      if (d < minD) {
+        minD = d;
+        this.homeZone = z;
+      }
+    }
+    this.updateColor();
+  }
+
+  updateColor() {
+    if (!this.homeZone) return;
+    let z = this.homeZone;
+    this.cr = z.cr;
+    this.cg = z.cg;
+    this.cb = z.cb;
+  }
+
+  update() {
+    // Store trail
+    this.trail.push({ x: this.x, y: this.y });
+    if (this.trail.length > this.maxTrail) this.trail.shift();
+
+    this.inCurrent = false;
+    this.currentIntensity = 0;
+
+    // 1. Active current forces (transmission paths)
+    for (let ap of activePaths) {
+      this.applyCurrentForce(ap);
+    }
+
+    // 2. Zone gravity (gentle pull toward home)
+    if (this.homeZone && !this.inCurrent) {
+      let z = this.homeZone;
+      let dx = z.x - this.x;
+      let dy = z.y - this.y;
+      let d = Math.sqrt(dx * dx + dy * dy);
+      if (d > z.r * 0.3) {
+        let force = 0.02 * z.strength;
+        this.vx += (dx / d) * force;
+        this.vy += (dy / d) * force;
+      }
+      // Orbital component (slight tangential force)
+      this.vx += (-dy / d) * 0.005;
+      this.vy += (dx / d) * 0.005;
+    }
+
+    // 3. Noise-based micro drift
+    let n = noise(this.x * 0.003, this.y * 0.003, frameCount * 0.003);
+    this.vx += cos(n * TWO_PI * 2) * 0.03;
+    this.vy += sin(n * TWO_PI * 2) * 0.03;
+
+    // 4. Mouse repulsion
+    let mx = mouseX, my = mouseY;
+    if (mx > 0 && mx < W && my > 0 && my < H) {
+      let mdx = this.x - mx;
+      let mdy = this.y - my;
+      let md = Math.sqrt(mdx * mdx + mdy * mdy);
+      if (md < 120 && md > 1) {
+        let repel = (1 - md / 120) * 0.8;
+        this.vx += (mdx / md) * repel;
+        this.vy += (mdy / md) * repel;
+      }
+    }
+
+    // Damping
+    this.vx *= 0.94;
+    this.vy *= 0.94;
+
+    // Integrate
+    this.x += this.vx;
+    this.y += this.vy;
+
+    // Bounds (soft wrap)
+    if (this.x < -20) this.x = W + 10;
+    if (this.x > W + 20) this.x = -10;
+    if (this.y < -20) this.y = H + 10;
+    if (this.y > H + 20) this.y = -10;
+
+    // Update home zone periodically
+    if (frameCount % 60 === 0) {
+      this.findHome();
+    }
+  }
+
+  applyCurrentForce(ap) {
+    let fromZ = ap.fromZone;
+    let toZ = ap.toZone;
+
+    // Current is a "river" between two zones
+    // Particles near the path get pulled along it
+    let fx = fromZ.x, fy = fromZ.y;
+    let tx = toZ.x, ty = toZ.y;
+
+    // Path midpoint with slight curve
+    let mx = (fx + tx) / 2 + (ty - fy) * 0.06;
+    let my = (fy + ty) / 2 - (tx - fx) * 0.06;
+
+    // Distance from particle to path (simplified: distance to midpoint)
+    let pathLen = dist(fx, fy, tx, ty);
+    let catchRadius = 30 + pathLen * 0.12 * ap.coeff;
+
+    // Project particle onto path segments
+    let nearDist = this.distToQuadBezier(fx, fy, mx, my, tx, ty);
+
+    if (nearDist < catchRadius) {
+      this.inCurrent = true;
+      let proximity = 1 - (nearDist / catchRadius);
+      proximity = proximity * proximity;
+      let intensity = proximity * ap.intensity * ap.coeff;
+      this.currentIntensity = Math.max(this.currentIntensity, intensity);
+
+      // Direction: pull toward next point on path
+      // Determine where on the path we are (project)
+      let t = this.projectOnPath(fx, fy, tx, ty);
+
+      // Target point slightly ahead on the path
+      let ahead = Math.min(1, t + 0.1);
+      let targetX = (1-ahead)*(1-ahead)*fx + 2*(1-ahead)*ahead*mx + ahead*ahead*tx;
+      let targetY = (1-ahead)*(1-ahead)*fy + 2*(1-ahead)*ahead*my + ahead*ahead*ty;
+
+      let dx = targetX - this.x;
+      let dy = targetY - this.y;
+      let d = Math.sqrt(dx * dx + dy * dy);
+      if (d > 1) {
+        let force = intensity * 0.6;
+        this.vx += (dx / d) * force;
+        this.vy += (dy / d) * force;
+      }
+
+      // Blend color toward target zone
+      this.cr = lerp(this.cr, toZ.cr, intensity * 0.03);
+      this.cg = lerp(this.cg, toZ.cg, intensity * 0.03);
+      this.cb = lerp(this.cb, toZ.cb, intensity * 0.03);
+    }
+  }
+
+  distToQuadBezier(x0, y0, cx, cy, x1, y1) {
+    // Approximate: sample 5 points on bezier, find min distance
+    let minD = Infinity;
+    for (let i = 0; i <= 4; i++) {
+      let t = i / 4;
+      let bx = (1-t)*(1-t)*x0 + 2*(1-t)*t*cx + t*t*x1;
+      let by = (1-t)*(1-t)*y0 + 2*(1-t)*t*cy + t*t*y1;
+      let d = dist(this.x, this.y, bx, by);
+      if (d < minD) minD = d;
+    }
+    return minD;
+  }
+
+  projectOnPath(fx, fy, tx, ty) {
+    let dx = tx - fx, dy = ty - fy;
+    let len2 = dx*dx + dy*dy;
+    if (len2 < 1) return 0;
+    let t = ((this.x - fx)*dx + (this.y - fy)*dy) / len2;
+    return constrain(t, 0, 1);
+  }
+
+  render() {
+    let intensity = this.currentIntensity;
+    let baseAlpha = 25 + intensity * 180;
+    let sz = this.size * (1 + intensity * 1.5);
+
+    // Trail
+    if (intensity > 0.1 && this.trail.length > 1) {
+      noFill();
+      for (let i = 1; i < this.trail.length; i++) {
+        let ta = (i / this.trail.length) * intensity * 60;
+        stroke(this.cr, this.cg, this.cb, ta);
+        strokeWeight(sz * (i / this.trail.length) * 0.5);
+        line(this.trail[i-1].x, this.trail[i-1].y, this.trail[i].x, this.trail[i].y);
+      }
+    }
+
+    // Particle body
+    noStroke();
+    fill(this.cr, this.cg, this.cb, baseAlpha);
+    ellipse(this.x, this.y, sz, sz);
+
+    // Bright core when in current
+    if (intensity > 0.3) {
+      fill(255, 255, 255, intensity * 80);
+      ellipse(this.x, this.y, sz * 0.35, sz * 0.35);
+    }
+  }
+}
+
+// ─── Zone rendering ────────────────────────────────────────
+function renderZones() {
+  for (let z of zones) {
+    // Activation glow
+    let act = z.activation;
+
+    // Soft glow field
+    if (act > 0.05) {
+      let glowR = z.r * (2.5 + act * 3);
+      for (let i = 3; i > 0; i--) {
+        fill(z.cr, z.cg, z.cb, act * 8 * i);
+        noStroke();
+        ellipse(z.x, z.y, glowR * i / 1.5, glowR * i / 1.5);
+      }
+    }
+
+    // Pulse ring
+    if (z.pulse > 0.02) {
+      let pulseR = z.r * (1 + (1 - z.pulse) * 5);
+      noFill();
+      stroke(z.cr, z.cg, z.cb, z.pulse * 100);
+      strokeWeight(1.5);
+      ellipse(z.x, z.y, pulseR * 2, pulseR * 2);
+      z.pulse *= 0.96;
+    }
+
+    // Zone label (always visible, subtle)
+    noStroke();
+    textFont('JetBrains Mono');
+    textSize(9);
+    textAlign(CENTER, CENTER);
+    let labelAlpha = 40 + act * 160;
+    fill(z.cr, z.cg, z.cb, labelAlpha);
+    text(z.label, z.x, z.y);
+
+    // Coefficient when activated
+    if (act > 0.2 && z.type !== 'shock') {
+      textSize(8);
+      fill(255, 255, 255, act * 120);
+      text(act.toFixed(2), z.x, z.y + 14);
+    }
+
+    // Decay activation
+    z.activation *= 0.997;
+  }
+}
+
+// ─── Render active path indicators ─────────────────────────
+function renderCurrents() {
+  for (let ap of activePaths) {
+    if (ap.intensity < 0.05) continue;
+
+    let fz = ap.fromZone, tz = ap.toZone;
+    let mx = (fz.x + tz.x) / 2 + (tz.y - fz.y) * 0.06;
+    let my = (fz.y + tz.y) / 2 - (tz.x - fz.x) * 0.06;
+
+    // Subtle path glow
+    noFill();
+    stroke(
+      lerp(fz.cr, tz.cr, 0.5),
+      lerp(fz.cg, tz.cg, 0.5),
+      lerp(fz.cb, tz.cb, 0.5),
+      ap.intensity * 15 * ap.coeff
+    );
+    strokeWeight(ap.coeff * 3 * ap.intensity);
+    beginShape();
+    vertex(fz.x, fz.y);
+    quadraticVertex(mx, my, tz.x, tz.y);
+    endShape();
+  }
+}
+
+// ─── Fire a shock ──────────────────────────────────────────
+function fireShock(shockType) {
+  // Find shock zone(s) to activate
+  let shockZones = [];
+  if (shockType === 'gpr')        shockZones = ['gpr'];
+  if (shockType === 'trade')      shockZones = ['trade_war'];
+  if (shockType === 'sanctions')  shockZones = ['sanctions'];
+  if (shockType === 'financial')  shockZones = ['financial'];
+
+  for (let sid of shockZones) {
+    let sz = zones.find(z => z.id === sid);
+    if (!sz) continue;
+    sz.activation = 1;
+    sz.pulse = 1;
+
+    // Activate outgoing paths with delays
+    for (let p of PATHS) {
+      if (p.from === sid) {
+        schedulePathActivation(p, 0);
+      }
+    }
+  }
+}
+
+function schedulePathActivation(pathDef, baseDelay) {
+  let fromZone = zones.find(z => z.id === pathDef.from);
+  let toZone = zones.find(z => z.id === pathDef.to);
+  if (!fromZone || !toZone) return;
+
+  let delay = baseDelay + 15 + Math.floor(dist(fromZone.x, fromZone.y, toZone.x, toZone.y) * 0.08);
+
+  setTimeout(() => {
+    // Activate the path (add to active currents)
+    let existing = activePaths.find(ap => ap.from === pathDef.from && ap.to === pathDef.to);
+    if (existing) {
+      existing.intensity = Math.min(1, existing.intensity + pathDef.coeff * 0.8);
+    } else {
+      activePaths.push({
+        from: pathDef.from,
+        to: pathDef.to,
+        fromZone: fromZone,
+        toZone: toZone,
+        coeff: pathDef.coeff,
+        intensity: pathDef.coeff * 0.8,
+      });
+    }
+
+    // Activate target zone
+    toZone.activation = Math.min(1, toZone.activation + pathDef.coeff * 0.6);
+    toZone.pulse = Math.max(toZone.pulse, pathDef.coeff * 0.8);
+
+    // Cascade: activate outgoing paths from target zone
+    for (let p of PATHS) {
+      if (p.from === pathDef.to) {
+        schedulePathActivation(p, delay * 0.4);
+      }
+    }
+  }, delay * 16); // Convert frames to ms (~16ms/frame)
+}
+
+function firePolycrisis() {
+  fireShock('gpr');
+  setTimeout(() => fireShock('trade'), 500);
+  setTimeout(() => fireShock('sanctions'), 1000);
+  setTimeout(() => fireShock('financial'), 1500);
+}
+
+function resetField() {
+  activePaths = [];
+  for (let z of zones) {
+    z.activation = 0;
+    z.pulse = 0;
+  }
+  for (let p of particles) {
+    p.currentIntensity = 0;
+    p.trail = [];
+    p.findHome();
+    p.updateColor();
+  }
+}
+
+// ─── p5.js Setup ───────────────────────────────────────────
+function setup() {
+  let container = document.getElementById('field-container');
+  W = container.offsetWidth;
+  H = container.offsetHeight;
+  let cnv = createCanvas(W, H);
+  cnv.parent(container);
+  cnv.style('z-index', '1');
+  pixelDensity(1);
+
+  defineZones();
+
+  // Create particles distributed near zones
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    let z = zones[Math.floor(random(zones.length))];
+    let p = new Particle();
+    p.x = z.x + randomGaussian() * z.r * 2;
+    p.y = z.y + randomGaussian() * z.r * 2;
+    p.findHome();
+    p.updateColor();
+    particles.push(p);
+  }
+
+  // Auto shock every 10 seconds
+  setInterval(() => {
+    let shocks = ['gpr', 'trade', 'sanctions', 'financial'];
+    fireShock(shocks[Math.floor(random(4))]);
+  }, 10000);
+
+  // Initial shock after 3s
+  setTimeout(() => fireShock('gpr'), 3000);
+}
+
+function windowResized() {
+  let container = document.getElementById('field-container');
+  W = container.offsetWidth;
+  H = container.offsetHeight;
+  resizeCanvas(W, H);
+  defineZones();
+}
+
+// ─── Draw loop ─────────────────────────────────────────────
+function draw() {
+  // Semi-transparent background for trail effect
+  background(10, 22, 40, 30);
+
+  // Decay active paths
+  for (let ap of activePaths) {
+    ap.intensity *= 0.995;
+  }
+  activePaths = activePaths.filter(ap => ap.intensity > 0.02);
+
+  // Render path indicators (behind particles)
+  renderCurrents();
+
+  // Update & render particles
+  for (let p of particles) {
+    p.update();
+  }
+  for (let p of particles) {
+    p.render();
+  }
+
+  // Render zones (labels on top)
+  renderZones();
+
+  // Status
+  updateStatus();
+}
+
+function updateStatus() {
+  if (frameCount % 10 !== 0) return;
+  let flowing = particles.filter(p => p.currentIntensity > 0.1).length;
+  let disr = activePaths.length > 0 ?
+    Math.min(100, activePaths.reduce((s, a) => s + a.intensity * a.coeff * 20, 0)).toFixed(0) : '0';
+
+  let el1 = document.getElementById('st-particles');
+  let el2 = document.getElementById('st-flows');
+  let el3 = document.getElementById('st-disruption');
+  if (el1) el1.textContent = particles.length;
+  if (el2) el2.textContent = flowing;
+  if (el3) el3.textContent = disr + '%';
+}
+
+// Mouse click = shock from nearest shock zone
+function mousePressed() {
+  let nearestShock = null;
+  let minD = 150;
+  for (let z of zones) {
+    if (z.type !== 'shock') continue;
+    let d = dist(mouseX, mouseY, z.x, z.y);
+    if (d < minD) { minD = d; nearestShock = z; }
+  }
+  if (nearestShock) {
+    fireShock(nearestShock.id === 'trade_war' ? 'trade' : nearestShock.id);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('field-container')
+    .addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
+});
+</script>
+</body>
+</html>

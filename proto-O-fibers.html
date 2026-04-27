@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Proto O — Fiber Field</title>
+<style>
+*{margin:0;padding:0}
+body{background:#070b14;overflow:hidden;cursor:crosshair}
+canvas{display:block}
+#info{position:fixed;top:20px;left:20px;color:rgba(255,255,255,.3);font:11px/1.6 'SF Mono',monospace;z-index:10;pointer-events:none}
+#info span{color:rgba(255,255,255,.6)}
+.ctrl{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.ctrl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font:10px/1 'SF Mono',monospace;padding:8px 16px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .2s}
+.ctrl button:hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+</style>
+</head>
+<body>
+<div id="info">
+  PROTO O — FIBER FIELD<br>
+  Moteur : curl noise · zone vortices<br>
+  Rendu : courbes continues, pas de formes<br>
+  <span id="fc">0</span> fibres cumulees · <span id="sc">0</span> chocs
+</div>
+<div class="ctrl">
+  <button onclick="doShock()">Choc !</button>
+  <button onclick="regen()">Regenerer</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script>
+const ZONES = [
+  {x:.20, y:.30, r:200, g:55,  b:55,  vort: 0.35, name:'CHOC'},
+  {x:.75, y:.25, r:55,  g:110, b:220, vort: 0.28, name:'TRANSMISSION'},
+  {x:.55, y:.72, r:210, g:175, b:45,  vort:-0.22, name:'MESURE'},
+  {x:.28, y:.78, r:175, g:180, b:200, vort: 0.18, name:'IMPACT'}
+];
+
+let shocks = [], ctx, t = 0, totalFibers = 0, shockCount = 0;
+const PER_FRAME = 350, SEG = 45, STEP = 3.5;
+
+function setup() {
+  let c = createCanvas(windowWidth, windowHeight);
+  ctx = c.drawingContext;
+  background(7, 11, 20);
+  noiseSeed(42);
+  ctx.lineCap = 'round';
+}
+
+// Curl noise: divergence-free flow
+function flowAngle(x, y) {
+  let s = 0.0025, e = 1.0;
+  let n  = noise(x*s, y*s, t);
+  let nx = noise((x+e)*s, y*s, t);
+  let ny = noise(x*s, (y+e)*s, t);
+  let ang = Math.atan2(nx - n, -(ny - n));
+
+  // Zone vortices
+  for (let z of ZONES) {
+    let zx = z.x*width, zy = z.y*height;
+    let dx = x - zx, dy = y - zy;
+    let d2 = dx*dx + dy*dy;
+    let inf = z.vort * Math.exp(-d2 / (width*width*0.04));
+    ang += inf * Math.atan2(dy, dx);
+  }
+
+  // Shocks: tangential spiral
+  for (let s of shocks) {
+    let dx = x - s.x, dy = y - s.y;
+    let d = Math.sqrt(dx*dx + dy*dy);
+    let wf = Math.abs(d - s.rad);
+    if (wf < 70) {
+      let inf = (1 - wf/70) * s.str;
+      ang += inf * (Math.atan2(dy, dx) + Math.PI*0.35);
+    }
+  }
+
+  // Mouse influence
+  if (mouseIsPressed || (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height)) {
+    let dx = x - mouseX, dy = y - mouseY;
+    let d2 = dx*dx + dy*dy;
+    if (d2 < 40000) {
+      let inf = 0.4 * Math.exp(-d2/8000);
+      ang += inf * (Math.atan2(dy, dx) + Math.PI*0.5);
+    }
+  }
+
+  return ang;
+}
+
+function zoneColor(x, y) {
+  let tw = 0, r = 0, g = 0, b = 0;
+  for (let z of ZONES) {
+    let d = dist(x, y, z.x*width, z.y*height);
+    let w = 1 / (d*d + 2000);
+    r += z.r*w; g += z.g*w; b += z.b*w; tw += w;
+  }
+  return [r/tw|0, g/tw|0, b/tw|0];
+}
+
+function draw() {
+  // Very slow fade — accumulation creates density
+  ctx.fillStyle = 'rgba(7,11,20,0.008)';
+  ctx.fillRect(0, 0, width, height);
+
+  t += 0.0006;
+
+  // Update shocks
+  for (let i = shocks.length-1; i >= 0; i--) {
+    shocks[i].rad += 2.2;
+    shocks[i].str *= 0.988;
+    if (shocks[i].str < 0.005) shocks.splice(i, 1);
+  }
+
+  // Auto-shock every ~12 seconds
+  if (frameCount % 720 === 360) {
+    let z = ZONES[Math.floor(Math.random()*4)];
+    addShock(z.x*width + (Math.random()-0.5)*80, z.y*height + (Math.random()-0.5)*80);
+  }
+
+  // Draw streamlines
+  for (let i = 0; i < PER_FRAME; i++) {
+    let sx = Math.random()*width;
+    let sy = Math.random()*height;
+    let col = zoneColor(sx, sy);
+    let lw = Math.random()*1.4 + 0.2;
+    let alpha = Math.random()*0.04 + 0.006;
+
+    ctx.beginPath();
+    let x = sx, y = sy;
+    ctx.moveTo(x, y);
+
+    for (let j = 0; j < SEG; j++) {
+      let a = flowAngle(x, y);
+      x += Math.cos(a)*STEP;
+      y += Math.sin(a)*STEP;
+      if (x < -30 || x > width+30 || y < -30 || y > height+30) break;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.strokeStyle = `rgba(${col[0]},${col[1]},${col[2]},${alpha})`;
+    ctx.lineWidth = lw;
+    ctx.stroke();
+    totalFibers++;
+  }
+
+  // Zone labels (very subtle)
+  if (frameCount === 1) drawZoneLabels();
+
+  // HUD
+  if (frameCount % 30 === 0) {
+    document.getElementById('fc').textContent = (totalFibers/1000|0) + 'K';
+    document.getElementById('sc').textContent = shockCount;
+  }
+}
+
+function drawZoneLabels() {
+  ctx.save();
+  ctx.font = '9px "SF Mono", monospace';
+  ctx.textAlign = 'center';
+  for (let z of ZONES) {
+    ctx.fillStyle = `rgba(${z.r},${z.g},${z.b},0.15)`;
+    ctx.fillText(z.name, z.x*width, z.y*height - 15);
+  }
+  ctx.restore();
+}
+
+function addShock(x, y) {
+  shocks.push({x, y, rad: 0, str: 0.7});
+  shockCount++;
+}
+
+function doShock() {
+  addShock(width/2 + (Math.random()-0.5)*200, height/2 + (Math.random()-0.5)*200);
+}
+
+function regen() {
+  noiseSeed(Math.floor(Math.random()*10000));
+  totalFibers = 0;
+  background(7, 11, 20);
+}
+
+function mousePressed() {
+  if (mouseY < height - 60) addShock(mouseX, mouseY);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  background(7, 11, 20);
+}
+</script>
+</body>
+</html>
