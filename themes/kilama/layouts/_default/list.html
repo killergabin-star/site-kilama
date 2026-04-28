@@ -1,12 +1,24 @@
 {{ define "main" }}
-<main class="container" style="padding-top: 120px; padding-bottom: 80px;">
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-  <article>
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ .Summary }}
-  </article>
-  {{ end }}
+<main>
+  <section style="background: var(--surface-primary, #0d1117); padding: 140px 2.5rem 64px;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 style="font-family: var(--ff-display, Newsreader, serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: #fff; margin: 0 0 16px;">{{ .Title }}</h1>
+      {{ with .Content }}<div style="font-family: var(--ff-ui, Inter, sans-serif); font-size: 15px; color: rgba(255,255,255,0.6); max-width: 600px;">{{ . }}</div>{{ end }}
+    </div>
+  </section>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 48px 2.5rem 80px;">
+    {{ range .Pages.ByDate.Reverse }}
+    <article style="padding: 24px 0; border-bottom: 1px solid var(--border-primary, #30363d);">
+      <div style="font-family: var(--ff-ui, Inter, sans-serif); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-tertiary, #6e7681); margin-bottom: 8px;">
+        {{ .Date.Format "2 January 2006" }}
+      </div>
+      <h2 style="font-family: var(--ff-display, Newsreader, serif); font-size: 1.5rem; font-weight: 400; margin: 0 0 8px;">
+        <a href="{{ .Permalink }}" style="color: var(--text-primary, #e6edf3); text-decoration: none;">{{ .Title }}</a>
+      </h2>
+      {{ with .Params.summary }}<p style="font-family: var(--ff-ui, Inter, sans-serif); font-size: 15px; color: var(--text-secondary, #8b949e); line-height: 1.6; margin: 0;">{{ . }}</p>{{ end }}
+    </article>
+    {{ end }}
+  </section>
 </main>
 {{ end }}

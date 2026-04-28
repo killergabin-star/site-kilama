@@ -1,8 +1,165 @@
+{{ define "styles" }}
+<style>
+.default-article-hero {
+  background: var(--surface-primary, #0d1117);
+  padding: 140px 2.5rem 64px;
+}
+.default-article-hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.default-article-hero__eyebrow {
+  font-family: var(--ff-ui, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-primary, #4da6ff);
+  margin-bottom: 20px;
+}
+.default-article-hero__title {
+  font-family: var(--ff-display, Newsreader, serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+.default-article-hero__meta {
+  font-family: var(--ff-ui, Inter, sans-serif);
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+.default-article-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 2.5rem 80px;
+  font-family: var(--ff-display, Newsreader, serif);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-primary, #e6edf3);
+}
+.default-article-body h2 {
+  font-family: var(--ff-display, Newsreader, serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+.default-article-body h3 {
+  font-family: var(--ff-ui, Inter, sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.default-article-body p { margin-bottom: 1.5em; }
+.default-article-body a {
+  color: var(--accent-primary, #4da6ff);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.default-article-body blockquote {
+  border-left: 3px solid var(--accent-primary, #4da6ff);
+  padding-left: 1.5em;
+  margin: 2em 0;
+  color: var(--text-secondary, #8b949e);
+  font-style: italic;
+}
+.default-article-body ul, .default-article-body ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+.default-article-body li { margin-bottom: 0.5em; }
+.default-article-body strong { color: #ffffff; font-weight: 600; }
+.default-article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-family: var(--ff-ui, Inter, sans-serif);
+  font-size: 0.9375rem;
+}
+.default-article-body thead th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-primary, #30363d);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.default-article-body tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-primary, #30363d);
+}
+.default-article-body img {
+  max-width: 100%;
+  display: block;
+  margin: 2em auto;
+}
+.default-article-body code {
+  font-family: var(--ff-data, 'IBM Plex Mono', monospace);
+  font-size: 0.85em;
+  background: var(--surface-secondary, #161b22);
+  padding: 2px 6px;
+}
+.default-article-body pre {
+  background: var(--surface-secondary, #161b22);
+  padding: 20px 24px;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  font-family: var(--ff-data, 'IBM Plex Mono', monospace);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.default-article-body pre code { background: none; padding: 0; }
+.default-back-nav {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2.5rem 64px;
+}
+.default-back-nav a {
+  font-family: var(--ff-ui, Inter, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-primary, #4da6ff);
+  text-decoration: none;
+}
+.default-back-nav a:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .default-article-hero { padding: 100px 1.5rem 40px; }
+  .default-article-body { padding: 32px 1.5rem 60px; font-size: 16px; }
+  .default-back-nav { padding: 0 1.5rem 48px; }
+}
+</style>
+{{ end }}
+
 {{ define "main" }}
-<main class="container" style="padding-top: 120px; padding-bottom: 80px;">
-  <article>
-    <h1>{{ .Title }}</h1>
+
+<section class="default-article-hero">
+  <div class="default-article-hero__inner">
+    {{ with .Section }}
+    <div class="default-article-hero__eyebrow">{{ . }}</div>
+    {{ end }}
+    <h1 class="default-article-hero__title">{{ .Title }}</h1>
+    {{ if not .Date.IsZero }}
+    <div class="default-article-hero__meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      {{ with .ReadingTime }}· {{ . }} min{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<main>
+  <div class="default-article-body">
     {{ .Content }}
-  </article>
+  </div>
+  <div class="default-back-nav">
+    {{ with .Section }}
+    <a href="{{ . | relURL }}/">&larr; Retour</a>
+    {{ end }}
+  </div>
 </main>
+
 {{ end }}

@@ -1,37 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" data-palette="{{ with .Params.palette }}{{ . }}{{ else }}{{ if .IsHome }}vivid-home-blue{{ else if eq .Section "research" }}vivid-bloomberg{{ else if eq .Section "foresight" }}vivid-bloomberg{{ else if eq .Section "policy" }}vivid-editorial{{ else if eq .Section "teaching" }}vivid-editorial{{ else if eq .Section "about" }}vivid-home-blue{{ else }}vivid-home-blue{{ end }}{{ end }}">
 <head>
   {{ partial "head.html" . }}
   {{ block "styles" . }}{{ end }}
 </head>
-<body class="{{ with .Params.bodyClass }}{{ . }}{{ end }}">
-
-<div class="scroll-progress" id="scrollProgress"></div>
+<body>
 
 {{ partial "nav.html" . }}
 
 {{ block "main" . }}
-  <main class="container" style="padding-top: 120px;">
+  <main>
     {{ .Content }}
   </main>
 {{ end }}
 
 {{ partial "footer.html" . }}
 
-<!-- Shared scripts -->
+<!-- Sticky header scroll detection -->
 <script>
-// Scroll progress bar
-window.addEventListener('scroll', () => {
-  const prog = document.getElementById('scrollProgress');
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  if (h > 0) prog.style.width = (window.scrollY / h * 100) + '%';
-});
-
-// Nav scroll transition
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
-});
+(function() {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+})();
 </script>
 
 {{ block "scripts" . }}{{ end }}

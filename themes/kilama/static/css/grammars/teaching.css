@@ -1,0 +1,270 @@
+/* ============================================================================
+   teaching.css — Grammaire Teaching
+   Pages: /teaching/
+   Hero ambre + 3 piliers + cours structurés + Geopolitical Officer
+   ============================================================================ */
+
+/* ---------- HERO TEACHING (amber marker) ---------- */
+
+.hero-editorial--teaching .h-display em {
+  font-style: italic;
+  color: var(--brand-quaternary);
+  font-weight: 400;
+}
+
+/* ---------- APPROCHE PÉDAGOGIQUE ---------- */
+
+.teaching-approach {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-approach-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-approach .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 56px;
+  max-width: 24ch;
+}
+
+.teaching-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.teaching-pillar {
+  padding-left: 24px;
+  border-left: 3px solid var(--brand-quaternary);
+}
+
+.pillar-num {
+  font-family: var(--font-data, monospace);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+}
+
+.teaching-pillar h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 0 0 16px;
+}
+
+.teaching-pillar p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .teaching-approach {
+    padding: 48px 24px;
+  }
+  .teaching-approach-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- COURS & SÉMINAIRES ---------- */
+
+.teaching-courses {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-courses .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 64px;
+  max-width: 30ch;
+}
+
+.teaching-category {
+  margin-bottom: 64px;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--brand-quaternary);
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-item {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border-tertiary);
+}
+
+.teaching-item:last-child {
+  border-bottom: none;
+}
+
+.teaching-item-meta {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+}
+
+.teaching-item h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.teaching-item p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 75ch;
+  margin: 0 0 16px;
+}
+
+.teaching-item-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag--amber {
+  color: var(--brand-quaternary);
+  border-color: var(--brand-quaternary);
+}
+
+@media (max-width: 900px) {
+  .teaching-courses {
+    padding: 48px 24px;
+  }
+}
+
+/* ---------- GEOPOLITICAL OFFICER ---------- */
+
+.geopolitical-officer {
+  padding: 120px 40px;
+  background: var(--color-background-secondary);
+  border-top: 4px solid var(--brand-quaternary);
+}
+
+.geopolitical-officer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.h-display-medium {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  margin: 24px 0 32px;
+  max-width: 22ch;
+  color: var(--color-text-primary);
+}
+
+.h-display-medium em {
+  font-style: italic;
+  color: var(--brand-quaternary);
+  font-weight: 400;
+}
+
+.geopolitical-officer .standfirst {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 70ch;
+  margin: 0 0 64px;
+}
+
+.officer-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.officer-module {
+  padding: 24px;
+  background: var(--color-background-tertiary);
+  border-top: 2px solid var(--brand-quaternary);
+}
+
+.module-num {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-quaternary);
+  margin-bottom: 12px;
+}
+
+.officer-module h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.officer-module p {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.officer-cta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.officer-formats {
+  font-family: var(--font-data, monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .officer-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .geopolitical-officer {
+    padding: 64px 24px;
+  }
+  .officer-modules-grid {
+    grid-template-columns: 1fr;
+  }
+}

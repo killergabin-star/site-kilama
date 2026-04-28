@@ -1,571 +1,297 @@
-{{ define "styles" }}
-<style>
-/* ═══════════════════════════════════════════════════
-   P2 v2 — HOMEPAGE OVERRIDES
-   Hero photo N&B + section-specific styles
-   (Nav CSS now in shared style.css)
-   ═══════════════════════════════════════════════════ */
-
-/* === HERO HOME — Photo N&B fond clair, typo McKinsey === */
-/* Reset global .hero styles for homepage */
-.hero-home.hero {
-  position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: var(--white);
-  color: var(--navy);
-}
-
-.hero-home .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: url('{{ "images/avatar_kilama_hero_v2.png" | relURL }}') right -5% top 15% / auto 110% no-repeat;
-  filter: grayscale(1) brightness(1.15) contrast(1.05);
-  z-index: 1;
-}
-
-/* Subtle grain texture — masks compression artifacts on B&W photo edges */
-.hero-home.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-home .hero-content {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 160px 40px 80px;
-  color: var(--navy);
-}
-
-.hero-home .hero-text {
-  max-width: 560px;
-}
-
-.hero-home .hero-headline {
-  font-family: var(--font-title);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-}
-.hero-home .hero-headline strong {
-  font-weight: 700;
-  color: var(--electric-blue);
-}
-
-.hero-home .hero-subline {
-  font-family: var(--font-title);
-  font-size: clamp(16px, 1.6vw, 20px);
-  font-weight: 400;
-  color: rgba(5, 28, 44, 0.6);
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  margin-bottom: 32px;
-}
-
-.hero-home .hero-ctas {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
-}
-.hero-home .hero-ctas .btn-primary {
-  background: var(--navy); color: var(--white);
-  font-family: var(--font-title);
-}
-.hero-home .hero-ctas .btn-primary:hover { background: var(--electric-blue); }
-.hero-home .hero-ctas .btn-outline {
-  color: var(--navy);
-  border-color: rgba(5,28,44,0.35);
-  font-family: var(--font-title);
-}
-.hero-home .hero-ctas .btn-outline:hover { border-color: var(--electric-blue); color: var(--electric-blue); }
-
-/* Credentials bar bottom of hero */
-.hero-home .hero-credentials {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  right: 40px;
-  z-index: 6;
-}
-.hero-home .hero-credentials-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.hero-home .hero-credentials-inner span {
-  font-family: var(--font-title);
-  font-size: clamp(14px, 2vw, 18px);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-.cred-blue { color: var(--electric-blue); }
-.cred-dark { color: var(--navy); }
-.cred-sep { color: rgba(5,28,44,0.25); font-weight: 300; margin: 0 4px; }
-
-/* Harmonize flagship titles */
-.flagship-card h3 {
-  font-family: var(--font-title);
-  letter-spacing: -0.02em;
-}
-
-/* Clean transition — no blur between hero and next section */
-.hero { box-shadow: none; border: none; }
-.hero .hero-bg { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.latest-pub { box-shadow: none; }
-
-/* Nav override: dark text on light hero */
-.site-nav--light .wordmark .first-name { color: var(--navy); }
-.site-nav--light .wordmark .last-name { color: var(--electric-blue); }
-.site-nav--light .nav-item > a { color: var(--navy); }
-.site-nav--light .nav-item:hover > a { color: var(--electric-blue); }
-.site-nav--light .nav-item.active > a { color: var(--electric-blue); }
-.site-nav--light .nav-lang a { color: var(--gray-400); }
-.site-nav--light .nav-lang a:hover { color: var(--navy); }
-.site-nav--light .nav-lang .active { color: var(--navy); }
-
-/* Section eyebrow pattern */
-.section-eyebrow {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--electric-blue);
-  margin-bottom: 24px;
-}
-
-/* Latest publication card (McKinsey) */
-.latest-pub {
-  background: var(--ivory-deep);
-  padding: 64px 40px;
-}
-.latest-pub-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.pub-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-.pub-card-visual {
-  background: linear-gradient(135deg, #1D4A6E 0%, #0E2940 100%);
-  border-radius: 2px;
-  aspect-ratio: 16/10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.pub-type-badge {
-  position: absolute;
-  top: 16px; left: 16px;
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: var(--blue-fpsq);
-  color: var(--white);
-  padding: 4px 10px;
-  border-radius: 2px;
-  z-index: 2;
-}
-.pub-visual-title {
-  font-family: var(--font-title);
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--white);
-  text-align: center;
-  padding: 32px;
-  line-height: 1.3;
-}
-.pub-card-text h3 {
-  font-family: var(--font-title);
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.3;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-.pub-card-meta {
-  font-family: var(--font-title);
-  font-size: 13px;
-  color: var(--gray-500);
-  margin-bottom: 16px;
-}
-.pub-card-meta span {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 2px;
-  background: rgba(34,81,255,0.08);
-  color: var(--blue-fpsq);
-  font-weight: 500;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-right: 8px;
-}
-.pub-card-text p {
-  font-family: var(--font-title);
-  font-size: 16px;
-  color: var(--anthracite);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-.arrow-link {
-  font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--blue-fpsq);
-}
-.arrow-link:hover { text-decoration: underline; }
-
-/* Section titles (Mazzucato pattern) */
-.section-title-mazz {
-  font-family: var(--font-title);
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--navy);
-  line-height: 1.2;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-}
-.section-title-mazz strong { font-weight: 600; color: var(--electric-blue); }
-.section-subtitle-mazz {
-  font-family: var(--font-title);
-  font-size: 16px;
-  color: var(--gray-500);
-  margin-bottom: 32px;
-  max-width: 600px;
-}
-
-/* Analyses list (VoxEU editorial) */
-.analyses-list {
-  list-style: none;
-}
-.analysis-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 20px;
-  padding: 20px 0;
-  border-top: 1px solid var(--gray-200);
-  align-items: start;
-}
-.analysis-item:first-child {
-  border-top: 2px solid var(--navy);
-}
-.analysis-date {
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--gray-500);
-  padding-top: 3px;
-}
-.analysis-tag {
-  font-family: var(--font-title);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-}
-.analysis-tag--defense { color: var(--navy); }
-.analysis-tag--energie { color: var(--gold-caps); }
-.analysis-tag--commerce { color: var(--blue-fpsq); }
-.analysis-tag--risque { color: var(--red-analytical); }
-.analysis-tag--dev { color: var(--vert-dev); }
-
-.analysis-title {
-  font-family: var(--font-title);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.3;
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
-}
-.analysis-title a { color: var(--navy); text-decoration: none; }
-.analysis-title a:hover { color: var(--blue-fpsq); }
-.analysis-excerpt {
-  font-family: var(--font-title);
-  font-size: 15px;
-  color: var(--gray-500);
-  line-height: 1.5;
-}
-
-/* Vigie teaser — McKinsey gradient depth */
-.vigie-teaser {
-  background: linear-gradient(180deg, #0D1117 0%, #051C2C 40%, #042A76 70%, #0D1117 100%);
-}
-
-@media (max-width: 900px) {
-  .hero-home.hero { min-height: 75vh; }
-  .hero-home .hero-bg {
-    background-position: center top 15%;
-    background-size: cover;
-    opacity: 0.3;
-  }
-  .hero-home .hero-text { max-width: 100%; }
-  .hero-home .hero-headline { font-size: 32px; }
-  .hero-home .hero-credentials-inner { flex-wrap: wrap; }
-  .hero-home .hero-credentials-inner span { font-size: 13px; }
-  .pub-card { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .hero-home.hero { min-height: 65vh; }
-  .hero-home .hero-content { padding: 100px 20px 60px; }
-  .hero-home .hero-headline { font-size: clamp(24px, 7vw, 32px); }
-  .hero-home .hero-subline { font-size: 15px; margin-bottom: 24px; }
-  .hero-home .hero-ctas { flex-direction: column; }
-  .hero-home .hero-ctas .btn {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    padding: 14px 20px;
-  }
-  .hero-home .hero-credentials { left: 20px; right: 20px; bottom: 20px; }
-  .hero-home .hero-credentials-inner span { font-size: 11px; letter-spacing: 1px; }
-  .analysis-item { grid-template-columns: 1fr; gap: 6px; }
-  .analysis-date { padding-top: 0; }
-  .section-title-mazz { font-size: 22px; }
-}
-@media (max-width: 480px) {
-  .hero-home.hero { min-height: 55vh; }
-  .hero-home .hero-headline { font-size: 22px; }
-  .hero-home .hero-bg { opacity: 0.2; }
-  .hero-home .hero-credentials-inner { gap: 4px; }
-  .hero-home .hero-credentials-inner span { font-size: 10px; }
-}
-</style>
-{{ end }}
-
 {{ define "main" }}
-<!-- === HERO — Photo N&B fond clair, typo McKinsey === -->
-<section class="hero hero-home page-body">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-headline">Quantifier la transmission des <strong>chocs géopolitiques</strong> à l'économie</div>
-      <div class="hero-subline">De l'économétrie causale à la recommandation stratégique — donner aux décideurs une prise sur l'incertitude.</div>
-      <div class="hero-ctas">
-        <a href="{{ "policy/" | relURL }}" class="btn btn-primary">Dernier rapport &rarr;</a>
-        <a href="{{ "foresight/" | relURL }}" class="btn btn-outline">Scénarios Vigie</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-credentials">
-    <div class="hero-credentials-inner">
-      <span class="cred-blue">Recherche</span>
-      <span class="cred-sep">&middot;</span>
-      <span class="cred-dark">Prospective</span>
-      <span class="cred-sep">&middot;</span>
-      <span class="cred-blue">Conseil stratégique</span>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- === DERNIÈRE PUBLICATION (McKinsey featured card) === -->
-<section class="latest-pub">
-  <div class="latest-pub-inner">
-    <div class="section-eyebrow">Dernière publication</div>
-    <div class="pub-card">
-      <div class="pub-card-visual">
-        <span class="pub-type-badge">Rapport 2026</span>
-        <div class="pub-visual-title">G7 Development Finance<br>in a Fragmented World</div>
-      </div>
-      <div class="pub-card-text">
-        <div class="pub-card-meta">
-          <span>Finance du développement</span> Mars 2026 &middot; 14 pages
+  <!-- HERO EDITORIAL — DNA Variant-A, marqueur bleu -->
+  <section class="hero-editorial hero-editorial--home">
+    <div class="hero-editorial-inner">
+      <div class="hero-editorial-text">
+        <div class="eyebrow eyebrow--with-flag eyebrow--blue">Intelligence géopolitique quantifiée</div>
+        <h1 class="h-display">
+          <span class="h-line">Quand la <em>géopolitique</em></span><br>
+          <span class="h-line">reconfigure</span><br>
+          <span class="h-line">l'économie mondiale</span>
+        </h1>
+        <p class="standfirst">
+          Économétrie causale, prospective quantitative et conseil stratégique. Une grille de lecture pour décideurs publics et privés en régime de polycrisis.
+        </p>
+        <div class="hero-editorial-actions">
+          <a href="{{ "policy/" | relURL }}" class="cta-link cta-link--primary cta-link--blue">Lire le dernier rapport &rarr;</a>
+          <a href="{{ "foresight/" | relURL }}" class="cta-link">Scénarios Vigie</a>
         </div>
-        <h3>Comment la compétition G7-Chine transforme l'architecture de l'aide au développement</h3>
-        <p>Réallocations stratégiques, conditionnalité géopolitique et conséquences pour les pays récipiendaires. Analyse des flux, identification des ruptures, recommandations pour les décideurs.</p>
-        <a href="{{ "policy/" | relURL }}" class="arrow-link">Lire le rapport &rarr;</a>
+      </div>
+      <div class="hero-editorial-portrait">
+        <img src="{{ "images/portrait-eric-kilama.png" | relURL }}" alt="Eric Gabin Kilama" class="portrait-photo">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- === FLAGSHIP — Polycrisis teaser === -->
-<section class="flagships">
+  <!-- RESEARCH TEASE — 3 axes colorés -->
+  <section class="home-research-tease">
+    <div class="home-research-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-mark"></span>
+        <span class="eyebrow-text">Programme de recherche</span>
+      </div>
+      <h2 class="section-title">Trois axes de recherche appliquée</h2>
+      <div class="home-research-grid">
+        <a href="{{ "research/" | relURL }}" class="home-research-axis">
+          <span class="axis-num">01</span>
+          <h3>Risque géopolitique &amp; macroéconomie</h3>
+          <p>Transmission des chocs géopolitiques à l'économie réelle. Indice GPR, fragmentation commerciale, FPSQ.</p>
+        </a>
+        <a href="{{ "research/" | relURL }}" class="home-research-axis">
+          <span class="axis-num">02</span>
+          <h3>Finance du développement</h3>
+          <p>APD du G7, aide chinoise, arbitrages de financement public. Économétrie causale sur données de panel.</p>
+        </a>
+        <a href="{{ "research/" | relURL }}" class="home-research-axis">
+          <span class="axis-num">03</span>
+          <h3>Prospective quantifiée</h3>
+          <p>Scénarios macroéconomiques, indicateurs FPSQ, monitor de fragmentation. Desk Vigie en temps réel.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
+      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
+      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
+      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">▲ +0.04</span></span>
+      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
+      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
+      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
+      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">▼ −0.01</span></span>
+      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
+      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
+      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
+      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">▲ +0.04</span></span>
+      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
+      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
+      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
+      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">▼ −0.01</span></span>
+    </div>
+  </div>
+
+  <!-- KPI BAND -->
   <div class="container">
-    <div class="section-eyebrow">Surveillance en cours</div>
-    <div class="flagships-grid">
-      <div class="flagship-card flagship-card--polycrisis">
-        <span class="flagship-badge flagship-badge--foresight">Foresight</span>
-        <h3>Polycrisis Monitor</h3>
-        <p>Scénarios de crise et effets économiques croisés en temps réel.</p>
-        <div class="sparklines">
-          <div class="sparkline-item">
-            <div class="sparkline-label">GPR Index</div>
-            <div class="sparkline-value">187</div>
-            <div class="sparkline-delta up">+12.4%</div>
+    <div class="kpi-band">
+      <div class="kpi-band-header">
+        <span class="eyebrow-text live-dot">Vigie &middot; Live</span>
+        <span class="kpi-band-timestamp">{{ now.Format "2 Jan. 2006" }} &middot; 10:00 CET</span>
+      </div>
+      <div class="kpi-band-grid">
+        <div class="kpi">
+          <div class="kpi-label">GPR Index</div>
+          <div class="kpi-value-row">
+            <span class="kpi-value">187.3</span>
+            <span class="kpi-delta kpi-delta--bad">&#9650; +12,4%</span>
           </div>
-          <div class="sparkline-item">
-            <div class="sparkline-label">Brent</div>
-            <div class="sparkline-value">$94</div>
-            <div class="sparkline-delta up">+8.2%</div>
+          <div class="kpi-context">vs MA-12M (108.2)</div>
+          <div class="kpi-source">Caldara-Iacoviello</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Frag. Index</div>
+          <div class="kpi-value-row">
+            <span class="kpi-value">0.73</span>
+            <span class="kpi-delta kpi-delta--bad">&#9650; +0.04</span>
           </div>
-          <div class="sparkline-item">
-            <div class="sparkline-label">Frag. Index</div>
-            <div class="sparkline-value">0.73</div>
-            <div class="sparkline-delta up">+0.04</div>
+          <div class="kpi-context">vs Q4 2025 (0.69)</div>
+          <div class="kpi-source">JPM Fragmentation</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Spread IT-DE 10Y</div>
+          <div class="kpi-value-row">
+            <span class="kpi-value">142</span>
+            <span class="kpi-delta kpi-delta--good">&#9660; -8 bps</span>
           </div>
+          <div class="kpi-context">vs mois précédent (150)</div>
+          <div class="kpi-source">Bloomberg</div>
         </div>
-        <a href="{{ "foresight/" | relURL }}" class="btn btn-sm btn-outline">Dashboard complet &rarr;</a>
-      </div>
-      <div class="flagship-card">
-        <span class="flagship-badge flagship-badge--report">Policy Brief</span>
-        <h3>La fragilité par la base</h3>
-        <p>26M de PME européennes absorbent les chocs géopolitiques sans les transmettre aux prix — le maillon faible de la base industrielle de défense. 7 recommandations opérationnelles.</p>
-        <a href="{{ "policy/" | relURL }}" class="btn btn-sm btn-navy">Lire le brief &rarr;</a>
+        <div class="kpi">
+          <div class="kpi-label">ODA/RNB DAC</div>
+          <div class="kpi-value-row">
+            <span class="kpi-value">0.37%</span>
+            <span class="kpi-delta kpi-delta--bad">&#9660; -0.01</span>
+          </div>
+          <div class="kpi-context">vs 2024 (0.38%)</div>
+          <div class="kpi-source">OCDE-DAC</div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- === PROGRAMME DE RECHERCHE — McKinsey "How we help" dark treatment === -->
-<section style="background: linear-gradient(160deg, #051C2C 0%, #042A76 30%, #051C2C 100%); padding: 80px 40px;">
+  <!-- WATCH LIST — À PARAÎTRE -->
+  <div class="container" style="padding-top: 80px;">
+    <div class="watch-block">
+      <div class="eyebrow">
+        <span class="eyebrow-mark"></span>
+        <span class="eyebrow-text">À paraître &middot; Mai 2026</span>
+      </div>
+      <blockquote class="watch-quote">
+        « La fragmentation commerciale n'est pas une menace future — c'est un régime installé. Les PME européennes l'absorbent déjà dans leurs marges. »
+      </blockquote>
+      <a href="{{ "foresight/" | relURL }}" class="cta-link">S'abonner aux Notes Vigie &rarr;</a>
+    </div>
+  </div>
+
+  <!-- DERNIÈRE PUBLICATION -->
   <div class="container">
-    <div style="font-family: var(--font-title); font-size: 13px; font-weight: 600; color: var(--electric-blue); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1.5px;">Programme de recherche</div>
-    <div style="font-family: var(--font-title); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: var(--white); line-height: 1.15; max-width: 700px; margin-bottom: 48px; letter-spacing: -0.03em;">Comment les chocs géopolitiques se transmettent-ils à <strong style='font-weight: 600; color: var(--electric-blue);'>l'économie</strong> ?</div>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px;">
-
-      <!-- Axe 1 : Mesurer -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
-        <h3 style="font-family: var(--font-title); font-size: 24px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.02em;">Risque géopolitique, entreprises &amp; chaînes de valeur</h3>
-        <p style="font-family: var(--font-title); font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 16px;">Économétrie causale sur données granulaires. Identifier les canaux de transmission des chocs — énergie, tarifs, sanctions — vers l'investissement des PME et les flux commerciaux.</p>
-        <a href="{{ "research/" | relURL }}" style="font-family: var(--font-title); font-size: 16px; font-weight: 400; color: var(--white); display: inline-flex; align-items: center; gap: 8px;">Explorer la recherche &rarr;</a>
+    <section class="section">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Dernière publication</span>
+        </div>
       </div>
-
-      <!-- Axe 2 : Anticiper -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
-        <h3 style="font-family: var(--font-title); font-size: 24px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.02em;">Prospective quantitative &amp; scénarios de crise</h3>
-        <p style="font-family: var(--font-title); font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 16px;">Modélisation de scénarios géopolitiques. Projections macroéconomiques calibrées, signaux d'alerte, et stress-tests pour décideurs.</p>
-        <a href="{{ "foresight/" | relURL }}" style="font-family: var(--font-title); font-size: 16px; font-weight: 400; color: var(--white); display: inline-flex; align-items: center; gap: 8px;">Vigie Dashboard &rarr;</a>
+      {{ $allPolicy := where .Site.RegularPages "Type" "policy" }}
+      {{ $latest := index ($allPolicy.ByDate.Reverse) 0 }}
+      {{ if $latest }}
+      <div class="featured-pub">
+        {{ with $latest.Params.tags }}<span class="card-note-tag tag--{{ index . 0 | urlize }}">{{ index . 0 }}</span>{{ end }}
+        <h2 class="featured-pub-title">{{ $latest.Title }}</h2>
+        <p class="featured-pub-summary">{{ with $latest.Params.summary }}{{ . | truncate 300 }}{{ else }}{{ $latest.Summary | truncate 300 }}{{ end }}</p>
+        <a class="action" href="{{ $latest.Permalink }}">Lire la note &rarr;</a>
       </div>
-
-      <!-- Axe 3 : Décider -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
-        <h3 style="font-family: var(--font-title); font-size: 24px; font-weight: 500; color: var(--white); line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.02em;">Finance du développement &amp; gouvernance</h3>
-        <p style="font-family: var(--font-title); font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: 16px;">Aide au développement G7 vs finance chinoise, corruption et choix occupationnels. De l'analyse causale à la recommandation opérationnelle.</p>
-        <a href="{{ "policy/" | relURL }}" style="font-family: var(--font-title); font-size: 16px; font-weight: 400; color: var(--white); display: inline-flex; align-items: center; gap: 8px;">Notes stratégiques &rarr;</a>
+      {{ else }}
+      <div class="featured-pub">
+        <span class="card-note-tag tag--polycrisis">polycrisis</span>
+        <h2 class="featured-pub-title">La convergence des crises : polycrisis, fragmentation et résilience des économies du G7</h2>
+        <p class="featured-pub-summary">Brief stratégique analysant les interactions entre chocs géopolitiques, fragmentation commerciale et capacités de résilience. Les données FPSQ montrent que la polycrisis n'est pas une juxtaposition de crises mais un régime systémique distinct.</p>
+        <a class="action" href="{{ "policy/" | relURL }}">Lire le rapport &rarr;</a>
       </div>
-
-    </div>
+      {{ end }}
+    </section>
   </div>
-</section>
 
-<!-- === ANALYSES RÉCENTES (VoxEU editorial list) === -->
-<section style="background: var(--ivory-deep); padding: 64px 40px;">
+  <!-- ANALYSES RÉCENTES -->
   <div class="container">
-    <div class="section-eyebrow">Analyses récentes</div>
-    <div class="section-title-mazz">Notes, briefs &amp; <strong>contributions</strong></div>
-    <ul class="analyses-list">
-      <li class="analysis-item">
-        <div class="analysis-date">Mars 2026</div>
-        <div>
-          <div class="analysis-tag analysis-tag--energie">Énergie &amp; Ressources</div>
-          <div class="analysis-title"><a href="{{ "policy/" | relURL }}">Détroit d'Ormuz : scénario de fermeture et impacts énergétiques européens</a></div>
-          <div class="analysis-excerpt">Simulation d'une fermeture du détroit : +27% Brent, cascade sur les coûts PME en 15 jours.</div>
+    <section class="section">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Analyses récentes</span>
         </div>
-      </li>
-      <li class="analysis-item">
-        <div class="analysis-date">Mars 2026</div>
-        <div>
-          <div class="analysis-tag analysis-tag--commerce">Commerce &amp; Tarifs</div>
-          <div class="analysis-title"><a href="{{ "policy/" | relURL }}">Section 122 et crise constitutionnelle du commerce : anatomie d'un contournement</a></div>
-          <div class="analysis-excerpt">Après l'arrêt de la Cour suprême invalidant les tarifs IEEPA, l'administration bascule sur la Section 122. Géométrie tarifaire et impact G7.</div>
-        </div>
-      </li>
-      <li class="analysis-item">
-        <div class="analysis-date">Mars 2026</div>
-        <div>
-          <div class="analysis-tag analysis-tag--defense">Défense &amp; Réarmement</div>
-          <div class="analysis-title"><a href="{{ "policy/" | relURL }}">ReArm Europe : LPM 2024-2030 et les 4 500 PME de la BITD</a></div>
-          <div class="analysis-excerpt">Le plan de réarmement européen repose sur 4 500 PME. Analyse de leur capacité d'absorption.</div>
-        </div>
-      </li>
-      <li class="analysis-item">
-        <div class="analysis-date">Mars 2026</div>
-        <div>
-          <div class="analysis-tag analysis-tag--risque">Risque Systémique</div>
-          <div class="analysis-title"><a href="{{ "policy/" | relURL }}">Triple choc simultané : Ormuz + tarifs + réarmement</a></div>
-          <div class="analysis-excerpt">Stress-test polycrisis à trois dimensions. Impact PIB UE projeté : -3.1 à -5.4%.</div>
-        </div>
-      </li>
-    </ul>
-    <a href="{{ "policy/" | relURL }}" class="arrow-link" style="margin-top: 24px; display: inline-block;">Toutes les analyses &rarr;</a>
+        <h2 class="section-title">Notes stratégiques et policy briefs</h2>
+      </div>
+      <div class="analyses-grid">
+        {{ $policyPages := where .Site.RegularPages "Type" "policy" }}
+        {{ $sorted := $policyPages.ByDate.Reverse }}
+        {{ range first 4 $sorted }}
+        <article class="card-note">
+          {{ with .Params.tags }}
+          <span class="card-note-tag">{{ index . 0 }}</span>
+          {{ end }}
+          <h3 class="card-note-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 160 }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">{{ .Date.Format "January 2006" }}</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">{{ .Params.doc_type | default "note" }}</span>
+          </div>
+        </article>
+        {{ else }}
+        <article class="card-note">
+          <span class="card-note-tag tag--geoeconomie">géoéconomie</span>
+          <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">PME, fragmentation et résilience dans les chaînes d'approvisionnement</a></h3>
+          <p class="card-note-summary">Les chocs géopolitiques affectent les PME via les chaînes d'approvisionnement. Quantification sur données BACI.</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">Avril 2026</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">working paper</span>
+          </div>
+        </article>
+        <article class="card-note">
+          <span class="card-note-tag tag--aide-chinoise">aide chinoise</span>
+          <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Sovereign Investment as Commodity Trade Insurance</a></h3>
+          <p class="card-note-summary">L'aide chinoise en Afrique fonctionne comme une assurance commerciale. Evidence causale PAR-first.</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">Mars 2026</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">note</span>
+          </div>
+        </article>
+        <article class="card-note">
+          <span class="card-note-tag tag--polycrisis">polycrisis</span>
+          <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Polycrisis Asie : convergence des risques sur la zone Indo-Pacifique</a></h3>
+          <p class="card-note-summary">Note pour la Fondation France-Asie. Trois scénarios de matérialisation des risques en Asie.</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">Février 2026</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">note FFA</span>
+          </div>
+        </article>
+        <article class="card-note">
+          <span class="card-note-tag tag--finance-dev">finance publique</span>
+          <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">L'APD du G7 décroche pour la troisième année consécutive</a></h3>
+          <p class="card-note-summary">Analyse des données OCDE-DAC 2025. La tendance baissière s'installe malgré les engagements du sommet.</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">Janvier 2026</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">policy brief</span>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
   </div>
-</section>
 
-<!-- === VIGIE TEASER === -->
-<section class="vigie-teaser">
+  <!-- VIGIE PREVIEW -->
   <div class="container">
-    <div class="vigie-teaser-header">
-      <h2>Vigie — Foresight Monitor</h2>
-      <div class="vigie-teaser-badge">
-        <span class="dot"></span> Live
+    <section class="section vigie-preview">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Vigie &middot; Foresight Monitor</span>
+        </div>
+        <h2 class="section-title">Suivi des scénarios macroéconomiques</h2>
+        <p class="section-subtitle">Indicateurs FPSQ, scénarios actifs et signaux géopolitiques en temps réel.</p>
       </div>
-    </div>
-    <div class="vigie-indicators">
-      <div class="vigie-indicator">
-        <div class="vigie-indicator-label">GPR Global</div>
-        <div class="vigie-indicator-value">187.3</div>
-        <div class="vigie-indicator-delta" style="color: #FF6B6B;">&#9650; +12.4%</div>
-        <div class="vigie-indicator-spark"></div>
-      </div>
-      <div class="vigie-indicator">
-        <div class="vigie-indicator-label">Brent Crude</div>
-        <div class="vigie-indicator-value">$94.2</div>
-        <div class="vigie-indicator-delta" style="color: #FF6B6B;">&#9650; +8.2%</div>
-        <div class="vigie-indicator-spark"></div>
-      </div>
-      <div class="vigie-indicator">
-        <div class="vigie-indicator-label">EMBI Spread</div>
-        <div class="vigie-indicator-value">412</div>
-        <div class="vigie-indicator-delta" style="color: #00D4AA;">&#9660; -2.1%</div>
-        <div class="vigie-indicator-spark"></div>
-      </div>
-      <div class="vigie-indicator">
-        <div class="vigie-indicator-label">Trade Frag.</div>
-        <div class="vigie-indicator-value">0.73</div>
-        <div class="vigie-indicator-delta" style="color: #FF6B6B;">&#9650; +0.04</div>
-        <div class="vigie-indicator-spark"></div>
-      </div>
-    </div>
+      <figure class="chart">
+        <header class="chart-header">
+          <span class="eyebrow-text">Graphique de la semaine</span>
+          <h3 class="chart-title">Le risque géopolitique reste élevé sur trois théâtres</h3>
+          <p class="chart-subtitle">Indice GPR mondial, par théâtre, contribution trimestrielle</p>
+          <p class="chart-takeaway">L'ANMO concentre désormais 60% de la hausse du risque géopolitique mondial.</p>
+        </header>
+        <div class="chart-canvas">
+          <svg viewBox="0 0 680 400" style="width:100%;height:auto;background:var(--color-background-secondary);border-radius:var(--radius-md)">
+            <text x="340" y="200" text-anchor="middle" fill="var(--color-text-tertiary)" font-family="var(--font-ui)" font-size="14">[Chart placeholder — GPR par théâtre Q1 2021 - Q4 2025]</text>
+          </svg>
+        </div>
+        <footer class="chart-footer">
+          <ul class="chart-legend">
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-1)"></span>ANMO</li>
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-2)"></span>Asie-Pacifique</li>
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-3)"></span>Europe-Russie</li>
+          </ul>
+          <p class="chart-source">Source : FPSQ Vigie ; Caldara &amp; Iacoviello (2024).</p>
+          <span class="chart-watermark">erickilama.com</span>
+        </footer>
+      </figure>
+      <a class="action" href="{{ "foresight/" | relURL }}">Ouvrir le desk complet &rarr;</a>
+    </section>
   </div>
-</section>
 
-<!-- === CREDENTIALS === -->
-<section class="credentials">
+  <!-- PULLQUOTE -->
   <div class="container">
-    <blockquote>La géopolitique est redevenue une variable structurelle de l'économie mondiale. La mesurer rigoureusement, c'est donner aux décideurs une prise sur l'incertitude.</blockquote>
-    <div class="credentials-affiliations">
-      CAPS-MEAE <span>&middot;</span> EconomiX <span>&middot;</span> CERDI <span>&middot;</span> FERDI <span>&middot;</span> European Economic Review <span>&middot;</span> Journal of Comparative Economics <span>&middot;</span> China Economic Review
+    <blockquote class="pullquote pullquote--centered">
+      <p>La géopolitique est redevenue une variable structurelle de l'économie mondiale. Les modèles macroéconomiques qui l'ignorent produisent des prévisions biaisées.</p>
+      <cite>&mdash; Eric Kilama, Vigie 2026</cite>
+    </blockquote>
+  </div>
+
+  <!-- AFFILIATIONS -->
+  <div class="container">
+    <div class="affiliations">
+      <span>CAPS-MEAE</span> &middot;
+      <span>EconomiX</span> &middot;
+      <span>CERDI</span> &middot;
+      <span>FERDI</span>
     </div>
   </div>
-</section>
+
+</main>
 {{ end }}

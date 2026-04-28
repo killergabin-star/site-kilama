@@ -1,0 +1,683 @@
+/* ============================================================================
+   editorial.css — Grammaire 1 : Editorial Long-form
+   Pages: /policy/, notes individuelles, briefs, debates
+   Inspiration: The Economist + FMI Blog
+   Spec: 07_PAGE_GRAMMARS.md — Grammaire 1
+   ============================================================================ */
+
+/* ---------- PAGE LAYOUT ---------- */
+
+.editorial-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- ARTICLE HEADER ---------- */
+
+.article-header {
+  margin-bottom: var(--space-6);
+}
+
+.article-header .eyebrow {
+  margin-bottom: var(--space-4);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.article-subtitle {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4);
+}
+
+.article-meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+.article-meta .sep {
+  margin: 0 6px;
+}
+
+/* ---------- ARTICLE BODY ---------- */
+
+.article-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-primary);
+}
+
+.article-body p {
+  margin: 0 0 var(--space-4);
+}
+
+.article-body h2 {
+  margin: var(--space-6) 0 var(--space-3);
+  position: relative;
+  padding-left: 24px;
+}
+
+.article-body h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 12px;
+  height: 12px;
+  background: var(--brand-accent);
+}
+
+.article-body h3 {
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.article-body a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* External links */
+.article-body a[target="_blank"]::after {
+  content: " \2197";
+  font-size: 0.8em;
+}
+
+/* ---------- HERO DATA (editorial accent number) ---------- */
+
+.article-hero-data {
+  background: var(--color-background-secondary);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  margin: var(--space-5) 0;
+  text-align: center;
+}
+
+/* ---------- WIDE ELEMENTS (charts, images that break out of 720px) ---------- */
+
+.article-wide {
+  margin-left: calc(-1 * (min(50vw - 360px, 160px)));
+  margin-right: calc(-1 * (min(50vw - 360px, 160px)));
+  max-width: 1024px;
+}
+
+@media (max-width: 760px) {
+  .article-wide {
+    margin-left: calc(-1 * var(--space-5));
+    margin-right: calc(-1 * var(--space-5));
+  }
+}
+
+/* ---------- HERO IMAGE ---------- */
+
+.article-hero-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+}
+
+/* ---------- TAGS ---------- */
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: var(--space-5) 0;
+  padding-top: var(--space-5);
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+
+/* ---------- RELATED NOTES ---------- */
+
+.related-notes {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+
+.related-notes h2 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- POLICY INDEX PAGE ---------- */
+
+.policy-hero {
+  margin-bottom: var(--space-6);
+}
+
+.policy-hero .article-title {
+  font-size: var(--fs-hero);
+  line-height: var(--lh-hero);
+}
+
+.policy-dossier {
+  background: var(--color-background-secondary);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.policy-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .policy-catalog {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- POLICY H1 ITALIC ACCENT ---------- */
+
+[data-palette="vivid-editorial"] .article-title em {
+  font-style: italic;
+  color: var(--brand-accent);
+  font-weight: 400;
+}
+
+/* ---------- DOSSIER BANNER FILIGRANE (dynamic via data-watermark) ---------- */
+
+.dossier-banner {
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid var(--brand-accent);
+  padding-left: var(--space-5);
+}
+
+.dossier-banner::before {
+  content: attr(data-watermark);
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(120px, 14vw, 220px);
+  font-weight: 400;
+  color: rgba(230, 32, 58, 0.06);
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.dossier-banner > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- DEBATE CARDS NUMBERED ---------- */
+
+.debate-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--color-border-secondary);
+  align-items: start;
+}
+
+.debate-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--brand-accent);
+  font-weight: 400;
+}
+
+.debate-content h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.debate-position {
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin: 0 0 24px;
+  max-width: 75ch;
+}
+
+.debate-related {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.debate-related a {
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border-secondary);
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+.debate-related a:hover {
+  color: var(--brand-accent);
+  border-bottom-color: var(--brand-accent);
+}
+
+/* ---------- POLICY HERO ---------- */
+
+.policy-hero {
+  padding: 96px 40px 80px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.policy-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.policy-hero .h-display {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6.5vw, 92px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4);
+  max-width: none;
+  text-align: left;
+}
+
+.policy-hero .h-display em {
+  font-style: italic;
+  color: var(--brand-accent, var(--brand-primary));
+}
+
+.policy-standfirst {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+  margin: 0 0 var(--space-5);
+  text-align: left;
+}
+
+.policy-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: none;
+  justify-content: flex-start;
+}
+
+@media (max-width: 760px) {
+  .policy-hero {
+    padding: 64px 24px 48px;
+  }
+}
+
+/* ============================================================================
+   VARIANT-A EDITORIAL LAYER (vivid-editorial)
+   ===========================================================================
+   Mono-accent rouge sur fond dark cream-ivory. Registre Economist dark.
+   On nettoie tout résidu de couleurs froides (bleu, cyan) et on dramatise
+   le rouge accent pour donner de la personnalité éditoriale à Policy.
+   ============================================================================ */
+
+/* Hero policy — taille calibrée + halo radial subtil */
+[data-palette="vivid-editorial"] .policy-hero {
+  background:
+    radial-gradient(ellipse at 8% 20%, rgba(230, 32, 58, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 95% 90%, rgba(230, 32, 58, 0.04) 0%, transparent 55%);
+  padding: 88px 40px 64px;
+}
+[data-palette="vivid-editorial"] .policy-hero .eyebrow {
+  font-family: var(--font-data);
+  letter-spacing: 0.08em;
+  color: var(--brand-accent);
+  margin-bottom: 24px;
+}
+[data-palette="vivid-editorial"] .policy-hero .eyebrow-text {
+  color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .policy-hero .h-display {
+  font-size: clamp(44px, 5.5vw, 78px);
+  max-width: 24ch;
+}
+[data-palette="vivid-editorial"] .policy-hero .h-display em {
+  color: var(--brand-accent);
+}
+
+.policy-hero .h-display .h-line {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .policy-hero .h-display .h-line {
+    white-space: normal;
+  }
+}
+
+/* Chips thématiques : padding plus aéré, monospace, hover plein rouge */
+[data-palette="vivid-editorial"] .policy-chips .chip {
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-width: 1px;
+  background: transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+[data-palette="vivid-editorial"] .policy-chips .chip:hover {
+  background: var(--brand-accent);
+  color: var(--color-text-primary);
+  border-color: var(--brand-accent);
+}
+
+/* En Variant-A, neutralise les couleurs spécifiques des chips
+   en faveur du mono-accent rouge + warm grey */
+[data-palette="vivid-editorial"] .chip--polycrisis,
+[data-palette="vivid-editorial"] .tag--polycrisis,
+[data-palette="vivid-editorial"] .tag--risque-geo {
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .chip--geoeconomie,
+[data-palette="vivid-editorial"] .chip--europe,
+[data-palette="vivid-editorial"] .tag--commerce,
+[data-palette="vivid-editorial"] .tag--energie {
+  border-color: var(--brand-data-2);
+  color: var(--brand-data-2);
+}
+[data-palette="vivid-editorial"] .chip--asie,
+[data-palette="vivid-editorial"] .chip--multilat,
+[data-palette="vivid-editorial"] .chip--finance-dev,
+[data-palette="vivid-editorial"] .tag--findev,
+[data-palette="vivid-editorial"] .tag--finance-dev {
+  border-color: var(--brand-data-3);
+  color: var(--brand-data-3);
+}
+
+/* Tabs Bruegel : underline rouge sur active */
+[data-palette="vivid-editorial"] .tab--active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .tab {
+  font-family: var(--font-data);
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Filters chip active : rouge plein */
+[data-palette="vivid-editorial"] .filters .chip--active {
+  background: var(--brand-accent);
+  color: var(--color-background-primary);
+  border-color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .filters .chip {
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+
+/* Featured policy : hero card éditoriale forte */
+[data-palette="vivid-editorial"] .policy-featured {
+  border: 0.5px solid var(--color-border-secondary);
+  border-left: 3px solid var(--brand-accent);
+  background: var(--color-background-secondary);
+  padding: 40px;
+  margin: 32px 0;
+  border-radius: 4px;
+}
+[data-palette="vivid-editorial"] .policy-featured .eyebrow .eyebrow-mark {
+  background: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .policy-featured .eyebrow .eyebrow-text {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  letter-spacing: 0.08em;
+}
+[data-palette="vivid-editorial"] .policy-featured h2 {
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+[data-palette="vivid-editorial"] .policy-featured a.action {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--brand-accent);
+  padding-bottom: 2px;
+}
+[data-palette="vivid-editorial"] .policy-featured a.action:hover {
+  color: var(--color-text-primary);
+}
+
+/* Dossier banner : watermark rouge dilué + barre plus marquée */
+[data-palette="vivid-editorial"] .dossier-banner {
+  background: var(--color-background-secondary);
+  border-left: 4px solid var(--brand-accent);
+  padding: 40px;
+  border-radius: 4px;
+}
+[data-palette="vivid-editorial"] .dossier-banner::before {
+  color: rgba(230, 32, 58, 0.05);
+}
+[data-palette="vivid-editorial"] .dossier-banner > .eyebrow .eyebrow-mark {
+  background: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .dossier-banner > .eyebrow .eyebrow-text {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+}
+
+/* Cards within dossier : minimal mono-accent, hover plein */
+[data-palette="vivid-editorial"] .policy-catalog .card-note {
+  background: var(--color-background-tertiary);
+  border: 0.5px solid var(--color-border-tertiary);
+  padding: 20px;
+  border-radius: 4px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+[data-palette="vivid-editorial"] .policy-catalog .card-note:hover {
+  border-color: var(--brand-accent);
+  transform: translateY(-2px);
+}
+[data-palette="vivid-editorial"] .policy-catalog .card-note-tag {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--brand-accent);
+  padding: 2px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+[data-palette="vivid-editorial"] .policy-catalog .card-note-title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+[data-palette="vivid-editorial"] .policy-catalog .card-note-title a:hover {
+  border-bottom-color: var(--brand-accent);
+  color: var(--brand-accent-soft, var(--brand-accent));
+}
+
+/* Section headers (Catalogue / Débats / Rapports) : titre + barre rouge */
+[data-palette="vivid-editorial"] #catalogue h2,
+[data-palette="vivid-editorial"] #debats h2,
+[data-palette="vivid-editorial"] #rapports h2 {
+  color: var(--color-text-primary);
+  font-size: clamp(28px, 3.5vw, 40px);
+  border-bottom: 2px solid var(--brand-accent);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+[data-palette="vivid-editorial"] #catalogue > h2,
+[data-palette="vivid-editorial"] #debats > h2,
+[data-palette="vivid-editorial"] #rapports > h2 {
+  display: block;
+}
+
+/* Section eyebrow blocks (Débats, Rapports) */
+[data-palette="vivid-editorial"] #debats > .eyebrow .eyebrow-text,
+[data-palette="vivid-editorial"] #rapports > .eyebrow .eyebrow-text {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  letter-spacing: 0.08em;
+}
+[data-palette="vivid-editorial"] #debats > .eyebrow .eyebrow-mark,
+[data-palette="vivid-editorial"] #rapports > .eyebrow .eyebrow-mark {
+  background: var(--brand-accent);
+}
+
+/* Policy entries : list dense avec hover rouge */
+[data-palette="vivid-editorial"] .policy-entry {
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  padding: 24px 0;
+  transition: background 0.15s;
+}
+[data-palette="vivid-editorial"] .policy-entry:hover {
+  background: rgba(230, 32, 58, 0.03);
+}
+[data-palette="vivid-editorial"] .policy-entry-thumb {
+  background: var(--color-background-tertiary);
+  border-radius: 2px;
+}
+[data-palette="vivid-editorial"] .policy-entry-body h3 a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+[data-palette="vivid-editorial"] .policy-entry-body h3 a:hover {
+  border-bottom-color: var(--brand-accent);
+  color: var(--brand-accent);
+}
+
+/* Debate cards : numéro rouge dramatique */
+[data-palette="vivid-editorial"] .debate-card {
+  border-bottom-color: var(--color-border-tertiary);
+}
+[data-palette="vivid-editorial"] .debate-num {
+  color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .debate-content h3 {
+  color: var(--color-text-primary);
+}
+[data-palette="vivid-editorial"] .debate-related a {
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+[data-palette="vivid-editorial"] .debate-related a:hover {
+  color: var(--brand-accent);
+  border-bottom-color: var(--brand-accent);
+}
+[data-palette="vivid-editorial"] .debate-related .meta {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  letter-spacing: 0.08em;
+}
+
+/* Tag rapport branded */
+[data-palette="vivid-editorial"] .tag--brand {
+  background: var(--brand-accent);
+  color: var(--color-text-primary);
+  border-color: var(--brand-accent);
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  text-transform: uppercase;
+}
+
+/* Newsletter CTA */
+[data-palette="vivid-editorial"] .subscribe-cta {
+  border: 0.5px solid var(--color-border-secondary);
+  border-left: 3px solid var(--brand-accent);
+  padding: 32px;
+  margin: 48px 0;
+  background: var(--color-background-secondary);
+  border-radius: 4px;
+}
+[data-palette="vivid-editorial"] .subscribe-cta h3 {
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+[data-palette="vivid-editorial"] .subscribe-cta a.action {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--brand-accent);
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+/* Chart figure : legend + watermark cohérents */
+[data-palette="vivid-editorial"] .chart-header h3.chart-title {
+  color: var(--color-text-primary);
+}
+[data-palette="vivid-editorial"] .chart-header .eyebrow-text {
+  color: var(--brand-accent);
+  font-family: var(--font-data);
+  letter-spacing: 0.08em;
+}
+
+/* Article body links : rouge */
+[data-palette="vivid-editorial"] .article-body a {
+  color: var(--brand-accent);
+}
+
+/* Wordmark mark : rouge pour cohérence Variant-A (au lieu du cyan flag) */
+[data-palette="vivid-editorial"] .wordmark-mark {
+  color: var(--brand-accent);
+}
+
+/* Site header link active : rouge */
+[data-palette="vivid-editorial"] .nav-item.active > a {
+  color: var(--color-text-primary);
+}
+[data-palette="vivid-editorial"] .nav-item > a:hover,
+[data-palette="vivid-editorial"] .main-nav > a:hover {
+  color: var(--brand-accent);
+}
+
+/* Lang switch active : rouge */
+[data-palette="vivid-editorial"] .lang-switch a.active {
+  color: var(--brand-accent);
+}

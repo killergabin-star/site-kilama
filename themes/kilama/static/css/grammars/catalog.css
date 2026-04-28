@@ -1,0 +1,555 @@
+/* ============================================================================
+   catalog.css — Grammaire 3 : Catalog / Index
+   Pages: /research/, /teaching/
+   Inspiration: hybride editoriale avec filtres
+   Spec: 07_PAGE_GRAMMARS.md — Grammaire 3
+   ============================================================================ */
+
+/* ---------- PAGE LAYOUT ---------- */
+
+.catalog-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- CATALOG HEADER ---------- */
+
+.catalog-header {
+  margin-bottom: var(--space-5);
+}
+
+.catalog-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-h1);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.catalog-subtitle {
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ---------- RESULT COUNT ---------- */
+
+.result-count {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+/* ---------- CARD GRID ---------- */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- CARD LIST (single column) ---------- */
+
+.catalog-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- CATEGORY GROUPS ---------- */
+
+.catalog-group {
+  margin-bottom: var(--space-6);
+}
+
+.catalog-group-title {
+  font-family: var(--font-ui);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+/* ---------- SORT CONTROL ---------- */
+
+.sort-control {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-4);
+}
+
+.sort-select {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* ---------- PAGINATION ---------- */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+}
+
+.pagination a,
+.pagination span {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+}
+
+.pagination a:hover {
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+}
+
+.pagination .current {
+  background: var(--brand-primary);
+  color: var(--color-text-on-brand);
+}
+
+/* ---------- TEACHING-SPECIFIC ---------- */
+
+.course-card {
+  padding: var(--space-5);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.course-card h3 {
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-2);
+}
+
+.course-card .course-institution {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-3);
+}
+
+.course-card p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.course-years {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- RESEARCH BLOOMBERG HERO ----------
+   Aligné gauche, taille proportionnée aux autres pages (mêmes
+   tokens que policy-hero), eyebrow + titre + standfirst.
+   Multi-couleur Bloomberg (cyan / violet / mint) sur les em. */
+
+.research-hero {
+  padding: 96px 40px 72px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.research-hero .container {
+  max-width: 1200px;
+  text-align: left;
+}
+
+.research-hero .eyebrow {
+  margin-bottom: 28px;
+}
+
+.research-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 84px);
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  font-weight: 400;
+  margin: 0 0 32px;
+  max-width: 16ch;
+  color: var(--color-text-primary);
+  text-align: left;
+}
+
+.research-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.research-hero-standfirst {
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 60ch;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Couleurs hero multi-Bloomberg — fonctionnent en vivid-bloomberg.
+   En vivid-editorial, fallback sur l'accent rouge (mono-tone). */
+.hero-cyan   { color: var(--brand-primary); }
+.hero-violet { color: var(--brand-secondary, var(--brand-accent)); }
+.hero-mint   { color: var(--brand-tertiary, var(--brand-accent)); }
+
+@media (max-width: 760px) {
+  .research-hero {
+    padding: 64px 24px 48px;
+  }
+  .research-hero-title {
+    font-size: clamp(38px, 9vw, 56px);
+  }
+}
+
+.catalog-hero {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+/* ---------- RESEARCH AXIS COLORED BORDERS ---------- */
+
+.research-axis:nth-child(1) { border-left-color: var(--brand-primary); }
+.research-axis:nth-child(2) { border-left-color: var(--brand-secondary, var(--brand-primary)); }
+.research-axis:nth-child(3) { border-left-color: var(--brand-tertiary, var(--brand-primary)); }
+.research-axis:nth-child(4) { border-left-color: var(--brand-quaternary, var(--brand-primary)); }
+.research-axis:nth-child(5) { border-left-color: var(--brand-data-5, var(--brand-primary)); }
+
+.research-axis:nth-child(1) .eyebrow { color: var(--brand-primary); }
+.research-axis:nth-child(2) .eyebrow { color: var(--brand-secondary, var(--brand-primary)); }
+.research-axis:nth-child(3) .eyebrow { color: var(--brand-tertiary, var(--brand-primary)); }
+.research-axis:nth-child(4) .eyebrow { color: var(--brand-quaternary, var(--brand-primary)); }
+.research-axis:nth-child(5) .eyebrow { color: var(--brand-data-5, var(--brand-primary)); }
+
+/* ============================================================================
+   BLOOMBERG RESEARCH LAYER
+   ===========================================================================
+   Quand Research est en vivid-bloomberg, on insuffle de la couleur partout
+   après le hero pour respecter la promesse multi-couleur. Couleurs Bloomberg :
+     1. cyan        --brand-primary       (#00BFFF)
+     2. violet      --brand-secondary     (#B062FF)
+     3. mint        --brand-tertiary      (#00E5C4)
+     4. amber       --brand-quaternary    (#FFC633)
+     5. coral       --brand-data-5        (#FF4757)
+     6. magenta     --brand-data-6        (#FF50B5)
+   ============================================================================ */
+
+[data-palette="vivid-bloomberg"] .research-hero {
+  /* Soft background gradient pour ancrer le hero dans le DNA terminal */
+  background:
+    radial-gradient(ellipse at 12% 15%, rgba(0,191,255,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 80%, rgba(176,98,255,0.05) 0%, transparent 55%);
+}
+
+/* Catalog group eyebrows et titles : couleurs cycliques */
+[data-palette="vivid-bloomberg"] #axes  > .eyebrow .eyebrow-text { color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] #axes  > .eyebrow .eyebrow-mark { background: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] #methodo > .eyebrow .eyebrow-text,
+[data-palette="vivid-bloomberg"] #methodo > .eyebrow .eyebrow-mark { color: var(--brand-secondary); background: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] #methodo > .eyebrow .eyebrow-text { background: transparent; }
+[data-palette="vivid-bloomberg"] #publications > .eyebrow .eyebrow-text { color: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] #publications > .eyebrow .eyebrow-mark { background: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] #working-papers > .eyebrow .eyebrow-text { color: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] #working-papers > .eyebrow .eyebrow-mark { background: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] #data > .eyebrow .eyebrow-text { color: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] #data > .eyebrow .eyebrow-mark { background: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] #methodo-notes > .eyebrow .eyebrow-text { color: var(--brand-data-6); }
+[data-palette="vivid-bloomberg"] #methodo-notes > .eyebrow .eyebrow-mark { background: var(--brand-data-6); }
+
+/* Section titles : underline subtil de couleur */
+[data-palette="vivid-bloomberg"] .catalog-page .catalog-group .catalog-group-title {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 12px;
+  color: var(--color-text-primary);
+}
+[data-palette="vivid-bloomberg"] #axes .catalog-group-title { border-bottom-color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] #methodo .catalog-group-title { border-bottom-color: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] #publications .catalog-group-title { border-bottom-color: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] #working-papers .catalog-group-title { border-bottom-color: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] #data .catalog-group-title { border-bottom-color: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] #methodo-notes .catalog-group-title { border-bottom-color: var(--brand-data-6); }
+
+/* AXES : 5 couleurs distinctes, eyebrow + bordure + titre en couleur */
+[data-palette="vivid-bloomberg"] .research-axis {
+  padding-left: 24px;
+  border-left: 4px solid var(--brand-primary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+[data-palette="vivid-bloomberg"] .research-axis::before { display: none; }
+
+[data-palette="vivid-bloomberg"] .research-axis[data-color="1"] { border-left-color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="1"] .research-axis-main > .eyebrow .eyebrow-text { color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="1"] .research-axis-main h2 { color: var(--brand-primary); }
+
+[data-palette="vivid-bloomberg"] .research-axis[data-color="2"] { border-left-color: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="2"] .research-axis-main > .eyebrow .eyebrow-text { color: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="2"] .research-axis-main h2 { color: var(--brand-secondary); }
+
+[data-palette="vivid-bloomberg"] .research-axis[data-color="3"] { border-left-color: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="3"] .research-axis-main > .eyebrow .eyebrow-text { color: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="3"] .research-axis-main h2 { color: var(--brand-tertiary); }
+
+[data-palette="vivid-bloomberg"] .research-axis[data-color="4"] { border-left-color: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="4"] .research-axis-main > .eyebrow .eyebrow-text { color: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="4"] .research-axis-main h2 { color: var(--brand-quaternary); }
+
+[data-palette="vivid-bloomberg"] .research-axis[data-color="5"] { border-left-color: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="5"] .research-axis-main > .eyebrow .eyebrow-text { color: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="5"] .research-axis-main h2 { color: var(--brand-data-5); }
+
+/* Pills/tags Bloomberg : background coloré subtle, texte coloré */
+[data-palette="vivid-bloomberg"] .research-axis-pills .tag {
+  background: rgba(0, 191, 255, 0.08);
+  border: 1px solid rgba(0, 191, 255, 0.25);
+  color: var(--color-text-primary);
+  font-family: var(--font-data);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+}
+[data-palette="vivid-bloomberg"] .research-axis[data-color="2"] .research-axis-pills .tag {
+  background: rgba(176, 98, 255, 0.08);
+  border-color: rgba(176, 98, 255, 0.25);
+}
+[data-palette="vivid-bloomberg"] .research-axis[data-color="3"] .research-axis-pills .tag {
+  background: rgba(0, 229, 196, 0.08);
+  border-color: rgba(0, 229, 196, 0.25);
+}
+[data-palette="vivid-bloomberg"] .research-axis[data-color="4"] .research-axis-pills .tag {
+  background: rgba(255, 198, 51, 0.08);
+  border-color: rgba(255, 198, 51, 0.25);
+}
+[data-palette="vivid-bloomberg"] .research-axis[data-color="5"] .research-axis-pills .tag {
+  background: rgba(255, 71, 87, 0.08);
+  border-color: rgba(255, 71, 87, 0.25);
+}
+
+/* Sidebar h4 colored par axe */
+[data-palette="vivid-bloomberg"] .research-axis[data-color="1"] .research-axis-sidebar h4 { color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="2"] .research-axis-sidebar h4 { color: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="3"] .research-axis-sidebar h4 { color: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="4"] .research-axis-sidebar h4 { color: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] .research-axis[data-color="5"] .research-axis-sidebar h4 { color: var(--brand-data-5); }
+
+/* Tags "in progress" : couleur ambre Bloomberg, monospace */
+[data-palette="vivid-bloomberg"] .research-axis-sidebar .tag,
+[data-palette="vivid-bloomberg"] .pub-entry-links .tag {
+  background: rgba(255, 198, 51, 0.10);
+  border: 1px solid rgba(255, 198, 51, 0.35);
+  color: var(--brand-quaternary);
+  font-family: var(--font-data);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+}
+
+/* Pub entry : eyebrow année + journal en cyan, h3 hover effect */
+[data-palette="vivid-bloomberg"] .pub-entry {
+  border-bottom-color: rgba(232, 233, 234, 0.10);
+  padding: 32px 0;
+}
+[data-palette="vivid-bloomberg"] .pub-entry > .eyebrow .eyebrow-text {
+  color: var(--brand-tertiary);
+  font-family: var(--font-data);
+}
+[data-palette="vivid-bloomberg"] .pub-entry h3 {
+  color: var(--color-text-primary);
+  transition: color 0.2s ease;
+}
+[data-palette="vivid-bloomberg"] .pub-entry-links a {
+  color: var(--brand-primary);
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 191, 255, 0.4);
+  padding-bottom: 2px;
+}
+[data-palette="vivid-bloomberg"] .pub-entry-links a:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--brand-primary);
+  text-decoration: none;
+}
+
+/* Working papers : sur-coloration ambre */
+[data-palette="vivid-bloomberg"] #working-papers .pub-entry > .eyebrow .eyebrow-text {
+  color: var(--brand-quaternary);
+}
+
+/* Data section : eyebrows en coral */
+[data-palette="vivid-bloomberg"] #data .pub-entry > .eyebrow .eyebrow-text {
+  color: var(--brand-data-5);
+}
+
+/* Method notes : numbered avec couleurs cyclées */
+[data-palette="vivid-bloomberg"] #methodo .method-notes-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+[data-palette="vivid-bloomberg"] #methodo .method-note {
+  padding: 24px 24px 24px 28px;
+  border-right: 0.5px solid var(--color-border-tertiary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  position: relative;
+}
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(2n) { border-right: none; }
+[data-palette="vivid-bloomberg"] #methodo .method-note::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+}
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+1)::before { background: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+2)::before { background: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+3)::before { background: var(--brand-tertiary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+4)::before { background: var(--brand-quaternary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+5)::before { background: var(--brand-data-5); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+6)::before { background: var(--brand-data-6); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+7)::before { background: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note:nth-child(8n+8)::before { background: var(--brand-secondary); }
+[data-palette="vivid-bloomberg"] #methodo .method-note h4 { color: var(--color-text-primary); margin-bottom: 8px; }
+[data-palette="vivid-bloomberg"] #methodo .method-note p { color: var(--color-text-secondary); }
+
+@media (max-width: 760px) {
+  [data-palette="vivid-bloomberg"] #methodo .method-notes-list {
+    grid-template-columns: 1fr;
+  }
+  [data-palette="vivid-bloomberg"] #methodo .method-note {
+    border-right: none;
+  }
+}
+
+/* Model equation (LaTeX) : terminal-style highlight */
+[data-palette="vivid-bloomberg"] .model-equation {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-secondary);
+  border-left: 3px solid var(--brand-secondary);
+  padding: 24px 28px;
+  margin: 32px 0;
+  border-radius: 4px;
+}
+[data-palette="vivid-bloomberg"] .model-equation > .eyebrow .eyebrow-text {
+  color: var(--brand-secondary);
+}
+[data-palette="vivid-bloomberg"] .model-equation .equation-content {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin: 16px 0;
+  text-align: center;
+}
+[data-palette="vivid-bloomberg"] .model-equation .legend {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+/* Sub-nav anchors (filters chips) sous le hero : look terminal */
+[data-palette="vivid-bloomberg"] .filters .chip {
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--color-border-secondary);
+  color: var(--color-text-secondary);
+  padding: 6px 14px;
+}
+[data-palette="vivid-bloomberg"] .filters .chip:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+[data-palette="vivid-bloomberg"] .filters .chip--active {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--color-background-primary);
+}
+
+/* Method notes (notes méthodologiques individuelles section finale) */
+[data-palette="vivid-bloomberg"] #methodo-notes .method-note {
+  padding: 24px 0 24px 24px;
+  border-left: 3px solid var(--brand-data-6);
+  margin-bottom: 12px;
+}
+[data-palette="vivid-bloomberg"] #methodo-notes .method-note h4 a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+[data-palette="vivid-bloomberg"] #methodo-notes .method-note h4 a:hover {
+  color: var(--brand-data-6);
+  border-bottom-color: var(--brand-data-6);
+}
+
+/* Catalog hero (Programme de recherche subtitle block) : un peu plus aéré */
+[data-palette="vivid-bloomberg"] .catalog-hero {
+  padding: 48px 40px 32px;
+  background: var(--color-background-secondary);
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+[data-palette="vivid-bloomberg"] .catalog-hero .container {
+  padding: 0;
+  max-width: 1200px;
+}
+[data-palette="vivid-bloomberg"] .catalog-hero .eyebrow .eyebrow-text { color: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] .catalog-hero .eyebrow .eyebrow-mark { background: var(--brand-primary); }
+[data-palette="vivid-bloomberg"] .catalog-hero .catalog-title {
+  color: var(--color-text-primary);
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+[data-palette="vivid-bloomberg"] .catalog-hero .catalog-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+/* Catalog page : élargir un peu pour Bloomberg layout */
+[data-palette="vivid-bloomberg"] .catalog-page {
+  max-width: 1200px;
+}
+
+/* Hero research eyebrow flag : cyan en Bloomberg, font monospace */
+[data-palette="vivid-bloomberg"] .research-hero .eyebrow--with-flag::before {
+  background: var(--brand-primary);
+}
+[data-palette="vivid-bloomberg"] .research-hero .eyebrow {
+  font-family: var(--font-data);
+  color: var(--brand-primary);
+  letter-spacing: 0.08em;
+}
+[data-palette="vivid-bloomberg"] .research-hero .eyebrow .eyebrow-text,
+[data-palette="vivid-bloomberg"] .research-hero .eyebrow {
+  color: var(--brand-primary);
+}

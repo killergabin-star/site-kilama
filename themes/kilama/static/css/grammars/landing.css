@@ -1,0 +1,460 @@
+/* ============================================================================
+   landing.css — Grammaire 5 : Landing / Hero (home)
+   Synthese des trois inspirations. Mixe KPI, cards, editorial.
+   Spec: 07_PAGE_GRAMMARS.md — Grammaire 5
+   ============================================================================ */
+
+/* ---------- HERO EDITORIAL (fold sobre) ---------- */
+
+.hero-editorial {
+  padding: 96px 40px 120px;
+  border-bottom: 1px solid var(--color-border-secondary);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-editorial-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-editorial-text .eyebrow {
+  margin-bottom: 32px;
+}
+
+.hero-editorial-text .h-display {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px;
+  color: var(--color-text-primary);
+  max-width: 18ch;
+}
+
+.hero-editorial-text .standfirst {
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 55ch;
+  margin: 0 0 48px;
+}
+
+.hero-editorial-actions {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-editorial-portrait {
+  position: relative;
+}
+
+.portrait-placeholder {
+  aspect-ratio: 3/4;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cta-link--muted {
+  color: var(--color-text-secondary);
+  border-bottom-color: var(--color-text-tertiary);
+}
+
+/* ---------- HOME HERO ACCENTS ---------- */
+.hero-editorial--home .h-display {
+  font-size: clamp(40px, 4.7vw, 68px);
+  max-width: 20ch;
+}
+
+.hero-editorial--home .h-display .h-line {
+  white-space: nowrap;
+}
+
+.hero-editorial--home .h-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: #2251FF;
+}
+.hero-editorial--home .h-display em + br + em,
+.hero-editorial--home .h-display em:nth-of-type(2) {
+  color: #2251FF;
+}
+
+.hero-editorial--home .eyebrow--blue::before,
+.hero-editorial--home .cta-link--primary.cta-link--blue {
+  background: #2251FF;
+}
+
+.hero-editorial--home .hero-editorial-actions .cta-link:not(.cta-link--primary) {
+  color: #2251FF;
+  border-bottom-color: #2251FF;
+}
+
+[data-palette="vivid-bloomberg"] .wordmark-mark {
+  color: #2251FF;
+}
+
+/* Fallback Variant-A : un seul accent rouge sur les em */
+[data-palette="vivid-editorial"] .hero-editorial--home .h-display em {
+  color: var(--brand-accent);
+}
+
+@media (max-width: 900px) {
+  .hero-editorial {
+    padding: 64px 24px 80px;
+    min-height: auto;
+  }
+  .hero-editorial-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero-editorial--home .h-display .h-line {
+    white-space: normal;
+  }
+}
+
+/* ---------- WATCH BLOCK ---------- */
+
+.watch-block {
+  max-width: 720px;
+  border-left: 3px solid var(--brand-primary);
+  padding: 24px 0 24px 32px;
+}
+
+.watch-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 16px 0 24px;
+}
+
+/* ---------- LEGACY HERO (kept for reference) ---------- */
+
+.hero {
+  padding: var(--space-8) 0 var(--space-7);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.hero-main {}
+
+.hero .eyebrow {
+  margin-bottom: var(--space-4);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-hero);
+  letter-spacing: var(--tracking-hero);
+  color: var(--color-text-primary);
+  max-width: 700px;
+  margin: 0 0 var(--space-4);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 580px;
+  margin: 0 0 var(--space-5);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ---------- SECTION GENERAL ---------- */
+
+.section {
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--color-border-secondary);
+}
+
+.section-header {
+  margin-bottom: var(--space-5);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-h2);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin: var(--space-2) 0 0;
+}
+
+/* ---------- FEATURED PUBLICATION ---------- */
+
+.featured-pub {
+  background: var(--color-background-secondary);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  margin: var(--space-5) 0;
+  border-left: 4px solid var(--brand-accent);
+}
+
+.featured-pub-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-h2);
+  margin: var(--space-3) 0 var(--space-3);
+}
+
+.featured-pub-summary {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
+  max-width: 640px;
+  margin: 0 0 var(--space-4);
+}
+
+/* ---------- RESEARCH PROGRAM (3 cards) ---------- */
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.program-card {
+  padding: var(--space-5);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--brand-primary);
+}
+
+.program-card-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-3);
+  color: var(--brand-primary);
+}
+
+.program-card h3 {
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-3);
+}
+
+.program-card p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4);
+}
+
+@media (max-width: 760px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- RECENT ANALYSES (2x2 grid) ---------- */
+
+.analyses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .analyses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- VIGIE PREVIEW ---------- */
+
+.vigie-preview {
+  padding: var(--space-6) 0;
+}
+
+.vigie-preview .chart {
+  max-width: 680px;
+}
+
+/* ---------- AFFILIATIONS ---------- */
+
+.affiliations {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-tertiary);
+  text-align: center;
+  padding: var(--space-5) 0;
+}
+
+.affiliations span {
+  margin: 0 var(--space-2);
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    padding: var(--space-6) 0 var(--space-5);
+  }
+  .hero-title {
+    font-size: 30px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- PORTRAIT PHOTO ----------
+   Le PNG source est composé sur fond noir pur (#000) avec vignette
+   pré-appliquée. Sur fond noir Bloomberg (--color-background-primary = #000)
+   les bords disparaissent intégralement. On ajoute un mask radial CSS pour
+   estomper encore davantage les bords sur palettes non-noir-pur. */
+
+.hero-editorial-portrait {
+  position: relative;
+}
+
+.hero-editorial-portrait .portrait-photo {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  background: transparent;
+  border: none;
+  margin: 0 auto;
+  /* Soft fade vers le fond aux bords + bas — gomme tout résidu de halo */
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse 75% 80% at 50% 42%,
+      #000 55%,
+      rgba(0,0,0,0.92) 72%,
+      rgba(0,0,0,0.4) 90%,
+      transparent 100%
+    );
+  mask-image:
+    radial-gradient(
+      ellipse 75% 80% at 50% 42%,
+      #000 55%,
+      rgba(0,0,0,0.92) 72%,
+      rgba(0,0,0,0.4) 90%,
+      transparent 100%
+    );
+}
+
+/* ---------- HOME RESEARCH TEASE ---------- */
+
+.home-research-tease {
+  padding: 80px 40px;
+  border-top: 1px solid var(--color-border-secondary);
+}
+
+.home-research-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-research-tease .section-title {
+  margin-bottom: 48px;
+}
+
+.home-research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.home-research-axis {
+  display: block;
+  text-decoration: none;
+  padding: var(--space-5);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.home-research-axis:hover {
+  border-color: var(--brand-primary);
+  background: var(--color-background-secondary);
+}
+
+.axis-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.home-research-axis:nth-child(1) .axis-num {
+  color: var(--brand-primary);
+}
+.home-research-axis:nth-child(2) .axis-num {
+  color: var(--brand-secondary);
+}
+.home-research-axis:nth-child(3) .axis-num {
+  color: var(--brand-tertiary);
+}
+
+.home-research-axis:nth-child(1) {
+  border-left: 3px solid var(--brand-primary);
+}
+.home-research-axis:nth-child(2) {
+  border-left: 3px solid var(--brand-secondary);
+}
+.home-research-axis:nth-child(3) {
+  border-left: 3px solid var(--brand-tertiary);
+}
+
+.home-research-axis h3 {
+  font-size: var(--fs-h3);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.home-research-axis p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .home-research-tease {
+    padding: 48px 24px;
+  }
+  .home-research-grid {
+    grid-template-columns: 1fr;
+  }
+}

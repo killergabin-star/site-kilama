@@ -1,0 +1,39 @@
+/* Variante A : dark + rouge mono-accent (registre Economist dark) */
+[data-palette="vivid-editorial"] {
+  --color-background-primary:   #0E0E10;
+  --color-background-secondary: #18181C;
+  --color-background-tertiary:  #232328;
+  --color-background-cream:     #F2EDE6;
+  --color-text-primary:         #F6F4F0;
+  --color-text-secondary:       #B8B4AC;
+  --color-text-tertiary:        #76726B;
+  --color-text-muted:           #4A4742;
+  --brand-primary:              #E6203A;     /* Rouge éditorial : sert d'accent pour eyebrows, liens, hover */
+  --brand-primary-soft:         #FF4F66;
+  --brand-primary-deep:         #B81628;
+  --brand-secondary:            #E6203A;     /* identique pour neutraliser tout fallback Bloomberg */
+  --brand-tertiary:             #B8B4AC;     /* warm grey pour graduation */
+  --brand-quaternary:            #E0A341;     /* ambre éditorial — réservé Teaching */
+  --brand-accent:               #E6203A;
+  --brand-accent-deep:          #B81628;
+  --brand-accent-soft:          #FF4F66;
+  --brand-flag:                 #E6203A;     /* drapeau rouge au lieu de cyan */
+  --brand-blue:                 #E6203A;     /* tout "bleu" hérité devient rouge en Variant-A */
+  --state-good:                 #4FC082;
+  --state-bad:                  #E6203A;
+  --state-warn:                 #E0A341;
+  --state-neutral:              #76726B;
+  --color-border-primary:       rgba(246, 244, 240, 0.16);
+  --color-border-secondary:     rgba(246, 244, 240, 0.08);
+  --color-border-tertiary:      rgba(246, 244, 240, 0.04);
+  /* Palette data : mono-accent rouge + warm greys (pas de couleurs froides) */
+  --brand-data-1:               #E6203A;     /* rouge éditorial */
+  --brand-data-2:               #B8B4AC;     /* warm grey clair */
+  --brand-data-3:               #76726B;     /* warm grey moyen */
+  --brand-data-4:               #4A4742;     /* warm grey foncé */
+  --brand-data-5:               #B81628;     /* rouge profond — series 5 (au lieu du terre cuite) */
+  --brand-data-6:               #8E8B85;     /* warm grey alt — series 6 (au lieu du bleu pétrole) */
+  --brand-data-7:               #2A2A2D;     /* presque noir */
+  /* Surfaces accent */
+  --color-background-brand-soft: rgba(230, 32, 58, 0.08);
+}

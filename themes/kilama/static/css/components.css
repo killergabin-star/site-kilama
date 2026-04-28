@@ -1,0 +1,1349 @@
+/* ============================================================================
+   components.css — Composants partages erickilama.com
+   Identiques sur toutes les pages. Aucun hex hardcode.
+   Spec: 08_COMPONENTS.md
+   ============================================================================ */
+
+/* ---------- 1. EYEBROW ---------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.eyebrow-mark {
+  width: 18px;
+  height: 8px;
+  background: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+.eyebrow-text {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  line-height: var(--lh-eyebrow);
+}
+
+/* ---------- 1b. EYEBROW FLAG VARIANT ---------- */
+
+.eyebrow--with-flag {
+  position: relative;
+  padding-left: 28px;
+}
+
+.eyebrow--with-flag .eyebrow-mark {
+  display: none;
+}
+
+.eyebrow--with-flag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--brand-accent);
+}
+
+.eyebrow--blue::before {
+  background: var(--brand-blue);
+}
+
+.eyebrow--amber::before {
+  background: var(--brand-quaternary);
+}
+
+/* ---------- 1c. CTA PRIMARY ---------- */
+
+.cta-link--primary {
+  background: var(--brand-accent);
+  color: white;
+  padding: 16px 24px;
+  font-family: var(--font-data, var(--font-ui));
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-link--primary:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+.cta-link--primary.cta-link--blue {
+  background: var(--brand-blue);
+}
+
+.cta-link--primary.cta-link--amber {
+  background: var(--brand-quaternary);
+  color: #1a1a1a;
+}
+
+/* ---------- 2. CARD NOTE ---------- */
+
+.card-note {
+  padding: var(--space-5) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.card-note-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--brand-primary);
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.card-note-title {
+  font-size: 18px;
+  line-height: 1.30;
+  margin: 0 0 8px;
+}
+
+.card-note-title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.card-note-title a:hover {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.card-note-summary {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 10px;
+}
+
+.card-note-meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+.card-note-sep {
+  margin: 0 6px;
+}
+
+/* Card horizontal variant */
+.card-note--horizontal {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.card-note--horizontal .card-note-image {
+  width: 240px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 600px) {
+  .card-note--horizontal {
+    grid-template-columns: 1fr;
+  }
+  .card-note--horizontal .card-note-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Card featured variant */
+.card-note--featured {
+  background: var(--color-background-secondary);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border-bottom: none;
+}
+
+.card-note--featured .card-note-title {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+/* ---------- 3. KPI BOX ---------- */
+
+.kpi {
+  padding: var(--space-3) var(--space-4);
+}
+
+.kpi-label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.kpi-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.kpi-value {
+  font-family: var(--font-data);
+  font-size: var(--fs-num-large);
+  font-weight: var(--weight-medium);
+  color: var(--brand-primary);
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.kpi-change {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+}
+
+/* Risk indicators: up = bad (red), down = good (green) */
+[data-direction="risk"] .kpi-change--up   { color: var(--state-down); }
+[data-direction="risk"] .kpi-change--down { color: var(--state-up); }
+
+/* Performance indicators: up = good (green), down = bad (red) */
+[data-direction="performance"] .kpi-change--up   { color: var(--state-up); }
+[data-direction="performance"] .kpi-change--down { color: var(--state-down); }
+
+.kpi-change--flat { color: var(--state-flat); }
+
+.kpi-context {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- 4. KPI BAND ---------- */
+
+.kpi-band {
+  margin: var(--space-5) 0;
+}
+
+.kpi-band-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.kpi-band-timestamp {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.kpi-band-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 0.5px solid var(--color-border-tertiary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  padding: var(--space-4) 0;
+}
+
+.kpi-band-grid .kpi {
+  border-right: 0.5px solid var(--color-border-tertiary);
+}
+
+.kpi-band-grid .kpi:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 600px) {
+  .kpi-band-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kpi-band-grid .kpi {
+    border-right: 0.5px solid var(--color-border-tertiary);
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    padding: var(--space-3);
+  }
+  .kpi-band-grid .kpi:nth-child(2n) {
+    border-right: 0;
+  }
+  .kpi-band-grid .kpi:nth-child(n+3) {
+    border-bottom: 0;
+  }
+}
+
+/* ---------- 5. CHART CONTAINER ---------- */
+
+.chart {
+  margin: var(--space-6) 0;
+}
+
+.chart-header {
+  margin-bottom: var(--space-4);
+}
+
+.chart-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: var(--weight-medium);
+  margin: 4px 0 4px;
+}
+
+.chart-subtitle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.chart-canvas {
+  width: 100%;
+  margin-bottom: var(--space-3);
+}
+
+.chart-canvas svg {
+  width: 100%;
+  height: auto;
+}
+
+.chart-legend {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-primary);
+}
+
+.chart-legend-mark {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+}
+
+.chart-legend--circles .chart-legend-mark {
+  border-radius: 50%;
+}
+
+.chart-note,
+.chart-source {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+  margin: 0 0 4px;
+}
+
+.chart-watermark {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.3px;
+  text-align: right;
+  margin-top: 8px;
+}
+
+/* Chart editorial variant (FMI double-titrage) */
+.chart--editorial .chart-title {
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.chart--editorial .chart-subtitle {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Chart BNEF compact variant */
+.chart--bnef .chart-title {
+  font-size: 17px;
+}
+
+/* ---------- 6. PULLQUOTE ---------- */
+
+.pullquote {
+  margin: var(--space-6) 0;
+  padding-left: var(--space-4);
+  border-left: 4px solid var(--brand-accent);
+  max-width: 640px;
+}
+
+.pullquote p {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: var(--weight-medium);
+  line-height: 1.35;
+  margin: 0 0 8px;
+  color: var(--color-text-primary);
+}
+
+.pullquote cite {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: normal;
+}
+
+/* Press variant */
+.pullquote--press p {
+  font-style: italic;
+}
+
+/* Centered variant (for home) */
+.pullquote--centered {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- 7. TAG / BADGE ---------- */
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-background-secondary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border: 0.5px solid transparent;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tag:hover {
+  background: var(--color-background-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.tag--brand {
+  background: var(--color-background-brand-soft);
+  color: var(--brand-primary);
+}
+
+.tag--active {
+  background: var(--brand-primary);
+  color: var(--color-text-on-brand);
+}
+
+/* ---------- 8. ACTION LINK ---------- */
+
+.action {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--brand-primary);
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 0.5px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color var(--transition-fast);
+}
+
+.action:hover {
+  border-bottom-color: var(--brand-primary);
+}
+
+/* ---------- 9. FILTERS (chips) ---------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: var(--space-4) 0;
+}
+
+.chip {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  background: transparent;
+  border: 0.5px solid var(--color-border-secondary);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.chip:hover {
+  background: var(--color-background-secondary);
+}
+
+.chip--active {
+  background: var(--color-background-brand-soft);
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.chip--geoeconomie { border-color: var(--brand-data-2); color: var(--brand-data-2); }
+.chip--asie        { border-color: var(--brand-data-4); color: var(--brand-data-4); }
+.chip--europe      { border-color: var(--brand-data-2); color: var(--brand-data-2); }
+.chip--multilat    { border-color: var(--brand-data-3); color: var(--brand-data-3); }
+.chip--finance-dev { border-color: var(--brand-data-3); color: var(--brand-data-3); }
+.chip--polycrisis  { border-color: var(--brand-data-1); color: var(--brand-data-1); }
+
+/* ---------- 10. HERO DATA (accent number) ---------- */
+
+.hero-data {
+  display: inline-block;
+  font-family: var(--font-data);
+  font-size: var(--fs-num-xlarge);
+  font-weight: var(--weight-medium);
+  color: var(--brand-accent);
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.hero-data-context {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+}
+
+/* ---------- 11. STATUS INDICATOR ---------- */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot--live { background: var(--state-up); }
+.status-dot--delay { background: var(--state-warn); }
+.status-dot--down { background: var(--state-down); }
+
+/* ---------- 12. TABLE (data tables) ---------- */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+}
+
+.data-table thead th {
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  padding: var(--space-3) var(--space-3);
+  border-bottom: 0.5px solid var(--color-border-secondary);
+}
+
+.data-table tbody td {
+  padding: var(--space-3) var(--space-3);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  color: var(--color-text-primary);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--color-background-secondary);
+}
+
+.data-table .num {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  text-align: right;
+}
+
+/* ---------- 13. TABS ---------- */
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  margin-bottom: var(--space-5);
+}
+
+.tab {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+}
+
+.tab--active {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+  border-bottom-color: var(--brand-primary);
+}
+
+/* ---------- 14. ACTION SECONDARY ---------- */
+
+.action--secondary {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-secondary);
+}
+
+.action--secondary:hover {
+  border-color: var(--color-text-primary);
+}
+
+/* ---------- 15. RELATED NOTES ---------- */
+
+.related-notes {
+  border-top: 0.5px solid var(--color-border-tertiary);
+  padding-top: var(--space-6);
+  margin-top: var(--space-7);
+}
+
+.related-notes h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-5);
+}
+
+.related-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .related-notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 16. LEAD PARAGRAPH ---------- */
+
+.lead-paragraph {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: var(--space-5);
+}
+
+/* ---------- 17. EXECUTIVE SUMMARY ---------- */
+
+.executive-summary {
+  background: var(--color-background-secondary);
+  border-left: 4px solid var(--brand-accent);
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.executive-summary h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-4);
+}
+
+.executive-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.executive-summary li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 1.05em;
+  line-height: 1.5;
+}
+
+.executive-summary li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--brand-accent);
+}
+
+/* ---------- 18. DEBATE CARD ---------- */
+
+.debate-card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.debate-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-medium);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.debate-card p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+.debate-card-articles {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+}
+
+.debate-card-articles li {
+  font-size: var(--fs-caption);
+  padding: var(--space-1) 0;
+}
+
+/* ---------- 19. SUBSCRIPTION CTA ---------- */
+
+.subscribe-cta {
+  background: var(--color-background-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  text-align: center;
+  margin-top: var(--space-7);
+  border-left: 4px solid var(--brand-accent);
+}
+
+.subscribe-cta h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-3);
+}
+
+.subscribe-cta p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  margin: 0 auto var(--space-4);
+}
+
+/* ---------- 20. KPI DELTA (semantic good/bad/neutral) ---------- */
+/*
+ * INTERPRÉTATION SÉMANTIQUE DES INDICATEURS
+ * --good = bonne nouvelle (vert), --bad = mauvaise nouvelle (rouge), --neutral = sans verdict
+ *
+ * Risque/stress (hausse=bad): GPR, Frag, VIX, spreads, inflation, dette/PIB, chômage
+ * Performance (hausse=good): PIB, ODA/RNB, exports, FDI, productivité, emploi
+ * Neutre (contexte): taux de change, Brent, taux directeurs, M2
+ */
+
+.kpi-delta--good    { color: var(--state-good); }
+.kpi-delta--bad     { color: var(--state-bad); }
+.kpi-delta--neutral { color: var(--state-neutral); }
+.kpi-delta--warn    { color: var(--state-warn); }
+
+.kpi-delta--up      { color: var(--state-good); }
+.kpi-delta--down    { color: var(--state-bad); }
+
+/* ---------- 21. EQUATIONS (MathJax + styled blocks) ---------- */
+
+.equation {
+  display: block;
+  margin: var(--space-5) auto;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--brand-primary);
+  background: var(--color-background-secondary);
+  font-size: 1.1em;
+  overflow-x: auto;
+}
+
+.equation-numbered {
+  position: relative;
+  padding-right: var(--space-6);
+}
+
+.equation-number {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+.model-equation {
+  margin: var(--space-6) 0;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border-tertiary);
+  border-left: 4px solid var(--brand-primary);
+  border-radius: var(--radius-md);
+}
+
+.model-equation .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.model-equation .equation-content {
+  text-align: center;
+  margin: var(--space-3) 0;
+}
+
+.model-equation .legend {
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  font-family: var(--font-ui);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-tertiary);
+}
+
+/* ---------- 22. DROP CAP (lettrine) ---------- */
+
+.article-body--drop-cap > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4em;
+  line-height: 0.85;
+  padding-right: 0.1em;
+  padding-top: 0.05em;
+  color: var(--brand-accent);
+}
+
+/* ---------- 23. RESEARCH AXIS BLOCK ---------- */
+
+.research-axis {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  padding: var(--space-6) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  position: relative;
+}
+
+.research-axis::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--space-6);
+  bottom: var(--space-6);
+  width: 4px;
+  border-radius: 2px;
+}
+
+.research-axis[data-color="1"]::before { background: var(--brand-data-1); }
+.research-axis[data-color="2"]::before { background: var(--brand-data-2); }
+.research-axis[data-color="3"]::before { background: var(--brand-data-3); }
+
+.research-axis-main {
+  padding-left: var(--space-5);
+}
+
+.research-axis-main h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.research-axis-main p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4);
+}
+
+.research-axis-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.research-axis-pills .tag {
+  background: var(--color-background-secondary);
+  font-size: var(--fs-caption);
+}
+
+.research-axis-sidebar {
+  padding-top: var(--space-2);
+}
+
+.research-axis-sidebar h4 {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-tertiary);
+  margin: 0 0 var(--space-3);
+}
+
+.research-axis-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-5);
+}
+
+.research-axis-sidebar li {
+  font-size: var(--fs-body-sm);
+  padding: var(--space-2) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  line-height: 1.45;
+}
+
+.research-axis-sidebar li:last-child {
+  border-bottom: none;
+}
+
+.research-axis-sidebar .tag {
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+@media (max-width: 760px) {
+  .research-axis {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 24. POLICY CATALOG ENTRY (Bruegel dense list) ---------- */
+
+.policy-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.policy-entry-thumb {
+  width: 160px;
+  height: 90px;
+  background: var(--color-background-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+.policy-entry-body h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-2);
+}
+
+.policy-entry-body p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2);
+  line-height: 1.45;
+}
+
+.policy-entry-meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 600px) {
+  .policy-entry {
+    grid-template-columns: 1fr;
+  }
+  .policy-entry-thumb {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+/* ---------- 25. DATA ROOM (Foresight Bloomberg sub-theme) ---------- */
+
+.data-room {
+  padding: var(--space-6) 0;
+}
+
+.data-room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.data-room-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+.data-room-card-info {
+  min-width: 0;
+}
+
+.data-room-card-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-tertiary);
+  margin-bottom: 2px;
+}
+
+.data-room-card-name {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--weight-medium);
+}
+
+.data-room-card-values {
+  text-align: right;
+}
+
+.data-room-card-value {
+  font-family: var(--font-data);
+  font-size: var(--fs-body);
+  font-weight: var(--weight-medium);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.data-room-card-delta {
+  font-family: var(--font-data);
+  font-size: var(--fs-caption);
+}
+
+.data-room-card-timestamp {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+}
+
+.data-room-sparkline {
+  width: 120px;
+  height: 30px;
+}
+
+@media (max-width: 760px) {
+  .data-room-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 26. POLICY FEATURED HERO ---------- */
+
+.policy-featured {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.policy-featured-image {
+  width: 100%;
+  height: 320px;
+  background: var(--color-background-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.policy-featured h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.policy-featured p {
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-body);
+  margin: 0 0 var(--space-3);
+}
+
+@media (max-width: 760px) {
+  .policy-featured {
+    grid-template-columns: 1fr;
+  }
+  .policy-featured-image {
+    height: 200px;
+  }
+}
+
+/* ---------- 27. METHODOLOGY NOTES LIST ---------- */
+
+.method-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.method-note {
+  padding: var(--space-3) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.method-note:last-child {
+  border-bottom: none;
+}
+
+.method-note h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-1);
+}
+
+.method-note p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ---------- 28. PUBLICATION LIST ENTRY (editorial, not card) ---------- */
+
+.pub-entry {
+  padding: var(--space-5) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.pub-entry:last-child {
+  border-bottom: none;
+}
+
+.pub-entry h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: var(--weight-medium);
+  margin: var(--space-2) 0 var(--space-2);
+}
+
+.pub-entry p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 var(--space-2);
+}
+
+.pub-entry-authors {
+  font-style: italic;
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.pub-entry-links {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+}
+
+.pub-entry-links a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+
+.pub-entry-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 29. COLORED CATEGORY TAGS ---------- */
+
+.tag--polycrisis       { color: var(--brand-data-1); border-color: var(--brand-data-1); }
+.tag--geo, .tag--geoeconomie { color: var(--brand-data-2); border-color: var(--brand-data-2); }
+.tag--finance-dev      { color: var(--brand-data-3); border-color: var(--brand-data-3); }
+.tag--asie             { color: var(--brand-data-4); border-color: var(--brand-data-4); }
+.tag--energie          { color: var(--brand-data-5); border-color: var(--brand-data-5); }
+.tag--aide-chinoise    { color: var(--brand-data-6); border-color: var(--brand-data-6); }
+.tag--risque-geo       { color: var(--brand-accent); border-color: var(--brand-accent); }
+.tag--findev           { color: var(--brand-data-3); border-color: var(--brand-data-3); }
+.tag--chine            { color: var(--brand-data-4); border-color: var(--brand-data-4); }
+.tag--commerce         { color: var(--brand-data-5); border-color: var(--brand-data-5); }
+.tag--climat           { color: var(--brand-data-3); border-color: var(--brand-data-3); }
+.tag--europe           { color: var(--brand-data-2); border-color: var(--brand-data-2); }
+.tag--fmi              { color: var(--brand-data-6); border-color: var(--brand-data-6); }
+
+.card-note-tag[class*="tag--"] {
+  background: transparent;
+  border: 1px solid;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- 30. HOVER EFFECTS (cards & links) ---------- */
+
+.card-note:hover {
+  border-left: 2px solid var(--brand-accent);
+  padding-left: calc(var(--space-5) - 2px);
+  background: var(--color-background-secondary);
+}
+
+.card-note .action::after {
+  content: '';
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.card-note:hover .action {
+  color: var(--brand-accent);
+}
+
+.article-body a:hover {
+  background: rgba(160, 40, 40, 0.08);
+  border-radius: 2px;
+}
+
+/* ---------- 31. LIVE DOT (pulsing indicator) ---------- */
+
+@keyframes vigie-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(27, 122, 90, 0.5); }
+  50%      { opacity: 0.5; box-shadow: 0 0 0 6px rgba(27, 122, 90, 0); }
+}
+
+.live-dot::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--state-good);
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: vigie-pulse 1.8s ease-in-out infinite;
+}
+
+/* ---------- 32. FORESIGHT GRAIN OVERLAY ---------- */
+
+.foresight-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* ---------- 33. KPI SOURCE LINE ---------- */
+
+.kpi-source {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 34. KPI BAND ENHANCED ---------- */
+
+.kpi-band--enhanced .kpi {
+  border-left: 1px solid var(--color-border-tertiary);
+  padding-left: var(--space-4);
+}
+
+.kpi-band--enhanced .kpi-band-label {
+  background: var(--color-background-secondary);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-items: flex-start;
+}
+
+/* ---------- 35. HERO ASIDE (À paraître) ---------- */
+
+.hero-aside {
+  border-left: 3px solid var(--brand-accent);
+  padding-left: var(--space-4);
+}
+
+.hero-aside .eyebrow-text {
+  font-size: 11px;
+}
+
+.hero-aside-excerpt {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-body-sm);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: var(--space-3) 0;
+}
+
+.hero-aside-link {
+  font-family: var(--font-data);
+  font-size: var(--fs-caption);
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+
+.hero-aside-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 36. CHART ENHANCED ---------- */
+
+.chart {
+  background: var(--color-background-secondary);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+}
+
+.chart-takeaway {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-body-sm);
+  color: var(--brand-accent);
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+.chart-footer {
+  border-top: 1px solid var(--color-border-tertiary);
+  padding-top: var(--space-3);
+  margin-top: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

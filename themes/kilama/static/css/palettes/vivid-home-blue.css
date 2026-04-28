@@ -1,0 +1,41 @@
+/* Variante Home/About : dark institutionnel + mono-accent bleu professionnel */
+[data-palette="vivid-home-blue"] {
+  --color-background-primary:   #000000;
+  --color-background-secondary: #0B1118;
+  --color-background-tertiary:  #111A24;
+  --color-background-cream:     #151D26;
+  --color-text-primary:         #F4F7FA;
+  --color-text-secondary:       #B0BAC4;
+  --color-text-tertiary:        #6D7884;
+  --color-text-muted:           #3A4550;
+
+  --brand-primary:              #2251FF;
+  --brand-primary-soft:         #2251FF;
+  --brand-primary-deep:         #2251FF;
+  --brand-secondary:            #2251FF;
+  --brand-tertiary:             #2251FF;
+  --brand-quaternary:           #2251FF;
+  --brand-accent:               #2251FF;
+  --brand-accent-deep:          #2251FF;
+  --brand-accent-soft:          #2251FF;
+  --brand-flag:                 #2251FF;
+  --brand-blue:                 #2251FF;
+
+  --state-good:                 #3E7BA8;
+  --state-bad:                  #3E7BA8;
+  --state-warn:                 #3E7BA8;
+  --state-neutral:              #6D7884;
+
+  --color-border-primary:       rgba(244, 247, 250, 0.22);
+  --color-border-secondary:     rgba(244, 247, 250, 0.11);
+  --color-border-tertiary:      rgba(244, 247, 250, 0.055);
+
+  --brand-data-1:               #2251FF;
+  --brand-data-2:               #2251FF;
+  --brand-data-3:               #2251FF;
+  --brand-data-4:               #2251FF;
+  --brand-data-5:               #2251FF;
+  --brand-data-6:               #2251FF;
+  --brand-data-7:               #6D7884;
+  --color-background-brand-soft: rgba(34, 81, 255, 0.14);
+}

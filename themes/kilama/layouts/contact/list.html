@@ -1,8 +1,8 @@
 {{ define "styles" }}
 <style>
 .contact-section {
-  background: var(--ivory);
-  padding: 120px 40px 80px;
+  background: var(--color-background-primary, #0d1117);
+  padding: 140px 40px 80px;
   min-height: 70vh;
 }
 .contact-inner {
@@ -10,27 +10,27 @@
   margin: 0 auto;
 }
 .contact-eyebrow {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--blue-fpsq);
+  letter-spacing: 0.1em;
+  color: var(--brand-primary, #2251FF);
   margin-bottom: 16px;
 }
 .contact-title {
-  font-family: var(--font-body);
+  font-family: var(--font-display, Newsreader, serif);
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 300;
-  color: var(--navy);
+  font-weight: 400;
+  color: var(--color-text-primary, #F4F7FA);
   line-height: 1.2;
   margin-bottom: 24px;
 }
 .contact-text {
-  font-family: var(--font-title);
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 17px;
-  font-weight: 300;
-  color: var(--anthracite);
+  font-weight: 400;
+  color: var(--color-text-secondary, #B0BAC4);
   line-height: 1.7;
   margin-bottom: 40px;
 }
@@ -41,37 +41,37 @@
   margin-bottom: 48px;
 }
 .contact-channel {
-  border-top: 2px solid var(--navy);
+  border-top: 2px solid var(--brand-primary, #2251FF);
   padding-top: 16px;
 }
 .contact-channel-label {
-  font-family: var(--font-title);
-  font-size: 13px;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-500);
+  color: var(--color-text-tertiary, #6D7884);
   margin-bottom: 8px;
 }
 .contact-channel-value {
-  font-family: var(--font-title);
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 17px;
   font-weight: 400;
-  color: var(--navy);
+  color: var(--color-text-primary, #F4F7FA);
 }
 .contact-channel-value a {
-  color: var(--navy);
+  color: var(--color-text-primary, #F4F7FA);
   text-decoration: none;
 }
 .contact-channel-value a:hover {
-  color: var(--blue-fpsq);
+  color: var(--brand-primary, #2251FF);
 }
 .contact-note {
-  font-family: var(--font-title);
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 14px;
-  color: var(--gray-500);
+  color: var(--color-text-tertiary, #6D7884);
   line-height: 1.6;
-  border-top: 1px solid var(--gray-200);
+  border-top: 1px solid var(--color-border-tertiary, rgba(244,247,250,0.055));
   padding-top: 24px;
 }
 @media (max-width: 600px) {
@@ -92,7 +92,7 @@
       <div class="contact-channels">
         <div class="contact-channel">
           <div class="contact-channel-label">Email</div>
-          <div class="contact-channel-value"><a href="mailto:kilamaericgabin@yahoo.fr">kilamaericgabin@yahoo.fr</a></div>
+          <div class="contact-channel-value"><a href="mailto:eric@erickilama.com">eric@erickilama.com</a></div>
         </div>
         <div class="contact-channel">
           <div class="contact-channel-label">LinkedIn</div>

@@ -1,847 +1,1039 @@
 {{ define "styles" }}
 <style>
 /* ═══════════════════════════════════════════════════
-   POLICY — The Economist editorial density
-   Sticky tabs + compact editorial + tab catalog
+   POLICY — try-06 prototype design
+   palette : vivid-editorial (red accent)
    ═══════════════════════════════════════════════════ */
 
-/* Policy vision header */
-.policy-vision {
+/* ── Hero ── */
+.policy-hero {
   background: linear-gradient(135deg, #051C2C 0%, #061E32 15%, #0A2440 30%, #0E2B52 50%, #112E5E 65%, #0F2D68 80%, #042A76 100%);
   padding: 100px 40px 80px;
 }
-.policy-vision-inner {
+.policy-hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
 }
-.policy-vision .section-label {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--electric-blue);
+.eyebrow--with-flag {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  color: var(--brand-primary, #E6203A);
   margin-bottom: 24px;
+  display: block;
 }
-.policy-vision h1 {
-  font-family: var(--font-title);
-  font-size: clamp(2rem, 4vw, 3rem);
+.policy-hero h1.h-display {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1.15;
   letter-spacing: -0.03em;
-  max-width: 700px;
+  max-width: 22ch;
   margin-bottom: 24px;
 }
-.policy-vision-text {
-  font-family: var(--font-title);
-  font-size: 18px;
+.policy-hero h1.h-display em { font-style: italic; }
+.policy-standfirst {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 17px;
   font-weight: 300;
   color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-  max-width: 650px;
+  line-height: 1.65;
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+.policy-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip:hover, .chip--active {
+  background: var(--brand-accent, #E6203A);
+  border-color: var(--brand-accent, #E6203A);
+  color: #ffffff;
+}
+/* Chip variants (light surface) */
+.container .chip {
+  border-color: var(--color-border-tertiary, rgba(246,244,240,0.04));
+  color: var(--color-text-tertiary, #76726B);
+  background: transparent;
+}
+.container .chip:hover, .container .chip--active {
+  background: var(--brand-accent, #E6203A);
+  border-color: var(--brand-accent, #E6203A);
+  color: #ffffff;
 }
 
-/* ═══ STICKY FILTER TABS ═══ */
-.policy-filters {
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  padding: 0 40px;
-  position: sticky;
-  top: 72px;
-  z-index: 50;
-}
-.policy-filters-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+/* ── Tabs ── */
+.tabs {
   display: flex;
   gap: 0;
   overflow-x: auto;
+  border-bottom: 1px solid var(--color-border-tertiary, rgba(246,244,240,0.04));
+  margin-bottom: 0;
+  padding: 0;
+  background: var(--color-background-secondary, #18181C);
 }
-.filter-btn {
-  font-family: var(--font-title);
+.tab {
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 13px;
   font-weight: 500;
-  color: var(--gray-500);
-  padding: 14px 20px;
+  color: var(--color-text-tertiary, #76726B);
+  padding: 13px 20px;
   border: none;
   background: none;
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   transition: all 0.15s;
+  margin-bottom: -1px;
 }
-.filter-btn:hover { color: var(--navy); }
-.filter-btn.active {
-  color: var(--navy);
-  border-bottom-color: var(--navy);
+.tab:hover { color: var(--color-text-primary, #F6F4F0); }
+.tab--active {
+  color: var(--color-text-primary, #F6F4F0);
+  border-bottom-color: var(--color-text-primary, #F6F4F0);
   font-weight: 600;
 }
 
-/* ═══ EDITORIAL SECTIONS ═══ */
-
-/* Featured note — hero card */
-.policy-featured {
-  background: var(--ivory);
-  padding: 48px 40px;
+/* ── Filters ── */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 0;
 }
-.policy-featured-inner {
-  max-width: var(--max-width);
+
+/* ── Container ── */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Policy Featured — hero card ── */
+.policy-featured {
+  background: var(--color-background-secondary, #18181C);
+  border-top: 3px solid var(--brand-accent, #E6203A);
+  padding: 40px;
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 240px 1fr;
   gap: 40px;
   align-items: start;
+  margin: 40px 0;
 }
-.featured-content { padding: 8px 0; }
-.featured-format {
-  font-family: var(--font-data);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--red-analytical);
-  margin-bottom: 12px;
+.policy-featured-image {
+  background: linear-gradient(145deg, #1a1a2e 0%, #0d2840 100%);
+  min-height: 200px;
+  border-radius: 2px;
 }
-.featured-title {
-  font-family: var(--font-title);
-  font-size: 28px;
+.policy-featured h2 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 26px;
   font-weight: 500;
-  color: var(--navy);
+  color: var(--color-text-primary, #F6F4F0);
   line-height: 1.25;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-.featured-excerpt {
-  font-family: var(--font-title);
+.policy-featured p {
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 16px;
   font-weight: 300;
-  color: var(--anthracite);
+  color: var(--color-text-secondary, #B8B4AC);
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
-.featured-meta {
-  display: flex;
-  gap: 20px;
-  font-family: var(--font-data);
+.article-meta {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
   font-size: 11px;
-  color: var(--gray-500);
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--color-text-tertiary, #76726B);
+  margin-bottom: 18px;
 }
-.featured-cover {
-  background: linear-gradient(145deg, var(--navy) 0%, #0d2840 100%);
-  background-size: cover;
-  background-position: center;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 360px;
+.article-meta .sep { margin: 0 6px; }
+.action {
+  display: inline-block;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-accent, #E6203A);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.15s;
+}
+.action:hover { opacity: 0.75; }
+.action--secondary { color: var(--color-text-primary, #F6F4F0); }
+
+/* ── Dossier banner ── */
+.policy-dossier {
+  background: var(--color-background-secondary, #18181C);
+  border-top: 2px solid var(--color-text-primary, #F6F4F0);
+  padding: 40px;
+  margin: 40px 0;
   position: relative;
+  overflow: hidden;
 }
-.featured-cover.has-image {
-  background-blend-mode: overlay;
-}
-.featured-cover.has-image::after {
-  content: '';
+.dossier-banner::before {
+  content: attr(data-watermark);
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(5,28,44,0.85) 100%);
-}
-.featured-cover-label {
-  font-family: var(--font-data);
-  font-size: 10px;
-  color: rgba(255,255,255,0.4);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 8px;
-}
-.featured-cover-title {
-  font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.3;
-}
-.featured-cover-author {
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.5);
-  margin-top: 12px;
-}
-
-/* ═══ ECONOMIST PATTERNS ═══ */
-
-.rule-red {
-  border: none;
-  border-top: 3px solid var(--red-analytical);
-  width: 48px;
-  margin-bottom: 12px;
-}
-.rule-section {
-  border: none;
-  border-top: 1px solid var(--navy);
-  margin-bottom: 12px;
-}
-.section-heading-econ {
-  font-family: var(--font-title);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--navy);
-}
-
-/* Fly-title — Economist red category label */
-.fly-title {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--red-analytical);
-  margin-bottom: 4px;
-}
-.note-title {
-  font-family: var(--font-title);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-.note-title a { color: var(--navy); text-decoration: none; }
-.note-title a:hover { color: var(--red-analytical); }
-.note-excerpt {
-  font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--anthracite);
-  line-height: 1.5;
-}
-.note-meta {
-  display: flex;
-  gap: 16px;
-  margin-top: 8px;
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 300;
-  color: var(--gray-500);
-}
-.note-format-tag {
-  font-family: var(--font-data);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--gray-500);
-}
-
-/* Graphique de la semaine */
-.graphic-detail {
-  background: var(--ivory);
-  padding: 48px 40px;
-  border-top: 1px solid var(--gray-200);
-}
-.graphic-detail-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.graphic-detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  margin-top: 16px;
-}
-.graphic-chart {
-  background: var(--ivory-deep);
-  padding: 24px;
-  border: 1px solid rgba(27,42,74,0.06);
-}
-.graphic-body .fly-title { margin-bottom: 8px; }
-
-/* Dossier special — dark band */
-.dossier-special {
-  background: linear-gradient(135deg, #051C2C 0%, #042A76 40%, #051C2C 100%);
-  padding: 64px 40px;
-}
-.dossier-special-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.dossier-label {
-  font-family: var(--font-data);
-  font-size: 11px;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%) rotate(-12deg);
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 80px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 12px;
+  color: rgba(246,244,240,0.03);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  white-space: nowrap;
 }
-.dossier-title {
-  font-family: var(--font-title);
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  max-width: 700px;
-  margin-bottom: 16px;
+.policy-dossier .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
 }
-.dossier-excerpt {
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.6;
-  max-width: 600px;
-  margin-bottom: 32px;
+.eyebrow-mark {
+  width: 8px;
+  height: 8px;
+  background: var(--brand-accent, #E6203A);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
-.dossier-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 8px;
-}
-.dossier-card {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  padding-top: 16px;
-}
-.dossier-card .fly-title { color: rgba(255,255,255,0.5); font-size: 12px; margin-bottom: 6px; }
-.dossier-card .note-title { color: var(--white); font-size: 18px; font-weight: 400; }
-.dossier-card .note-title a { color: var(--white); }
-.dossier-card .note-title a:hover { color: rgba(255,255,255,0.7); }
-.dossier-card .note-excerpt { color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 6px; }
-
-/* Débats & Controverses */
-.debats-section {
-  background: var(--ivory-deep);
-  padding: 48px 40px;
-  border-top: 1px solid var(--gray-200);
-}
-.debats-section-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.debats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 16px;
-}
-.debat-card {
-  border-top: 3px solid var(--red-analytical);
-  padding-top: 16px;
-}
-.debat-card .fly-title { margin-bottom: 6px; }
-.debat-card .note-title { font-size: 18px; margin-bottom: 8px; }
-.debat-card .note-excerpt { font-size: 14px; }
-
-/* En bref — dense 2-column */
-.en-bref {
-  background: var(--ivory);
-  padding: 48px 40px;
-  border-top: 1px solid var(--gray-200);
-}
-.en-bref-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.en-bref-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 48px;
-}
-.en-bref-item {
-  border-top: 1px solid var(--gray-200);
-  padding-top: 12px;
-}
-.en-bref-item .fly-title { margin-bottom: 4px; }
-.en-bref-item .note-title { font-size: 17px; }
-
-/* ═══ CATALOGUE PAR ONGLETS ═══ */
-
-.catalog-section {
-  background: var(--ivory-deep);
-  padding: 56px 40px 80px;
-  border-top: 2px solid var(--navy);
-}
-.catalog-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.catalog-panel { display: none; }
-.catalog-panel.active { display: block; }
-.catalog-list { list-style: none; }
-.catalog-list li {
-  padding: 16px 0;
-  border-top: 1px solid var(--gray-200);
-}
-.catalog-list li:first-child { border-top: 1px solid var(--navy); }
-.catalog-count {
-  font-family: var(--font-data);
-  font-size: 12px;
-  color: var(--gray-500);
-  margin-bottom: 20px;
-}
-
-/* ═══ DOSSIERS EN LUMIÈRE — rail 3 sections ═══ */
-.dossiers-rail {
-  background: var(--ivory);
-  padding: 48px 40px 8px;
-}
-.dossiers-rail-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-.dossier-bloc {
-  padding: 36px 0 40px;
-  border-top: 2px solid var(--navy);
-}
-.dossier-bloc:first-child { border-top: none; padding-top: 8px; }
-.dossier-bloc-head {
-  max-width: 780px;
-  margin-bottom: 20px;
-}
-.dossier-eyebrow {
-  font-family: var(--font-data);
+.eyebrow-text {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red-analytical);
-  margin-bottom: 8px;
+  color: var(--brand-accent, #E6203A);
 }
-.dossier-bloc-title {
-  font-family: var(--font-title);
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+.policy-dossier h2 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   font-weight: 500;
-  color: var(--navy);
+  color: var(--color-text-primary, #F6F4F0);
   line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
-.dossier-bloc-lede {
-  font-family: var(--font-title);
+.article-subtitle {
+  font-family: var(--font-ui, Inter, sans-serif);
   font-size: 16px;
   font-weight: 300;
-  color: var(--anthracite);
-  line-height: 1.55;
-  margin-bottom: 12px;
-  max-width: 720px;
-}
-.dossier-bloc-cta {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 4px;
-}
-.dossier-bloc-cta a {
-  color: var(--blue-fpsq, #2C5F8A);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 1px;
-}
-.dossier-bloc-cta a:hover { border-bottom-color: var(--blue-fpsq, #2C5F8A); color: var(--red-analytical); }
-.dossier-bloc-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid var(--gray-200);
-}
-.rail-card {
-  padding-right: 8px;
-  border-left: 2px solid var(--navy);
-  padding-left: 14px;
-}
-.rail-card .fly-title {
-  font-family: var(--font-title);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--red-analytical);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 4px;
-}
-.rail-card .note-title {
-  font-family: var(--font-title);
-  font-size: 15.5px;
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.28;
-  margin-bottom: 8px;
-}
-.rail-card .note-title a { color: var(--navy); text-decoration: none; }
-.rail-card .note-title a:hover { color: var(--red-analytical); }
-.rail-card .note-meta {
-  font-family: var(--font-data);
-  font-size: 10px;
-  color: var(--gray-500);
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  color: var(--color-text-secondary, #B8B4AC);
+  line-height: 1.6;
+  max-width: 760px;
+  margin-bottom: 28px;
 }
 
-/* ═══ RESPONSIVE ═══ */
+/* ── Policy Catalog (grid of card-note) ── */
+.policy-catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.card-note {
+  border-top: 2px solid var(--brand-accent, #E6203A);
+  padding-top: 14px;
+  background: var(--color-background-secondary, #18181C);
+  padding: 20px;
+}
+.card-note-tag {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-accent, #E6203A);
+  display: block;
+  margin-bottom: 8px;
+}
+.card-note-title {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.card-note-title a { color: var(--color-text-primary, #F6F4F0); text-decoration: none; }
+.card-note-title a:hover { color: var(--brand-accent, #E6203A); }
+.card-note-summary {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text-secondary, #B8B4AC);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.card-note-meta {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #76726B);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.card-note-date { }
+.card-note-sep { color: var(--color-text-muted, #4A4742); }
+.card-note-type { text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── Chart (graphique de la semaine) ── */
+.editorial-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+.chart {
+  background: var(--color-background-secondary, #18181C);
+  border-top: 2px solid var(--color-text-primary, #F6F4F0);
+  padding: 32px;
+  margin: 0;
+}
+.chart-header {
+  margin-bottom: 20px;
+}
+.chart-header .eyebrow-text {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-accent, #E6203A);
+  display: block;
+  margin-bottom: 8px;
+}
+.chart-title {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  margin-bottom: 4px;
+}
+.chart-subtitle {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text-tertiary, #76726B);
+}
+.chart-canvas {
+  background: var(--color-background-tertiary, #232328);
+  border: 1px solid rgba(246,244,240,0.06);
+  padding: 24px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.chart-canvas img { width: 100%; display: block; border-radius: 2px; }
+.chart-canvas svg { width: 100%; height: auto; }
+.article-wide { width: 100%; }
+.chart-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.chart-legend {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #76726B);
+}
+.chart-legend li { display: flex; align-items: center; gap: 6px; }
+.chart-legend-mark {
+  width: 12px;
+  height: 3px;
+  display: inline-block;
+  border-radius: 2px;
+}
+.chart-source {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #76726B);
+  margin: 0;
+  flex: 1;
+}
+.chart-watermark {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #4A4742);
+}
+
+/* ── Policy List (catalogue) ── */
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.policy-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-border-tertiary, rgba(246,244,240,0.04));
+}
+.policy-entry:first-child { border-top: 1px solid var(--color-text-primary, #F6F4F0); }
+.policy-entry-thumb {
+  background: linear-gradient(145deg, #1a1a2e 0%, #0d2840 100%);
+  height: 64px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.policy-entry-body h3 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.policy-entry-body h3 a { color: var(--color-text-primary, #F6F4F0); text-decoration: none; }
+.policy-entry-body h3 a:hover { color: var(--brand-accent, #E6203A); }
+.policy-entry-body p {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text-secondary, #B8B4AC);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.policy-entry-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #76726B);
+}
+.tag {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.tag--polycrisis { background: rgba(230,32,58,0.15); color: var(--brand-accent, #E6203A); }
+.tag--commerce   { background: rgba(246,244,240,0.08); color: var(--color-text-primary, #F6F4F0); }
+.tag--risque-geo { background: rgba(80,120,220,0.12); color: #7BA3E8; }
+.tag--finance-dev { background: rgba(78,192,130,0.12); color: #4FC082; }
+.tag--energie    { background: rgba(224,163,65,0.12); color: #E0A341; }
+.tag--brand      { background: rgba(246,244,240,0.08); color: var(--color-text-primary, #F6F4F0); }
+
+/* ── Debate cards ── */
+.debate-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-border-tertiary, rgba(246,244,240,0.04));
+}
+.debate-card:first-of-type { border-top: 3px solid var(--brand-accent, #E6203A); }
+.debate-num {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(230,32,58,0.25);
+  line-height: 1;
+  padding-top: 4px;
+}
+.debate-content h3 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.debate-position {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-text-secondary, #B8B4AC);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.debate-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.debate-related .meta {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary, #76726B);
+}
+.debate-related a {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-tertiary, rgba(246,244,240,0.04));
+  padding-bottom: 1px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.debate-related a:hover { color: var(--brand-accent, #E6203A); border-color: var(--brand-accent, #E6203A); }
+
+/* ── Subscribe CTA ── */
+.subscribe-cta {
+  background: var(--color-text-primary, #F6F4F0);
+  color: #ffffff;
+  padding: 40px;
+  text-align: center;
+  margin: 40px 0;
+  border-radius: 2px;
+}
+.subscribe-cta h3 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.subscribe-cta p {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+.subscribe-cta .action { color: var(--brand-primary, #E6203A); }
+
+/* ── Section headings ── */
+.container section > h2 {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-text-primary, #F6F4F0);
+  margin-bottom: 8px;
+  border-top: 2px solid var(--color-text-primary, #F6F4F0);
+  padding-top: 16px;
+  margin-top: 40px;
+}
+.container section:first-of-type > h2 { margin-top: 0; }
+
+/* ── Responsive ── */
 @media (max-width: 1100px) {
-  .dossier-bloc-grid { grid-template-columns: repeat(2, 1fr); }
+  .policy-catalog { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
-  .policy-featured-inner { grid-template-columns: 1fr; }
-  .dossier-cards { grid-template-columns: 1fr; }
-  .graphic-detail-grid { grid-template-columns: 1fr; }
-  .en-bref-grid { grid-template-columns: 1fr; }
-  .debats-grid { grid-template-columns: 1fr; }
+  .policy-featured { grid-template-columns: 1fr; }
+  .policy-featured-image { min-height: 140px; }
+  .policy-entry { grid-template-columns: 60px 1fr; gap: 16px; }
+  .debate-card { grid-template-columns: 1fr; gap: 8px; }
+  .debate-num { font-size: 18px; }
 }
-@media (max-width: 600px) {
-  .dossier-bloc-grid { grid-template-columns: 1fr; }
+@media (max-width: 700px) {
+  .policy-hero { padding: 72px 20px 56px; }
+  .container { padding: 0 20px; }
+  .editorial-page { padding: 0 20px; }
+  .policy-catalog { grid-template-columns: 1fr; }
+  .policy-dossier, .policy-featured { padding: 28px 20px; }
+  .chart { padding: 24px 20px; }
 }
 </style>
 {{ end }}
 
 {{ define "main" }}
-  {{/* ═══ Collect all policy pages (notes, reports, briefs, debates) ═══ */}}
-  {{ $allPages := where .Site.RegularPages "Section" "policy" }}
-  {{ $allPages = sort $allPages "Date" "desc" }}
-  {{ $featured := index (first 1 $allPages) 0 }}
-  {{ $debates := where $allPages ".Params.doc_type" "controverse" }}
-  {{ $recent := after 1 $allPages | first 6 }}
+  {{/* ─── French month names ─────────────────────────────────────────── */}}
+  {{ $months := dict "01" "Janvier" "02" "Février" "03" "Mars" "04" "Avril" "05" "Mai" "06" "Juin" "07" "Juillet" "08" "Août" "09" "Septembre" "10" "Octobre" "11" "Novembre" "12" "Décembre" }}
 
-  {{/* Theme groupings for catalog — maps tab key → (label, matching theme values) */}}
-  {{/* Each tab matches multiple theme values from content frontmatter */}}
+  {{/* ─── Data queries ─────────────────────────────────────────────── */}}
+  {{ $allPages   := where .Site.RegularPages "Section" "policy" }}
+  {{ $allPages    = sort $allPages "Date" "desc" }}
+  {{ $featured   := index (first 1 $allPages) 0 }}
+  {{ $debates    := where $allPages ".Params.doc_type" "controverse" }}
+  {{ $recent     := after 1 $allPages | first 8 }}
+  {{ $dossierPages := where $allPages ".Params.theme" "in" (slice "polycrisis" "polycrisis-asie" "dossier") }}
+  {{ $commissioned := where $allPages ".Params.commissioned" true }}
 
-  <div class="page-body">
+  {{/* Tab-filtered slices */}}
+  {{ $geoPages   := where $allPages ".Params.theme" "in" (slice "geopolitical" "polycrisis" "polycrisis-asie" "iran" "sécurité" "geoeconomics") }}
+  {{ $tradePages := where $allPages ".Params.theme" "in" (slice "commerce" "trade" "geoeconomics") }}
+  {{ $devPages   := where $allPages ".Params.theme" "in" (slice "développement" "development" "architecture-financière" "g7") }}
+  {{ $energyPages := where $allPages ".Params.theme" "in" (slice "énergie" "energy") }}
+  {{ $afriquePages := where $allPages ".Params.theme" "in" (slice "afrique" "africa") }}
 
-    <!-- ═══ POLICY VISION — dark header ═══ -->
-    <div class="policy-vision">
-      <div class="policy-vision-inner">
-        <div class="section-label">Policy &amp; Strategic Intelligence</div>
-        <h1>De l'analyse quantitative à la recommandation opérationnelle</h1>
-        <p class="policy-vision-text">
-          Chaque note traduit un résultat de recherche en recommandation actionnable. Le registre combine le rapport analytique, le policy brief et le scénario prospectif. Les destinataires : décideurs G7, analystes institutionnels, directions stratégiques.
-        </p>
-      </div>
-    </div>
+  <div class="page-body" data-palette="vivid-editorial">
 
-    <!-- ═══ STICKY FILTER TABS ═══ -->
-    <div class="policy-filters">
-      <div class="policy-filters-inner">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="geopolitique">Risque géopolitique</button>
-        <button class="filter-btn" data-filter="commerce">Commerce &amp; Sanctions</button>
-        <button class="filter-btn" data-filter="developpement">Finance du développement</button>
-        <button class="filter-btn" data-filter="energie">Énergie &amp; Climat</button>
-        <button class="filter-btn" data-filter="defense">Défense &amp; Industrie</button>
-        <button class="filter-btn" data-filter="afrique">Afrique</button>
-        <button class="filter-btn" data-filter="asie">Asie-Pacifique</button>
-        <button class="filter-btn" data-filter="europe">Europe</button>
-      </div>
-    </div>
-
-    <!-- ═══ DOSSIERS EN LUMIÈRE — rail 3 sections thématiques ═══ -->
-    {{ $polycrisisPages := where $allPages ".Params.theme" "in" (slice "polycrisis" "polycrisis-asie") }}
-    {{ $geopoliticsPages := where $allPages ".Params.theme" "in" (slice "geopolitical" "géopolitique" "iran" "sécurité") }}
-    {{ $springPages := where $allPages ".Params.theme" "in" (slice "spring-meetings") }}
-    <div class="dossiers-rail">
-      <div class="dossiers-rail-inner">
-
-        {{ if gt (len $polycrisisPages) 0 }}
-        <section class="dossier-bloc">
-          <div class="dossier-bloc-head">
-            <div class="dossier-eyebrow">Dossier · Polycrisis 2026</div>
-            <h2 class="dossier-bloc-title">La convergence des crises</h2>
-            <p class="dossier-bloc-lede">Six chaînes causales, neuf boucles de rétroaction dont sept amplificatrices, cinq scénarios probabilisés : la cartographie intégrée des chocs qui se conjuguent en 2026 et la série Vigie qui en tire les leçons opérationnelles pour Évian.</p>
-            <div class="dossier-bloc-cta">
-              <a href="/policy/briefs/polycrisis-serie-vigie/">Série Vigie Polycrisis →</a>
-              <a href="/policy/reports/convergence-polycrisis/">Rapport intégrateur →</a>
-            </div>
-          </div>
-          <div class="dossier-bloc-grid">
-            {{ range first 4 $polycrisisPages }}
-            <article class="rail-card">
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </article>
-            {{ end }}
-          </div>
-        </section>
-        {{ end }}
-
-        {{ if gt (len $geopoliticsPages) 0 }}
-        <section class="dossier-bloc">
-          <div class="dossier-bloc-head">
-            <div class="dossier-eyebrow">Dossier · Géopolitique & sécurité</div>
-            <h2 class="dossier-bloc-title">Chocs stratégiques et architecture de sécurité</h2>
-            <p class="dossier-bloc-lede">Configuration Trump II, Moyen-Orient après Ormuz, crise iranienne, recours souverain du Vatican, impasse Haïti : les chaînes de transmission des chocs géopolitiques à l'économie et aux architectures de coopération.</p>
-          </div>
-          <div class="dossier-bloc-grid">
-            {{ range first 4 $geopoliticsPages }}
-            <article class="rail-card">
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </article>
-            {{ end }}
-          </div>
-        </section>
-        {{ end }}
-
-        {{ if gt (len $springPages) 0 }}
-        <section class="dossier-bloc">
-          <div class="dossier-bloc-head">
-            <div class="dossier-eyebrow">Dossier · Spring Meetings 2026</div>
-            <h2 class="dossier-bloc-title">Vigie FMI–Banque mondiale, Washington avril 2026</h2>
-            <p class="dossier-bloc-lede">Lecture quotidienne des réunions de printemps : <em>World Economic Outlook</em>, <em>Global Financial Stability Report</em>, communiqué IMFC, Development Committee. Chaque jour, une ligne de rupture lue au prisme de la polycrisis.</p>
-            <div class="dossier-bloc-cta">
-              <a href="/policy/briefs/spring-meetings-2026/">Kit complet Spring Meetings →</a>
-            </div>
-          </div>
-          <div class="dossier-bloc-grid">
-            {{ range first 4 $springPages }}
-            <article class="rail-card">
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-meta"><span>{{ .Date.Format "2 Jan. 2006" }}</span><span>{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </article>
-            {{ end }}
-          </div>
-        </section>
-        {{ end }}
-
-      </div>
-    </div>
-
-    <!-- ═══ GRAPHIQUE DE LA SEMAINE ═══ -->
-    <div class="graphic-detail">
-      <div class="graphic-detail-inner">
-        <hr class="rule-section">
-        <h2 class="section-heading-econ">Graphique de la semaine</h2>
-        <div class="graphic-detail-grid">
-          <div class="graphic-chart">
-            <img src="/uploads/charts/fig9_stabilizer_history.png" alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973" style="width: 100%; border-radius: 2px;">
-          </div>
-          <div class="graphic-body">
-            <div class="fly-title">Polycrisis</div>
-            <div class="note-title"><a href="/policy/briefs/polycrisis-stabilisateurs-qui-cede/">Les trois stabilisateurs qui ont cédé</a></div>
-            <div class="note-excerpt" style="margin-top: 12px;">Pour la première fois depuis Bretton Woods, les trois mécanismes institutionnels de stabilisation — lignes de swap Fed, indépendance monétaire, cohésion atlantique — sont simultanément fragilisés.</div>
-            <div class="note-meta" style="margin-top: 16px;"><span>Avril 2026</span><span class="note-format-tag">Analyse · Vigie</span></div>
-          </div>
+    <!-- ══════════════════════════════════════════════════════
+         HERO — full-width dark band
+         ══════════════════════════════════════════════════════ -->
+    <section class="policy-hero">
+      <div class="policy-hero-inner">
+        <span class="eyebrow eyebrow--with-flag">Policy &middot; Briefs &middot; Rapports</span>
+        <h1 class="h-display">
+          <span class="h-line">Analyses de <em>politique</em></span><br>
+          <span class="h-line"><em>économique</em></span><br>
+          <span class="h-line">et prospective stratégique</span>
+        </h1>
+        <p class="policy-standfirst">Notes d'analyse, policy briefs et rapports sur les risques géopolitiques, la fragmentation commerciale et la finance du développement. Ces travaux traduisent une recherche appliquée en recommandations opérationnelles pour les décideurs publics, les institutions multilatérales et les investisseurs institutionnels.</p>
+        <div class="policy-chips">
+          <span class="chip chip--geoeconomie">Géoéconomie</span>
+          <span class="chip chip--asie">Asie-Pacifique</span>
+          <span class="chip chip--europe">Europe &amp; Défense</span>
+          <span class="chip chip--multilat">Multilatéral</span>
+          <span class="chip chip--finance-dev">Finance du développement</span>
+          <span class="chip chip--polycrisis">Polycrisis</span>
         </div>
       </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         À LA UNE — featured policy note
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      {{ if $featured }}
+      <section class="policy-featured">
+        <div class="policy-featured-image"
+          {{ with $featured.Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+        </div>
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-mark"></span>
+            <span class="eyebrow-text">{{ with $featured.Params.fly_title }}{{ . | upper }}{{ else }}À LA UNE &middot; {{ with $featured.Params.theme }}{{ . | upper }}{{ end }}{{ end }}</span>
+          </div>
+          <h2>{{ $featured.Title }}</h2>
+          <p>{{ with $featured.Params.summary }}{{ . | truncate 280 }}{{ else }}{{ $featured.Summary | truncate 280 }}{{ end }}</p>
+          <div class="article-meta">
+            <span>Eric Gabin Kilama</span><span class="sep">&middot;</span><span>{{ index $months ($featured.Date.Format "01") }} {{ $featured.Date.Format "2006" }}</span><span class="sep">&middot;</span><span>{{ $featured.ReadingTime }} min</span>
+          </div>
+          <a class="action" href="{{ $featured.RelPermalink }}">Lire l'analyse &rarr;</a>
+        </div>
+      </section>
+      {{ else }}
+      {{/* Fallback hardcoded featured when no content exists */}}
+      <section class="policy-featured">
+        <div class="policy-featured-image"></div>
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-mark"></span>
+            <span class="eyebrow-text">DOSSIER &middot; POLYCRISIS 2026</span>
+          </div>
+          <h2>La convergence des crises : polycrisis, fragmentation et résilience des économies du G7</h2>
+          <p>Les économies avancées font face à une superposition inédite de chocs géopolitiques, énergétiques et commerciaux. Cette note quantifie les canaux de transmission, identifie les vulnérabilités asymétriques entre membres du G7 et évalue les scénarios adverses à horizon 2027.</p>
+          <div class="article-meta">
+            <span>Eric Gabin Kilama</span><span class="sep">&middot;</span><span>Avril 2026</span><span class="sep">&middot;</span><span>12 min</span>
+          </div>
+          <a class="action" href="{{ "policy/" | relURL }}">Lire l'analyse &rarr;</a>
+        </div>
+      </section>
+      {{ end }}
     </div>
 
-    <!-- ═══ DÉBATS & CONTROVERSES ═══ -->
-    {{ if gt (len $debates) 0 }}
-    <div class="debats-section" id="debats">
-      <div class="debats-section-inner">
-        <hr class="rule-section">
-        <h2 class="section-heading-econ">Débats &amp; Controverses</h2>
-        <div class="debats-grid">
-          {{ range $debates }}
-          <div class="debat-card">
-            <div class="fly-title">{{ with .Params.theme }}{{ . }}{{ else }}Débat{{ end }}</div>
-            <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-            <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 150 }}{{ else }}{{ .Summary | truncate 150 }}{{ end }}</div>
-            <div class="note-meta"><span>{{ .Date.Format "Janvier 2006" }}</span><span class="note-format-tag">Analyse · {{ .ReadingTime }} min</span></div>
-          </div>
+    <!-- ══════════════════════════════════════════════════════
+         TABS — type filter (Bruegel-style)
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <nav class="tabs" role="tablist" id="policy-tabs">
+        <button class="tab tab--active" data-tab="all">Tous</button>
+        <button class="tab" data-tab="vigie">Notes Vigie</button>
+        <button class="tab" data-tab="briefs">Policy Briefs</button>
+        <button class="tab" data-tab="rapports">Rapports</button>
+        <button class="tab" data-tab="dossiers">Dossiers</button>
+        <button class="tab" data-tab="debats">Débats</button>
+      </nav>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         THEMATIC CHIP FILTERS
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="filters" id="policy-filters">
+        <button class="chip chip--active" data-filter="all">Tous</button>
+        <button class="chip" data-filter="risque-geo">Risque géopolitique</button>
+        <button class="chip" data-filter="commerce">Commerce &amp; Sanctions</button>
+        <button class="chip" data-filter="findev">Finance du développement</button>
+        <button class="chip" data-filter="energie">Énergie &amp; Climat</button>
+        <button class="chip" data-filter="polycrisis">Polycrisis</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         DOSSIER SPÉCIAL — Polycrisis 2026
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <section id="dossier" class="policy-dossier dossier-banner" data-watermark="POLYCRISIS">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">DOSSIER SPÉCIAL &middot; EN COURS</span>
+        </div>
+        <h2>Polycrisis 2026 : la convergence des crises</h2>
+        <p class="article-subtitle">Ce dossier rassemble six analyses complémentaires sur la polycrisis contemporaine. Choc géopolitique, fragmentation des chaînes de valeur, contagion financière, souveraineté énergétique et capacités de résilience sont traités séparément puis croisés dans une grille de scénarios intégrée. L'objectif est de fournir aux décideurs une lecture unifiée des risques systémiques auxquels font face les économies du G7.</p>
+
+        <div class="policy-catalog">
+          {{ if gt (len $dossierPages) 0 }}
+            {{ range first 6 $dossierPages }}
+            <article class="card-note">
+              <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}DOSSIER{{ end }}</span>
+              <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+              <div class="card-note-meta">
+                <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                <span class="card-note-sep">&middot;</span>
+                <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+              </div>
+            </article>
+            {{ end }}
+          {{ else }}
+          {{/* Fallback hardcoded dossier entries */}}
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Polycrisis et transmission aux économies du G7</a></h3>
+            <p class="card-note-summary">Canaux de transmission simultanés : énergie, commerce, finance. Modélisation des effets croisés sur la croissance potentielle.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Mars 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">note</span>
+            </div>
+          </article>
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Fragmentation commerciale et chaînes de valeur</a></h3>
+            <p class="card-note-summary">Mesure de la fragmentation via les données BACI. Identification des maillons critiques et estimation de l'impact sur les PME exportatrices.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Mars 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">note</span>
+            </div>
+          </article>
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Spreads souverains et risque politique en zone euro</a></h3>
+            <p class="card-note-summary">Les spreads souverains intègrent-ils le risque géopolitique de manière hétérogène ? Analyse des réponses différenciées entre pays de la zone euro.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Février 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">analyse</span>
+            </div>
+          </article>
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Scénarios adverses et capacités de résilience</a></h3>
+            <p class="card-note-summary">Construction de trois scénarios macroéconomiques adverses. Évaluation des marges de manœuvre budgétaires et monétaires du G7 face à chaque trajectoire.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Février 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">note</span>
+            </div>
+          </article>
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Souveraineté énergétique et dépendances critiques</a></h3>
+            <p class="card-note-summary">Cartographie des dépendances énergétiques européennes après le découplage russe. Vulnérabilités résiduelles sur le GNL, l'uranium et les métaux critiques.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Mars 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">note</span>
+            </div>
+          </article>
+          <article class="card-note">
+            <span class="card-note-tag">DOSSIER</span>
+            <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Contagion financière et corridors de risque</a></h3>
+            <p class="card-note-summary">Les chocs géopolitiques se propagent-ils via les marchés financiers ? Estimation des spillovers sur les spreads CDS souverains et corporates du G7.</p>
+            <div class="card-note-meta">
+              <span class="card-note-date">Avril 2026</span>
+              <span class="card-note-sep">&middot;</span>
+              <span class="card-note-type">note</span>
+            </div>
+          </article>
           {{ end }}
         </div>
-      </div>
-    </div>
-    {{ end }}
 
-    <!-- ═══ EN BREF — latest notes ═══ -->
-    {{ if gt (len $recent) 0 }}
-    <div class="en-bref">
-      <div class="en-bref-inner">
-        <hr class="rule-section">
-        <h2 class="section-heading-econ">En bref</h2>
-        <div class="en-bref-grid" style="margin-top: 16px;">
-          {{ range $recent }}
-          <div class="en-bref-item">
-            <div class="fly-title">{{ with .Params.theme }}{{ . }}{{ end }}</div>
-            <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-          </div>
-          {{ end }}
+        <a class="action action--secondary" href="{{ "policy/" | relURL }}">Voir le dossier complet &rarr;</a>
+      </section>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         GRAPHIQUE DE LA SEMAINE
+         ══════════════════════════════════════════════════════ -->
+    <div class="editorial-page">
+      <figure class="chart">
+        <header class="chart-header">
+          <span class="eyebrow-text">Graphique de la semaine</span>
+          <h3 class="chart-title">Le risque géopolitique reste élevé sur trois théâtres</h3>
+          <p class="chart-subtitle">Indice GPR mondial, par théâtre, contribution trimestrielle</p>
+        </header>
+        <div class="chart-canvas article-wide">
+          <img src="/uploads/charts/fig9_stabilizer_history.png"
+               alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <svg viewBox="0 0 680 340" preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Graphique GPR par théâtre Q1 2021 à Q4 2025"
+               style="display:none; width:100%; height:auto;">
+            <rect width="680" height="340" fill="var(--color-background-tertiary, #232328)" rx="4"/>
+            <text x="340" y="170" text-anchor="middle" fill="var(--color-text-tertiary, #76726B)"
+                  font-family="var(--font-data, monospace)" font-size="13">
+              [Chart placeholder — GPR par théâtre Q1 2021 – Q4 2025]
+            </text>
+          </svg>
         </div>
-      </div>
+        <footer class="chart-footer">
+          <ul class="chart-legend">
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-1, #C0392B)"></span>ANMO</li>
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-2, #1B2A4A)"></span>Asie-Pacifique</li>
+            <li><span class="chart-legend-mark" style="background:var(--brand-data-3, #4FC3F7)"></span>Europe-Russie</li>
+          </ul>
+          <p class="chart-source">Source : FPSQ Vigie ; Caldara &amp; Iacoviello (2024).</p>
+          <span class="chart-watermark">erickilama.com</span>
+        </footer>
+      </figure>
     </div>
-    {{ end }}
 
-    <!-- ═══════════════════════════════════════════════════
-         CATALOGUE DES NOTES — controlled by sticky tabs
-         ═══════════════════════════════════════════════════ -->
-    <div class="catalog-section" id="catalogue">
-      <div class="catalog-inner">
-        <hr class="rule-section">
-        <h2 class="section-heading-econ" style="margin-bottom: 24px;">Catalogue des notes</h2>
+    <!-- ══════════════════════════════════════════════════════
+         CATALOGUE — dense list, all publications
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <section id="catalogue">
+        <h2>Toutes les analyses</h2>
+        <p class="card-note-summary">Tri par date, filtres ci-dessus.{{ if gt (len $allPages) 0 }} {{ len $allPages }} notes publiées.{{ end }}</p>
 
-        <!-- ALL — default visible panel -->
-        <div class="catalog-panel active" data-theme="all">
-          <div class="catalog-count">{{ len $allPages }} publications</div>
-          <ul class="catalog-list">
+        <div class="policy-list">
+          {{ if gt (len $allPages) 0 }}
             {{ range $allPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
+            <article class="policy-entry"
+              data-theme="{{ with .Params.theme }}{{ . }}{{ end }}"
+              data-doctype="{{ with .Params.doc_type }}{{ . }}{{ end }}">
+              <div class="policy-entry-thumb"
+                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+              </div>
+              <div class="policy-entry-body">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p>{{ with .Params.summary }}{{ . | truncate 200 }}{{ else }}{{ .Summary | truncate 200 }}{{ end }}</p>
+                <div class="policy-entry-meta">
+                  {{ with .Params.theme }}<span class="tag tag--{{ . | urlize }}">{{ . }}</span><span class="card-note-sep">&middot;</span>{{ end }}
+                  <span>{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+                  <span class="card-note-sep">&middot;</span>
+                  <span>{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                </div>
+              </div>
+            </article>
             {{ end }}
-          </ul>
+          {{ else }}
+          {{/* Fallback hardcoded entries */}}
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">La convergence des crises : polycrisis, fragmentation et résilience des économies du G7</a></h3>
+              <p>Superposition inédite de chocs géopolitiques, énergétiques et commerciaux. Quantification des canaux de transmission et scénarios adverses pour le G7.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--polycrisis">Polycrisis</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>working paper</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>Avril 2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">Résilience des chaînes de valeur face aux sanctions</a></h3>
+              <p>Les sanctions économiques contre la Russie ont révélé des fragilités insoupçonnées dans les chaînes d'approvisionnement européennes. Estimation PPML sur données BACI des effets de réallocation et de détournement.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--commerce">Commerce &amp; Sanctions</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>note Vigie</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>Mars 2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">Iran-Ormuz : frappes et risque Brent</a></h3>
+              <p>Malgré des frappes répétées dans le détroit d'Ormuz, le Brent reste contenu. Analyse des mécanismes d'absorption, du rôle des stocks stratégiques américains et de la prime de risque implicite.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--energie">Énergie &amp; Climat</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>note Vigie</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>Mars 2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">Le déclin de l'APD au G7</a></h3>
+              <p>L'aide publique au développement du G7 décroche pour la troisième année consécutive. Analyse des données OCDE-DAC 2025 et identification de trois facteurs structurels de déclin.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--finance-dev">Finance du développement</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>policy brief</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>Février 2026</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
         </div>
+      </section>
+    </div>
 
-        <!-- Risque géopolitique -->
-        {{ $geoPages := where $allPages ".Params.theme" "in" (slice "geopolitical" "polycrisis" "polycrisis-asie" "iran" "sécurité" "geoeconomics") }}
-        {{ if gt (len $geoPages) 0 }}
-        <div class="catalog-panel" data-theme="geopolitique">
-          <div class="catalog-count">{{ len $geoPages }} notes · Risque géopolitique</div>
-          <ul class="catalog-list">
-            {{ range $geoPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
+    <!-- ══════════════════════════════════════════════════════
+         DÉBATS & CONTROVERSES
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <section id="debats">
+        <div class="eyebrow" style="display:flex; align-items:center; gap:8px; margin-bottom:14px; margin-top:40px;">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Débats &amp; Controverses</span>
         </div>
+        <h2 style="border-top:none; padding-top:0; margin-top:0;">Prises de position</h2>
+        <p class="article-subtitle">Analyses argumentées dans des débats de politique économique en cours. Chaque entrée synthétise la controverse, expose la position défendue et renvoie aux travaux sous-jacents.</p>
+
+        {{ if gt (len $debates) 0 }}
+          {{ range $i, $debate := $debates }}
+          <article class="debate-card">
+            <div class="debate-num">{{ printf "%02d" (add $i 1) }}</div>
+            <div class="debate-content">
+              <h3>{{ $debate.Title }}</h3>
+              <p class="debate-position">{{ with $debate.Params.summary }}{{ . | truncate 350 }}{{ else }}{{ $debate.Summary | truncate 350 }}{{ end }}</p>
+              <div class="debate-related">
+                <span class="meta">LIRE →</span>
+                <a href="{{ $debate.RelPermalink }}">{{ $debate.Title | truncate 60 }}</a>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        {{ else }}
+        {{/* Fallback hardcoded debates */}}
+        <article class="debate-card">
+          <div class="debate-num">01</div>
+          <div class="debate-content">
+            <h3>Faut-il poursuivre la réforme de l'architecture financière internationale ?</h3>
+            <p class="debate-position">Le système de Bretton Woods est contesté de toutes parts : montée des banques de développement régionales, initiatives chinoises (AIIB, NDB), fatigue des donateurs traditionnels. La position défendue ici est que la réforme reste préférable à la fragmentation, à condition de repenser la gouvernance et les conditionnalités.</p>
+            <div class="debate-related">
+              <span class="meta">VOIR LES NOTES :</span>
+              <a href="{{ "policy/" | relURL }}">L'APD du G7 décroche pour la 3e année</a>
+              <a href="{{ "policy/" | relURL }}">Architecture financière et polycrisis</a>
+            </div>
+          </div>
+        </article>
+        <article class="debate-card">
+          <div class="debate-num">02</div>
+          <div class="debate-content">
+            <h3>L'aide chinoise : bienveillance, instrumentalisation ou prédation ?</h3>
+            <p class="debate-position">L'evidence causale, fondée sur des données AidData et des instruments commerciaux, pointe vers un mécanisme d'assurance sur matières premières, distinct des trois récits dominants. L'investissement souverain chinois suit la logique d'une couverture de risque d'approvisionnement.</p>
+            <div class="debate-related">
+              <span class="meta">VOIR LES NOTES :</span>
+              <a href="{{ "policy/" | relURL }}">Sovereign Investment as Commodity Trade Insurance</a>
+              <a href="{{ "policy/" | relURL }}">China Aid géopolitique : note FFA</a>
+            </div>
+          </div>
+        </article>
         {{ end }}
+      </section>
+    </div>
 
-        <!-- Commerce & Sanctions -->
-        {{ $tradePages := where $allPages ".Params.theme" "in" (slice "commerce" "trade" "geoeconomics") }}
-        {{ if gt (len $tradePages) 0 }}
-        <div class="catalog-panel" data-theme="commerce">
-          <div class="catalog-count">{{ len $tradePages }} notes · Commerce &amp; Sanctions</div>
-          <ul class="catalog-list">
-            {{ range $tradePages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
+    <!-- ══════════════════════════════════════════════════════
+         RAPPORTS & BRIEFS COMMANDÉS
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      <section id="rapports">
+        <div class="eyebrow" style="display:flex; align-items:center; gap:8px; margin-bottom:14px; margin-top:40px;">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Rapports &amp; Briefs commandés</span>
         </div>
-        {{ end }}
+        <h2 style="border-top:none; padding-top:0; margin-top:0;">Travaux institutionnels</h2>
+        <p class="article-subtitle">Rapports et notes de synthèse produits pour des institutions, fondations et organismes de recherche. Ces livrables traduisent la recherche en recommandations opérationnelles ciblées.</p>
 
-        <!-- Finance du développement -->
-        {{ $devPages := where $allPages ".Params.theme" "in" (slice "développement" "development" "architecture-financière" "g7") }}
-        {{ if gt (len $devPages) 0 }}
-        <div class="catalog-panel" data-theme="developpement">
-          <div class="catalog-count">{{ len $devPages }} notes · Finance du développement</div>
-          <ul class="catalog-list">
-            {{ range $devPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
+        <div class="policy-list">
+          {{ if gt (len $commissioned) 0 }}
+            {{ range $commissioned }}
+            <article class="policy-entry">
+              <div class="policy-entry-thumb"
+                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+              </div>
+              <div class="policy-entry-body">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p>{{ with .Params.summary }}{{ . | truncate 200 }}{{ else }}{{ .Summary | truncate 200 }}{{ end }}</p>
+                <div class="policy-entry-meta">
+                  {{ with .Params.institution }}<span class="tag tag--brand">{{ . }}</span><span class="card-note-sep">&middot;</span>{{ end }}
+                  <span>{{ .Date.Format "2006" }}</span>
+                </div>
+              </div>
+            </article>
             {{ end }}
-          </ul>
+          {{ else }}
+          {{/* Fallback hardcoded commissioned reports */}}
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">La fragilité par la base : polycrisis Asie et aide chinoise en perspective</a></h3>
+              <p>Rapport pour la Fondation France-Asie. Deux notes croisées : les scénarios de risque en Asie-Pacifique et l'instrument géopolitique de l'aide chinoise, analysés conjointement pour dégager les implications pour la politique française en Indo-Pacifique.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--brand">FFA &middot; Rapport</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+          <article class="policy-entry">
+            <div class="policy-entry-thumb"></div>
+            <div class="policy-entry-body">
+              <h3><a href="{{ "policy/" | relURL }}">Analyse CAPS — prospective stratégique et recommandations</a></h3>
+              <p>Contribution issue de l'expérience au Centre d'analyse, de prévision et de stratégie du Quai d'Orsay. Analyse prospective et recommandations stratégiques sur les chocs géopolitiques contemporains.</p>
+              <div class="policy-entry-meta">
+                <span class="tag tag--brand">CAPS-MEAE</span>
+                <span class="card-note-sep">&middot;</span>
+                <span>2026</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
         </div>
-        {{ end }}
+      </section>
+    </div>
 
-        <!-- Énergie & Climat -->
-        {{ $energyPages := where $allPages ".Params.theme" "in" (slice "énergie" "energy") }}
-        {{ if gt (len $energyPages) 0 }}
-        <div class="catalog-panel" data-theme="energie">
-          <div class="catalog-count">{{ len $energyPages }} notes · Énergie &amp; Climat</div>
-          <ul class="catalog-list">
-            {{ range $energyPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-        <!-- Défense & Industrie -->
-        {{ $defPages := where $allPages ".Params.theme" "in" (slice "défense" "sécurité" "defense") }}
-        {{ if gt (len $defPages) 0 }}
-        <div class="catalog-panel" data-theme="defense">
-          <div class="catalog-count">{{ len $defPages }} notes · Défense &amp; Industrie</div>
-          <ul class="catalog-list">
-            {{ range $defPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-        <!-- Afrique -->
-        {{ $afriquePages := where $allPages ".Params.theme" "in" (slice "afrique" "africa") }}
-        {{ if gt (len $afriquePages) 0 }}
-        <div class="catalog-panel" data-theme="afrique">
-          <div class="catalog-count">{{ len $afriquePages }} notes · Afrique</div>
-          <ul class="catalog-list">
-            {{ range $afriquePages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-        <!-- Asie-Pacifique -->
-        {{ $asiaPages := where $allPages ".Params.theme" "in" (slice "polycrisis-asie" "asie" "asia") }}
-        {{ if gt (len $asiaPages) 0 }}
-        <div class="catalog-panel" data-theme="asie">
-          <div class="catalog-count">{{ len $asiaPages }} notes · Asie-Pacifique</div>
-          <ul class="catalog-list">
-            {{ range $asiaPages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-        <!-- Europe -->
-        {{ $europePages := where $allPages ".Params.theme" "in" (slice "europe" "european") }}
-        {{ if gt (len $europePages) 0 }}
-        <div class="catalog-panel" data-theme="europe">
-          <div class="catalog-count">{{ len $europePages }} notes · Europe</div>
-          <ul class="catalog-list">
-            {{ range $europePages }}
-            <li>
-              <div class="fly-title">{{ with .Params.fly_title }}{{ . }}{{ else }}{{ with .Params.theme }}{{ . }}{{ end }}{{ end }}</div>
-              <div class="note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-              <div class="note-excerpt">{{ with .Params.summary }}{{ . | truncate 180 }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}</div>
-              <div class="note-meta"><span>{{ .Date.Format "Jan. 2006" }}</span><span class="note-format-tag">{{ with .Params.doc_type }}{{ . }}{{ else }}Note{{ end }} · {{ .ReadingTime }} min</span></div>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ end }}
-
-      </div>
+    <!-- ══════════════════════════════════════════════════════
+         NEWSLETTER CTA
+         ══════════════════════════════════════════════════════ -->
+    <div class="editorial-page">
+      <section class="subscribe-cta">
+        <h3>Recevoir les Notes Vigie</h3>
+        <p>Pour recevoir les notes par e-mail dès leur publication.</p>
+        <a class="action" href="mailto:kilamaericgabin@yahoo.fr?subject=Abonnement%20Notes%20Vigie">S'inscrire par email &rarr;</a>
+      </section>
     </div>
 
   </div>
@@ -849,20 +1041,60 @@
 
 {{ define "scripts" }}
 <script>
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    var filter = btn.dataset.filter;
-    document.querySelectorAll('.catalog-panel').forEach(function(p) {
-      if (filter === 'all') {
-        p.classList.toggle('active', p.dataset.theme === 'all');
-      } else {
-        p.classList.toggle('active', p.dataset.theme === filter);
-      }
+(function () {
+  /* ─── Tab switching ─────────────────────────────────── */
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('tab--active'); });
+      tab.classList.add('tab--active');
+      filterEntries();
     });
-    document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-});
+
+  /* ─── Chip filter switching ─────────────────────────── */
+  var chips = document.querySelectorAll('#policy-filters .chip');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('chip--active'); });
+      chip.classList.add('chip--active');
+      filterEntries();
+    });
+  });
+
+  /* ─── Combined filter logic ─────────────────────────── */
+  function filterEntries () {
+    var activeTab    = document.querySelector('.tab--active');
+    var activeChip   = document.querySelector('#policy-filters .chip--active');
+    var tabVal  = activeTab  ? activeTab.dataset.tab   : 'all';
+    var chipVal = activeChip ? activeChip.dataset.filter : 'all';
+
+    var entries = document.querySelectorAll('#catalogue .policy-entry');
+    entries.forEach(function (el) {
+      var theme   = (el.dataset.theme   || '').toLowerCase();
+      var doctype = (el.dataset.doctype || '').toLowerCase();
+
+      var tabMatch = (tabVal === 'all') ||
+        (tabVal === 'vigie'    && doctype.indexOf('vigie') !== -1) ||
+        (tabVal === 'briefs'   && (doctype.indexOf('brief') !== -1 || doctype.indexOf('policy brief') !== -1)) ||
+        (tabVal === 'rapports' && doctype.indexOf('rapport') !== -1) ||
+        (tabVal === 'dossiers' && doctype.indexOf('dossier') !== -1) ||
+        (tabVal === 'debats'   && doctype.indexOf('controverse') !== -1);
+
+      var chipMatch = (chipVal === 'all') ||
+        (chipVal === 'risque-geo' && (theme.indexOf('geopolitical') !== -1 || theme.indexOf('géopolitique') !== -1 || theme.indexOf('iran') !== -1 || theme.indexOf('sécurité') !== -1)) ||
+        (chipVal === 'commerce'   && (theme.indexOf('commerce') !== -1 || theme.indexOf('trade') !== -1 || theme.indexOf('geoeconomics') !== -1)) ||
+        (chipVal === 'findev'     && (theme.indexOf('développement') !== -1 || theme.indexOf('development') !== -1 || theme.indexOf('g7') !== -1)) ||
+        (chipVal === 'energie'    && (theme.indexOf('énergie') !== -1 || theme.indexOf('energy') !== -1)) ||
+        (chipVal === 'polycrisis' && theme.indexOf('polycrisis') !== -1);
+
+      el.style.display = (tabMatch && chipMatch) ? '' : 'none';
+    });
+
+    /* scroll to catalogue on filter change */
+    var cat = document.getElementById('catalogue');
+    if (cat) cat.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+})();
 </script>
 {{ end }}
