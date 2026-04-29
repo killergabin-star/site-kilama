@@ -16,7 +16,7 @@ tags:
 - migration
 - developpement
 summary: >
-  La semaine dernière, le Comité d'aide au développement de l'OCDE a publié ses projections 2025 : l'aide publique au développement recule entre 9 et 17 % — contraction sans précédent hors période de guerre mondiale. Cette semaine, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : un Soudan avec 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine, un appel humanitaire financé à 12 %. Les deux événements ne sont pas lus ensemble. Ils devraient l'être. Le brief documente pourquoi la contraction actuelle est un démantèlement d'infrastructure de prévention — pas une pause — et ce que le cas soudanais impose à l'agenda du G7 d'Évian.
+  La semaine dernière, le Comité d'aide au développement de l'OCDE a publié ses données préliminaires 2025 : l'aide publique au développement des pays du CAD recule de 23,1 %, avec une baisse de 25,8 % vers les PMA et de 26,3 % vers l'Afrique subsaharienne. Cette semaine, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : un Soudan avec 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine, un appel humanitaire financé à 12 %. Les deux événements ne sont pas lus ensemble. Ils devraient l'être. Le brief documente pourquoi la contraction actuelle est un démantèlement d'infrastructure de prévention — pas une pause — et ce que le cas soudanais impose à l'agenda du G7 d'Évian.
 ---
 
 ## Numéro spécial Vigie — Polycrisis
@@ -27,15 +27,15 @@ summary: >
 
 ---
 
-**La semaine dernière**, le Comité d'aide au développement de l'OCDE a publié ses projections 2025 : l'aide publique au développement des pays donateurs recule entre 9 et 17 % — contraction sans précédent hors période de guerre mondiale.[^0] **Cette semaine**, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : 10,7 millions de déplacés internes au Soudan, 25 millions de personnes en risque de famine, appel humanitaire des Nations unies financé à 12 %.
+**La semaine dernière**, le Comité d'aide au développement de l'OCDE a publié ses données préliminaires 2025 : l'aide publique au développement des pays du CAD recule de 23,1 %, avec une baisse de 25,8 % vers les PMA et de 26,3 % vers l'Afrique subsaharienne.[^0] **Cette semaine**, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : 10,7 millions de déplacés internes au Soudan, 25 millions de personnes en risque de famine, appel humanitaire des Nations unies financé à 12 %.
 
 Les deux événements se succèdent à quatre jours d'intervalle sans être lus ensemble. Ils devraient l'être. Les chocs commerciaux, énergétiques et sécuritaires qui dominent l'agenda macrofinancier du Nord convergent, en aval, sur les États fragiles du Sud ; c'est précisément au même moment que leurs capacités d'absorption sont démantelées. La contraction de l'aide n'est pas un ralentissement conjoncturel. C'est le retrait d'une infrastructure de prévention dont l'absence produit des externalités — migrations de masse, effondrement alimentaire, conflits régionaux — dont le coût remonte, mécaniquement, vers les budgets et les politiques du Nord.
 
-[^0]: OCDE, *Preliminary ODA data 2025 — Projections*, webinaire données CAD du 9 avril 2026. La fourchette 9-17 % correspond aux bornes basse et haute de la projection préliminaire ; la donnée consolidée est attendue à l'automne 2026.
+[^0]: OCDE, *Preliminary official development assistance levels in 2025*, données publiées le 9 avril 2026. La donnée reste préliminaire ; les données finales sont annoncées pour décembre 2026.
 
 ### Quatre points saillants
 
-- **Aide publique au développement projetée entre -9 % et -17 % pour 2025** par l'OCDE (fourchette préliminaire, webinaire CAD du 9 avril), sous l'effet cumulé du retrait américain (liquidation de l'USAID), des réallocations européennes vers le réarmement et de l'effet d'éviction par les besoins exceptionnels (Ukraine, Gaza).
+- **Aide publique au développement des pays du CAD en recul de 23,1 % en 2025** selon les données préliminaires de l'OCDE, avec des baisses bilatérales de 25,8 % vers les PMA et 26,3 % vers l'Afrique subsaharienne.
 - **Soudan, cas-test** : 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine (Phase 3 ou plus du Cadre intégré de classification de la sécurité alimentaire), appel humanitaire des Nations unies financé à 12 %.
 - **L'aide au développement fonctionne comme infrastructure de prévention**, pas comme ligne budgétaire charitable. Son démantèlement a des externalités mesurables sur les migrations, la sécurité alimentaire et la stabilité régionale ; ces externalités remontent vers les budgets du Nord sous des formes politiquement coûteuses (frontex, sécurité intérieure, cohésion électorale).
 - **Évian 2026** peut transformer la crise soudanaise en cas-test d'un paquet cohérent qui articule humanitaire, sécurité et traitement de la dette — ou la laisser se dissoudre dans la fragmentation des guichets.
@@ -44,7 +44,7 @@ Les deux événements se succèdent à quatre jours d'intervalle sans être lus 
 
 ## L'essentiel en 30 secondes
 
-La polycrisis 2026 est le plus souvent lue depuis le Nord : tarifs, écarts de taux souverains, réarmement, prix de l'énergie. Sa face la plus dangereuse se joue ailleurs — dans les États fragiles où les chocs convergent au moment précis où leurs capacités d'absorption se contractent. L'aide publique au développement projetée entre -9 % et -17 % pour 2025 combine trois mouvements : le retrait américain (la liquidation de l'USAID et son absorption partielle par le Département d'État réduisent les flux américains de 25 à 40 % selon les fourchettes disponibles), les réallocations européennes vers le réarmement (plusieurs États membres ont ajusté à la baisse leur ratio aide / revenu national brut) et l'effet d'éviction par les besoins exceptionnels ukrainiens et gazaouis. Le Soudan, avec 10,7 millions de déplacés internes et un appel humanitaire financé à 12 %, concentre cinq des six chaînes causales identifiées par le rapport mère. **L'aide au développement n'est pas un poste charitable, c'est l'infrastructure de prévention des crises en amont.** Sa contraction silencieuse alimente l'enchaînement le plus dangereux du système 2026 : celui qui relie la fragilité du Sud à la cohésion politique intérieure du Nord.
+La polycrisis 2026 est le plus souvent lue depuis le Nord : tarifs, écarts de taux souverains, réarmement, prix de l'énergie. Sa face la plus dangereuse se joue ailleurs — dans les États fragiles où les chocs convergent au moment précis où leurs capacités d'absorption se contractent. L'aide publique au développement des pays du CAD a reculé de 23,1 % en 2025, après une baisse de 6,1 % en 2024, sous l'effet cumulé du retrait américain, des réallocations européennes vers le réarmement et de l'effet d'éviction par les besoins exceptionnels ukrainiens et gazaouis. Le Soudan, avec 10,7 millions de déplacés internes et un appel humanitaire financé à 12 %, concentre cinq des six chaînes causales identifiées par le rapport mère. **L'aide au développement n'est pas un poste charitable, c'est l'infrastructure de prévention des crises en amont.** Sa contraction silencieuse alimente l'enchaînement le plus dangereux du système 2026 : celui qui relie la fragilité du Sud à la cohésion politique intérieure du Nord.
 
 ---
 
@@ -62,7 +62,7 @@ Cette lecture n'est pas une justification a posteriori ; elle est empiriquement 
 
 ## L'arithmétique du retrait
 
-Trois mouvements simultanés produisent la contraction projetée entre 9 et 17 % pour 2025.[^2]
+Trois mouvements simultanés expliquent la contraction préliminaire de 23,1 % en 2025.[^2]
 
 **Premièrement, le retrait américain.** La liquidation de l'USAID amorcée début 2025 a transféré une partie des programmes au Département d'État, tout en réduisant significativement les enveloppes globales. Les ordres de grandeur préliminaires suggèrent une réduction de l'ordre de 30 à 40 % des flux américains d'APD sur l'exercice 2025-2026, avec des effets différenciés par région et par secteur. Les programmes de santé globale (PEPFAR, Gavi, Fonds mondial) ont été partiellement préservés par arbitrages politiques ciblés ; les programmes de résilience climatique et de gouvernance ont été les plus durement touchés.
 
@@ -70,7 +70,7 @@ Trois mouvements simultanés produisent la contraction projetée entre 9 et 17 %
 
 **Troisièmement, l'effet d'éviction par les besoins exceptionnels.** Les engagements humanitaires sur l'Ukraine et sur Gaza mobilisent une part croissante des enveloppes disponibles, au détriment des crises plus anciennes (Sahel, Corne de l'Afrique, Venezuela). L'éviction cognitive — mécanisme par lequel les crises où les intérêts directs des grandes puissances sont engagés saturent l'agenda international — se double d'une éviction budgétaire mesurable.
 
-Le résultat cumulé, projeté par l'OCDE à partir des annonces disponibles et des trajectoires budgétaires nationales, est une contraction comprise entre 9 et 17 % de l'APD totale des pays du CAD sur 2025, la borne haute dépendant de la trajectoire effective des engagements américains et européens. La réduction est de surcroît concentrée sur les PMA — qui recevaient en 2023 environ 32 % des flux bilatéraux et qui absorbent une part disproportionnée de la contraction.
+Le résultat cumulé, mesuré par les données préliminaires de l'OCDE, est une contraction de 23,1 % de l'APD totale des pays du CAD en 2025. La réduction est de surcroît concentrée sur les PMA et l'Afrique subsaharienne : les flux bilatéraux vers les PMA reculent de 25,8 %, et ceux vers l'Afrique subsaharienne de 26,3 %.
 
 ---
 
@@ -157,7 +157,7 @@ Ce numéro spécial prolonge le chapitre 5 (Développement — la contraction si
 
 [^1]: La littérature sur les rendements de l'aide à la résilience est synthétisée dans *World Development Report 2023: Migrants, Refugees, and Societies*, Banque mondiale. Les estimations convergent sur des ratios bénéfice/coût de l'ordre de 4:1 à 7:1 pour les programmes de prévention des crises humanitaires.
 
-[^2]: OCDE (2025). *Preliminary ODA data 2025 — Projections*. La projection de -17 % est indicative et sujette à révision selon les données finales publiées par le CAD.
+[^2]: OCDE (2026). *Preliminary official development assistance levels in 2025*. L'APD des pays du CAD recule de 23,1 % en 2025 après -6,1 % en 2024 ; la donnée finale est attendue en décembre 2026.
 
 [^3]: Les trajectoires nationales sont suivies par le DAC Reporting System de l'OCDE et compilées par les plateformes indépendantes (Donor Tracker, ODI). Les 8 Md€ de réductions européennes annoncées sont une estimation agrégée sur 2025-2027.
 

@@ -4,7 +4,7 @@
     "title": "Future of Development Finance",
     "subtitle": "ODA trajectories \u00d7 debt sustainability \u00d7 geopolitical competition",
     "status": "active",
-    "last_update": "2026-03-31",
+    "last_update": "2026-04-09",
     "data_mode": "hybrid"
   },
 
@@ -14,8 +14,8 @@
     "value": 0.33,
     "threshold": 0.38,
     "threshold_label": "5-year average",
-    "text": "DAC ODA fell <strong>7.1%</strong> in real terms in 2024 to $212.1bn (0.33% GNI). OECD projects further <strong>9-17%</strong> contraction in 2025 \u2014 steepest decline since 1990s",
-    "timestamp": "2026-03-31T09:00:00+01:00"
+    "text": "DAC ODA fell <strong>23.1%</strong> in real terms in 2025 after a 6.1% decline in 2024. Bilateral ODA to LDCs fell <strong>25.8%</strong>; bilateral ODA to sub-Saharan Africa fell <strong>26.3%</strong>.",
+    "timestamp": "2026-04-09T09:00:00+02:00"
   },
 
   "sparklines": {

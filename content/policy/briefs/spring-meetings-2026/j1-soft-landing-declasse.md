@@ -15,7 +15,7 @@ tags:
 summary: >
   Vingt-quatre heures après la présentation du *World Economic Outlook* d'avril 2026, une ligne de rupture s'impose dans les couloirs washingtoniens. Moins la révision chiffrée — croissance mondiale 2026 à 3,1 % contre les 3,4 % escomptés avant la guerre au Moyen-Orient — que le glissement sémantique : la dégradation est désormais « incompressible, même dans le scénario le plus optimiste ». Le vocabulaire de l'*atterrissage en douceur* sort sans bruit de l'*Agenda global* de la directrice générale.
 status: ready
-draft: true
+draft: false
 author: Eric Gabin Kilama
 ---
 

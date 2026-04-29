@@ -10,8 +10,8 @@ tags:
 - spring-meetings
 - financement-développement
 summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1
-  milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les projections de l'OCDE pour 2025 anticipent une
-  contraction supplémentaire de 9 à 17 %, qui constituerait le recul le plus grave depuis les coupes des années 1990. Cette
+  milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les données préliminaires de l'OCDE pour 2025 confirment une
+  contraction supplémentaire de 23,1 %, le recul le plus grave depuis les coupes des années 1990. Cette
   contraction intervient dans un contexte...
 status: ready
 draft: false
@@ -25,7 +25,7 @@ theme: development
 
 ## Résumé analytique
 
-L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1 milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les projections de l'OCDE pour 2025 anticipent une contraction supplémentaire de 9 à 17 %, qui constituerait le recul le plus grave depuis les coupes des années 1990. Cette contraction intervient dans un contexte de réarmement européen formalisé par le programme ReArm Europe, dont l'objectif de 800 milliards d'euros implique des arbitrages budgétaires explicites entre dépenses de défense et enveloppes de développement. La présente note examine si ce déclin relève d'un ajustement cyclique réversible ou d'une réallocation structurelle durable, en s'appuyant sur les conclusions du rapport « Au-delà du consensus » et la littérature récente sur le financement du développement.[^1]
+L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1 milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les données préliminaires de l'OCDE pour 2025 confirment une contraction supplémentaire de 23,1 %, avec des baisses bilatérales de 25,8 % vers les PMA et de 26,3 % vers l'Afrique subsaharienne. Cette contraction intervient dans un contexte de réarmement européen formalisé par le programme ReArm Europe, dont l'objectif de 800 milliards d'euros implique des arbitrages budgétaires explicites entre dépenses de défense et enveloppes de développement. La présente note examine si ce déclin relève d'un ajustement cyclique réversible ou d'une réallocation structurelle durable, en s'appuyant sur les conclusions du rapport « Au-delà du consensus » et la littérature récente sur le financement du développement.[^1]
 
 ## Le déclin chiffré
 
@@ -43,7 +43,7 @@ S'y ajoute la fragmentation institutionnelle du système d'aide. Le gel de l'USA
 
 Plus fondamentalement, l'érosion du consensus normatif autour de l'objectif de 0,7 % du RNB est désormais avancée. L'engagement, réaffirmé formellement dans chaque communiqué du G7, n'est atteint que par quatre ou cinq pays du CAD. Son non-respect chronique, conjugué à l'inflation statistique de l'APD par inclusion des coûts d'accueil des réfugiés, des prêts DFI et du double-comptage climatique, a transformé cet objectif en fiction comptable. La contraction actuelle ne s'effectue pas depuis un niveau d'équilibre vers un creux conjoncturel ; elle s'effectue depuis un niveau déjà inférieur aux engagements, ce qui suggère une révision implicite à la baisse des ambitions collectives. Comme le note Rodrik, la question n'est plus celle des volumes mais de ce que le financement du développement doit servir — une stratégie de croissance cohérente plutôt qu'un transfert de ressources sans vision productive.[^8] L'objectif de 0,7 % est devenu un rituel sans conséquence.
 
-L'hypothèse retenue dans cette note est celle d'un déclin partiellement structurel : les volumes d'APD pourraient se stabiliser à un niveau inférieur à la tendance pré-2024, sans retrouver leur trajectoire antérieure, en raison de la permanence de la pression défense et de l'affaiblissement du consensus normatif. Cette hypothèse sera testable lors de la publication des données préliminaires 2025 par l'OCDE le 9 avril.
+L'hypothèse retenue dans cette note est celle d'un déclin partiellement structurel : les volumes d'APD pourraient se stabiliser à un niveau inférieur à la tendance pré-2024, sans retrouver leur trajectoire antérieure, en raison de la permanence de la pression défense et de l'affaiblissement du consensus normatif. La publication des données préliminaires 2025 par l'OCDE le 9 avril confirme que le choc se situe au-delà de la borne haute anticipée.
 
 ## La concurrence défense-développement
 
@@ -73,13 +73,13 @@ Plus fondamentalement, l'absence de vision productive constitue l'échec concept
 
 La France se trouve dans une position singulière. En tant que présidente du G7, elle porte la responsabilité de l'agenda de développement au moment où ses propres arbitrages défense-développement sont les plus tendus. En tant que membre influent du Club de Paris et actionnaire significatif des BMD, elle dispose de leviers opérationnels. En tant qu'hôte du sommet d'Évian, elle définit la portée des engagements.
 
-Le calendrier crée une séquence d'action identifiable. La réunion des ministres des Affaires étrangères du G7 (25-27 mars) abordera le développement en marge d'un agenda dominé par l'Iran, sans produire d'engagements substantiels mais en testant les positions des alliés sur le Transparency Pact. La publication des données APD 2025 par l'OCDE le 9 avril créera un moment politique exploitable si la contraction confirmée atteint l'extrémité haute de la fourchette. Les Spring Meetings (13-18 avril) constitueront le premier test multilatéral de la volonté française de porter une réforme de la gouvernance des BMD et de l'architecture de la dette. Trois rendez-vous. Pas de seconde chance.
+Le calendrier crée une séquence d'action identifiable. La réunion des ministres des Affaires étrangères du G7 (25-27 mars) a abordé le développement en marge d'un agenda dominé par l'Iran, sans produire d'engagements substantiels mais en testant les positions des alliés sur le Transparency Pact. La publication des données APD 2025 par l'OCDE le 9 avril a créé un moment politique exploitable : la contraction confirmée dépasse l'extrémité haute de la fourchette initiale. Les Spring Meetings (13-18 avril) ont constitué le premier test multilatéral de la volonté française de porter une réforme de la gouvernance des BMD et de l'architecture de la dette. Trois rendez-vous. Pas de seconde chance.
 
 La question stratégique pour la France est celle de la séquençabilité des propositions. Le Transparency Pact, dont la faisabilité politique est la plus élevée et le coût budgétaire nul, peut être porté dès les Spring Meetings comme une initiative française concrète, sans attendre Évian. Le pilote du Nairobi Partnership Framework, qui requiert une négociation préalable avec l'Union Africaine, doit être lancé avant le sommet d'Évian pour éviter un cadrage exclusivement G7 qui en réduirait la crédibilité auprès des pays du Sud Global. La PMA First Facility, qui implique une réforme des mécanismes d'allocation des BMD, doit être inscrite dans le cycle IDA-21, dont les négociations s'ouvrent au second semestre 2026.
 
 ## Recommandations
 
-La Direction générale de la mondialisation devrait préparer, avant les Spring Meetings, un élément de langage articulant la position française sur le plancher APD dans le contexte du réarmement : la France ne considère pas que la hausse des dépenses de défense justifie une réduction de l'aide au développement, parce que les deux postes répondent à des menaces de nature différente qui s'alimentent mutuellement. Cette articulation est d'autant plus nécessaire que la publication des données APD 2025 le 9 avril créera une pression médiatique que les délégations doivent anticiper.
+La Direction générale de la mondialisation devrait consolider un élément de langage articulant la position française sur le plancher APD dans le contexte du réarmement : la France ne considère pas que la hausse des dépenses de défense justifie une réduction de l'aide au développement, parce que les deux postes répondent à des menaces de nature différente qui s'alimentent mutuellement. Cette articulation est d'autant plus nécessaire que la publication des données APD 2025 le 9 avril a créé une pression médiatique que les délégations doivent absorber.
 
 La Direction générale du Trésor devrait mandater une évaluation technique de la proposition de Transparency Pact avant les Spring Meetings, afin de disposer d'un format négociable (périmètres des flux couverts, fréquence de reporting, mécanisme de vérification) susceptible d'être présenté aux alliés G7 comme une initiative française concrète et non comme une déclaration de principe supplémentaire. Le monde n'a pas besoin d'une déclaration de plus. Il a besoin d'un instrument.
 
@@ -89,7 +89,7 @@ Le MEAE devrait initier, avant fin avril, un contact exploratoire avec la Commis
 
 ---
 
-[^1]: Les données factuelles s'appuient sur OECD DAC, « ODA Levels in 2024 — Preliminary Data », avril 2025, et sur les projections communiquées lors du Comité du CAD du 11 mars 2026.
+[^1]: Les données factuelles s'appuient sur OECD DAC, « ODA Levels in 2024 — Preliminary Data », avril 2025, et sur OCDE, « Preliminary official development assistance levels in 2025 », données publiées le 9 avril 2026.
 
 [^2]: La loi britannique International Development (Official Development Assistance Target) Act 2015 fixait un objectif de 0,7 % du RNB. Le gouvernement a invoqué une clause dérogatoire liée aux circonstances fiscales exceptionnelles pour ramener temporairement l'objectif à 0,5 % en 2021, sans retour au niveau statutaire depuis.
 

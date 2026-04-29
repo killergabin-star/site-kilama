@@ -118,3 +118,4 @@ Le sous-directeur Afrique du Nord et Moyen-Orient devrait produire, en coordinat
 [^9]: FMI, déclaration de la directrice générale Kristalina Georgieva, 20 mars 2026.
 [^10]: Report of the Congressional Committees Investigating the Iran-Contra Affair, 1987.
 [^11]: Trita Parsi, *Losing an Enemy: Obama, Iran, and the Triumph of Diplomacy*, Yale University Press, 2017.
+[^12]: France Diplomatie, « Joint Statement of G7 Foreign Ministers on Iran », 27 mars 2026 ; France Diplomatie, « Foreign Ministers' Meeting of G7 Member States at the Abbaye des Vaux-de-Cernay », 26-27 mars 2026.

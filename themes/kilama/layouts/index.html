@@ -20,42 +20,50 @@
         </div>
       </div>
       <div class="hero-editorial-portrait">
-        <img src="{{ "images/portrait-eric-kilama-dark.png" | relURL }}" alt="Eric Gabin Kilama" class="portrait-photo" data-portrait-dual="{{ "images/portrait-eric-kilama-{scheme}.png" | relURL }}">
+        <img src="{{ "images/portrait-eric-kilama.png" | relURL }}" alt="Eric Gabin Kilama" class="portrait-photo">
       </div>
     </div>
   </section>
 
-  <!-- RESEARCH TEASE — 3 axes colorés -->
+  <!-- RESEARCH TEASE — 3 thématiques + 1 transversal -->
   <section class="home-research-tease">
     <div class="home-research-inner">
       <div class="eyebrow">
         <span class="eyebrow-mark"></span>
         <span class="eyebrow-text">Programme de recherche</span>
       </div>
-      <h2 class="section-title">Trois axes de recherche appliquée</h2>
+      <h2 class="section-title">Trois thématiques de recherche</h2>
       <div class="home-research-grid">
         <a href="{{ "research/" | relURL }}" class="home-research-axis">
           <span class="axis-num">01</span>
-          <h3>Risque géopolitique &amp; macroéconomie</h3>
-          <p>Transmission des chocs géopolitiques à l'économie réelle. Indice GPR, fragmentation commerciale, FPSQ.</p>
+          <h3>Chocs géopolitiques &amp; économie réelle</h3>
+          <p>Comment les sanctions, les ruptures d'approvisionnement et les tensions commerciales se transmettent aux entreprises, aux prix d'actifs et au crédit bancaire. Mesure des risques géopolitiques, exposition sectorielle, mécanismes de propagation.</p>
         </a>
         <a href="{{ "research/" | relURL }}" class="home-research-axis">
           <span class="axis-num">02</span>
-          <h3>Finance du développement</h3>
-          <p>APD du G7, financements et investissements chinois, arbitrages de financement public. Économétrie causale sur données de panel.</p>
+          <h3>Architecture financière internationale</h3>
+          <p>Aide au développement, dette souveraine, prêts chinois, actifs sûrs et dédollarisation. Les instruments financiers qui structurent — ou fragilisent — l'accès aux ressources critiques et la stabilité macroéconomique.</p>
         </a>
         <a href="{{ "research/" | relURL }}" class="home-research-axis">
           <span class="axis-num">03</span>
+          <h3>Gouvernance, instabilité &amp; ressources critiques</h3>
+          <p>Survie autoritaire, corruption, investissements extractifs et chaînes d'approvisionnement en matières premières. Les mécanismes par lesquels l'instabilité politique reconfigure les flux de capitaux et les conditions d'investissement.</p>
+        </a>
+      </div>
+      <div class="home-research-transversal">
+        <a href="{{ "foresight/" | relURL }}" class="home-research-axis home-research-axis--transversal">
+          <span class="axis-num">&harr;</span>
           <h3>Prospective quantifiée</h3>
-          <p>Scénarios macroéconomiques, indicateurs FPSQ, monitor de fragmentation. Desk Vigie en temps réel.</p>
+          <p>Infrastructure méthodologique transversale : scénarios calibrés, indicateurs FPSQ, signposts et seuils de basculement. Applicable à chaque thématique de recherche.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker">
+  <!-- TICKER — snapshot daté, pas live -->
+  <div class="ticker" aria-label="Snapshot indicateurs — 9 avril 2026">
     <div class="ticker-inner">
+      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">9 avr. 2026</span></span>
       <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
       <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
       <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
@@ -63,7 +71,8 @@
       <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
       <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
       <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">▼ −0.01</span></span>
+      <span class="ticker-item"><span class="symbol">APD DAC</span><span class="value">−23.1%</span><span class="delta-bad">▼ −23.1%</span></span>
+      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">9 avr. 2026</span></span>
       <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
       <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
       <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
@@ -71,7 +80,7 @@
       <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
       <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
       <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">▼ −0.01</span></span>
+      <span class="ticker-item"><span class="symbol">APD DAC</span><span class="value">−23.1%</span><span class="delta-bad">▼ −23.1%</span></span>
     </div>
   </div>
 
@@ -79,8 +88,8 @@
   <div class="container">
     <div class="kpi-band">
       <div class="kpi-band-header">
-        <span class="eyebrow-text live-dot">Vigie &middot; Live</span>
-        <span class="kpi-band-timestamp">{{ now.Format "2 Jan. 2006" }} &middot; 10:00 CET</span>
+        <span class="eyebrow-text">Vigie &middot; Snapshot</span>
+        <span class="kpi-band-timestamp">9 avr. 2026 &middot; snapshot OCDE/FMI</span>
       </div>
       <div class="kpi-band-grid">
         <div class="kpi">
@@ -111,17 +120,59 @@
           <div class="kpi-source">Bloomberg</div>
         </div>
         <div class="kpi">
-          <div class="kpi-label">ODA/RNB DAC</div>
+          <div class="kpi-label">APD DAC 2025</div>
           <div class="kpi-value-row">
-            <span class="kpi-value">0.37%</span>
-            <span class="kpi-delta kpi-delta--bad">&#9660; -0.01</span>
+            <span class="kpi-value">−23,1%</span>
+            <span class="kpi-delta kpi-delta--bad">&#9660; -23,1%</span>
           </div>
-          <div class="kpi-context">vs 2024 (0.38%)</div>
+          <div class="kpi-context">vs 2024, données préliminaires</div>
           <div class="kpi-source">OCDE-DAC</div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- INDICATEURS OPÉRATIONNELS — preview prudente -->
+  {{ $operationalIndicators := .Site.Data.operational_indicators.indicators }}
+  {{ if $operationalIndicators }}
+  <div class="container">
+    <section class="section home-operational">
+      <div class="home-operational-head">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-mark"></span>
+            <span class="eyebrow-text">Vigie &middot; Indicateurs en consolidation</span>
+          </div>
+          <h2 class="section-title">Mesurer les vulnérabilités géoéconomiques</h2>
+          <p class="section-subtitle">Premiers cadres de mesure pour transformer des données sectorielles, financières et géopolitiques en signaux opérationnels. Les versions stabilisées rejoindront le desk Vigie.</p>
+        </div>
+        <div class="home-operational-actions">
+          <a class="action" href="{{ "foresight/" | relURL }}">Ouvrir Vigie &rarr;</a>
+          <a class="action action--muted" href="{{ "data/#operational-indicators" | relURL }}">Voir la Data Room &rarr;</a>
+        </div>
+      </div>
+      <div class="home-operational-grid">
+        {{ range first 4 $operationalIndicators }}
+        <article class="home-operational-card">
+          <div class="home-operational-label">{{ .label }} · {{ .status }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .positioning }}</p>
+          <div class="home-operational-metrics">
+            <div>
+              <span>{{ .top_metric }}</span>
+              <small>{{ .top_metric_label }}</small>
+            </div>
+            <div>
+              <span>{{ .secondary_metric }}</span>
+              <small>{{ .secondary_metric_label }}</small>
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+  {{ end }}
 
   <!-- WATCH LIST — À PARAÎTRE -->
   <div class="container" style="padding-top: 80px;">

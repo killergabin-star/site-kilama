@@ -23,13 +23,13 @@ theme: development
 
 ## En bref
 
-L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024. Les projections de l'OCDE pour 2025 anticipent une contraction de 9 à 17 %, la plus sévère depuis les coupes des années 1990. Ce déclin intervient dans un contexte de réarmement européen (ReArm Europe, 800 milliards d'euros), de pression fiscale liée au conflit iranien, et de fragmentation institutionnelle révélée par le gel de l'USAID. Ce n'est pas un ajustement. C'est un changement de régime. Le présent policy brief identifié les angles morts prioritaires du consensus et propose deux recommandations phares que l'Union européenne et la présidence française du G7 peuvent porter dès les Spring Meetings, avant le sommet d'Évian de juin 2026.
+L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024. Les données préliminaires publiées par l'OCDE le 9 avril 2026 confirment une contraction beaucoup plus sévère en 2025 : -23,1 % pour les membres du CAD, -25,8 % vers les PMA et -26,3 % vers l'Afrique subsaharienne. Ce déclin intervient dans un contexte de réarmement européen (ReArm Europe, 800 milliards d'euros), de pression fiscale liée au conflit iranien, et de fragmentation institutionnelle révélée par le gel de l'USAID. Ce n'est pas un ajustement. C'est un changement de régime. Le présent policy brief identifie les angles morts prioritaires du consensus et propose deux recommandations phares que l'Union européenne et la présidence française du G7 peuvent porter dès les Spring Meetings, avant le sommet d'Évian de juin 2026.
 
 ---
 
 ## Le diagnostic : un système en contraction et en crise de confiance
 
-Les Spring Meetings d'avril 2026 s'ouvrent dans un contexte inéditement défavorable pour l'agenda du financement du développement. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, soit 0,33 % du RNB combiné, en baisse de 7,1 % en termes réels par rapport à 2023. Le webinaire de données de l'OCDE du 9 avril — quatre jours avant l'ouverture des Spring Meetings — confirmera les chiffres 2025, qui pourraient marquer le recul le plus important en trois décennies. Le Royaume-Uni concentré les réductions les plus massives en valeur absolue. Les États-Unis maintiennent leur APD en apparence, mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays.
+Les Spring Meetings d'avril 2026 s'ouvrent dans un contexte inéditement défavorable pour l'agenda du financement du développement. L'APD nette des pays du CAD s'est établie à 212,1 milliards de dollars en 2024, soit 0,33 % du RNB combiné, en baisse de 7,1 % en termes réels par rapport à 2023. Le webinaire de données de l'OCDE du 9 avril — quatre jours avant l'ouverture des Spring Meetings — a confirmé un recul de 23,1 % en 2025, le plus marqué depuis les coupes des années 1990. Le Royaume-Uni concentre les réductions les plus massives en valeur absolue. Les États-Unis maintiennent leur APD en apparence, mais le gel de l'USAID au premier trimestre 2025 a suspendu de facto plusieurs milliards de dollars de programmes dans plus de cent pays.
 
 Ce déclin n'est pas conjoncturel. Plusieurs facteurs structurels le distinguent des épisodes précédents de contraction.
 
@@ -95,7 +95,7 @@ Le troisième pilier de la position française à Évian doit être le Nairobi P
 
 | Date | Action | Acteur |
 |------|--------|--------|
-| 9 avril | Publication données APD 2025 (webinaire OCDE) — moment politique | OCDE/CAD |
+| 9 avril | Publication données APD 2025 (webinaire OCDE) — contraction de 23,1 % confirmée | OCDE/CAD |
 | 13-18 avril | Spring Meetings — présentation du Transparency Pact comme initiative française concrète | France, Commission européenne |
 | 17 avril | Comité du développement — inscription de la PMA First Facility à l'agenda IDA-21 | France, actionnaires BMD |
 | Avril-mai | Contact exploratoire MEAE/Commission UA sur les pilotes Nairobi Partnership Framework | MEAE, AFD, Commission UA |

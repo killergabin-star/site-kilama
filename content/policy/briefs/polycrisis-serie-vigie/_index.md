@@ -39,7 +39,7 @@ Le FMI publie le 14 avril une croissance mondiale 2026 à 3,1 %. Derrière ce ch
 → [Lire l'épisode 2](/policy/briefs/polycrisis-cinq-mondes-gradient/)
 
 ### Épisode 3 / 4 — Afrique et PMA : la contraction silencieuse
-Aide publique au développement projetée en baisse de 9 à 17 % pour 2025 par l'OCDE (webinaire CAD du 9 avril). Le Soudan comme cas-test d'une aide publique au développement lue comme infrastructure de prévention, et non comme poste charitable. Trois mécanismes de verrouillage de l'enchaînement qui relie fragilité du Sud et cohésion politique intérieure du Nord.
+Aide publique au développement en baisse préliminaire de 23,1 % en 2025 pour les membres du CAD, avec des reculs plus marqués pour les PMA (-25,8 %) et l'Afrique subsaharienne (-26,3 %). Le Soudan comme cas-test d'une aide publique au développement lue comme infrastructure de prévention, et non comme poste charitable. Trois mécanismes de verrouillage de l'enchaînement qui relie fragilité du Sud et cohésion politique intérieure du Nord.
 
 → [Lire l'épisode 3](/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/)
 

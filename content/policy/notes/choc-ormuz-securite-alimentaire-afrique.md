@@ -82,8 +82,8 @@ Le FMI (REO Afrique, avril 2026, Ch. 2 « This Time Is Different ») confirme qu
 
 | Période | Phase | Événement |
 |---------|-------|-----------|
-| T2 2026 (maintenant) | Hausse prix engrais et pétrole ; fenêtre d'approvisionnement agricole compromise | G7 Développement (29 avril), Africa Forward Nairobi (11-12 mai) |
-| T3 2026 (juil.-sept.) | Impact sur rendements agricoles subsahariens ; réductions 20-30 % au Sahel | Sommet G7 Évian (15-17 juin) |
+| T2 2026 (maintenant) | Hausse prix engrais et pétrole ; fenêtre d'approvisionnement agricole compromise | G7 Développement (29 avril), Africa Forward Nairobi (11-12 mai), Sommet G7 Évian (15-17 juin) |
+| T3 2026 (juil.-sept.) | Impact sur rendements agricoles subsahariens ; réductions 20-30 % au Sahel | Suivi des décisions d'Évian ; préparation budgétaire 2027 |
 | T4 2026 (oct.-déc.) | Matérialisation du choc alimentaire ; hausse prix céréales locaux | Reconstitution IDA-21 (S2 2026) |
 
 Le choc alimentaire frappe dans une fenêtre où (a) les amortisseurs sont au plus bas, (b) la saison agricole est irréversiblement compromise, et (c) les décisions budgétaires des donateurs pour 2027 seront déjà prises.

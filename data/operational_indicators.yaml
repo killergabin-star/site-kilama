@@ -1,0 +1,157 @@
+indicators:
+  - slug: multi-risk-triple-menace
+    label: Indicateur 1
+    title: "Multi-Risk / Triple Menace"
+    status: "Prototype"
+    question: "Quels secteurs cumulent simultanément vulnérabilité géopolitique, coût de friend-shoring, chokepoints logistiques, minerais critiques et risque africain ?"
+    dataset: "Données internes — méthodologie et sources sur demande"
+    coverage: "28 secteurs industriels européens"
+    method: "Score composite sur 7 dimensions : GVI, FSCI, Chokepoints, SIS, CMNI, AMAI et GASRI. Un secteur est en triple menace s'il se situe dans le quintile supérieur sur au moins 3 dimensions."
+    top_metric: "11"
+    top_metric_label: "secteurs en triple menace sur 28"
+    secondary_metric: "65,4"
+    secondary_metric_label: "score le plus élevé (éq. électriques)"
+    positioning: "Cartographie opérationnelle pour prioriser les secteurs à auditer."
+    top_rows:
+      - rank: 1
+        sector: "C27"
+        name: "Éq. électriques"
+        score: "65,4"
+        signal: "Triple menace"
+      - rank: 2
+        sector: "C26"
+        name: "Électronique"
+        score: "59,3"
+        signal: "Triple menace"
+      - rank: 3
+        sector: "C24"
+        name: "Métallurgie"
+        score: "49,2"
+        signal: "Triple menace"
+      - rank: 4
+        sector: "C29"
+        name: "Automobile"
+        score: "47,2"
+        signal: "Triple menace"
+      - rank: 5
+        sector: "C28"
+        name: "Machines"
+        score: "40,9"
+        signal: "Triple menace"
+  - slug: fsci
+    label: Indicateur 2
+    title: "FSCI — Friend-Shoring Cost Index"
+    status: "Prototype"
+    question: "Combien coûterait la diversification géopolitique des chaînes de valeur européennes ?"
+    dataset: "Données internes — méthodologie et sources sur demande"
+    coverage: "756 couples pays-industrie (27 UE × 28 secteurs)"
+    method: "Indice de surcoût combinant différentiel de prix des inputs, logistique, tarifs, switching costs et multiplicateur PME."
+    top_metric: "168,8 Md€"
+    top_metric_label: "surcoût agrégé simulé"
+    secondary_metric: "~1 % du PIB UE"
+    secondary_metric_label: "soit 6,3 % des importations extra-UE"
+    positioning: "Ordre de grandeur du surcoût de diversification. Raffinage, alimentation et électronique concentrent 40 % de l'impact. L'Allemagne, la France, l'Italie et l'Espagne portent 47 % du coût ; l'Europe de l'Est, 18 %."
+    top_rows:
+      - rank: 1
+        sector: "DEU C19"
+        name: "Raffinage Allemagne"
+        score: "10,7 Md€"
+        signal: "FSCI 12,3"
+      - rank: 2
+        sector: "ITA C19"
+        name: "Raffinage Italie"
+        score: "6,3 Md€"
+        signal: "FSCI 13,2"
+      - rank: 3
+        sector: "FRA C19"
+        name: "Raffinage France"
+        score: "5,0 Md€"
+        signal: "FSCI 11,4"
+      - rank: 4
+        sector: "C26"
+        name: "Électronique (UE)"
+        score: "9,2 Md€"
+        signal: "FSCI moyen 10,0"
+      - rank: 5
+        sector: "C10T12"
+        name: "Alimentation (UE)"
+        score: "14,4 Md€"
+        signal: "FSCI moyen 3,3"
+  - slug: gvi
+    label: Indicateur 3
+    title: "GVI — Geopolitical Vulnerability Index"
+    status: "Prototype"
+    question: "Quels secteurs industriels européens sont les plus exposés aux chocs géopolitiques ?"
+    dataset: "Données internes — méthodologie et sources sur demande"
+    coverage: "756 couples pays-industrie (27 UE × 28 secteurs)"
+    method: "Score composite sur 5 dimensions : dépendance aux importations, concentration géographique des fournisseurs, distance géopolitique, inputs stratégiques (CRM Act), multiplicateur PME."
+    top_metric: "62,9"
+    top_metric_label: "GVI maximal (électronique, Irlande)"
+    secondary_metric: "5"
+    secondary_metric_label: "dimensions de vulnérabilité"
+    positioning: "Score de vulnérabilité sectorielle aux chocs géopolitiques. Sources : OECD TiVA, Caldara-Iacoviello GPR, Eurostat SBS, EU CRM Act 2024."
+    top_rows:
+      - rank: 1
+        sector: "C26"
+        name: "Électronique"
+        score: "56,0"
+        signal: "Concentration Asie"
+      - rank: 2
+        sector: "C27"
+        name: "Éq. électriques"
+        score: "53,3"
+        signal: "Inputs stratégiques"
+      - rank: 3
+        sector: "C24"
+        name: "Métallurgie"
+        score: "49,7"
+        signal: "Dépendance import"
+      - rank: 4
+        sector: "C19"
+        name: "Raffinage"
+        score: "47,8"
+        signal: "Distance géopolitique"
+      - rank: 5
+        sector: "C20"
+        name: "Chimie"
+        score: "42,1"
+        signal: "Concentration fournisseurs"
+  - slug: chokepoints
+    label: Indicateur 4
+    title: "Chokepoints — Goulots d'étranglement"
+    status: "Prototype"
+    question: "Où se situent les goulots d'étranglement dans les chaînes d'approvisionnement européennes ?"
+    dataset: "Données internes — méthodologie et sources sur demande"
+    coverage: "28 secteurs × produits HS-6 stratégiques"
+    method: "Score de concentration et de criticité combinant HHI fournisseurs, centralité dans le réseau I-O, risque géopolitique pondéré et criticité CRM Act."
+    top_metric: "144,4"
+    top_metric_label: "score chokepoint max (éq. électriques)"
+    secondary_metric: "14"
+    secondary_metric_label: "secteurs avec chokepoints critiques"
+    positioning: "Cartographie des produits et secteurs où la concentration des fournisseurs crée un risque de rupture. Sources : EU CRM Act, IEA, USGS, OECD TiVA."
+    top_rows:
+      - rank: 1
+        sector: "C27"
+        name: "Éq. électriques"
+        score: "144,4"
+        signal: "Terres rares, aimants"
+      - rank: 2
+        sector: "C26"
+        name: "Électronique"
+        score: "134,2"
+        signal: "Semi-conducteurs"
+      - rank: 3
+        sector: "C24"
+        name: "Métallurgie"
+        score: "125,3"
+        signal: "Nickel, cobalt"
+      - rank: 4
+        sector: "C30"
+        name: "Aut. transports"
+        score: "118,7"
+        signal: "Titane, lithium"
+      - rank: 5
+        sector: "C20"
+        name: "Chimie"
+        score: "97,2"
+        signal: "Catalyseurs, phosphates"

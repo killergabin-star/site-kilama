@@ -11,11 +11,11 @@ tags:
 - Évian
 - FfD4
 - Séville
-summary: Le 17 avril 2026, 30 pays en développement ont lancé la première plateforme de coordination
+summary: Le 15 avril 2026, 30 pays en développement ont lancé la première plateforme de coordination
   des emprunteurs souverains de l'histoire. Cette note évalue l'acquis au regard des conditions de réussite
   identifiées dans deux analyses précédentes (septembre 2024, mars 2026) et propose trois actions concrètes
   pour le G7 Évian.
-status: draft
+status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
@@ -23,7 +23,7 @@ author: Eric Gabin Kilama
 
 ## Ce qui vient de se passer
 
-Le 17 avril 2026, en marge des Spring Meetings du FMI et de la Banque mondiale à Washington, 30 pays en développement ont lancé la première **Borrowers' Platform** de l'histoire — un espace permanent de coordination des débiteurs souverains, avec la CNUCED comme secrétariat. Un premier ministre, seize ministres des finances et plusieurs gouverneurs de banques centrales étaient présents au lancement. L'Égypte préside le groupe de travail, le Pakistan assure la vice-présidence, avec la Colombie, le Honduras, le Népal, la Zambie et les Maldives.
+Le 15 avril 2026, pendant les Spring Meetings du FMI et de la Banque mondiale, 30 pays en développement ont lancé à Genève la première **Borrowers' Platform** de l'histoire — un espace permanent de coordination des débiteurs souverains, avec la CNUCED comme secrétariat. Un premier ministre, seize ministres des finances et plusieurs gouverneurs de banques centrales étaient présents au lancement. L'Égypte préside le groupe de travail, le Pakistan assure la vice-présidence, avec la Colombie, le Honduras, le Népal, la Zambie et les Maldives.
 
 António Guterres a qualifié le lancement de « breakthrough in global financing — a platform where borrowing countries sit together, learn from each other, and speak with a collective voice ». Rebeca Grynspan, secrétaire générale de la CNUCED, a ajouté : « 3,4 milliards de personnes méritent un terrain de jeu équitable où la finance permet le développement plutôt que de le contraindre. »
 

@@ -39,24 +39,24 @@ Le choc au Moyen-Orient consomme ce qui restait du discours d'atterrissage en do
 ### Jeudi 16 avril — *Fragilités financières et risques d'amplification*
 Le *Rapport sur la stabilité financière mondiale* consacre son chapitre d'ouverture aux marchés financiers confrontés à la guerre et à leurs risques d'amplification. Que disent les flux non-bancaires — fonds spéculatifs, fonds cotés, fonds à forte sensibilité au risque — de la diffusion du choc aux économies émergentes ?
 
-→ *À paraître jeudi 16 avril.*
+→ Lecture non publiée dans cette première version ; les éléments macrofinanciers ont été intégrés aux notes Polycrisis et Évian.
 
 ### Vendredi 17 avril — *Ce que le communiqué taira*
 Le Comité monétaire et financier international clôt la semaine monétaire. Lecture critique du communiqué officiel à l'aune de ce qu'il n'aura pas dit : sur la dette souveraine des économies émergentes, sur la coordination des banques centrales, sur le Cadre commun de restructuration des dettes du G20.
 
-→ *À paraître vendredi 17 avril.*
+→ Lecture non publiée dans cette première version ; le lancement de la Borrowers' Platform est traité dans la note dédiée du 20 avril.
 
 ### Samedi 18 avril — *Development Committee : ce que la boucle Sud révèle*
-Le Comité du développement ferme la semaine institutionnelle. Lecture à partir de la projection d'aide publique au développement pour 2025 — en recul de 17 pour cent selon les données préliminaires de l'Organisation de coopération et de développement économiques —, de la contraction silencieuse qui s'installe en Afrique subsaharienne, et des positions européennes sur le financement climat.
+Le Comité du développement ferme la semaine institutionnelle. Lecture à partir des données préliminaires d'aide publique au développement pour 2025 — en recul de 23,1 pour cent selon l'Organisation de coopération et de développement économiques —, de la contraction silencieuse qui s'installe en Afrique subsaharienne, et des positions européennes sur le financement climat.
 
-→ *À paraître samedi 18 avril.*
+→ Voir aussi : [Afrique et PMA : la contraction silencieuse](/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/) et [La Borrowers' Platform est née aux Spring Meetings](/policy/notes/borrowers-platform-spring-meetings-2026/).
 
 ## Note de clôture
 
 ### Dimanche 19 avril — *Spring Meetings 2026 : ce que la semaine a révélé*
 Synthèse articulant les quatre lectures courtes au rapport *La convergence des crises*. Trois bascules candidates : sémantique (le vocabulaire officiel change, le cadre discursif se déplace) ; opérationnelle (la Banque mondiale passe d'une institution de financement du développement à une institution de prévention des fragilités) ; géopolitique (les blocs de négociation se recomposent au sein même des enceintes multilatérales).
 
-→ *À paraître dimanche 19 avril.*
+→ Synthèse intégrée aux notes Polycrisis publiées dans cette série.
 
 ---
 

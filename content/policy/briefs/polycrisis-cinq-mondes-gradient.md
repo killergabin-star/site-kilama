@@ -35,7 +35,7 @@ Le discours de cadrage de la directrice générale du FMI du 9 avril acte un gli
 
 - **Deux mondes plutôt qu'une moyenne.** La distribution de la croissance mondiale 2026 n'est pas une courbe en cloche : deux régimes distincts concentrent 92,5 % des trajectoires plausibles. La zone intermédiaire, celle que suggère la moyenne publiée par le FMI, est peu peuplée.
 - **Le saut n'est pas progressif, il est seuillé.** Lorsque trois enchaînements amplificateurs s'activent en même temps pendant plus de soixante jours ouvrés, les corrélations entre classes d'actifs doublent et le multiplicateur des chocs sectoriels passe de 1,0 à 1,7-2,3.
-- **Le coût de la bascule** : 1 400 points de base de croissance mondiale séparent le régime supérieur du régime inférieur, soit environ 1 200 milliards de dollars de produit mondial.
+- **Le coût de la bascule** : 1,4 point de croissance mondiale sépare le régime supérieur du régime inférieur, soit environ 1 200 milliards de dollars de produit mondial.
 - **Conséquence pour l'agenda d'Évian** : la priorité politique utile n'est pas l'ambition agrégée, c'est la prévention de franchissement du seuil. La géométrie du risque commande une stratégie de digues, non de relance.
 
 ---
@@ -57,6 +57,8 @@ Le cadre de quantification du rapport mère produit cinq scénarios nommés, ord
 | **Embrasement** | 17,5 % | +0,9 % | 3+ canaux simultanés |
 | **Tenaille** | 7,5 % | −0,1 % | 3+ canaux + choc exogène |
 | **Sursaut** | 17,5 % | +2,5 % | Coordination G7 active |
+
+Les cinq scénarios ci-dessus couvrent 92,5 % des trajectoires simulées. Les 7,5 % restants correspondent à des trajectoires résiduelles de faible masse — variantes intermédiaires ou combinaisons instables — qui ne changent pas la géométrie centrale du résultat.
 
 Le premier enseignement est que le tableau dessine **deux régimes, pas une moyenne**. Les trajectoires plausibles se regroupent sur deux points distincts ; l'espace entre les deux est quasi vide. Un régime supérieur (Statu Quo Instable + Découplage Ordonné + Sursaut = 67,5 % cumulé) se situe autour de 2,3-3,0 % de croissance mondiale. Un régime inférieur (Embrasement + Tenaille = 25 % cumulé) se situe autour de 0-1 %. **La zone intermédiaire — une croissance autour de 1,5 % — est peu peuplée**, parce qu'aucun mécanisme du système ne la stabilise. Autrement dit, les projections moyennes publiées par les institutions internationales décrivent un état que le système ne visite presque jamais.
 
@@ -86,7 +88,7 @@ Trois conséquences opérationnelles découlent directement de la structure non 
 
 **Deuxième conséquence : les couvertures traditionnelles perdent en efficacité.** Les stratégies de couverture reposent sur la stabilité des corrélations historiques. Un portefeuille diversifié fonctionne parce que ses composantes sont partiellement décorrélées. Dans un régime où les corrélations passent de 0,3 à 0,7 lors d'un choc, l'effet de diversification s'effondre précisément au moment où il est le plus nécessaire. Ce phénomène — documenté dans la littérature de la crise 2008 sous le nom de *correlation breakdown* — revient comme contrainte structurelle dans la configuration 2026.[^5]
 
-**Troisième conséquence : la prévention acquiert un rendement démultiplié.** Dans un système linéaire, réduire la probabilité d'un événement de 5 % à 4 % produit un gain proportionnel. Dans un système à seuil, si l'événement évité est la bascule, le gain est multiplié par le différentiel de dommage entre les deux régimes — de l'ordre de 1 400 points de base de produit mondial. **La prévention devient mécaniquement la politique publique au plus fort rendement marginal**, à condition d'être calibrée sur le franchissement du seuil, non sur la réduction incrémentale des chocs dans chaque canal pris séparément.
+**Troisième conséquence : la prévention acquiert un rendement démultiplié.** Dans un système linéaire, réduire la probabilité d'un événement de 5 % à 4 % produit un gain proportionnel. Dans un système à seuil, si l'événement évité est la bascule, le gain est multiplié par le différentiel de dommage entre les deux régimes — de l'ordre de 1,4 point de croissance mondiale. **La prévention devient mécaniquement la politique publique au plus fort rendement marginal**, à condition d'être calibrée sur le franchissement du seuil, non sur la réduction incrémentale des chocs dans chaque canal pris séparément.
 
 ---
 
