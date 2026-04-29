@@ -42,7 +42,7 @@
         <a href="{{ "research/" | relURL }}" class="home-research-axis">
           <span class="axis-num">02</span>
           <h3>Finance du développement</h3>
-          <p>APD du G7, aide chinoise, arbitrages de financement public. Économétrie causale sur données de panel.</p>
+          <p>APD du G7, financements et investissements chinois, arbitrages de financement public. Économétrie causale sur données de panel.</p>
         </a>
         <a href="{{ "research/" | relURL }}" class="home-research-axis">
           <span class="axis-num">03</span>
@@ -204,9 +204,9 @@
           </div>
         </article>
         <article class="card-note">
-          <span class="card-note-tag tag--aide-chinoise">aide chinoise</span>
+          <span class="card-note-tag tag--aide-chinoise">finance du développement</span>
           <h3 class="card-note-title"><a href="{{ "policy/" | relURL }}">Sovereign Investment as Commodity Trade Insurance</a></h3>
-          <p class="card-note-summary">L'aide chinoise en Afrique fonctionne comme une assurance commerciale. Evidence causale PAR-first.</p>
+          <p class="card-note-summary">Les financements et investissements chinois en Afrique fonctionnent comme une assurance commerciale. Evidence causale PAR-first.</p>
           <div class="card-note-meta">
             <span class="card-note-date">Mars 2026</span>
             <span class="card-note-sep">&middot;</span>
@@ -251,15 +251,13 @@
       </div>
       <figure class="chart">
         <header class="chart-header">
-          <span class="eyebrow-text">Graphique de la semaine</span>
+          <span class="eyebrow-text">Vigie &middot; GPR Monitor</span>
           <h3 class="chart-title">Le risque géopolitique reste élevé sur trois théâtres</h3>
           <p class="chart-subtitle">Indice GPR mondial, par théâtre, contribution trimestrielle</p>
           <p class="chart-takeaway">L'ANMO concentre désormais 60% de la hausse du risque géopolitique mondial.</p>
         </header>
         <div class="chart-canvas">
-          <svg viewBox="0 0 680 400" style="width:100%;height:auto;background:var(--color-background-secondary);border-radius:var(--radius-md)">
-            <text x="340" y="200" text-anchor="middle" fill="var(--color-text-tertiary)" font-family="var(--font-ui)" font-size="14">[Chart placeholder — GPR par théâtre Q1 2021 - Q4 2025]</text>
-          </svg>
+          <div id="home-gpr-chart" style="width:100%;height:420px;"></div>
         </div>
         <footer class="chart-footer">
           <ul class="chart-legend">
@@ -294,4 +292,40 @@
   </div>
 
 </main>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script>
+(function() {
+  var el = document.getElementById('home-gpr-chart');
+  if (!el) return;
+
+  var quarters = ['Q1 21','Q2 21','Q3 21','Q4 21','Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23','Q1 24','Q2 24','Q3 24','Q4 24','Q1 25','Q2 25','Q3 25','Q4 25','Q1 26'];
+  var anmo =     [45, 54, 60, 72, 105,129,117,108, 96, 84, 90, 78, 72, 66, 78, 84, 96, 108,114,120,126];
+  var asiapac =  [27, 30, 33, 39,  42, 48, 48, 48, 42, 36, 36, 30, 33, 36, 42, 48, 42, 39, 36, 33, 36];
+  var europe =   [18, 15, 12, 18,  51, 60, 54, 42, 30, 24, 18, 18, 21, 24, 24, 21, 18, 18, 21, 24, 25];
+
+  var cs = getComputedStyle(document.documentElement);
+  var isDark = cs.getPropertyValue('--color-background-primary').trim().match(/^#[0-3]/);
+  var textColor = isDark ? '#9AA0A6' : '#5A6068';
+  var gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+  var plotBg = 'rgba(0,0,0,0)';
+
+  Plotly.newPlot(el, [
+    { x: quarters, y: anmo, name: 'ANMO', type: 'bar', marker: { color: '#1F8FD6' } },
+    { x: quarters, y: asiapac, name: 'Asie-Pacifique', type: 'bar', marker: { color: '#7E57C2' } },
+    { x: quarters, y: europe, name: 'Europe-Russie', type: 'bar', marker: { color: '#26B89A' } }
+  ], {
+    barmode: 'stack',
+    paper_bgcolor: plotBg, plot_bgcolor: plotBg,
+    margin: { l: 45, r: 15, t: 10, b: 50 },
+    xaxis: { color: textColor, gridcolor: gridColor, tickfont: { size: 10 } },
+    yaxis: { color: textColor, gridcolor: gridColor, title: { text: 'Indice GPR', font: { size: 11, color: textColor } } },
+    legend: { font: { color: textColor, size: 11 }, bgcolor: 'rgba(0,0,0,0)', orientation: 'h', x: 0, y: -0.15 },
+    font: { family: 'Inter, sans-serif' },
+    hovermode: 'x unified'
+  }, { displayModeBar: false, responsive: true });
+})();
+</script>
 {{ end }}

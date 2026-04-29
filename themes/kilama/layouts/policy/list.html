@@ -791,9 +791,9 @@
     <div class="editorial-page">
       <figure class="chart">
         <header class="chart-header">
-          <span class="eyebrow-text">Graphique de la semaine</span>
-          <h3 class="chart-title">Le risque géopolitique reste élevé sur trois théâtres</h3>
-          <p class="chart-subtitle">Indice GPR mondial, par théâtre, contribution trimestrielle</p>
+          <span class="eyebrow-text">Vigie &middot; Graphique</span>
+          <h3 class="chart-title">Les stabilisateurs institutionnels ont cédé l'un après l'autre</h3>
+          <p class="chart-subtitle">État des trois stabilisateurs lors des crises majeures depuis 1973</p>
         </header>
         <div class="chart-canvas article-wide">
           <img src="/uploads/charts/fig9_stabilizer_history.png"
@@ -833,7 +833,7 @@
           {{ if gt (len $allPages) 0 }}
             {{ range $allPages }}
             <article class="policy-entry"
-              data-theme="{{ with .Params.theme }}{{ . }}{{ end }}"
+              data-theme="{{ with .Params.theme }}{{ . }}{{ end }}{{ with .Params.tags }} {{ delimit . " " }}{{ end }}"
               data-doctype="{{ with .Params.doc_type }}{{ . }}{{ end }}">
               <div class="policy-entry-thumb"
                 {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
@@ -956,7 +956,7 @@
         <article class="debate-card">
           <div class="debate-num">02</div>
           <div class="debate-content">
-            <h3>L'aide chinoise : bienveillance, instrumentalisation ou prédation ?</h3>
+            <h3>Les financements chinois : bienveillance, instrumentalisation ou prédation ?</h3>
             <p class="debate-position">L'evidence causale, fondée sur des données AidData et des instruments commerciaux, pointe vers un mécanisme d'assurance sur matières premières, distinct des trois récits dominants. L'investissement souverain chinois suit la logique d'une couverture de risque d'approvisionnement.</p>
             <div class="debate-related">
               <span class="meta">VOIR LES NOTES :</span>
@@ -1004,7 +1004,7 @@
             <div class="policy-entry-thumb"></div>
             <div class="policy-entry-body">
               <h3><a href="{{ "policy/" | relURL }}">La fragilité par la base : polycrisis Asie et aide chinoise en perspective</a></h3>
-              <p>Rapport pour la Fondation France-Asie. Deux notes croisées : les scénarios de risque en Asie-Pacifique et l'instrument géopolitique de l'aide chinoise, analysés conjointement pour dégager les implications pour la politique française en Indo-Pacifique.</p>
+              <p>Rapport pour la Fondation France-Asie. Deux notes croisées : les scénarios de risque en Asie-Pacifique et l'instrument géopolitique des financements chinois, analysés conjointement pour dégager les implications pour la politique française en Indo-Pacifique.</p>
               <div class="policy-entry-meta">
                 <span class="tag tag--brand">FFA &middot; Rapport</span>
                 <span class="card-note-sep">&middot;</span>
@@ -1086,11 +1086,11 @@
         (tabVal === 'debats'   && doctype.indexOf('controverse') !== -1);
 
       var chipMatch = (chipVal === 'all') ||
-        (chipVal === 'risque-geo' && (theme.indexOf('geopolitical') !== -1 || theme.indexOf('géopolitique') !== -1 || theme.indexOf('iran') !== -1 || theme.indexOf('sécurité') !== -1)) ||
-        (chipVal === 'commerce'   && (theme.indexOf('commerce') !== -1 || theme.indexOf('trade') !== -1 || theme.indexOf('geoeconomics') !== -1)) ||
-        (chipVal === 'findev'     && (theme.indexOf('développement') !== -1 || theme.indexOf('development') !== -1 || theme.indexOf('g7') !== -1)) ||
-        (chipVal === 'energie'    && (theme.indexOf('énergie') !== -1 || theme.indexOf('energy') !== -1)) ||
-        (chipVal === 'polycrisis' && theme.indexOf('polycrisis') !== -1);
+        (chipVal === 'risque-geo' && (theme.indexOf('geopolitical') !== -1 || theme.indexOf('géopolitique') !== -1 || theme.indexOf('iran') !== -1 || theme.indexOf('sécurité') !== -1 || theme.indexOf('sanctions') !== -1 || theme.indexOf('ormuz') !== -1)) ||
+        (chipVal === 'commerce'   && (theme.indexOf('commerce') !== -1 || theme.indexOf('trade') !== -1 || theme.indexOf('geoeconomics') !== -1 || theme.indexOf('sanctions') !== -1 || theme.indexOf('tarif') !== -1 || theme.indexOf('dédollarisation') !== -1)) ||
+        (chipVal === 'findev'     && (theme.indexOf('développement') !== -1 || theme.indexOf('development') !== -1 || theme.indexOf('g7') !== -1 || theme.indexOf('aide') !== -1 || theme.indexOf('apd') !== -1 || theme.indexOf('donateur') !== -1)) ||
+        (chipVal === 'energie'    && (theme.indexOf('énergie') !== -1 || theme.indexOf('energy') !== -1 || theme.indexOf('transition') !== -1 || theme.indexOf('jetp') !== -1 || theme.indexOf('fossile') !== -1)) ||
+        (chipVal === 'polycrisis' && (theme.indexOf('polycrisis') !== -1 || theme.indexOf('convergence') !== -1 || theme.indexOf('stabilisateur') !== -1));
 
       el.style.display = (tabMatch && chipMatch) ? '' : 'none';
     });
