@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" data-palette="{{ with .Params.palette }}{{ . }}{{ else }}{{ if .IsHome }}vivid-bloomberg{{ else if eq .Section "research" }}vivid-bloomberg{{ else if eq .Section "foresight" }}vivid-bloomberg{{ else if eq .Section "policy" }}vivid-editorial{{ else if eq .Section "teaching" }}vivid-editorial{{ else if eq .Section "data" }}vivid-bloomberg{{ else if eq .Section "about" }}vivid-bloomberg{{ else }}vivid-bloomberg{{ end }}{{ end }}">
+<html lang="{{ .Site.Language.Lang }}" data-palette="{{ with .Params.palette }}{{ . }}{{ else }}{{ if .IsHome }}vivid-bloomberg{{ else if eq .Section "research" }}vivid-bloomberg{{ else if eq .Section "foresight" }}vivid-bloomberg{{ else if eq .Section "policy" }}vivid-editorial{{ else if eq .Section "teaching" }}vivid-editorial{{ else if eq .Section "data" }}vivid-bloomberg{{ else if eq .Section "about" }}vivid-editorial{{ else }}vivid-bloomberg{{ end }}{{ end }}">
 <head>
   {{ partial "head.html" . }}
   {{ block "styles" . }}{{ end }}

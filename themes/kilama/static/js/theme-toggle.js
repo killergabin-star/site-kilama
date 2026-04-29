@@ -1,6 +1,9 @@
 /* ============================================================================
-   theme-toggle.js — Bascule dark/light pour erickilama.com
+   theme-toggle.js — Bascule dark/light pour erickilama.com (v2)
    ----------------------------------------------------------------------------
+   v2 patch (29 avril 2026) : propage le changement de palette aux descendants
+   qui ont leur propre data-palette (corrige le bug texte invisible sur Policy).
+
    Comportement :
    - Défaut : dark mode (vivid-editorial / vivid-bloomberg) selon la page
    - Toggle bascule vers la palette light correspondante :
@@ -12,6 +15,10 @@
        portrait-eric-kilama-dark.png  ↔  portrait-eric-kilama-light.png
    - Met à jour les icônes du toggle dans le header (haut-droit)
      ET les liens texte du footer
+   - NOUVEAU v2 : synchronise les data-palette descendants (page-body, etc.)
+     avec la palette toggleable. Les palettes "spéciales" non-toggleables
+     (institutional, bloomberg basique pour data-room Foresight) restent
+     intactes.
    ============================================================================ */
 
 (function () {
@@ -27,6 +34,14 @@
     'editorial-light': 'vivid-editorial'
   };
 
+  // Palettes que le toggle gère (toggleables). Les autres sont préservées.
+  var TOGGLEABLE_PALETTES = {
+    'vivid-bloomberg': true,
+    'vivid-editorial': true,
+    'bloomberg-light': true,
+    'editorial-light': true
+  };
+
   var STORAGE_KEY = 'erickilama-color-scheme';
 
   function getCurrentScheme() {
@@ -36,22 +51,44 @@
   }
 
   function getDarkPalette() {
-    // Récupère la palette dark "native" de la page (l'attribut initial du HTML
-    // au moment du load, qu'on aura sauvé dans data-palette-default)
     var html = document.documentElement;
     return html.getAttribute('data-palette-default') || 'vivid-bloomberg';
+  }
+
+  /**
+   * Propage la palette à tous les descendants qui ont un data-palette
+   * appartenant à l'ensemble toggleable. Préserve les data-palette spéciaux
+   * (institutional, bloomberg, etc.) qui sont des contextes intentionnels.
+   */
+  function propagatePaletteToDescendants(targetPalette) {
+    var html = document.documentElement;
+    var descendants = document.querySelectorAll('[data-palette]');
+    descendants.forEach(function (el) {
+      if (el === html) return;  // racine déjà gérée
+      var current = el.getAttribute('data-palette');
+      if (TOGGLEABLE_PALETTES[current]) {
+        el.setAttribute('data-palette', targetPalette);
+      }
+      // Si pas dans TOGGLEABLE_PALETTES (ex. "bloomberg" pour data-room),
+      // on ne touche pas — c'est un contexte intentionnel.
+    });
   }
 
   function applyScheme(scheme) {
     var html = document.documentElement;
     var darkPalette = getDarkPalette();
+    var targetPalette;
 
     if (scheme === 'light') {
-      var lightPalette = DARK_TO_LIGHT[darkPalette] || 'bloomberg-light';
-      html.setAttribute('data-palette', lightPalette);
+      targetPalette = DARK_TO_LIGHT[darkPalette] || 'bloomberg-light';
     } else {
-      html.setAttribute('data-palette', darkPalette);
+      targetPalette = darkPalette;
     }
+
+    html.setAttribute('data-palette', targetPalette);
+
+    // NOUVEAU v2 : propager aux descendants
+    propagatePaletteToDescendants(targetPalette);
 
     // Mettre à jour les portraits dual (index + about)
     var portraits = document.querySelectorAll('.portrait-photo[data-portrait-dual]');
@@ -65,7 +102,6 @@
     // Mettre à jour les icônes du toggle
     var icons = document.querySelectorAll('[data-theme-icon]');
     icons.forEach(function (icon) {
-      // Convention : on montre l'icône du mode VERS LEQUEL on bascule
       icon.setAttribute('data-current', scheme);
     });
 
@@ -100,7 +136,6 @@
     var html = document.documentElement;
     if (!html.hasAttribute('data-palette-default')) {
       var current = html.getAttribute('data-palette') || 'vivid-bloomberg';
-      // Si la page démarre déjà en light (rare mais possible), on déduit la dark associée
       if (current.endsWith('-light')) {
         html.setAttribute('data-palette-default', LIGHT_TO_DARK[current] || 'vivid-bloomberg');
       } else {

@@ -339,18 +339,20 @@
 [data-palette="vivid-editorial"] .hero-editorial-portrait .portrait-photo {
   -webkit-mask-image:
     radial-gradient(
-      ellipse 75% 80% at 50% 42%,
-      #000 55%,
-      rgba(0,0,0,0.92) 72%,
-      rgba(0,0,0,0.4) 90%,
+      ellipse 70% 78% at 50% 38%,
+      #000 35%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.55) 75%,
+      rgba(0,0,0,0.15) 92%,
       transparent 100%
     );
   mask-image:
     radial-gradient(
-      ellipse 75% 80% at 50% 42%,
-      #000 55%,
-      rgba(0,0,0,0.92) 72%,
-      rgba(0,0,0,0.4) 90%,
+      ellipse 70% 78% at 50% 38%,
+      #000 35%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.55) 75%,
+      rgba(0,0,0,0.15) 92%,
       transparent 100%
     );
 }
