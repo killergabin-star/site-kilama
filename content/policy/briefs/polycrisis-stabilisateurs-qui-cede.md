@@ -6,8 +6,6 @@ theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  custom_path: thumbnails/custom/stabilisateurs.svg
 tags:
 - polycrisis
 - vigie

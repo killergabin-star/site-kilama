@@ -411,41 +411,6 @@
   height: 64px;
   border-radius: 2px;
   flex-shrink: 0;
-  overflow: hidden;
-}
-.policy-entry-thumb svg,
-.card-note-thumbnail svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.policy-entry-thumb img,
-.card-note-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.card-note--with-thumbnail {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
-  align-items: start;
-}
-.card-note-thumbnail {
-  aspect-ratio: 16 / 9;
-  border-radius: 2px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #1a1a2e 0%, #0d2840 100%);
-}
-@media (max-width: 720px) {
-  .card-note--with-thumbnail {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .card-note-thumbnail {
-    max-height: 120px;
-  }
 }
 .policy-entry-body h3 {
   font-family: var(--font-ui, Inter, sans-serif);
@@ -661,9 +626,8 @@
     <div class="container">
       {{ if $featured }}
       <section class="policy-featured">
-        <div class="policy-featured-image policy-thumbnail policy-thumbnail--featured"
+        <div class="policy-featured-image"
           {{ with $featured.Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
-          {{ if not $featured.Params.cover_image }}{{ partial "policy-thumbnail.html" $featured }}{{ end }}
         </div>
         <div>
           <div class="eyebrow">
@@ -741,19 +705,14 @@
         <div class="policy-catalog">
           {{ if gt (len $dossierPages) 0 }}
             {{ range first 6 $dossierPages }}
-            <article class="card-note card-note--with-thumbnail">
-              <div class="card-note-thumbnail policy-thumbnail">
-                {{ partial "policy-thumbnail.html" . }}
-              </div>
-              <div class="card-note-content">
-                <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}DOSSIER{{ end }}</span>
-                <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
-                <div class="card-note-meta">
-                  <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
-                  <span class="card-note-sep">&middot;</span>
-                  <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
-                </div>
+            <article class="card-note">
+              <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}DOSSIER{{ end }}</span>
+              <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+              <div class="card-note-meta">
+                <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                <span class="card-note-sep">&middot;</span>
+                <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
               </div>
             </article>
             {{ end }}
@@ -923,9 +882,8 @@
             <article class="policy-entry"
               data-theme="{{ with .Params.theme }}{{ . }}{{ end }}{{ with .Params.tags }} {{ delimit . " " }}{{ end }}"
               data-doctype="{{ with .Params.doc_type }}{{ . }}{{ end }}">
-              <div class="policy-entry-thumb policy-thumbnail"
+              <div class="policy-entry-thumb"
                 {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
-                {{ if not .Params.cover_image }}{{ partial "policy-thumbnail.html" . }}{{ end }}
               </div>
               <div class="policy-entry-body">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
@@ -1074,9 +1032,8 @@
           {{ if gt (len $commissioned) 0 }}
             {{ range $commissioned }}
             <article class="policy-entry">
-              <div class="policy-entry-thumb policy-thumbnail"
+              <div class="policy-entry-thumb"
                 {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
-                {{ if not .Params.cover_image }}{{ partial "policy-thumbnail.html" . }}{{ end }}
               </div>
               <div class="policy-entry-body">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
