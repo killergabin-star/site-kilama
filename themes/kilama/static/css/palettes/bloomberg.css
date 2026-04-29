@@ -96,84 +96,9 @@
    Bleu cyan vivifié, fond charbon, corail réchauffé
    ============================================================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand-primary:        #5DB3E8;
-    --brand-primary-soft:   #84C7EE;
-    --brand-primary-deep:   #B0DAF3;
 
-    --brand-accent:         #E68056;
-    --brand-accent-soft:    #EFA17F;
 
-    --brand-data-1:         #5DB3E8;
-    --brand-data-2:         #A084D0;
-    --brand-data-3:         #5DCBB0;
-    --brand-data-4:         #E68056;
-    --brand-data-5:         #F0CB6C;
-    --brand-data-6:         #ED7896;
-    --brand-data-7:         #C8C8C8;
 
-    --brand-data-1-soft:    #4090C5;
-    --brand-data-2-soft:    #8868AF;
-    --brand-data-3-soft:    #44A088;
-
-    --color-text-primary:   #ECECEC;
-    --color-text-secondary: #A8A8A8;
-    --color-text-tertiary:  #707070;
-    --color-text-inverse:   #1A1A1A;
-    --color-text-on-brand:  #FFFFFF;
-
-    --color-background-primary:    #14171C;
-    --color-background-secondary:  #1B2028;
-    --color-background-tertiary:   #232A33;
-    --color-background-elevated:   #1B2028;
-    --color-background-brand-soft: #1A2C3C;
-
-    --color-border-tertiary:   rgba(236, 236, 236, 0.08);
-    --color-border-secondary:  rgba(236, 236, 236, 0.18);
-    --color-border-primary:    rgba(236, 236, 236, 0.32);
-
-    --state-up:        #5DCBB0;
-    --state-down:      #E68056;
-    --state-flat:      #9C9A92;
-    --state-warn:      #F0CB6C;
-  }
-}
-
-[data-theme="dark"] {
-  --brand-primary:        #5DB3E8;
-  --brand-primary-soft:   #84C7EE;
-  --brand-primary-deep:   #B0DAF3;
-  --brand-accent:         #E68056;
-  --brand-accent-soft:    #EFA17F;
-  --brand-data-1:         #5DB3E8;
-  --brand-data-2:         #A084D0;
-  --brand-data-3:         #5DCBB0;
-  --brand-data-4:         #E68056;
-  --brand-data-5:         #F0CB6C;
-  --brand-data-6:         #ED7896;
-  --brand-data-7:         #C8C8C8;
-  --brand-data-1-soft:    #4090C5;
-  --brand-data-2-soft:    #8868AF;
-  --brand-data-3-soft:    #44A088;
-  --color-text-primary:   #ECECEC;
-  --color-text-secondary: #A8A8A8;
-  --color-text-tertiary:  #707070;
-  --color-text-inverse:   #1A1A1A;
-  --color-text-on-brand:  #FFFFFF;
-  --color-background-primary:    #14171C;
-  --color-background-secondary:  #1B2028;
-  --color-background-tertiary:   #232A33;
-  --color-background-elevated:   #1B2028;
-  --color-background-brand-soft: #1A2C3C;
-  --color-border-tertiary:   rgba(236, 236, 236, 0.08);
-  --color-border-secondary:  rgba(236, 236, 236, 0.18);
-  --color-border-primary:    rgba(236, 236, 236, 0.32);
-  --state-up:        #5DCBB0;
-  --state-down:      #E68056;
-  --state-flat:      #9C9A92;
-  --state-warn:      #F0CB6C;
-}
 
 /* ============================================================================
    BLOOMBERG SUB-THEME — scoped for Data Room on Foresight

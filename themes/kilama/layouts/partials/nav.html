@@ -51,6 +51,15 @@
       {{ else }}
         <a href="{{ replace .Permalink "/en/" "/fr/" }}">FR</a> / <a class="active">EN</a>
       {{ end }}
+        <button class="theme-toggle" data-theme-toggle data-current="dark" type="button" aria-label="Basculer le thème" title="Apparence : Sombre / Clair" data-theme-icon>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5"></circle>
+            <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.1 5.1l2.1 2.1M16.8 16.8l2.1 2.1M5.1 18.9l2.1-2.1M16.8 7.2l2.1-2.1"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4a7.5 7.5 0 1 0 10.5 10.5z"></path>
+          </svg>
+        </button>
     </div>
     <button class="burger" aria-label="Menu">
       <span class="burger-line"></span>

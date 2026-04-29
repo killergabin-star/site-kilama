@@ -77,41 +77,22 @@
 }
 
 /* ---------- HOME HERO ACCENTS ---------- */
-.hero-editorial--home .h-display {
-  font-size: clamp(40px, 4.7vw, 68px);
-  max-width: 20ch;
-}
-
-.hero-editorial--home .h-display .h-line {
-  white-space: nowrap;
-}
-
+/* Sur Bloomberg (vivid-bloomberg) : deux teintes complémentaires,
+   premier em en cyan, second en violet — fait écho au DNA Variant-B
+   sans saturer. Reste lisible et structurel. */
 .hero-editorial--home .h-display em {
   font-style: italic;
   font-weight: 400;
-  color: #2251FF;
+  color: var(--brand-primary);
 }
 .hero-editorial--home .h-display em + br + em,
 .hero-editorial--home .h-display em:nth-of-type(2) {
-  color: #2251FF;
-}
-
-.hero-editorial--home .eyebrow--blue::before,
-.hero-editorial--home .cta-link--primary.cta-link--blue {
-  background: #2251FF;
-}
-
-.hero-editorial--home .hero-editorial-actions .cta-link:not(.cta-link--primary) {
-  color: #2251FF;
-  border-bottom-color: #2251FF;
-}
-
-[data-palette="vivid-bloomberg"] .wordmark-mark {
-  color: #2251FF;
+  color: var(--brand-secondary, var(--brand-primary));
 }
 
 /* Fallback Variant-A : un seul accent rouge sur les em */
-[data-palette="vivid-editorial"] .hero-editorial--home .h-display em {
+[data-palette="vivid-editorial"] .hero-editorial--home .h-display em,
+[data-palette="editorial-light"] .hero-editorial--home .h-display em {
   color: var(--brand-accent);
 }
 
@@ -123,9 +104,6 @@
   .hero-editorial-inner {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-  .hero-editorial--home .h-display .h-line {
-    white-space: normal;
   }
 }
 
@@ -353,7 +331,12 @@
   background: transparent;
   border: none;
   margin: 0 auto;
-  /* Soft fade vers le fond aux bords + bas — gomme tout résidu de halo */
+}
+
+/* Mask radial uniquement en dark mode — gomme le halo studio sur fond noir.
+   En light mode (fond blanc/cream), la photo N&B est déjà propre, pas de mask. */
+[data-palette="vivid-bloomberg"] .hero-editorial-portrait .portrait-photo,
+[data-palette="vivid-editorial"] .hero-editorial-portrait .portrait-photo {
   -webkit-mask-image:
     radial-gradient(
       ellipse 75% 80% at 50% 42%,

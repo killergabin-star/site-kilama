@@ -97,85 +97,10 @@
    Bleu marine adouci, fond noir-bleuté, rouge légèrement réchauffé
    ============================================================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brand-primary:        #6589BC;
-    --brand-primary-soft:   #88A6CF;
-    --brand-primary-deep:   #B5C9E0;
 
-    --brand-accent:         #E84545;
-    --brand-accent-soft:    #F07070;
-
-    --brand-data-1:         #6589BC;
-    --brand-data-2:         #E0BC4A;
-    --brand-data-3:         #7CA67C;
-    --brand-data-4:         #9D75BC;
-    --brand-data-5:         #D87E47;
-    --brand-data-6:         #5A9DAB;
-    --brand-data-7:         #9C9A92;
-
-    --brand-data-1-soft:    #4A6F9C;
-    --brand-data-2-soft:    #B89A40;
-    --brand-data-3-soft:    #5C8A5C;
-
-    --color-text-primary:   #ECECEC;
-    --color-text-secondary: #A8A8A8;
-    --color-text-tertiary:  #707070;
-    --color-text-inverse:   #121212;
-    --color-text-on-brand:  #FFFFFF;
-
-    --color-background-primary:    #121517;
-    --color-background-secondary:  #1B1F22;
-    --color-background-tertiary:   #232830;
-    --color-background-elevated:   #1B1F22;
-    --color-background-brand-soft: #1A2435;
-
-    --color-border-tertiary:   rgba(236, 236, 236, 0.10);
-    --color-border-secondary:  rgba(236, 236, 236, 0.20);
-    --color-border-primary:    rgba(236, 236, 236, 0.35);
-
-    --state-up:        #5DCBB0;
-    --state-down:      #E8623E;
-    --state-flat:      #9C9A92;
-    --state-warn:      #E0BC4A;
-  }
-}
 
 /* Override manuel via attribut data-theme */
-[data-theme="dark"] {
-  --brand-primary:        #6589BC;
-  --brand-primary-soft:   #88A6CF;
-  --brand-primary-deep:   #B5C9E0;
-  --brand-accent:         #E84545;
-  --brand-accent-soft:    #F07070;
-  --brand-data-1:         #6589BC;
-  --brand-data-2:         #E0BC4A;
-  --brand-data-3:         #7CA67C;
-  --brand-data-4:         #9D75BC;
-  --brand-data-5:         #D87E47;
-  --brand-data-6:         #5A9DAB;
-  --brand-data-7:         #9C9A92;
-  --brand-data-1-soft:    #4A6F9C;
-  --brand-data-2-soft:    #B89A40;
-  --brand-data-3-soft:    #5C8A5C;
-  --color-text-primary:   #ECECEC;
-  --color-text-secondary: #A8A8A8;
-  --color-text-tertiary:  #707070;
-  --color-text-inverse:   #121212;
-  --color-text-on-brand:  #FFFFFF;
-  --color-background-primary:    #121517;
-  --color-background-secondary:  #1B1F22;
-  --color-background-tertiary:   #232830;
-  --color-background-elevated:   #1B1F22;
-  --color-background-brand-soft: #1A2435;
-  --color-border-tertiary:   rgba(236, 236, 236, 0.10);
-  --color-border-secondary:  rgba(236, 236, 236, 0.20);
-  --color-border-primary:    rgba(236, 236, 236, 0.35);
-  --state-up:        #5DCBB0;
-  --state-down:      #E8623E;
-  --state-flat:      #9C9A92;
-  --state-warn:      #E0BC4A;
-}
+
 
 /* ============================================================================
    BLOOMBERG SUB-THEME — Data Room scope on institutional pages

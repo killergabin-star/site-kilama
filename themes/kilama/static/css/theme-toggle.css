@@ -1,0 +1,93 @@
+/* ============================================================================
+   theme-toggle.css — Style du toggle dark/light
+   ----------------------------------------------------------------------------
+   - Icône SVG dans le header à côté du sélecteur FR/EN
+   - Mention texte "Apparence : Sombre / Clair" dans le footer
+   ============================================================================ */
+
+/* ---------- TOGGLE HEADER (icône à côté de FR/EN) ---------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-left: 12px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease-out;
+  vertical-align: middle;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text-primary);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* L'icône change selon le mode actif. Convention : on montre vers où on va.
+   - data-current="dark"  → on est en dark, on montre le soleil (= bascule vers light)
+   - data-current="light" → on est en light, on montre la lune (= bascule vers dark) */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: none; }
+.theme-toggle[data-current="dark"]  .icon-sun  { display: block; }
+.theme-toggle[data-current="light"] .icon-moon { display: block; }
+
+/* ---------- FOOTER : lien texte explicite ---------- */
+
+.theme-footer-switch {
+  font-family: var(--font-data);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--color-text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-footer-switch .label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.theme-footer-switch a {
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.theme-footer-switch a:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border-secondary);
+}
+
+.theme-footer-switch a.active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--brand-accent);
+}
+
+.theme-footer-switch .sep {
+  opacity: 0.5;
+  margin: 0 2px;
+}
