@@ -96,6 +96,508 @@
 @media (max-width: 480px) {
   .metric-row { grid-template-columns: 1fr; }
 }
+
+/* ====== FPSQ INDICATORS SECTION ====== */
+
+/* Section Header */
+.fpsq-section-header { margin-bottom: 32px; }
+.fpsq-section-title {
+  font-family: var(--font-display, Newsreader, serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-text-primary, #E8E9EA);
+  margin-bottom: 6px;
+}
+.fpsq-section-subtitle {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 14px;
+  color: var(--color-text-tertiary, #5F6368);
+}
+
+/* Indicator Grid */
+.data-indicator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.data-indicator-card {
+  background: var(--color-background-secondary, #0E0F12);
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  border-radius: 8px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.data-indicator-card:hover {
+  box-shadow: 0 4px 12px rgba(0,191,255,0.08);
+  border-color: rgba(0,191,255,0.3);
+}
+.data-indicator-card.active {
+  box-shadow: 0 0 0 2px var(--brand-primary, #00BFFF);
+}
+.data-ind-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.data-ind-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text-primary, #E8E9EA);
+  line-height: 1.3;
+}
+.data-ind-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.data-ind-badge.live { background: rgba(34,136,51,0.15); color: #228833; }
+.data-ind-badge.updated { background: rgba(0,191,255,0.1); color: var(--brand-primary, #00BFFF); }
+.data-ind-desc {
+  font-size: 13px;
+  color: var(--color-text-tertiary, #5F6368);
+  line-height: 1.5;
+}
+.data-ind-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+.data-ind-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.data-ind-stat-label {
+  font-size: 10px;
+  color: var(--color-text-tertiary, #5F6368);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.data-ind-stat-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary, #E8E9EA);
+}
+.data-ind-spark {
+  height: 40px;
+  margin-top: auto;
+}
+
+/* Detail Layout: side nav + chart panel */
+.data-detail-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Side Navigation */
+.data-side-nav {
+  background: var(--color-background-secondary, #0E0F12);
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  border-radius: 16px;
+  padding: 16px 0;
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+.data-side-group {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-tertiary, #5F6368);
+  padding: 12px 20px 6px;
+  margin-top: 4px;
+}
+.data-side-group:first-child { margin-top: 0; }
+.data-side-link {
+  display: block;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-primary, #E8E9EA);
+  padding: 8px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  border-left: 3px solid transparent;
+}
+.data-side-link:hover {
+  background: rgba(255,255,255,0.05);
+}
+.data-side-link.active {
+  background: rgba(0,191,255,0.1);
+  border-left-color: var(--brand-primary, #00BFFF);
+  color: var(--brand-primary, #00BFFF);
+  font-weight: 600;
+}
+
+/* Chart Panel */
+.data-chart-panel {
+  background: var(--color-background-secondary, #0E0F12);
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  border-radius: 16px;
+  padding: 32px;
+}
+.data-chart-top { margin-bottom: 20px; }
+.data-chart-name {
+  font-family: var(--font-display, Newsreader, serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-primary, #E8E9EA);
+  margin-bottom: 6px;
+}
+.data-chart-desc {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 13px;
+  color: var(--color-text-tertiary, #5F6368);
+  line-height: 1.5;
+}
+
+/* View Toggle (Time Series / Heatmap) */
+.data-view-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 16px;
+}
+.data-view-btn {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 18px;
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  background: rgba(255,255,255,0.08);
+  color: var(--color-text-tertiary, #5F6368);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.data-view-btn:first-child { border-radius: 999px 0 0 999px; }
+.data-view-btn:last-child { border-radius: 0 999px 999px 0; }
+.data-view-btn + .data-view-btn { border-left: none; }
+.data-view-btn.active {
+  background: var(--brand-primary, #00BFFF);
+  color: #000;
+  border-color: var(--brand-primary, #00BFFF);
+  font-weight: 600;
+}
+
+/* Range Pills */
+.data-range-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.data-range-pill {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: var(--color-text-tertiary, #5F6368);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.data-range-pill:hover {
+  background: rgba(255,255,255,0.12);
+  color: var(--color-text-primary, #E8E9EA);
+}
+.data-range-pill.active {
+  background: var(--brand-primary, #00BFFF);
+  color: #000;
+  font-weight: 600;
+}
+.data-date-range {
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #5F6368);
+  margin-left: 8px;
+}
+
+/* Country Picker */
+.data-country-picker {
+  margin-bottom: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+}
+.data-country-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.data-country-picker-count {
+  font-size: 12px;
+  color: var(--brand-primary, #00BFFF);
+  font-weight: 500;
+}
+.data-country-picker-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.data-picker-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.data-picker-tag .tag-x {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.7;
+}
+.data-picker-tag:hover .tag-x { opacity: 1; }
+.data-picker-region {
+  margin-bottom: 8px;
+}
+.data-picker-region-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-tertiary, #5F6368);
+  margin-bottom: 4px;
+}
+.data-picker-region-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.data-picker-btn {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.15));
+  background: rgba(255,255,255,0.06);
+  color: var(--color-text-primary, #E8E9EA);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.12s;
+}
+.data-picker-btn.selected {
+  background: var(--brand-primary, #00BFFF);
+  border-color: var(--brand-primary, #00BFFF);
+  color: #000;
+}
+.data-picker-btn:hover:not(.selected):not(.unavailable) {
+  border-color: var(--brand-primary, #00BFFF);
+}
+.data-picker-btn.unavailable {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Chart Body */
+.data-chart-body {
+  margin-bottom: 20px;
+  min-height: 525px;
+}
+
+/* Country Comparison Panel */
+.data-compare-panel { display: none; }
+.data-compare-panel.active { display: block; }
+.data-compare-country-selector {
+  margin-bottom: 20px;
+}
+.data-compare-region-group {
+  margin-bottom: 12px;
+}
+.data-compare-region-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--color-text-tertiary, #5F6368); margin-bottom: 6px;
+  padding-bottom: 3px; border-bottom: 1px solid var(--color-border-secondary, rgba(232,233,234,0.15));
+}
+.data-compare-region-btns {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+}
+.data-compare-country-btn {
+  font-size: 13px; padding: 5px 14px; border-radius: 20px;
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.15));
+  background: rgba(255,255,255,0.06);
+  color: var(--color-text-primary, #E8E9EA); cursor: pointer;
+  transition: all 0.15s; font-family: inherit;
+}
+.data-compare-country-btn.selected {
+  background: var(--brand-primary, #00BFFF);
+  border-color: var(--brand-primary, #00BFFF);
+  color: #000; font-weight: 600;
+}
+.data-compare-country-btn:hover:not(.selected) {
+  border-color: var(--brand-primary, #00BFFF);
+  color: var(--brand-primary, #00BFFF);
+}
+.data-compare-country-btn.unavailable {
+  opacity: 0.35; cursor: default;
+}
+.data-compare-limit-msg {
+  font-size: 12px; color: var(--color-text-tertiary, #5F6368); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.data-compare-limit-count {
+  font-weight: 700; color: var(--brand-primary, #00BFFF);
+}
+.data-compare-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  margin-top: 16px;
+}
+.data-compare-mini {
+  background: rgba(255,255,255,0.04); border: none;
+  border-radius: 8px; padding: 12px; min-height: 200px;
+}
+.data-compare-mini-title {
+  font-size: 11px; font-weight: 600; color: var(--color-text-primary, #E8E9EA);
+  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px;
+}
+.data-compare-mini-unit {
+  font-size: 10px; color: var(--color-text-tertiary, #5F6368); margin-bottom: 8px;
+}
+.data-compare-summary {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px; margin-bottom: 20px;
+}
+.data-compare-stat {
+  background: rgba(255,255,255,0.04); border: none;
+  border-radius: 8px; padding: 12px; text-align: center;
+}
+.data-compare-stat-country {
+  font-size: 11px; color: var(--color-text-tertiary, #5F6368); margin-bottom: 4px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.data-compare-stat-value {
+  font-size: 22px; font-weight: 300; color: var(--color-text-primary, #E8E9EA);
+  font-family: var(--font-data, 'IBM Plex Mono', monospace);
+}
+.data-compare-stat-label {
+  font-size: 10px; color: var(--color-text-tertiary, #5F6368); margin-top: 2px;
+}
+
+/* Risk Zone Legend */
+.data-risk-legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+}
+.data-risk-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 12px;
+  color: var(--color-text-tertiary, #5F6368);
+}
+.data-risk-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Chart Footer */
+.data-chart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+}
+.data-chart-source {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 11px;
+  color: var(--color-text-tertiary, #5F6368);
+}
+.data-download-btns {
+  display: flex;
+  gap: 6px;
+}
+.data-dl-btn {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-text-tertiary, #5F6368);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.data-dl-btn:hover {
+  border-color: var(--brand-primary, #00BFFF);
+  color: var(--brand-primary, #00BFFF);
+  background: rgba(0,191,255,0.06);
+}
+
+/* Methodology Note */
+.methodology-note {
+  background: var(--color-background-secondary, #0E0F12);
+  border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1));
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-top: 32px;
+}
+.methodology-title {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-primary, #00BFFF);
+  margin-bottom: 10px;
+}
+.methodology-note p {
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 13px;
+  color: var(--color-text-tertiary, #5F6368);
+  line-height: 1.7;
+  margin: 0;
+}
+.methodology-note p a {
+  color: var(--brand-primary, #00BFFF);
+  text-decoration: none;
+}
+.methodology-note p a:hover { text-decoration: underline; }
+
+/* FPSQ Responsive */
+@media (max-width: 900px) {
+  .data-indicator-grid { grid-template-columns: repeat(2, 1fr); }
+  .data-detail-layout { grid-template-columns: 1fr; }
+  .data-side-nav { position: static; max-height: none; }
+  .data-chart-footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .data-compare-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .data-indicator-grid { grid-template-columns: 1fr; }
+  .data-risk-legend { flex-direction: column; gap: 8px; }
+}
 </style>
 {{ end }}
 
@@ -328,16 +830,121 @@
     </div>
   </div>
 
+  <!-- ====== FPSQ INDICATORS SECTION ====== -->
+  <div style="height: 2px; background: linear-gradient(90deg, transparent, var(--brand-primary, #00BFFF), transparent); margin: 48px 0;"></div>
+
+  <div class="fpsq-section-header">
+    <div class="fpsq-section-title">FPSQ Indicators</div>
+    <div class="fpsq-section-subtitle">Geopolitical &amp; fiscal stress quantification — Select an indicator for detail</div>
+  </div>
+
+  <div class="data-indicator-grid" id="data-ind-grid">
+    <!-- Populated by vigie-data-engine.js -->
+  </div>
+
+  <div class="data-detail-layout">
+    <nav class="data-side-nav" id="data-side-nav">
+      <div class="data-side-group">Fiscal Stress</div>
+      <a class="data-side-link active" data-ind="fiscal-stress" onclick="selectIndicator('fiscal-stress',this)">Fiscal Stress Index</a>
+      <a class="data-side-link" data-ind="debt-sustainability" onclick="selectIndicator('debt-sustainability',this)">Debt Sustainability</a>
+      <a class="data-side-link" data-ind="primary-balance" onclick="selectIndicator('primary-balance',this)">Primary Balance Gap</a>
+      <a class="data-side-link" data-ind="interest-growth" onclick="selectIndicator('interest-growth',this)">Interest-Growth Differential</a>
+      <div class="data-side-group">Market Stress</div>
+      <a class="data-side-link" data-ind="sovereign-spreads" onclick="selectIndicator('sovereign-spreads',this)">Sovereign Spreads</a>
+      <a class="data-side-link" data-ind="cds-spreads" onclick="selectIndicator('cds-spreads',this)">CDS Spreads</a>
+      <a class="data-side-link" data-ind="yield-curve" onclick="selectIndicator('yield-curve',this)">Yield Curve Slope</a>
+      <div class="data-side-group">Geopolitical</div>
+      <a class="data-side-link" data-ind="gpr-index" onclick="selectIndicator('gpr-index',this)">GPR Index</a>
+      <a class="data-side-link" data-ind="trade-uncertainty" onclick="selectIndicator('trade-uncertainty',this)">Trade Policy Uncertainty</a>
+      <a class="data-side-link" data-ind="economic-sentiment" onclick="selectIndicator('economic-sentiment',this)">Economic Sentiment</a>
+      <div class="data-side-group">Cross-Section</div>
+      <a class="data-side-link" data-ind="country-comparison" onclick="selectIndicator('country-comparison',this)">Country Comparison</a>
+    </nav>
+
+    <div class="data-chart-panel">
+      <div class="data-chart-top">
+        <div class="data-chart-name" id="data-detail-title">Fiscal Stress Index</div>
+        <div class="data-chart-desc" id="data-detail-desc">Composite index measuring fiscal vulnerability across G7 economies. Combines debt sustainability metrics, primary balance gaps, and market stress signals into a single normalized score.</div>
+      </div>
+
+      <div class="data-chart-readout" id="data-readout" style="display:none;"></div>
+
+      <div class="data-view-toggle">
+        <button class="data-view-btn active" onclick="switchDataView('timeseries',this)">Time Series</button>
+        <button class="data-view-btn" onclick="switchDataView('heatmap',this)">Heatmap</button>
+      </div>
+
+      <div class="data-range-pills" id="data-range-pills">
+        <button class="data-range-pill" data-range="1m" onclick="setDataRange('1m',this)">1m</button>
+        <button class="data-range-pill" data-range="3m" onclick="setDataRange('3m',this)">3m</button>
+        <button class="data-range-pill" data-range="6m" onclick="setDataRange('6m',this)">6m</button>
+        <button class="data-range-pill active" data-range="1y" onclick="setDataRange('1y',this)">1y</button>
+        <button class="data-range-pill" data-range="all" onclick="setDataRange('all',this)">All</button>
+        <span class="data-date-range" id="data-date-range"></span>
+      </div>
+
+      <div class="data-country-picker" id="data-country-picker" style="display:none;">
+            <div class="data-country-picker-header">
+              <span style="font-size:12px;color:var(--color-text-tertiary,#5F6368);">Select up to <strong>6</strong> countries</span>
+              <span class="data-country-picker-count" id="data-picker-count">3 selected</span>
+            </div>
+            <div class="data-country-picker-tags" id="data-picker-tags"></div>
+            <div class="data-country-picker-regions" id="data-picker-regions"></div>
+      </div>
+
+      <div class="data-chart-body">
+        <div id="data-ts-chart" style="height:525px;"></div>
+        <div id="data-hm-chart" style="height:500px;display:none;"></div>
+        <div class="data-compare-panel" id="data-compare-panel">
+              <div style="font-size:12px;color:var(--color-text-tertiary,#5F6368);margin-bottom:10px;">Select countries to compare across all FPSQ indicators:</div>
+              <div class="data-compare-country-selector" id="data-compare-selector"></div>
+              <div class="data-compare-summary" id="data-compare-summary"></div>
+              <div class="data-compare-grid" id="data-compare-grid"></div>
+        </div>
+      </div>
+
+      <div class="data-risk-legend">
+        <div class="data-risk-item"><span class="data-risk-dot" style="background:#228833;"></span> Low (x &lt; -1)</div>
+        <div class="data-risk-item"><span class="data-risk-dot" style="background:#CCBB44;"></span> Neutral (-1 &le; x &le; 1)</div>
+        <div class="data-risk-item"><span class="data-risk-dot" style="background:#EE6677;"></span> High (1 &lt; x &le; 3)</div>
+        <div class="data-risk-item"><span class="data-risk-dot" style="background:#AA3377;"></span> Extreme (x &gt; 3)</div>
+      </div>
+
+      <div class="data-chart-footer">
+        <div class="data-chart-source" id="data-source">Source: FPSQ Pipeline v1.4.0 — erickilama.com</div>
+        <div class="data-download-btns">
+          <button class="data-dl-btn">CSV</button>
+          <button class="data-dl-btn">XLSX</button>
+          <button class="data-dl-btn">PNG</button>
+          <button class="data-dl-btn">PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="methodology-note">
+    <div class="methodology-title">Methodology</div>
+    <p>FPSQ indicators are constructed using daily data from multiple sources (ECB SDW, Caldara &amp; Iacoviello GPR, Baker/Bloom/Davis EPU, GDELT sentiment analysis). Raw indices are normalized by each country's historical distribution (2018–present) and smoothed using a 28-day exponentially weighted moving average. Positive (negative) values indicate higher (lower) stress relative to the country's historical mean. Risk zones follow the convention: Low (&lt;-1&sigma;), Neutral (&plusmn;1&sigma;), High (1-3&sigma;), Extreme (&gt;3&sigma;). Full methodology: <a href="/research/">FPSQ Technical Report v1.4</a>.</p>
+  </div>
+
 </div>
 </div>
 {{ end }}
 
 {{ define "scripts" }}
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="{{ "js/vigie-data-engine.js" | relURL }}"></script>
 <script>
 function setToggle(btn) {
   var bar = btn.parentElement;
   bar.querySelectorAll('.toggle-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
+}
+
+// Auto-init data tab on page load
+if (typeof initDataTab === 'function') {
+  setTimeout(initDataTab, 200);
 }
 </script>
 {{ end }}
