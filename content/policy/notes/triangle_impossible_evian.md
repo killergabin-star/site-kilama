@@ -23,7 +23,7 @@ theme: g7
 
 La présidence française du G7 repose sur trois piliers affichés par Barrot à Munich (14 février 2026) : sécurité euro-atlantique et Ukraine, partenariats et développement, réduction des déséquilibres mondiaux. Derrière ces formules, trois agendas budgétaires massifs se disputent les mêmes enveloppes : la reconstruction de l'Ukraine (486 milliards de dollars sur dix ans, RDNA3 Banque mondiale, février 2024), le réarmement européen (381 milliards d'euros en 2025, projection EDA/IISS), et les partenariats Afrique-développement (Summit Africa Forward, Nairobi, 11-12 mai). L'addition brute des engagements 2026-2030 se situe entre 900 et 1 400 milliards d'euros.
 
-L'asymétrie de tendance est le fait le plus important : la défense et la reconstruction sont des agendas en croissance ; l'APD est un agenda en déclin structurel (-7,1 % en termes réels en 2024, puis -23,1 % en données préliminaires 2025 selon l'OCDE). Les budgets APD n'ont pas augmenté pour absorber l'Ukraine — l'Ukraine a absorbé les budgets APD (12-15 % de l'enveloppe CAD réallouée depuis 2022).
+L'asymétrie de tendance est le fait le plus important : la défense et la reconstruction sont des agendas en croissance ; l'APD est un agenda en déclin structurel (-7,1 % en termes réels en 2024, projections de -9 % à -17 % en 2025, données OCDE). Les budgets APD n'ont pas augmenté pour absorber l'Ukraine — l'Ukraine a absorbé les budgets APD (12-15 % de l'enveloppe CAD réallouée depuis 2022).
 
 ### L'arithmétique budgétaire du triangle
 
