@@ -1,733 +1,14 @@
 {{ define "styles" }}
 <style>
-/* ═══════════════════════════════════════════════════
-   POLICY SINGLE — McKinsey article DNA × Kilama identity
-   Serif light headings, dark hero, 2-col layout,
-   centered pull quotes, sticky bar, gras stratégique
-   ═══════════════════════════════════════════════════ */
-
-/* --- Dark Hero Section --- */
-.mck-hero {
-  background: var(--navy, #1B2A4A);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-}
-.mck-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(27,42,74,0.0) 0%, rgba(27,42,74,0.4) 100%);
-  pointer-events: none;
-}
-.mck-hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 120px 2.5rem 64px;
-}
-.mck-hero__eyebrow {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--electric-blue);
-  margin-bottom: 24px;
-}
-.mck-hero__eyebrow a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.mck-hero__eyebrow a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-.mck-hero__eyebrow-sep {
-  margin: 0 8px;
-  opacity: 0.4;
-}
-.mck-hero__title {
-  font-family: var(--font-body) !important;
-  font-size: clamp(2rem, 4.5vw, 3.25rem) !important;
-  font-weight: 300 !important;
-  color: #ffffff !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.01em;
-  margin: 0 0 24px;
-  max-width: 820px;
-}
-.mck-hero__meta {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.55);
-}
-.mck-hero__meta time {
-  color: rgba(255, 255, 255, 0.55);
-}
-.mck-hero__meta-sep {
-  margin: 0 10px;
-  opacity: 0.35;
-}
-
-/* --- Sticky Share Bar --- */
-.mck-sticky-bar {
-  position: sticky;
-  top: 70px; /* below nav */
-  z-index: 500;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  pointer-events: none;
-}
-.mck-sticky-bar.visible {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-.mck-sticky-bar__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-}
-.mck-sticky-bar__title {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--navy, #1B2A4A);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 60%;
-}
-.mck-sticky-bar__actions {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-.mck-sticky-bar__btn {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-secondary, #5A6068);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 0;
-  transition: color 0.2s;
-}
-.mck-sticky-bar__btn:hover {
-  color: var(--navy, #1B2A4A);
-}
-.mck-sticky-bar__btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* --- Byline Section --- */
-.mck-byline {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 2.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.mck-byline__author {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--text-secondary, #5A6068);
-}
-.mck-byline__author strong {
-  font-weight: 500;
-  color: var(--text-primary, #2D2D2D);
-}
-.mck-byline__share {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.mck-byline__share-btn {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-secondary, #5A6068);
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 6px 0;
-  transition: color 0.2s;
-}
-.mck-byline__share-btn:hover {
-  color: var(--navy, #1B2A4A);
-}
-.mck-byline__share-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* --- Two-Column Layout --- */
-.mck-article-grid {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 2.5rem 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 64px;
-}
-
-/* --- Article Body --- */
-.mck-article-body {
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--text-primary, #2D2D2D);
-  line-height: 1.72;
-  max-width: 720px;
-}
-
-.mck-article-body p {
-  margin-bottom: 1.5em;
-}
-
-/* --- Headings: McKinsey serif + weight 300 DNA ---
-   !important needed to override global h1-h6 rules in custom.css */
-.mck-article-body h2 {
-  font-family: var(--font-body) !important;
-  font-size: clamp(1.6rem, 3vw, 2.5rem) !important;
-  font-weight: 300 !important;
-  color: var(--text-primary, #2D2D2D) !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.01em;
-  margin-top: 56px;
-  margin-bottom: 20px;
-}
-
-.mck-article-body h3 {
-  font-family: var(--font-body) !important;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem) !important;
-  font-weight: 300 !important;
-  color: var(--text-primary, #2D2D2D) !important;
-  line-height: 1.25 !important;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.mck-article-body h4 {
-  font-family: var(--font-title) !important;
-  font-size: 1rem !important;
-  font-weight: 500 !important;
-  color: var(--text-primary, #2D2D2D);
-  margin-top: 32px;
-  margin-bottom: 12px;
-}
-
-/* --- Gras Stratégique ---
-   Notre ajout distinctif : 1 phrase grasse par § = le verdict.
-   L'ensemble des phrases grasses forme un résumé autonome.
-   ─────────────────────────────────────────────────── */
-.mck-article-body strong {
-  font-weight: 700;
-  color: var(--navy, #1B2A4A);
-}
-
-/* --- Links --- */
-.mck-article-body a {
-  color: var(--accent, #2C5F8A);
-  text-decoration: underline;
-  text-decoration-color: rgba(44, 95, 138, 0.3);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.15s;
-}
-.mck-article-body a:hover {
-  text-decoration-color: var(--accent, #2C5F8A);
-  color: var(--navy, #1B2A4A);
-}
-
-/* --- Pull Quotes: McKinsey DNA ---
-   Centered, serif, blue, no border, no background.
-   Electric blue → blue-fpsq for Kilama identity.
-   ─────────────────────────────────────────────── */
-.mck-article-body blockquote {
-  margin: 48px auto;
-  padding: 0;
-  border: none;
-  background: transparent;
-  text-align: center;
-  max-width: 85%;
-}
-.mck-article-body blockquote p {
-  font-family: var(--font-body);
-  font-size: clamp(1.25rem, 2vw, 1.625rem);
-  font-weight: 300;
-  font-style: normal;
-  color: var(--accent, #2C5F8A);
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-.mck-article-body blockquote p + p {
-  margin-top: 0.8em;
-}
-.mck-article-body blockquote cite,
-.mck-article-body blockquote footer {
-  font-family: var(--font-title);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.8125rem;
-  color: var(--text-secondary, #5A6068);
-  display: block;
-  margin-top: 12px;
-}
-
-/* --- Lists --- */
-.mck-article-body ul,
-.mck-article-body ol {
-  margin-bottom: 1.5em;
-  padding-left: 1.5em;
-}
-.mck-article-body li {
-  margin-bottom: 0.5em;
-}
-.mck-article-body li::marker {
-  color: var(--accent, #2C5F8A);
-}
-
-/* --- Tables --- */
-.mck-article-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5em 0;
-  font-family: var(--font-title);
-  font-size: 0.9375rem;
-}
-.mck-article-body thead th {
-  font-weight: 500;
-  color: var(--navy, #1B2A4A);
-  text-align: left;
-  padding: 10px 12px;
-  border-bottom: 2px solid var(--navy, #1B2A4A);
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.mck-article-body tbody td {
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
-  color: var(--text-primary, #2D2D2D);
-}
-.mck-article-body tbody tr:hover {
-  background: var(--bg-light, #F0EFE9);
-}
-
-/* --- Code --- */
-.mck-article-body code {
-  font-family: var(--font-data);
-  font-size: 0.85em;
-  background: var(--bg-light, #F0EFE9);
-  padding: 2px 6px;
-}
-.mck-article-body pre {
-  background: var(--navy, #1B2A4A);
-  color: var(--bg-white, #F8F7F4);
-  padding: 20px 24px;
-  margin: 1.5em 0;
-  overflow-x: auto;
-  font-family: var(--font-data);
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
-.mck-article-body pre code {
-  background: none;
-  padding: 0;
-  color: inherit;
-}
-
-/* --- Images & Figures --- */
-.mck-article-body img {
-  margin: 2em auto;
-  display: block;
-  max-width: 100%;
-}
-.mck-article-body figure {
-  margin: 2em 0;
-}
-.mck-article-body figcaption {
-  font-family: var(--font-title);
-  font-size: 0.8125rem;
-  color: var(--text-secondary, #5A6068);
-  text-align: center;
-  margin-top: 8px;
-}
-
-/* --- Horizontal Rule --- */
-.mck-article-body hr {
-  border: none;
-  border-top: 1px solid rgba(27, 42, 74, 0.08);
-  margin: 2.5em 0;
-}
-
-/* --- Footnotes --- */
-.mck-article-body .footnotes {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(27, 42, 74, 0.08);
-}
-.mck-article-body .footnotes ol {
-  padding-left: 1.2em;
-}
-.mck-article-body .footnotes li {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--text-secondary, #5A6068);
-  margin-bottom: 0.5em;
-}
-.mck-article-body .footnotes li p {
-  margin-bottom: 0.3em;
-}
-.mck-article-body sup a,
-.mck-article-body .footnote-ref {
-  font-family: var(--font-data);
-  font-size: 0.7em;
-  color: var(--accent, #2C5F8A);
-  text-decoration: none;
-  vertical-align: super;
-}
-.mck-article-body .footnote-backref {
-  font-size: 0.75rem;
-  text-decoration: none;
-  color: var(--accent, #2C5F8A);
-}
-
-/* --- Sidebar --- */
-.mck-sidebar {
-  position: sticky;
-  top: 140px; /* nav 70px + sticky bar 56px + gap */
-  align-self: start;
-}
-.mck-sidebar__section {
-  margin-bottom: 40px;
-}
-.mck-sidebar__heading {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-primary, #2D2D2D);
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--navy, #1B2A4A);
-  margin-bottom: 16px;
-}
-.mck-sidebar__link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--accent, #2C5F8A);
-  text-decoration: none;
-  padding: 8px 0;
-  transition: color 0.15s;
-}
-.mck-sidebar__link:hover {
-  color: var(--navy, #1B2A4A);
-}
-.mck-sidebar__link svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-.mck-sidebar__recent-item {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
-}
-.mck-sidebar__recent-item:last-child {
-  border-bottom: none;
-}
-.mck-sidebar__recent-type {
-  font-family: var(--font-title);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent, #2C5F8A);
-  margin-bottom: 4px;
-}
-.mck-sidebar__recent-title {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.35;
-}
-.mck-sidebar__recent-title a {
-  color: var(--text-primary, #2D2D2D);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.mck-sidebar__recent-title a:hover {
-  color: var(--accent, #2C5F8A);
-}
-
-/* --- Tags Section --- */
-.mck-tags {
-  padding: 32px 0;
-  border-top: 1px solid rgba(27, 42, 74, 0.08);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-.mck-tags__label {
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary, #5A6068);
-  margin-right: 8px;
-}
-.mck-tags__pill {
-  font-family: var(--font-title);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent, #2C5F8A);
-  background: rgba(44, 95, 138, 0.08);
-  padding: 5px 12px;
-  text-decoration: none;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.mck-tags__pill:hover {
-  background: rgba(44, 95, 138, 0.15);
-  color: var(--navy, #1B2A4A);
-}
-
-/* --- About Author Section --- */
-.mck-about-author {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 2.5rem;
-  border-top: 1px solid rgba(27, 42, 74, 0.08);
-}
-.mck-about-author__heading {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-primary, #2D2D2D);
-  text-align: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--navy, #1B2A4A);
-  display: inline-block;
-  margin: 0 auto 24px;
-  width: 100%;
-}
-.mck-about-author__text {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--text-secondary, #5A6068);
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-.mck-about-author__text strong {
-  font-weight: 600;
-  color: var(--text-primary, #2D2D2D);
-}
-
-/* --- Related Articles Section --- */
-.mck-related {
-  background: var(--bg-light, #F0EFE9);
-  padding: 56px 0;
-}
-.mck-related__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
-.mck-related__heading {
-  font-family: var(--font-title);
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-primary, #2D2D2D);
-  text-align: center;
-  margin-bottom: 32px;
-}
-.mck-related__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.mck-related__card {
-  background: #ffffff;
-  padding: 24px;
-  transition: box-shadow 0.2s;
-}
-.mck-related__card:hover {
-  box-shadow: 0 4px 16px rgba(27, 42, 74, 0.08);
-}
-.mck-related__card-type {
-  font-family: var(--font-title);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent, #2C5F8A);
-  margin-bottom: 8px;
-}
-.mck-related__card-title {
-  font-family: var(--font-title);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.35;
-  margin-bottom: 8px;
-}
-.mck-related__card-title a {
-  color: var(--text-primary, #2D2D2D);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.mck-related__card-title a:hover {
-  color: var(--accent, #2C5F8A);
-}
-.mck-related__card-date {
-  font-family: var(--font-title);
-  font-size: 12px;
-  color: var(--text-secondary, #5A6068);
-}
-
-/* --- Back Navigation --- */
-.mck-back-nav {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 2.5rem 64px;
-}
-.mck-back-link {
-  font-family: var(--font-title);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--accent, #2C5F8A);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.15s;
-}
-.mck-back-link:hover {
-  color: var(--navy, #1B2A4A);
-}
-.mck-back-link svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.15s;
-}
-.mck-back-link:hover svg {
-  transform: translateX(-3px);
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 900px) {
-  .mck-article-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 32px 1.5rem 0;
-  }
-  .mck-sidebar {
-    position: static;
-    border-top: 1px solid rgba(27, 42, 74, 0.08);
-    padding-top: 32px;
-    margin-top: 40px;
-  }
-  .mck-related__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .mck-hero__inner {
-    padding: 100px 1.5rem 40px;
-  }
-  .mck-hero__title {
-    font-size: 1.75rem;
-  }
-  .mck-byline {
-    padding: 24px 1.5rem 0;
-  }
-  .mck-about-author {
-    padding: 40px 1.5rem;
-  }
-  .mck-related__inner {
-    padding: 0 1.5rem;
-  }
-  .mck-back-nav {
-    padding: 24px 1.5rem 48px;
-  }
-  .mck-sticky-bar__inner {
-    padding: 0 1.5rem;
-  }
-  .mck-article-body {
-    font-size: 16px;
-  }
-  .mck-article-body h2 {
-    font-size: 1.5rem;
-    margin-top: 40px;
-  }
-  .mck-article-body h3 {
-    font-size: 1.25rem;
-    margin-top: 32px;
-  }
-  .mck-article-body blockquote {
-    max-width: 95%;
-    margin: 32px auto;
-  }
-  .mck-article-body blockquote p {
-    font-size: 1.125rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .mck-hero__inner {
-    padding: 90px 1rem 32px;
-  }
-  .mck-hero__eyebrow {
-    font-size: 11px;
-  }
-  .mck-hero__title {
-    font-size: 1.5rem;
-  }
-  .mck-hero__meta {
-    font-size: 12px;
-  }
-  .mck-byline__share {
-    display: none;
-  }
-}
+.editorial-page > .article-header { padding-top: 120px; }
 </style>
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
 
 {{ define "main" }}
@@ -745,174 +26,83 @@
   {{ $typeLabel = "Scénario" }}
 {{ end }}
 
-{{/* ═══ DARK HERO ═══ */}}
-<section class="mck-hero"{{ with .Params.cover }} style="background-image: linear-gradient(180deg, rgba(27,42,74,0.55) 0%, rgba(27,42,74,0.85) 100%), url('{{ . | relURL }}')"{{ end }}>
-  <div class="mck-hero__inner">
-    <div class="mck-hero__eyebrow">
-      <a href="{{ "policy/" | relURL }}">Policy</a>
-      <span class="mck-hero__eyebrow-sep">·</span>
-      {{ $typeLabel }}
+{{/* French month dict for date formatting */}}
+{{ $months := dict "01" "Janvier" "02" "Février" "03" "Mars" "04" "Avril" "05" "Mai" "06" "Juin" "07" "Juillet" "08" "Août" "09" "Septembre" "10" "Octobre" "11" "Novembre" "12" "Décembre" }}
+{{ $monthNum := .Date.Format "01" }}
+{{ $monthName := index $months $monthNum }}
+{{ $dateFr := printf "%s %s %s" (.Date.Format "2") $monthName (.Date.Format "2006") }}
+
+<main class="editorial-page">
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="eyebrow">
+      <span class="eyebrow-mark"></span>
+      <span class="eyebrow-text">{{ upper $typeLabel }}{{ with .Params.theme }} · {{ upper . }}{{ end }}</span>
     </div>
-    <h1 class="mck-hero__title">{{ .Title }}</h1>
-    <div class="mck-hero__meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format "2 January 2006" .Date }}</time>
-      <span class="mck-hero__meta-sep">|</span>
-      {{ $typeLabel }}
-      <span class="mck-hero__meta-sep">|</span>
-      {{ .ReadingTime }} min de lecture
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Params.summary }}
+    <p class="article-subtitle">{{ . }}</p>
+    {{ end }}
+    <div class="article-meta">
+      <span>{{ .Params.author | default "Eric Gabin Kilama" }}</span>
+      <span class="sep">·</span>
+      <span>{{ $dateFr }}</span>
+      <span class="sep">·</span>
+      <span>~{{ .ReadingTime }} min de lecture</span>
     </div>
-  </div>
-</section>
+  </header>
 
-{{/* ═══ STICKY SHARE BAR ═══ */}}
-<div class="mck-sticky-bar" id="stickyBar">
-  <div class="mck-sticky-bar__inner">
-    <div class="mck-sticky-bar__title">{{ .Title }}</div>
-    <div class="mck-sticky-bar__actions">
-      <button class="mck-sticky-bar__btn" onclick="navigator.share ? navigator.share({title: document.title, url: location.href}) : navigator.clipboard.writeText(location.href).then(() => alert('Lien copié'))">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        Share
-      </button>
-      <button class="mck-sticky-bar__btn" onclick="window.print()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-        Print
-      </button>
-    </div>
-  </div>
-</div>
-
-{{/* ═══ BYLINE ═══ */}}
-<div class="mck-byline">
-  <div class="mck-byline__author">
-    By <strong>{{ .Params.author | default "Eric Gabin Kilama" }}</strong>
-  </div>
-  <div class="mck-byline__share">
-    <button class="mck-byline__share-btn" onclick="navigator.share ? navigator.share({title: document.title, url: location.href}) : navigator.clipboard.writeText(location.href).then(() => alert('Lien copié'))">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      Share
-    </button>
-    <button class="mck-byline__share-btn" onclick="window.print()">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      Print
-    </button>
-    <button class="mck-byline__share-btn" onclick="navigator.clipboard.writeText(location.href).then(() => alert('Lien copié'))">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      Copy link
-    </button>
-  </div>
-</div>
-
-<main>
-  {{/* ═══ TWO-COLUMN LAYOUT ═══ */}}
-  <div class="mck-article-grid">
-
-    {{/* — LEFT: Article body — */}}
-    <article>
-      {{/* Chapeau / summary */}}
-      {{ with .Params.summary }}
-      <p style="font-family: var(--font-body); font-size: 1.125rem; font-style: italic; font-weight: 400; color: var(--text-secondary, #5A6068); line-height: 1.65; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid rgba(27,42,74,0.08);">{{ . }}</p>
-      {{ end }}
-
-      {{/* Body content */}}
-      <div class="mck-article-body">
-        {{ .Content }}
-      </div>
-
-      {{/* Tags */}}
-      {{ with .Params.tags }}
-      <div class="mck-tags">
-        <span class="mck-tags__label">Thèmes</span>
-        {{ range . }}
-        <a href="{{ "tags/" | relURL }}{{ . | urlize }}/" class="mck-tags__pill">{{ . }}</a>
-        {{ end }}
+  {{/* KPI band if front matter has kpis */}}
+  {{ with .Params.kpis }}
+  <div class="article-hero-data">
+    <div class="kpi-band">
+      {{ range . }}
+      <div class="kpi">
+        <span class="kpi-value">{{ .value }}</span>
+        <span class="kpi-label">{{ .label }}</span>
       </div>
       {{ end }}
-    </article>
+    </div>
+  </div>
+  {{ end }}
 
-    {{/* — RIGHT: Sidebar — */}}
-    <aside class="mck-sidebar">
-      {{/* Downloads */}}
-      {{ with .Params.pdf }}
-      <div class="mck-sidebar__section">
-        <div class="mck-sidebar__heading">Téléchargement</div>
-        <a href="{{ . }}" class="mck-sidebar__link" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Article (PDF)
-        </a>
-      </div>
-      {{ end }}
+  <!-- ARTICLE BODY -->
+  <div class="article-body article-body--drop-cap">
+    {{ .Content }}
+  </div>
 
-      {{/* Recent notes from same section */}}
-      <div class="mck-sidebar__section">
-        <div class="mck-sidebar__heading">Notes récentes</div>
-        {{ $current := . }}
-        {{ range first 5 (where (where .Site.RegularPages "Section" "policy") ".Permalink" "!=" .Permalink) }}
-        <div class="mck-sidebar__recent-item">
-          <div class="mck-sidebar__recent-type">{{ .Params.doc_type | default "Note" }}</div>
-          <div class="mck-sidebar__recent-title">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </div>
+  <!-- TAGS -->
+  {{ with .Params.tags }}
+  <div class="article-tags">
+    {{ range . }}
+    <span class="tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- RELATED NOTES -->
+  {{ $related := first 3 (where (where .Site.RegularPages "Type" "policy") ".Permalink" "!=" .Permalink) }}
+  {{ if $related }}
+  <section class="related-notes">
+    <h2>Notes connexes</h2>
+    <div class="related-notes-grid">
+      {{ range $related }}
+      <div class="card-note">
+        <div class="card-note-body">
+          <span class="tag">{{ .Params.doc_type | default "Note" }}</span>
+          <h4 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+          {{ $rMonthNum := .Date.Format "01" }}
+          {{ $rMonthName := index $months $rMonthNum }}
+          <p class="card-note-meta">{{ $rMonthName }} {{ .Date.Format "2006" }}</p>
         </div>
-        {{ end }}
+        <a class="action" href="{{ .RelPermalink }}">Lire →</a>
       </div>
-    </aside>
-  </div>
-
-  {{/* ═══ ABOUT AUTHOR ═══ */}}
-  <div class="mck-about-author">
-    <div class="mck-about-author__heading">À propos de l'auteur</div>
-    <div class="mck-about-author__text">
-      <strong>Eric Gabin Kilama</strong> est macroéconomiste-stratège, spécialiste de la transmission des chocs géopolitiques à l'économie. Docteur en économie (CERDI), son expérience au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay a forgé sa conviction que la géopolitique est redevenue une variable structurelle de l'économie mondiale. Chercheur associé à la FERDI.
+      {{ end }}
     </div>
-  </div>
+  </section>
+  {{ end }}
+
 </main>
 
-{{/* ═══ RELATED ARTICLES ═══ */}}
-{{ $related := first 4 (where (where .Site.RegularPages "Section" "policy") ".Permalink" "!=" .Permalink) }}
-{{ if $related }}
-<section class="mck-related">
-  <div class="mck-related__inner">
-    <div class="mck-related__heading">À lire aussi</div>
-    <div class="mck-related__grid">
-      {{ range first 4 $related }}
-      <div class="mck-related__card">
-        <div class="mck-related__card-type">{{ .Params.doc_type | default "Note" }}</div>
-        <div class="mck-related__card-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </div>
-        <div class="mck-related__card-date">{{ time.Format "2 January 2006" .Date }}</div>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>
-{{ end }}
-
-{{/* ═══ BACK NAVIGATION ═══ */}}
-<div class="mck-back-nav">
-  <a href="{{ "policy/" | relURL }}" class="mck-back-link">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-    Retour aux analyses
-  </a>
-</div>
-
-{{ end }}
-
-{{ define "scripts" }}
-<script>
-// Sticky share bar: show after scrolling past hero
-(function() {
-  const bar = document.getElementById('stickyBar');
-  const hero = document.querySelector('.mck-hero');
-  if (!bar || !hero) return;
-  const threshold = hero.offsetTop + hero.offsetHeight;
-
-  function checkScroll() {
-    bar.classList.toggle('visible', window.scrollY > threshold);
-  }
-
-  window.addEventListener('scroll', checkScroll, { passive: true });
-  checkScroll();
-})();
-</script>
 {{ end }}
