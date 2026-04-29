@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="grain-light" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="5"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="rg-accent" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E6203A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#E6203A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg-paper" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8E1D4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#E8E1D4" stop-opacity="0"/>
+    </radialGradient>
+    
+  </defs>
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <circle cx="200" cy="100" r="70" fill="#71717A" opacity="0.18"/>
+<circle cx="200" cy="100" r="50" fill="#E8E1D4" opacity="0.12"/>
+<rect x="75" y="50" width="50" height="150" fill="#22D3EE" opacity="1.0"/>
+<line x1="87.5" y1="54" x2="87.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="100.0" y1="54" x2="100.0" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="112.5" y1="54" x2="112.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<rect x="70" y="44" width="60" height="6" fill="#22D3EE" opacity="1.05"/>
+<text x="100.0" y="128.0" font-family="EB Garamond, serif" font-size="22" font-style="italic" fill="#0A0A0A" font-weight="500" text-anchor="middle" opacity="0.5">I</text>
+<rect x="175" y="70" width="50" height="130" fill="#FBBF24" opacity="0.85"/>
+<line x1="187.5" y1="74" x2="187.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="200.0" y1="74" x2="200.0" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="212.5" y1="74" x2="212.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<rect x="170" y="64" width="60" height="6" fill="#FBBF24" opacity="0.8925"/>
+<text x="200.0" y="138.0" font-family="EB Garamond, serif" font-size="22" font-style="italic" fill="#0A0A0A" font-weight="500" text-anchor="middle" opacity="0.5">II</text>
+<rect x="275" y="100" width="50" height="100" fill="#E6203A" opacity="0.85"/>
+<line x1="287.5" y1="104" x2="287.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="300.0" y1="104" x2="300.0" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<line x1="312.5" y1="104" x2="312.5" y2="196" stroke="#0A0A0A" stroke-width="0.6" opacity="0.5"/>
+<rect x="270" y="94" width="60" height="6" fill="#E6203A" opacity="0.8925"/>
+<text x="300.0" y="153.0" font-family="EB Garamond, serif" font-size="22" font-style="italic" fill="#0A0A0A" font-weight="500" text-anchor="middle" opacity="0.5">III</text>
+<rect x="178" y="40" width="44" height="14" fill="#FBBF24" opacity="0.55" transform="rotate(-12 200 47)"/>
+<rect x="278" y="55" width="48" height="16" fill="#E6203A" opacity="0.4" transform="rotate(-20 302 63)"/>
+<rect x="290" y="80" width="35" height="12" fill="#E6203A" opacity="0.65" transform="rotate(8 308 86)"/>
+<rect x="0" y="200" width="400" height="3" fill="#A1A1AA" opacity="0.5"/>
+  <!-- noise overlay subtil -->
+  <rect width="400" height="225" fill="url(#noise-overlay)" opacity="0.03"/>
+</svg>

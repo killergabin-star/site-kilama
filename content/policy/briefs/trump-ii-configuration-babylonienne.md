@@ -6,6 +6,8 @@ theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama
+thumbnail:
+  custom_path: thumbnails/custom/babylone.svg
 tags:
 - États-Unis
 - Trump

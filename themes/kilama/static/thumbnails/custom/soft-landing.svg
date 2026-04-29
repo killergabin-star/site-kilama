@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="grain-light" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="5"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="rg-accent" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E6203A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#E6203A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg-paper" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8E1D4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#E8E1D4" stop-opacity="0"/>
+    </radialGradient>
+    
+  </defs>
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <circle cx="200" cy="115" r="50" fill="url(#rg-paper)" opacity="0.6"/>
+<circle cx="200" cy="115" r="25" fill="#E8E1D4" opacity="0.18"/>
+<path d="M 30 60 Q 100 80 170 105 Q 200 115 230 130 Q 320 175 380 200" stroke="#71717A" stroke-width="1" fill="none" stroke-dasharray="3,3" opacity="0.4"/>
+<path d="M 200 115 Q 270 90 380 50" stroke="#22D3EE" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.1"/>
+<path d="M 200 115 Q 270 90 380 50" stroke="#22D3EE" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.3"/>
+<path d="M 200 115 Q 270 90 380 50" stroke="#22D3EE" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.95"/>
+<path d="M 200 115 Q 270 145 380 200" stroke="#E6203A" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.1"/>
+<path d="M 200 115 Q 270 145 380 200" stroke="#E6203A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.3"/>
+<path d="M 200 115 Q 270 145 380 200" stroke="#E6203A" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.95"/>
+<circle cx="200" cy="115" r="6" fill="#F4F4F5"/>
+<circle cx="200" cy="115" r="13" fill="none" stroke="#F4F4F5" stroke-width="1" opacity="0.5"/>
+<line x1="212.7" y1="127.7" x2="217.7" y2="132.7" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="200.0" y1="133.0" x2="200.0" y2="140.0" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="187.3" y1="127.7" x2="182.3" y2="132.7" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="182.0" y1="115.0" x2="175.0" y2="115.0" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="187.3" y1="102.3" x2="182.3" y2="97.3" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="200.0" y1="97.0" x2="200.0" y2="90.0" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<line x1="212.7" y1="102.3" x2="217.7" y2="97.3" stroke="#F4F4F5" stroke-width="0.5" opacity="0.5"/>
+<text x="385" y="48" font-family="EB Garamond, serif" font-size="10" font-style="italic" fill="#22D3EE" text-anchor="end">stabilisation</text>
+<text x="385" y="60" font-family="JetBrains Mono, monospace" font-size="8" fill="#22D3EE" text-anchor="end">67,5%</text>
+<text x="385" y="200" font-family="EB Garamond, serif" font-size="10" font-style="italic" fill="#E6203A" text-anchor="end">bascule</text>
+<text x="385" y="212" font-family="JetBrains Mono, monospace" font-size="8" fill="#E6203A" text-anchor="end">25%</text>
+  <!-- noise overlay subtil -->
+  <rect width="400" height="225" fill="url(#noise-overlay)" opacity="0.03"/>
+</svg>
