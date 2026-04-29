@@ -24,16 +24,21 @@
 <link rel="stylesheet" href="{{ "css/grammars/landing.css" | relURL }}?v={{ now.Unix }}">
 {{ else if eq .Section "research" }}
 <link rel="stylesheet" href="{{ "css/grammars/catalog.css" | relURL }}?v={{ now.Unix }}">
+{{ if .IsPage }}<link rel="stylesheet" href="{{ "css/grammars/editorial.css" | relURL }}?v={{ now.Unix }}">{{ end }}
 {{ else if eq .Section "policy" }}
 <link rel="stylesheet" href="{{ "css/grammars/editorial.css" | relURL }}?v={{ now.Unix }}">
 {{ else if eq .Section "foresight" }}
 <link rel="stylesheet" href="{{ "css/grammars/dashboard.css" | relURL }}?v={{ now.Unix }}">
+{{ if .IsPage }}<link rel="stylesheet" href="{{ "css/grammars/editorial.css" | relURL }}?v={{ now.Unix }}">{{ end }}
 {{ else if eq .Section "teaching" }}
 <link rel="stylesheet" href="{{ "css/grammars/landing.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/grammars/catalog.css" | relURL }}?v={{ now.Unix }}">
 <link rel="stylesheet" href="{{ "css/grammars/teaching.css" | relURL }}?v={{ now.Unix }}">
+{{ if .IsPage }}<link rel="stylesheet" href="{{ "css/grammars/editorial.css" | relURL }}?v={{ now.Unix }}">{{ end }}
 {{ else if eq .Section "about" }}
 <link rel="stylesheet" href="{{ "css/grammars/biographical.css" | relURL }}?v={{ now.Unix }}">
+{{ else if eq .Section "data" }}
+{{/* Data Room uses inline styles via define "styles" block — no external grammar needed */}}
 {{ else }}
 <link rel="stylesheet" href="{{ "css/grammars/editorial.css" | relURL }}?v={{ now.Unix }}">
 {{ end }}
