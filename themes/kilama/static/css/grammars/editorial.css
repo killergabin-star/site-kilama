@@ -196,6 +196,25 @@
   margin-right: 6px;
 }
 
+/* ---------- CHART-OF-THE-WEEK DUAL LAYOUT (chart + table) ---------- */
+
+.cotw-table-section {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-secondary, rgba(0,0,0,0.06));
+}
+
+.cotw-table-section .state-label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 600px) {
+  .cotw-table-section .state-label {
+    display: none;
+  }
+}
+
 /* ---------- WIDE ELEMENTS (charts, images that break out of 720px) ---------- */
 
 .article-wide {

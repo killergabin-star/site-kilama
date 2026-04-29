@@ -786,36 +786,83 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
-         GRAPHIQUE DE LA SEMAINE
+         GRAPHIQUE DE LA SEMAINE — dual layout (chart + table)
          ══════════════════════════════════════════════════════ -->
     <div class="editorial-page">
       <figure class="chart">
         <header class="chart-header">
-          <span class="eyebrow-text">Vigie &middot; Graphique</span>
-          <h3 class="chart-title">Les stabilisateurs institutionnels ont cédé l'un après l'autre</h3>
-          <p class="chart-subtitle">État des trois stabilisateurs lors des crises majeures depuis 1973</p>
+          <span class="eyebrow-text">Graphique de la semaine</span>
+          <h3 class="chart-title">Les trois stabilisateurs qui ont cédé</h3>
+          <p class="chart-subtitle">Pour la première fois depuis Bretton Woods, les trois mécanismes institutionnels de stabilisation sont simultanément fragilisés</p>
         </header>
-        <div class="chart-canvas article-wide">
-          <img src="/uploads/charts/fig9_stabilizer_history.png"
-               alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <svg viewBox="0 0 680 340" preserveAspectRatio="xMidYMid meet" role="img"
-               aria-label="Matrice des stabilisateurs institutionnels lors des crises majeures depuis 1973"
-               style="display:none; width:100%; height:auto;">
-            <rect width="680" height="340" fill="var(--color-background-tertiary, #232328)" rx="4"/>
-            <text x="340" y="170" text-anchor="middle" fill="var(--color-text-tertiary, #76726B)"
-                  font-family="var(--font-data, monospace)" font-size="13">
-              [Chart placeholder — stabilisateurs institutionnels 1973-2026]
-            </text>
-          </svg>
+
+        <!-- Bar chart (Chart Engine V1.2 — vivid-bloomberg) -->
+        <div class="chart-canvas">
+          <img src="/uploads/charts/stabilisateurs_vivid-bloomberg_fr.png"
+               alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973 — barres groupées montrant la dégradation progressive"
+               width="1440" height="960" loading="lazy"
+               style="width:100%; height:auto; border-radius: 4px;">
         </div>
+
+        <!-- Data table — detailed reading -->
+        <div class="cotw-table-section article-body">
+          <div class="table-legend">
+            <span><span class="state state--ok"></span> Opérationnel</span>
+            <span><span class="state state--warn"></span> Sous tension</span>
+            <span><span class="state state--bad"></span> Dégradé / absent</span>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Crise</th>
+                <th>Swaps Fed</th>
+                <th>Indépendance Fed</th>
+                <th>Alliance atlantique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Choc pétrolier</strong> 1973-74</td>
+                <td><span class="state state--bad"></span><span class="state-label">Dégradé</span></td>
+                <td><span class="state state--bad"></span><span class="state-label">Dégradé</span></td>
+                <td><span class="state state--warn"></span><span class="state-label">Sous tension</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tournant Volcker</strong> 1979-82</td>
+                <td><span class="state state--warn"></span><span class="state-label">Sous tension</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+              </tr>
+              <tr>
+                <td><strong>Crise asiatique</strong> 1997-98</td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+              </tr>
+              <tr>
+                <td><strong>Crise financière</strong> 2008-09</td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+              </tr>
+              <tr>
+                <td><strong>COVID-19</strong> 2020</td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--ok"></span><span class="state-label">Opérationnel</span></td>
+                <td><span class="state state--warn"></span><span class="state-label">Sous tension</span></td>
+              </tr>
+              <tr>
+                <td><strong>Polycrisis Trump</strong> 2025-26</td>
+                <td><span class="state state--warn"></span><span class="state-label">Sous tension</span></td>
+                <td><span class="state state--warn"></span><span class="state-label">Sous tension</span></td>
+                <td><span class="state state--bad"></span><span class="state-label">Dégradé</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <footer class="chart-footer">
-          <ul class="chart-legend">
-            <li><span class="chart-legend-mark" style="background:#43A047"></span>Opérationnel</li>
-            <li><span class="chart-legend-mark" style="background:#FB8C00"></span>Sous tension</li>
-            <li><span class="chart-legend-mark" style="background:#E53935"></span>Dégradé / absent</li>
-          </ul>
-          <p class="chart-source">Source : FPSQ Vigie ; analyse historique des mécanismes institutionnels de stabilisation, six crises majeures 1973-2026.</p>
+          <p class="chart-source">Source : analyse historique des mécanismes institutionnels de stabilisation, six crises majeures 1973-2026. Voir <a href="/foresight/chart-stabilisateurs-polycrisis/">l'analyse complète</a> et le rapport <a href="/policy/reports/convergence-polycrisis/">La convergence des crises</a>.</p>
           <span class="chart-watermark">erickilama.com</span>
         </footer>
       </figure>
