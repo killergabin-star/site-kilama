@@ -13,7 +13,7 @@ tags:
   - chart-of-the-week
 summary: >
   Pour la première fois depuis Bretton Woods, les trois mécanismes institutionnels de stabilisation — lignes de swap de la Fed, indépendance de la politique monétaire et cohésion de l'Alliance atlantique — sont simultanément fragilisés. Le graphique retrace leur état lors des six crises majeures depuis 1973.
-image: /uploads/charts/fig9_stabilizer_history.png
+image: /uploads/charts/stabilisateurs_vivid-bloomberg_fr.png
 related:
   - /policy/briefs/polycrisis-stabilisateurs-qui-cede/
   - /policy/reports/convergence-polycrisis/
@@ -21,7 +21,7 @@ related:
 
 ## Chart of the Week — 16 avril 2026
 
-{{< figure src="/uploads/charts/fig9_stabilizer_history.png" alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973" caption="Source : analyse historique des mécanismes institutionnels de stabilisation, six crises majeures 1973-2026." >}}
+{{< figure src="/uploads/charts/stabilisateurs_vivid-bloomberg_fr.png" alt="État des trois stabilisateurs institutionnels lors des crises majeures depuis 1973 — barres groupées montrant la dégradation progressive" caption="Source : analyse historique des mécanismes institutionnels de stabilisation, six crises majeures 1973-2026." >}}
 
 ### Ce que montre le graphique
 

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title-stab desc-stab">
+<title id="title-stab">Pour la première fois depuis Bretton Woods, les trois stabilisateurs sont simultanément fragilisés</title>
+<desc id="desc-stab">État des trois stabilisateurs institutionnels lors des crises majeures, 1973-2026. Source : analyse historique.</desc>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap');
+  :root {
+    --font-display: "Newsreader", "GT Sectra", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-data: "IBM Plex Mono", "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+  .tnums { font-feature-settings: "tnum" 1, "lnum" 1; font-variant-numeric: tabular-nums lining-nums; }
+</style>
+<rect width="720" height="480" fill="#000000" />
+
+<!-- Eyebrow -->
+<text x="24" y="28" fill="#00BFFF" font-family="var(--font-data)" font-size="11" font-weight="500" letter-spacing="0.07em" class="tnums">GRAPHIQUE DE LA SEMAINE</text>
+
+<!-- Title -->
+<text x="24" y="57" fill="#E8E9EA" font-family="var(--font-display)" font-size="17" font-weight="500">Les trois stabilisateurs qui ont cédé</text>
+
+<!-- Subtitle -->
+<text x="24" y="78" fill="#9AA0A6" font-family="var(--font-display)" font-size="13" font-weight="400" font-style="italic">Pour la première fois depuis Bretton Woods, les trois stabilisateurs sont simultanément fragilisés</text>
+
+<!-- Legend -->
+<rect x="24" y="92" width="8" height="8" fill="#00E5C4" />
+<text x="38" y="100" fill="#E8E9EA" font-family="var(--font-data)" font-size="11" font-weight="500" class="tnums">Opérationnel</text>
+<rect x="140" y="92" width="8" height="8" fill="#FFC633" />
+<text x="154" y="100" fill="#E8E9EA" font-family="var(--font-data)" font-size="11" font-weight="500" class="tnums">Sous tension</text>
+<rect x="256" y="92" width="8" height="8" fill="#FF433D" />
+<text x="270" y="100" fill="#E8E9EA" font-family="var(--font-data)" font-size="11" font-weight="500" class="tnums">Dégradé / absent</text>
+
+<!-- ============ BARS ============ -->
+<!-- Bar area: y=125 to y=380, height=255 -->
+<!-- 6 groups centered at x: 80, 192, 304, 416, 528, 640 -->
+<!-- Each group: 3 bars, width=24, gap=4, offsets from center: -38, -12, +14 -->
+
+<!-- GROUP 1: Choc pétrolier 1973-74 — S=red F=red A=amber -->
+<rect x="42" y="125" width="24" height="255" fill="#FF433D" rx="1" />
+<text x="54" y="260" text-anchor="middle" fill="#FFFFFF" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="70" y="125" width="24" height="255" fill="#FF433D" rx="1" />
+<text x="82" y="260" text-anchor="middle" fill="#FFFFFF" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="98" y="125" width="24" height="255" fill="#FFC633" rx="1" />
+<text x="110" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- GROUP 2: Tournant Volcker 1979-82 — S=amber F=green A=green -->
+<rect x="154" y="125" width="24" height="255" fill="#FFC633" rx="1" />
+<text x="166" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="182" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="194" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="210" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="222" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- GROUP 3: Crise asiatique 1997-98 — all green -->
+<rect x="266" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="278" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="294" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="306" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="322" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="334" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- GROUP 4: Crise financière 2008-09 — all green -->
+<rect x="378" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="390" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="406" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="418" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="434" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="446" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- GROUP 5: COVID-19 2020 — S=green F=green A=amber -->
+<rect x="490" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="502" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="518" y="125" width="24" height="255" fill="#00E5C4" rx="1" />
+<text x="530" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="546" y="125" width="24" height="255" fill="#FFC633" rx="1" />
+<text x="558" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- AUJOURD'HUI dashed line -->
+<line x1="584" y1="115" x2="584" y2="390" stroke="#9AA0A6" stroke-width="1" stroke-dasharray="5,4" />
+<text x="584" y="112" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-data)" font-size="9" font-weight="500" letter-spacing="0.06em" class="tnums">AUJOURD'HUI</text>
+
+<!-- GROUP 6: Polycrisis Trump 2025-26 — S=amber F=amber A=red -->
+<rect x="602" y="125" width="24" height="255" fill="#FFC633" rx="1" />
+<text x="614" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">S</text>
+<rect x="630" y="125" width="24" height="255" fill="#FFC633" rx="1" />
+<text x="642" y="260" text-anchor="middle" fill="#000000" font-family="var(--font-body)" font-size="13" font-weight="700">F</text>
+<rect x="658" y="125" width="24" height="255" fill="#FF433D" rx="1" />
+<text x="670" y="260" text-anchor="middle" fill="#FFFFFF" font-family="var(--font-body)" font-size="13" font-weight="700">A</text>
+
+<!-- ============ X-AXIS LABELS ============ -->
+<text x="82" y="400" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">Choc pétrolier</text>
+<text x="82" y="414" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">1973-74</text>
+
+<text x="194" y="400" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">Tournant Volcker</text>
+<text x="194" y="414" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">1979-82</text>
+
+<text x="306" y="400" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">Crise asiatique</text>
+<text x="306" y="414" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">1997-98</text>
+
+<text x="418" y="400" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">Crise financière</text>
+<text x="418" y="414" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">2008-09</text>
+
+<text x="530" y="400" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">COVID-19</text>
+<text x="530" y="414" text-anchor="middle" fill="#9AA0A6" font-family="var(--font-body)" font-size="11" font-weight="400">2020</text>
+
+<text x="642" y="400" text-anchor="middle" fill="#E8E9EA" font-family="var(--font-body)" font-size="11" font-weight="500">Polycrisis Trump</text>
+<text x="642" y="414" text-anchor="middle" fill="#E8E9EA" font-family="var(--font-body)" font-size="11" font-weight="500">2025-26</text>
+
+<!-- ============ KEY ============ -->
+<text x="24" y="440" fill="#9AA0A6" font-family="var(--font-data)" font-size="10" font-weight="400" class="tnums">S = Lignes de swap Fed    F = Indépendance Fed    A = Cohésion Alliance atlantique</text>
+
+<!-- Source -->
+<text x="24" y="458" fill="#5F6368" font-family="var(--font-data)" font-size="10" font-weight="400" class="tnums">Source : analyse historique des mécanismes institutionnels de stabilisation, six crises majeures 1973-2026.</text>
+
+<!-- Brand -->
+<text x="696" y="472" text-anchor="end" fill="#5F6368" font-family="var(--font-data)" font-size="9" font-weight="400" letter-spacing="0.05em" class="tnums">erickilama.com</text>
+</svg>
