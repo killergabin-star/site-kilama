@@ -77,41 +77,22 @@
 }
 
 /* ---------- HOME HERO ACCENTS ---------- */
-.hero-editorial--home .h-display {
-  font-size: clamp(40px, 4.7vw, 68px);
-  max-width: 20ch;
-}
-
-.hero-editorial--home .h-display .h-line {
-  white-space: nowrap;
-}
-
+/* Sur Bloomberg (vivid-bloomberg) : deux teintes complémentaires,
+   premier em en cyan, second en violet — fait écho au DNA Variant-B
+   sans saturer. Reste lisible et structurel. */
 .hero-editorial--home .h-display em {
   font-style: italic;
   font-weight: 400;
-  color: #2251FF;
+  color: var(--brand-primary);
 }
 .hero-editorial--home .h-display em + br + em,
 .hero-editorial--home .h-display em:nth-of-type(2) {
-  color: #2251FF;
-}
-
-.hero-editorial--home .eyebrow--blue::before,
-.hero-editorial--home .cta-link--primary.cta-link--blue {
-  background: #2251FF;
-}
-
-.hero-editorial--home .hero-editorial-actions .cta-link:not(.cta-link--primary) {
-  color: #2251FF;
-  border-bottom-color: #2251FF;
-}
-
-[data-palette="vivid-bloomberg"] .wordmark-mark {
-  color: #2251FF;
+  color: var(--brand-secondary, var(--brand-primary));
 }
 
 /* Fallback Variant-A : un seul accent rouge sur les em */
-[data-palette="vivid-editorial"] .hero-editorial--home .h-display em {
+[data-palette="vivid-editorial"] .hero-editorial--home .h-display em,
+[data-palette="editorial-light"] .hero-editorial--home .h-display em {
   color: var(--brand-accent);
 }
 
@@ -123,9 +104,6 @@
   .hero-editorial-inner {
     grid-template-columns: 1fr;
     gap: 48px;
-  }
-  .hero-editorial--home .h-display .h-line {
-    white-space: normal;
   }
 }
 
@@ -304,111 +282,6 @@
   max-width: 680px;
 }
 
-/* ---------- OPERATIONAL INDICATORS PREVIEW ---------- */
-
-.home-operational {
-  border-top-color: rgba(34, 81, 255, 0.28);
-}
-
-.home-operational-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-5);
-  align-items: end;
-  margin-bottom: var(--space-5);
-}
-
-.home-operational-head .section-subtitle {
-  max-width: 66ch;
-}
-
-.home-operational-actions {
-  display: flex;
-  gap: var(--space-3);
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.home-operational-actions .action--muted {
-  color: var(--color-text-secondary);
-  border-bottom-color: var(--color-text-tertiary);
-}
-
-.home-operational-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-5);
-}
-
-.home-operational-card {
-  background: linear-gradient(135deg, rgba(44, 95, 138, 0.14), rgba(14, 15, 18, 0.72));
-  border: 1px solid rgba(34, 81, 255, 0.22);
-  border-left: 3px solid #2251FF;
-  padding: var(--space-5);
-}
-
-.home-operational-label {
-  font-family: var(--font-data, monospace);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #2251FF;
-  margin-bottom: var(--space-3);
-}
-
-.home-operational-card h3 {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 2.2vw, 30px);
-  line-height: 1.16;
-  margin: 0 0 var(--space-3);
-  color: var(--color-text-primary);
-}
-
-.home-operational-card p {
-  font-size: var(--fs-body-sm);
-  line-height: var(--lh-body-sm);
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-4);
-}
-
-.home-operational-metrics {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
-  border-top: 1px solid var(--color-border-tertiary);
-  padding-top: var(--space-3);
-}
-
-.home-operational-metrics span {
-  display: block;
-  font-family: var(--font-data, monospace);
-  font-size: clamp(22px, 2.3vw, 32px);
-  line-height: 1;
-  color: var(--brand-primary);
-}
-
-.home-operational-metrics small {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  line-height: 1.35;
-  color: var(--color-text-tertiary);
-}
-
-@media (max-width: 760px) {
-  .home-operational-head,
-  .home-operational-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-operational-actions {
-    justify-content: flex-start;
-  }
-}
-
 /* ---------- AFFILIATIONS ---------- */
 
 .affiliations {
@@ -458,21 +331,28 @@
   background: transparent;
   border: none;
   margin: 0 auto;
-  /* Soft fade vers le fond aux bords + bas — gomme tout résidu de halo */
+}
+
+/* Mask radial uniquement en dark mode — gomme le halo studio sur fond noir.
+   En light mode (fond blanc/cream), la photo N&B est déjà propre, pas de mask. */
+[data-palette="vivid-bloomberg"] .hero-editorial-portrait .portrait-photo,
+[data-palette="vivid-editorial"] .hero-editorial-portrait .portrait-photo {
   -webkit-mask-image:
     radial-gradient(
-      ellipse 75% 80% at 50% 42%,
-      #000 55%,
-      rgba(0,0,0,0.92) 72%,
-      rgba(0,0,0,0.4) 90%,
+      ellipse 70% 78% at 50% 38%,
+      #000 35%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.55) 75%,
+      rgba(0,0,0,0.15) 92%,
       transparent 100%
     );
   mask-image:
     radial-gradient(
-      ellipse 75% 80% at 50% 42%,
-      #000 55%,
-      rgba(0,0,0,0.92) 72%,
-      rgba(0,0,0,0.4) 90%,
+      ellipse 70% 78% at 50% 38%,
+      #000 35%,
+      rgba(0,0,0,0.95) 55%,
+      rgba(0,0,0,0.55) 75%,
+      rgba(0,0,0,0.15) 92%,
       transparent 100%
     );
 }
@@ -555,11 +435,117 @@
   margin: 0;
 }
 
+/* ---------- RESEARCH TRANSVERSAL ---------- */
+
+.home-research-transversal {
+  margin-top: var(--space-4);
+}
+
+.home-research-axis--transversal {
+  border-left: 3px solid var(--brand-primary) !important;
+  background: linear-gradient(135deg, rgba(34, 81, 255, 0.06), transparent);
+}
+
+/* ---------- OPERATIONAL INDICATORS PREVIEW ---------- */
+
+.home-operational {
+  border-top-color: rgba(34, 81, 255, 0.28);
+}
+
+.home-operational-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-5);
+  align-items: end;
+  margin-bottom: var(--space-5);
+}
+
+.home-operational-head .section-subtitle {
+  max-width: 66ch;
+}
+
+.home-operational-actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.home-operational-actions .action--muted {
+  color: var(--color-text-secondary);
+  border-bottom-color: var(--color-text-tertiary);
+}
+
+.home-operational-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.home-operational-card {
+  background: linear-gradient(135deg, rgba(44, 95, 138, 0.14), rgba(14, 15, 18, 0.72));
+  border: 1px solid rgba(34, 81, 255, 0.22);
+  border-left: 3px solid var(--brand-primary, #2251FF);
+  padding: var(--space-5);
+}
+
+.home-operational-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-primary, #2251FF);
+  margin-bottom: var(--space-2);
+}
+
+.home-operational-card h3 {
+  font-size: var(--fs-h3);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.home-operational-card p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.home-operational-metrics {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.home-operational-metrics span {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--color-text-primary);
+  display: block;
+}
+
+.home-operational-metrics small {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  display: block;
+  margin-top: 2px;
+}
+
+/* ---------- MOBILE ---------- */
+
 @media (max-width: 760px) {
   .home-research-tease {
     padding: 48px 24px;
   }
   .home-research-grid {
     grid-template-columns: 1fr;
+  }
+  .home-operational-head,
+  .home-operational-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-operational-actions {
+    justify-content: flex-start;
   }
 }

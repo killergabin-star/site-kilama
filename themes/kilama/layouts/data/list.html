@@ -2,7 +2,7 @@
 <style>
 /* ====== DATA ROOM — FPSQ Dashboard ====== */
 .dashboard { max-width: 1200px; margin: 0 auto; padding: 120px 40px 80px; }
-.dashboard-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 32px; }
+.dashboard-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
 .page-title { font-family: var(--font-ui, Inter, sans-serif); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brand-primary, #00BFFF); margin-bottom: 8px; }
 .page-heading { font-family: var(--font-display, Newsreader, serif); font-size: 32px; font-weight: 500; color: var(--color-text-primary, #E8E9EA); margin-bottom: 0; line-height: 1.2; }
 .dashboard-timestamp { font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; color: var(--color-text-tertiary, #5F6368); }
@@ -80,31 +80,6 @@
 .data-table .neg { color: var(--state-bad, #FF4757); }
 .table-note { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; color: var(--color-text-tertiary); margin-top: 12px; }
 
-/* Operational indicators */
-.operational-panel { background: linear-gradient(135deg, rgba(44,95,138,0.16), rgba(14,15,18,0.92)); border: 1px solid rgba(0,191,255,0.18); padding: 28px; margin-bottom: 48px; }
-.operational-header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; margin-bottom: 24px; }
-.operational-kicker { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: var(--brand-primary, #00BFFF); margin-bottom: 8px; }
-.operational-title { font-family: var(--font-display, Newsreader, serif); font-size: 28px; font-weight: 500; color: var(--color-text-primary, #E8E9EA); line-height: 1.15; margin: 0; }
-.operational-note { max-width: 360px; font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; line-height: 1.5; color: var(--color-text-tertiary, #9AA0A6); }
-.operational-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.operational-card { background: rgba(8,9,12,0.72); border: 1px solid rgba(232,233,234,0.12); padding: 22px; display: flex; flex-direction: column; gap: 16px; }
-.operational-card-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
-.operational-label { font-family: var(--font-ui, Inter, sans-serif); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--state-warn, #FFC633); }
-.operational-status { font-family: var(--font-ui, Inter, sans-serif); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--state-neutral, #9AA0A6); border: 1px solid rgba(154,160,166,0.35); padding: 4px 7px; white-space: nowrap; }
-.operational-card h3 { font-family: var(--font-display, Newsreader, serif); font-size: 22px; line-height: 1.2; color: var(--color-text-primary, #E8E9EA); margin: 2px 0 0; }
-.operational-question { font-family: var(--font-ui, Inter, sans-serif); font-size: 13px; line-height: 1.55; color: var(--color-text-secondary, #C6C8CC); margin: 0; }
-.operational-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.operational-metric { border-top: 1px solid rgba(232,233,234,0.12); padding-top: 12px; }
-.operational-metric-value { font-family: var(--font-data, 'IBM Plex Mono', monospace); font-size: 24px; color: var(--brand-primary, #00BFFF); line-height: 1; }
-.operational-metric-label { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; color: var(--color-text-tertiary, #9AA0A6); margin-top: 6px; }
-.operational-meta { display: grid; gap: 6px; font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; color: var(--color-text-tertiary, #9AA0A6); }
-.operational-meta strong { color: var(--color-text-secondary, #C6C8CC); }
-.operational-rank-table { width: 100%; border-collapse: collapse; font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; }
-.operational-rank-table th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-text-tertiary, #9AA0A6); padding: 7px 0; border-bottom: 1px solid rgba(232,233,234,0.12); }
-.operational-rank-table td { color: var(--color-text-primary, #E8E9EA); padding: 7px 0; border-bottom: 1px solid rgba(232,233,234,0.08); }
-.operational-rank-table td:last-child, .operational-rank-table th:last-child { text-align: right; }
-.operational-positioning { font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; line-height: 1.5; color: var(--color-text-tertiary, #9AA0A6); border-left: 2px solid var(--brand-primary, #00BFFF); padding-left: 12px; margin: 0; }
-
 /* Scenario colors */
 :root {
   --sc-reform: #228833; --sc-cooperative: #4477AA; --sc-sq: #CCBB44;
@@ -113,20 +88,13 @@
 
 @media (max-width: 900px) {
   .dashboard { padding: 100px 1.5rem 60px; }
-  .dashboard-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .metric-row { grid-template-columns: repeat(2, 1fr); }
   .dashboard-body { grid-template-columns: 1fr; }
   .dashboard-sidebar { position: static; }
   .comparison-grid { grid-template-columns: 1fr; }
-  .operational-header { flex-direction: column; align-items: flex-start; }
-  .operational-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .page-heading { font-size: 30px; }
-  .dashboard-timestamp { line-height: 1.4; }
   .metric-row { grid-template-columns: 1fr; }
-  .operational-panel { padding: 20px; }
-  .operational-metrics { grid-template-columns: 1fr; }
 }
 
 /* ====== FPSQ INDICATORS SECTION ====== */
@@ -630,6 +598,29 @@
   .data-indicator-grid { grid-template-columns: 1fr; }
   .data-risk-legend { flex-direction: column; gap: 8px; }
 }
+
+/* ====== OPERATIONAL INDICATORS PANEL ====== */
+.operational-panel { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--color-border-primary, rgba(232,233,234,0.15)); }
+.operational-header { margin-bottom: 24px; }
+.operational-kicker { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--brand-primary, #2C5F8A); margin-bottom: 8px; }
+.operational-title { font-family: var(--font-display, Newsreader, serif); font-size: 24px; font-weight: 500; color: var(--color-text-primary, #E8E9EA); margin-bottom: 12px; line-height: 1.3; }
+.operational-note { font-family: var(--font-ui, Inter, sans-serif); font-size: 13px; color: var(--color-text-secondary, #9AA0A6); max-width: 72ch; line-height: 1.5; }
+.operational-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.operational-card { background: var(--color-background-secondary, rgba(14,15,18,0.6)); border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.1)); border-left: 3px solid var(--brand-primary, #2C5F8A); padding: 24px; }
+.operational-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.operational-label { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-primary, #2C5F8A); margin-bottom: 4px; }
+.operational-card h3 { font-family: var(--font-display, Newsreader, serif); font-size: 18px; font-weight: 500; color: var(--color-text-primary, #E8E9EA); margin: 0; }
+.operational-status { font-family: var(--font-ui, Inter, sans-serif); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border: 1px solid var(--color-border-secondary, rgba(232,233,234,0.15)); color: var(--color-text-tertiary, #5F6368); white-space: nowrap; }
+.operational-question { font-family: var(--font-ui, Inter, sans-serif); font-size: 13px; color: var(--color-text-secondary, #9AA0A6); line-height: 1.5; margin-bottom: 16px; }
+.operational-metrics { display: flex; gap: 24px; margin-bottom: 16px; }
+.operational-metric-value { font-family: var(--font-ui, Inter, sans-serif); font-size: 28px; font-weight: 300; color: var(--color-text-primary, #E8E9EA); line-height: 1.1; }
+.operational-metric-label { font-family: var(--font-ui, Inter, sans-serif); font-size: 11px; color: var(--color-text-tertiary, #5F6368); margin-top: 4px; }
+.operational-meta { font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; color: var(--color-text-tertiary, #5F6368); line-height: 1.6; margin-bottom: 16px; border-top: 1px solid var(--color-border-primary, rgba(232,233,234,0.1)); padding-top: 12px; }
+.operational-rank-table { width: 100%; border-collapse: collapse; font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; margin-bottom: 12px; }
+.operational-rank-table th { text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-text-tertiary, #5F6368); padding: 6px 8px; border-bottom: 1px solid var(--color-border-primary, rgba(232,233,234,0.15)); }
+.operational-rank-table td { padding: 6px 8px; color: var(--color-text-secondary, #9AA0A6); border-bottom: 1px solid var(--color-border-primary, rgba(232,233,234,0.06)); }
+.operational-positioning { font-family: var(--font-ui, Inter, sans-serif); font-size: 12px; color: var(--color-text-tertiary, #5F6368); font-style: italic; line-height: 1.5; }
+@media (max-width: 900px) { .operational-grid { grid-template-columns: 1fr; } }
 </style>
 {{ end }}
 
@@ -704,7 +695,7 @@
   {{ end }}
 
   <!-- KPI ROW -->
-  <div class="section-label">Snapshot macro — prototype non live</div>
+  <div class="section-label">Key Indicators — Status Quo Scenario</div>
   <div class="metric-row">
     <div class="metric-card">
       <div class="metric-label">GDP Growth (AE)</div>
@@ -737,9 +728,9 @@
       </div>
     </div>
     <div class="metric-card">
-      <div class="metric-label">APD DAC 2025</div>
-      <div class="metric-value">-23.1%</div>
-      <div class="metric-trend down">&#9660; -23.1% vs 2024</div>
+      <div class="metric-label">ODA / GNI Ratio</div>
+      <div class="metric-value">0.33%</div>
+      <div class="metric-trend down">&#9660; -0.04pp vs 2024</div>
       <div class="metric-sparkline">
         <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none">
           <polyline points="0,8 20,9 40,10 60,11 80,12 100,13 120,14 140,15 160,16 180,17 200,18" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
@@ -752,7 +743,7 @@
 
     <!-- SIDEBAR -->
     <div class="dashboard-sidebar">
-      <div class="section-label">Scénarios actifs</div>
+      <div class="section-label">Active Scenarios</div>
       <div class="scenario-panel">
         <div class="scenario-badge" style="border-color: var(--sc-cooperative);">
           <div class="scenario-dot" style="background: var(--sc-cooperative);"></div>
@@ -781,7 +772,7 @@
         </div>
       </div>
 
-      <div class="section-label" style="margin-top: 32px;">Alertes Vigie</div>
+      <div class="section-label" style="margin-top: 32px;">Vigie Alerts</div>
       <div class="alert-card medium">
         <div class="alert-severity">Watch</div>
         <div class="alert-content">
@@ -910,7 +901,7 @@
             <tr><td>Inflation (AE)</td><td class="num">2.2%</td><td class="num">2.5%</td><td class="num">2.0%</td><td class="num"><span class="neg">4.8%</span></td><td class="num">1.8%</td></tr>
             <tr><td>Sovereign Spread (EMDE, bp)</td><td class="num"><span class="pos">280</span></td><td class="num">320</td><td class="num"><span class="pos">250</span></td><td class="num"><span class="neg">520</span></td><td class="num"><span class="neg">680</span></td></tr>
             <tr><td>Debt/GDP (AE)</td><td class="num">108%</td><td class="num">115%</td><td class="num"><span class="pos">102%</span></td><td class="num"><span class="neg">128%</span></td><td class="num"><span class="neg">142%</span></td></tr>
-            <tr><td>APD DAC 2025</td><td class="num"><span class="neg">-23.1%</span></td><td class="num"><span class="neg">-23.1%</span></td><td class="num"><span class="neg">-23.1%</span></td><td class="num"><span class="neg">-23.1%</span></td><td class="num"><span class="neg">-23.1%</span></td></tr>
+            <tr><td>ODA/GNI</td><td class="num">0.35%</td><td class="num">0.33%</td><td class="num"><span class="pos">0.38%</span></td><td class="num"><span class="neg">0.28%</span></td><td class="num"><span class="neg">0.25%</span></td></tr>
             <tr><td>Financial Stress Index</td><td class="num"><span class="pos">35</span></td><td class="num">42</td><td class="num"><span class="pos">30</span></td><td class="num"><span class="neg">65</span></td><td class="num"><span class="neg">78</span></td></tr>
           </tbody>
         </table>
