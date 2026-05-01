@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Coins cascade thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #FAF8F3)"/>
+  <g id="slot-main">
+    <path d="M0 118 C88 155 176 179 300 176" fill="none" stroke="var(--svg-accent, #B81628)" stroke-width="34"/>
+    <circle cx="86" cy="70" r="24" fill="var(--svg-paper, #F6F4F0)" stroke="var(--svg-ink, #1A1815)" stroke-width="4"/>
+    <circle cx="145" cy="94" r="21" fill="var(--svg-paper, #F6F4F0)" stroke="var(--svg-ink, #1A1815)" stroke-width="4"/>
+    <circle cx="201" cy="124" r="17" fill="var(--svg-paper, #F6F4F0)" stroke="var(--svg-ink, #1A1815)" stroke-width="4"/>
+    <circle cx="251" cy="151" r="13" fill="var(--svg-paper, #F6F4F0)" stroke="var(--svg-ink, #1A1815)" stroke-width="4"/>
+  </g>
+  <g id="slot-secondary">
+    <rect x="308" y="148" width="48" height="30" fill="var(--svg-ink, #1A1815)"/>
+    <rect x="318" y="132" width="28" height="20" fill="var(--svg-accent, #B81628)"/>
+  </g>
+</svg>

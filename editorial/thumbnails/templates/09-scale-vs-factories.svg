@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Scale versus factories thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #0E0E10)"/>
+  <g id="slot-main" stroke="var(--svg-paper, #F6F4F0)" stroke-width="5" fill="none">
+    <path d="M200 44 V178"/>
+    <path d="M104 62 H296"/>
+    <path d="M104 62 L76 154 H132 Z"/>
+    <path d="M296 62 L264 154 H332 Z"/>
+  </g>
+  <g id="slot-secondary" fill="var(--svg-accent, #E6203A)">
+    <path d="M268 154 V112 L286 126 V104 L304 119 V98 L328 116 V154 Z"/>
+    <path d="M286 91 C315 71 344 83 362 58 C357 95 329 111 291 105 Z" opacity="0.72"/>
+  </g>
+  <g fill="var(--svg-paper, #F6F4F0)">
+    <rect x="86" y="112" width="12" height="42"/>
+    <rect x="104" y="96" width="12" height="58"/>
+    <rect x="122" y="79" width="12" height="75"/>
+  </g>
+</svg>

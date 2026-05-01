@@ -1,0 +1,67 @@
+{
+  "provider": "openai-cli",
+  "created_at": "2026-04-30T07:22:19.532Z",
+  "briefs": [
+    {
+      "slug": "ormuz-food-security",
+      "article": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+      "prompt": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "borrowers-platform",
+      "article": "La Borrowers' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+      "prompt": "Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "article": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+      "prompt": "Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "article": "À qui profitent les sanctions ? Mise à jour 2026 — Iran, Ormuz, fragmentation sanctionnatoire",
+      "prompt": "Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text."
+    }
+  ],
+  "style_inputs": [
+    "ref-01-economist-light.jpg",
+    "ref-02-economist-columns.jpg",
+    "ref-03-foreignaffairs-dark.jpg",
+    "ref-04-foreignaffairs-covers.jpg",
+    "ref-05-mixed-editorial.jpg"
+  ],
+  "palette": {
+    "name": "erickilama-policy-editorial-light",
+    "colors": [
+      "#101014",
+      "#FFF7E8",
+      "#E63846",
+      "#7CB7E6",
+      "#F4CC58",
+      "#8BCB8F",
+      "#15203C"
+    ]
+  },
+  "results": [
+    {
+      "slug": "ormuz-food-security",
+      "out": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/ormuz-food-security.png",
+      "stdout": "{\n  \"endpoint\": \"/v1/images/generations\",\n  \"model\": \"gpt-image-2\",\n  \"n\": 1,\n  \"output_format\": \"png\",\n  \"outputs\": [\n    \"/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/ormuz-food-security.png\"\n  ],\n  \"outputs_downscaled\": null,\n  \"prompt\": \"Primary request: A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text.\\n\\nVisual direction: adult press illustration for a premium policy publication. Use a clear metaphor, strong composition, sophisticated flat colour, refined ink texture, not childish, not corporate infographic. No readable text, no logos, no flags, no public figures.\",\n  \"quality\": \"high\",\n  \"size\": \"1536x864\"\n}\n"
+    },
+    {
+      "slug": "borrowers-platform",
+      "out": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/borrowers-platform.png",
+      "stdout": "{\n  \"endpoint\": \"/v1/images/generations\",\n  \"model\": \"gpt-image-2\",\n  \"n\": 1,\n  \"output_format\": \"png\",\n  \"outputs\": [\n    \"/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/borrowers-platform.png\"\n  ],\n  \"outputs_downscaled\": null,\n  \"prompt\": \"Primary request: Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text.\\n\\nVisual direction: adult press illustration for a premium policy publication. Use a clear metaphor, strong composition, sophisticated flat colour, refined ink texture, not childish, not corporate infographic. No readable text, no logos, no flags, no public figures.\",\n  \"quality\": \"high\",\n  \"size\": \"1536x864\"\n}\n"
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "out": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/sme-geopolitical-fragility.png",
+      "stdout": "{\n  \"endpoint\": \"/v1/images/generations\",\n  \"model\": \"gpt-image-2\",\n  \"n\": 1,\n  \"output_format\": \"png\",\n  \"outputs\": [\n    \"/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/sme-geopolitical-fragility.png\"\n  ],\n  \"outputs_downscaled\": null,\n  \"prompt\": \"Primary request: Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text.\\n\\nVisual direction: adult press illustration for a premium policy publication. Use a clear metaphor, strong composition, sophisticated flat colour, refined ink texture, not childish, not corporate infographic. No readable text, no logos, no flags, no public figures.\",\n  \"quality\": \"high\",\n  \"size\": \"1536x864\"\n}\n"
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "out": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/sanctions-shadow-routes.png",
+      "stdout": "{\n  \"endpoint\": \"/v1/images/generations\",\n  \"model\": \"gpt-image-2\",\n  \"n\": 1,\n  \"output_format\": \"png\",\n  \"outputs\": [\n    \"/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/external-benchmark/outputs/openai/sanctions-shadow-routes.png\"\n  ],\n  \"outputs_downscaled\": null,\n  \"prompt\": \"Primary request: Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text.\\n\\nVisual direction: adult press illustration for a premium policy publication. Use a clear metaphor, strong composition, sophisticated flat colour, refined ink texture, not childish, not corporate infographic. No readable text, no logos, no flags, no public figures.\",\n  \"quality\": \"high\",\n  \"size\": \"1536x864\"\n}\n"
+    }
+  ]
+}

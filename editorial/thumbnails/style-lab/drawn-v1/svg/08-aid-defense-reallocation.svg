@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.08"/></feComponentTransfer>
+    </filter>
+    <pattern id="dotgrid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#111116" opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="480" height="270" rx="0" fill="#F1DFA6" stroke="none" stroke-width="0"/>
+  <rect x="0" y="0" width="480" height="270" rx="0" fill="white" stroke="none" stroke-width="0"/>
+  <rect width="480" height="270" fill="#F1DFA6"/>
+  <rect width="480" height="270" filter="url(#paper)" opacity="0.55"/>
+  <line x1="240" y1="54" x2="240" y2="215" stroke="#111116" stroke-width="6" stroke-linecap="round"/><line x1="105" y1="102" x2="375" y2="102" stroke="#111116" stroke-width="6" stroke-linecap="round"/><path d="M118 102 L75 190 L161 190 Z" fill="none" stroke="#111116" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M360 102 L310 214 L415 214 Z" fill="none" stroke="#111116" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="92" y="160" width="52" height="30" rx="0" fill="#8BBF8A" stroke="#111116" stroke-width="3"/><polygon points="98,160 118,140 138,160" fill="#F8F1E3" stroke="#111116" stroke-width="3" stroke-linejoin="round"/><path d="M330 160 L360 130 L390 160 L380 205 L340 205 Z" fill="#17213B" stroke="#111116" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><line x1="350" y1="172" x2="370" y2="192" stroke="#E23B4A" stroke-width="5" stroke-linecap="round"/><path d="M160 188 C222 172 260 174 326 150" fill="none" stroke="#E23B4A" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/><circle cx="240" cy="222" r="24" fill="#F8F1E3" stroke="#111116" stroke-width="4"/>
+</svg>

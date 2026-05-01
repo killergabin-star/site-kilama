@@ -1,0 +1,15 @@
+policy-compatible-v1
+source: /Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/local-drawthings/outputs/playground-v25-batch02
+created: 2026-04-30T14:25:32Z
+
+Policy palette anchors:
+- dark background: #0E0E10, #18181C, #232328
+- dark text/accent: #F6F4F0, #B8B4AC, #E6203A
+- light background: #FAF8F3, #F2EDE6, #E8E2D6
+- light text/accent: #1A1815, #4A4742, #B81628
+
+Folders:
+- balanced-800 / balanced-400: cropped 16:9, mild restraint, one-version-fits-both candidate.
+- dark-800 / dark-400: darker grade for vivid-editorial.
+- light-800 / light-400: cream grade for editorial-light.
+- previews: contact sheets without labels to avoid fake typography.

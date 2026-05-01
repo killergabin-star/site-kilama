@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9 L9 0" stroke="#101014" stroke-width="1" opacity="0.18"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#101014" opacity="0.16"/></pattern>
+  </defs>
+  <rect width="480" height="270" fill="#15203C"/>
+  <g filter="url(#wobble)">
+  <path d="M195 35 L318 35 L354 95 L329 209 L258 242 L187 209 L162 95 Z" fill="#FFF7E8" stroke="#FFF7E8" stroke-width="0" stroke-linejoin="round" stroke-linecap="round"/><path d="M195 35 L318 35 L354 95 L329 209 L258 242 L187 209 L162 95 Z" fill="none" stroke="#101014" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M198 72 L257 66 L248 132 L181 121 Z" fill="#7CB7E6" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M267 66 L326 74 L342 123 L269 132 Z" fill="#F4CC58" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M184 137 L248 148 L235 203 L197 185 Z" fill="#8BCB8F" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M269 148 L336 137 L318 185 L280 204 Z" fill="#F39A69" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><rect x="361" y="110" width="43" height="48" rx="7" fill="#E63846" stroke="#FFF7E8" stroke-width="5"/><line x1="404" y1="134" x2="458" y2="134" stroke="#E63846" stroke-width="9" stroke-linecap="round"/><line x1="46" y1="66" x2="162" y2="97" stroke="#FFF7E8" stroke-width="4" stroke-linecap="round"/><line x1="46" y1="95" x2="162" y2="126" stroke="#FFF7E8" stroke-width="4" stroke-linecap="round"/><line x1="46" y1="124" x2="162" y2="155" stroke="#FFF7E8" stroke-width="4" stroke-linecap="round"/><circle cx="81" cy="213" r="14" fill="#E63846" stroke="#FFF7E8" stroke-width="3"/><circle cx="120" cy="219" r="11" fill="#9EA3A8" stroke="#FFF7E8" stroke-width="3"/>
+  </g>
+</svg>

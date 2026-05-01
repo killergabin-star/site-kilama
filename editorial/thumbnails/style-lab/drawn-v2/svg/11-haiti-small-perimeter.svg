@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9 L9 0" stroke="#101014" stroke-width="1" opacity="0.18"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#101014" opacity="0.16"/></pattern>
+  </defs>
+  <rect width="480" height="270" fill="#B9DCCB"/>
+  <g filter="url(#wobble)">
+  <path d="M155 79 C206 47 287 64 325 112 C360 156 322 210 249 218 C170 227 111 175 124 123 C129 103 139 90 155 79 Z" fill="#E7CE9D" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><rect x="176" y="137" width="28" height="35" rx="2" fill="#FFF7E8" stroke="#101014" stroke-width="4"/><rect x="213" y="159" width="28" height="35" rx="2" fill="#F39A69" stroke="#101014" stroke-width="4"/><rect x="250" y="137" width="28" height="35" rx="2" fill="#7CB7E6" stroke="#101014" stroke-width="4"/><rect x="287" y="159" width="28" height="35" rx="2" fill="#F4CC58" stroke="#101014" stroke-width="4"/><path d="M128 116 C172 65 276 58 328 105 C375 151 337 219 255 228 C166 238 99 181 128 116 Z" fill="none" stroke="#FFF7E8" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><path d="M91 88 C155 18 315 21 382 92 C438 154 392 250 266 255 C134 260 42 174 91 88 Z" fill="none" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M230 94 L246 145 L220 179 L248 222" fill="none" stroke="#E63846" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M128 116 C172 65 276 58 328 105" fill="none" stroke="#E63846" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/><rect x="56" y="189" width="22" height="43" rx="3" fill="#9EA3A8" stroke="#101014" stroke-width="4"/><rect x="401" y="189" width="22" height="43" rx="3" fill="#9EA3A8" stroke="#101014" stroke-width="4"/>
+  </g>
+</svg>

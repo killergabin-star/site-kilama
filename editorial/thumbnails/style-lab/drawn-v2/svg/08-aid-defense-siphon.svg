@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9 L9 0" stroke="#101014" stroke-width="1" opacity="0.18"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#101014" opacity="0.16"/></pattern>
+  </defs>
+  <rect width="480" height="270" fill="#FFF0B5"/>
+  <g filter="url(#wobble)">
+  <line x1="240" y1="49" x2="240" y2="224" stroke="#101014" stroke-width="7" stroke-linecap="round"/><line x1="82" y1="97" x2="398" y2="97" stroke="#101014" stroke-width="7" stroke-linecap="round"/><path d="M124 97 L72 201 H176 Z" fill="#FFF7E8" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M358 97 L296 224 H425 Z" fill="#FFF7E8" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><rect x="94" y="185" width="54" height="36" rx="0" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><polygon points="94,185 108,168 122,185 135,168 148,185" fill="#8BCB8F" stroke="#101014" stroke-width="4" stroke-linejoin="round"/><rect x="101" y="198" width="10" height="23" rx="0" fill="#FFF7E8" stroke="#101014" stroke-width="2"/><rect x="124" y="198" width="14" height="12" rx="0" fill="#7CB7E6" stroke="#101014" stroke-width="2"/><path d="M333 145 L360 115 L390 145 L380 204 L343 204 Z" fill="#15203C" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M350 163 L374 191" fill="none" stroke="#E63846" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M169 193 C235 178 271 169 326 145" fill="none" stroke="#E63846" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/><circle cx="240" cy="225" r="22" fill="#FFF7E8" stroke="#101014" stroke-width="5"/><rect x="35" y="46" width="72" height="20" rx="2" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><rect x="43" y="34" width="72" height="20" rx="2" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><circle cx="80" cy="44" r="8" fill="#FFF7E8" stroke="#101014" stroke-width="3"/>
+  </g>
+</svg>

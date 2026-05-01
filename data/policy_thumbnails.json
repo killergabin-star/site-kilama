@@ -1,0 +1,332 @@
+{
+  "/policy/briefs/apd-g7-spring-meetings/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-apd-g7-spring-meetings.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/briefs/fragilite-par-la-base-pme-geopolitique/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/briefs-fragilite-par-la-base-pme-geopolitique.svg",
+    "source": "themes/kilama/static/thumbnails/custom/pme-fragilite.svg"
+  },
+  "/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/briefs-polycrisis-afrique-pma-contraction-silencieuse.svg",
+    "source": "themes/kilama/static/thumbnails/custom/pma-contraction.svg"
+  },
+  "/policy/briefs/polycrisis-cinq-mondes-gradient/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-polycrisis-cinq-mondes-gradient.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/briefs/polycrisis-europe-compensation-financiere/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-polycrisis-europe-compensation-financiere.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/briefs/polycrisis-evian/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-polycrisis-evian.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/briefs/polycrisis-stabilisateurs-qui-cede/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/briefs-polycrisis-stabilisateurs-qui-cede.svg",
+    "source": "themes/kilama/static/thumbnails/custom/stabilisateurs.svg"
+  },
+  "/policy/briefs/rearm-europe-policy-brief/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-rearm-europe-policy-brief.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/briefs/reconfiguration-energetique-ormuz/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-reconfiguration-energetique-ormuz.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/briefs/second-china-shock/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/briefs-second-china-shock.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/briefs/spring-meetings-2026/j1-soft-landing-declasse/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/briefs-spring-meetings-2026-j1-soft-landing-declasse.svg",
+    "source": "themes/kilama/static/thumbnails/custom/soft-landing.svg"
+  },
+  "/policy/briefs/trump-ii-configuration-babylonienne/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/briefs-trump-ii-configuration-babylonienne.svg",
+    "source": "themes/kilama/static/thumbnails/custom/babylone.svg"
+  },
+  "/policy/debates/gopinath-pettis-dollar-deficit/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/debates-gopinath-pettis-dollar-deficit.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/debates/hickel-ajustement-structurel/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/debates-hickel-ajustement-structurel.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/1100-kenyans-haiti-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-1100-kenyans-haiti-update-2026.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/1100-kenyans-haiti/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-1100-kenyans-haiti.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/acceleration-reforme-afi-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-acceleration-reforme-afi-update-2026.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/acceleration-reforme-afi/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-acceleration-reforme-afi.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/afrique-triangle-evian/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-afrique-triangle-evian.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/aide-crise-identite-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-aide-crise-identite-update-2026.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/aide-crise-identite/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-aide-crise-identite.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/apd-defense-reallocation/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-apd-defense-reallocation.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/bilan-g7-mae/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-bilan-g7-mae.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/borrowers-club-coordination-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-borrowers-club-coordination-update-2026.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/borrowers-club-coordination/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-borrowers-club-coordination.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/borrowers-platform-spring-meetings-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-borrowers-platform-spring-meetings-2026.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/choc-ormuz-securite-alimentaire-afrique/": {
+    "strategy": "custom",
+    "path": "/thumbnails/policy/notes-choc-ormuz-securite-alimentaire-afrique.svg",
+    "source": "themes/kilama/static/thumbnails/custom/choc-ormuz.svg"
+  },
+  "/policy/notes/crise_iranienne_finance_guerre_russe/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-crise-iranienne-finance-guerre-russe.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/eu-trade-geopolitics-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-eu-trade-geopolitics-update-2026.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/eu-trade-geopolitics/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-eu-trade-geopolitics.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/france-presidence-g7-contraintes/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-france-presidence-g7-contraintes.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/gopinath-pettis-deficit-courant/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-gopinath-pettis-deficit-courant.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/notes/haiti-2025-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-haiti-2025-update-2026.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/haiti-2025/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-haiti-2025.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/hickel-ajustement-structurel-proces/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-hickel-ajustement-structurel-proces.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/ifi-allocation-geopolitique/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ifi-allocation-geopolitique.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/iran-pause-trois-lectures/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-iran-pause-trois-lectures.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/iran-scenarios-moyen-orient/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-iran-scenarios-moyen-orient.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/jetp-failing-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-jetp-failing-update-2026.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
+  },
+  "/policy/notes/jetp-failing/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-jetp-failing.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
+  },
+  "/policy/notes/migration-cohesion-europe/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-migration-cohesion-europe.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/non-expedit-recours-souverain-vatican/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-non-expedit-recours-souverain-vatican.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/northern-donor-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-northern-donor-update-2026.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/northern-donor/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-northern-donor.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/ormuz-choc-petrolier-xxi/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ormuz-choc-petrolier-xxi.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/polycrisis-transmission-asie/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-polycrisis-transmission-asie.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/notes/rearm-europe-autonomie-defense/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-rearm-europe-autonomie-defense.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/rearm_europe_dependance/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-rearm-europe-dependance.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/routes-rail-afrique-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-routes-rail-afrique-update-2026.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/routes-rail-afrique/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-routes-rail-afrique.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/safe-green-deal-dilemme-industriel/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-safe-green-deal-dilemme-industriel.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/section122_chaos_tarifaire/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-section122-chaos-tarifaire.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/soudan-guerre-invisible/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-soudan-guerre-invisible.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/transition-energetique-apres-ormuz/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-transition-energetique-apres-ormuz.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
+  },
+  "/policy/notes/triangle_impossible_evian/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-triangle-impossible-evian.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/trump-ii-nouveau-nabuchodonosor/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-trump-ii-nouveau-nabuchodonosor.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/trump-xi-enjeux/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-trump-xi-enjeux.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/unleashing-development-banks-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-unleashing-development-banks-update-2026.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/unleashing-development-banks/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-unleashing-development-banks.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
+  "/policy/notes/vulnerabilite_energetique_ormuz/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-vulnerabilite-energetique-ormuz.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
+  },
+  "/policy/notes/who-benefits-sanctions-update-2026/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-who-benefits-sanctions-update-2026.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/notes/who-benefits-sanctions/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-who-benefits-sanctions.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/reports/apd-g7-executive-summary-v4/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-apd-g7-executive-summary-v4.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/reports/convergence-polycrisis/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-convergence-polycrisis.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/reports/convergence-resume-executif/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-convergence-resume-executif.svg",
+    "source": "editorial/thumbnails/categories/polycrisis.svg"
+  },
+  "/policy/reports/iran-crise-analyse-strategique/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-iran-crise-analyse-strategique.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  }
+}

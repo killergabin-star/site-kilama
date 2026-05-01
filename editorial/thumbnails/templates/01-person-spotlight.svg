@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Person spotlight thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #FAF8F3)"/>
+  <g id="slot-background">
+    <circle cx="210" cy="105" r="58" fill="var(--svg-paper, #F6F4F0)" opacity="0.82"/>
+  </g>
+  <g id="slot-main">
+    <circle cx="210" cy="88" r="13" fill="var(--svg-ink, #1A1815)"/>
+    <rect x="197" y="102" width="26" height="62" fill="var(--svg-accent, #B81628)"/>
+    <rect x="198" y="164" width="9" height="34" fill="var(--svg-ink, #1A1815)"/>
+    <rect x="213" y="164" width="9" height="34" fill="var(--svg-ink, #1A1815)"/>
+  </g>
+  <g id="slot-secondary">
+    <rect x="58" y="152" width="14" height="32" fill="var(--svg-muted, #76726B)"/>
+    <rect x="82" y="132" width="14" height="52" fill="var(--svg-muted, #76726B)" opacity="0.7"/>
+    <rect x="106" y="108" width="14" height="76" fill="var(--svg-accent, #B81628)"/>
+  </g>
+</svg>

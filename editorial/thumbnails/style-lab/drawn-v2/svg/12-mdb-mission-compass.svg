@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9 L9 0" stroke="#101014" stroke-width="1" opacity="0.18"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#101014" opacity="0.16"/></pattern>
+  </defs>
+  <rect width="480" height="270" fill="#F8EEE4"/>
+  <g filter="url(#wobble)">
+  <rect x="89" y="78" width="40" height="119" rx="0" fill="#FFF7E8" stroke="#101014" stroke-width="5"/><polygon points="78,78 109,49 140,78" fill="#15203C" stroke="#101014" stroke-width="5" stroke-linejoin="round"/><rect x="77" y="197" width="64" height="20" rx="0" fill="#9EA3A8" stroke="#101014" stroke-width="5"/><rect x="154" y="78" width="40" height="119" rx="0" fill="#7CB7E6" stroke="#101014" stroke-width="5"/><polygon points="143,78 174,49 205,78" fill="#15203C" stroke="#101014" stroke-width="5" stroke-linejoin="round"/><rect x="142" y="197" width="64" height="20" rx="0" fill="#9EA3A8" stroke="#101014" stroke-width="5"/><rect x="219" y="78" width="40" height="119" rx="0" fill="#FFF7E8" stroke="#101014" stroke-width="5"/><polygon points="208,78 239,49 270,78" fill="#15203C" stroke="#101014" stroke-width="5" stroke-linejoin="round"/><rect x="207" y="197" width="64" height="20" rx="0" fill="#9EA3A8" stroke="#101014" stroke-width="5"/><rect x="300" y="113" width="18" height="73" rx="0" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><rect x="328" y="94" width="18" height="92" rx="0" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><rect x="356" y="65" width="18" height="121" rx="0" fill="#8BCB8F" stroke="#101014" stroke-width="4"/><path d="M292 222 H430" fill="none" stroke="#101014" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M293 222 C332 151 371 122 432 66" fill="none" stroke="#E63846" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="432" cy="66" r="22" fill="#F4CC58" stroke="#101014" stroke-width="5"/><line x1="432" y1="66" x2="452" y2="51" stroke="#E63846" stroke-width="6" stroke-linecap="round"/><path d="M48 237 H438" fill="none" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>

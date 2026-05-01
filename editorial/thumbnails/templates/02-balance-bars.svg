@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Balance bars thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #FAF8F3)"/>
+  <g id="slot-main" fill="none" stroke="var(--svg-ink, #1A1815)" stroke-width="5" stroke-linecap="round">
+    <path d="M200 42 L200 178"/>
+    <path d="M112 64 L288 52"/>
+    <path d="M112 64 L82 145 L142 145 Z"/>
+    <path d="M288 52 L258 155 L318 155 Z"/>
+  </g>
+  <g id="slot-secondary">
+    <rect x="96" y="105" width="12" height="40" fill="var(--svg-muted, #76726B)"/>
+    <rect x="113" y="87" width="12" height="58" fill="var(--svg-accent, #B81628)"/>
+    <rect x="270" y="108" width="12" height="47" fill="var(--svg-muted, #76726B)"/>
+    <rect x="287" y="80" width="12" height="75" fill="var(--svg-accent, #B81628)"/>
+  </g>
+</svg>

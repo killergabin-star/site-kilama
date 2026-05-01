@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#15151A" />
+  <rect x="0" y="0" width="400" height="2.5" fill="#E6203A" opacity="0.6"/>
+
+  <path d="M85,82 Q145,112 85,142" fill="none" stroke="#E6203A" stroke-width="1.2" opacity="0.2"/>
+  <path d="M315,82 Q255,112 315,142" fill="none" stroke="#E6203A" stroke-width="1.2" opacity="0.2"/>
+  <line x1="145" y1="112" x2="255" y2="112" stroke="#E6203A" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="255,112 245,106 245,118" fill="#E6203A" opacity="0.3"/>
+  <circle cx="200" cy="112" r="3" fill="#E6203A" opacity="0.35"/>
+  <rect x="18" y="17" width="10" height="4" fill="#E6203A" opacity="0.7"/>
+  <text x="34" y="21" font-family="Inter, sans-serif" font-size="7.5" font-weight="700"
+        fill="#E6203A" letter-spacing="0.10em" opacity="0.8">IRAN · MOYEN-ORIENT</text>
+  <text x="18" y="212" font-family="Inter, sans-serif" font-size="6.5"
+        fill="#71717A" letter-spacing="0.04em">Ormuz · escalade · sécurité régionale</text>
+</svg>

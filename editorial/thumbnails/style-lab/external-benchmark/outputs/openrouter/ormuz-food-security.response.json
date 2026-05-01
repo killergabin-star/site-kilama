@@ -1,0 +1,58 @@
+{
+  "dry_run": true,
+  "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "model": "google/gemini-2.5-flash-image",
+  "payload_preview": {
+    "model": "google/gemini-2.5-flash-image",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text.\n\nEditorial thumbnail for erickilama.com/policy.\n\nTarget art direction:\n- mature magazine illustration, close to serious policy press rather than startup/AI gloss;\n- metaphor must be specific to the article, not a generic chart or globe;\n- drawn/painted composition with adult restraint, sharp shapes, controlled texture;\n- palette anchored in the site: black undefined, off-white undefined, policy red undefined, restrained blue undefined;\n- 16:9 horizontal thumbnail, strong at 200px wide;\n- no readable text, no logos, no flags, no real public figures, no childish cartoon style.\n\nUse the attached reference captures only as general visual direction: premium editorial illustration, disciplined composition, mature colour blocking, and abstract press-cover intelligence. Do not copy any exact artwork, layout, headline, logo, or character."
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "[embedded image/jpeg...]"
+            }
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "[embedded image/jpeg...]"
+            }
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "[embedded image/jpeg...]"
+            }
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "[embedded image/jpeg...]"
+            }
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "[embedded image/jpeg...]"
+            }
+          }
+        ]
+      }
+    ],
+    "modalities": [
+      "image",
+      "text"
+    ],
+    "stream": false,
+    "image_config": {
+      "aspect_ratio": "16:9",
+      "image_size": "1K"
+    }
+  }
+}

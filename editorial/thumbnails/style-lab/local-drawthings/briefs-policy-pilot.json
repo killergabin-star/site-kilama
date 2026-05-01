@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "ormuz-food-security",
+    "article": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+    "prompt": "Minimal editorial cover metaphor: a narrow maritime chokepoint becomes a precise red valve controlling four clean channels toward a dry African grain field: fuel, fertilizer, exchange-rate pressure, aid logistics. Sharp geometric composition, adult policy magazine visual, no text."
+  },
+  {
+    "slug": "borrowers-platform",
+    "article": "La Borrowers' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+    "prompt": "Minimal editorial cover metaphor: many small debtor-country chairs form a disciplined circle around a locked legal toolkit, while a heavy creditor table looms at the edge. Sharp geometric composition, adult institutional visual, no text."
+  },
+  {
+    "slug": "sme-geopolitical-fragility",
+    "article": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+    "prompt": "Minimal editorial cover metaphor: a small European factory silhouette squeezed by a red mechanical clamp; input costs enter from one side, blocked price pass-through and frozen investment appear as subtle symbols. Sharp geometric composition, adult economic visual, no text."
+  },
+  {
+    "slug": "sanctions-shadow-routes",
+    "article": "À qui profitent les sanctions ? Mise à jour 2026 — Iran, Ormuz, fragmentation sanctionnatoire",
+    "prompt": "Minimal editorial cover metaphor: a blocked oil route splits into dim shadow routes; a tilted scale shows costs shifting toward allies while discounted flows bypass the barrier. Sharp geometric composition, adult foreign-policy visual, no text."
+  },
+  {
+    "slug": "polycrisis-dashboard",
+    "article": "Polycrisis, chocs croisés et vulnérabilités macrofinancières",
+    "prompt": "Interlocking stress gauges arranged like a severe editorial cover: energy, debt, food, exchange rates and security pressures pull on the same fragile mechanism. Sophisticated drawn policy illustration, restrained red and blue palette, no text."
+  },
+  {
+    "slug": "development-finance-squeeze",
+    "article": "Finance du développement : marges budgétaires, dette et arbitrages",
+    "prompt": "A narrow fiscal bridge carries a small public budget cart between two cliffs labelled only visually by debt stones and social investment seedlings; no readable words. Adult institutional illustration, sober, analytical, no text."
+  },
+  {
+    "slug": "energy-transition-friction",
+    "article": "Énergie, matières premières critiques et transition sous contrainte",
+    "prompt": "A copper wire and an oil pipeline twist into a knot beneath a clean-energy turbine silhouette; the knot is held by a red geopolitical pin. Premium editorial drawing, mature magazine style, no text."
+  },
+  {
+    "slug": "g7-multilateral-choice",
+    "article": "G7, multilatéralisme et architecture financière internationale",
+    "prompt": "Seven heavy stones attempt to hold up a cracked multilateral arch while smaller countries wait below for a usable passage. Serious global governance illustration, calm composition, no flags, no text."
+  }
+]

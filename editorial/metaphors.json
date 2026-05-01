@@ -1,0 +1,57 @@
+{
+  "polycrisis": [
+    {"template": "broken-chart", "subject": "interlocking shocks fracture the same macro-financial chart", "central_symbol": "a cracked chart panel crossed by a red falling line", "secondary_1": "a small warning triangle", "secondary_2": "one shadowed stress gauge"},
+    {"template": "roundtable-flows", "subject": "crisis channels circulate around the same decision table", "central_symbol": "a circular table surrounded by directional arrows", "secondary_1": "one red pressure node", "secondary_2": "one ochre counterflow"},
+    {"template": "balance-bars", "subject": "stabilizers fail while risk indicators rise", "central_symbol": "an unbalanced scale holding rising bars", "secondary_1": "a red bar taller than the others", "secondary_2": "a dark weight pulling the scale down"}
+  ],
+  "geoeconomie": [
+    {"template": "map-arrows", "subject": "economic pressure travels through global routes", "central_symbol": "a world map crossed by one dominant red route", "secondary_1": "two smaller off-white routes", "secondary_2": "three pressure nodes"},
+    {"template": "scale-vs-factories", "subject": "state power and productive capacity pull against each other", "central_symbol": "a scale weighing policy bars against factory silhouettes", "secondary_1": "red industrial smoke", "secondary_2": "a muted institutional block"},
+    {"template": "containers-bridge", "subject": "supply chains become a strategic bridge under strain", "central_symbol": "a bridge made from stacked containers", "secondary_1": "a red container at the stress point", "secondary_2": "dark water below"}
+  ],
+  "architecture-financiere": [
+    {"template": "balance-bars", "subject": "reserve currency power weighs against external deficits", "central_symbol": "a scale with bars on one side and an institution on the other", "secondary_1": "a red imbalance marker", "secondary_2": "a pale sun disk"},
+    {"template": "coins-cascade", "subject": "financial flows compress into narrowing fiscal space", "central_symbol": "coins cascading down a red curve into a small wallet", "secondary_1": "one black budget line", "secondary_2": "empty ivory space"},
+    {"template": "broken-chart", "subject": "the international financial architecture cracks under stress", "central_symbol": "a broken grid chart split by a red fault line", "secondary_1": "one institutional column", "secondary_2": "falling fragments"}
+  ],
+  "commerce-sanctions": [
+    {"template": "map-arrows", "subject": "sanctions redirect trade into shadow routes", "central_symbol": "a blocked red route splitting into pale bypass routes", "secondary_1": "three ports as dots", "secondary_2": "a dotted evasive arc"},
+    {"template": "scale-vs-factories", "subject": "sanctions costs fall unevenly across allies and producers", "central_symbol": "a scale weighing factories against a red sanctions block", "secondary_1": "smoke in red", "secondary_2": "a tilted tray"},
+    {"template": "containers-bridge", "subject": "trade restrictions turn logistics into a fragile crossing", "central_symbol": "a container bridge with a missing span", "secondary_1": "one red barrier", "secondary_2": "shadowed cargo below"}
+  ],
+  "energie": [
+    {"template": "pipeline-valve", "subject": "a chokepoint valve controls energy-price transmission", "central_symbol": "a large pipeline valve with a red directional arrow", "secondary_1": "one pressure gauge", "secondary_2": "a dark horizon"},
+    {"template": "broken-chart", "subject": "energy prices break the expected macro path", "central_symbol": "a cracked chart with a red shock line", "secondary_1": "a small oil drop silhouette", "secondary_2": "one grid fragment"},
+    {"template": "map-arrows", "subject": "energy routes reroute around geopolitical risk", "central_symbol": "a map with one red maritime chokepoint", "secondary_1": "two pale tanker routes", "secondary_2": "one pressure node"}
+  ],
+  "developpement": [
+    {"template": "coins-cascade", "subject": "development finance shrinks into narrowing budget space", "central_symbol": "coins rolling down a red curve toward a small public wallet", "secondary_1": "one seedling or public good icon", "secondary_2": "empty ivory space"},
+    {"template": "balance-bars", "subject": "aid contraction and investment needs sit on the same scale", "central_symbol": "a scale balancing falling aid bars against social investment bars", "secondary_1": "one red declining bar", "secondary_2": "one muted institutional block"},
+    {"template": "containers-bridge", "subject": "infrastructure finance becomes a bridge with missing supports", "central_symbol": "a bridge made from blocks with one red missing piece", "secondary_1": "small silhouettes waiting below", "secondary_2": "a pale sun disk"}
+  ],
+  "afrique-pma": [
+    {"template": "coins-cascade", "subject": "aid contraction falls onto already fragile public budgets", "central_symbol": "small coins shrinking as they move toward a public wallet", "secondary_1": "one red downward curve", "secondary_2": "a minimal map contour"},
+    {"template": "map-arrows", "subject": "external shocks converge toward African food and fiscal systems", "central_symbol": "a map route converging on one red node", "secondary_1": "grain silhouettes", "secondary_2": "one off-white aid route"},
+    {"template": "balance-bars", "subject": "food, debt and aid pressures overload the same scale", "central_symbol": "a scale holding bars and a grain symbol", "secondary_1": "one red stress bar", "secondary_2": "one ochre reserve marker"}
+  ],
+  "defense": [
+    {"template": "parliament-symbol", "subject": "security choices move through public finance and institutions", "central_symbol": "a parliament building under a red sun disk", "secondary_1": "a scale silhouette", "secondary_2": "small citizens as simple dots"},
+    {"template": "balance-bars", "subject": "defence spending rises while fiscal space narrows", "central_symbol": "a scale weighing red defence bars against public budget bars", "secondary_1": "one shield-like shape", "secondary_2": "a dark fiscal baseline"},
+    {"template": "containers-bridge", "subject": "dual-use supply chains become a security bridge", "central_symbol": "a container bridge under a red strategic marker", "secondary_1": "industrial silhouettes", "secondary_2": "one guarded passage"}
+  ],
+  "iran-moyen-orient": [
+    {"template": "pipeline-valve", "subject": "regional escalation turns the energy valve into a macro shock", "central_symbol": "a red valve on a pipeline under high pressure", "secondary_1": "a pressure gauge near the danger zone", "secondary_2": "one directional arrow"},
+    {"template": "map-arrows", "subject": "Middle East risk radiates through maritime and financial routes", "central_symbol": "a narrow chokepoint with red outgoing arrows", "secondary_1": "one tanker silhouette", "secondary_2": "two pale financial arcs"},
+    {"template": "broken-chart", "subject": "war finance and sanctions crack the baseline scenario", "central_symbol": "a broken macro chart with a red fault line", "secondary_1": "one dark oil marker", "secondary_2": "a small warning triangle"}
+  ],
+  "g7-multilateral": [
+    {"template": "roundtable-flows", "subject": "G7 coordination circulates around a contested agenda", "central_symbol": "a roundtable surrounded by arrows", "secondary_1": "one red agenda disk", "secondary_2": "one ochre counterflow"},
+    {"template": "parliament-symbol", "subject": "multilateral legitimacy depends on institutional choices", "central_symbol": "a parliament-like institution under a red sun disk", "secondary_1": "small country silhouettes", "secondary_2": "a scale in the background"},
+    {"template": "containers-bridge", "subject": "global governance must keep the bridge open under stress", "central_symbol": "a bridge made of blocks with one red load-bearing block", "secondary_1": "dark water below", "secondary_2": "small waiting figures"}
+  ],
+  "institutions": [
+    {"template": "parliament-symbol", "subject": "institutional credibility becomes the central policy asset", "central_symbol": "a parliament building under a red sun disk", "secondary_1": "a small scale", "secondary_2": "simple public silhouettes"},
+    {"template": "roundtable-flows", "subject": "decision flows circulate around one institutional table", "central_symbol": "a roundtable with arrows of coordination", "secondary_1": "one red decision node", "secondary_2": "muted ochre counterflow"},
+    {"template": "person-spotlight", "subject": "one decision-maker stands inside measurable policy pressure", "central_symbol": "a stylized figure in a red spotlight", "secondary_1": "simple bars", "secondary_2": "one coin or public finance object"}
+  ]
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.08"/></feComponentTransfer>
+    </filter>
+    <pattern id="dotgrid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#111116" opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="480" height="270" rx="0" fill="#DDE7E8" stroke="none" stroke-width="0"/>
+  <rect x="0" y="0" width="480" height="270" rx="0" fill="white" stroke="none" stroke-width="0"/>
+  <rect width="480" height="270" fill="#DDE7E8"/>
+  <rect width="480" height="270" filter="url(#paper)" opacity="0.55"/>
+  <rect x="0" y="0" width="480" height="270" rx="0" fill="url(#dotgrid)" stroke="none" stroke-width="0"/><path d="M36 56 H168 V116 H92 V194 H220 V236" fill="none" stroke="#111116" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><path d="M225 36 V98 H350 V166 H282 V234 H444" fill="none" stroke="#111116" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><rect x="150" y="96" width="60" height="42" rx="0" fill="#E23B4A" stroke="#111116" stroke-width="4"/><rect x="325" y="148" width="60" height="42" rx="0" fill="#E23B4A" stroke="#111116" stroke-width="4"/><path d="M70 224 C148 160 244 178 306 116 S404 54 452 84" fill="none" stroke="#6E7179" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M115 206 l38 10 l-18 10 l-38 -10 z" fill="#17213B" stroke="#111116" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="119" y1="216" x2="143" y2="216" stroke="#F8F1E3" stroke-width="2" stroke-linecap="round"/><path d="M265 170 l38 10 l-18 10 l-38 -10 z" fill="#17213B" stroke="#111116" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="269" y1="180" x2="293" y2="180" stroke="#F8F1E3" stroke-width="2" stroke-linecap="round"/><path d="M414 134 l38 10 l-18 10 l-38 -10 z" fill="#17213B" stroke="#111116" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="418" y1="144" x2="442" y2="144" stroke="#F8F1E3" stroke-width="2" stroke-linecap="round"/><circle cx="72" cy="78" r="24" fill="#F2C85A" stroke="#111116" stroke-width="4"/><circle cx="422" cy="198" r="22" fill="#8BBF8A" stroke="#111116" stroke-width="4"/>
+</svg>

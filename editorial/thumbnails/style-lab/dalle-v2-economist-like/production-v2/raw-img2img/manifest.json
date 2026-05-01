@@ -1,0 +1,512 @@
+{
+  "created_at": "2026-04-30T15:54:38.123Z",
+  "queue": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/policy-v2-production-queue.json",
+  "engine": "draw-things-cli",
+  "model": "playground_v2.5_q6p_q8p.ckpt",
+  "width": 768,
+  "height": 448,
+  "steps": 20,
+  "cfg": 5,
+  "useTemplateReference": true,
+  "strength": 0.42,
+  "offset": 4,
+  "limit": null,
+  "results": [
+    {
+      "index": 5,
+      "slug": "briefs-polycrisis-europe-compensation-financiere",
+      "title": "Europe : la souveraineté à l''épreuve des dépendances",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/05-briefs-polycrisis-europe-compensation-financiere.png"
+    },
+    {
+      "index": 6,
+      "slug": "briefs-polycrisis-evian",
+      "title": "Polycrisis 2026 : ce que le G7 d''Évian peut encore faire",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/06-briefs-polycrisis-evian.png"
+    },
+    {
+      "index": 7,
+      "slug": "briefs-polycrisis-stabilisateurs-qui-cede",
+      "title": "Polycrisis 2026 : les stabilisateurs qui ont cédé",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/07-briefs-polycrisis-stabilisateurs-qui-cede.png"
+    },
+    {
+      "index": 8,
+      "slug": "briefs-rearm-europe-policy-brief",
+      "title": "ReArm Europe : l''arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian",
+      "style": "policy-dark",
+      "template": "scale-vs-factories",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/08-briefs-rearm-europe-policy-brief.png"
+    },
+    {
+      "index": 9,
+      "slug": "briefs-reconfiguration-energetique-ormuz",
+      "title": "Reconfiguration des flux énergétiques post-Ormuz : l''avantage structurel chinois",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/09-briefs-reconfiguration-energetique-ormuz.png"
+    },
+    {
+      "index": 10,
+      "slug": "briefs-second-china-shock",
+      "title": "Le Second China Shock : anatomie d''un surplus de 1 200 milliards de dollars et ses conséquences européennes",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/10-briefs-second-china-shock.png"
+    },
+    {
+      "index": 11,
+      "slug": "briefs-spring-meetings-2026-j1-soft-landing-declasse",
+      "title": "Spring Meetings — Jour 3 : le *soft landing* déclassé",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/11-briefs-spring-meetings-2026-j1-soft-landing-declasse.png"
+    },
+    {
+      "index": 12,
+      "slug": "briefs-trump-ii-configuration-babylonienne",
+      "title": "La configuration babylonienne : Trump II et la polycrisis 2026",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/12-briefs-trump-ii-configuration-babylonienne.png"
+    },
+    {
+      "index": 13,
+      "slug": "debates-gopinath-pettis-dollar-deficit",
+      "title": "Controverse : Le dollar condamne-t-il l''Amérique au déficit ? Gopinath, Pettis, et ce que la littérature dit vraiment",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/13-debates-gopinath-pettis-dollar-deficit.png"
+    },
+    {
+      "index": 14,
+      "slug": "debates-hickel-ajustement-structurel",
+      "title": "Controverse : L''ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/14-debates-hickel-ajustement-structurel.png"
+    },
+    {
+      "index": 15,
+      "slug": "notes-1100-kenyans-haiti-update-2026",
+      "title": "Haïti deux ans après : la mission kényane, les mercenaires et l''impasse qui se confirme",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/15-notes-1100-kenyans-haiti-update-2026.png"
+    },
+    {
+      "index": 16,
+      "slug": "notes-1100-kenyans-haiti",
+      "title": "1 100 Kenyans ne sauveront pas Haïti",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/16-notes-1100-kenyans-haiti.png"
+    },
+    {
+      "index": 17,
+      "slug": "notes-acceleration-reforme-afi-update-2026",
+      "title": "Réforme de l''architecture financière internationale : bilan d''étape et enjeux de 2026",
+      "style": "policy-dark",
+      "template": "roundtable-flows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/17-notes-acceleration-reforme-afi-update-2026.png"
+    },
+    {
+      "index": 18,
+      "slug": "notes-acceleration-reforme-afi",
+      "title": "Accélération de la réforme de l'architecture financière internationale",
+      "style": "policy-dark",
+      "template": "balance-bars",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/18-notes-acceleration-reforme-afi.png"
+    },
+    {
+      "index": 19,
+      "slug": "notes-afrique-triangle-evian",
+      "title": "L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/19-notes-afrique-triangle-evian.png"
+    },
+    {
+      "index": 20,
+      "slug": "notes-aide-crise-identite-update-2026",
+      "title": "La crise d''identité de l''aide : ce que 2025-2026 a confirmé et aggravé",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/20-notes-aide-crise-identite-update-2026.png"
+    },
+    {
+      "index": 21,
+      "slug": "notes-aide-crise-identite",
+      "title": "L'industrie de l'aide est en crise d'identité",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/21-notes-aide-crise-identite.png"
+    },
+    {
+      "index": 22,
+      "slug": "notes-apd-defense-reallocation",
+      "title": "APD, défense et géopolitique : qui paie la réallocation ?",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/22-notes-apd-defense-reallocation.png"
+    },
+    {
+      "index": 23,
+      "slug": "notes-bilan-g7-mae",
+      "title": "Bilan G7 MAE Vaux-de-Cernay : la désescalade conditionnelle comme doctrine française",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/23-notes-bilan-g7-mae.png"
+    },
+    {
+      "index": 24,
+      "slug": "notes-borrowers-club-coordination-update-2026",
+      "title": "Le Club des emprunteurs, dix-huit mois plus tard : de l''argument à l''institution",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/24-notes-borrowers-club-coordination-update-2026.png"
+    },
+    {
+      "index": 25,
+      "slug": "notes-borrowers-club-coordination",
+      "title": "Le Club des emprunteurs : la coordination des débiteurs, bien public mondial sous-produit",
+      "style": "policy-dark",
+      "template": "roundtable-flows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/25-notes-borrowers-club-coordination.png"
+    },
+    {
+      "index": 26,
+      "slug": "notes-borrowers-platform-spring-meetings-2026",
+      "title": "La Borrowers'' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/26-notes-borrowers-platform-spring-meetings-2026.png"
+    },
+    {
+      "index": 27,
+      "slug": "notes-choc-ormuz-securite-alimentaire-afrique",
+      "title": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/27-notes-choc-ormuz-securite-alimentaire-afrique.png"
+    },
+    {
+      "index": 28,
+      "slug": "notes-crise-iranienne-finance-guerre-russe",
+      "title": "La crise iranienne finance la guerre russe : implications pour la présidence française du G7",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/28-notes-crise-iranienne-finance-guerre-russe.png"
+    },
+    {
+      "index": 29,
+      "slug": "notes-eu-trade-geopolitics-update-2026",
+      "title": "Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/29-notes-eu-trade-geopolitics-update-2026.png"
+    },
+    {
+      "index": 30,
+      "slug": "notes-eu-trade-geopolitics",
+      "title": "Politique commerciale de l''UE et géopolitique : les défis de la nouvelle Commission",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/30-notes-eu-trade-geopolitics.png"
+    },
+    {
+      "index": 31,
+      "slug": "notes-france-presidence-g7-contraintes",
+      "title": "La France au G7 : présider sous contrainte",
+      "style": "policy-dark",
+      "template": "roundtable-flows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/31-notes-france-presidence-g7-contraintes.png"
+    },
+    {
+      "index": 32,
+      "slug": "notes-gopinath-pettis-deficit-courant",
+      "title": "Gopinath contre Pettis : le déficit courant américain est-il un choix ou une contrainte structurelle ?",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/32-notes-gopinath-pettis-deficit-courant.png"
+    },
+    {
+      "index": 33,
+      "slug": "notes-haiti-2025-update-2026",
+      "title": "Haïti : l''initiative mémorielle française à l''épreuve des faits",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/33-notes-haiti-2025-update-2026.png"
+    },
+    {
+      "index": 34,
+      "slug": "notes-haiti-2025",
+      "title": "Haïti : sortir de l''impasse sécuritaire, repenser l''action internationale",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/34-notes-haiti-2025.png"
+    },
+    {
+      "index": 35,
+      "slug": "notes-hickel-ajustement-structurel-proces",
+      "title": "L''ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/35-notes-hickel-ajustement-structurel-proces.png"
+    },
+    {
+      "index": 36,
+      "slug": "notes-ifi-allocation-geopolitique",
+      "title": "L''allocation géopolitique des IFI : quand les données confirment le soupçon",
+      "style": "economist-light",
+      "template": "parliament-symbol",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/36-notes-ifi-allocation-geopolitique.png"
+    },
+    {
+      "index": 37,
+      "slug": "notes-iran-pause-trois-lectures",
+      "title": "Iran J+29 : trois lectures d''une pause prolongée",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/37-notes-iran-pause-trois-lectures.png"
+    },
+    {
+      "index": 38,
+      "slug": "notes-iran-scenarios-moyen-orient",
+      "title": "L''Iran sous les bombes : scénarios pour le Moyen-Orient et l''architecture de sécurité européenne",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/38-notes-iran-scenarios-moyen-orient.png"
+    },
+    {
+      "index": 39,
+      "slug": "notes-jetp-failing-update-2026",
+      "title": "JETP : deux ans après, le bilan d''un mécanisme au point mort",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/39-notes-jetp-failing-update-2026.png"
+    },
+    {
+      "index": 40,
+      "slug": "notes-jetp-failing",
+      "title": "Just Energy Transition Partnerships : ce que les donateurs doivent faire pour relancer la dynamique",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/40-notes-jetp-failing.png"
+    },
+    {
+      "index": 41,
+      "slug": "notes-migration-cohesion-europe",
+      "title": "Migration et cohésion politique européenne : la boucle la plus dangereuse",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/41-notes-migration-cohesion-europe.png"
+    },
+    {
+      "index": 42,
+      "slug": "notes-non-expedit-recours-souverain-vatican",
+      "title": "Non Expedit : le recours souverain du Vatican",
+      "style": "economist-light",
+      "template": "parliament-symbol",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/42-notes-non-expedit-recours-souverain-vatican.png"
+    },
+    {
+      "index": 43,
+      "slug": "notes-northern-donor-update-2026",
+      "title": "Le donateur du Nord en 2026 : entre retrait américain et quête d''un nouveau mandat",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/43-notes-northern-donor-update-2026.png"
+    },
+    {
+      "index": 44,
+      "slug": "notes-northern-donor",
+      "title": "Un donateur du Nord a-t-il encore sa place au XXIe siècle ?",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/44-notes-northern-donor.png"
+    },
+    {
+      "index": 45,
+      "slug": "notes-ormuz-choc-petrolier-xxi",
+      "title": "Ormuz fermé : anatomie du premier choc pétrolier du XXIe siècle",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/45-notes-ormuz-choc-petrolier-xxi.png"
+    },
+    {
+      "index": 46,
+      "slug": "notes-polycrisis-transmission-asie",
+      "title": "La polycrisis vue d''Asie : canaux de transmission et vulnérabilités différenciées",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/46-notes-polycrisis-transmission-asie.png"
+    },
+    {
+      "index": 47,
+      "slug": "notes-rearm-europe-autonomie-defense",
+      "title": "ReArm Europe et SAFE : l''Europe peut-elle se réarmer sans les États-Unis ?",
+      "style": "policy-dark",
+      "template": "scale-vs-factories",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/47-notes-rearm-europe-autonomie-defense.png"
+    },
+    {
+      "index": 48,
+      "slug": "notes-rearm-europe-dependance",
+      "title": "ReArm Europe : le réarmement européen entre ambition et dépendance américaine",
+      "style": "policy-dark",
+      "template": "scale-vs-factories",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/48-notes-rearm-europe-dependance.png"
+    },
+    {
+      "index": 49,
+      "slug": "notes-routes-rail-afrique-update-2026",
+      "title": "Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/49-notes-routes-rail-afrique-update-2026.png"
+    },
+    {
+      "index": 50,
+      "slug": "notes-routes-rail-afrique",
+      "title": "Routes, rail et développement africain : une analyse des investissements optimaux",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/50-notes-routes-rail-afrique.png"
+    },
+    {
+      "index": 51,
+      "slug": "notes-safe-green-deal-dilemme-industriel",
+      "title": "SAFE vs Green Deal : le dilemme industriel européen",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/51-notes-safe-green-deal-dilemme-industriel.png"
+    },
+    {
+      "index": 52,
+      "slug": "notes-section122-chaos-tarifaire",
+      "title": "La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/52-notes-section122-chaos-tarifaire.png"
+    },
+    {
+      "index": 53,
+      "slug": "notes-soudan-guerre-invisible",
+      "title": "Soudan : la guerre invisible et le dernier levier du G7",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/53-notes-soudan-guerre-invisible.png"
+    },
+    {
+      "index": 54,
+      "slug": "notes-transition-energetique-apres-ormuz",
+      "title": "La transition énergétique après Ormuz : accélération ou régression ?",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/54-notes-transition-energetique-apres-ormuz.png"
+    },
+    {
+      "index": 55,
+      "slug": "notes-triangle-impossible-evian",
+      "title": "Le triangle impossible d''Évian : Ukraine, réarmement et Afrique sous présidence française",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/55-notes-triangle-impossible-evian.png"
+    },
+    {
+      "index": 56,
+      "slug": "notes-trump-ii-nouveau-nabuchodonosor",
+      "title": "Trump, un nouveau Nabuchodonosor ? Anatomie d''une démesure : de Babylone à Washington",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/56-notes-trump-ii-nouveau-nabuchodonosor.png"
+    },
+    {
+      "index": 57,
+      "slug": "notes-trump-xi-enjeux",
+      "title": "Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert",
+      "style": "policy-dark",
+      "template": "map-arrows",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/57-notes-trump-xi-enjeux.png"
+    },
+    {
+      "index": 58,
+      "slug": "notes-unleashing-development-banks-update-2026",
+      "title": "Banques de développement en 2026 : l''optimisation ne suffit plus",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/58-notes-unleashing-development-banks-update-2026.png"
+    },
+    {
+      "index": 59,
+      "slug": "notes-unleashing-development-banks",
+      "title": "Banques de développement : de la correction des marchés à leur transformation",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/59-notes-unleashing-development-banks.png"
+    },
+    {
+      "index": 60,
+      "slug": "notes-vulnerabilite-energetique-ormuz",
+      "title": "Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/60-notes-vulnerabilite-energetique-ormuz.png"
+    },
+    {
+      "index": 61,
+      "slug": "notes-who-benefits-sanctions-update-2026",
+      "title": "À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/61-notes-who-benefits-sanctions-update-2026.png"
+    },
+    {
+      "index": 62,
+      "slug": "notes-who-benefits-sanctions",
+      "title": "À qui profitent les sanctions ? Leçons du cas iranien",
+      "style": "policy-dark",
+      "template": "pipeline-valve",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/62-notes-who-benefits-sanctions.png"
+    },
+    {
+      "index": 63,
+      "slug": "reports-apd-g7-executive-summary-v4",
+      "title": "Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/63-reports-apd-g7-executive-summary-v4.png"
+    },
+    {
+      "index": 64,
+      "slug": "reports-convergence-polycrisis",
+      "title": "La convergence des crises : anatomie d''une polycrisis sous administration Trump II",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/64-reports-convergence-polycrisis.png"
+    },
+    {
+      "index": 65,
+      "slug": "reports-convergence-resume-executif",
+      "title": "La convergence des crises : anatomie d''une polycrisis sous administration Trump II",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/65-reports-convergence-resume-executif.png"
+    },
+    {
+      "index": 66,
+      "slug": "reports-iran-crise-analyse-strategique",
+      "title": "La crise iranienne de mars 2026 : dynamique militaire, succession, reconfiguration énergétique et position française",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw-img2img/66-reports-iran-crise-analyse-strategique.png"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Map arrows thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #0E0E10)"/>
+  <g id="slot-background" fill="var(--svg-paper, #F6F4F0)" opacity="0.85">
+    <path d="M28 72 C54 47 93 47 124 70 C97 90 68 93 28 72Z"/>
+    <path d="M152 86 C193 51 252 55 286 86 C242 110 194 111 152 86Z"/>
+    <path d="M303 83 C331 61 366 66 388 88 C363 105 331 104 303 83Z"/>
+  </g>
+  <g id="slot-main" fill="none" stroke="var(--svg-accent, #E6203A)" stroke-width="12" stroke-linecap="round">
+    <path d="M72 142 C156 70 250 160 335 82"/>
+    <path d="M335 82 L318 85 L331 98" stroke-linejoin="round"/>
+  </g>
+  <g id="slot-secondary" fill="none" stroke="var(--svg-paper, #F6F4F0)" stroke-width="4" opacity="0.85">
+    <path d="M66 156 C136 124 226 125 310 162"/>
+    <path d="M98 91 C170 112 238 104 318 132" stroke-dasharray="2 8"/>
+  </g>
+</svg>

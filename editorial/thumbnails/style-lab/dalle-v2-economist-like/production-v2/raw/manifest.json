@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-04-30T15:29:14.805Z",
+  "queue": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/policy-v2-production-queue.json",
+  "engine": "draw-things-cli",
+  "model": "playground_v2.5_q6p_q8p.ckpt",
+  "width": 768,
+  "height": 448,
+  "steps": 20,
+  "cfg": 5,
+  "offset": 0,
+  "limit": 4,
+  "results": [
+    {
+      "index": 1,
+      "slug": "briefs-apd-g7-spring-meetings",
+      "title": "Development Finance at a Crossroads: What the G7 Must Do Before Évian",
+      "style": "economist-light",
+      "template": "coins-cascade",
+      "output": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw/01-briefs-apd-g7-spring-meetings.png"
+    },
+    {
+      "index": 2,
+      "slug": "briefs-fragilite-par-la-base-pme-geopolitique",
+      "title": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+      "style": "policy-dark",
+      "template": "scale-vs-factories",
+      "output": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw/02-briefs-fragilite-par-la-base-pme-geopolitique.png"
+    },
+    {
+      "index": 3,
+      "slug": "briefs-polycrisis-afrique-pma-contraction-silencieuse",
+      "title": "Afrique et PMA : la contraction silencieuse",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw/03-briefs-polycrisis-afrique-pma-contraction-silencieuse.png"
+    },
+    {
+      "index": 4,
+      "slug": "briefs-polycrisis-cinq-mondes-gradient",
+      "title": "Le soft landing déclassé : deux régimes pour la croissance 2026",
+      "style": "policy-dark",
+      "template": "broken-chart",
+      "output": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/dalle-v2-economist-like/production-v2/raw/04-briefs-polycrisis-cinq-mondes-gradient.png"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "provider": "bfl",
+  "created_at": "2026-04-30T07:22:19.443Z",
+  "briefs": [
+    {
+      "slug": "ormuz-food-security",
+      "article": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+      "prompt": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "borrowers-platform",
+      "article": "La Borrowers' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+      "prompt": "Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "article": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+      "prompt": "Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "article": "À qui profitent les sanctions ? Mise à jour 2026 — Iran, Ormuz, fragmentation sanctionnatoire",
+      "prompt": "Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text."
+    }
+  ],
+  "style_inputs": [
+    "ref-01-economist-light.jpg",
+    "ref-02-economist-columns.jpg",
+    "ref-03-foreignaffairs-dark.jpg",
+    "ref-04-foreignaffairs-covers.jpg",
+    "ref-05-mixed-editorial.jpg"
+  ],
+  "palette": {
+    "name": "erickilama-policy-editorial-light",
+    "colors": [
+      "#101014",
+      "#FFF7E8",
+      "#E63846",
+      "#7CB7E6",
+      "#F4CC58",
+      "#8BCB8F",
+      "#15203C"
+    ]
+  },
+  "results": [
+    {
+      "slug": "ormuz-food-security",
+      "result": {
+        "request": {
+          "endpoint": "POST https://api.bfl.ai/v1/flux-kontext-pro",
+          "payload": {
+            "prompt": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text.\n\nUse the reference images only for visual language: mature press illustration, adult metaphor, refined line, controlled flat colour. Do not copy layouts or images. No text, no logos, no flags.",
+            "input_image": "ref-01-economist-light.jpg",
+            "input_image_2": "ref-02-economist-columns.jpg",
+            "input_image_3": "ref-03-foreignaffairs-dark.jpg",
+            "input_image_4": "ref-04-foreignaffairs-covers.jpg",
+            "aspect_ratio": "16:9",
+            "output_format": "png",
+            "prompt_upsampling": false
+          }
+        }
+      }
+    },
+    {
+      "slug": "borrowers-platform",
+      "result": {
+        "request": {
+          "endpoint": "POST https://api.bfl.ai/v1/flux-kontext-pro",
+          "payload": {
+            "prompt": "Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text.\n\nUse the reference images only for visual language: mature press illustration, adult metaphor, refined line, controlled flat colour. Do not copy layouts or images. No text, no logos, no flags.",
+            "input_image": "ref-01-economist-light.jpg",
+            "input_image_2": "ref-02-economist-columns.jpg",
+            "input_image_3": "ref-03-foreignaffairs-dark.jpg",
+            "input_image_4": "ref-04-foreignaffairs-covers.jpg",
+            "aspect_ratio": "16:9",
+            "output_format": "png",
+            "prompt_upsampling": false
+          }
+        }
+      }
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "result": {
+        "request": {
+          "endpoint": "POST https://api.bfl.ai/v1/flux-kontext-pro",
+          "payload": {
+            "prompt": "Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text.\n\nUse the reference images only for visual language: mature press illustration, adult metaphor, refined line, controlled flat colour. Do not copy layouts or images. No text, no logos, no flags.",
+            "input_image": "ref-01-economist-light.jpg",
+            "input_image_2": "ref-02-economist-columns.jpg",
+            "input_image_3": "ref-03-foreignaffairs-dark.jpg",
+            "input_image_4": "ref-04-foreignaffairs-covers.jpg",
+            "aspect_ratio": "16:9",
+            "output_format": "png",
+            "prompt_upsampling": false
+          }
+        }
+      }
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "result": {
+        "request": {
+          "endpoint": "POST https://api.bfl.ai/v1/flux-kontext-pro",
+          "payload": {
+            "prompt": "Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text.\n\nUse the reference images only for visual language: mature press illustration, adult metaphor, refined line, controlled flat colour. Do not copy layouts or images. No text, no logos, no flags.",
+            "input_image": "ref-01-economist-light.jpg",
+            "input_image_2": "ref-02-economist-columns.jpg",
+            "input_image_3": "ref-03-foreignaffairs-dark.jpg",
+            "input_image_4": "ref-04-foreignaffairs-covers.jpg",
+            "aspect_ratio": "16:9",
+            "output_format": "png",
+            "prompt_upsampling": false
+          }
+        }
+      }
+    }
+  ]
+}

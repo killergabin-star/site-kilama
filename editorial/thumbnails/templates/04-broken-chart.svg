@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Broken chart thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #0E0E10)"/>
+  <g id="slot-background" transform="translate(88 40)" fill="var(--svg-paper, #F6F4F0)">
+    <path d="M0 0 H108 L95 68 L115 145 H0 Z"/>
+    <path d="M132 0 H224 V145 H113 L126 76 L111 34 Z"/>
+  </g>
+  <g id="slot-secondary" stroke="var(--svg-ink, #1A1815)" stroke-width="1" opacity="0.4">
+    <path d="M112 74 H300 M112 110 H300 M112 146 H300"/>
+    <path d="M150 48 V184 M190 48 V184 M230 48 V184 M270 48 V184"/>
+  </g>
+  <g id="slot-main" fill="none" stroke="var(--svg-accent, #E6203A)" stroke-width="10" stroke-linejoin="miter">
+    <path d="M102 78 L148 102 L185 91 L225 133 L268 120 L322 165"/>
+  </g>
+</svg>

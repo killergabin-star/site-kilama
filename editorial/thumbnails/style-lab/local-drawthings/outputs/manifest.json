@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-04-30T08:22:25.848Z",
+  "engine": "draw-things-cli",
+  "cli": "/Volumes/T7 sharing/local-ai/bin/draw-things-cli",
+  "model": "sd_xl_turbo_q6p_q8p.ckpt",
+  "modelsDir": "/Volumes/T7 sharing/local-ai/draw-things-models",
+  "width": 768,
+  "height": 448,
+  "steps": 8,
+  "cfg": 2,
+  "results": [
+    {
+      "slug": "ormuz-food-security",
+      "article": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+      "output": "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/local-drawthings/outputs/01-ormuz-food-security.png",
+      "prompt": "Minimal editorial cover metaphor: a narrow maritime chokepoint becomes a precise red valve controlling four clean channels toward a dry African grain field: fuel, fertilizer, exchange-rate pressure, aid logistics. Sharp geometric composition, adult policy magazine visual, no text.\n\nStyle contract: adult press illustration for erickilama.com/policy; visual language close to premium editorial columns and foreign-policy magazine covers; clean vector collage, screen-print discipline, sharp silhouettes, deliberate negative space, smart metaphor, restrained texture, black #101014, warm paper #FFF7E8, policy red #E63846, restrained blue #7CB7E6, small muted yellow and green accents. The image must remain legible as a 16:9 thumbnail.",
+      "negative_prompt": "childish cartoon, kindergarten drawing, naive doodle, crayon, scribble, wobbly lines, messy line art, psychedelic, overcrowded composition, generic AI art, glossy startup illustration, corporate stock vector, readable text, logos, flags, public figures, watermark, blurry, messy anatomy, random globe, meaningless abstract background",
+      "command": [
+        "/Volumes/T7 sharing/local-ai/bin/draw-things-cli",
+        "generate",
+        "--models-dir",
+        "/Volumes/T7 sharing/local-ai/draw-things-models",
+        "--model",
+        "sd_xl_turbo_q6p_q8p.ckpt",
+        "--prompt",
+        "Minimal editorial cover metaphor: a narrow maritime chokepoint becomes a precise red valve controlling four clean channels toward a dry African grain field: fuel, fertilizer, exchange-rate pressure, aid logistics. Sharp geometric composition, adult policy magazine visual, no text.\n\nStyle contract: adult press illustration for erickilama.com/policy; visual language close to premium editorial columns and foreign-policy magazine covers; clean vector collage, screen-print discipline, sharp silhouettes, deliberate negative space, smart metaphor, restrained texture, black #101014, warm paper #FFF7E8, policy red #E63846, restrained blue #7CB7E6, small muted yellow and green accents. The image must remain legible as a 16:9 thumbnail.",
+        "--negative-prompt",
+        "childish cartoon, kindergarten drawing, naive doodle, crayon, scribble, wobbly lines, messy line art, psychedelic, overcrowded composition, generic AI art, glossy startup illustration, corporate stock vector, readable text, logos, flags, public figures, watermark, blurry, messy anatomy, random globe, meaningless abstract background",
+        "--width",
+        "768",
+        "--height",
+        "448",
+        "--steps",
+        "8",
+        "--cfg",
+        "2.0",
+        "--seed",
+        "620260",
+        "--output",
+        "/Users/killergabin/Documents/Application files/site-kilama/editorial/thumbnails/style-lab/local-drawthings/outputs/01-ormuz-food-security.png",
+        "--disable-preview"
+      ]
+    }
+  ]
+}

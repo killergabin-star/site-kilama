@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#15151A" />
+  <rect x="0" y="0" width="400" height="2.5" fill="#60A5FA" opacity="0.6"/>
+
+  <path d="M200,62 L255,86 L255,132 Q255,170 200,185 Q145,170 145,132 L145,86 Z" fill="none" stroke="#60A5FA" stroke-width="1.2" opacity="0.2"/>
+  <line x1="200" y1="86" x2="200" y2="162" stroke="#60A5FA" stroke-width="0.8" opacity="0.15"/>
+  <line x1="163" y1="118" x2="237" y2="118" stroke="#60A5FA" stroke-width="0.8" opacity="0.15"/>
+  <rect x="18" y="17" width="10" height="4" fill="#60A5FA" opacity="0.7"/>
+  <text x="34" y="21" font-family="Inter, sans-serif" font-size="7.5" font-weight="700"
+        fill="#60A5FA" letter-spacing="0.10em" opacity="0.8">DÉFENSE</text>
+  <text x="18" y="212" font-family="Inter, sans-serif" font-size="6.5"
+        fill="#71717A" letter-spacing="0.04em">Réarmement · OTAN · ReArm Europe</text>
+</svg>

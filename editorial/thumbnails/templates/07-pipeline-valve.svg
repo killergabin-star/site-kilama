@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Pipeline valve thumbnail template">
+  <rect width="400" height="225" fill="var(--svg-bg-primary, #0E0E10)"/>
+  <g id="slot-secondary">
+    <path d="M0 134 H400" stroke="var(--svg-paper, #F6F4F0)" stroke-width="32"/>
+    <path d="M0 134 H400" stroke="var(--svg-accent, #E6203A)" stroke-width="10" opacity="0.9"/>
+    <circle cx="92" cy="78" r="26" fill="none" stroke="var(--svg-paper, #F6F4F0)" stroke-width="5"/>
+    <path d="M92 78 L106 65" stroke="var(--svg-ink, #1A1815)" stroke-width="4"/>
+  </g>
+  <g id="slot-main">
+    <rect x="168" y="91" width="64" height="84" fill="var(--svg-paper, #F6F4F0)"/>
+    <circle cx="200" cy="88" r="40" fill="none" stroke="var(--svg-accent, #E6203A)" stroke-width="13"/>
+    <path d="M176 88 H224" stroke="var(--svg-accent, #E6203A)" stroke-width="9"/>
+  </g>
+  <path d="M246 86 H336 L316 66 M336 86 L316 106" fill="none" stroke="var(--svg-accent, #E6203A)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

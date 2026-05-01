@@ -1,0 +1,117 @@
+{
+  "provider": "recraft",
+  "created_at": "2026-04-30T07:22:19.291Z",
+  "briefs": [
+    {
+      "slug": "ormuz-food-security",
+      "article": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+      "prompt": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "borrowers-platform",
+      "article": "La Borrowers' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+      "prompt": "Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "article": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+      "prompt": "Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text."
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "article": "À qui profitent les sanctions ? Mise à jour 2026 — Iran, Ormuz, fragmentation sanctionnatoire",
+      "prompt": "Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text."
+    }
+  ],
+  "style_inputs": [
+    "ref-01-economist-light.jpg",
+    "ref-02-economist-columns.jpg",
+    "ref-03-foreignaffairs-dark.jpg",
+    "ref-04-foreignaffairs-covers.jpg",
+    "ref-05-mixed-editorial.jpg"
+  ],
+  "palette": {
+    "name": "erickilama-policy-editorial-light",
+    "colors": [
+      "#101014",
+      "#FFF7E8",
+      "#E63846",
+      "#7CB7E6",
+      "#F4CC58",
+      "#8BCB8F",
+      "#15203C"
+    ]
+  },
+  "style": {
+    "id": "dry-run-style-id",
+    "request": {
+      "endpoint": "POST https://external.api.recraft.ai/v1/styles",
+      "base_style": "digital_illustration",
+      "images": [
+        "ref-01-economist-light.jpg",
+        "ref-02-economist-columns.jpg",
+        "ref-03-foreignaffairs-dark.jpg",
+        "ref-04-foreignaffairs-covers.jpg",
+        "ref-05-mixed-editorial.jpg"
+      ]
+    }
+  },
+  "results": [
+    {
+      "slug": "ormuz-food-security",
+      "result": {
+        "request": {
+          "endpoint": "POST https://external.api.recraft.ai/v1/images/generations",
+          "payload": {
+            "model": "recraftv3",
+            "style_id": "dry-run-style-id",
+            "size": "1365x768",
+            "prompt": "A narrow sea chokepoint becomes a delayed food-security shock: ships halted at a red gate, fertilizer, fuel, currency and aid channels flowing into a dry African grain field. Mature editorial magazine illustration, sharp metaphor, no text.\n\nVisual direction: adult editorial illustration, clear metaphor, flat colour, refined linework, textured print feel, premium policy magazine. Avoid corporate infographic, childish icons, photorealism, logos, flags, readable text, and public figures."
+          }
+        }
+      }
+    },
+    {
+      "slug": "borrowers-platform",
+      "result": {
+        "request": {
+          "endpoint": "POST https://external.api.recraft.ai/v1/images/generations",
+          "payload": {
+            "model": "recraftv3",
+            "style_id": "dry-run-style-id",
+            "size": "1365x768",
+            "prompt": "Debtor countries finally coordinate: many small chairs form a circle facing a heavy creditor table, but the legal toolkit in the middle is still locked. Mature editorial magazine illustration, sharp metaphor, no text.\n\nVisual direction: adult editorial illustration, clear metaphor, flat colour, refined linework, textured print feel, premium policy magazine. Avoid corporate infographic, childish icons, photorealism, logos, flags, readable text, and public figures."
+          }
+        }
+      }
+    },
+    {
+      "slug": "sme-geopolitical-fragility",
+      "result": {
+        "request": {
+          "endpoint": "POST https://external.api.recraft.ai/v1/images/generations",
+          "payload": {
+            "model": "recraftv3",
+            "style_id": "dry-run-style-id",
+            "size": "1365x768",
+            "prompt": "Small European factories are squeezed by a red clamp: costs enter, prices cannot pass through, and investment is blocked. Mature editorial magazine illustration, sharp metaphor, no text.\n\nVisual direction: adult editorial illustration, clear metaphor, flat colour, refined linework, textured print feel, premium policy magazine. Avoid corporate infographic, childish icons, photorealism, logos, flags, readable text, and public figures."
+          }
+        }
+      }
+    },
+    {
+      "slug": "sanctions-shadow-routes",
+      "result": {
+        "request": {
+          "endpoint": "POST https://external.api.recraft.ai/v1/images/generations",
+          "payload": {
+            "model": "recraftv3",
+            "style_id": "dry-run-style-id",
+            "size": "1365x768",
+            "prompt": "Sanctions reroute value: blocked oil routes become shadow routes, and a tilted scale shows costs falling on allies while discounts flow elsewhere. Mature editorial magazine illustration, sharp metaphor, no text.\n\nVisual direction: adult editorial illustration, clear metaphor, flat colour, refined linework, textured print feel, premium policy magazine. Avoid corporate infographic, childish icons, photorealism, logos, flags, readable text, and public figures."
+          }
+        }
+      }
+    }
+  ]
+}

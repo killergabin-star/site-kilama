@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#15151A" />
+  <rect x="0" y="0" width="400" height="2.5" fill="#22D3EE" opacity="0.6"/>
+
+  <line x1="80" y1="95" x2="320" y2="95" stroke="#22D3EE" stroke-width="2" opacity="0.25"/>
+  <polygon points="320,95 306,88 306,102" fill="#22D3EE" opacity="0.25"/>
+  <line x1="320" y1="130" x2="80" y2="130" stroke="#22D3EE" stroke-width="1.5" opacity="0.2"/>
+  <polygon points="80,130 94,123 94,137" fill="#22D3EE" opacity="0.2"/>
+  <line x1="200" y1="60" x2="200" y2="168" stroke="#22D3EE" stroke-width="0.5" opacity="0.12" stroke-dasharray="4,4"/>
+  <rect x="18" y="17" width="10" height="4" fill="#22D3EE" opacity="0.7"/>
+  <text x="34" y="21" font-family="Inter, sans-serif" font-size="7.5" font-weight="700"
+        fill="#22D3EE" letter-spacing="0.10em" opacity="0.8">GÉOÉCONOMIE</text>
+  <text x="18" y="212" font-family="Inter, sans-serif" font-size="6.5"
+        fill="#71717A" letter-spacing="0.04em">Déséquilibres commerciaux · flux</text>
+</svg>

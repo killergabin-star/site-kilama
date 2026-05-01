@@ -1,0 +1,1876 @@
+[
+  {
+    "index": 1,
+    "slug": "briefs-apd-g7-spring-meetings",
+    "permalink": "/policy/briefs/apd-g7-spring-meetings/",
+    "source": "content/policy/briefs/apd-g7-spring-meetings.md",
+    "title": "Development Finance at a Crossroads: What the G7 Must Do Before Évian",
+    "doc_type": "brief",
+    "theme": "development",
+    "tags": [
+      "apd",
+      "g7",
+      "financement-développement",
+      "spring-meetings",
+      "réformes"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Development Finance at a Crossroads: What the G7 Must Do Before Évian\nArticle summary: *Based on the report \"Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement\"*\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 2,
+    "slug": "briefs-fragilite-par-la-base-pme-geopolitique",
+    "permalink": "/policy/briefs/fragilite-par-la-base-pme-geopolitique/",
+    "source": "content/policy/briefs/fragilite-par-la-base-pme-geopolitique.md",
+    "title": "La fragilité par la base : PME européennes face aux risques géopolitiques",
+    "doc_type": "brief",
+    "theme": "géoéconomie",
+    "tags": [
+      "pme",
+      "géopolitique",
+      "bitd",
+      "défense",
+      "risque-géopolitique",
+      "ecb-safe",
+      "pricing-passthrough",
+      "résilience",
+      "rearm-europe"
+    ],
+    "family": "defense",
+    "style": "policy-dark",
+    "template": "scale-vs-factories",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "security choices move through public finance and institutions",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a scale silhouette",
+      "secondary_2": "small citizens as simple dots"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: scale vs factories.\nSubject: security choices move through public finance and institutions.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a scale silhouette and small citizens as simple dots if they clarify the idea.\n\nArticle title: La fragilité par la base : PME européennes face aux risques géopolitiques\nArticle summary: Les PME industrielles européennes absorbent les chocs géopolitiques dans leurs marges. Ce policy brief quantifie le mécanisme sur 337 000 entreprises dans 12 pays et formule sept recommandations opérationnelles pour la base industrielle et technologique de défense.\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 3,
+    "slug": "briefs-polycrisis-afrique-pma-contraction-silencieuse",
+    "permalink": "/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/",
+    "source": "content/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse.md",
+    "title": "Afrique et PMA : la contraction silencieuse",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "vigie",
+      "afrique",
+      "pma",
+      "apd",
+      "soudan",
+      "migration",
+      "developpement"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Afrique et PMA : la contraction silencieuse\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 4,
+    "slug": "briefs-polycrisis-cinq-mondes-gradient",
+    "permalink": "/policy/briefs/polycrisis-cinq-mondes-gradient/",
+    "source": "content/policy/briefs/polycrisis-cinq-mondes-gradient.md",
+    "title": "Le soft landing déclassé : deux régimes pour la croissance 2026",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "vigie",
+      "scenarios",
+      "prospective",
+      "seuil-de-bascule",
+      "risque-systémique",
+      "g7"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Le soft landing déclassé : deux régimes pour la croissance 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 5,
+    "slug": "briefs-polycrisis-europe-compensation-financiere",
+    "permalink": "/policy/briefs/polycrisis-europe-compensation-financiere/",
+    "source": "content/policy/briefs/polycrisis-europe-compensation-financiere.md",
+    "title": "Europe : la souveraineté à l''épreuve des dépendances",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "vigie",
+      "europe",
+      "rearm",
+      "euroclear",
+      "compensation-financiere",
+      "bce"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Europe : la souveraineté à l''épreuve des dépendances\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 6,
+    "slug": "briefs-polycrisis-evian",
+    "permalink": "/policy/briefs/polycrisis-evian/",
+    "source": "content/policy/briefs/polycrisis-evian.md",
+    "title": "Polycrisis 2026 : ce que le G7 d''Évian peut encore faire",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "brief",
+      "g7",
+      "evian",
+      "policy",
+      "scenarios"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Polycrisis 2026 : ce que le G7 d''Évian peut encore faire\nArticle summary: L'administration Trump II active simultanément trois canaux de crise — financier, commercial, énergétique — dont\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 7,
+    "slug": "briefs-polycrisis-stabilisateurs-qui-cede",
+    "permalink": "/policy/briefs/polycrisis-stabilisateurs-qui-cede/",
+    "source": "content/policy/briefs/polycrisis-stabilisateurs-qui-cede.md",
+    "title": "Polycrisis 2026 : les stabilisateurs qui ont cédé",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "vigie",
+      "stabilisateurs",
+      "boucles-retroaction",
+      "banques-centrales",
+      "macrofinance"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Polycrisis 2026 : les stabilisateurs qui ont cédé\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 8,
+    "slug": "briefs-rearm-europe-policy-brief",
+    "permalink": "/policy/briefs/rearm-europe-policy-brief/",
+    "source": "content/policy/briefs/rearm-europe-policy-brief.md",
+    "title": "ReArm Europe : l''arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian",
+    "doc_type": "brief",
+    "theme": "défense",
+    "tags": [
+      "rearm-europe",
+      "g7",
+      "evian",
+      "défense",
+      "france",
+      "otan",
+      "nucleaire"
+    ],
+    "family": "defense",
+    "style": "policy-dark",
+    "template": "scale-vs-factories",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "security choices move through public finance and institutions",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a scale silhouette",
+      "secondary_2": "small citizens as simple dots"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: scale vs factories.\nSubject: security choices move through public finance and institutions.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a scale silhouette and small citizens as simple dots if they clarify the idea.\n\nArticle title: ReArm Europe : l''arithmétique du réarmement, le paradoxe industriel et les options françaises pour Évian\nArticle summary: *Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 9,
+    "slug": "briefs-reconfiguration-energetique-ormuz",
+    "permalink": "/policy/briefs/reconfiguration-energetique-ormuz/",
+    "source": "content/policy/briefs/reconfiguration-energetique-ormuz.md",
+    "title": "Reconfiguration des flux énergétiques post-Ormuz : l''avantage structurel chinois",
+    "doc_type": "brief",
+    "theme": "geopolitical",
+    "tags": [
+      "énergie",
+      "petrole",
+      "ormuz",
+      "chine",
+      "europe",
+      "choc-petrolier"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: Reconfiguration des flux énergétiques post-Ormuz : l''avantage structurel chinois\nArticle summary: Étude analytique, 29 mars 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 10,
+    "slug": "briefs-second-china-shock",
+    "permalink": "/policy/briefs/second-china-shock/",
+    "source": "content/policy/briefs/second-china-shock.md",
+    "title": "Le Second China Shock : anatomie d''un surplus de 1 200 milliards de dollars et ses conséquences européennes",
+    "doc_type": "brief",
+    "theme": "trade",
+    "tags": [
+      "chine",
+      "commerce",
+      "surplus",
+      "section-301",
+      "europe",
+      "pme"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Le Second China Shock : anatomie d''un surplus de 1 200 milliards de dollars et ses conséquences européennes\nArticle summary: 1. [Résumé](#résumé) 2. [Le surplus record : état des lieux](#le-surplus-record) 3. [Premier et second choc chinois\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 11,
+    "slug": "briefs-spring-meetings-2026-j1-soft-landing-declasse",
+    "permalink": "/policy/briefs/spring-meetings-2026/j1-soft-landing-declasse/",
+    "source": "content/policy/briefs/spring-meetings-2026/j1-soft-landing-declasse.md",
+    "title": "Spring Meetings — Jour 3 : le *soft landing* déclassé",
+    "doc_type": "note",
+    "theme": "spring-meetings",
+    "tags": [
+      "spring-meetings",
+      "vigie",
+      "fmi",
+      "banque-mondiale",
+      "weo",
+      "gfsr",
+      "moyen-orient",
+      "polycrisis"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Spring Meetings — Jour 3 : le *soft landing* déclassé\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 12,
+    "slug": "briefs-trump-ii-configuration-babylonienne",
+    "permalink": "/policy/briefs/trump-ii-configuration-babylonienne/",
+    "source": "content/policy/briefs/trump-ii-configuration-babylonienne.md",
+    "title": "La configuration babylonienne : Trump II et la polycrisis 2026",
+    "doc_type": "brief",
+    "theme": "polycrisis",
+    "tags": [
+      "États-Unis",
+      "Trump",
+      "polycrisis",
+      "dollar",
+      "tarifs",
+      "sanctions",
+      "Nabuchodonosor",
+      "empire",
+      "interdépendance-armée",
+      "dette-souveraine"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: La configuration babylonienne : Trump II et la polycrisis 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 13,
+    "slug": "debates-gopinath-pettis-dollar-deficit",
+    "permalink": "/policy/debates/gopinath-pettis-dollar-deficit/",
+    "source": "content/policy/debates/gopinath-pettis-dollar-deficit.md",
+    "title": "Controverse : Le dollar condamne-t-il l''Amérique au déficit ? Gopinath, Pettis, et ce que la littérature dit vraiment",
+    "doc_type": "controverse",
+    "theme": null,
+    "tags": [
+      "macroéconomie internationale",
+      "déficit courant",
+      "dollar",
+      "monnaie de réserve",
+      "déséquilibres mondiaux",
+      "G7",
+      "commerce",
+      "controverse"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Controverse : Le dollar condamne-t-il l''Amérique au déficit ? Gopinath, Pettis, et ce que la littérature dit vraiment\nArticle summary: Le 23 mars 2026, Pan Gongsheng, gouverneur de la Banque populaire de Chine, prend la parole au China Development\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 14,
+    "slug": "debates-hickel-ajustement-structurel",
+    "permalink": "/policy/debates/hickel-ajustement-structurel/",
+    "source": "content/policy/debates/hickel-ajustement-structurel.md",
+    "title": "Controverse : L''ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce",
+    "doc_type": "controverse",
+    "theme": null,
+    "tags": [
+      "ajustement structurel",
+      "FMI",
+      "Banque mondiale",
+      "conditionnalité",
+      "développement",
+      "Hickel",
+      "épistémologie",
+      "controverse"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Controverse : L''ajustement structurel en procès — ce que Hickel accuse, ce que les libertariens contestent, et ce\nArticle summary: Le 25 mars 2026, Jostein Hauge, économiste de l''université de Cambridge spécialiste de politique industrielle,\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 15,
+    "slug": "notes-1100-kenyans-haiti-update-2026",
+    "permalink": "/policy/notes/1100-kenyans-haiti-update-2026/",
+    "source": "content/policy/notes/1100-kenyans-haiti-update-2026.md",
+    "title": "Haïti deux ans après : la mission kényane, les mercenaires et l''impasse qui se confirme",
+    "doc_type": "note",
+    "theme": "sécurité",
+    "tags": [
+      "Haiti",
+      "Kenya",
+      "MMAS",
+      "sécurité",
+      "mercenaires"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: Haïti deux ans après : la mission kényane, les mercenaires et l''impasse qui se confirme\nArticle summary: Depuis notre analyse de mars 2024 sur les limites structurelles de la mission de sécurité kényane en Haïti, les développements\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 16,
+    "slug": "notes-1100-kenyans-haiti",
+    "permalink": "/policy/notes/1100-kenyans-haiti/",
+    "source": "content/policy/notes/1100-kenyans-haiti.md",
+    "title": "1 100 Kenyans ne sauveront pas Haïti",
+    "doc_type": "note",
+    "theme": "sécurité",
+    "tags": [
+      "Haiti",
+      "Kenya",
+      "sécurité",
+      "intervention internationale",
+      "Caraïbes"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: 1 100 Kenyans ne sauveront pas Haïti\nArticle summary: La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 17,
+    "slug": "notes-acceleration-reforme-afi-update-2026",
+    "permalink": "/policy/notes/acceleration-reforme-afi-update-2026/",
+    "source": "content/policy/notes/acceleration-reforme-afi-update-2026.md",
+    "title": "Réforme de l''architecture financière internationale : bilan d''étape et enjeux de 2026",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "architecture financière",
+      "FfD4",
+      "NCQG",
+      "G7",
+      "BMD",
+      "réforme"
+    ],
+    "family": "g7-multilateral",
+    "style": "policy-dark",
+    "template": "roundtable-flows",
+    "metaphor": {
+      "template": "roundtable-flows",
+      "subject": "G7 coordination circulates around a contested agenda",
+      "central_symbol": "a roundtable surrounded by arrows",
+      "secondary_1": "one red agenda disk",
+      "secondary_2": "one ochre counterflow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: roundtable flows.\nSubject: G7 coordination circulates around a contested agenda.\nShow a roundtable surrounded by arrows as the dominant visual metaphor. Add only one red agenda disk and one ochre counterflow if they clarify the idea.\n\nArticle title: Réforme de l''architecture financière internationale : bilan d''étape et enjeux de 2026\nArticle summary: En septembre 2024, cette note identifiait trois conditions minimales pour une réforme ambitieuse de l''architecture\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 18,
+    "slug": "notes-acceleration-reforme-afi",
+    "permalink": "/policy/notes/acceleration-reforme-afi/",
+    "source": "content/policy/notes/acceleration-reforme-afi.md",
+    "title": "Accélération de la réforme de l'architecture financière internationale",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "architecture financière",
+      "réforme",
+      "G20",
+      "climat",
+      "NCQG"
+    ],
+    "family": "architecture-financiere",
+    "style": "policy-dark",
+    "template": "balance-bars",
+    "metaphor": {
+      "template": "balance-bars",
+      "subject": "reserve currency power weighs against external deficits",
+      "central_symbol": "a scale with bars on one side and an institution on the other",
+      "secondary_1": "a red imbalance marker",
+      "secondary_2": "a pale sun disk"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: balance bars.\nSubject: reserve currency power weighs against external deficits.\nShow a scale with bars on one side and an institution on the other as the dominant visual metaphor. Add only a red imbalance marker and a pale sun disk if they clarify the idea.\n\nArticle title: Accélération de la réforme de l'architecture financière internationale\nArticle summary: Les agendas chargés de l'automne 2024 — Assemblées annuelles de la Banque mondiale et du FMI, sommet du G20 sous\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 19,
+    "slug": "notes-afrique-triangle-evian",
+    "permalink": "/policy/notes/afrique-triangle-evian/",
+    "source": "content/policy/notes/afrique-triangle-evian.md",
+    "title": "L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "Afrique",
+      "G7",
+      "Évian",
+      "APD",
+      "Ukraine",
+      "développement",
+      "France"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7\nArticle summary: Le sommet du G7 d''Évian (15-17 juin 2026) se prépare dans un contexte de compétition budgétaire sans précédent\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 20,
+    "slug": "notes-aide-crise-identite-update-2026",
+    "permalink": "/policy/notes/aide-crise-identite-update-2026/",
+    "source": "content/policy/notes/aide-crise-identite-update-2026.md",
+    "title": "La crise d''identité de l''aide : ce que 2025-2026 a confirmé et aggravé",
+    "doc_type": "note",
+    "theme": "développement",
+    "tags": [
+      "aide",
+      "APD",
+      "USAID",
+      "Trump",
+      "réforme",
+      "dette"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: La crise d''identité de l''aide : ce que 2025-2026 a confirmé et aggravé\nArticle summary: En juin 2024, cette note diagnostiquait une crise existentielle de l'industrie de l'aide au développement, sous l'effet\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 21,
+    "slug": "notes-aide-crise-identite",
+    "permalink": "/policy/notes/aide-crise-identite/",
+    "source": "content/policy/notes/aide-crise-identite.md",
+    "title": "L'industrie de l'aide est en crise d'identité",
+    "doc_type": "note",
+    "theme": "développement",
+    "tags": [
+      "aide",
+      "APD",
+      "réforme",
+      "géopolitique",
+      "dette"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: L'industrie de l'aide est en crise d'identité\nArticle summary: Conflits armés, changement climatique, surendettement souverain, bouleversements géopolitiques : de multiples crises\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 22,
+    "slug": "notes-apd-defense-reallocation",
+    "permalink": "/policy/notes/apd-defense-reallocation/",
+    "source": "content/policy/notes/apd-defense-reallocation.md",
+    "title": "APD, défense et géopolitique : qui paie la réallocation ?",
+    "doc_type": "note",
+    "theme": "development",
+    "tags": [
+      "apd",
+      "défense",
+      "réallocation",
+      "g7",
+      "spring-meetings",
+      "financement-développement"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: APD, défense et géopolitique : qui paie la réallocation ?\nArticle summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 23,
+    "slug": "notes-bilan-g7-mae",
+    "permalink": "/policy/notes/bilan-g7-mae/",
+    "source": "content/policy/notes/bilan-g7-mae.md",
+    "title": "Bilan G7 MAE Vaux-de-Cernay : la désescalade conditionnelle comme doctrine française",
+    "doc_type": "note",
+    "theme": "geopolitical",
+    "tags": [
+      "g7",
+      "iran",
+      "france",
+      "multilateralisme",
+      "diplomatie"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: Bilan G7 MAE Vaux-de-Cernay : la désescalade conditionnelle comme doctrine française\nArticle summary: La première réunion ministérielle des Affaires étrangères du G7 sous présidence française, tenue les 26 et 27 mars\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 24,
+    "slug": "notes-borrowers-club-coordination-update-2026",
+    "permalink": "/policy/notes/borrowers-club-coordination-update-2026/",
+    "source": "content/policy/notes/borrowers-club-coordination-update-2026.md",
+    "title": "Le Club des emprunteurs, dix-huit mois plus tard : de l''argument à l''institution",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "dette",
+      "coordination emprunteurs",
+      "stabilité financière",
+      "FfD4",
+      "Séville",
+      "Trump",
+      "NCQG",
+      "Sevilla Borrower's Forum"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Le Club des emprunteurs, dix-huit mois plus tard : de l''argument à l''institution\nArticle summary: En septembre 2024, une note précédente argumentait que la coordination des pays emprunteurs constituait un bien public\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 25,
+    "slug": "notes-borrowers-club-coordination",
+    "permalink": "/policy/notes/borrowers-club-coordination/",
+    "source": "content/policy/notes/borrowers-club-coordination.md",
+    "title": "Le Club des emprunteurs : la coordination des débiteurs, bien public mondial sous-produit",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "dette",
+      "coordination emprunteurs",
+      "stabilité financière",
+      "architecture financière",
+      "FfD4"
+    ],
+    "family": "g7-multilateral",
+    "style": "policy-dark",
+    "template": "roundtable-flows",
+    "metaphor": {
+      "template": "roundtable-flows",
+      "subject": "G7 coordination circulates around a contested agenda",
+      "central_symbol": "a roundtable surrounded by arrows",
+      "secondary_1": "one red agenda disk",
+      "secondary_2": "one ochre counterflow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: roundtable flows.\nSubject: G7 coordination circulates around a contested agenda.\nShow a roundtable surrounded by arrows as the dominant visual metaphor. Add only one red agenda disk and one ochre counterflow if they clarify the idea.\n\nArticle title: Le Club des emprunteurs : la coordination des débiteurs, bien public mondial sous-produit\nArticle summary: La discussion sur la réforme de l''architecture internationale de la dette souveraine tourne, depuis une décennie,\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 26,
+    "slug": "notes-borrowers-platform-spring-meetings-2026",
+    "permalink": "/policy/notes/borrowers-platform-spring-meetings-2026/",
+    "source": "content/policy/notes/borrowers-platform-spring-meetings-2026.md",
+    "title": "La Borrowers'' Platform est née aux Spring Meetings — et le G7 doit choisir son camp",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "dette",
+      "coordination emprunteurs",
+      "spring-meetings",
+      "borrowers-platform",
+      "G7",
+      "Évian",
+      "FfD4",
+      "Séville"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: La Borrowers'' Platform est née aux Spring Meetings — et le G7 doit choisir son camp\nArticle summary: Le 15 avril 2026, 30 pays en développement ont lancé la première plateforme de coordination\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 27,
+    "slug": "notes-choc-ormuz-securite-alimentaire-afrique",
+    "permalink": "/policy/notes/choc-ormuz-securite-alimentaire-afrique/",
+    "source": "content/policy/notes/choc-ormuz-securite-alimentaire-afrique.md",
+    "title": "Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier",
+    "doc_type": "note",
+    "theme": "geopolitics-economics",
+    "tags": [
+      "sécurité alimentaire",
+      "Ormuz",
+      "engrais",
+      "Afrique subsaharienne",
+      "G7",
+      "Évian",
+      "spring-meetings"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: Choc Ormuz et sécurité alimentaire en Afrique subsaharienne : quatre canaux, un calendrier\nArticle summary: Le blocus du détroit d'Ormuz déclenche un choc alimentaire à retardement sur l'Afrique\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 28,
+    "slug": "notes-crise-iranienne-finance-guerre-russe",
+    "permalink": "/policy/notes/crise_iranienne_finance_guerre_russe/",
+    "source": "content/policy/notes/crise_iranienne_finance_guerre_russe.md",
+    "title": "La crise iranienne finance la guerre russe : implications pour la présidence française du G7",
+    "doc_type": "note",
+    "theme": "iran",
+    "tags": [
+      "Iran",
+      "énergie",
+      "Russie",
+      "G7",
+      "présidence française"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: La crise iranienne finance la guerre russe : implications pour la présidence française du G7\nArticle summary: L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a pas encore nommé. La crise que Washington a déclenchée\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 29,
+    "slug": "notes-eu-trade-geopolitics-update-2026",
+    "permalink": "/policy/notes/eu-trade-geopolitics-update-2026/",
+    "source": "content/policy/notes/eu-trade-geopolitics-update-2026.md",
+    "title": "Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026",
+    "doc_type": "note",
+    "theme": "commerce",
+    "tags": [
+      "UE",
+      "politique commerciale",
+      "Trump",
+      "tarifs",
+      "CBAM",
+      "FfD4",
+      "Global Gateway",
+      "Sud global"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026\nArticle summary: Depuis la publication de cette analyse en novembre 2024, le contexte de la politique commerciale européenne a été\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 30,
+    "slug": "notes-eu-trade-geopolitics",
+    "permalink": "/policy/notes/eu-trade-geopolitics/",
+    "source": "content/policy/notes/eu-trade-geopolitics.md",
+    "title": "Politique commerciale de l''UE et géopolitique : les défis de la nouvelle Commission",
+    "doc_type": "note",
+    "theme": "commerce",
+    "tags": [
+      "UE",
+      "politique commerciale",
+      "géopolitique",
+      "pays en développement",
+      "durabilité",
+      "Global Gateway"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Politique commerciale de l''UE et géopolitique : les défis de la nouvelle Commission\nArticle summary: L'Union européenne a multiplié les instruments commerciaux unilatéraux pour se repositionner dans un environnement\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 31,
+    "slug": "notes-france-presidence-g7-contraintes",
+    "permalink": "/policy/notes/france-presidence-g7-contraintes/",
+    "source": "content/policy/notes/france-presidence-g7-contraintes.md",
+    "title": "La France au G7 : présider sous contrainte",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "France",
+      "G7",
+      "Évian",
+      "présidence",
+      "contrainte budgétaire",
+      "diplomatie"
+    ],
+    "family": "g7-multilateral",
+    "style": "policy-dark",
+    "template": "roundtable-flows",
+    "metaphor": {
+      "template": "roundtable-flows",
+      "subject": "G7 coordination circulates around a contested agenda",
+      "central_symbol": "a roundtable surrounded by arrows",
+      "secondary_1": "one red agenda disk",
+      "secondary_2": "one ochre counterflow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: roundtable flows.\nSubject: G7 coordination circulates around a contested agenda.\nShow a roundtable surrounded by arrows as the dominant visual metaphor. Add only one red agenda disk and one ochre counterflow if they clarify the idea.\n\nArticle title: La France au G7 : présider sous contrainte\nArticle summary: La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d''État\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 32,
+    "slug": "notes-gopinath-pettis-deficit-courant",
+    "permalink": "/policy/notes/gopinath-pettis-deficit-courant/",
+    "source": "content/policy/notes/gopinath-pettis-deficit-courant.md",
+    "title": "Gopinath contre Pettis : le déficit courant américain est-il un choix ou une contrainte structurelle ?",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "macroéconomie internationale",
+      "déficit courant",
+      "dollar",
+      "monnaie de réserve",
+      "déséquilibres mondiaux",
+      "G7",
+      "commerce"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Gopinath contre Pettis : le déficit courant américain est-il un choix ou une contrainte structurelle ?\nArticle summary: La mi-mars 2026 a vu émerger sur la plateforme X un échange intellectuel inhabituel entre deux figures majeures de\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 33,
+    "slug": "notes-haiti-2025-update-2026",
+    "permalink": "/policy/notes/haiti-2025-update-2026/",
+    "source": "content/policy/notes/haiti-2025-update-2026.md",
+    "title": "Haïti : l''initiative mémorielle française à l''épreuve des faits",
+    "doc_type": "note",
+    "theme": "sécurité",
+    "tags": [
+      "Haiti",
+      "France",
+      "diplomatie",
+      "memoire",
+      "transition",
+      "gouvernance"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: Haïti : l''initiative mémorielle française à l''épreuve des faits\nArticle summary: Depuis la publication de notre analyse en mai 2025 sur les leviers diplomatiques dont dispose la France pour relancer\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 34,
+    "slug": "notes-haiti-2025",
+    "permalink": "/policy/notes/haiti-2025/",
+    "source": "content/policy/notes/haiti-2025.md",
+    "title": "Haïti : sortir de l''impasse sécuritaire, repenser l''action internationale",
+    "doc_type": "note",
+    "theme": "sécurité",
+    "tags": [
+      "Haiti",
+      "gouvernance",
+      "France",
+      "diplomatie",
+      "crise"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: Haïti : sortir de l''impasse sécuritaire, repenser l''action internationale\nArticle summary: Un an après le déploiement de la Mission multinationale d'appui à la sécurité (MMAS) en Haïti, la crise continue\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 35,
+    "slug": "notes-hickel-ajustement-structurel-proces",
+    "permalink": "/policy/notes/hickel-ajustement-structurel-proces/",
+    "source": "content/policy/notes/hickel-ajustement-structurel-proces.md",
+    "title": "L''ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "ajustement structurel",
+      "FMI",
+      "Banque mondiale",
+      "conditionnalité",
+      "développement",
+      "Hickel"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: L''ajustement structurel en procès : ce que les données montrent, ce que la méthode ne capture pas\nArticle summary: Le 26 mars 2026, Jason Hickel — anthropologue économique à l''Université autonome de Barcelone et figure intellectuelle\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 36,
+    "slug": "notes-ifi-allocation-geopolitique",
+    "permalink": "/policy/notes/ifi-allocation-geopolitique/",
+    "source": "content/policy/notes/ifi-allocation-geopolitique.md",
+    "title": "L''allocation géopolitique des IFI : quand les données confirment le soupçon",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "IFI",
+      "allocation",
+      "géopolitique",
+      "WID",
+      "Piketty",
+      "conditionnalité",
+      "FfD4"
+    ],
+    "family": "institutions",
+    "style": "economist-light",
+    "template": "parliament-symbol",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "institutional credibility becomes the central policy asset",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a small scale",
+      "secondary_2": "simple public silhouettes"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: parliament symbol.\nSubject: institutional credibility becomes the central policy asset.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a small scale and simple public silhouettes if they clarify the idea.\n\nArticle title: L''allocation géopolitique des IFI : quand les données confirment le soupçon\nArticle summary: Le soupçon est aussi vieux que les institutions elles-mêmes. Depuis la création du Fonds monétaire international\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 37,
+    "slug": "notes-iran-pause-trois-lectures",
+    "permalink": "/policy/notes/iran-pause-trois-lectures/",
+    "source": "content/policy/notes/iran-pause-trois-lectures.md",
+    "title": "Iran J+29 : trois lectures d''une pause prolongée",
+    "doc_type": "note",
+    "theme": "geopolitical",
+    "tags": [
+      "iran",
+      "petrole",
+      "ormuz",
+      "diplomatie",
+      "scenarios"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Iran J+29 : trois lectures d''une pause prolongée\nArticle summary: Note analytique, 29 mars 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 38,
+    "slug": "notes-iran-scenarios-moyen-orient",
+    "permalink": "/policy/notes/iran-scenarios-moyen-orient/",
+    "source": "content/policy/notes/iran-scenarios-moyen-orient.md",
+    "title": "L''Iran sous les bombes : scénarios pour le Moyen-Orient et l''architecture de sécurité européenne",
+    "doc_type": "note",
+    "theme": "geopolitical",
+    "tags": [
+      "iran",
+      "moyen-orient",
+      "sécurité",
+      "scenarios",
+      "défense"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: L''Iran sous les bombes : scénarios pour le Moyen-Orient et l''architecture de sécurité européenne\nArticle summary: Note analytique, 3 mars 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 39,
+    "slug": "notes-jetp-failing-update-2026",
+    "permalink": "/policy/notes/jetp-failing-update-2026/",
+    "source": "content/policy/notes/jetp-failing-update-2026.md",
+    "title": "JETP : deux ans après, le bilan d''un mécanisme au point mort",
+    "doc_type": "note",
+    "theme": "énergie",
+    "tags": [
+      "JETP",
+      "transition énergétique",
+      "climat",
+      "COP29",
+      "G7"
+    ],
+    "family": "energie",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "a chokepoint valve controls energy-price transmission",
+      "central_symbol": "a large pipeline valve with a red directional arrow",
+      "secondary_1": "one pressure gauge",
+      "secondary_2": "a dark horizon"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: a chokepoint valve controls energy-price transmission.\nShow a large pipeline valve with a red directional arrow as the dominant visual metaphor. Add only one pressure gauge and a dark horizon if they clarify the idea.\n\nArticle title: JETP : deux ans après, le bilan d''un mécanisme au point mort\nArticle summary: Depuis la publication de notre analyse sur les défaillances structurelles des Just Energy Transition Partnerships\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 40,
+    "slug": "notes-jetp-failing",
+    "permalink": "/policy/notes/jetp-failing/",
+    "source": "content/policy/notes/jetp-failing.md",
+    "title": "Just Energy Transition Partnerships : ce que les donateurs doivent faire pour relancer la dynamique",
+    "doc_type": "note",
+    "theme": "énergie",
+    "tags": [
+      "JETP",
+      "transition énergétique",
+      "climat",
+      "finance développement"
+    ],
+    "family": "energie",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "a chokepoint valve controls energy-price transmission",
+      "central_symbol": "a large pipeline valve with a red directional arrow",
+      "secondary_1": "one pressure gauge",
+      "secondary_2": "a dark horizon"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: a chokepoint valve controls energy-price transmission.\nShow a large pipeline valve with a red directional arrow as the dominant visual metaphor. Add only one pressure gauge and a dark horizon if they clarify the idea.\n\nArticle title: Just Energy Transition Partnerships : ce que les donateurs doivent faire pour relancer la dynamique\nArticle summary: Pour respecter l''ambition de limiter le réchauffement climatique à 1,5 degré Celsius, une action urgente est nécessaire\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 41,
+    "slug": "notes-migration-cohesion-europe",
+    "permalink": "/policy/notes/migration-cohesion-europe/",
+    "source": "content/policy/notes/migration-cohesion-europe.md",
+    "title": "Migration et cohésion politique européenne : la boucle la plus dangereuse",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "migration",
+      "Europe",
+      "cohésion politique",
+      "populisme",
+      "Méditerranée",
+      "Pacte asile"
+    ],
+    "family": "geoeconomie",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "economic pressure travels through global routes",
+      "central_symbol": "a world map crossed by one dominant red route",
+      "secondary_1": "two smaller off-white routes",
+      "secondary_2": "three pressure nodes"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: economic pressure travels through global routes.\nShow a world map crossed by one dominant red route as the dominant visual metaphor. Add only two smaller off-white routes and three pressure nodes if they clarify the idea.\n\nArticle title: Migration et cohésion politique européenne : la boucle la plus dangereuse\nArticle summary: L'Union européenne entre dans une phase où la question migratoire ne fonctionne plus comme un dossier sectoriel parmi\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 42,
+    "slug": "notes-non-expedit-recours-souverain-vatican",
+    "permalink": "/policy/notes/non-expedit-recours-souverain-vatican/",
+    "source": "content/policy/notes/non-expedit-recours-souverain-vatican.md",
+    "title": "Non Expedit : le recours souverain du Vatican",
+    "doc_type": "note",
+    "theme": "géopolitique",
+    "tags": [
+      "Vatican",
+      "papauté",
+      "géopolitique",
+      "États-Unis",
+      "Non Expedit",
+      "Léon XIV",
+      "théologie politique"
+    ],
+    "family": "institutions",
+    "style": "economist-light",
+    "template": "parliament-symbol",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "institutional credibility becomes the central policy asset",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a small scale",
+      "secondary_2": "simple public silhouettes"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: parliament symbol.\nSubject: institutional credibility becomes the central policy asset.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a small scale and simple public silhouettes if they clarify the idea.\n\nArticle title: Non Expedit : le recours souverain du Vatican\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 43,
+    "slug": "notes-northern-donor-update-2026",
+    "permalink": "/policy/notes/northern-donor-update-2026/",
+    "source": "content/policy/notes/northern-donor-update-2026.md",
+    "title": "Le donateur du Nord en 2026 : entre retrait américain et quête d''un nouveau mandat",
+    "doc_type": "note",
+    "theme": "développement",
+    "tags": [
+      "aide",
+      "donateurs",
+      "APD",
+      "USAID",
+      "FfD4",
+      "réforme"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Le donateur du Nord en 2026 : entre retrait américain et quête d''un nouveau mandat\nArticle summary: En septembre 2024, cette note posait une question que beaucoup jugeaient prématurée : un donateur du Nord a-t-il\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 44,
+    "slug": "notes-northern-donor",
+    "permalink": "/policy/notes/northern-donor/",
+    "source": "content/policy/notes/northern-donor.md",
+    "title": "Un donateur du Nord a-t-il encore sa place au XXIe siècle ?",
+    "doc_type": "note",
+    "theme": "développement",
+    "tags": [
+      "aide",
+      "donateurs",
+      "APD",
+      "réforme",
+      "coopération"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Un donateur du Nord a-t-il encore sa place au XXIe siècle ?\nArticle summary: L''aide publique au développement (APD) a été introduite dans les années 1960 comme un instrument temporaire répondant\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 45,
+    "slug": "notes-ormuz-choc-petrolier-xxi",
+    "permalink": "/policy/notes/ormuz-choc-petrolier-xxi/",
+    "source": "content/policy/notes/ormuz-choc-petrolier-xxi.md",
+    "title": "Ormuz fermé : anatomie du premier choc pétrolier du XXIe siècle",
+    "doc_type": "note",
+    "theme": "geopolitical",
+    "tags": [
+      "petrole",
+      "ormuz",
+      "choc-petrolier",
+      "énergie",
+      "iran",
+      "macro"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: Ormuz fermé : anatomie du premier choc pétrolier du XXIe siècle\nArticle summary: Eric Kilama | Note analytique, 10 mars 2026\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 46,
+    "slug": "notes-polycrisis-transmission-asie",
+    "permalink": "/policy/notes/polycrisis-transmission-asie/",
+    "source": "content/policy/notes/polycrisis-transmission-asie.md",
+    "title": "La polycrisis vue d''Asie : canaux de transmission et vulnérabilités différenciées",
+    "doc_type": "note",
+    "theme": "polycrisis-asie",
+    "tags": [
+      "polycrisis",
+      "asie",
+      "ffa",
+      "chine",
+      "japon",
+      "inde",
+      "asean",
+      "transmission"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: La polycrisis vue d''Asie : canaux de transmission et vulnérabilités différenciées\nArticle summary: *Cette note constitue une extension régionale du rapport intégrateur « La convergence des crises : anatomie d''une\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 47,
+    "slug": "notes-rearm-europe-autonomie-defense",
+    "permalink": "/policy/notes/rearm-europe-autonomie-defense/",
+    "source": "content/policy/notes/rearm-europe-autonomie-defense.md",
+    "title": "ReArm Europe et SAFE : l''Europe peut-elle se réarmer sans les États-Unis ?",
+    "doc_type": "note",
+    "theme": "défense",
+    "tags": [
+      "défense",
+      "rearm-europe",
+      "safe",
+      "otan",
+      "nucleaire",
+      "bitd",
+      "pme"
+    ],
+    "family": "defense",
+    "style": "policy-dark",
+    "template": "scale-vs-factories",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "security choices move through public finance and institutions",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a scale silhouette",
+      "secondary_2": "small citizens as simple dots"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: scale vs factories.\nSubject: security choices move through public finance and institutions.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a scale silhouette and small citizens as simple dots if they clarify the idea.\n\nArticle title: ReArm Europe et SAFE : l''Europe peut-elle se réarmer sans les États-Unis ?\nArticle summary: Éric Kilama[^1]\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 48,
+    "slug": "notes-rearm-europe-dependance",
+    "permalink": "/policy/notes/rearm_europe_dependance/",
+    "source": "content/policy/notes/rearm_europe_dependance.md",
+    "title": "ReArm Europe : le réarmement européen entre ambition et dépendance américaine",
+    "doc_type": "note",
+    "theme": "défense",
+    "tags": [
+      "ReArm Europe",
+      "défense",
+      "dépendance américaine",
+      "SAFE",
+      "industrie"
+    ],
+    "family": "defense",
+    "style": "policy-dark",
+    "template": "scale-vs-factories",
+    "metaphor": {
+      "template": "parliament-symbol",
+      "subject": "security choices move through public finance and institutions",
+      "central_symbol": "a parliament building under a red sun disk",
+      "secondary_1": "a scale silhouette",
+      "secondary_2": "small citizens as simple dots"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: scale vs factories.\nSubject: security choices move through public finance and institutions.\nShow a parliament building under a red sun disk as the dominant visual metaphor. Add only a scale silhouette and small citizens as simple dots if they clarify the idea.\n\nArticle title: ReArm Europe : le réarmement européen entre ambition et dépendance américaine\nArticle summary: Les dépenses de défense de l'UE-27 atteignent 381 milliards d'euros en 2026 --- 2,03 % du PIB collectif, un seuil\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 49,
+    "slug": "notes-routes-rail-afrique-update-2026",
+    "permalink": "/policy/notes/routes-rail-afrique-update-2026/",
+    "source": "content/policy/notes/routes-rail-afrique-update-2026.md",
+    "title": "Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport",
+    "doc_type": "note",
+    "theme": "afrique",
+    "tags": [
+      "Afrique",
+      "infrastructure",
+      "Lobito",
+      "ZLECAf",
+      "Belt and Road",
+      "rail"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Infrastructures africaines en 2026 : le corridor de Lobito, la ZLECAf et la nouvelle géopolitique du transport\nArticle summary: Depuis notre analyse de septembre 2024 sur les investissements optimaux en infrastructures de transport en Afrique,\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 50,
+    "slug": "notes-routes-rail-afrique",
+    "permalink": "/policy/notes/routes-rail-afrique/",
+    "source": "content/policy/notes/routes-rail-afrique.md",
+    "title": "Routes, rail et développement africain : une analyse des investissements optimaux",
+    "doc_type": "note",
+    "theme": "afrique",
+    "tags": [
+      "Afrique",
+      "infrastructure",
+      "transport",
+      "ZLECAf",
+      "développement"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Routes, rail et développement africain : une analyse des investissements optimaux\nArticle summary: Malgré une croissance économique notable sur les deux dernières décennies, le déficit infrastructurel persistant\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 51,
+    "slug": "notes-safe-green-deal-dilemme-industriel",
+    "permalink": "/policy/notes/safe-green-deal-dilemme-industriel/",
+    "source": "content/policy/notes/safe-green-deal-dilemme-industriel.md",
+    "title": "SAFE vs Green Deal : le dilemme industriel européen",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "SAFE",
+      "Green Deal",
+      "défense",
+      "industrie",
+      "Europe",
+      "dual-use",
+      "réarmement"
+    ],
+    "family": "energie",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "a chokepoint valve controls energy-price transmission",
+      "central_symbol": "a large pipeline valve with a red directional arrow",
+      "secondary_1": "one pressure gauge",
+      "secondary_2": "a dark horizon"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: a chokepoint valve controls energy-price transmission.\nShow a large pipeline valve with a red directional arrow as the dominant visual metaphor. Add only one pressure gauge and a dark horizon if they clarify the idea.\n\nArticle title: SAFE vs Green Deal : le dilemme industriel européen\nArticle summary: L'Union européenne poursuit simultanément deux ambitions industrielles d'une ampleur sans précédent dans son histoire.\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 52,
+    "slug": "notes-section122-chaos-tarifaire",
+    "permalink": "/policy/notes/section122_chaos_tarifaire/",
+    "source": "content/policy/notes/section122_chaos_tarifaire.md",
+    "title": "La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7",
+    "doc_type": "note",
+    "theme": "commerce",
+    "tags": [
+      "Section 122",
+      "tarifs",
+      "Trump",
+      "G7",
+      "commerce"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7\nArticle summary: L'arrêt de la Cour suprême *Learning Resources v. Trump* (20 février 2026) a invalidé l'utilisation de l'International\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 53,
+    "slug": "notes-soudan-guerre-invisible",
+    "permalink": "/policy/notes/soudan-guerre-invisible/",
+    "source": "content/policy/notes/soudan-guerre-invisible.md",
+    "title": "Soudan : la guerre invisible et le dernier levier du G7",
+    "doc_type": "note",
+    "theme": "africa",
+    "tags": [
+      "soudan",
+      "crise-humanitaire",
+      "partition",
+      "g7",
+      "sahel"
+    ],
+    "family": "afrique-pma",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "external shocks converge toward African food and fiscal systems",
+      "central_symbol": "a map route converging on one red node",
+      "secondary_1": "grain silhouettes",
+      "secondary_2": "one off-white aid route"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: external shocks converge toward African food and fiscal systems.\nShow a map route converging on one red node as the dominant visual metaphor. Add only grain silhouettes and one off-white aid route if they clarify the idea.\n\nArticle title: Soudan : la guerre invisible et le dernier levier du G7\nArticle summary: Éric Kilama\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 54,
+    "slug": "notes-transition-energetique-apres-ormuz",
+    "permalink": "/policy/notes/transition-energetique-apres-ormuz/",
+    "source": "content/policy/notes/transition-energetique-apres-ormuz.md",
+    "title": "La transition énergétique après Ormuz : accélération ou régression ?",
+    "doc_type": "note",
+    "theme": null,
+    "tags": [
+      "transition énergétique",
+      "Ormuz",
+      "JETP",
+      "subventions fossiles",
+      "COP30",
+      "G7"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: La transition énergétique après Ormuz : accélération ou régression ?\nArticle summary: La fermeture partielle du détroit d'Ormuz, consécutive aux frappes américano-israéliennes sur l'Iran lancées le 28\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 55,
+    "slug": "notes-triangle-impossible-evian",
+    "permalink": "/policy/notes/triangle_impossible_evian/",
+    "source": "content/policy/notes/triangle_impossible_evian.md",
+    "title": "Le triangle impossible d''Évian : Ukraine, réarmement et Afrique sous présidence française",
+    "doc_type": "note",
+    "theme": "g7",
+    "tags": [
+      "G7",
+      "Évian",
+      "Ukraine",
+      "réarmement",
+      "Afrique",
+      "APD",
+      "triangle impossible"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Le triangle impossible d''Évian : Ukraine, réarmement et Afrique sous présidence française\nArticle summary: La présidence française du G7 repose sur trois piliers affichés par Barrot à Munich (14 février 2026) : sécurité\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 56,
+    "slug": "notes-trump-ii-nouveau-nabuchodonosor",
+    "permalink": "/policy/notes/trump-ii-nouveau-nabuchodonosor/",
+    "source": "content/policy/notes/trump-ii-nouveau-nabuchodonosor.md",
+    "title": "Trump, un nouveau Nabuchodonosor ? Anatomie d''une démesure : de Babylone à Washington",
+    "doc_type": "note",
+    "theme": "géopolitique",
+    "tags": [
+      "États-Unis",
+      "Trump",
+      "Nabuchodonosor",
+      "Vatican",
+      "Léon XIV",
+      "polycrisis",
+      "Ormuz",
+      "OTAN",
+      "dollar",
+      "non-expedit"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: Trump, un nouveau Nabuchodonosor ? Anatomie d''une démesure : de Babylone à Washington\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 57,
+    "slug": "notes-trump-xi-enjeux",
+    "permalink": "/policy/notes/trump-xi-enjeux/",
+    "source": "content/policy/notes/trump-xi-enjeux.md",
+    "title": "Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert",
+    "doc_type": "note",
+    "theme": "trade",
+    "tags": [
+      "chine",
+      "états-unis",
+      "commerce",
+      "g7",
+      "section-301",
+      "tarifs"
+    ],
+    "family": "commerce-sanctions",
+    "style": "policy-dark",
+    "template": "map-arrows",
+    "metaphor": {
+      "template": "map-arrows",
+      "subject": "sanctions redirect trade into shadow routes",
+      "central_symbol": "a blocked red route splitting into pale bypass routes",
+      "secondary_1": "three ports as dots",
+      "secondary_2": "a dotted evasive arc"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: map arrows.\nSubject: sanctions redirect trade into shadow routes.\nShow a blocked red route splitting into pale bypass routes as the dominant visual metaphor. Add only three ports as dots and a dotted evasive arc if they clarify the idea.\n\nArticle title: Trump-Xi J-2 : ce que le G7 a cadré et ce qui reste ouvert\nArticle summary: Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un contexte de pression commerciale sans précédent\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 58,
+    "slug": "notes-unleashing-development-banks-update-2026",
+    "permalink": "/policy/notes/unleashing-development-banks-update-2026/",
+    "source": "content/policy/notes/unleashing-development-banks-update-2026.md",
+    "title": "Banques de développement en 2026 : l''optimisation ne suffit plus",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "BMD",
+      "réforme",
+      "CAF",
+      "Banque mondiale",
+      "BAD",
+      "missions"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Banques de développement en 2026 : l''optimisation ne suffit plus\nArticle summary: En juillet 2024, cette note plaidait pour un changement de paradigme dans le rôle des banques publiques de développement\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 59,
+    "slug": "notes-unleashing-development-banks",
+    "permalink": "/policy/notes/unleashing-development-banks/",
+    "source": "content/policy/notes/unleashing-development-banks.md",
+    "title": "Banques de développement : de la correction des marchés à leur transformation",
+    "doc_type": "note",
+    "theme": "architecture-financière",
+    "tags": [
+      "BMD",
+      "réforme",
+      "développement",
+      "missions",
+      "Mazzucato"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Banques de développement : de la correction des marchés à leur transformation\nArticle summary: À six ans de l'échéance de l'Agenda 2030, les pays à revenu faible et intermédiaire doivent mobiliser 4 000 milliards\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 60,
+    "slug": "notes-vulnerabilite-energetique-ormuz",
+    "permalink": "/policy/notes/vulnerabilite_energetique_ormuz/",
+    "source": "content/policy/notes/vulnerabilite_energetique_ormuz.md",
+    "title": "Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7",
+    "doc_type": "note",
+    "theme": "énergie",
+    "tags": [
+      "Ormuz",
+      "énergie",
+      "résilience",
+      "G7",
+      "vulnérabilité européenne"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: Après Ormuz : vulnérabilité énergétique européenne et Pacte de résilience G7\nArticle summary: La fermeture du détroit d''Ormuz (5 mars 2026) a provoqué un choc pétrolier immédiat : Brent à 127 dollars (+51\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 61,
+    "slug": "notes-who-benefits-sanctions-update-2026",
+    "permalink": "/policy/notes/who-benefits-sanctions-update-2026/",
+    "source": "content/policy/notes/who-benefits-sanctions-update-2026.md",
+    "title": "À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire",
+    "doc_type": "note",
+    "theme": "geoeconomics",
+    "tags": [
+      "sanctions",
+      "Iran",
+      "géopolitique",
+      "détroit d'Ormuz",
+      "dédollarisation",
+      "coercition économique"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire\nArticle summary: Depuis la publication de cette note en novembre 2024, le régime de sanctions contre l'Iran a connu une escalade sans\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 62,
+    "slug": "notes-who-benefits-sanctions",
+    "permalink": "/policy/notes/who-benefits-sanctions/",
+    "source": "content/policy/notes/who-benefits-sanctions.md",
+    "title": "À qui profitent les sanctions ? Leçons du cas iranien",
+    "doc_type": "note",
+    "theme": "geoeconomics",
+    "tags": [
+      "sanctions",
+      "géopolitique",
+      "Iran",
+      "économie politique",
+      "coercition économique"
+    ],
+    "family": "iran-moyen-orient",
+    "style": "policy-dark",
+    "template": "pipeline-valve",
+    "metaphor": {
+      "template": "pipeline-valve",
+      "subject": "regional escalation turns the energy valve into a macro shock",
+      "central_symbol": "a red valve on a pipeline under high pressure",
+      "secondary_1": "a pressure gauge near the danger zone",
+      "secondary_2": "one directional arrow"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: pipeline valve.\nSubject: regional escalation turns the energy valve into a macro shock.\nShow a red valve on a pipeline under high pressure as the dominant visual metaphor. Add only a pressure gauge near the danger zone and one directional arrow if they clarify the idea.\n\nArticle title: À qui profitent les sanctions ? Leçons du cas iranien\nArticle summary: Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001,\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 63,
+    "slug": "reports-apd-g7-executive-summary-v4",
+    "permalink": "/policy/reports/apd-g7-executive-summary-v4/",
+    "source": "content/policy/reports/apd-g7-executive-summary-v4.md",
+    "title": "Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement",
+    "doc_type": "report",
+    "theme": "development",
+    "tags": [
+      "apd",
+      "g7",
+      "financement-développement",
+      "spring-meetings",
+      "réformes"
+    ],
+    "family": "developpement",
+    "style": "economist-light",
+    "template": "coins-cascade",
+    "metaphor": {
+      "template": "coins-cascade",
+      "subject": "development finance shrinks into narrowing budget space",
+      "central_symbol": "coins rolling down a red curve toward a small public wallet",
+      "secondary_1": "one seedling or public good icon",
+      "secondary_2": "empty ivory space"
+    },
+    "prompt": "Create a 16:9 horizontal conceptual editorial thumbnail illustration.\nUse the Economist-light register: warm ivory background, dark ink linework, limited flat colours, one strong deep-red accent, optional muted blue-grey or ochre, subtle paper texture.\n\nTemplate: coins cascade.\nSubject: development finance shrinks into narrowing budget space.\nShow coins rolling down a red curve toward a small public wallet as the dominant visual metaphor. Add only one seedling or public good icon and empty ivory space if they clarify the idea.\n\nArticle title: Au-delà du consensus : vulnérabilités et angles morts du nouvel agenda du financement du développement\nArticle summary: Quatre décennies de programmes de développement, des centaines de milliards d'APD déboursées, des réformes institutionnelles\n\nComposition rules: one central idea, generous negative space, simple geometry, strong silhouette, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic stock illustration, no childish cartoon, no clutter."
+  },
+  {
+    "index": 64,
+    "slug": "reports-convergence-polycrisis",
+    "permalink": "/policy/reports/convergence-polycrisis/",
+    "source": "content/policy/reports/convergence-polycrisis.md",
+    "title": "La convergence des crises : anatomie d''une polycrisis sous administration Trump II",
+    "doc_type": "report",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "convergence",
+      "scénarios",
+      "trump",
+      "g7",
+      "évian",
+      "énergie",
+      "commerce",
+      "finance",
+      "sécurité",
+      "développement",
+      "migration"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: La convergence des crises : anatomie d''une polycrisis sous administration Trump II\nArticle summary: L'administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d'une crise financière,\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 65,
+    "slug": "reports-convergence-resume-executif",
+    "permalink": "/policy/reports/convergence-resume-executif/",
+    "source": "content/policy/reports/convergence-resume-executif.md",
+    "title": "La convergence des crises : anatomie d''une polycrisis sous administration Trump II",
+    "doc_type": "report",
+    "theme": "polycrisis",
+    "tags": [
+      "polycrisis",
+      "convergence",
+      "scenarios",
+      "trump",
+      "g7",
+      "evian",
+      "fpsq"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: La convergence des crises : anatomie d''une polycrisis sous administration Trump II\nArticle summary: L''administration Trump II ne crée pas trois crises séparées. Elle active simultanément les canaux d''une crise\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  },
+  {
+    "index": 66,
+    "slug": "reports-iran-crise-analyse-strategique",
+    "permalink": "/policy/reports/iran-crise-analyse-strategique/",
+    "source": "content/policy/reports/iran-crise-analyse-strategique.md",
+    "title": "La crise iranienne de mars 2026 : dynamique militaire, succession, reconfiguration énergétique et position française",
+    "doc_type": "report",
+    "theme": "geopolitical",
+    "tags": [
+      "iran",
+      "crise",
+      "ormuz",
+      "scénarios",
+      "france",
+      "g7",
+      "moyen-orient",
+      "pétrole",
+      "succession",
+      "désescalade"
+    ],
+    "family": "polycrisis",
+    "style": "policy-dark",
+    "template": "broken-chart",
+    "metaphor": {
+      "template": "broken-chart",
+      "subject": "interlocking shocks fracture the same macro-financial chart",
+      "central_symbol": "a cracked chart panel crossed by a red falling line",
+      "secondary_1": "a small warning triangle",
+      "secondary_2": "one shadowed stress gauge"
+    },
+    "prompt": "Create a 16:9 horizontal editorial thumbnail illustration.\nUse the Policy-dark register: dark anthracite background, warm off-white main forms, deep editorial red accent, optional muted ochre, slightly textured engraving-inspired look.\n\nTemplate: broken chart.\nSubject: interlocking shocks fracture the same macro-financial chart.\nShow a cracked chart panel crossed by a red falling line as the dominant visual metaphor. Add only a small warning triangle and one shadowed stress gauge if they clarify the idea.\n\nArticle title: La crise iranienne de mars 2026 : dynamique militaire, succession, reconfiguration énergétique et position française\nArticle summary: L'assassinat de l'ayatollah Ali Khamenei le 28 février 2026 a ouvert la séquence la plus conséquente pour la sécurité\n\nComposition rules: one central idea, strong silhouette, high contrast, readable at 160x90 px, mature current-affairs magazine feel.\n\nNo text, no letters, no numbers, no logos, no flags, no photorealism, no public figures, no generic globe, no childish cartoon, no clutter."
+  }
+]

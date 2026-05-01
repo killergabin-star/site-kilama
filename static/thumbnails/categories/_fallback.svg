@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#15151A" />
+  <rect x="0" y="0" width="400" height="2.5" fill="#A1A1AA" opacity="0.3"/>
+  <rect x="18" y="17" width="10" height="4" fill="#A1A1AA" opacity="0.4"/>
+  <text x="34" y="21" font-family="Inter, sans-serif" font-size="7.5" font-weight="700"
+        fill="#A1A1AA" letter-spacing="0.10em" opacity="0.5">POLICY</text>
+  <line x1="18" y1="112" x2="382" y2="112" stroke="#A1A1AA" stroke-width="0.4" opacity="0.12"/>
+  <text x="200" y="108" font-family="Inter, sans-serif" font-size="9" font-weight="500"
+        fill="#71717A" text-anchor="middle" letter-spacing="0.08em" opacity="0.35">ANALYSE</text>
+  <text x="18" y="212" font-family="Inter, sans-serif" font-size="6.5"
+        fill="#71717A" letter-spacing="0.04em">erickilama.com</text>
+</svg>

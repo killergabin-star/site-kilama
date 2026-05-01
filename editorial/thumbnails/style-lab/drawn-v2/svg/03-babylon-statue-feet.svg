@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270">
+  <defs>
+    <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="1.2"/></filter>
+    <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse"><path d="M0 9 L9 0" stroke="#101014" stroke-width="1" opacity="0.18"/></pattern>
+    <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#101014" opacity="0.16"/></pattern>
+  </defs>
+  <rect width="480" height="270" fill="#F3E1C2"/>
+  <g filter="url(#wobble)">
+  <rect x="187" y="88" width="106" height="124" rx="10" fill="#F4CC58" stroke="#101014" stroke-width="7"/><circle cx="240" cy="58" r="28" fill="#FFF7E8" stroke="#101014" stroke-width="5"/><rect x="214" y="33" width="52" height="15" rx="2" fill="#E63846" stroke="#101014" stroke-width="5"/><rect x="156" y="132" width="58" height="44" rx="4" fill="#7CB7E6" stroke="#101014" stroke-width="5"/><rect x="267" y="132" width="58" height="44" rx="4" fill="#8BCB8F" stroke="#101014" stroke-width="5"/><line x1="199" y1="99" x2="282" y2="99" stroke="#101014" stroke-width="3" stroke-linecap="round"/><line x1="199" y1="126" x2="282" y2="126" stroke="#101014" stroke-width="3" stroke-linecap="round"/><line x1="199" y1="153" x2="282" y2="153" stroke="#101014" stroke-width="3" stroke-linecap="round"/><line x1="199" y1="180" x2="282" y2="180" stroke="#101014" stroke-width="3" stroke-linecap="round"/><circle cx="214" cy="151" r="11" fill="#FFF7E8" stroke="#101014" stroke-width="3"/><circle cx="267" cy="151" r="11" fill="#FFF7E8" stroke="#101014" stroke-width="3"/><path d="M241 86 L229 126 L251 151 L236 211" fill="none" stroke="#E63846" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><path d="M199 212 L164 246 L224 246 L241 212" fill="#C3926B" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M283 212 L320 246 L259 246 L241 212" fill="#62656B" stroke="#101014" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><line x1="240" y1="212" x2="245" y2="246" stroke="#E63846" stroke-width="5" stroke-linecap="round"/><rect x="43" y="190" width="52" height="29" rx="4" fill="#15203C" stroke="#101014" stroke-width="5"/><rect x="387" y="190" width="52" height="29" rx="4" fill="#15203C" stroke="#101014" stroke-width="5"/>
+  </g>
+</svg>

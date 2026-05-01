@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#15151A" />
+  <rect x="0" y="0" width="400" height="2.5" fill="#FB923C" opacity="0.6"/>
+
+  <polyline points="165,62 185,107 168,107 198,168" fill="none" stroke="#FB923C" stroke-width="2.5" opacity="0.3" stroke-linejoin="round"/>
+  <circle cx="255" cy="112" r="32" fill="none" stroke="#FB923C" stroke-width="0.8" opacity="0.15"/>
+  <circle cx="255" cy="112" r="18" fill="none" stroke="#FB923C" stroke-width="1" opacity="0.2"/>
+  <circle cx="255" cy="112" r="4" fill="#FB923C" opacity="0.2"/>
+  <rect x="18" y="17" width="10" height="4" fill="#FB923C" opacity="0.7"/>
+  <text x="34" y="21" font-family="Inter, sans-serif" font-size="7.5" font-weight="700"
+        fill="#FB923C" letter-spacing="0.10em" opacity="0.8">ÉNERGIE</text>
+  <text x="18" y="212" font-family="Inter, sans-serif" font-size="6.5"
+        fill="#71717A" letter-spacing="0.04em">Transition · pétrole · nucléaire</text>
+</svg>

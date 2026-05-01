@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <polygon points="200,60 250,90 250,140 200,165 150,140 150,90" stroke="#A1A1AA" stroke-width="1.5" fill="none" opacity="0.6"/>
+<line x1="155" y1="105" x2="245" y2="105" stroke="#71717A" stroke-width="0.7" opacity="0.5"/>
+<line x1="155" y1="125" x2="245" y2="125" stroke="#71717A" stroke-width="0.7" opacity="0.5"/>
+<line x1="200" y1="55" x2="200" y2="170" stroke="#E6203A" stroke-width="2"/>
+<polygon points="195,55 205,55 200,45" fill="#E6203A"/>
+<text x="200" y="115" font-family="EB Garamond, serif" font-size="24" fill="#F4F4F5" font-weight="500" text-anchor="middle">2,03%</text>
+<text x="200" y="140" font-family="Inter, sans-serif" font-size="8" fill="#71717A" text-anchor="middle" letter-spacing="0.1em">PIB UE-27 · 2026</text>
+  
+    <rect x="16" y="16" width="14" height="6" fill="#E6203A" />
+    <text x="36" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="600"
+          fill="#E6203A" letter-spacing="0.10em">DÉFENSE</text>
+    
+  
+    <text x="16" y="208" font-family="Inter, sans-serif" font-size="7"
+          fill="#71717A" letter-spacing="0.04em">ReArm Europe · 381 Mds €</text>
+    
+</svg>

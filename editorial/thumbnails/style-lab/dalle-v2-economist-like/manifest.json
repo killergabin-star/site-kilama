@@ -1,0 +1,19 @@
+{
+  "name": "dalle-v2-economist-like",
+  "created_at": "2026-04-30",
+  "source_memo": "/Users/killergabin/Downloads/Policy Thumbnails System v2.md",
+  "registers": ["policy-dark", "economist-light"],
+  "notes": "DALL-E reference set generated from Policy Thumbnails System v2 doctrine. Keep as visual benchmark and prompt-template evidence, not as live-site deployment assets until selected.",
+  "templates": [
+    {"slug": "person-spotlight", "file": "01-person-spotlight.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_04_45.png"},
+    {"slug": "balance-bars", "file": "02-balance-bars.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_04_50.png"},
+    {"slug": "map-arrows", "file": "03-map-arrows.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_03_35 (3).png"},
+    {"slug": "broken-chart", "file": "04-broken-chart.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_04_58.png"},
+    {"slug": "coins-cascade", "file": "05-coins-cascade.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_05_04.png"},
+    {"slug": "parliament-symbol", "file": "06-parliament-symbol.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_05_10.png"},
+    {"slug": "pipeline-valve", "file": "07-pipeline-valve.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_05_17.png"},
+    {"slug": "containers-bridge", "file": "08-containers-bridge.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_05_22.png"},
+    {"slug": "scale-vs-factories", "file": "09-scale-vs-factories.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_03_35 (9).png"},
+    {"slug": "roundtable-flows", "file": "10-roundtable-flows.png", "source": "/Users/killergabin/Downloads/ChatGPT Image 30 avr. 2026 à 17_03_35 (10).png"}
+  ]
+}
