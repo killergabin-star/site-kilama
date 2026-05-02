@@ -40,6 +40,7 @@ git commit -m "Auto-sync $(date '+%Y-%m-%d %H:%M')
 Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
 
 echo "→ Pushing to GitHub..."
+git config http.postBuffer 524288000
 git push
 
 # 6. Deploy to GitHub Pages (push built site to gh-pages branch)
