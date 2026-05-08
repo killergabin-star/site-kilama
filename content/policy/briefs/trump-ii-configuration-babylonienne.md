@@ -7,7 +7,9 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/trump-ii-configuration-babylonienne.png
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/03-babylon-statue-feet.svg
 tags:
 - États-Unis
 - Trump

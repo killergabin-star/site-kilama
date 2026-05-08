@@ -10,6 +10,10 @@ tags:
 - france
 - otan
 - nucleaire
+thumbnail:
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/09-rearm-fragmented-shield.svg
 summary: '*Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et
   des positions possibles pour le sommet d''Évian. Il est conçu pour une lecture de quinze minutes.*'
 status: ready

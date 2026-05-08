@@ -7,12 +7,12 @@
   "/policy/briefs/fragilite-par-la-base-pme-geopolitique/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/briefs-fragilite-par-la-base-pme-geopolitique.svg",
-    "source": "themes/kilama/static/thumbnails/custom/pme-fragilite.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/06-sme-red-clamp.svg"
   },
   "/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/briefs-polycrisis-afrique-pma-contraction-silencieuse.svg",
-    "source": "themes/kilama/static/thumbnails/custom/pma-contraction.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/05-sudan-aid-net.svg"
   },
   "/policy/briefs/polycrisis-cinq-mondes-gradient/": {
     "strategy": "category",
@@ -32,12 +32,12 @@
   "/policy/briefs/polycrisis-stabilisateurs-qui-cede/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/briefs-polycrisis-stabilisateurs-qui-cede.svg",
-    "source": "themes/kilama/static/thumbnails/custom/stabilisateurs.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/04-stabilizers-snapped-springs.svg"
   },
   "/policy/briefs/rearm-europe-policy-brief/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/briefs-rearm-europe-policy-brief.svg",
-    "source": "editorial/thumbnails/categories/defense.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/09-rearm-fragmented-shield.svg"
   },
   "/policy/briefs/reconfiguration-energetique-ormuz/": {
     "strategy": "category",
@@ -45,19 +45,19 @@
     "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
   },
   "/policy/briefs/second-china-shock/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/briefs-second-china-shock.svg",
-    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/07-china-shock-wave.svg"
   },
   "/policy/briefs/spring-meetings-2026/j1-soft-landing-declasse/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/briefs-spring-meetings-2026-j1-soft-landing-declasse.svg",
-    "source": "themes/kilama/static/thumbnails/custom/soft-landing.svg"
+    "source": "static/thumbnails/custom/soft-landing.svg"
   },
   "/policy/briefs/trump-ii-configuration-babylonienne/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/briefs-trump-ii-configuration-babylonienne.svg",
-    "source": "themes/kilama/static/thumbnails/custom/babylone.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/03-babylon-statue-feet.svg"
   },
   "/policy/debates/gopinath-pettis-dollar-deficit/": {
     "strategy": "category",
@@ -75,9 +75,9 @@
     "source": "editorial/thumbnails/categories/defense.svg"
   },
   "/policy/notes/1100-kenyans-haiti/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-1100-kenyans-haiti.svg",
-    "source": "editorial/thumbnails/categories/defense.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/11-haiti-small-perimeter.svg"
   },
   "/policy/notes/acceleration-reforme-afi-update-2026/": {
     "strategy": "category",
@@ -105,9 +105,9 @@
     "source": "editorial/thumbnails/categories/developpement.svg"
   },
   "/policy/notes/apd-defense-reallocation/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-apd-defense-reallocation.svg",
-    "source": "editorial/thumbnails/categories/developpement.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/08-aid-defense-siphon.svg"
   },
   "/policy/notes/bilan-g7-mae/": {
     "strategy": "category",
@@ -125,14 +125,14 @@
     "source": "editorial/thumbnails/categories/architecture-financiere.svg"
   },
   "/policy/notes/borrowers-platform-spring-meetings-2026/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-borrowers-platform-spring-meetings-2026.svg",
-    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/02-borrowers-megaphone.svg"
   },
   "/policy/notes/choc-ormuz-securite-alimentaire-afrique/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-choc-ormuz-securite-alimentaire-afrique.svg",
-    "source": "themes/kilama/static/thumbnails/custom/choc-ormuz.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/01-ormuz-bottle-grain.svg"
   },
   "/policy/notes/crise_iranienne_finance_guerre_russe/": {
     "strategy": "category",
@@ -275,9 +275,9 @@
     "source": "editorial/thumbnails/categories/g7-multilateral.svg"
   },
   "/policy/notes/trump-ii-nouveau-nabuchodonosor/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-trump-ii-nouveau-nabuchodonosor.svg",
-    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+    "source": "static/thumbnails/custom/babylone.svg"
   },
   "/policy/notes/trump-xi-enjeux/": {
     "strategy": "category",
@@ -290,9 +290,9 @@
     "source": "editorial/thumbnails/categories/architecture-financiere.svg"
   },
   "/policy/notes/unleashing-development-banks/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-unleashing-development-banks.svg",
-    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg"
   },
   "/policy/notes/vulnerabilite_energetique_ormuz/": {
     "strategy": "category",
@@ -305,14 +305,14 @@
     "source": "editorial/thumbnails/categories/geoeconomie.svg"
   },
   "/policy/notes/who-benefits-sanctions/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/notes-who-benefits-sanctions.svg",
-    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/10-sanctions-shadow-routes.svg"
   },
   "/policy/reports/apd-g7-executive-summary-v4/": {
-    "strategy": "category",
+    "strategy": "custom",
     "path": "/thumbnails/policy/reports-apd-g7-executive-summary-v4.svg",
-    "source": "editorial/thumbnails/categories/developpement.svg"
+    "source": "static/thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg"
   },
   "/policy/reports/convergence-polycrisis/": {
     "strategy": "category",

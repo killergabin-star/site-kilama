@@ -18,7 +18,9 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/spring-meetings-2026-j1-soft-landing-declasse.png
+  strategy: custom
+  style: policy-dark
+  custom_path: thumbnails/custom/soft-landing.svg
 ---
 
 > *Troisième jour des Spring Meetings 2026. Le chiffre qu'il faudra retenir n'est pas 3,1 % — c'est la demi-phrase de la directrice générale qui admet qu'aucun scénario n'évite la dégradation. Lecture d'une journée qui acte la sortie du référentiel post-Covid.*

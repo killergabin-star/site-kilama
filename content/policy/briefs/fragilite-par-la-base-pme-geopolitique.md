@@ -17,7 +17,9 @@ status: ready
 draft: false
 theme: géoéconomie
 thumbnail:
-  custom_path: thumbnails/custom/pme-fragilite.svg
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/06-sme-red-clamp.svg
 download: /files/Policy_Brief_PME_Geopolitique_Kilama_2026.docx
 ---
 

@@ -22,6 +22,12 @@ python3 scripts/update_vigie_data.py 2>&1 | tail -5
 echo "→ Regenerating trust page..."
 bash scripts/generate_trust_page.sh 2>&1 | tail -2 || echo "  (skipped: cert fetch failed, keeping previous trust.md)"
 
+# 2c. Regenerate Policy thumbnails manifest/assets
+if [ -f editorial/thumbnails/build-thumbnails.mjs ]; then
+    echo "→ Regenerating Policy thumbnails..."
+    node editorial/thumbnails/build-thumbnails.mjs 2>&1 | tail -8
+fi
+
 # 3. Check if anything changed
 if git diff --quiet && git diff --cached --quiet; then
     echo "[$(date '+%Y-%m-%d %H:%M')] No changes detected. Skipping deploy."

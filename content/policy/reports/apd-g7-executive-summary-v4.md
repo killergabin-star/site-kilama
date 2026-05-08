@@ -16,7 +16,9 @@ status: ready
 draft: false
 theme: development
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/apd-g7-executive-summary-v4.png
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg
 ---
 
 ## Résumé exécutif

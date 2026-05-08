@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, extname, join, resolve } from 'node:path';
 import { loadPolicyArticle, listPolicyMarkdownFiles } from './content-utils.mjs';
 import { resolveThumbnail } from './resolver.mjs';
 
@@ -17,9 +17,6 @@ const manifest = {};
 const counts = { custom: 0, chart: 0, category: 0, null: 0 };
 
 for (const article of articles) {
-  const targetRel = join(outputDir, `${article.slug}.svg`);
-  const publicPath = `/${targetRel.replace(/^static\//, '').split('\\').join('/')}`;
-
   const resolved = resolveThumbnail(article, {
     cwd,
     outputDir,
@@ -32,6 +29,12 @@ for (const article of articles) {
     counts.null += 1;
     continue;
   }
+
+  const outputExtension = resolved.strategy === 'chart'
+    ? '.svg'
+    : normalizedAssetExtension(resolved.svgPath);
+  const targetRel = join(outputDir, `${article.slug}${outputExtension}`);
+  const publicPath = `/${targetRel.replace(/^static\//, '').split('\\').join('/')}`;
 
   counts[resolved.strategy] = (counts[resolved.strategy] ?? 0) + 1;
 
@@ -55,3 +58,10 @@ console.log(`category: ${counts.category}`);
 console.log(`null: ${counts.null}`);
 console.log(`manifest: ${dataPath}`);
 console.log(`assets: ${outputDir}`);
+
+function normalizedAssetExtension(filePath) {
+  const extension = extname(filePath).toLowerCase();
+  return ['.svg', '.png', '.jpg', '.jpeg', '.webp', '.avif'].includes(extension)
+    ? extension
+    : '.svg';
+}

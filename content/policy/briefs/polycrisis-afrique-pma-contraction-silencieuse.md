@@ -7,7 +7,9 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/polycrisis-afrique-pma-contraction-silencieuse.png
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/05-sudan-aid-net.svg
 tags:
 - polycrisis
 - vigie

@@ -20,7 +20,9 @@ draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/borrowers-platform-spring-meetings-2026.png
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/02-borrowers-megaphone.svg
 ---
 
 ## Ce qui vient de se passer

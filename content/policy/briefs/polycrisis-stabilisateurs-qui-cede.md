@@ -7,7 +7,9 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/dalle-v3/polycrisis-stabilisateurs-qui-cede.png
+  strategy: custom
+  style: economist-light
+  custom_path: thumbnails/custom/claude-drawn-v2/04-stabilizers-snapped-springs.svg
 tags:
 - polycrisis
 - vigie

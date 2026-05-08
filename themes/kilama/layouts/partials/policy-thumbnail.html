@@ -8,7 +8,30 @@
   {{- end -}}
 {{- end -}}
 
-{{/* 2. Category mapping via tags */}}
+{{/* 2. Generated thumbnail manifest from editorial/thumbnails/build-thumbnails.mjs */}}
+{{- if not $thumbPath -}}
+  {{- with $page.Params.thumbnail -}}
+    {{- with .resolved_path -}}
+      {{- $candidate := replaceRE "^/" "" . -}}
+      {{- if fileExists (printf "static/%s" $candidate) -}}
+        {{- $thumbPath = $candidate -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $thumbPath -}}
+  {{- with index site.Data.policy_thumbnails $page.RelPermalink -}}
+    {{- with .path -}}
+      {{- $candidate := replaceRE "^/" "" . -}}
+      {{- if fileExists (printf "static/%s" $candidate) -}}
+        {{- $thumbPath = $candidate -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 3. Category mapping via tags */}}
 {{- if not $thumbPath -}}
   {{- $catMap := dict
     "polycrisis" "polycrisis"
@@ -78,7 +101,7 @@
   {{- end -}}
 {{- end -}}
 
-{{/* 3. Fallback */}}
+{{/* 4. Fallback */}}
 {{- if not $thumbPath -}}
   {{- $thumbPath = "thumbnails/categories/_fallback.svg" -}}
 {{- end -}}
