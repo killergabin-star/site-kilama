@@ -7,7 +7,7 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/babylone.svg
+  custom_path: thumbnails/custom/dalle-v3/trump-ii-configuration-babylonienne.png
 tags:
 - États-Unis
 - Trump

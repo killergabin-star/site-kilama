@@ -7,7 +7,7 @@ status: ready
 draft: false
 author: Eric Gabin Kilama
 thumbnail:
-  custom_path: thumbnails/custom/stabilisateurs.svg
+  custom_path: thumbnails/custom/dalle-v3/polycrisis-stabilisateurs-qui-cede.png
 tags:
 - polycrisis
 - vigie

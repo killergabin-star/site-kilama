@@ -740,14 +740,19 @@
         <div class="policy-catalog">
           {{ if gt (len $dossierPages) 0 }}
             {{ range first 6 $dossierPages }}
-            <article class="card-note">
-              <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}DOSSIER{{ end }}</span>
-              <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
-              <div class="card-note-meta">
-                <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
-                <span class="card-note-sep">&middot;</span>
-                <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+            <article class="card-note card-note--with-thumbnail">
+              <div class="card-note-thumbnail" aria-hidden="true">
+                {{ partial "policy-thumbnail.html" . }}
+              </div>
+              <div>
+                <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}DOSSIER{{ end }}</span>
+                <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+                <div class="card-note-meta">
+                  <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                  <span class="card-note-sep">&middot;</span>
+                  <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+                </div>
               </div>
             </article>
             {{ end }}

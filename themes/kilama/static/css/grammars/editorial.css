@@ -202,6 +202,9 @@
   margin-top: var(--space-5);
   padding-top: var(--space-4);
   border-top: 1px solid var(--color-border-secondary, rgba(0,0,0,0.06));
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cotw-table-section .state-label {
@@ -210,6 +213,9 @@
 }
 
 @media (max-width: 600px) {
+  .cotw-table-section table {
+    min-width: 480px;
+  }
   .cotw-table-section .state-label {
     display: none;
   }

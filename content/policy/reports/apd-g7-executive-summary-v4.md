@@ -15,6 +15,8 @@ summary: Quatre décennies de programmes de développement, des centaines de mil
 status: ready
 draft: false
 theme: development
+thumbnail:
+  custom_path: thumbnails/custom/dalle-v3/apd-g7-executive-summary-v4.png
 ---
 
 ## Résumé exécutif

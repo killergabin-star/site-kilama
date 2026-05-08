@@ -83,10 +83,10 @@
   {{- $thumbPath = "thumbnails/categories/_fallback.svg" -}}
 {{- end -}}
 
-{{/* Inline SVG if file exists in static/ */}}
+{{/* Inline SVGs only. Raster thumbnails are rendered as images. */}}
 {{- $file := printf "static/%s" $thumbPath -}}
-{{- if fileExists $file -}}
+{{- if and (fileExists $file) (in $thumbPath ".svg") -}}
   {{- readFile $file | safeHTML -}}
 {{- else -}}
-  <img src="{{ $thumbPath | relURL }}" alt="" loading="lazy" class="card-note-thumb-img">
+  <img src="{{ $thumbPath | relURL }}" alt="" loading="lazy" decoding="async" class="card-note-thumb-img">
 {{- end -}}
