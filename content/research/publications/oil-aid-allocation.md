@@ -3,7 +3,7 @@ title: "The Importance of Oil in the Allocation of Foreign Aid: The Case of G7 d
 authors:
   - "Eric Gabin Kilama"
   - "Cécile Couharde"
-  - "Ferhat Karanfil"
+  - "Fatih Karanfil"
   - "Luc-Désiré Omgba"
 date: "2020-04-01"
 hugoblox:

@@ -2,7 +2,6 @@
 title: "Leader Survival and Political Environment after a Failed Coup"
 authors:
   - "Eric Gabin Kilama"
-  - "Luc-Désiré Omgba"
 date: "2025-06-01"
 publication_types: ["manuscript"]
 publication: "Document de recherche"

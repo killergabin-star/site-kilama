@@ -2,8 +2,7 @@
 title: "Corruption and occupational choice: Evidence from Sub-Saharan Africa"
 authors:
   - "Eric Gabin Kilama"
-  - "Honoré Sedgo"
-  - "Luc-Désiré Omgba"
+  - "Harouna Sedgo"
   - "Eric Djimeu"
 date: "2025-01-01"
 publication_types: ["manuscript"]
