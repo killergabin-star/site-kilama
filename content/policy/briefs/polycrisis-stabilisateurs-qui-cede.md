@@ -6,10 +6,6 @@ theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/07-briefs-polycrisis-stabilisateurs-qui-cede.png
 tags:
 - polycrisis
 - vigie
@@ -19,6 +15,10 @@ tags:
 - macrofinance
 summary: >
   Toutes les polycrises récentes — 2008, 2015, 2022 — disposaient d'un frein automatique : un ajustement de prix, une reprise de la demande, une substitution énergétique absorbait une partie du choc avant même que les décideurs n'agissent. La configuration 2026 est la première depuis la fin de la Guerre froide où ces trois freins sont neutralisés en même temps. Le dollar ne peut plus s'ajuster librement, les marges budgétaires européennes sont déjà préemptées par ReArm Europe, la coordination multilatérale est fragilisée par le retrait américain. Le brief documente pourquoi et ce que cela change pour la gestion macrofinancière, la politique monétaire et les portefeuilles exposés aux scénarios de queue.
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-polycrisis-stabilisateurs-qui-cede.png
 ---
 
 ## Numéro spécial Vigie — Polycrisis

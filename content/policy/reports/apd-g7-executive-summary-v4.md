@@ -17,8 +17,8 @@ draft: false
 theme: development
 thumbnail:
   strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/63-reports-apd-g7-executive-summary-v4.png
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/reports-apd-g7-executive-summary-v4.png
 ---
 
 ## Résumé exécutif

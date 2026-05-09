@@ -8,10 +8,6 @@ tags:
 - développement
 - missions
 - Mazzucato
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/59-notes-unleashing-development-banks.png
 summary: À six ans de l'échéance de l'Agenda 2030, les pays à revenu faible et intermédiaire doivent mobiliser 4 000 milliards
   de dollars par an pour investir dans la santé, les infrastructures, la connectivité et la décarbonation. Ce déficit de financement
   colossal — estimé à environ 2 500 milliards de dollars par an compte tenu des flux actuels — a suscité une multiplication
@@ -20,6 +16,10 @@ status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-unleashing-development-banks.png
 ---
 
 ## Introduction : un déficit de financement colossal

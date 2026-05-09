@@ -6,10 +6,6 @@ theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/03-briefs-polycrisis-afrique-pma-contraction-silencieuse.png
 tags:
 - polycrisis
 - vigie
@@ -21,6 +17,10 @@ tags:
 - developpement
 summary: >
   La semaine dernière, le Comité d'aide au développement de l'OCDE a publié ses données préliminaires 2025 : l'aide publique au développement des pays du CAD recule de 23,1 %, avec une baisse de 25,8 % vers les PMA et de 26,3 % vers l'Afrique subsaharienne. Cette semaine, les réunions de printemps du FMI et de la Banque mondiale s'ouvrent à Washington sur l'image miroir : un Soudan avec 10,7 millions de déplacés internes, 25 millions de personnes en risque de famine, un appel humanitaire financé à 12 %. Les deux événements ne sont pas lus ensemble. Ils devraient l'être. Le brief documente pourquoi la contraction actuelle est un démantèlement d'infrastructure de prévention — pas une pause — et ce que le cas soudanais impose à l'agenda du G7 d'Évian.
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-polycrisis-afrique-pma-contraction-silencieuse.png
 ---
 
 ## Numéro spécial Vigie — Polycrisis

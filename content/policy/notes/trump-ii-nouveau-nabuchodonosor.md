@@ -21,8 +21,8 @@ summary: >
   L'imaginaire trumpiste assimile désormais le président des États-Unis à une figure messianique. Cette note soutient qu'un autre registre biblique saisit mieux la séquence ouverte en janvier 2026 : non pas le Christ-Sauveur revendiqué, mais le Nabuchodonosor de Daniel, dont la grandeur finit par se retourner contre lui. Blocus d'Ormuz, plan de continuité OTAN sans les États-Unis, durcissement tarifaire, transmission du choc américain à l'économie mondiale par la centralité du dollar, fractures dans la base républicaine, divorce avec les nationalismes européens : la polycrise a cessé d'être un instrument d'action pour devenir la condition permanente dans laquelle le pouvoir opère.
 thumbnail:
   strategy: custom
-  style: policy-dark
-  custom_path: thumbnails/custom/economist-img2img/56-notes-trump-ii-nouveau-nabuchodonosor.png
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-trump-ii-nouveau-nabuchodonosor.png
 ---
 
 > Cette note s'inscrit dans la séquence événementielle entamée en janvier 2026 et prolonge [*Non Expedit : le recours souverain du Vatican*](/policy/notes/non-expedit-recours-souverain-vatican/).

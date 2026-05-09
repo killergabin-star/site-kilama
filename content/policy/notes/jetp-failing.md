@@ -15,6 +15,10 @@ status: ready
 draft: false
 theme: énergie
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-jetp-failing.png
 ---
 
 ## Un modèle prometteur en panne

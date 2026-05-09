@@ -13,6 +13,10 @@ summary: Étude analytique, 29 mars 2026
 status: ready
 draft: false
 theme: geopolitical
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-reconfiguration-energetique-ormuz.png
 ---
 
 Étude analytique, 29 mars 2026

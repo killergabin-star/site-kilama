@@ -17,6 +17,10 @@ status: ready
 draft: false
 theme: sécurité
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-haiti-2025-update-2026.png
 ---
 
 ## Introduction

@@ -8,10 +8,6 @@ tags:
 - Iran
 - économie politique
 - coercition économique
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/62-notes-who-benefits-sanctions.png
 summary: Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001,
   le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus que doublé. L'Union européenne a élargi
   son propre arsenal, passant de quelques régimes ciblés à plus de quarante cadres restrictifs en vigueur. Cette inflation
@@ -20,6 +16,10 @@ status: ready
 draft: false
 theme: geoeconomics
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-who-benefits-sanctions.png
 ---
 
 Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001, le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus que doublé. L'Union européenne a élargi son propre arsenal, passant de quelques régimes ciblés à plus de quarante cadres restrictifs en vigueur. Cette inflation sanctionnatoire repose sur une hypothèse rarement questionnée : que la coercition économique modifie le comportement des États ciblés dans le sens souhaité par ceux qui l'imposent. Le cas iranien, l'un des régimes de sanctions les plus sévères et les plus durables au monde, offre un test empirique de cette hypothèse — et les résultats sont profondément ambigus.

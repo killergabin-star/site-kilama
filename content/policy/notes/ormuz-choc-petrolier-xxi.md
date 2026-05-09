@@ -13,6 +13,10 @@ summary: Eric Kilama | Note analytique, 10 mars 2026
 status: ready
 draft: false
 theme: geopolitical
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-ormuz-choc-petrolier-xxi.png
 ---
 
 Eric Kilama | Note analytique, 10 mars 2026

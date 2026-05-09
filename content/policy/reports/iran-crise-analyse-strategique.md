@@ -20,6 +20,10 @@ summary: L'assassinat de l'ayatollah Ali Khamenei le 28 février 2026 a ouvert l
 status: ready
 draft: false
 theme: geopolitical
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/reports-iran-crise-analyse-strategique.png
 ---
 
 ## Résumé

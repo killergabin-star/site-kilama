@@ -17,6 +17,10 @@ summary: La mi-mars 2026 a vu émerger sur la plateforme X un échange intellect
 status: ready
 draft: false
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-gopinath-pettis-deficit-courant.png
 ---
 
 ## Contexte du débat

@@ -12,6 +12,10 @@ summary: Note analytique, 3 mars 2026
 status: ready
 draft: false
 theme: geopolitical
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-iran-scenarios-moyen-orient.png
 ---
 
 Note analytique, 3 mars 2026

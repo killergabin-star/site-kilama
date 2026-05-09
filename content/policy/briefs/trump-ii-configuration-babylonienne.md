@@ -6,10 +6,6 @@ theme: polycrisis
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/12-briefs-trump-ii-configuration-babylonienne.png
 tags:
 - États-Unis
 - Trump
@@ -23,6 +19,10 @@ tags:
 - dette-souveraine
 summary: >
   Quatre mécanismes de la souveraineté néo-babylonienne — extraction sélective des élites périphériques, statue composite dissimulant l'hétérogénéité des fondations, hypertrophie d'une souveraineté sans contre-pouvoir, production iconographique de la légitimité — constituent une grille précise pour lire la configuration de pouvoir que l'administration Trump II installe en 2026. Le brief en tire trois leviers contemporains d'économie politique, mesure les fragilités qui se logent aux « pieds » de cet empire, caractérise la fonction opératoire du dispositif iconographique, et propose cinq indicateurs à suivre sur dix-huit mois pour tester la trajectoire.
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-trump-ii-configuration-babylonienne.png
 ---
 
 > L'administration Trump II a radicalisé trois instruments hérités — tarifs, dollar, sanctions — au point d'en faire les moteurs d'une coercition qui s'exerce désormais par les infrastructures financières et par les réseaux de circulation des biens, plutôt que par le contrôle territorial.

@@ -12,6 +12,10 @@ summary: Éric Kilama
 status: ready
 draft: false
 theme: africa
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-soudan-guerre-invisible.png
 ---
 
 **Centre d'analyse, de prévision et de stratégie — Note d'analyse**

@@ -15,6 +15,10 @@ summary: Les dépenses de défense de l'UE-27 atteignent 381 milliards d'euros e
 status: ready
 draft: false
 theme: défense
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-rearm-europe-dependance.png
 ---
 
 ### Contexte

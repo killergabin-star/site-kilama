@@ -16,6 +16,10 @@ status: ready
 draft: false
 theme: géopolitique
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-non-expedit-recours-souverain-vatican.png
 ---
 
 *Chapeau — Si les récits de presse publiés début avril sont exacts, des responsables américains ont rappelé à un représentant du Saint-Siège le précédent d'Avignon après un discours de Léon XIV contre la « diplomatie fondée sur la force ». Le Pentagone conteste fortement cette version. Mais, même traité avec toutes les précautions nécessaires, l'épisode remet au centre une vieille question : que peut encore le pape face à une grande puissance ? La réponse tient dans un mécanisme historique précis — le Non Expedit — et dans un concept que cet article propose : le recours souverain du Vatican.*

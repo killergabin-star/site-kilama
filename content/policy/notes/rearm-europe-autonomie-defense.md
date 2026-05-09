@@ -14,6 +14,10 @@ summary: Éric Kilama[^1]
 status: ready
 draft: false
 theme: défense
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-rearm-europe-autonomie-defense.png
 ---
 
 ## Le paradoxe industriel, le précédent budgétaire et la question nucléaire

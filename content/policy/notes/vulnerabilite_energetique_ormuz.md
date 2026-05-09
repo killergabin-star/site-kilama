@@ -14,6 +14,10 @@ summary: 'La fermeture du détroit d''Ormuz (5 mars 2026) a provoqué un choc p�
 status: ready
 draft: false
 theme: énergie
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-vulnerabilite-energetique-ormuz.png
 ---
 
 ### Contexte

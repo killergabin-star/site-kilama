@@ -17,6 +17,10 @@ tags:
 - bce
 summary: >
   La lecture dominante identifie l'énergie comme principale vulnérabilité européenne face à la polycrisis 2026. Cette lecture sous-estime une exposition moins visible : la compensation financière. 827 milliards de dollars d'actifs américains détenus par des investisseurs européens transitent par les plateformes belges et luxembourgeoises, au moment même où ReArm Europe doit mobiliser 800 milliards d'euros dans le pire environnement macrofinancier depuis 2012. La combinaison d'un portefeuille concentré, d'une contrainte budgétaire saturée par le réarmement et d'une autonomie sécuritaire qui n'est pas encore bâtie constitue une exposition systémique distincte de la dépendance énergétique — et que les dispositifs actuels de surveillance prudentielle ne captent pas.
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-polycrisis-europe-compensation-financiere.png
 ---
 
 ## Numéro spécial Vigie — Polycrisis

@@ -18,6 +18,10 @@ summary: 'Le 23 mars 2026, Pan Gongsheng, gouverneur de la Banque populaire de C
 status: ready
 draft: false
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/debates-gopinath-pettis-dollar-deficit.png
 ---
 
 ## 1. L'échange

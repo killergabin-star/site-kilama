@@ -19,6 +19,10 @@ status: ready
 draft: false
 theme: architecture-financière
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-borrowers-club-coordination-update-2026.png
 ---
 
 ## Ce qui a changé

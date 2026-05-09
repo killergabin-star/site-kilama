@@ -16,11 +16,11 @@ summary: 'Les PME industrielles européennes absorbent les chocs géopolitiques 
 status: ready
 draft: false
 theme: géoéconomie
+download: /files/Policy_Brief_PME_Geopolitique_Kilama_2026.docx
 thumbnail:
   strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/02-briefs-fragilite-par-la-base-pme-geopolitique.png
-download: /files/Policy_Brief_PME_Geopolitique_Kilama_2026.docx
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-fragilite-par-la-base-pme-geopolitique.png
 ---
 
 **Policy Brief** | Eric Kilama | Mars 2026

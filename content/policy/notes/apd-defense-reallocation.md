@@ -9,10 +9,6 @@ tags:
 - g7
 - spring-meetings
 - financement-développement
-thumbnail:
-  strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/22-notes-apd-defense-reallocation.png
 summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % en termes réels en 2024, s'établissant à 212,1
   milliards de dollars, soit 0,33 % du RNB combiné. Le recul est sévère. Les données préliminaires de l'OCDE pour 2025 confirment une
   contraction supplémentaire de 23,1 %, le recul le plus grave depuis les coupes des années 1990. Cette
@@ -20,6 +16,10 @@ summary: L'aide publique au développement des pays du CAD a diminué de 7,1 % e
 status: ready
 draft: false
 theme: development
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-apd-defense-reallocation.png
 ---
 
 **Note d'analyse** | 24 mars 2026

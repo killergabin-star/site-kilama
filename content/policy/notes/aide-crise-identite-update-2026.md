@@ -17,6 +17,10 @@ status: ready
 draft: false
 theme: développement
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-aide-crise-identite-update-2026.png
 ---
 
 ## Introduction

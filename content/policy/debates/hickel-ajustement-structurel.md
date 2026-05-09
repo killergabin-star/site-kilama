@@ -19,6 +19,10 @@ summary: 'Le 25 mars 2026, Jostein Hauge, économiste de l''université de Cambr
 status: ready
 draft: false
 author: Eric Gabin Kilama
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/debates-hickel-ajustement-structurel.png
 ---
 
 ## 1. L'échange — cinq jours, trois camps

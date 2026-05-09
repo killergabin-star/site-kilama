@@ -17,6 +17,10 @@ tags:
 - g7
 summary: >
   Les *Perspectives de l'économie mondiale* publiées à Washington le 14 avril annoncent une croissance mondiale de 3,1 % pour 2026. Ce chiffre unique décrit un état que le système ne visite presque jamais. Les trajectoires plausibles se regroupent sur deux points distincts — autour de 2,3 % (Découplage Ordonné) et autour de 0,9 % (Embrasement) — et l'espace entre les deux est quasi vide. Le système ne glisse pas d'un régime à l'autre : il bascule. Le brief documente le mécanisme de cette bascule, ses conséquences pour la gestion du risque systémique, et ce qu'il change pour l'agenda du G7 d'Évian.
+thumbnail:
+  strategy: custom
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/briefs-polycrisis-cinq-mondes-gradient.png
 ---
 
 ## Numéro spécial Vigie — Polycrisis

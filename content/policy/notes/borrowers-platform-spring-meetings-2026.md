@@ -21,8 +21,8 @@ theme: architecture-financière
 author: Eric Gabin Kilama
 thumbnail:
   strategy: custom
-  style: economist-light
-  custom_path: thumbnails/custom/economist-img2img/26-notes-borrowers-platform-spring-meetings-2026.png
+  style: dalle-original
+  custom_path: thumbnails/custom/dalle-original/notes-borrowers-platform-spring-meetings-2026.png
 ---
 
 ## Ce qui vient de se passer
