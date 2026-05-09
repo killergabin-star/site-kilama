@@ -19,7 +19,7 @@ theme: géoéconomie
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/06-sme-red-clamp.svg
+  custom_path: thumbnails/custom/economist-img2img/02-briefs-fragilite-par-la-base-pme-geopolitique.png
 download: /files/Policy_Brief_PME_Geopolitique_Kilama_2026.docx
 ---
 

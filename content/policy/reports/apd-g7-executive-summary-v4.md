@@ -18,7 +18,7 @@ theme: development
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg
+  custom_path: thumbnails/custom/economist-img2img/63-reports-apd-g7-executive-summary-v4.png
 ---
 
 ## Résumé exécutif

@@ -11,7 +11,7 @@ tags:
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/10-sanctions-shadow-routes.svg
+  custom_path: thumbnails/custom/economist-img2img/62-notes-who-benefits-sanctions.png
 summary: Les sanctions économiques sont devenues l'instrument privilégié de la politique étrangère occidentale. Depuis 2001,
   le nombre de programmes de sanctions actifs administrés par l'OFAC américain a plus que doublé. L'Union européenne a élargi
   son propre arsenal, passant de quelques régimes ciblés à plus de quarante cadres restrictifs en vigueur. Cette inflation

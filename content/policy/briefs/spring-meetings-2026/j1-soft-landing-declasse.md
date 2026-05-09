@@ -20,7 +20,7 @@ author: Eric Gabin Kilama
 thumbnail:
   strategy: custom
   style: policy-dark
-  custom_path: thumbnails/custom/soft-landing.svg
+  custom_path: thumbnails/custom/economist-img2img/11-briefs-spring-meetings-2026-j1-soft-landing-declasse.png
 ---
 
 > *Troisième jour des Spring Meetings 2026. Le chiffre qu'il faudra retenir n'est pas 3,1 % — c'est la demi-phrase de la directrice générale qui admet qu'aucun scénario n'évite la dégradation. Lecture d'une journée qui acte la sortie du référentiel post-Covid.*

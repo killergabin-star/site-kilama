@@ -22,7 +22,7 @@ summary: >
 thumbnail:
   strategy: custom
   style: policy-dark
-  custom_path: thumbnails/custom/babylone.svg
+  custom_path: thumbnails/custom/economist-img2img/56-notes-trump-ii-nouveau-nabuchodonosor.png
 ---
 
 > Cette note s'inscrit dans la séquence événementielle entamée en janvier 2026 et prolonge [*Non Expedit : le recours souverain du Vatican*](/policy/notes/non-expedit-recours-souverain-vatican/).

@@ -9,7 +9,7 @@ author: Eric Gabin Kilama
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/04-stabilizers-snapped-springs.svg
+  custom_path: thumbnails/custom/economist-img2img/07-briefs-polycrisis-stabilisateurs-qui-cede.png
 tags:
 - polycrisis
 - vigie

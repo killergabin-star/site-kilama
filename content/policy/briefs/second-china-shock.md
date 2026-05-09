@@ -12,7 +12,7 @@ tags:
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/07-china-shock-wave.svg
+  custom_path: thumbnails/custom/economist-img2img/10-briefs-second-china-shock.png
 summary: '1. [Résumé](#résumé) 2. [Le surplus record : état des lieux](#le-surplus-record) 3. [Premier et second choc chinois
   : ce qui a changé](#premier-et-second-choc) 4. [Trois grilles de lecture du surplus](#trois-grilles-de-lecture) 5. [La Section
   301 comme pression multi-front](#section-301-multi-front) 6. [Options européennes](#options-européennes) 7. [Le lien risque

@@ -13,7 +13,7 @@ tags:
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/09-rearm-fragmented-shield.svg
+  custom_path: thumbnails/custom/economist-img2img/08-briefs-rearm-europe-policy-brief.png
 summary: '*Ce document propose une analyse du réarmement européen, du mécanisme SAFE, des options nucléaires françaises et
   des positions possibles pour le sommet d''Évian. Il est conçu pour une lecture de quinze minutes.*'
 status: ready

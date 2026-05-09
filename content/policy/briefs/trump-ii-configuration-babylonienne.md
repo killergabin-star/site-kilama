@@ -9,7 +9,7 @@ author: Eric Gabin Kilama
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/03-babylon-statue-feet.svg
+  custom_path: thumbnails/custom/economist-img2img/12-briefs-trump-ii-configuration-babylonienne.png
 tags:
 - États-Unis
 - Trump

@@ -20,7 +20,7 @@ author: Eric Gabin Kilama
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/01-ormuz-bottle-grain.svg
+  custom_path: thumbnails/custom/economist-img2img/27-notes-choc-ormuz-securite-alimentaire-afrique.png
 ---
 
 Le blocus du détroit d'Ormuz (depuis le 28 février 2026) déclenche un choc alimentaire à retardement sur l'Afrique subsaharienne via quatre canaux convergents — engrais (direct, décalé), énergie (immédiat), macroéconomique (amplificateur), aide (aggravant). Le choc se matérialise au second semestre 2026 — après le sommet G7 d'Évian, avant les récoltes — dans une fenêtre où les amortisseurs traditionnels (aide humanitaire, multilatéraux) sont au plus bas historique.

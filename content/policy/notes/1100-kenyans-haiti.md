@@ -11,7 +11,7 @@ tags:
 thumbnail:
   strategy: custom
   style: economist-light
-  custom_path: thumbnails/custom/claude-drawn-v2/11-haiti-small-perimeter.svg
+  custom_path: thumbnails/custom/economist-img2img/16-notes-1100-kenyans-haiti.png
 summary: La mission de sécurité kényane autorisée par le Conseil de sécurité des Nations Unies en octobre 2023 constitue un
   geste politique bienvenu, mais elle reste dramatiquement en deçà des besoins réels d'Haïti. Avec environ 1 100 agents de
   sécurité kényans, auxquels s'ajoutent quelques centaines de policiers des Bahamas, de la Jamaïque et d'Antigua-et-Barbuda,

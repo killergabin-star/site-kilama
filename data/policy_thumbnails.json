@@ -6,13 +6,13 @@
   },
   "/policy/briefs/fragilite-par-la-base-pme-geopolitique/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-fragilite-par-la-base-pme-geopolitique.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/06-sme-red-clamp.svg"
+    "path": "/thumbnails/policy/briefs-fragilite-par-la-base-pme-geopolitique.png",
+    "source": "static/thumbnails/custom/economist-img2img/02-briefs-fragilite-par-la-base-pme-geopolitique.png"
   },
   "/policy/briefs/polycrisis-afrique-pma-contraction-silencieuse/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-polycrisis-afrique-pma-contraction-silencieuse.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/05-sudan-aid-net.svg"
+    "path": "/thumbnails/policy/briefs-polycrisis-afrique-pma-contraction-silencieuse.png",
+    "source": "static/thumbnails/custom/economist-img2img/03-briefs-polycrisis-afrique-pma-contraction-silencieuse.png"
   },
   "/policy/briefs/polycrisis-cinq-mondes-gradient/": {
     "strategy": "category",
@@ -31,13 +31,13 @@
   },
   "/policy/briefs/polycrisis-stabilisateurs-qui-cede/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-polycrisis-stabilisateurs-qui-cede.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/04-stabilizers-snapped-springs.svg"
+    "path": "/thumbnails/policy/briefs-polycrisis-stabilisateurs-qui-cede.png",
+    "source": "static/thumbnails/custom/economist-img2img/07-briefs-polycrisis-stabilisateurs-qui-cede.png"
   },
   "/policy/briefs/rearm-europe-policy-brief/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-rearm-europe-policy-brief.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/09-rearm-fragmented-shield.svg"
+    "path": "/thumbnails/policy/briefs-rearm-europe-policy-brief.png",
+    "source": "static/thumbnails/custom/economist-img2img/08-briefs-rearm-europe-policy-brief.png"
   },
   "/policy/briefs/reconfiguration-energetique-ormuz/": {
     "strategy": "category",
@@ -46,18 +46,18 @@
   },
   "/policy/briefs/second-china-shock/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-second-china-shock.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/07-china-shock-wave.svg"
+    "path": "/thumbnails/policy/briefs-second-china-shock.png",
+    "source": "static/thumbnails/custom/economist-img2img/10-briefs-second-china-shock.png"
   },
   "/policy/briefs/spring-meetings-2026/j1-soft-landing-declasse/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-spring-meetings-2026-j1-soft-landing-declasse.svg",
-    "source": "static/thumbnails/custom/soft-landing.svg"
+    "path": "/thumbnails/policy/briefs-spring-meetings-2026-j1-soft-landing-declasse.png",
+    "source": "static/thumbnails/custom/economist-img2img/11-briefs-spring-meetings-2026-j1-soft-landing-declasse.png"
   },
   "/policy/briefs/trump-ii-configuration-babylonienne/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/briefs-trump-ii-configuration-babylonienne.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/03-babylon-statue-feet.svg"
+    "path": "/thumbnails/policy/briefs-trump-ii-configuration-babylonienne.png",
+    "source": "static/thumbnails/custom/economist-img2img/12-briefs-trump-ii-configuration-babylonienne.png"
   },
   "/policy/debates/gopinath-pettis-dollar-deficit/": {
     "strategy": "category",
@@ -76,8 +76,8 @@
   },
   "/policy/notes/1100-kenyans-haiti/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-1100-kenyans-haiti.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/11-haiti-small-perimeter.svg"
+    "path": "/thumbnails/policy/notes-1100-kenyans-haiti.png",
+    "source": "static/thumbnails/custom/economist-img2img/16-notes-1100-kenyans-haiti.png"
   },
   "/policy/notes/acceleration-reforme-afi-update-2026/": {
     "strategy": "category",
@@ -106,8 +106,8 @@
   },
   "/policy/notes/apd-defense-reallocation/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-apd-defense-reallocation.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/08-aid-defense-siphon.svg"
+    "path": "/thumbnails/policy/notes-apd-defense-reallocation.png",
+    "source": "static/thumbnails/custom/economist-img2img/22-notes-apd-defense-reallocation.png"
   },
   "/policy/notes/bilan-g7-mae/": {
     "strategy": "category",
@@ -126,13 +126,13 @@
   },
   "/policy/notes/borrowers-platform-spring-meetings-2026/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-borrowers-platform-spring-meetings-2026.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/02-borrowers-megaphone.svg"
+    "path": "/thumbnails/policy/notes-borrowers-platform-spring-meetings-2026.png",
+    "source": "static/thumbnails/custom/economist-img2img/26-notes-borrowers-platform-spring-meetings-2026.png"
   },
   "/policy/notes/choc-ormuz-securite-alimentaire-afrique/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-choc-ormuz-securite-alimentaire-afrique.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/01-ormuz-bottle-grain.svg"
+    "path": "/thumbnails/policy/notes-choc-ormuz-securite-alimentaire-afrique.png",
+    "source": "static/thumbnails/custom/economist-img2img/27-notes-choc-ormuz-securite-alimentaire-afrique.png"
   },
   "/policy/notes/crise_iranienne_finance_guerre_russe/": {
     "strategy": "category",
@@ -276,8 +276,8 @@
   },
   "/policy/notes/trump-ii-nouveau-nabuchodonosor/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-trump-ii-nouveau-nabuchodonosor.svg",
-    "source": "static/thumbnails/custom/babylone.svg"
+    "path": "/thumbnails/policy/notes-trump-ii-nouveau-nabuchodonosor.png",
+    "source": "static/thumbnails/custom/economist-img2img/56-notes-trump-ii-nouveau-nabuchodonosor.png"
   },
   "/policy/notes/trump-xi-enjeux/": {
     "strategy": "category",
@@ -291,8 +291,8 @@
   },
   "/policy/notes/unleashing-development-banks/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-unleashing-development-banks.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg"
+    "path": "/thumbnails/policy/notes-unleashing-development-banks.png",
+    "source": "static/thumbnails/custom/economist-img2img/59-notes-unleashing-development-banks.png"
   },
   "/policy/notes/vulnerabilite_energetique_ormuz/": {
     "strategy": "category",
@@ -306,13 +306,13 @@
   },
   "/policy/notes/who-benefits-sanctions/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/notes-who-benefits-sanctions.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/10-sanctions-shadow-routes.svg"
+    "path": "/thumbnails/policy/notes-who-benefits-sanctions.png",
+    "source": "static/thumbnails/custom/economist-img2img/62-notes-who-benefits-sanctions.png"
   },
   "/policy/reports/apd-g7-executive-summary-v4/": {
     "strategy": "custom",
-    "path": "/thumbnails/policy/reports-apd-g7-executive-summary-v4.svg",
-    "source": "static/thumbnails/custom/claude-drawn-v2/12-mdb-mission-compass.svg"
+    "path": "/thumbnails/policy/reports-apd-g7-executive-summary-v4.png",
+    "source": "static/thumbnails/custom/economist-img2img/63-reports-apd-g7-executive-summary-v4.png"
   },
   "/policy/reports/convergence-polycrisis/": {
     "strategy": "category",
