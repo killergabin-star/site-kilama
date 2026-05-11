@@ -16,10 +16,6 @@ status: ready
 draft: false
 theme: développement
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-aide-crise-identite.png
 ---
 
 ## Un système sous tensions multiples

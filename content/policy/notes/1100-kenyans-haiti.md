@@ -16,10 +16,6 @@ status: ready
 draft: false
 theme: sécurité
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-1100-kenyans-haiti.png
 ---
 
 ## Le pari kényan : une mission sous-dimensionnée face à l'ampleur de la crise

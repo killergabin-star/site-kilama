@@ -17,10 +17,6 @@ summary: 'L''administration Trump II ne crée pas trois crises séparées. Elle 
 status: ready
 draft: false
 theme: polycrisis
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/reports-convergence-resume-executif.png
 ---
 
 ## Résumé exécutif

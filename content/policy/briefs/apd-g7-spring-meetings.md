@@ -12,10 +12,6 @@ summary: '*Based on the report "Au-delà du consensus : vulnérabilités et angl
 status: ready
 draft: false
 theme: development
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/briefs-apd-g7-spring-meetings.png
 ---
 
 **Policy Brief for the IMF-World Bank Spring Meetings, April 13-18 2026**

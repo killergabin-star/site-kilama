@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <path d="M 180 60 L 220 60 L 240 80 L 245 110 L 240 140 L 230 165 L 215 180 L 200 175 L 185 180 L 175 165 L 170 145 L 165 120 L 170 95 L 180 60 Z" fill="#34D399" opacity="0.20" stroke="#34D399" stroke-width="1.2"/>
+<circle cx="200" cy="90" r="3" fill="#E6203A" opacity="0.9"/>
+<circle cx="215" cy="130" r="3" fill="#E6203A" opacity="0.9"/>
+<circle cx="190" cy="155" r="3" fill="#E6203A" opacity="0.9"/>
+<circle cx="210" cy="170" r="3" fill="#E6203A" opacity="0.9"/>
+<line x1="50" y1="200" x2="350" y2="200" stroke="#E6203A" stroke-width="0.5" opacity="0.6" stroke-dasharray="3,2"/>
+<text x="100" y="120" font-family="EB Garamond, serif" font-size="22" fill="#F4F4F5" font-weight="500">45</text>
+<text x="100" y="135" font-family="Inter, sans-serif" font-size="7" fill="#71717A" letter-spacing="0.1em">PMA · CONCERNÉS</text>
+<text x="290" y="160" font-family="JetBrains Mono, monospace" font-size="9" fill="#E6203A" font-weight="600">−23,1%</text>
+<text x="290" y="172" font-family="Inter, sans-serif" font-size="7" fill="#71717A">APD 2025</text>
+  
+    <rect x="16" y="16" width="14" height="6" fill="#E6203A" />
+    <text x="36" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="600"
+          fill="#E6203A" letter-spacing="0.10em">AFRIQUE · PMA</text>
+    
+  
+    <text x="16" y="208" font-family="Inter, sans-serif" font-size="7"
+          fill="#71717A" letter-spacing="0.04em">Contraction silencieuse · 2026</text>
+    
+</svg>

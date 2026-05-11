@@ -15,10 +15,6 @@ summary: L'arrêt de la Cour suprême *Learning Resources v. Trump* (20 février
 status: ready
 draft: false
 theme: commerce
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-section122-chaos-tarifaire.png
 ---
 
 ### Contexte

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <path d="M 320 90 L 80 90" stroke="#22D3EE" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+<polygon points="80,90 95,82 95,98" fill="#22D3EE" opacity="0.85"/>
+<path d="M 80 110 L 320 110" stroke="#A78BFA" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.75"/>
+<polygon points="320,110 305,103 305,117" fill="#A78BFA" opacity="0.75"/>
+<path d="M 200 50 L 200 165" stroke="#E6203A" stroke-width="2" fill="none" stroke-linecap="round"/>
+<polygon points="200,165 192,150 208,150" fill="#E6203A"/>
+<text x="170" y="80" font-family="JetBrains Mono, monospace" font-size="9" fill="#22D3EE" font-weight="600">+22%</text>
+<text x="220" y="125" font-family="JetBrains Mono, monospace" font-size="9" fill="#A78BFA" font-weight="600">-8%</text>
+  
+    <rect x="16" y="16" width="14" height="6" fill="#E6203A" />
+    <text x="36" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="600"
+          fill="#E6203A" letter-spacing="0.10em">GÉOÉCONOMIE</text>
+    
+  
+    <text x="16" y="208" font-family="Inter, sans-serif" font-size="7"
+          fill="#71717A" letter-spacing="0.04em">Déséquilibres commerciaux · flux</text>
+    
+</svg>

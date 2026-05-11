@@ -16,10 +16,6 @@ summary: Le sommet Trump-Xi de Pékin (31 mars -- 2 avril) intervient dans un co
 status: ready
 draft: false
 theme: trade
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-trump-xi-enjeux.png
 ---
 
 *Centre d'analyse, de prévision et de stratégie — Note rapide*

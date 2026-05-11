@@ -16,10 +16,6 @@ summary: 'La France a pris la présidence du G7 le 1er janvier 2026, avec pour p
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-france-presidence-g7-contraintes.png
 ---
 
 La France a pris la présidence du G7 le 1er janvier 2026, avec pour point culminant le sommet des chefs d'État et de gouvernement à Évian-les-Bains du 15 au 17 juin. Le choix d'Évian est symbolique : la ville avait déjà accueilli le G8 en 2003 sous la présidence de Jacques Chirac, année où la France s'était distinguée par son refus de la guerre en Irak. Vingt-trois ans plus tard, la configuration présente des analogies troublantes : un président américain lancé dans une aventure militaire (cette fois contre l'Iran), des alliés européens réticents à suivre, et une France qui tente de se positionner en médiateur entre fermeté atlantique et ouverture au Sud Global[^1].

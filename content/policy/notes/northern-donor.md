@@ -16,10 +16,6 @@ status: ready
 draft: false
 theme: développement
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-northern-donor.png
 ---
 
 ## Une légitimité en question

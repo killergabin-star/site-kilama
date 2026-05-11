@@ -19,10 +19,6 @@ status: ready
 draft: false
 theme: commerce
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-eu-trade-geopolitics-update-2026.png
 ---
 
 Depuis la publication de cette analyse en novembre 2024, le contexte de la politique commerciale européenne a été bouleversé. Le retour de l'administration Trump, avec une politique tarifaire d'une ampleur inédite, a placé l'UE dans une position de double contrainte : défendre ses intérêts face à Washington tout en préservant ses relations avec les pays en développement. Cette note actualise le diagnostic et les recommandations à la lumière des développements de 2025-2026.

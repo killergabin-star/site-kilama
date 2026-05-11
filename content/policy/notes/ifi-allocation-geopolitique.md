@@ -17,10 +17,6 @@ summary: Le soupçon est aussi vieux que les institutions elles-mêmes. Depuis l
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-ifi-allocation-geopolitique.png
 ---
 
 ## Introduction

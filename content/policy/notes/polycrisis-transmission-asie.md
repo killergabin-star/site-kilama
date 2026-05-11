@@ -17,10 +17,6 @@ summary: '*Cette note constitue une extension régionale du rapport intégrateur
 status: ready
 draft: false
 theme: polycrisis-asie
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-polycrisis-transmission-asie.png
 ---
 
 ## Note d'analyse pour la Fondation France-Asie

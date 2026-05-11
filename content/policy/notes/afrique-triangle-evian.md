@@ -17,10 +17,6 @@ summary: 'Le sommet du G7 d''Évian (15-17 juin 2026) se prépare dans un contex
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-afrique-triangle-evian.png
 ---
 
 Le sommet du G7 d'Évian (15-17 juin 2026) se prépare dans un contexte de compétition budgétaire sans précédent entre trois agendas majeurs de l'Occident : la reconstruction de l'Ukraine (486 milliards de dollars sur dix ans selon la RDNA3 de la Banque mondiale), le réarmement européen (800 milliards d'euros à l'horizon 2030 dans le cadre de ReArm Europe/Readiness 2030), et les partenariats de développement avec l'Afrique[^1]. Cette compétition, que l'on peut qualifier de « triangle d'Évian », n'oppose pas trois priorités abstraites. Elle se traduit dans les budgets nationaux des sept membres par des arbitrages concrets dont l'Afrique sort perdante.

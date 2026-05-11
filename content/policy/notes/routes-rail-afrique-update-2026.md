@@ -17,10 +17,6 @@ status: ready
 draft: false
 theme: afrique
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-routes-rail-afrique-update-2026.png
 ---
 
 ## Introduction

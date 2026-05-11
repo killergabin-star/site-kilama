@@ -17,10 +17,6 @@ summary: L'Union européenne poursuit simultanément deux ambitions industrielle
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-safe-green-deal-dilemme-industriel.png
 ---
 
 ## Introduction

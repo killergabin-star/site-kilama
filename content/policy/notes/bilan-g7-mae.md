@@ -15,10 +15,6 @@ summary: La première réunion ministérielle des Affaires étrangères du G7 so
 status: ready
 draft: false
 theme: geopolitical
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-bilan-g7-mae.png
 ---
 
 **Note d'analyse** | 29 mars 2026

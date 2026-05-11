@@ -16,10 +16,6 @@ summary: 'Le 26 mars 2026, Jason Hickel — anthropologue économique à l''Univ
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-hickel-ajustement-structurel-proces.png
 ---
 
 ## Contexte du débat

@@ -16,10 +16,6 @@ summary: '1. [Résumé](#résumé) 2. [Le surplus record : état des lieux](#le-
 status: ready
 draft: false
 theme: trade
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/briefs-second-china-shock.png
 ---
 
 *Centre d'analyse, de prévision et de stratégie — Étude*

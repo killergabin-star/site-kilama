@@ -15,10 +15,6 @@ summary: L'opération Epic Fury produit un paradoxe stratégique que le G7 n'a p
 status: ready
 draft: false
 theme: iran
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-crise-iranienne-finance-guerre-russe.png
 ---
 
 ### Synthèse

@@ -16,10 +16,6 @@ summary: La fermeture partielle du détroit d'Ormuz, consécutive aux frappes am
 status: ready
 draft: false
 author: Eric Gabin Kilama
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/notes-transition-energetique-apres-ormuz.png
 ---
 
 ## Introduction

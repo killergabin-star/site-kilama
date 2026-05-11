@@ -16,10 +16,6 @@ summary: L'administration Trump II active simultan√©ment trois canaux de crise ‚
 status: ready
 draft: false
 theme: polycrisis
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/briefs-polycrisis-evian.png
 ---
 
 ## Policy Brief

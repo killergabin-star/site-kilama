@@ -15,10 +15,6 @@ summary: '*Ce document propose une analyse du réarmement européen, du mécanis
 status: ready
 draft: false
 theme: défense
-thumbnail:
-  strategy: custom
-  style: dalle-original
-  custom_path: thumbnails/custom/dalle-original/briefs-rearm-europe-policy-brief.png
 ---
 
 **Policy Brief** | Eric Kilama | 29 mars 2026
