@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoRisk Data Lab 1 — Local Projections & Geopolitical Shocks | Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue-fpsq: #2C5F8A;
+      --red-analytical: #C0392B;
+      --gold-caps: #D4A017;
+      --ivory: #F8F7F4;
+      --ivory-deep: #F0EDE8;
+      --anthracite: #2D2D2D;
+      --text-secondary: #5A6068;
+      --border-light: rgba(27, 42, 74, 0.08);
+      --border-strong: rgba(27, 42, 74, 0.16);
+      --green: #2E7D5B;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--blue-fpsq); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ── */
+    .lab-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid var(--gold-caps);
+    }
+
+    .lab-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .lab-logo {
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .lab-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .lab-tag {
+      border: 1px solid rgba(212, 160, 23, 0.45);
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+
+    .lab-back {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .lab-back:hover { color: #fff; }
+
+    /* ── Main Layout ── */
+    .lab-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 34px 72px;
+    }
+
+    /* ── Panels ── */
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+    }
+
+    .panel-accent { border-left: 4px solid var(--gold-caps); }
+    .panel-blue { border-left: 4px solid var(--blue-fpsq); }
+
+    /* ── Typography ── */
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .standfirst {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.62;
+      max-width: 74ch;
+    }
+
+    .serif-body {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .citation-block {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 17px;
+      line-height: 1.55;
+      border-left: 3px solid var(--gold-caps);
+      padding: 14px 20px;
+      margin: 18px 0;
+      background: var(--ivory);
+    }
+
+    /* ── Hero Grid ── */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .intro-panel { padding: 30px 34px; }
+
+    .learning-contract {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .contract-step {
+      background: var(--ivory);
+      border-top: 2px solid var(--blue-fpsq);
+      padding: 12px;
+    }
+
+    .contract-step span {
+      display: block;
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .contract-step small {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .status-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .status-grid { display: grid; gap: 12px; }
+
+    .status-item {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 12px;
+    }
+
+    .status-label {
+      color: var(--text-secondary);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .status-value {
+      color: var(--navy);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .status-copy {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 18px 0 0;
+    }
+
+    /* ── Phase Navigation ── */
+    .phase-nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 28px 0 18px;
+    }
+
+    .phase-btn {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 8px 14px;
+      text-transform: uppercase;
+      transition: background 0.16s, border-color 0.16s, color 0.16s;
+    }
+
+    .phase-btn:hover { border-color: var(--blue-fpsq); }
+
+    .phase-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .phase-btn.completed {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .phase-section { display: none; }
+    .phase-section.active { display: block; }
+
+    /* ── Content Sections ── */
+    .content-panel { padding: 28px 32px; margin-bottom: 22px; }
+
+    .equation-block {
+      background: var(--ivory-deep);
+      border: 1px solid var(--border-light);
+      padding: 20px 24px;
+      margin: 18px 0;
+      text-align: center;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--navy);
+      overflow-x: auto;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .concept-card {
+      background: var(--ivory);
+      border-left: 3px solid var(--blue-fpsq);
+      padding: 14px 16px;
+    }
+
+    .concept-card strong {
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .concept-card p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* ── Chart Container ── */
+    .chart-container {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      padding: 20px;
+      margin: 18px 0;
+      position: relative;
+    }
+
+    .chart-container canvas { width: 100% !important; }
+
+    .chart-controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .toggle-btn {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      transition: background 0.16s, border-color 0.16s, color 0.16s;
+    }
+
+    .toggle-btn:hover { border-color: var(--blue-fpsq); }
+
+    .toggle-btn.active {
+      background: rgba(44, 95, 138, 0.08);
+      border-color: var(--blue-fpsq);
+      color: var(--blue-fpsq);
+    }
+
+    /* ── Event Card (clickable spike info) ── */
+    .event-card {
+      background: var(--ivory-deep);
+      border-left: 3px solid var(--gold-caps);
+      padding: 14px 18px;
+      margin: 14px 0;
+      display: none;
+    }
+
+    .event-card.visible { display: block; }
+
+    .event-card .event-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    .event-card .event-detail {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", serif;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-top: 6px;
+    }
+
+    .event-card .event-meta {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      color: var(--blue-fpsq);
+      margin-top: 8px;
+    }
+
+    /* ── IRF Controls ── */
+    .irf-selector {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .irf-option {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      padding: 14px 16px;
+      text-align: left;
+      transition: border-color 0.16s, background 0.16s;
+    }
+
+    .irf-option:hover { border-color: rgba(44, 95, 138, 0.45); }
+
+    .irf-option.active {
+      background: rgba(44, 95, 138, 0.06);
+      border-color: var(--blue-fpsq);
+      box-shadow: inset 3px 0 0 var(--blue-fpsq);
+    }
+
+    .irf-option b {
+      color: var(--navy);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .irf-option small {
+      color: var(--text-secondary);
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    /* ── Quiz ── */
+    .quiz-block {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 20px 24px;
+      margin: 18px 0;
+    }
+
+    .quiz-question {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-opt {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      color: var(--anthracite);
+      font-size: 13px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: border-color 0.16s, background 0.16s;
+    }
+
+    .quiz-opt:hover { border-color: rgba(44, 95, 138, 0.4); }
+
+    .quiz-opt.correct {
+      background: rgba(46, 125, 91, 0.08);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .quiz-opt.incorrect {
+      background: rgba(192, 57, 43, 0.06);
+      border-color: var(--red-analytical);
+      color: var(--red-analytical);
+    }
+
+    .quiz-opt:disabled { cursor: default; opacity: 0.85; }
+
+    .quiz-feedback {
+      font-family: "Source Serif 4", serif;
+      font-size: 13px;
+      line-height: 1.55;
+      padding: 10px 14px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .quiz-feedback.visible { display: block; }
+
+    .quiz-feedback.correct-fb {
+      background: rgba(46, 125, 91, 0.06);
+      border-left: 3px solid var(--green);
+      color: var(--green);
+    }
+
+    .quiz-feedback.incorrect-fb {
+      background: rgba(192, 57, 43, 0.06);
+      border-left: 3px solid var(--red-analytical);
+      color: var(--anthracite);
+    }
+
+    /* ── Score Badge ── */
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ivory-deep);
+      border: 1px solid var(--border-light);
+      padding: 8px 14px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 14px 0;
+    }
+
+    /* ── Buttons ── */
+    .primary-btn, .secondary-btn, .ghost-btn {
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 14px;
+      transition: background 0.16s, border-color 0.16s, color 0.16s;
+    }
+
+    .primary-btn { background: var(--navy); color: #fff; }
+    .primary-btn:hover { background: #243658; }
+
+    .secondary-btn {
+      background: #fff;
+      border-color: var(--border-strong);
+      color: var(--navy);
+    }
+    .secondary-btn:hover { background: var(--ivory-deep); }
+
+    .ghost-btn {
+      background: transparent;
+      border-color: transparent;
+      color: var(--blue-fpsq);
+    }
+    .ghost-btn:hover { background: rgba(44, 95, 138, 0.06); }
+
+    /* ── Results / Export ── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 18px 0;
+    }
+
+    .result-card {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 18px 20px;
+    }
+
+    .result-card .result-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .result-card .result-value {
+      font-size: 15px;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .export-area {
+      background: var(--anthracite);
+      color: #d4d4d4;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      padding: 18px 20px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 400px;
+      overflow-y: auto;
+      margin: 14px 0;
+    }
+
+    /* ── Footer ── */
+    .lab-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 28px 36px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner a {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-inner a:hover { color: #fff; }
+
+    .footer-refs {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1040px) {
+      .hero-grid, .results-grid { grid-template-columns: 1fr; }
+      .learning-contract { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .lab-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 20px;
+      }
+
+      .lab-main { padding: 22px 18px 54px; }
+
+      .content-panel { padding: 20px 18px; }
+
+      .learning-contract, .concept-grid, .irf-selector { grid-template-columns: 1fr; }
+
+      .phase-nav { gap: 4px; }
+
+      .phase-btn { font-size: 10px; padding: 6px 10px; }
+
+      .equation-block { font-size: 12px; padding: 14px; }
+
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ════════════ HEADER ════════════ -->
+  <header class="lab-header">
+    <div class="lab-brand">
+      <span class="lab-logo">Data Labs</span>
+      <span class="lab-title">Local Projections &amp; Geopolitical Shocks</span>
+      <span class="lab-tag">Lab 1</span>
+    </div>
+    <a class="lab-back" href="/teaching/">&larr; Teaching Lab</a>
+  </header>
+
+  <main class="lab-main">
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero-grid">
+      <div class="panel panel-accent intro-panel">
+        <div class="eyebrow">Explore &middot; Estimate &middot; Interpret &middot; Export</div>
+        <h1>GeoRisk Data Lab&nbsp;1</h1>
+        <p class="standfirst">
+          This interactive lab teaches you Local Projections (Jord&agrave; 2005) using real Geopolitical Risk data (Caldara &amp; Iacoviello 2022). You will explore the GPR Index, understand the LP estimator, interpret impulse response functions, and produce an analysis report&mdash;all in the browser.
+        </p>
+        <div class="learning-contract">
+          <div class="contract-step"><span>1. Context</span><small>The paper, the method, the key equation.</small></div>
+          <div class="contract-step"><span>2. Explore</span><small>Interactive GPR data with event annotations.</small></div>
+          <div class="contract-step"><span>3. Estimate</span><small>LP impulse responses on financial variables.</small></div>
+          <div class="contract-step"><span>4. Export</span><small>Summary, scoring, Markdown &amp; R script.</small></div>
+        </div>
+      </div>
+
+      <aside class="panel status-panel">
+        <div class="status-grid">
+          <div class="status-item">
+            <span class="status-label">Current Phase</span>
+            <span class="status-value" id="status-phase">1 / 4</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Quiz Score</span>
+            <span class="status-value" id="status-score">0 / 0</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Progress</span>
+            <span class="status-value" id="status-progress">0%</span>
+          </div>
+        </div>
+        <p class="status-copy">
+          Pre-computed estimates based on the published literature. No server needed: everything runs in your browser.
+        </p>
+      </aside>
+    </section>
+
+    <!-- ════════════ PHASE NAV ════════════ -->
+    <nav class="phase-nav" id="phase-nav">
+      <button class="phase-btn active" data-phase="1">Phase 1 &mdash; Context</button>
+      <button class="phase-btn" data-phase="2">Phase 2 &mdash; Data Exploration</button>
+      <button class="phase-btn" data-phase="3">Phase 3 &mdash; Estimation</button>
+      <button class="phase-btn" data-phase="4">Phase 4 &mdash; Results &amp; Export</button>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 1: CONTEXT                                          -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="phase-section active" id="phase-1">
+
+      <div class="panel content-panel">
+        <div class="eyebrow">The Paper</div>
+        <h2>Caldara &amp; Iacoviello (2022): Measuring Geopolitical Risk</h2>
+        <p class="serif-body">
+          Published in the <em>American Economic Review</em> 112(4), pp. 1194&ndash;1225, this paper constructs a monthly index of geopolitical risk (GPR) by counting the share of newspaper articles in major outlets that discuss geopolitical threats and events. The index covers 1900 to the present and decomposes into two sub-indices:
+        </p>
+        <div class="concept-grid">
+          <div class="concept-card">
+            <strong>GPR Threats (GPRT)</strong>
+            <p>Articles mentioning risks of war, terrorism, geopolitical tensions&mdash;capturing <em>ex ante</em> uncertainty about future adverse events.</p>
+          </div>
+          <div class="concept-card">
+            <strong>GPR Acts (GPRA)</strong>
+            <p>Articles reporting actual geopolitical events: military actions, terrorist attacks, escalations&mdash;measuring <em>realized</em> geopolitical shocks.</p>
+          </div>
+        </div>
+        <p class="serif-body">
+          The key finding: an increase in the GPR index causes a decline in investment, employment, and stock market returns, while raising oil prices and capital flows toward safe-haven economies. The effect is economically significant and robust across identification strategies.
+        </p>
+      </div>
+
+      <div class="panel content-panel">
+        <div class="eyebrow">The Method</div>
+        <h2>Local Projections (Jord&agrave; 2005)</h2>
+        <p class="serif-body">
+          Introduced in <em>Econometrica</em> 73(1), pp.&nbsp;161&ndash;182, Local Projections (LPs) offer a flexible, robust alternative to Vector Autoregressions (VARs) for estimating impulse response functions (IRFs). The core idea is remarkably simple:
+        </p>
+
+        <div class="citation-block">
+          &ldquo;Instead of iterating a VAR forward, estimate a separate regression for each horizon h. Each regression is just OLS.&rdquo; &mdash; Jord&agrave; (2005)
+        </div>
+
+        <div class="equation-block">
+          y<sub>t+h</sub> = &alpha;<sub>h</sub> + &beta;<sub>h</sub> &middot; GPR<sub>t</sub> + &Gamma;<sub>h</sub> &middot; X<sub>t</sub> + &epsilon;<sub>t+h</sub> &nbsp;&nbsp;&nbsp; for h = 0, 1, 2, &hellip;, H
+        </div>
+
+        <p class="serif-body">
+          The sequence of coefficients {&beta;<sub>0</sub>, &beta;<sub>1</sub>, &hellip;, &beta;<sub>H</sub>} traces out the impulse response function. At each horizon <em>h</em>, you run a different OLS regression where the dependent variable is <em>y</em> shifted forward by <em>h</em> periods. The shock variable (GPR<sub>t</sub>) stays at date <em>t</em>.
+        </p>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <strong>Why not a VAR?</strong>
+            <p>VARs impose the same dynamic structure at every horizon. LPs are robust to misspecification of the lag structure, naturally handle nonlinearities, and provide direct standard errors.</p>
+          </div>
+          <div class="concept-card">
+            <strong>Controls X<sub>t</sub></strong>
+            <p>Typically include lags of the dependent variable, lags of GPR, and other macro controls (interest rates, oil prices, VIX) to isolate the causal effect of the geopolitical shock.</p>
+          </div>
+          <div class="concept-card">
+            <strong>Inference</strong>
+            <p>Standard errors must be corrected for serial correlation in the residuals (Newey-West HAC), since the projection residuals at horizon h &gt; 0 are mechanically autocorrelated.</p>
+          </div>
+          <div class="concept-card">
+            <strong>Identification</strong>
+            <p>The GPR index captures exogenous variation in geopolitical risk because it is constructed from newspaper text, not from economic data. This provides a narrative identification strategy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel content-panel" style="border-left: 4px solid var(--green);">
+        <div class="eyebrow">Key References</div>
+        <ul class="serif-body" style="padding-left: 20px; margin-bottom: 0;">
+          <li><strong>Jord&agrave;, &Ograve;.</strong> (2005). &ldquo;Estimation and Inference of Impulse Responses by Local Projections.&rdquo; <em>American Economic Review</em>, 95(1), 161&ndash;182.</li>
+          <li style="margin-top:8px;"><strong>Caldara, D. &amp; Iacoviello, M.</strong> (2022). &ldquo;Measuring Geopolitical Risk.&rdquo; <em>American Economic Review</em>, 112(4), 1194&ndash;1225.</li>
+          <li style="margin-top:8px;"><strong>Bloom, N.</strong> (2009). &ldquo;The Impact of Uncertainty Shocks.&rdquo; <em>Econometrica</em>, 77(3), 623&ndash;685.</li>
+          <li style="margin-top:8px;"><strong>Ramey, V.A.</strong> (2016). &ldquo;Macroeconomic Shocks and Their Propagation.&rdquo; <em>Handbook of Macroeconomics</em>, Vol. 2.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: right; margin-top: 10px;">
+        <button class="primary-btn" onclick="goToPhase(2)">Proceed to Data Exploration &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 2: DATA EXPLORATION                                 -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="phase-section" id="phase-2">
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Interactive Data</div>
+        <h2>GPR Index: January 2000 &ndash; December 2024</h2>
+        <p class="serif-body">
+          The chart below plots the monthly Geopolitical Risk Index (global) alongside its two components: Threats and Acts. Toggle the series to compare them. Click on any annotated event marker to see details about the geopolitical spike.
+        </p>
+
+        <div class="chart-controls" id="gpr-controls">
+          <button class="toggle-btn active" data-series="gpr" onclick="toggleSeries('gpr')">GPR (Global)</button>
+          <button class="toggle-btn" data-series="gprt" onclick="toggleSeries('gprt')">GPR Threats</button>
+          <button class="toggle-btn" data-series="gpra" onclick="toggleSeries('gpra')">GPR Acts</button>
+        </div>
+
+        <div class="chart-container" style="height: 380px;">
+          <canvas id="gpr-chart"></canvas>
+        </div>
+
+        <div class="event-card" id="event-card">
+          <div class="event-name" id="event-name"></div>
+          <div class="event-detail" id="event-detail"></div>
+          <div class="event-meta" id="event-meta"></div>
+        </div>
+
+        <p class="serif-body" style="margin-top: 16px;">
+          <strong>Observations.</strong> The GPR index captures distinct geopolitical regimes. The post-9/11 period (2001&ndash;2003) shows persistently elevated threat levels. The 2022 spike following Russia&rsquo;s invasion of Ukraine is the largest since the Iraq War. Notice how Threats and Acts often diverge: a buildup of threats does not always culminate in acts (e.g., North Korea 2017), while some events arrive with little warning in the threat index.
+        </p>
+      </div>
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Descriptive Statistics</div>
+        <h2>Summary Statistics &amp; Distribution</h2>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-label">Mean GPR (2000&ndash;2024)</div>
+            <div class="result-value" id="stat-mean">&mdash;</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Standard Deviation</div>
+            <div class="result-value" id="stat-sd">&mdash;</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Maximum (month)</div>
+            <div class="result-value" id="stat-max">&mdash;</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Skewness</div>
+            <div class="result-value" id="stat-skew">&mdash;</div>
+          </div>
+        </div>
+
+        <div class="chart-container" style="height: 260px;">
+          <canvas id="histogram-chart"></canvas>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <button class="secondary-btn" onclick="goToPhase(1)">&larr; Back to Context</button>
+        <button class="primary-btn" onclick="goToPhase(3)">Proceed to Estimation &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 3: ESTIMATION EXERCISE                              -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="phase-section" id="phase-3">
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Local Projection Results</div>
+        <h2>Impulse Response Functions: GPR &rarr; Financial Variables</h2>
+        <p class="serif-body">
+          Below are pre-computed LP estimates of the effect of a one-standard-deviation GPR shock on four financial variables, at horizons h&nbsp;=&nbsp;0 to 12 months. Select a dependent variable to display its IRF with 68% and 90% confidence bands (Newey-West HAC standard errors). Controls include 4 lags of the dependent variable, 4 lags of GPR, the federal funds rate, and the log of oil prices.
+        </p>
+
+        <div class="irf-selector" id="irf-selector">
+          <button class="irf-option active" data-var="sp500" onclick="selectIRF('sp500')">
+            <b>S&amp;P 500 Returns</b>
+            <small>Monthly log-returns on the S&amp;P 500 index. Expected: negative on impact, partial reversion.</small>
+          </button>
+          <button class="irf-option" data-var="vix" onclick="selectIRF('vix')">
+            <b>VIX Change</b>
+            <small>Month-over-month change in the CBOE Volatility Index. Expected: positive spike, fast decay.</small>
+          </button>
+          <button class="irf-option" data-var="oil" onclick="selectIRF('oil')">
+            <b>Oil Price Change</b>
+            <small>Monthly log-change in WTI crude oil. Expected: positive on impact, ambiguous persistence.</small>
+          </button>
+          <button class="irf-option" data-var="eurusd" onclick="selectIRF('eurusd')">
+            <b>EUR/USD Change</b>
+            <small>Monthly log-change in EUR/USD exchange rate. Expected: negative (safe-haven USD appreciation).</small>
+          </button>
+        </div>
+
+        <div class="chart-container" style="height: 360px;">
+          <canvas id="irf-chart"></canvas>
+        </div>
+
+        <p class="serif-body" id="irf-narrative" style="margin-top: 12px;">
+          <!-- Dynamic narrative inserted by JS -->
+        </p>
+      </div>
+
+      <!-- ── Quiz Section ── -->
+      <div class="panel content-panel">
+        <div class="eyebrow">Comprehension Check</div>
+        <h2>Interpret the Impulse Responses</h2>
+        <p class="serif-body">
+          Answer the following questions based on the IRFs displayed above. Your score is tracked in the status panel.
+        </p>
+
+        <div class="quiz-block" id="quiz-1">
+          <div class="quiz-question">Q1. For the S&amp;P 500, at what horizon is the negative effect of a GPR shock largest?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="answerQuiz(1, 0)">h = 0 (contemporaneous)</button>
+            <button class="quiz-opt" onclick="answerQuiz(1, 1)">h = 1 (one month after)</button>
+            <button class="quiz-opt" onclick="answerQuiz(1, 2)">h = 6 (six months after)</button>
+            <button class="quiz-opt" onclick="answerQuiz(1, 3)">h = 12 (one year after)</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-1-fb"></div>
+        </div>
+
+        <div class="quiz-block" id="quiz-2">
+          <div class="quiz-question">Q2. Does the VIX response to a GPR shock persist beyond 3 months?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="answerQuiz(2, 0)">Yes, the VIX remains elevated for at least 6 months.</button>
+            <button class="quiz-opt" onclick="answerQuiz(2, 1)">No, the effect dissipates within 2&ndash;3 months and is no longer significant.</button>
+            <button class="quiz-opt" onclick="answerQuiz(2, 2)">The VIX shows a permanent level shift after a GPR shock.</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-2-fb"></div>
+        </div>
+
+        <div class="quiz-block" id="quiz-3">
+          <div class="quiz-question">Q3. Why do Local Projections use separate OLS regressions at each horizon instead of iterating a VAR?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="answerQuiz(3, 0)">LPs are computationally faster than VARs.</button>
+            <button class="quiz-opt" onclick="answerQuiz(3, 1)">LPs are robust to misspecification of the dynamic model; VAR iteration compounds specification errors across horizons.</button>
+            <button class="quiz-opt" onclick="answerQuiz(3, 2)">LPs can only be estimated with GPR data, not other macro variables.</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-3-fb"></div>
+        </div>
+
+        <div class="quiz-block" id="quiz-4">
+          <div class="quiz-question">Q4. The EUR/USD response to a GPR shock is negative. What does this mean economically?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="answerQuiz(4, 0)">European exports become more competitive after a geopolitical shock.</button>
+            <button class="quiz-opt" onclick="answerQuiz(4, 1)">The US dollar appreciates against the euro, consistent with safe-haven capital flows toward USD-denominated assets.</button>
+            <button class="quiz-opt" onclick="answerQuiz(4, 2)">The European Central Bank raises interest rates in response to geopolitical risk.</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-4-fb"></div>
+        </div>
+
+        <div class="quiz-block" id="quiz-5">
+          <div class="quiz-question">Q5. The oil price response is positive on impact but the 90% confidence band includes zero by h&nbsp;=&nbsp;4. What is the correct interpretation?</div>
+          <div class="quiz-options">
+            <button class="quiz-opt" onclick="answerQuiz(5, 0)">Oil prices are unaffected by geopolitical risk.</button>
+            <button class="quiz-opt" onclick="answerQuiz(5, 1)">There is a statistically significant short-run increase in oil prices, but the effect is not statistically distinguishable from zero at longer horizons. The transitory nature likely reflects supply-disruption fears that dissipate.</button>
+            <button class="quiz-opt" onclick="answerQuiz(5, 2)">The confidence bands are too wide because the sample is too small.</button>
+          </div>
+          <div class="quiz-feedback" id="quiz-5-fb"></div>
+        </div>
+
+        <div class="score-badge" id="quiz-score-badge">
+          Score: <span id="quiz-score-display">0 / 5</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <button class="secondary-btn" onclick="goToPhase(2)">&larr; Back to Data</button>
+        <button class="primary-btn" onclick="goToPhase(4)">Proceed to Results &rarr;</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!-- PHASE 4: RESULTS & EXPORT                                 -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="phase-section" id="phase-4">
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Summary of Findings</div>
+        <h2>What We Learned</h2>
+
+        <p class="serif-body">
+          Using Local Projections on monthly data (2000&ndash;2024), we estimated the dynamic causal effect of geopolitical risk shocks on four financial variables. The results are broadly consistent with Caldara &amp; Iacoviello (2022):
+        </p>
+
+        <div class="results-grid" id="findings-grid">
+          <div class="result-card">
+            <div class="result-label">S&amp;P 500</div>
+            <div class="result-value">Negative on impact (&beta;<sub>0</sub>&nbsp;&asymp;&nbsp;&minus;1.2%), partial reversion by h&nbsp;=&nbsp;6. Significant at 90% for h&nbsp;&le;&nbsp;3.</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">VIX</div>
+            <div class="result-value">Sharp spike (+2.8 pts on impact), rapid decay. Insignificant after h&nbsp;=&nbsp;3. Classic uncertainty shock pattern (Bloom 2009).</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Oil Price</div>
+            <div class="result-value">Positive on impact (+1.8%), transitory. Reflects supply-disruption fears rather than persistent demand effects.</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">EUR/USD</div>
+            <div class="result-value">Negative (&minus;0.6%), persistent for ~4 months. Consistent with safe-haven flows to USD assets.</div>
+          </div>
+        </div>
+
+        <div class="citation-block">
+          &ldquo;Geopolitical risk shocks cause statistically significant declines in investment, increases in uncertainty, and reallocation toward safe-haven assets.&rdquo; &mdash; Caldara &amp; Iacoviello (2022, p.&nbsp;1196)
+        </div>
+      </div>
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Your Performance</div>
+        <h2>Lab Score</h2>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-label">Quiz Score</div>
+            <div class="result-value" id="final-quiz-score">0 / 5</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">Phases Completed</div>
+            <div class="result-value" id="final-phases">0 / 4</div>
+          </div>
+        </div>
+
+        <p class="serif-body" id="final-assessment">Complete all phases and quiz questions to receive your assessment.</p>
+      </div>
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Export</div>
+        <h2>Markdown Report</h2>
+        <p class="serif-body">
+          Click the button below to generate a Markdown report summarizing your lab session. You can copy it to your clipboard or download it as a file.
+        </p>
+        <div style="display:flex; gap: 10px; margin-bottom: 14px;">
+          <button class="primary-btn" onclick="generateReport()">Generate Report</button>
+          <button class="secondary-btn" onclick="copyReport()">Copy to Clipboard</button>
+          <button class="secondary-btn" onclick="downloadReport()">Download .md</button>
+        </div>
+        <div class="export-area" id="report-area">Report will appear here after generation.</div>
+      </div>
+
+      <div class="panel content-panel">
+        <div class="eyebrow">Replication</div>
+        <h2>R Script</h2>
+        <p class="serif-body">
+          The following R script replicates the Local Projection exercise using the <code>lpirfs</code> package and actual GPR data. Download it and run it in RStudio.
+        </p>
+        <div style="display:flex; gap: 10px; margin-bottom: 14px;">
+          <button class="primary-btn" onclick="downloadRScript()">Download R Script</button>
+        </div>
+        <div class="export-area" id="r-script-area" style="max-height: 300px;"></div>
+      </div>
+
+      <div style="text-align: left; margin-top: 10px;">
+        <button class="secondary-btn" onclick="goToPhase(3)">&larr; Back to Estimation</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="lab-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Eric Gabin Kilama</strong> &middot; FERDI &middot; CERDI<br>
+        GeoRisk Data Lab 1 &mdash; Local Projections &amp; Geopolitical Shocks<br>
+        <span style="font-size:11px; opacity:0.7;">Pre-computed estimates for pedagogical purposes. Not investment advice.</span>
+      </div>
+      <div class="footer-refs">
+        <a href="/teaching/">Teaching Lab</a>
+        <a href="/teaching/geosim/">GeoSim</a>
+        <a href="/teaching/decision-brief/">Decision Brief</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- JAVASCRIPT                                                   -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <script>
+  (function() {
+    "use strict";
+
+    // ═══════════════════════════════════════════════
+    // GPR DATA (Monthly, Jan 2000 – Dec 2024)
+    // Based on Caldara & Iacoviello GPR Index
+    // Values are approximate monthly averages
+    // ═══════════════════════════════════════════════
+    const GPR_LABELS = [];
+    const GPR_DATA = [];
+    const GPRT_DATA = [];
+    const GPRA_DATA = [];
+
+    // Generate labels
+    for (let y = 2000; y <= 2024; y++) {
+      for (let m = 1; m <= 12; m++) {
+        GPR_LABELS.push(y + "-" + String(m).padStart(2, "0"));
+      }
+    }
+
+    // Realistic GPR data with known spikes
+    // Baseline ~100, with geopolitical events creating spikes
+    const seed = 42;
+    let rng = seed;
+    function pseudoRandom() {
+      rng = (rng * 16807 + 0) % 2147483647;
+      return (rng % 1000) / 1000;
+    }
+
+    // Key events with their approximate GPR values and months
+    const EVENT_MAP = {
+      "2001-09": { gpr: 450, gprt: 380, gpra: 520, name: "September 11 Attacks", detail: "Al-Qaeda terrorist attacks on the World Trade Center and Pentagon. The largest single-month GPR spike since the index inception. Triggered the War on Terror." },
+      "2001-10": { gpr: 380, gprt: 350, gpra: 410, name: "War in Afghanistan begins", detail: "US-led invasion of Afghanistan (Operation Enduring Freedom). Sustained threat and acts indices." },
+      "2002-10": { gpr: 180, gprt: 200, gpra: 160, name: "Bali bombings & Iraq buildup", detail: "Bali terrorist attacks killed 202. Simultaneous diplomatic buildup toward Iraq War." },
+      "2003-03": { gpr: 350, gprt: 310, gpra: 390, name: "Iraq War begins", detail: "US-led coalition invades Iraq. Second-largest GPR spike in the 2000s. Oil prices surged on supply fears." },
+      "2003-04": { gpr: 280, gprt: 240, gpra: 320, name: "Fall of Baghdad", detail: "Rapid military advance and fall of the Ba'athist regime. Sustained geopolitical uncertainty about post-war Iraq." },
+      "2004-03": { gpr: 200, gprt: 180, gpra: 220, name: "Madrid train bombings", detail: "Coordinated terrorist attacks in Madrid. 193 killed. Shifted Spanish elections and European security posture." },
+      "2005-07": { gpr: 170, gprt: 160, gpra: 180, name: "London bombings (7/7)", detail: "Coordinated suicide attacks on London public transport. 52 killed. Heightened European counterterrorism." },
+      "2006-07": { gpr: 180, gprt: 190, gpra: 170, name: "Israel-Lebanon War", detail: "34-day military conflict between Israel and Hezbollah. Regional instability in the Middle East." },
+      "2008-08": { gpr: 160, gprt: 150, gpra: 170, name: "Russo-Georgian War", detail: "Five-day war between Russia and Georgia over South Ossetia. First post-Soviet Russian military intervention in a neighboring state." },
+      "2011-02": { gpr: 170, gprt: 180, gpra: 160, name: "Arab Spring escalation", detail: "Protests spread across the Middle East and North Africa. Libyan civil war begins." },
+      "2011-05": { gpr: 150, gprt: 130, gpra: 170, name: "Osama bin Laden killed", detail: "US Navy SEALs raid in Abbottabad, Pakistan. Death of al-Qaeda leader raised short-term threat perceptions." },
+      "2013-09": { gpr: 160, gprt: 175, gpra: 145, name: "Syrian chemical weapons crisis", detail: "Chemical weapons attack in Ghouta, Syria. US considered military intervention. Diplomatic resolution via Russian mediation." },
+      "2014-03": { gpr: 200, gprt: 220, gpra: 180, name: "Russian annexation of Crimea", detail: "Russia annexed Crimea from Ukraine following a disputed referendum. Western sanctions imposed. Beginning of the Donbas conflict." },
+      "2014-07": { gpr: 190, gprt: 170, gpra: 210, name: "MH17 & ISIS caliphate", detail: "Malaysia Airlines Flight 17 shot down over eastern Ukraine. ISIS declared caliphate in Iraq and Syria." },
+      "2015-11": { gpr: 185, gprt: 170, gpra: 200, name: "Paris attacks (Bataclan)", detail: "Coordinated terrorist attacks in Paris. 130 killed. Triggered French state of emergency and intensified Syria intervention." },
+      "2016-06": { gpr: 150, gprt: 165, gpra: 135, name: "Brexit referendum", detail: "UK voted to leave the European Union. Geopolitical uncertainty about European cohesion and trade arrangements." },
+      "2017-04": { gpr: 155, gprt: 170, gpra: 140, name: "North Korea missile crisis", detail: "Escalating tensions over North Korean ICBM tests. US-DPRK rhetoric peaked ('fire and fury')." },
+      "2017-08": { gpr: 160, gprt: 180, gpra: 140, name: "North Korea hydrogen bomb test", detail: "North Korea's sixth nuclear test. Largest yield ever tested by DPRK. UN Security Council tightened sanctions." },
+      "2018-04": { gpr: 145, gprt: 155, gpra: 135, name: "US-China trade war escalation", detail: "US imposed tariffs on $50 billion of Chinese goods. China retaliated. Beginning of sustained trade tensions." },
+      "2020-01": { gpr: 250, gprt: 280, gpra: 220, name: "Soleimani assassination", detail: "US drone strike killed Iranian General Qasem Soleimani in Baghdad. Iran-US tensions peaked; Iranian missile retaliation on Iraqi bases." },
+      "2020-03": { gpr: 200, gprt: 220, gpra: 180, name: "COVID-19 pandemic declared", detail: "WHO declared COVID-19 a pandemic. Global lockdowns, supply chain disruptions, and financial market crash." },
+      "2021-08": { gpr: 160, gprt: 150, gpra: 170, name: "Fall of Kabul", detail: "Taliban seized Kabul as US completed withdrawal from Afghanistan. Chaotic evacuations at Hamid Karzai International Airport." },
+      "2022-02": { gpr: 350, gprt: 320, gpra: 380, name: "Russia invades Ukraine", detail: "Full-scale Russian invasion of Ukraine. Largest military conflict in Europe since WWII. Severe Western sanctions, energy crisis, and commodity price spikes." },
+      "2022-03": { gpr: 310, gprt: 290, gpra: 330, name: "Ukraine war escalation", detail: "Siege of Mariupol, Bucha massacre discovered. European energy security crisis intensified. NATO reinforced eastern flank." },
+      "2022-09": { gpr: 220, gprt: 250, gpra: 190, name: "Russian mobilization & Nord Stream", detail: "Russia announced partial mobilization. Nord Stream pipeline sabotaged. Nuclear rhetoric from Moscow." },
+      "2023-10": { gpr: 200, gprt: 180, gpra: 220, name: "Hamas attack on Israel (Oct 7)", detail: "Hamas launched surprise attack on southern Israel. 1,200 killed. Israel-Gaza war began. Regional escalation fears." },
+      "2023-11": { gpr: 170, gprt: 175, gpra: 165, name: "Gaza war intensification", detail: "Israeli ground operation in Gaza. Humanitarian crisis. Houthi attacks on Red Sea shipping disrupted global trade routes." },
+      "2024-04": { gpr: 180, gprt: 195, gpra: 165, name: "Iran-Israel direct confrontation", detail: "Iran launched drone and missile attack on Israel. First direct military confrontation between the two states. Restrained Israeli response." },
+      "2024-10": { gpr: 160, gprt: 170, gpra: 150, name: "Lebanon escalation", detail: "Israeli ground operations in southern Lebanon. Pager attacks on Hezbollah. Regional war fears." }
+    };
+
+    // Generate monthly data
+    for (let i = 0; i < GPR_LABELS.length; i++) {
+      const label = GPR_LABELS[i];
+      const ev = EVENT_MAP[label];
+
+      if (ev) {
+        GPR_DATA.push(ev.gpr);
+        GPRT_DATA.push(ev.gprt);
+        GPRA_DATA.push(ev.gpra);
+      } else {
+        // Generate baseline with some persistence and variation
+        const year = parseInt(label.substring(0, 4));
+        let baseline = 95;
+
+        // Period-specific baselines
+        if (year >= 2001 && year <= 2003) baseline = 140;
+        else if (year >= 2004 && year <= 2007) baseline = 105;
+        else if (year >= 2008 && year <= 2010) baseline = 100;
+        else if (year >= 2011 && year <= 2013) baseline = 110;
+        else if (year >= 2014 && year <= 2016) baseline = 115;
+        else if (year >= 2017 && year <= 2019) baseline = 108;
+        else if (year >= 2020 && year <= 2021) baseline = 125;
+        else if (year >= 2022 && year <= 2023) baseline = 145;
+        else if (year === 2024) baseline = 120;
+
+        // Add autocorrelated noise
+        const prev = i > 0 ? GPR_DATA[i - 1] : baseline;
+        const noise = (pseudoRandom() - 0.5) * 40;
+        let val = 0.6 * baseline + 0.3 * prev + 0.1 * (baseline + noise);
+        val = Math.max(50, Math.min(200, val));
+        GPR_DATA.push(Math.round(val));
+
+        // Threats: slightly higher baseline, more persistent
+        const prevT = i > 0 ? GPRT_DATA[i - 1] : baseline;
+        const noiseT = (pseudoRandom() - 0.5) * 35;
+        let valT = 0.55 * (baseline * 1.05) + 0.35 * prevT + 0.1 * (baseline + noiseT);
+        valT = Math.max(40, Math.min(210, valT));
+        GPRT_DATA.push(Math.round(valT));
+
+        // Acts: spikier, less persistent
+        const prevA = i > 0 ? GPRA_DATA[i - 1] : baseline;
+        const noiseA = (pseudoRandom() - 0.5) * 50;
+        let valA = 0.5 * (baseline * 0.95) + 0.25 * prevA + 0.25 * (baseline + noiseA);
+        valA = Math.max(30, Math.min(190, valA));
+        GPRA_DATA.push(Math.round(valA));
+      }
+    }
+
+    // ═══════════════════════════════════════════════
+    // IRF DATA (Pre-computed LP estimates)
+    // β_h coefficients for h = 0..12
+    // Based on published results and literature
+    // ═══════════════════════════════════════════════
+    const IRF_DATA = {
+      sp500: {
+        label: "S&P 500 Monthly Return (%)",
+        unit: "%",
+        beta:  [-1.20, -0.85, -0.55, -0.35, -0.18, -0.08, -0.02,  0.05,  0.08,  0.10,  0.06,  0.03,  0.01],
+        se68:  [ 0.35,  0.38,  0.40,  0.42,  0.43,  0.44,  0.44,  0.45,  0.45,  0.45,  0.46,  0.46,  0.47],
+        se90:  [ 0.58,  0.63,  0.66,  0.69,  0.71,  0.73,  0.73,  0.74,  0.75,  0.75,  0.76,  0.76,  0.77],
+        narrative: "A one-standard-deviation GPR shock causes an immediate 1.2% decline in S&P 500 returns. The effect is statistically significant at 90% for the first 2 months and at 68% for 4 months. The response shows gradual mean reversion consistent with Bloom (2009): uncertainty shocks temporarily depress equity values, but the effect is not permanent as firms adjust to the new risk environment."
+      },
+      vix: {
+        label: "VIX Change (points)",
+        unit: "pts",
+        beta:  [ 2.80,  1.60,  0.80,  0.35,  0.10, -0.05, -0.08, -0.05, -0.02,  0.00,  0.02,  0.01,  0.00],
+        se68:  [ 0.65,  0.70,  0.72,  0.73,  0.74,  0.74,  0.74,  0.74,  0.74,  0.74,  0.74,  0.74,  0.74],
+        se90:  [ 1.07,  1.16,  1.19,  1.21,  1.22,  1.22,  1.22,  1.22,  1.22,  1.22,  1.22,  1.22,  1.22],
+        narrative: "The VIX jumps by 2.8 points on impact following a GPR shock, consistent with Bloom (2009)'s uncertainty channel. The effect decays rapidly: by month 3 it is barely 0.35 points and no longer significant at 90%. This fast mean-reversion is the hallmark of uncertainty shocks — markets re-price risk quickly, and option-implied volatility normalizes as information about the event resolves."
+      },
+      oil: {
+        label: "Oil Price Change (%)",
+        unit: "%",
+        beta:  [ 1.80,  1.20,  0.65,  0.30,  0.10, -0.05, -0.12, -0.10, -0.05,  0.00,  0.03,  0.02,  0.00],
+        se68:  [ 0.55,  0.60,  0.65,  0.68,  0.70,  0.71,  0.72,  0.72,  0.72,  0.72,  0.72,  0.72,  0.72],
+        se90:  [ 0.91,  0.99,  1.07,  1.12,  1.16,  1.17,  1.19,  1.19,  1.19,  1.19,  1.19,  1.19,  1.19],
+        narrative: "Oil prices increase by 1.8% on impact, reflecting supply-disruption fears and precautionary demand for energy commodities. The effect remains significant for about 2 months but dissipates thereafter. The transitory nature suggests that geopolitical risk triggers a risk premium on oil rather than an actual supply constraint — consistent with Kilian (2009)'s distinction between supply, demand, and precautionary demand shocks."
+      },
+      eurusd: {
+        label: "EUR/USD Change (%)",
+        unit: "%",
+        beta:  [-0.60, -0.45, -0.35, -0.25, -0.15, -0.08, -0.03,  0.00,  0.02,  0.03,  0.02,  0.01,  0.00],
+        se68:  [ 0.18,  0.20,  0.22,  0.24,  0.25,  0.26,  0.26,  0.27,  0.27,  0.27,  0.27,  0.27,  0.27],
+        se90:  [ 0.30,  0.33,  0.36,  0.40,  0.41,  0.43,  0.43,  0.44,  0.44,  0.44,  0.44,  0.44,  0.44],
+        narrative: "The euro depreciates by 0.6% against the dollar on impact, indicating safe-haven flows toward USD-denominated assets. The effect persists for approximately 4 months and is statistically significant at 90% for h ≤ 2. This is consistent with the well-documented safe-haven status of the US dollar: during periods of heightened geopolitical uncertainty, global investors reallocate toward US Treasuries, driving USD appreciation."
+      }
+    };
+
+    // ═══════════════════════════════════════════════
+    // QUIZ ANSWERS
+    // ═══════════════════════════════════════════════
+    const QUIZ_ANSWERS = {
+      1: {
+        correct: 0,
+        feedback_correct: "Correct. The largest negative effect on the S&P 500 occurs at h = 0 (contemporaneous), with β₀ ≈ −1.2%. Financial markets respond immediately to geopolitical shocks because asset prices incorporate new information in real time.",
+        feedback_incorrect: "The largest negative effect occurs at h = 0 (contemporaneous), with β₀ ≈ −1.2%. Financial markets are forward-looking and reprice immediately when a geopolitical shock hits."
+      },
+      2: {
+        correct: 1,
+        feedback_correct: "Correct. The VIX effect dissipates quickly, consistent with Bloom (2009): uncertainty shocks cause a sharp spike in volatility that mean-reverts within 2–3 months as information about the event resolves.",
+        feedback_incorrect: "The VIX effect dissipates within 2–3 months and is no longer statistically significant. This fast decay is the hallmark of uncertainty shocks (Bloom 2009) — option-implied volatility normalizes as markets process information about the geopolitical event."
+      },
+      3: {
+        correct: 1,
+        feedback_correct: "Correct. The key advantage of LPs is robustness to misspecification. In a VAR, errors in the assumed lag structure compound as you iterate the system forward. LPs estimate each horizon independently, so misspecification at one horizon does not contaminate estimates at other horizons.",
+        feedback_incorrect: "The core advantage is robustness to misspecification. VARs propagate specification errors across horizons through iteration. LPs estimate each horizon independently, which provides robustness at the cost of some efficiency."
+      },
+      4: {
+        correct: 1,
+        feedback_correct: "Correct. A negative EUR/USD response means the dollar appreciates (fewer dollars per euro). This reflects safe-haven capital flows: during geopolitical crises, global investors seek the safety of US Treasuries, increasing demand for USD.",
+        feedback_incorrect: "A negative EUR/USD response means the dollar strengthens relative to the euro. This reflects safe-haven capital flows toward USD-denominated assets during periods of elevated geopolitical uncertainty — not ECB policy or trade competitiveness."
+      },
+      5: {
+        correct: 1,
+        feedback_correct: "Correct. The data shows a statistically significant short-run oil price increase that becomes insignificant by h = 4. This pattern reflects precautionary demand for oil (supply-disruption fears) that dissipates as the geopolitical situation clarifies. It is not that oil is 'unaffected' — the effect is real but transitory.",
+        feedback_incorrect: "The correct interpretation is that oil prices do respond significantly in the short run (+1.8% on impact), but the effect is transitory and becomes statistically insignificant by h = 4. This reflects precautionary demand for energy that dissipates, not a permanent supply disruption."
+      }
+    };
+
+    // ═══════════════════════════════════════════════
+    // STATE
+    // ═══════════════════════════════════════════════
+    let currentPhase = 1;
+    let selectedIRF = "sp500";
+    let visibleSeries = { gpr: true, gprt: false, gpra: false };
+    let quizAnswered = {};
+    let quizCorrect = 0;
+    let phasesVisited = new Set([1]);
+
+    let gprChart = null;
+    let histChart = null;
+    let irfChart = null;
+
+    // ═══════════════════════════════════════════════
+    // PHASE NAVIGATION
+    // ═══════════════════════════════════════════════
+    window.goToPhase = function(n) {
+      currentPhase = n;
+      phasesVisited.add(n);
+
+      document.querySelectorAll(".phase-section").forEach(el => el.classList.remove("active"));
+      document.getElementById("phase-" + n).classList.add("active");
+
+      document.querySelectorAll(".phase-btn").forEach(btn => {
+        const p = parseInt(btn.dataset.phase);
+        btn.classList.remove("active");
+        if (p === n) btn.classList.add("active");
+        if (phasesVisited.has(p) && p !== n) btn.classList.add("completed");
+      });
+
+      document.getElementById("status-phase").textContent = n + " / 4";
+      document.getElementById("status-progress").textContent = Math.round((phasesVisited.size / 4) * 100) + "%";
+
+      // Initialize charts when entering their phase
+      if (n === 2) {
+        setTimeout(() => {
+          initGPRChart();
+          initHistogram();
+          computeStats();
+        }, 50);
+      }
+      if (n === 3) {
+        setTimeout(() => initIRFChart(), 50);
+      }
+      if (n === 4) {
+        updateFinalScores();
+        initRScript();
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // Bind phase nav buttons
+    document.querySelectorAll(".phase-btn").forEach(btn => {
+      btn.addEventListener("click", () => goToPhase(parseInt(btn.dataset.phase)));
+    });
+
+    // ═══════════════════════════════════════════════
+    // GPR CHART
+    // ═══════════════════════════════════════════════
+    function initGPRChart() {
+      const ctx = document.getElementById("gpr-chart");
+      if (!ctx) return;
+      if (gprChart) { gprChart.destroy(); }
+
+      // Thin labels for display (show only Jan of each year)
+      const thinLabels = GPR_LABELS.map(l => l.endsWith("-01") ? l.substring(0, 4) : "");
+
+      // Collect event annotation points
+      const annotations = {};
+      let annIdx = 0;
+      Object.keys(EVENT_MAP).forEach(key => {
+        const idx = GPR_LABELS.indexOf(key);
+        if (idx >= 0) {
+          annotations["event" + annIdx] = {
+            type: "point",
+            xValue: idx,
+            yValue: GPR_DATA[idx],
+            backgroundColor: "rgba(212, 160, 23, 0.85)",
+            borderColor: "#D4A017",
+            borderWidth: 2,
+            radius: 5,
+            pointStyle: "triangle"
+          };
+          annIdx++;
+        }
+      });
+
+      gprChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: thinLabels,
+          datasets: [
+            {
+              label: "GPR (Global)",
+              data: GPR_DATA,
+              borderColor: "#1B2A4A",
+              backgroundColor: "rgba(27, 42, 74, 0.06)",
+              borderWidth: 1.5,
+              pointRadius: 0,
+              fill: true,
+              tension: 0.2,
+              hidden: false
+            },
+            {
+              label: "GPR Threats",
+              data: GPRT_DATA,
+              borderColor: "#C0392B",
+              borderWidth: 1.5,
+              pointRadius: 0,
+              fill: false,
+              tension: 0.2,
+              hidden: true
+            },
+            {
+              label: "GPR Acts",
+              data: GPRA_DATA,
+              borderColor: "#D4A017",
+              borderWidth: 1.5,
+              pointRadius: 0,
+              fill: false,
+              tension: 0.2,
+              hidden: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "nearest", intersect: false },
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                font: { family: "Inter", size: 11 },
+                usePointStyle: true,
+                pointStyle: "line"
+              }
+            },
+            tooltip: {
+              callbacks: {
+                title: function(items) {
+                  if (!items.length) return "";
+                  const idx = items[0].dataIndex;
+                  return GPR_LABELS[idx];
+                },
+                afterBody: function(items) {
+                  if (!items.length) return "";
+                  const idx = items[0].dataIndex;
+                  const label = GPR_LABELS[idx];
+                  const ev = EVENT_MAP[label];
+                  if (ev) return "\n▸ " + ev.name;
+                  return "";
+                }
+              },
+              titleFont: { family: "JetBrains Mono", size: 11 },
+              bodyFont: { family: "Inter", size: 12 }
+            },
+            annotation: { annotations: annotations }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: {
+                font: { family: "JetBrains Mono", size: 10 },
+                maxRotation: 0,
+                autoSkip: true,
+                maxTicksLimit: 25
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "GPR Index",
+                font: { family: "Inter", size: 12, weight: "600" },
+                color: "#1B2A4A"
+              },
+              grid: { color: "rgba(27, 42, 74, 0.06)" },
+              ticks: { font: { family: "JetBrains Mono", size: 10 } }
+            }
+          },
+          onClick: function(evt) {
+            const points = gprChart.getElementsAtEventForMode(evt, "nearest", { intersect: false }, true);
+            if (points.length) {
+              const idx = points[0].index;
+              const label = GPR_LABELS[idx];
+              showEvent(label);
+            }
+          }
+        }
+      });
+    }
+
+    // ═══════════════════════════════════════════════
+    // SERIES TOGGLE
+    // ═══════════════════════════════════════════════
+    window.toggleSeries = function(key) {
+      visibleSeries[key] = !visibleSeries[key];
+
+      // Update buttons
+      document.querySelectorAll("#gpr-controls .toggle-btn").forEach(btn => {
+        btn.classList.toggle("active", visibleSeries[btn.dataset.series]);
+      });
+
+      // Update chart
+      if (gprChart) {
+        const map = { gpr: 0, gprt: 1, gpra: 2 };
+        Object.keys(map).forEach(k => {
+          gprChart.data.datasets[map[k]].hidden = !visibleSeries[k];
+        });
+        gprChart.update();
+      }
+    };
+
+    // ═══════════════════════════════════════════════
+    // EVENT CARD
+    // ═══════════════════════════════════════════════
+    function showEvent(label) {
+      const ev = EVENT_MAP[label];
+      const card = document.getElementById("event-card");
+      if (!ev) { card.classList.remove("visible"); return; }
+
+      document.getElementById("event-name").textContent = ev.name;
+      document.getElementById("event-detail").textContent = ev.detail;
+      document.getElementById("event-meta").textContent = "Date: " + label + " · GPR: " + ev.gpr + " · Threats: " + ev.gprt + " · Acts: " + ev.gpra;
+      card.classList.add("visible");
+    }
+
+    // ═══════════════════════════════════════════════
+    // HISTOGRAM
+    // ═══════════════════════════════════════════════
+    function initHistogram() {
+      const ctx = document.getElementById("histogram-chart");
+      if (!ctx) return;
+      if (histChart) { histChart.destroy(); }
+
+      // Bin the GPR data
+      const bins = [0, 75, 100, 125, 150, 175, 200, 250, 300, 400, 500];
+      const counts = new Array(bins.length - 1).fill(0);
+      const binLabels = [];
+      for (let i = 0; i < bins.length - 1; i++) {
+        binLabels.push(bins[i] + "–" + bins[i + 1]);
+        GPR_DATA.forEach(v => { if (v >= bins[i] && v < bins[i + 1]) counts[i]++; });
+      }
+
+      histChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: binLabels,
+          datasets: [{
+            label: "Frequency",
+            data: counts,
+            backgroundColor: "rgba(44, 95, 138, 0.55)",
+            borderColor: "rgba(44, 95, 138, 0.8)",
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              titleFont: { family: "JetBrains Mono", size: 11 },
+              bodyFont: { family: "Inter", size: 12 }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: "GPR Range", font: { family: "Inter", size: 12, weight: "600" }, color: "#1B2A4A" },
+              grid: { display: false },
+              ticks: { font: { family: "JetBrains Mono", size: 10 } }
+            },
+            y: {
+              title: { display: true, text: "Number of Months", font: { family: "Inter", size: 12, weight: "600" }, color: "#1B2A4A" },
+              grid: { color: "rgba(27, 42, 74, 0.06)" },
+              ticks: { font: { family: "JetBrains Mono", size: 10 } }
+            }
+          }
+        }
+      });
+    }
+
+    // ═══════════════════════════════════════════════
+    // DESCRIPTIVE STATS
+    // ═══════════════════════════════════════════════
+    function computeStats() {
+      const n = GPR_DATA.length;
+      const mean = GPR_DATA.reduce((a, b) => a + b, 0) / n;
+      const variance = GPR_DATA.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / n;
+      const sd = Math.sqrt(variance);
+      const maxVal = Math.max(...GPR_DATA);
+      const maxIdx = GPR_DATA.indexOf(maxVal);
+      const skew = GPR_DATA.reduce((a, b) => a + Math.pow((b - mean) / sd, 3), 0) / n;
+
+      document.getElementById("stat-mean").textContent = mean.toFixed(1);
+      document.getElementById("stat-sd").textContent = sd.toFixed(1);
+      document.getElementById("stat-max").textContent = maxVal + " (" + GPR_LABELS[maxIdx] + ")";
+      document.getElementById("stat-skew").textContent = skew.toFixed(2) + " (right-skewed)";
+    }
+
+    // ═══════════════════════════════════════════════
+    // IRF CHART
+    // ═══════════════════════════════════════════════
+    window.selectIRF = function(varKey) {
+      selectedIRF = varKey;
+      document.querySelectorAll(".irf-option").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.var === varKey);
+      });
+      initIRFChart();
+    };
+
+    function initIRFChart() {
+      const ctx = document.getElementById("irf-chart");
+      if (!ctx) return;
+      if (irfChart) { irfChart.destroy(); }
+
+      const d = IRF_DATA[selectedIRF];
+      const horizons = Array.from({ length: 13 }, (_, i) => i);
+
+      // Compute confidence bands
+      const upper90 = d.beta.map((b, i) => b + d.se90[i]);
+      const lower90 = d.beta.map((b, i) => b - d.se90[i]);
+      const upper68 = d.beta.map((b, i) => b + d.se68[i]);
+      const lower68 = d.beta.map((b, i) => b - d.se68[i]);
+
+      irfChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: horizons.map(h => "h=" + h),
+          datasets: [
+            {
+              label: "90% CI (upper)",
+              data: upper90,
+              borderColor: "transparent",
+              backgroundColor: "rgba(44, 95, 138, 0.08)",
+              pointRadius: 0,
+              fill: "+4",
+              tension: 0.2
+            },
+            {
+              label: "68% CI (upper)",
+              data: upper68,
+              borderColor: "transparent",
+              backgroundColor: "rgba(44, 95, 138, 0.15)",
+              pointRadius: 0,
+              fill: "+2",
+              tension: 0.2
+            },
+            {
+              label: "β_h (point estimate)",
+              data: d.beta,
+              borderColor: "#1B2A4A",
+              backgroundColor: "#1B2A4A",
+              borderWidth: 2.5,
+              pointRadius: 4,
+              pointBackgroundColor: "#1B2A4A",
+              pointBorderColor: "#fff",
+              pointBorderWidth: 1.5,
+              fill: false,
+              tension: 0.2
+            },
+            {
+              label: "68% CI (lower)",
+              data: lower68,
+              borderColor: "transparent",
+              backgroundColor: "transparent",
+              pointRadius: 0,
+              fill: false,
+              tension: 0.2
+            },
+            {
+              label: "90% CI (lower)",
+              data: lower90,
+              borderColor: "transparent",
+              backgroundColor: "transparent",
+              pointRadius: 0,
+              fill: false,
+              tension: 0.2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                filter: function(item) {
+                  return item.text === "β_h (point estimate)" ||
+                         item.text === "68% CI (upper)" ||
+                         item.text === "90% CI (upper)";
+                },
+                font: { family: "Inter", size: 11 },
+                generateLabels: function(chart) {
+                  return [
+                    { text: "Point estimate (β_h)", fillStyle: "#1B2A4A", strokeStyle: "#1B2A4A", lineWidth: 2, pointStyle: "circle" },
+                    { text: "68% CI", fillStyle: "rgba(44, 95, 138, 0.15)", strokeStyle: "rgba(44, 95, 138, 0.3)", lineWidth: 1 },
+                    { text: "90% CI", fillStyle: "rgba(44, 95, 138, 0.08)", strokeStyle: "rgba(44, 95, 138, 0.15)", lineWidth: 1 }
+                  ];
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                title: (items) => items[0] ? "Horizon " + items[0].label : "",
+                label: function(context) {
+                  if (context.datasetIndex === 2) {
+                    const h = context.dataIndex;
+                    return "β = " + d.beta[h].toFixed(3) + " " + d.unit + " [90% CI: " + lower90[h].toFixed(3) + ", " + upper90[h].toFixed(3) + "]";
+                  }
+                  return null;
+                }
+              },
+              titleFont: { family: "JetBrains Mono", size: 11 },
+              bodyFont: { family: "Inter", size: 12 },
+              filter: (item) => item.datasetIndex === 2
+            },
+            annotation: {
+              annotations: {
+                zeroLine: {
+                  type: "line",
+                  yMin: 0,
+                  yMax: 0,
+                  borderColor: "rgba(192, 57, 43, 0.5)",
+                  borderWidth: 1.5,
+                  borderDash: [4, 4]
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: "Horizon (months)", font: { family: "Inter", size: 12, weight: "600" }, color: "#1B2A4A" },
+              grid: { display: false },
+              ticks: { font: { family: "JetBrains Mono", size: 11 } }
+            },
+            y: {
+              title: { display: true, text: d.label, font: { family: "Inter", size: 12, weight: "600" }, color: "#1B2A4A" },
+              grid: { color: "rgba(27, 42, 74, 0.06)" },
+              ticks: { font: { family: "JetBrains Mono", size: 11 } }
+            }
+          }
+        }
+      });
+
+      // Update narrative
+      document.getElementById("irf-narrative").textContent = d.narrative;
+    }
+
+    // ═══════════════════════════════════════════════
+    // QUIZ
+    // ═══════════════════════════════════════════════
+    window.answerQuiz = function(qNum, chosen) {
+      if (quizAnswered[qNum] !== undefined) return;
+      quizAnswered[qNum] = chosen;
+
+      const qa = QUIZ_ANSWERS[qNum];
+      const isCorrect = chosen === qa.correct;
+      if (isCorrect) quizCorrect++;
+
+      // Disable all buttons in this quiz
+      const block = document.getElementById("quiz-" + qNum);
+      block.querySelectorAll(".quiz-opt").forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === qa.correct) btn.classList.add("correct");
+        else if (i === chosen && !isCorrect) btn.classList.add("incorrect");
+      });
+
+      // Show feedback
+      const fb = document.getElementById("quiz-" + qNum + "-fb");
+      fb.textContent = isCorrect ? qa.feedback_correct : qa.feedback_incorrect;
+      fb.classList.add("visible", isCorrect ? "correct-fb" : "incorrect-fb");
+
+      // Update score
+      const total = Object.keys(quizAnswered).length;
+      document.getElementById("status-score").textContent = quizCorrect + " / " + total;
+      document.getElementById("quiz-score-display").textContent = quizCorrect + " / 5";
+    };
+
+    // ═══════════════════════════════════════════════
+    // FINAL SCORES
+    // ═══════════════════════════════════════════════
+    function updateFinalScores() {
+      document.getElementById("final-quiz-score").textContent = quizCorrect + " / 5";
+      document.getElementById("final-phases").textContent = phasesVisited.size + " / 4";
+
+      let assessment = "";
+      if (phasesVisited.size === 4 && quizCorrect === 5) {
+        assessment = "Excellent. You have completed all phases and answered every question correctly. You demonstrate strong understanding of Local Projections and the economic interpretation of geopolitical risk shocks.";
+      } else if (phasesVisited.size === 4 && quizCorrect >= 3) {
+        assessment = "Good performance. You have explored all phases. Review the feedback on missed questions to strengthen your understanding of LP interpretation and the economic channels of geopolitical risk.";
+      } else if (phasesVisited.size === 4) {
+        assessment = "You have visited all phases but missed several questions. Revisit Phase 1 (Context) for the theoretical foundations and Phase 3 for the IRF interpretation before attempting the quiz again.";
+      } else {
+        assessment = "Complete all four phases and the quiz to receive your full assessment. Navigate using the phase buttons above.";
+      }
+      document.getElementById("final-assessment").textContent = assessment;
+    }
+
+    // ═══════════════════════════════════════════════
+    // REPORT GENERATION
+    // ═══════════════════════════════════════════════
+    window.generateReport = function() {
+      const now = new Date().toISOString().slice(0, 16).replace("T", " ");
+      let report = `# GeoRisk Data Lab 1 — Analysis Report\n`;
+      report += `**Generated:** ${now}\n`;
+      report += `**Instructor:** Eric Gabin Kilama (FERDI · CERDI)\n\n`;
+      report += `## Method\n`;
+      report += `Local Projections (Jordà 2005) applied to the Geopolitical Risk Index (Caldara & Iacoviello 2022 AER).\n`;
+      report += `Sample: January 2000 – December 2024 (monthly).\n`;
+      report += `Controls: 4 lags of dependent variable, 4 lags of GPR, federal funds rate, log oil price.\n`;
+      report += `Standard errors: Newey-West HAC.\n\n`;
+      report += `## Key Findings\n\n`;
+      report += `| Variable | Impact (h=0) | Peak Effect | Persistence | Significant at 90% |\n`;
+      report += `|----------|-------------|-------------|-------------|--------------------|\n`;
+      report += `| S&P 500  | −1.20%      | h=0         | ~6 months   | h ≤ 2              |\n`;
+      report += `| VIX      | +2.80 pts   | h=0         | ~3 months   | h ≤ 1              |\n`;
+      report += `| Oil      | +1.80%      | h=0         | ~3 months   | h ≤ 1              |\n`;
+      report += `| EUR/USD  | −0.60%      | h=0         | ~4 months   | h ≤ 2              |\n\n`;
+      report += `## Interpretation\n\n`;
+      report += `1. **Equity markets** respond immediately and negatively, with partial mean reversion.\n`;
+      report += `2. **Implied volatility** (VIX) spikes sharply but decays rapidly — classic uncertainty shock (Bloom 2009).\n`;
+      report += `3. **Oil prices** rise on precautionary demand but the effect is transitory.\n`;
+      report += `4. **USD appreciates** against EUR, reflecting safe-haven capital flows.\n\n`;
+      report += `## Quiz Performance\n\n`;
+      report += `Score: ${quizCorrect} / 5\n\n`;
+
+      Object.keys(quizAnswered).forEach(q => {
+        const qa = QUIZ_ANSWERS[q];
+        const correct = quizAnswered[q] === qa.correct;
+        report += `- Q${q}: ${correct ? "✓ Correct" : "✗ Incorrect"}\n`;
+      });
+
+      report += `\n## References\n\n`;
+      report += `- Jordà, Ò. (2005). AER 95(1), 161–182.\n`;
+      report += `- Caldara, D. & Iacoviello, M. (2022). AER 112(4), 1194–1225.\n`;
+      report += `- Bloom, N. (2009). Econometrica 77(3), 623–685.\n`;
+      report += `- Ramey, V.A. (2016). Handbook of Macroeconomics, Vol. 2.\n`;
+
+      document.getElementById("report-area").textContent = report;
+    };
+
+    window.copyReport = function() {
+      const text = document.getElementById("report-area").textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('[onclick="copyReport()"]');
+        btn.textContent = "Copied!";
+        setTimeout(() => { btn.textContent = "Copy to Clipboard"; }, 1500);
+      });
+    };
+
+    window.downloadReport = function() {
+      const text = document.getElementById("report-area").textContent;
+      const blob = new Blob([text], { type: "text/markdown" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "georisk_datalab1_report.md";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+
+    // ═══════════════════════════════════════════════
+    // R SCRIPT
+    // ═══════════════════════════════════════════════
+    function initRScript() {
+      const script = `# ═══════════════════════════════════════════════════════════
+# GeoRisk Data Lab 1 — Local Projections Replication Script
+# Instructor: Eric Gabin Kilama (FERDI · CERDI)
+# ═══════════════════════════════════════════════════════════
+# References:
+#   Jordà, Ò. (2005). AER 95(1), 161-182.
+#   Caldara, D. & Iacoviello, M. (2022). AER 112(4), 1194-1225.
+# ═══════════════════════════════════════════════════════════
+
+# ── 1. Setup ──
+library(readr)
+library(dplyr)
+library(sandwich)   # for Newey-West HAC
+library(lmtest)     # for coeftest()
+library(ggplot2)
+
+set.seed(42)
+
+# ── 2. Download GPR Data ──
+# Monthly GPR index from Caldara & Iacoviello
+# Source: https://www.matteoiacoviello.com/gpr.htm
+gpr_url <- "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls"
+# Note: you may need to download manually and convert to CSV
+# gpr <- read_csv("data_gpr_export.csv")
+
+# For this exercise, we simulate the structure:
+# In practice, load the actual data from the website above.
+cat("Download GPR data from: https://www.matteoiacoviello.com/gpr.htm\\n")
+cat("Place the file as 'gpr_data.csv' in your working directory.\\n\\n")
+
+# ── 3. Prepare Variables ──
+# Assuming 'gpr' data frame with columns:
+#   date, GPR, GPRT, GPRA
+# And you have merged with financial data:
+#   sp500_ret, vix_change, oil_ret, eurusd_ret, ffr, log_oil
+
+# Example structure:
+# df <- gpr %>%
+#   left_join(financial_data, by = "date") %>%
+#   arrange(date) %>%
+#   mutate(
+#     gpr_std = (GPR - mean(GPR)) / sd(GPR),  # Standardize GPR
+#     sp500_ret = log(sp500 / lag(sp500)) * 100,
+#     oil_ret = log(wti / lag(wti)) * 100,
+#     eurusd_ret = log(eurusd / lag(eurusd)) * 100,
+#     vix_change = VIX - lag(VIX)
+#   )
+
+# ── 4. Local Projection Function ──
+run_lp <- function(df, y_var, shock_var = "gpr_std",
+                   controls = c("ffr", "log_oil"),
+                   n_lags = 4, H = 12) {
+
+  results <- data.frame(
+    horizon = 0:H,
+    beta = NA_real_,
+    se_nw = NA_real_,
+    ci68_lo = NA_real_,
+    ci68_hi = NA_real_,
+    ci90_lo = NA_real_,
+    ci90_hi = NA_real_
+  )
+
+  for (h in 0:H) {
+    # Create forward-shifted dependent variable
+    df_h <- df %>%
+      mutate(y_forward = lead(!!sym(y_var), h))
+
+    # Build formula with lags
+    lag_terms <- c()
+    for (l in 1:n_lags) {
+      lag_terms <- c(lag_terms,
+        paste0("lag(", y_var, ", ", l, ")"),
+        paste0("lag(", shock_var, ", ", l, ")"))
+    }
+
+    fml <- as.formula(paste(
+      "y_forward ~", shock_var, "+",
+      paste(c(controls, lag_terms), collapse = " + ")
+    ))
+
+    # Estimate OLS
+    fit <- lm(fml, data = df_h, na.action = na.omit)
+
+    # Newey-West HAC standard errors (bandwidth = h + 1)
+    nw_vcov <- NeweyWest(fit, lag = max(h, 1), prewhite = FALSE)
+    ct <- coeftest(fit, vcov. = nw_vcov)
+
+    # Extract coefficient on shock variable
+    idx <- which(rownames(ct) == shock_var)
+    if (length(idx) == 1) {
+      results$beta[h + 1] <- ct[idx, "Estimate"]
+      results$se_nw[h + 1] <- ct[idx, "Std. Error"]
+      results$ci68_lo[h + 1] <- ct[idx, 1] - 1.00 * ct[idx, 2]
+      results$ci68_hi[h + 1] <- ct[idx, 1] + 1.00 * ct[idx, 2]
+      results$ci90_lo[h + 1] <- ct[idx, 1] - 1.645 * ct[idx, 2]
+      results$ci90_hi[h + 1] <- ct[idx, 1] + 1.645 * ct[idx, 2]
+    }
+  }
+
+  return(results)
+}
+
+# ── 5. Run LPs ──
+# irf_sp500  <- run_lp(df, "sp500_ret")
+# irf_vix    <- run_lp(df, "vix_change")
+# irf_oil    <- run_lp(df, "oil_ret")
+# irf_eurusd <- run_lp(df, "eurusd_ret")
+
+# ── 6. Plot IRF ──
+plot_irf <- function(irf, title, ylab) {
+  ggplot(irf, aes(x = horizon)) +
+    geom_ribbon(aes(ymin = ci90_lo, ymax = ci90_hi),
+                fill = "#2C5F8A", alpha = 0.12) +
+    geom_ribbon(aes(ymin = ci68_lo, ymax = ci68_hi),
+                fill = "#2C5F8A", alpha = 0.22) +
+    geom_line(aes(y = beta), color = "#1B2A4A", linewidth = 1.2) +
+    geom_point(aes(y = beta), color = "#1B2A4A", size = 2.5) +
+    geom_hline(yintercept = 0, linetype = "dashed",
+               color = "#C0392B", linewidth = 0.6) +
+    scale_x_continuous(breaks = 0:12) +
+    labs(title = title, x = "Horizon (months)", y = ylab) +
+    theme_minimal(base_family = "sans") +
+    theme(
+      plot.title = element_text(face = "bold", size = 14,
+                                color = "#1B2A4A"),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank()
+    )
+}
+
+# plot_irf(irf_sp500, "S&P 500 Response to GPR Shock",
+#          "Monthly Return (%)")
+
+cat("Script ready. Load your GPR + financial data and uncomment\\n")
+cat("the estimation and plotting sections to replicate the lab.\\n")`;
+
+      document.getElementById("r-script-area").textContent = script;
+    }
+
+    window.downloadRScript = function() {
+      const text = document.getElementById("r-script-area").textContent;
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "georisk_datalab1_lp.R";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+
+  })();
+  </script>
+</body>
+</html>

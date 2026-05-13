@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoRisk Data Labs — Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue-fpsq: #2C5F8A;
+      --red-analytical: #C0392B;
+      --gold-caps: #D4A017;
+      --ivory: #F8F7F4;
+      --ivory-deep: #F0EDE8;
+      --anthracite: #2D2D2D;
+      --text-secondary: #5A6068;
+      --border-light: rgba(27, 42, 74, 0.08);
+      --border-strong: rgba(27, 42, 74, 0.16);
+      --green: #2E7D5B;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: var(--blue-fpsq); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid var(--gold-caps);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo {
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .header-title { font-size: 18px; font-weight: 600; }
+
+    .header-tag {
+      border: 1px solid rgba(212, 160, 23, 0.45);
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+
+    .header-back {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .header-back:hover { color: #fff; text-decoration: none; }
+
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 34px 72px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .hero-eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue-fpsq);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-family: "Source Serif 4", serif;
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .citation-block {
+      border-left: 3px solid var(--gold-caps);
+      padding: 20px 24px;
+      background: var(--paper);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 48px;
+    }
+
+    .citation-text {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--navy);
+      line-height: 1.6;
+      margin: 0 0 8px;
+    }
+
+    .citation-author {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .labs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .lab-card {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-card:hover {
+      box-shadow: 0 4px 20px rgba(27, 42, 74, 0.08);
+      border-color: var(--border-strong);
+    }
+
+    .lab-card-header {
+      padding: 24px 24px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .lab-number {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-fpsq);
+      background: rgba(44, 95, 138, 0.08);
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .lab-level {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .lab-level--m1 { background: rgba(46, 125, 91, 0.1); color: var(--green); }
+    .lab-level--m2 { background: rgba(192, 57, 43, 0.1); color: var(--red-analytical); }
+
+    .lab-card-body {
+      padding: 16px 24px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-card h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+
+    .lab-card-desc {
+      font-family: "Source Serif 4", serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .lab-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .lab-method-tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: var(--ivory-deep);
+      color: var(--navy);
+    }
+
+    .lab-refs {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .lab-refs strong { color: var(--navy); font-weight: 600; }
+
+    .lab-card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .lab-btn:hover { text-decoration: none; }
+    .lab-btn--primary { background: var(--navy); color: #fff; }
+    .lab-btn--primary:hover { background: var(--blue-fpsq); }
+    .lab-btn--secondary { background: var(--ivory-deep); color: var(--navy); }
+    .lab-btn--secondary:hover { background: #E5E0D9; }
+    .lab-btn svg { width: 14px; height: 14px; }
+
+    .approach {
+      background: var(--ivory-deep);
+      border-radius: 8px;
+      padding: 36px;
+      margin-bottom: 48px;
+    }
+
+    .approach h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
+
+    .approach p {
+      font-family: "Source Serif 4", serif;
+      font-size: 15px;
+      color: var(--anthracite);
+      line-height: 1.65;
+      margin: 0 0 12px;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .approach-item { text-align: center; }
+
+    .approach-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--paper);
+      border-radius: 8px;
+      color: var(--blue-fpsq);
+    }
+
+    .approach-item h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+
+    .approach-item p { font-size: 13px; margin: 0; }
+
+    .footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 32px 36px;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255, 255, 255, 0.7); font-size: 13px; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .header { padding: 14px 18px; flex-wrap: wrap; }
+      .main { padding: 32px 18px 48px; }
+      .hero h1 { font-size: 24px; }
+      .labs-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; gap: 16px; }
+      .footer-content { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-brand">
+      <span class="header-logo">Data Labs</span>
+      <span class="header-title">GeoRisk Data Labs</span>
+      <span class="header-tag">Macro-Finance</span>
+    </div>
+    <a href="/teaching/" class="header-back">&larr; Teaching Lab</a>
+  </header>
+
+  <main class="main">
+
+    <section class="hero">
+      <div class="hero-eyebrow">Teaching Lab &middot; &Eacute;conom&eacute;trie appliqu&eacute;e</div>
+      <h1>GeoRisk Data Labs</h1>
+      <p class="hero-subtitle">
+        Quatre laboratoires interactifs pour ma&icirc;triser les m&eacute;thodologies &eacute;conom&eacute;triques
+        de pointe en macro-finance, &agrave; partir d'articles publi&eacute;s dans les meilleures revues
+        (AER, QJE, Econometrica, JoE, REStat).
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M6 20V4M18 20v-6"/></svg>
+          4 labs interactifs
+        </span>
+        <span class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          HTML + Chart.js
+        </span>
+        <span class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          Scripts R t&eacute;l&eacute;chargeables
+        </span>
+        <span class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+          M1 / M2
+        </span>
+      </div>
+    </section>
+
+    <div class="citation-block">
+      <p class="citation-text">&laquo; The best way to learn econometrics is to do econometrics. &raquo;</p>
+      <p class="citation-author">&mdash; Angrist &amp; Pischke, <em>Mastering 'Metrics</em> (2014)</p>
+    </div>
+
+    <section class="labs-grid">
+
+      <article class="lab-card">
+        <div class="lab-card-header">
+          <span class="lab-number">Lab 01</span>
+          <span class="lab-level lab-level--m1">M1</span>
+        </div>
+        <div class="lab-card-body">
+          <h2>Local Projections et chocs g&eacute;opolitiques</h2>
+          <p class="lab-card-desc">
+            Estimez des fonctions de r&eacute;ponse impulsionnelle (IRF) par la m&eacute;thode des
+            projections locales de Jord&agrave; (2005), appliqu&eacute;e au GPR Index de Caldara &amp;
+            Iacoviello (2022). Analysez l'impact des chocs g&eacute;opolitiques sur les march&eacute;s
+            financiers, la volatilit&eacute; et les prix de l'&eacute;nergie.
+          </p>
+          <div class="lab-methods">
+            <span class="lab-method-tag">Local Projections</span>
+            <span class="lab-method-tag">IRF</span>
+            <span class="lab-method-tag">Newey-West HAC</span>
+            <span class="lab-method-tag">GPR Index</span>
+          </div>
+          <div class="lab-refs">
+            <strong>Jord&agrave; (2005)</strong> AER &middot; <strong>Caldara &amp; Iacoviello (2022)</strong> AER
+          </div>
+          <div class="lab-card-actions">
+            <a href="lab1-local-projections/" class="lab-btn lab-btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Lancer le lab
+            </a>
+            <a href="r-scripts/lab1_local_projections.R" class="lab-btn lab-btn--secondary" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Script R
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <div class="lab-card-header">
+          <span class="lab-number">Lab 02</span>
+          <span class="lab-level lab-level--m1">M1 / M2</span>
+        </div>
+        <div class="lab-card-body">
+          <h2>Connectedness financi&egrave;re et spillovers</h2>
+          <p class="lab-card-desc">
+            Construisez et interpr&eacute;tez une matrice de connectedness de Diebold &amp;
+            Y&#305;lmaz (2009, 2014) &agrave; partir de donn&eacute;es macro-financi&egrave;res. Visualisez
+            le r&eacute;seau de transmission des chocs entre march&eacute;s et identifiez les
+            transmetteurs et r&eacute;cepteurs nets pendant les crises.
+          </p>
+          <div class="lab-methods">
+            <span class="lab-method-tag">VAR</span>
+            <span class="lab-method-tag">FEVD g&eacute;n&eacute;ralis&eacute;e</span>
+            <span class="lab-method-tag">Network Analysis</span>
+            <span class="lab-method-tag">Rolling Window</span>
+          </div>
+          <div class="lab-refs">
+            <strong>Diebold &amp; Y&#305;lmaz (2009)</strong> EJ &middot;
+            <strong>Diebold &amp; Y&#305;lmaz (2014)</strong> JoE &middot;
+            <strong>Pesaran &amp; Shin (1998)</strong>
+          </div>
+          <div class="lab-card-actions">
+            <a href="lab2-connectedness/" class="lab-btn lab-btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Lancer le lab
+            </a>
+            <a href="r-scripts/lab2_connectedness.R" class="lab-btn lab-btn--secondary" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Script R
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <div class="lab-card-header">
+          <span class="lab-number">Lab 03</span>
+          <span class="lab-level lab-level--m2">M2</span>
+        </div>
+        <div class="lab-card-body">
+          <h2>Event Study et DiD modernes</h2>
+          <p class="lab-card-desc">
+            Ma&icirc;trisez les m&eacute;thodes DiD de derni&egrave;re g&eacute;n&eacute;ration : TWFE na&iuml;f versus
+            Callaway &amp; Sant'Anna (2021), Sun &amp; Abraham (2021), d&eacute;composition
+            de Bacon, et analyse de sensibilit&eacute; Rambachan &amp; Roth (2023).
+            Application aux sanctions europ&eacute;ennes contre la Russie.
+          </p>
+          <div class="lab-methods">
+            <span class="lab-method-tag">Staggered DiD</span>
+            <span class="lab-method-tag">TWFE vs CS</span>
+            <span class="lab-method-tag">Bacon Decomposition</span>
+            <span class="lab-method-tag">HonestDiD</span>
+          </div>
+          <div class="lab-refs">
+            <strong>Callaway &amp; Sant'Anna (2021)</strong> JoE &middot;
+            <strong>de Chaisemartin &amp; D'Haultf&oelig;uille (2020)</strong> AER &middot;
+            <strong>Rambachan &amp; Roth (2023)</strong> RES
+          </div>
+          <div class="lab-card-actions">
+            <a href="lab3-eventstudy/" class="lab-btn lab-btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Lancer le lab
+            </a>
+            <a href="r-scripts/lab3_eventstudy_did.R" class="lab-btn lab-btn--secondary" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Script R
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="lab-card">
+        <div class="lab-card-header">
+          <span class="lab-number">Lab 04</span>
+          <span class="lab-level lab-level--m2">M2</span>
+        </div>
+        <div class="lab-card-body">
+          <h2>Pass-Through de change et variables instrumentales</h2>
+          <p class="lab-card-desc">
+            Apprenez la m&eacute;thodologie IV/2SLS &agrave; travers le pass-through des taux de
+            change aux prix d'importation. Instrumentation par les surprises de
+            politique mon&eacute;taire (Nakamura &amp; Steinsson 2018) et test du paradigme
+            de la monnaie dominante (Gopinath 2020).
+          </p>
+          <div class="lab-methods">
+            <span class="lab-method-tag">2SLS / IV</span>
+            <span class="lab-method-tag">Weak Instruments</span>
+            <span class="lab-method-tag">Stock-Yogo</span>
+            <span class="lab-method-tag">DCP</span>
+          </div>
+          <div class="lab-refs">
+            <strong>Nakamura &amp; Steinsson (2018)</strong> QJE &middot;
+            <strong>Gopinath et al. (2020)</strong> AER &middot;
+            <strong>Stock &amp; Yogo (2005)</strong>
+          </div>
+          <div class="lab-card-actions">
+            <a href="lab4-passthrough/" class="lab-btn lab-btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Lancer le lab
+            </a>
+            <a href="r-scripts/lab4_exchange_rate_iv.R" class="lab-btn lab-btn--secondary" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Script R
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="approach">
+      <h2>Approche p&eacute;dagogique</h2>
+      <p>
+        Chaque lab est con&ccedil;u comme un parcours guid&eacute; en 4-5 phases : contexte th&eacute;orique,
+        exploration des donn&eacute;es, estimation interactive, diagnostics, et export des r&eacute;sultats.
+        Les donn&eacute;es sont int&eacute;gr&eacute;es directement dans la page &mdash; aucune installation requise.
+      </p>
+      <div class="approach-grid">
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </div>
+          <h3>Articles top-journal</h3>
+          <p>Bas&eacute; sur des publications AER, QJE, JoE, REStat, Econometrica</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Donn&eacute;es r&eacute;alistes</h3>
+          <p>S&eacute;ries calibr&eacute;es sur les donn&eacute;es publiques (FRED, BIS, ECB)</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <h3>Code R fourni</h3>
+          <p>Scripts R t&eacute;l&eacute;chargeables avec packages fixest, did, vars, AER</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="text-align: center; padding: 24px 0;">
+      <p style="font-size: 14px; color: var(--text-secondary); margin: 0 0 8px;">
+        Conception et d&eacute;veloppement : <strong style="color: var(--navy);">Eric Gabin Kilama</strong> &middot; FERDI &middot; CERDI
+      </p>
+      <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">
+        Ces labs sont distribu&eacute;s &agrave; des fins p&eacute;dagogiques. Les donn&eacute;es sont simul&eacute;es ou agr&eacute;g&eacute;es &agrave; partir de sources publiques.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <div style="font-weight: 600; color: #fff; margin-bottom: 6px;">Eric Kilama &middot; Teaching Lab</div>
+        <div>&Eacute;conom&eacute;trie causale &middot; Macro-finance &middot; G&eacute;opolitique quantitative</div>
+      </div>
+      <div class="footer-links">
+        <a href="/teaching/">&larr; Teaching</a>
+        <a href="/teaching/geosim/">GeoSim</a>
+        <a href="/teaching/decision-brief/">Decision Brief</a>
+        <a href="/">erickilama.com</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

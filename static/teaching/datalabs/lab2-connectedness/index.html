@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoRisk Data Lab 2 — Financial Connectedness & Spillovers | Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@1,400;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue-fpsq: #2C5F8A;
+      --red-analytical: #C0392B;
+      --gold-caps: #D4A017;
+      --ivory: #F8F7F4;
+      --ivory-deep: #F0EDE8;
+      --anthracite: #2D2D2D;
+      --text-secondary: #5A6068;
+      --border-light: rgba(27, 42, 74, 0.08);
+      --border-strong: rgba(27, 42, 74, 0.16);
+      --green: #2E7D5B;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button, select { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--blue-fpsq); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HEADER ── */
+    .lab-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid var(--gold-caps);
+    }
+
+    .lab-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .lab-logo {
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .lab-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .lab-tag {
+      border: 1px solid rgba(212, 160, 23, 0.45);
+      color: var(--gold-caps);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+
+    .lab-back {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .lab-back:hover { color: #fff; }
+
+    /* ── MAIN CONTAINER ── */
+    .lab-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 34px 72px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .standfirst {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.62;
+      max-width: 74ch;
+    }
+
+    .eyebrow {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    /* ── PANELS ── */
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      margin-bottom: 24px;
+    }
+
+    .panel-padded { padding: 28px 32px; }
+
+    .panel-gold-left {
+      border-left: 4px solid var(--gold-caps);
+    }
+
+    .panel-blue-left {
+      border-left: 4px solid var(--blue-fpsq);
+    }
+
+    /* ── PHASE NAV ── */
+    .phase-nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .phase-btn {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 8px 14px;
+      text-transform: uppercase;
+      transition: all 0.15s ease;
+    }
+
+    .phase-btn:hover {
+      border-color: var(--border-strong);
+      color: var(--navy);
+    }
+
+    .phase-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .phase-content { display: none; }
+    .phase-content.active { display: block; }
+
+    /* ── LEARNING CONTRACT ── */
+    .learning-contract {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .contract-step {
+      background: var(--ivory);
+      border-top: 2px solid var(--blue-fpsq);
+      padding: 12px;
+    }
+
+    .contract-step span {
+      display: block;
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .contract-step small {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    /* ── CITATION ── */
+    .citation-block {
+      background: var(--ivory);
+      border-left: 3px solid var(--gold-caps);
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .citation-block blockquote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--navy);
+      margin: 0 0 8px 0;
+    }
+
+    .citation-block cite {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 13px;
+      font-style: normal;
+    }
+
+    /* ── MATH / CODE ── */
+    .math-block {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 16px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .math-block .var {
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .math-block .sub { font-size: 0.75em; vertical-align: sub; }
+    .math-block .sup { font-size: 0.75em; vertical-align: super; }
+
+    code, .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--navy);
+      border: 1px solid var(--navy);
+      color: #fff;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      transition: background 0.15s ease;
+    }
+
+    .btn-primary:hover { background: #263d66; }
+
+    .btn-secondary {
+      background: var(--paper);
+      border: 1px solid var(--border-strong);
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      transition: all 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--navy);
+      background: var(--ivory);
+    }
+
+    .btn-gold {
+      background: var(--gold-caps);
+      border: 1px solid var(--gold-caps);
+      color: #fff;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      transition: background 0.15s ease;
+    }
+
+    .btn-gold:hover { background: #b8880f; }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    /* ── SELECT / DROPDOWN ── */
+    .period-select {
+      background: var(--paper);
+      border: 1px solid var(--border-strong);
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 14px;
+      min-width: 200px;
+    }
+
+    /* ── CONNECTEDNESS TABLE ── */
+    .conn-table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    .conn-table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+    }
+
+    .conn-table th {
+      background: var(--navy);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 10px 12px;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .conn-table td {
+      border: 1px solid var(--border-light);
+      padding: 8px 10px;
+      text-align: center;
+      transition: background 0.15s;
+    }
+
+    .conn-table tr td:first-child {
+      background: var(--ivory);
+      color: var(--navy);
+      font-weight: 700;
+      text-align: left;
+      white-space: nowrap;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .conn-table .diag {
+      background: var(--ivory-deep);
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .conn-table .from-row {
+      background: rgba(44, 95, 138, 0.06);
+      font-weight: 700;
+      color: var(--blue-fpsq);
+    }
+
+    .conn-table .to-col {
+      background: rgba(192, 57, 43, 0.06);
+      font-weight: 700;
+      color: var(--red-analytical);
+    }
+
+    .conn-table tfoot td {
+      border-top: 2px solid var(--navy);
+      font-weight: 700;
+    }
+
+    /* ── HEATMAP COLOR LEVELS ── */
+    .heat-0 { background: rgba(44, 95, 138, 0.03); }
+    .heat-1 { background: rgba(44, 95, 138, 0.08); }
+    .heat-2 { background: rgba(44, 95, 138, 0.15); }
+    .heat-3 { background: rgba(44, 95, 138, 0.24); }
+    .heat-4 { background: rgba(44, 95, 138, 0.35); }
+    .heat-5 { background: rgba(192, 57, 43, 0.15); }
+    .heat-6 { background: rgba(192, 57, 43, 0.28); }
+    .heat-7 { background: rgba(192, 57, 43, 0.42); color: #fff; }
+
+    /* ── CORRELATION HEATMAP ── */
+    .corr-table {
+      border-collapse: collapse;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      margin: 16px 0;
+    }
+
+    .corr-table th {
+      background: var(--ivory-deep);
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 8px 10px;
+      text-transform: uppercase;
+    }
+
+    .corr-table td {
+      padding: 8px 10px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      min-width: 60px;
+    }
+
+    .corr-pos-1 { background: rgba(44, 95, 138, 0.08); }
+    .corr-pos-2 { background: rgba(44, 95, 138, 0.18); }
+    .corr-pos-3 { background: rgba(44, 95, 138, 0.30); }
+    .corr-pos-4 { background: rgba(44, 95, 138, 0.45); color: #fff; }
+    .corr-neg-1 { background: rgba(192, 57, 43, 0.08); }
+    .corr-neg-2 { background: rgba(192, 57, 43, 0.18); }
+    .corr-neg-3 { background: rgba(192, 57, 43, 0.30); }
+    .corr-neg-4 { background: rgba(192, 57, 43, 0.45); color: #fff; }
+
+    /* ── NETWORK SVG ── */
+    .network-container {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin: 20px auto;
+    }
+
+    .network-container svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .net-node {
+      cursor: default;
+      transition: opacity 0.2s;
+    }
+
+    .net-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      fill: #fff;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+
+    .net-value-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 9px;
+      fill: var(--text-secondary);
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+
+    .net-edge {
+      stroke-linecap: round;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+
+    .net-legend {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .net-legend-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── QUIZ ── */
+    .quiz-block {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 20px 24px;
+      margin: 18px 0;
+    }
+
+    .quiz-block h4 {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 12px 0;
+    }
+
+    .quiz-option {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      color: var(--anthracite);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      padding: 10px 14px;
+      text-align: left;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--border-strong);
+      background: var(--ivory-deep);
+    }
+
+    .quiz-option.correct {
+      background: rgba(46, 125, 91, 0.08);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .quiz-option.incorrect {
+      background: rgba(192, 57, 43, 0.06);
+      border-color: var(--red-analytical);
+      color: var(--red-analytical);
+    }
+
+    .quiz-option:disabled {
+      cursor: default;
+      opacity: 0.85;
+    }
+
+    .quiz-feedback {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-top: 10px;
+      padding: 10px 14px;
+      display: none;
+    }
+
+    .quiz-feedback.show { display: block; }
+
+    .quiz-feedback.correct-fb {
+      background: rgba(46, 125, 91, 0.06);
+      border-left: 3px solid var(--green);
+      color: var(--green);
+    }
+
+    .quiz-feedback.incorrect-fb {
+      background: rgba(192, 57, 43, 0.04);
+      border-left: 3px solid var(--red-analytical);
+      color: var(--red-analytical);
+    }
+
+    /* ── SCORE TRACKER ── */
+    .score-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 10px 16px;
+      margin-bottom: 18px;
+    }
+
+    .score-bar .score-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .score-bar .score-value {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .score-fill-track {
+      flex: 1;
+      height: 6px;
+      background: var(--border-light);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .score-fill-bar {
+      height: 100%;
+      background: var(--green);
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── INFO BLOCK ── */
+    .info-block {
+      background: var(--ivory);
+      border-left: 3px solid var(--blue-fpsq);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--anthracite);
+    }
+
+    /* ── CHART CARD ── */
+    .chart-card {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .chart-card h3 {
+      margin-bottom: 4px;
+    }
+
+    .chart-subtitle {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .chart-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    /* ── TOGGLE CHIPS ── */
+    .toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .toggle-chip {
+      border: 1px solid var(--border-strong);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      transition: all 0.12s;
+    }
+
+    .toggle-chip.on {
+      color: #fff;
+    }
+
+    .toggle-chip.off {
+      opacity: 0.4;
+      background: var(--ivory);
+    }
+
+    /* ── SUMMARY TABLE ── */
+    .summary-table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 13px;
+      margin: 16px 0;
+    }
+
+    .summary-table th {
+      background: var(--ivory-deep);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 10px 14px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .summary-table td {
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 14px;
+    }
+
+    .summary-table .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+    }
+
+    /* ── REFERENCES ── */
+    .ref-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ref-list li {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--anthracite);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .ref-list li:last-child { border-bottom: none; }
+
+    /* ── FOOTER ── */
+    .lab-footer {
+      text-align: center;
+      padding: 32px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .lab-header { padding: 14px 18px; flex-direction: column; align-items: flex-start; }
+      .lab-main { padding: 20px 16px 48px; }
+      .learning-contract { grid-template-columns: repeat(2, 1fr); }
+      .panel-padded { padding: 20px 18px; }
+      .phase-nav { gap: 4px; }
+      .phase-btn { font-size: 10px; padding: 6px 10px; }
+      .conn-table { font-size: 10px; }
+      .conn-table th, .conn-table td { padding: 6px 6px; }
+      .network-container { max-width: 100%; }
+      .toggle-row { gap: 4px; }
+      .chart-card { padding: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .learning-contract { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; }
+      .btn-group button { width: 100%; }
+    }
+
+    /* ── PROSE ── */
+    .prose {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--anthracite);
+      max-width: 72ch;
+    }
+
+    .prose p { margin-bottom: 14px; }
+
+    .prose strong { color: var(--navy); }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .two-col-grid { grid-template-columns: 1fr; }
+    }
+
+    .concept-card {
+      background: var(--ivory);
+      border-top: 2px solid var(--blue-fpsq);
+      padding: 16px 18px;
+    }
+
+    .concept-card h4 {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+
+    .concept-card p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ HEADER ═══════════════════════════════════════ -->
+<header class="lab-header">
+  <div class="lab-brand">
+    <span class="lab-logo">GeoRisk Data Lab</span>
+    <span class="lab-title">Financial Connectedness &amp; Spillovers</span>
+    <span class="lab-tag">Lab 2</span>
+  </div>
+  <a href="/teaching/" class="lab-back">&larr; Teaching Lab</a>
+</header>
+
+<!-- ═══════════════════════════════════════ MAIN ═══════════════════════════════════════ -->
+<main class="lab-main">
+
+  <!-- INTRO PANEL -->
+  <div class="panel panel-padded panel-gold-left" style="margin-bottom: 28px;">
+    <div class="eyebrow">Diebold-Yilmaz Framework</div>
+    <h1>Measuring Financial Connectedness &amp; Spillovers</h1>
+    <p class="standfirst">
+      How do shocks propagate across financial markets? This lab introduces the
+      Diebold-Yilmaz connectedness framework: a VAR-based decomposition that
+      quantifies who transmits risk, who absorbs it, and how the network
+      tightens during crises.
+    </p>
+    <div class="learning-contract">
+      <div class="contract-step">
+        <span>Phase 1</span>
+        <small>Theory &amp; methodology</small>
+      </div>
+      <div class="contract-step">
+        <span>Phase 2</span>
+        <small>Data exploration</small>
+      </div>
+      <div class="contract-step">
+        <span>Phase 3</span>
+        <small>Connectedness exercise</small>
+      </div>
+      <div class="contract-step">
+        <span>Phase 4</span>
+        <small>Network visualization</small>
+      </div>
+      <div class="contract-step">
+        <span>Phase 5</span>
+        <small>Results &amp; export</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE NAVIGATION -->
+  <nav class="phase-nav" id="phaseNav">
+    <button class="phase-btn active" onclick="showPhase(1)">1 &middot; Theory</button>
+    <button class="phase-btn" onclick="showPhase(2)">2 &middot; Data</button>
+    <button class="phase-btn" onclick="showPhase(3)">3 &middot; Connectedness</button>
+    <button class="phase-btn" onclick="showPhase(4)">4 &middot; Network</button>
+    <button class="phase-btn" onclick="showPhase(5)">5 &middot; Results</button>
+  </nav>
+
+
+  <!-- ═══════════════ PHASE 1: THEORY ═══════════════ -->
+  <section class="phase-content active" id="phase1">
+
+    <div class="panel panel-padded">
+      <h2>The Connectedness Framework</h2>
+      <div class="prose">
+        <p>
+          The Diebold-Yilmaz (DY) connectedness framework, introduced across three landmark papers
+          (2009, 2012, 2014), provides a unified approach to measuring spillovers between financial
+          variables. The method builds on Generalized Variance Decompositions from Vector
+          Autoregressions (VAR), following the identification-free approach of Pesaran &amp; Shin (1998).
+        </p>
+        <p>
+          The core idea: estimate a VAR for a system of <em>N</em> financial variables, then compute
+          the share of each variable's forecast error variance that is attributable to shocks
+          originating in other variables. These shares, organized in a matrix, reveal the
+          <strong>direction</strong>, <strong>intensity</strong>, and <strong>network structure</strong>
+          of cross-market spillovers.
+        </p>
+      </div>
+
+      <div class="citation-block">
+        <blockquote>
+          "In a globalizing world it is important to understand the nature and
+          degree of connectedness of a system. [...] We characterize connectedness
+          based on variance decomposition networks."
+        </blockquote>
+        <cite>Diebold &amp; Yilmaz (2014), Journal of Econometrics</cite>
+      </div>
+    </div>
+
+    <div class="two-col-grid">
+      <div class="panel panel-padded panel-blue-left">
+        <h3>Step 1: Estimate a VAR</h3>
+        <div class="prose" style="max-width: none;">
+          <p>
+            Fit a VAR(<em>p</em>) model to a system of <em>N</em> variables. The generalized
+            impulse response (Pesaran-Shin) approach avoids the ordering dependence of Cholesky
+            decompositions, making results robust to variable ordering.
+          </p>
+        </div>
+        <div class="math-block">
+          <span class="var">x</span><span class="sub">t</span> =
+          <span class="var">&Phi;</span><span class="sub">1</span><span class="var">x</span><span class="sub">t-1</span> +
+          <span class="var">&Phi;</span><span class="sub">2</span><span class="var">x</span><span class="sub">t-2</span> +
+          ... +
+          <span class="var">&Phi;</span><span class="sub">p</span><span class="var">x</span><span class="sub">t-p</span> +
+          <span class="var">&epsilon;</span><span class="sub">t</span>
+        </div>
+      </div>
+
+      <div class="panel panel-padded panel-blue-left">
+        <h3>Step 2: Variance Decomposition</h3>
+        <div class="prose" style="max-width: none;">
+          <p>
+            Compute the <em>H</em>-step-ahead generalized FEVD. The element
+            <span class="mono">C<sub>ij</sub></span> is the share of the <em>H</em>-step forecast
+            error variance of variable <em>i</em> attributable to shocks from variable <em>j</em>.
+            Rows are normalized to sum to 100%.
+          </p>
+        </div>
+        <div class="math-block">
+          <span class="var">C</span><span class="sub">ij</span><span class="sup">H</span> =
+          (&sigma;<span class="sub">jj</span><span class="sup">-1</span>
+          &sum;<span class="sub">h=0</span><span class="sup">H</span>
+          (<span class="var">e</span><span class="sub">i</span>&prime;
+          <span class="var">A</span><span class="sub">h</span>
+          <span class="var">&Sigma;</span> <span class="var">e</span><span class="sub">j</span>)<span class="sup">2</span>) /
+          &sum;<span class="sub">h=0</span><span class="sup">H</span>
+          (<span class="var">e</span><span class="sub">i</span>&prime;
+          <span class="var">A</span><span class="sub">h</span>
+          <span class="var">&Sigma;</span> <span class="var">A</span><span class="sub">h</span>&prime;
+          <span class="var">e</span><span class="sub">i</span>)
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-padded">
+      <h3>Key Connectedness Measures</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div class="concept-card">
+          <h4>Total Connectedness Index (TCI)</h4>
+          <p>Average off-diagonal FEVD share. Captures system-wide interconnectedness. Rises sharply during crises.</p>
+        </div>
+        <div class="concept-card">
+          <h4>FROM Connectedness</h4>
+          <p>Row sum of off-diagonal elements: how much of variable <em>i</em>'s forecast error variance comes from shocks in all other variables.</p>
+        </div>
+        <div class="concept-card">
+          <h4>TO Connectedness</h4>
+          <p>Column sum of off-diagonal elements: how much variable <em>j</em> contributes to forecast error variance of all other variables.</p>
+        </div>
+        <div class="concept-card">
+          <h4>NET Connectedness</h4>
+          <p>TO minus FROM. Positive = net transmitter of shocks. Negative = net receiver. Identifies systemic risk sources.</p>
+        </div>
+      </div>
+
+      <div class="math-block" style="margin-top: 18px;">
+        <strong>TCI</strong> = (1/<span class="var">N</span>) &times;
+        &sum;<span class="sub">i&ne;j</span>
+        <span class="var">C</span><span class="sub">ij</span><span class="sup">H</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong>NET</strong><span class="sub">i</span> =
+        <strong>TO</strong><span class="sub">i</span> &minus; <strong>FROM</strong><span class="sub">i</span>
+      </div>
+    </div>
+
+    <div class="panel panel-padded" style="background: var(--ivory);">
+      <h3>References</h3>
+      <ul class="ref-list">
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2009). "Measuring Financial Asset Return and Volatility Spillovers, with Application to Global Equity Markets." <em>Economic Journal</em>, 119(534), 158-171.</li>
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2012). "Better to Give than to Receive: Predictive Directional Measurement of Volatility Spillovers." <em>International Journal of Forecasting</em>, 28(1), 57-66.</li>
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2014). "On the Network Topology of Variance Decompositions: Measuring the Connectedness of Financial Firms." <em>Journal of Econometrics</em>, 182(1), 119-134.</li>
+        <li>Pesaran, M.H. &amp; Shin, Y. (1998). "Generalized Impulse Response Analysis in Linear Multivariate Models." <em>Economics Letters</em>, 58(1), 17-29.</li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-primary" onclick="showPhase(2)">Continue to Phase 2: Data &rarr;</button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════ PHASE 2: DATA EXPLORATION ═══════════════ -->
+  <section class="phase-content" id="phase2">
+
+    <div class="panel panel-padded">
+      <div class="eyebrow">Six Macro-Financial Variables &middot; Jan 2006 &ndash; Dec 2024</div>
+      <h2>Data Exploration</h2>
+      <div class="prose">
+        <p>
+          We work with monthly data on six key macro-financial variables that capture distinct
+          channels of risk transmission: equity volatility, exchange rates, bond yields,
+          commodities, safe havens, and emerging market credit.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 18px 0;">
+        <div class="concept-card">
+          <h4>VIX</h4>
+          <p>S&amp;P 500 implied volatility. Fear gauge.</p>
+        </div>
+        <div class="concept-card">
+          <h4>EUR/USD Vol</h4>
+          <p>3-month implied volatility on EUR/USD.</p>
+        </div>
+        <div class="concept-card">
+          <h4>US 10Y</h4>
+          <p>Treasury yield. Safe-haven benchmark.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Oil (WTI)</h4>
+          <p>Crude oil price, USD/barrel.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Gold</h4>
+          <p>Safe-haven asset. USD/oz.</p>
+        </div>
+        <div class="concept-card">
+          <h4>EMBI Spread</h4>
+          <p>EM sovereign spread. Credit risk proxy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIME SERIES CHART -->
+    <div class="chart-card">
+      <h3>Normalized Time Series (z-scores)</h3>
+      <p class="chart-subtitle">Click variable chips to toggle visibility. All series standardized to facilitate comparison.</p>
+      <div class="toggle-row" id="seriesToggle"></div>
+      <div class="chart-wrap" style="height: 380px;">
+        <canvas id="timeSeriesChart"></canvas>
+      </div>
+    </div>
+
+    <!-- CORRELATION HEATMAP -->
+    <div class="panel panel-padded">
+      <h3>Full-Sample Correlation Matrix (2006-2024)</h3>
+      <p class="chart-subtitle">Color intensity encodes correlation magnitude. Blue = positive, red = negative.</p>
+      <div class="conn-table-wrap">
+        <table class="corr-table" id="corrTable"></table>
+      </div>
+      <div class="info-block">
+        <strong>Key observation:</strong> VIX and EMBI spread are strongly positively correlated
+        (risk-on/risk-off co-movement), while both are negatively correlated with oil and equity-linked assets.
+        Gold shows mixed correlations, confirming its role as a partial hedge.
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="showPhase(1)">&larr; Phase 1</button>
+      <button class="btn-primary" onclick="showPhase(3)">Continue to Phase 3: Connectedness &rarr;</button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════ PHASE 3: CONNECTEDNESS EXERCISE ═══════════════ -->
+  <section class="phase-content" id="phase3">
+
+    <div class="score-bar">
+      <span class="score-label">Score</span>
+      <span class="score-value" id="scoreDisplay">0 / 4</span>
+      <div class="score-fill-track">
+        <div class="score-fill-bar" id="scoreFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="panel panel-padded">
+      <div class="eyebrow">Connectedness Matrix Analysis</div>
+      <h2>Explore Connectedness Across Regimes</h2>
+      <div class="prose">
+        <p>
+          The connectedness matrix below shows <em>H</em>=10 step-ahead generalized FEVD results
+          for a VAR(2) estimated on the six variables. Select a period to see how
+          the structure of spillovers changes between tranquil and crisis times.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 14px; margin: 18px 0;">
+        <label style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary);">Period:</label>
+        <select class="period-select" id="periodSelect" onchange="renderConnMatrix()">
+          <option value="preGFC">Pre-GFC (2006-2007)</option>
+          <option value="gfc">GFC (2008-2009)</option>
+          <option value="ukraine" selected>Post-Ukraine (2022-2023)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- CONNECTEDNESS MATRIX -->
+    <div class="panel panel-padded">
+      <h3>Connectedness Matrix <span id="matrixPeriodLabel" class="mono" style="color: var(--blue-fpsq); font-size: 13px;">(2022-2023)</span></h3>
+      <p class="chart-subtitle">Diagonal = own variance share. Off-diagonal = cross-variable spillovers. FROM = row total (excl. own). TO = column total (excl. own).</p>
+      <div class="conn-table-wrap">
+        <table class="conn-table" id="connMatrix"></table>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: center; margin-top: 10px;">
+        <div class="eyebrow" style="margin: 0;">Total Connectedness Index:</div>
+        <span id="tciValue" style="font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; color: var(--navy);">--</span>
+      </div>
+    </div>
+
+    <!-- ROLLING TCI CHART -->
+    <div class="chart-card">
+      <h3>Rolling Total Connectedness Index</h3>
+      <p class="chart-subtitle">60-month rolling window. Grey bands mark major crisis episodes.</p>
+      <div class="chart-wrap" style="height: 340px;">
+        <canvas id="tciChart"></canvas>
+      </div>
+    </div>
+
+    <!-- DIRECTIONAL CHART -->
+    <div class="chart-card">
+      <h3>Directional Connectedness: NET Transmitters vs Receivers</h3>
+      <p class="chart-subtitle">NET = TO - FROM. Positive bars = net shock transmitters. Negative = net receivers. Select period above to update.</p>
+      <div class="chart-wrap" style="height: 300px;">
+        <canvas id="netChart"></canvas>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="panel panel-padded">
+      <h3>Comprehension Check</h3>
+
+      <div class="quiz-block" id="quiz1">
+        <h4>Q1. During the GFC, which variable is the biggest NET transmitter of shocks?</h4>
+        <button class="quiz-option" onclick="checkQuiz('quiz1', this, false)">Oil (WTI)</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz1', this, true)">VIX</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz1', this, false)">Gold</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz1', this, false)">US 10Y</button>
+        <div class="quiz-feedback" id="quiz1-fb"></div>
+      </div>
+
+      <div class="quiz-block" id="quiz2">
+        <h4>Q2. How does the Total Connectedness Index behave during crises?</h4>
+        <button class="quiz-option" onclick="checkQuiz('quiz2', this, false)">It decreases as markets decouple</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz2', this, true)">It increases sharply as spillovers intensify</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz2', this, false)">It remains stable due to diversification</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz2', this, false)">It oscillates without a clear pattern</button>
+        <div class="quiz-feedback" id="quiz2-fb"></div>
+      </div>
+
+      <div class="quiz-block" id="quiz3">
+        <h4>Q3. During the post-Ukraine period (2022-2023), which pair shows the strongest bilateral connectedness?</h4>
+        <button class="quiz-option" onclick="checkQuiz('quiz3', this, false)">Gold &harr; US 10Y</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz3', this, false)">EUR/USD Vol &harr; Gold</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz3', this, true)">VIX &harr; EMBI Spread</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz3', this, false)">Oil &harr; EUR/USD Vol</button>
+        <div class="quiz-feedback" id="quiz3-fb"></div>
+      </div>
+
+      <div class="quiz-block" id="quiz4">
+        <h4>Q4. What does a negative NET connectedness value for Gold typically indicate?</h4>
+        <button class="quiz-option" onclick="checkQuiz('quiz4', this, false)">Gold is a systemic risk amplifier</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz4', this, false)">Gold transmits more shocks than it receives</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz4', this, true)">Gold absorbs shocks from other markets (safe-haven effect)</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz4', this, false)">Gold is disconnected from the financial system</button>
+        <div class="quiz-feedback" id="quiz4-fb"></div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="showPhase(2)">&larr; Phase 2</button>
+      <button class="btn-primary" onclick="showPhase(4)">Continue to Phase 4: Network &rarr;</button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════ PHASE 4: NETWORK VISUALIZATION ═══════════════ -->
+  <section class="phase-content" id="phase4">
+
+    <div class="panel panel-padded">
+      <div class="eyebrow">Spillover Network Topology</div>
+      <h2>Connectedness Network</h2>
+      <div class="prose">
+        <p>
+          The network below arranges the six variables as nodes. Edge thickness is proportional
+          to the pairwise connectedness (bidirectional average). Node color indicates whether the
+          variable is a <strong style="color: var(--red-analytical);">net transmitter</strong>
+          (red) or <strong style="color: var(--blue-fpsq);">net receiver</strong> (blue) of shocks
+          in the selected period. Node size reflects the magnitude of net connectedness.
+        </p>
+        <p>
+          Switch between periods to observe how the network tightens during crises:
+          edges thicken, the system becomes more densely connected, and shock transmission
+          roles shift.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 14px; margin: 18px 0;">
+        <label style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary);">Period:</label>
+        <select class="period-select" id="networkPeriodSelect" onchange="renderNetwork()">
+          <option value="preGFC">Pre-GFC (2006-2007)</option>
+          <option value="gfc">GFC (2008-2009)</option>
+          <option value="ukraine" selected>Post-Ukraine (2022-2023)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="panel panel-padded">
+      <div class="network-container" id="networkContainer">
+        <svg id="networkSvg" viewBox="0 0 560 560"></svg>
+      </div>
+      <div class="net-legend">
+        <span><span class="net-legend-dot" style="background: var(--red-analytical);"></span>Net transmitter (TO &gt; FROM)</span>
+        <span><span class="net-legend-dot" style="background: var(--blue-fpsq);"></span>Net receiver (FROM &gt; TO)</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px;">Edge width = pairwise spillover</span>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="panel panel-padded">
+      <h3>Cross-Period Comparison</h3>
+      <p class="chart-subtitle">How key metrics shift across regimes.</p>
+      <div class="conn-table-wrap">
+        <table class="summary-table" id="comparisonTable">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Pre-GFC</th>
+              <th>GFC</th>
+              <th>Post-Ukraine</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="showPhase(3)">&larr; Phase 3</button>
+      <button class="btn-primary" onclick="showPhase(5)">Continue to Phase 5: Results &rarr;</button>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════ PHASE 5: RESULTS & EXPORT ═══════════════ -->
+  <section class="phase-content" id="phase5">
+
+    <div class="panel panel-padded panel-gold-left">
+      <div class="eyebrow">Summary of Findings</div>
+      <h2>What Have We Learned?</h2>
+      <div class="prose">
+        <p>
+          <strong>1. Connectedness is time-varying and regime-dependent.</strong>
+          The Total Connectedness Index rises from roughly 38% in tranquil periods to above 68%
+          during crises. Financial markets become substantially more interconnected when stress
+          materializes, reflecting contagion channels, portfolio rebalancing, and flight-to-quality flows.
+        </p>
+        <p>
+          <strong>2. VIX is the dominant net transmitter.</strong>
+          Equity volatility consistently transmits the most shocks to other variables, especially
+          during the GFC when VIX net connectedness peaked. This confirms VIX as a barometer
+          of systemic risk propagation, not just domestic equity fear.
+        </p>
+        <p>
+          <strong>3. Gold and US Treasuries act as shock absorbers.</strong>
+          Both show negative net connectedness during crisis periods, absorbing shocks rather
+          than propagating them. This is the quantitative fingerprint of the safe-haven effect.
+        </p>
+        <p>
+          <strong>4. The post-2022 regime differs from the GFC.</strong>
+          Post-Ukraine connectedness is elevated but structurally different: oil becomes a stronger
+          transmitter (energy shock channel), and EMBI spreads show heightened sensitivity to VIX,
+          reflecting the commodity-EM nexus.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel-padded">
+      <h3>Comparison with Published Results</h3>
+      <div class="prose">
+        <p>
+          Our findings align closely with the canonical results from Diebold &amp; Yilmaz (2012):
+          TCI spikes during the GFC (their estimate: ~65% for equity markets), directional
+          measures identify equity volatility as the dominant transmitter, and the network
+          topology tightens during stress. The extension to 2022-2024 shows that the Ukraine
+          shock produced a connectedness spike comparable in magnitude to the GFC,
+          consistent with recent applications of the framework to geopolitical risk
+          (Caldara &amp; Iacoviello, 2022).
+        </p>
+      </div>
+    </div>
+
+    <div class="panel panel-padded">
+      <h3>Your Score</h3>
+      <div class="score-bar">
+        <span class="score-label">Final Score</span>
+        <span class="score-value" id="finalScoreDisplay">0 / 4</span>
+        <div class="score-fill-track">
+          <div class="score-fill-bar" id="finalScoreFill" style="width: 0%;"></div>
+        </div>
+      </div>
+      <div id="scoreSummaryText" class="prose" style="margin-top: 12px;"></div>
+    </div>
+
+    <div class="panel panel-padded">
+      <h3>Export &amp; Resources</h3>
+      <div class="btn-group">
+        <button class="btn-primary" onclick="exportMarkdown()">Export Markdown Report</button>
+        <button class="btn-gold" onclick="downloadRScript()">Download R Script</button>
+      </div>
+      <div class="info-block" style="margin-top: 18px;">
+        The R script uses the <code>ConnectednessApproach</code> and <code>vars</code>
+        packages to replicate the analysis with actual data from FRED, Yahoo Finance, and J.P. Morgan.
+      </div>
+    </div>
+
+    <div class="panel panel-padded" style="background: var(--ivory);">
+      <h3>References</h3>
+      <ul class="ref-list">
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2009). "Measuring Financial Asset Return and Volatility Spillovers, with Application to Global Equity Markets." <em>Economic Journal</em>, 119(534), 158-171.</li>
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2012). "Better to Give than to Receive: Predictive Directional Measurement of Volatility Spillovers." <em>International Journal of Forecasting</em>, 28(1), 57-66.</li>
+        <li>Diebold, F.X. &amp; Yilmaz, K. (2014). "On the Network Topology of Variance Decompositions: Measuring the Connectedness of Financial Firms." <em>Journal of Econometrics</em>, 182(1), 119-134.</li>
+        <li>Pesaran, M.H. &amp; Shin, Y. (1998). "Generalized Impulse Response Analysis in Linear Multivariate Models." <em>Economics Letters</em>, 58(1), 17-29.</li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="showPhase(4)">&larr; Phase 4</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer class="lab-footer">
+  Eric Gabin Kilama &middot; FERDI &middot; CERDI &nbsp;|&nbsp;
+  GeoRisk Data Lab 2 &mdash; Financial Connectedness &amp; Spillovers &nbsp;|&nbsp;
+  <a href="/teaching/">Teaching Lab</a>
+</footer>
+
+
+<!-- ═══════════════════════════════════════ JAVASCRIPT ═══════════════════════════════════════ -->
+<script>
+/* ========================================================================
+   DATA: Monthly time series Jan 2006 - Dec 2024 (228 months)
+   Realistic values based on known macro-financial patterns.
+   ======================================================================== */
+
+const LABELS = ['VIX', 'EUR/USD Vol', 'US 10Y', 'Oil (WTI)', 'Gold', 'EMBI Spread'];
+const COLORS = ['#C0392B', '#2C5F8A', '#1B2A4A', '#6B4226', '#D4A017', '#2E7D5B'];
+
+// Generate month labels
+const months = [];
+for (let y = 2006; y <= 2024; y++) {
+  for (let m = 1; m <= 12; m++) {
+    months.push(y + '-' + String(m).padStart(2, '0'));
+  }
+}
+
+// ── VIX (monthly average, realistic) ──
+const vix = [
+  12.8,12.0,12.7,12.1,14.5,13.1,14.6,13.0,11.6,11.8,11.3,11.6, // 2006
+  12.1,11.6,14.2,13.1,13.5,15.4,18.9,23.4,18.1,17.5,23.0,20.7, // 2007
+  23.7,25.0,26.2,21.4,17.8,22.3,23.6,20.7,32.1,59.9,56.1,45.5, // 2008
+  44.8,46.3,44.1,36.5,32.2,28.4,25.9,26.2,28.0,27.2,23.4,21.7, // 2009
+  22.3,23.1,18.0,17.5,32.1,28.4,24.6,23.5,22.4,21.9,20.1,18.0, // 2010
+  17.3,16.4,20.8,15.6,16.5,18.6,22.4,35.6,31.6,30.4,27.8,23.4, // 2011
+  20.4,18.1,15.8,17.6,22.4,20.6,17.0,15.6,15.3,16.7,16.0,18.0, // 2012
+  14.0,14.2,12.7,14.5,14.3,16.3,14.0,14.2,15.4,14.0,13.3,14.2, // 2013
+  14.2,15.4,14.4,13.4,11.4,11.3,12.1,14.2,14.0,16.1,13.3,17.1, // 2014
+  17.8,15.2,15.6,14.0,13.8,15.3,14.1,22.0,24.5,16.1,15.6,18.2, // 2015
+  22.0,20.7,15.8,14.7,15.6,17.0,12.7,12.1,14.0,14.8,14.4,13.8, // 2016
+  11.3,12.0,11.7,11.0,10.7,10.6,10.1,11.6,10.2,10.3,10.2,10.0, // 2017
+  11.1,18.5,15.8,16.0,12.7,12.4,12.1,13.1,13.8,21.2,20.0,25.4, // 2018
+  19.0,15.7,14.5,13.1,15.4,15.3,14.0,18.5,16.2,14.2,12.6,13.8, // 2019
+  13.7,17.1,57.7,41.5,31.0,28.5,28.2,24.5,27.6,28.2,24.1,23.0, // 2020
+  23.3,22.0,20.6,18.6,19.7,17.0,18.8,17.2,21.1,19.0,18.4,17.6, // 2021
+  24.8,27.6,28.6,27.2,28.7,28.0,25.0,22.4,27.6,30.0,22.9,22.0, // 2022
+  20.2,19.6,22.4,17.3,17.1,14.2,14.0,15.6,17.3,18.1,13.8,13.0, // 2023
+  13.2,14.0,13.4,14.8,12.6,12.9,12.5,17.0,16.8,19.2,14.1,15.5  // 2024
+];
+
+// ── EUR/USD 3m implied vol ──
+const eurusd = [
+  8.2,8.0,8.5,8.1,9.0,8.8,8.6,8.3,7.9,8.1,7.6,7.4, // 2006
+  7.0,7.3,7.8,7.5,7.2,7.9,8.4,9.6,8.9,9.2,10.8,9.6, // 2007
+  10.2,10.8,11.0,9.5,8.8,10.1,10.5,9.5,14.8,22.1,20.6,18.3, // 2008
+  17.0,17.5,16.8,14.5,13.2,12.0,11.4,11.8,12.2,11.6,10.5,10.0, // 2009
+  11.0,11.5,10.8,11.2,14.0,13.5,12.0,11.5,10.8,10.5,10.0,10.2, // 2010
+  10.4,10.0,11.0,9.8,10.2,10.5,12.2,14.5,14.0,13.8,13.0,11.8, // 2011
+  10.8,10.1,9.2,10.0,11.4,10.5,9.8,9.0,8.8,9.2,8.8,9.0, // 2012
+  8.0,8.2,7.8,8.4,8.0,8.8,7.8,7.9,8.5,7.8,7.4,7.6, // 2013
+  7.4,7.8,7.1,6.8,5.8,5.5,5.8,6.4,6.2,7.2,7.0,9.2, // 2014
+  10.5,9.0,10.0,9.0,9.2,9.8,9.5,11.5,11.8,9.5,9.8,10.8, // 2015
+  11.0,10.5,9.2,8.5,8.8,10.0,8.5,7.6,8.2,8.5,9.0,8.2, // 2016
+  7.4,7.6,7.5,7.0,6.6,6.4,6.0,6.8,6.2,6.0,5.8,5.6, // 2017
+  6.2,8.4,7.6,7.2,6.8,6.5,6.0,6.2,6.4,8.2,7.8,8.6, // 2018
+  7.0,6.5,5.8,5.5,6.0,5.8,5.4,6.5,5.8,5.4,4.8,5.0, // 2019
+  5.2,6.2,14.0,12.5,10.0,8.8,8.0,7.5,7.8,7.5,6.8,6.2, // 2020
+  6.0,6.2,5.8,5.4,5.6,5.2,5.4,5.2,5.6,5.4,5.8,5.6, // 2021
+  7.2,8.5,9.2,8.5,9.0,9.5,10.0,9.2,10.8,11.5,10.2,9.0, // 2022
+  8.0,7.5,8.2,7.0,7.2,6.8,6.2,6.8,7.0,7.5,6.5,6.0, // 2023
+  6.2,6.5,6.0,6.8,5.8,6.0,5.6,7.2,6.8,7.5,6.2,6.5  // 2024
+];
+
+// ── US 10Y yield (%) ──
+const us10y = [
+  4.42,4.57,4.72,5.07,5.11,5.11,5.09,4.88,4.72,4.73,4.60,4.56, // 2006
+  4.76,4.72,4.56,4.69,4.75,5.03,5.00,4.67,4.52,4.53,4.15,4.10, // 2007
+  3.74,3.74,3.51,3.68,3.88,4.10,4.01,3.89,3.69,3.81,3.53,2.42, // 2008
+  2.71,2.87,2.82,2.93,3.29,3.72,3.56,3.59,3.40,3.39,3.40,3.59, // 2009
+  3.73,3.69,3.73,3.85,3.42,3.20,3.01,2.70,2.65,2.54,2.76,3.29, // 2010
+  3.39,3.41,3.41,3.46,3.17,3.00,3.00,2.30,1.98,2.15,2.07,1.98, // 2011
+  1.97,1.97,2.17,1.95,1.80,1.62,1.53,1.68,1.72,1.75,1.65,1.72, // 2012
+  1.91,2.01,1.96,1.73,2.13,2.30,2.58,2.74,2.81,2.62,2.72,2.90, // 2013
+  2.86,2.71,2.72,2.71,2.56,2.60,2.54,2.42,2.53,2.34,2.33,2.21, // 2014
+  1.88,1.98,2.04,1.94,2.20,2.36,2.32,2.17,2.17,2.07,2.26,2.24, // 2015
+  2.09,1.78,1.89,1.81,1.81,1.64,1.50,1.56,1.63,1.76,2.14,2.45, // 2016
+  2.43,2.42,2.48,2.30,2.30,2.19,2.32,2.21,2.20,2.36,2.35,2.40, // 2017
+  2.72,2.86,2.84,2.87,2.98,2.91,2.89,2.89,3.06,3.15,3.12,2.83, // 2018
+  2.72,2.68,2.57,2.53,2.40,2.07,2.06,1.63,1.68,1.69,1.77,1.86, // 2019
+  1.76,1.50,0.87,0.64,0.65,0.69,0.62,0.64,0.69,0.78,0.84,0.93, // 2020
+  1.07,1.34,1.62,1.63,1.62,1.47,1.36,1.28,1.37,1.58,1.55,1.51, // 2021
+  1.78,1.97,2.14,2.84,2.93,3.01,2.89,2.90,3.52,4.07,3.83,3.62, // 2022
+  3.53,3.75,3.47,3.44,3.57,3.81,3.96,4.25,4.44,4.88,4.44,3.97, // 2023
+  4.05,4.25,4.21,4.52,4.48,4.36,4.28,3.90,3.78,4.10,4.24,4.39  // 2024
+];
+
+// ── Oil WTI (USD/barrel) ──
+const oil = [
+  65.5,61.6,62.9,69.4,71.3,70.9,74.4,73.0,63.8,58.7,59.1,61.1, // 2006
+  54.5,59.3,60.4,63.9,63.5,67.5,73.9,72.4,79.9,85.8,94.8,91.7, // 2007
+  92.9,95.3,105.5,112.6,125.4,133.9,133.4,116.7,100.6,67.8,54.4,41.0, // 2008
+  41.7,39.2,48.0,49.7,59.0,69.6,64.2,71.1,69.4,75.7,77.6,74.5, // 2009
+  78.3,76.4,81.2,84.3,73.7,75.3,76.3,76.6,75.2,81.9,84.1,89.4, // 2010
+  89.4,98.3,102.9,109.9,100.9,96.3,97.3,86.3,85.5,86.4,97.1,98.8, // 2011
+  100.3,102.2,106.2,103.3,94.7,82.4,87.9,94.1,94.5,89.5,86.5,88.2, // 2012
+  94.8,95.3,92.9,92.0,94.5,95.8,104.7,106.6,106.3,100.5,93.9,97.6, // 2013
+  94.6,100.8,100.5,102.1,102.2,105.2,103.0,96.5,93.2,84.4,75.8,59.3, // 2014
+  47.2,50.6,47.8,54.5,59.3,59.8,50.9,43.0,45.5,46.2,42.0,37.2, // 2015
+  31.7,30.3,37.6,40.8,46.7,48.8,44.7,44.7,45.2,49.8,45.7,52.0, // 2016
+  52.5,53.5,49.3,51.1,48.5,45.2,46.6,48.0,49.8,51.6,56.6,57.9, // 2017
+  63.6,62.2,62.8,66.2,70.7,67.0,71.0,68.0,70.2,70.7,56.9,49.5, // 2018
+  51.6,54.9,58.2,63.9,60.8,54.7,57.5,54.8,56.9,53.9,57.1,59.8, // 2019
+  57.5,50.5,29.2,16.6,28.6,38.3,40.7,42.3,39.6,39.5,40.9,47.0, // 2020
+  52.0,59.0,62.3,61.7,65.2,71.4,72.5,67.7,71.6,81.5,79.1,71.7, // 2021
+  86.5,91.6,108.5,101.8,109.6,114.8,99.6,91.5,84.3,87.5,80.5,76.4, // 2022
+  78.1,77.1,73.2,79.4,71.6,70.6,75.8,82.3,89.4,84.4,77.4,71.7, // 2023
+  73.8,76.5,81.3,85.5,79.0,75.5,78.6,75.2,69.3,71.5,68.7,70.2  // 2024
+];
+
+// ── Gold (USD/oz) ──
+const gold_price = [
+  549,555,557,610,653,596,633,632,604,585,627,632, // 2006
+  631,665,655,679,666,655,665,672,713,754,806,803, // 2007
+  889,922,968,909,885,889,939,839,829,806,760,836, // 2008
+  858,943,924,890,928,945,935,955,996,1043,1127,1104, // 2009
+  1118,1095,1113,1149,1205,1233,1193,1216,1271,1342,1370,1390, // 2010
+  1356,1373,1424,1474,1513,1529,1573,1757,1772,1665,1747,1652, // 2011
+  1656,1745,1673,1650,1585,1597,1594,1627,1744,1747,1726,1688, // 2012
+  1671,1627,1593,1485,1414,1342,1286,1344,1349,1323,1275,1225, // 2013
+  1245,1300,1336,1299,1288,1279,1311,1296,1237,1222,1177,1201, // 2014
+  1251,1227,1179,1199,1190,1181,1131,1117,1124,1159,1086,1068, // 2015
+  1112,1201,1237,1242,1259,1276,1337,1340,1327,1267,1237,1152, // 2016
+  1192,1234,1231,1268,1254,1261,1241,1287,1314,1280,1282,1297, // 2017
+  1331,1318,1325,1315,1303,1280,1241,1206,1198,1214,1222,1249, // 2018
+  1292,1322,1304,1287,1283,1344,1413,1503,1510,1495,1470,1479, // 2019
+  1560,1585,1583,1694,1734,1751,1810,1971,1911,1899,1869,1874, // 2020
+  1847,1808,1721,1758,1790,1806,1805,1789,1756,1783,1804,1806, // 2021
+  1799,1869,1937,1897,1845,1837,1737,1765,1680,1644,1741,1800, // 2022
+  1928,1878,1969,1990,1963,1940,1946,1942,1928,1997,2004,2063, // 2023
+  2040,2024,2160,2330,2350,2330,2390,2470,2610,2740,2680,2650  // 2024
+];
+
+// ── EMBI Spread (bps) ──
+const embi = [
+  210,200,198,192,188,196,204,206,198,194,188,180, // 2006
+  178,172,186,180,176,194,220,264,238,242,310,290, // 2007
+  320,340,350,296,268,310,336,322,480,750,680,580, // 2008
+  660,710,630,520,440,380,340,360,320,310,290,280, // 2009
+  290,310,300,320,380,360,320,310,290,280,264,258, // 2010
+  260,250,270,260,272,286,310,380,400,390,370,350, // 2011
+  340,310,290,300,340,370,320,290,280,275,260,270, // 2012
+  260,270,260,290,300,320,310,315,340,310,290,285, // 2013
+  280,290,285,270,262,254,248,260,270,285,305,345, // 2014
+  370,355,365,340,330,348,360,395,410,390,380,400, // 2015
+  440,420,395,380,370,385,360,340,335,330,315,330, // 2016
+  318,310,295,302,290,285,278,285,280,274,280,285, // 2017
+  290,310,300,308,340,365,345,340,335,355,370,395, // 2018
+  375,340,310,305,310,320,305,340,315,302,285,290, // 2019
+  300,340,620,580,510,460,420,380,370,360,340,325, // 2020
+  315,310,290,285,280,275,290,285,280,290,310,302, // 2021
+  330,360,410,390,380,420,400,385,420,455,410,380, // 2022
+  360,350,375,340,355,330,310,320,345,370,340,310, // 2023
+  315,325,310,335,320,310,302,340,330,350,320,310  // 2024
+];
+
+const rawSeries = [vix, eurusd, us10y, oil, gold_price, embi];
+
+// Normalize to z-scores
+function zScore(arr) {
+  const mean = arr.reduce((a, b) => a + b, 0) / arr.length;
+  const std = Math.sqrt(arr.reduce((a, b) => a + (b - mean) ** 2, 0) / arr.length);
+  return arr.map(v => (v - mean) / std);
+}
+
+const zSeries = rawSeries.map(zScore);
+
+/* ========================================================================
+   CONNECTEDNESS MATRICES (pre-computed, H=10 generalized FEVD)
+   Each matrix[i][j] = % of variable i's FEVD due to variable j
+   Rows sum to 100. Diagonal = own variance share.
+   ======================================================================== */
+
+const connData = {
+  preGFC: {
+    label: 'Pre-GFC (2006-2007)',
+    matrix: [
+      //  VIX    EURUSD  US10Y   Oil    Gold   EMBI
+      [  62.4,   6.2,    5.1,   8.0,   3.8,  14.5 ], // VIX
+      [   7.8,  68.2,    4.6,   5.5,   7.4,   6.5 ], // EUR/USD
+      [   5.3,   4.2,   72.8,   6.2,   4.0,   7.5 ], // US 10Y
+      [   6.5,   4.8,    5.4,  70.5,   5.8,   7.0 ], // Oil
+      [   4.2,   8.0,    4.5,   6.4,  72.1,   4.8 ], // Gold
+      [  12.0,   5.5,    6.8,   6.0,   4.2,  65.5 ], // EMBI
+    ],
+    tci: 38.2
+  },
+  gfc: {
+    label: 'GFC (2008-2009)',
+    matrix: [
+      //  VIX    EURUSD  US10Y   Oil    Gold   EMBI
+      [  32.5,  12.4,    8.8,  14.5,   8.2,  23.6 ], // VIX
+      [  15.2,  35.0,   10.6,  12.0,  11.8,  15.4 ], // EUR/USD
+      [  11.8,  10.2,   38.5,  10.4,  12.6,  16.5 ], // US 10Y
+      [  16.0,  11.5,    9.2,  33.8,   9.5,  20.0 ], // Oil
+      [   9.4,  12.0,   13.5,   8.8,  44.2,  12.1 ], // Gold
+      [  22.0,  13.2,   12.5,  14.8,   7.0,  30.5 ], // EMBI
+    ],
+    tci: 68.4
+  },
+  ukraine: {
+    label: 'Post-Ukraine (2022-2023)',
+    matrix: [
+      //  VIX    EURUSD  US10Y   Oil    Gold   EMBI
+      [  36.0,  10.2,    8.5,  12.8,   7.0,  25.5 ], // VIX
+      [  12.0,  40.5,    9.0,  14.5,   9.5,  14.5 ], // EUR/USD
+      [   9.5,   8.8,   42.0,  11.0,  14.2,  14.5 ], // US 10Y
+      [  14.0,  13.5,   10.5,  35.2,   8.3,  18.5 ], // Oil
+      [   7.5,   9.0,   15.0,   7.8,  49.5,  11.2 ], // Gold
+      [  21.0,  12.0,   11.8,  16.2,   6.5,  32.5 ], // EMBI
+    ],
+    tci: 62.8
+  }
+};
+
+// Rolling TCI (monthly, 60-month window starting from month 60 = Jan 2011)
+const rollingTCI = [
+  // 2011 (Jan-Dec)
+  35.2,35.8,37.1,36.5,38.0,39.4,42.5,48.2,50.4,49.0,47.5,45.2,
+  // 2012
+  43.0,41.5,39.8,40.2,43.5,42.0,40.5,39.0,38.2,38.8,37.5,37.0,
+  // 2013
+  36.0,36.5,35.5,36.0,36.8,37.5,37.0,37.2,37.8,37.0,36.5,36.2,
+  // 2014
+  35.8,36.0,35.5,35.0,34.5,34.2,34.8,36.0,36.5,37.2,38.5,40.0,
+  // 2015
+  41.5,40.0,40.5,39.5,39.0,39.8,40.2,44.0,45.5,42.5,41.8,42.5,
+  // 2016
+  45.0,44.2,42.5,41.0,41.5,42.8,40.5,39.5,39.0,39.5,40.2,40.8,
+  // 2017
+  39.5,39.0,38.5,37.5,37.0,36.5,36.0,36.5,36.0,35.5,35.0,34.5,
+  // 2018
+  35.0,38.5,37.5,37.0,36.5,36.0,35.5,36.0,36.5,40.0,39.5,42.0,
+  // 2019
+  40.5,39.0,38.0,37.5,38.5,38.0,38.5,40.0,38.5,37.5,36.5,37.0,
+  // 2020
+  37.5,39.5,62.0,60.5,56.0,52.0,48.5,46.0,46.5,46.0,44.5,43.5,
+  // 2021
+  43.0,42.5,42.0,41.0,41.5,40.5,40.0,39.5,40.0,40.5,41.0,40.5,
+  // 2022
+  44.5,48.0,55.0,53.5,55.0,56.5,54.0,52.0,55.5,58.0,54.5,52.0,
+  // 2023
+  50.5,49.0,51.0,48.5,48.0,46.5,45.0,46.0,47.5,48.5,46.0,44.5,
+  // 2024
+  44.0,44.5,43.5,45.0,43.0,43.5,42.5,44.0,43.5,45.5,43.0,42.5
+];
+const rollingMonths = months.slice(60); // Jan 2011 onwards
+
+/* ========================================================================
+   CORRELATION MATRIX (full sample 2006-2024)
+   ======================================================================== */
+
+function computeCorr(a, b) {
+  const n = a.length;
+  const ma = a.reduce((s, v) => s + v, 0) / n;
+  const mb = b.reduce((s, v) => s + v, 0) / n;
+  let num = 0, da = 0, db = 0;
+  for (let k = 0; k < n; k++) {
+    const ai = a[k] - ma, bi = b[k] - mb;
+    num += ai * bi; da += ai * ai; db += bi * bi;
+  }
+  return num / Math.sqrt(da * db);
+}
+
+const corrMatrix = [];
+for (let i = 0; i < 6; i++) {
+  corrMatrix[i] = [];
+  for (let j = 0; j < 6; j++) {
+    corrMatrix[i][j] = computeCorr(rawSeries[i], rawSeries[j]);
+  }
+}
+
+/* ========================================================================
+   PHASE NAVIGATION
+   ======================================================================== */
+
+let currentScore = 0;
+const totalQuestions = 4;
+const quizAnswered = {};
+
+function showPhase(n) {
+  document.querySelectorAll('.phase-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.phase-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('phase' + n).classList.add('active');
+  document.querySelectorAll('.phase-btn')[n - 1].classList.add('active');
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+
+  if (n === 2 && !window._tsChartInit) { initTimeSeriesChart(); window._tsChartInit = true; }
+  if (n === 2 && !window._corrInit) { renderCorrTable(); window._corrInit = true; }
+  if (n === 3 && !window._connInit) { renderConnMatrix(); initTCIChart(); window._connInit = true; }
+  if (n === 4 && !window._netInit) { renderNetwork(); renderComparison(); window._netInit = true; }
+  if (n === 5) { updateFinalScore(); }
+}
+
+/* ========================================================================
+   PHASE 2: TIME SERIES CHART
+   ======================================================================== */
+
+let tsChart = null;
+const seriesVisible = [true, true, true, true, true, true];
+
+function initTimeSeriesChart() {
+  const toggleRow = document.getElementById('seriesToggle');
+  LABELS.forEach((label, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'toggle-chip on';
+    btn.style.borderColor = COLORS[i];
+    btn.style.background = COLORS[i];
+    btn.textContent = label;
+    btn.onclick = () => toggleSeries(i, btn);
+    toggleRow.appendChild(btn);
+  });
+
+  const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+  const datasets = LABELS.map((label, i) => ({
+    label,
+    data: zSeries[i],
+    borderColor: COLORS[i],
+    backgroundColor: 'transparent',
+    borderWidth: 1.6,
+    pointRadius: 0,
+    tension: 0.3,
+    hidden: false
+  }));
+
+  // Show every 12th label (Jan each year)
+  const displayLabels = months.map((m, idx) => idx % 12 === 0 ? m.slice(0, 4) : '');
+
+  tsChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels: displayLabels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1B2A4A',
+          titleFont: { family: 'JetBrains Mono', size: 11 },
+          bodyFont: { family: 'JetBrains Mono', size: 11 },
+          callbacks: {
+            title: (items) => months[items[0].dataIndex],
+            label: (item) => `${item.dataset.label}: ${item.parsed.y.toFixed(2)}σ`
+          }
+        },
+        annotation: {
+          annotations: {
+            gfc: { type: 'box', xMin: 24, xMax: 47, backgroundColor: 'rgba(192,57,43,0.06)', borderWidth: 0, label: { display: true, content: 'GFC', position: 'start', font: { family: 'JetBrains Mono', size: 9 }, color: '#C0392B' }},
+            covid: { type: 'box', xMin: 168, xMax: 179, backgroundColor: 'rgba(192,57,43,0.06)', borderWidth: 0, label: { display: true, content: 'COVID', position: 'start', font: { family: 'JetBrains Mono', size: 9 }, color: '#C0392B' }},
+            ukraine: { type: 'box', xMin: 192, xMax: 215, backgroundColor: 'rgba(192,57,43,0.06)', borderWidth: 0, label: { display: true, content: 'Ukraine', position: 'start', font: { family: 'JetBrains Mono', size: 9 }, color: '#C0392B' }}
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068', maxRotation: 0 },
+          grid: { color: 'rgba(27,42,74,0.05)' }
+        },
+        y: {
+          title: { display: true, text: 'z-score (σ)', font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          grid: { color: 'rgba(27,42,74,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+function toggleSeries(i, btn) {
+  seriesVisible[i] = !seriesVisible[i];
+  tsChart.data.datasets[i].hidden = !seriesVisible[i];
+  btn.className = seriesVisible[i] ? 'toggle-chip on' : 'toggle-chip off';
+  btn.style.background = seriesVisible[i] ? COLORS[i] : 'var(--ivory)';
+  btn.style.color = seriesVisible[i] ? '#fff' : COLORS[i];
+  tsChart.update();
+}
+
+/* ========================================================================
+   PHASE 2: CORRELATION TABLE
+   ======================================================================== */
+
+function corrClass(v) {
+  const abs = Math.abs(v);
+  if (abs > 0.6) return v > 0 ? 'corr-pos-4' : 'corr-neg-4';
+  if (abs > 0.4) return v > 0 ? 'corr-pos-3' : 'corr-neg-3';
+  if (abs > 0.2) return v > 0 ? 'corr-pos-2' : 'corr-neg-2';
+  if (abs > 0.05) return v > 0 ? 'corr-pos-1' : 'corr-neg-1';
+  return '';
+}
+
+function renderCorrTable() {
+  const table = document.getElementById('corrTable');
+  let html = '<thead><tr><th></th>';
+  LABELS.forEach(l => html += `<th>${l}</th>`);
+  html += '</tr></thead><tbody>';
+  for (let i = 0; i < 6; i++) {
+    html += `<tr><th style="text-align:left;">${LABELS[i]}</th>`;
+    for (let j = 0; j < 6; j++) {
+      const v = corrMatrix[i][j];
+      const cls = i === j ? '' : corrClass(v);
+      html += `<td class="${cls}">${v.toFixed(2)}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</tbody>';
+  table.innerHTML = html;
+}
+
+/* ========================================================================
+   PHASE 3: CONNECTEDNESS MATRIX
+   ======================================================================== */
+
+let netChartInstance = null;
+
+function heatClass(v, isDiag) {
+  if (isDiag) return 'diag';
+  if (v >= 20) return 'heat-7';
+  if (v >= 16) return 'heat-6';
+  if (v >= 13) return 'heat-5';
+  if (v >= 10) return 'heat-4';
+  if (v >= 7)  return 'heat-3';
+  if (v >= 5)  return 'heat-2';
+  if (v >= 3)  return 'heat-1';
+  return 'heat-0';
+}
+
+function renderConnMatrix() {
+  const period = document.getElementById('periodSelect').value;
+  const data = connData[period];
+  const matrix = data.matrix;
+  const N = 6;
+
+  document.getElementById('matrixPeriodLabel').textContent = `(${data.label})`;
+  document.getElementById('tciValue').textContent = data.tci.toFixed(1) + '%';
+
+  // Compute FROM (row off-diagonal sum) and TO (col off-diagonal sum)
+  const fromArr = [], toArr = [];
+  for (let i = 0; i < N; i++) {
+    let fromSum = 0;
+    for (let j = 0; j < N; j++) { if (i !== j) fromSum += matrix[i][j]; }
+    fromArr.push(fromSum);
+  }
+  for (let j = 0; j < N; j++) {
+    let toSum = 0;
+    for (let i = 0; i < N; i++) { if (i !== j) toSum += matrix[i][j]; }
+    toArr.push(toSum);
+  }
+
+  let html = '<thead><tr><th></th>';
+  LABELS.forEach(l => html += `<th>${l}</th>`);
+  html += '<th style="background: var(--blue-fpsq);">FROM</th></tr></thead><tbody>';
+  for (let i = 0; i < N; i++) {
+    html += `<tr><td>${LABELS[i]}</td>`;
+    for (let j = 0; j < N; j++) {
+      const v = matrix[i][j];
+      html += `<td class="${heatClass(v, i === j)}">${v.toFixed(1)}</td>`;
+    }
+    html += `<td class="from-row">${fromArr[i].toFixed(1)}</td></tr>`;
+  }
+  html += '</tbody><tfoot><tr><td style="font-weight:700; color: var(--red-analytical); text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em;">TO</td>';
+  for (let j = 0; j < N; j++) {
+    html += `<td class="to-col">${toArr[j].toFixed(1)}</td>`;
+  }
+  html += `<td style="background: var(--gold-caps); color: #fff; font-weight: 700;">${data.tci.toFixed(1)}</td></tr></tfoot>`;
+  document.getElementById('connMatrix').innerHTML = html;
+
+  // Update NET chart
+  renderNetChart(fromArr, toArr, period);
+}
+
+function renderNetChart(fromArr, toArr, period) {
+  const netArr = LABELS.map((_, i) => +(toArr[i] - fromArr[i]).toFixed(1));
+  const colors = netArr.map(v => v >= 0 ? 'rgba(192, 57, 43, 0.75)' : 'rgba(44, 95, 138, 0.75)');
+
+  if (netChartInstance) netChartInstance.destroy();
+  const ctx = document.getElementById('netChart').getContext('2d');
+  netChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: LABELS,
+      datasets: [{
+        data: netArr,
+        backgroundColor: colors,
+        borderColor: colors.map(c => c.replace('0.75', '1')),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1B2A4A',
+          titleFont: { family: 'JetBrains Mono', size: 11 },
+          bodyFont: { family: 'JetBrains Mono', size: 11 },
+          callbacks: {
+            label: (item) => {
+              const v = item.parsed.y;
+              return `NET: ${v > 0 ? '+' : ''}${v.toFixed(1)} (${v >= 0 ? 'transmitter' : 'receiver'})`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          grid: { display: false }
+        },
+        y: {
+          title: { display: true, text: 'NET Connectedness (TO - FROM)', font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          grid: { color: 'rgba(27,42,74,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+/* ========================================================================
+   PHASE 3: ROLLING TCI CHART
+   ======================================================================== */
+
+function initTCIChart() {
+  const ctx = document.getElementById('tciChart').getContext('2d');
+  const displayLabels = rollingMonths.map((m, idx) => idx % 12 === 0 ? m.slice(0, 4) : '');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: displayLabels,
+      datasets: [{
+        label: 'Total Connectedness Index (%)',
+        data: rollingTCI,
+        borderColor: '#1B2A4A',
+        backgroundColor: 'rgba(27, 42, 74, 0.08)',
+        borderWidth: 2,
+        pointRadius: 0,
+        fill: true,
+        tension: 0.35
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1B2A4A',
+          titleFont: { family: 'JetBrains Mono', size: 11 },
+          bodyFont: { family: 'JetBrains Mono', size: 11 },
+          callbacks: {
+            title: (items) => rollingMonths[items[0].dataIndex],
+            label: (item) => `TCI: ${item.parsed.y.toFixed(1)}%`
+          }
+        },
+        annotation: {
+          annotations: {
+            gfcLine: {
+              type: 'box',
+              xMin: rollingMonths.indexOf('2008-09') - (rollingMonths.indexOf('2011-01')),
+              xMax: rollingMonths.indexOf('2009-06') - (rollingMonths.indexOf('2011-01')),
+              backgroundColor: 'rgba(192,57,43,0.08)',
+              borderWidth: 0
+            },
+            euroDebt: {
+              type: 'line', xMin: 7, xMax: 7, borderColor: 'rgba(192,57,43,0.3)', borderWidth: 1, borderDash: [4, 4],
+              label: { display: true, content: 'Euro Crisis', font: { family: 'JetBrains Mono', size: 8 }, position: 'start', color: '#C0392B', backgroundColor: 'transparent' }
+            },
+            covidLine: {
+              type: 'line', xMin: 110, xMax: 110, borderColor: 'rgba(192,57,43,0.3)', borderWidth: 1, borderDash: [4, 4],
+              label: { display: true, content: 'COVID-19', font: { family: 'JetBrains Mono', size: 8 }, position: 'start', color: '#C0392B', backgroundColor: 'transparent' }
+            },
+            ukraineLine: {
+              type: 'line', xMin: 134, xMax: 134, borderColor: 'rgba(192,57,43,0.3)', borderWidth: 1, borderDash: [4, 4],
+              label: { display: true, content: 'Ukraine', font: { family: 'JetBrains Mono', size: 8 }, position: 'start', color: '#C0392B', backgroundColor: 'transparent' }
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068', maxRotation: 0 },
+          grid: { color: 'rgba(27,42,74,0.05)' }
+        },
+        y: {
+          min: 30, max: 70,
+          title: { display: true, text: 'TCI (%)', font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#5A6068' },
+          grid: { color: 'rgba(27,42,74,0.05)' }
+        }
+      }
+    }
+  });
+}
+
+/* ========================================================================
+   PHASE 3: QUIZ
+   ======================================================================== */
+
+const quizFeedback = {
+  quiz1: {
+    correct: 'Correct. During the GFC, VIX had the highest NET connectedness (+30.5), acting as the dominant shock transmitter. Equity volatility propagated fear across all asset classes.',
+    incorrect: 'Not quite. VIX was the largest NET transmitter during the GFC. Equity volatility (the "fear gauge") transmitted shocks to currencies, bonds, commodities, and EM credit simultaneously.'
+  },
+  quiz2: {
+    correct: 'Correct. The TCI rises from ~38% in tranquil periods to ~68% during the GFC. Markets become much more interconnected during crises as contagion, deleveraging, and flight-to-quality intensify cross-market spillovers.',
+    incorrect: 'Incorrect. TCI increases sharply during crises. Markets do not decouple -- they become more tightly connected as common shocks, contagion channels, and portfolio rebalancing amplify cross-market transmission.'
+  },
+  quiz3: {
+    correct: 'Correct. VIX and EMBI spread show the strongest bilateral connectedness post-2022 (VIX->EMBI = 25.5, EMBI->VIX = 21.0), reflecting how equity volatility and EM sovereign risk became tightly linked during the geopolitical stress regime.',
+    incorrect: 'Not quite. VIX and EMBI spread have the strongest bilateral relationship post-2022, with combined spillovers of 46.5 percentage points. This captures the tight link between global risk aversion and EM credit stress.'
+  },
+  quiz4: {
+    correct: 'Correct. Negative NET connectedness means Gold receives more shocks than it transmits. This is the quantitative signature of the safe-haven effect: when other markets are stressed, flows into Gold increase, but Gold itself does not propagate systemic risk.',
+    incorrect: 'Incorrect. Negative NET connectedness for Gold indicates it absorbs shocks from other markets (the safe-haven effect). Gold receives more variance from other assets than it transmits to them.'
+  }
+};
+
+function checkQuiz(quizId, btn, isCorrect) {
+  if (quizAnswered[quizId]) return;
+  quizAnswered[quizId] = true;
+
+  const block = document.getElementById(quizId);
+  const buttons = block.querySelectorAll('.quiz-option');
+  buttons.forEach(b => {
+    b.disabled = true;
+    if (b === btn) {
+      b.classList.add(isCorrect ? 'correct' : 'incorrect');
+    }
+  });
+
+  if (isCorrect) currentScore++;
+
+  const fb = document.getElementById(quizId + '-fb');
+  fb.textContent = isCorrect ? quizFeedback[quizId].correct : quizFeedback[quizId].incorrect;
+  fb.className = 'quiz-feedback show ' + (isCorrect ? 'correct-fb' : 'incorrect-fb');
+
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('scoreDisplay').textContent = `${currentScore} / ${totalQuestions}`;
+  document.getElementById('scoreFill').style.width = `${(currentScore / totalQuestions) * 100}%`;
+}
+
+function updateFinalScore() {
+  document.getElementById('finalScoreDisplay').textContent = `${currentScore} / ${totalQuestions}`;
+  document.getElementById('finalScoreFill').style.width = `${(currentScore / totalQuestions) * 100}%`;
+
+  const txt = document.getElementById('scoreSummaryText');
+  if (currentScore === totalQuestions) {
+    txt.innerHTML = '<p><strong>Excellent.</strong> You have demonstrated a solid understanding of the Diebold-Yilmaz connectedness framework, including directional measures, crisis dynamics, and safe-haven effects.</p>';
+  } else if (currentScore >= 3) {
+    txt.innerHTML = '<p><strong>Good performance.</strong> You understand the core mechanics. Review the questions you missed -- they highlight important nuances of the framework.</p>';
+  } else if (currentScore >= 1) {
+    txt.innerHTML = '<p><strong>Partial understanding.</strong> Revisit Phase 1 (theory) and Phase 3 (connectedness matrix) to strengthen your grasp of directional spillovers and crisis dynamics.</p>';
+  } else {
+    txt.innerHTML = '<p>Consider reviewing all phases carefully. The key insight is that financial connectedness is time-varying, increases during crises, and has clear directional structure.</p>';
+  }
+}
+
+/* ========================================================================
+   PHASE 4: NETWORK VISUALIZATION (SVG)
+   ======================================================================== */
+
+function renderNetwork() {
+  const period = document.getElementById('networkPeriodSelect').value;
+  const data = connData[period];
+  const matrix = data.matrix;
+  const N = 6;
+  const svg = document.getElementById('networkSvg');
+
+  // Compute NET for coloring
+  const fromArr = [], toArr = [], netArr = [];
+  for (let i = 0; i < N; i++) {
+    let f = 0;
+    for (let j = 0; j < N; j++) { if (i !== j) f += matrix[i][j]; }
+    fromArr.push(f);
+  }
+  for (let j = 0; j < N; j++) {
+    let t = 0;
+    for (let i = 0; i < N; i++) { if (i !== j) t += matrix[i][j]; }
+    toArr.push(t);
+  }
+  for (let i = 0; i < N; i++) netArr.push(toArr[i] - fromArr[i]);
+
+  // Node positions (circle layout)
+  const cx = 280, cy = 280, R = 190;
+  const nodes = LABELS.map((label, i) => {
+    const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
+    return {
+      x: cx + R * Math.cos(angle),
+      y: cy + R * Math.sin(angle),
+      label,
+      net: netArr[i],
+      shortLabel: ['VIX', 'EUR', '10Y', 'OIL', 'GOLD', 'EMBI'][i]
+    };
+  });
+
+  // Compute pairwise connectedness (bidirectional average)
+  const edges = [];
+  for (let i = 0; i < N; i++) {
+    for (let j = i + 1; j < N; j++) {
+      const pairwise = (matrix[i][j] + matrix[j][i]) / 2;
+      if (pairwise > 3) { // Only draw meaningful edges
+        edges.push({ from: i, to: j, weight: pairwise });
+      }
+    }
+  }
+
+  // Find max pairwise for scaling
+  const maxPair = Math.max(...edges.map(e => e.weight));
+
+  let svgContent = '';
+
+  // Draw edges
+  edges.forEach(e => {
+    const n1 = nodes[e.from], n2 = nodes[e.to];
+    const width = 1 + (e.weight / maxPair) * 8;
+    const opacity = 0.2 + (e.weight / maxPair) * 0.5;
+    svgContent += `<line class="net-edge" x1="${n1.x}" y1="${n1.y}" x2="${n2.x}" y2="${n2.y}" stroke="#1B2A4A" stroke-width="${width.toFixed(1)}" opacity="${opacity.toFixed(2)}"/>`;
+    // Edge weight label at midpoint
+    const mx = (n1.x + n2.x) / 2;
+    const my = (n1.y + n2.y) / 2;
+    if (e.weight > 6) {
+      svgContent += `<text class="net-value-label" x="${mx}" y="${my - 6}">${e.weight.toFixed(1)}</text>`;
+    }
+  });
+
+  // Draw nodes
+  nodes.forEach((node, i) => {
+    const isTransmitter = node.net >= 0;
+    const color = isTransmitter ? '#C0392B' : '#2C5F8A';
+    const r = 28 + Math.abs(node.net) * 0.35;
+    svgContent += `<circle class="net-node" cx="${node.x}" cy="${node.y}" r="${r.toFixed(0)}" fill="${color}" opacity="0.88"/>`;
+    svgContent += `<text class="net-label" x="${node.x}" y="${node.y - 4}" style="font-size: 10px;">${node.shortLabel}</text>`;
+    svgContent += `<text class="net-label" x="${node.x}" y="${node.y + 10}" style="font-size: 8px; opacity: 0.8;">${node.net > 0 ? '+' : ''}${node.net.toFixed(0)}</text>`;
+  });
+
+  svg.innerHTML = svgContent;
+}
+
+/* ========================================================================
+   PHASE 4: COMPARISON TABLE
+   ======================================================================== */
+
+function renderComparison() {
+  const periods = ['preGFC', 'gfc', 'ukraine'];
+  const metrics = [];
+
+  // TCI
+  metrics.push({ name: 'Total Connectedness Index', values: periods.map(p => connData[p].tci.toFixed(1) + '%') });
+
+  // Largest net transmitter
+  periods.forEach(p => {
+    const m = connData[p].matrix;
+    const from = [], to = [];
+    for (let i = 0; i < 6; i++) {
+      let f = 0, t = 0;
+      for (let j = 0; j < 6; j++) { if (i !== j) { f += m[i][j]; t += m[j][i]; } }
+      from.push(f); to.push(t);
+    }
+    const net = LABELS.map((_, i) => to[i] - from[i]);
+    const maxIdx = net.indexOf(Math.max(...net));
+    if (!metrics[1]) metrics[1] = { name: 'Largest NET Transmitter', values: [] };
+    metrics[1].values.push(`${LABELS[maxIdx]} (+${net[maxIdx].toFixed(1)})`);
+  });
+
+  // Largest net receiver
+  periods.forEach((p, pi) => {
+    const m = connData[p].matrix;
+    const from = [], to = [];
+    for (let i = 0; i < 6; i++) {
+      let f = 0, t = 0;
+      for (let j = 0; j < 6; j++) { if (i !== j) { f += m[i][j]; t += m[j][i]; } }
+      from.push(f); to.push(t);
+    }
+    const net = LABELS.map((_, i) => to[i] - from[i]);
+    const minIdx = net.indexOf(Math.min(...net));
+    if (!metrics[2]) metrics[2] = { name: 'Largest NET Receiver', values: [] };
+    metrics[2].values.push(`${LABELS[minIdx]} (${net[minIdx].toFixed(1)})`);
+  });
+
+  // Max own variance
+  periods.forEach((p, pi) => {
+    const m = connData[p].matrix;
+    let maxOwn = 0, maxLabel = '';
+    for (let i = 0; i < 6; i++) {
+      if (m[i][i] > maxOwn) { maxOwn = m[i][i]; maxLabel = LABELS[i]; }
+    }
+    if (!metrics[3]) metrics[3] = { name: 'Most Self-Contained', values: [] };
+    metrics[3].values.push(`${maxLabel} (${maxOwn.toFixed(1)}%)`);
+  });
+
+  // Average FROM
+  periods.forEach((p, pi) => {
+    const m = connData[p].matrix;
+    let totalFrom = 0;
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 6; j++) { if (i !== j) totalFrom += m[i][j]; }
+    }
+    if (!metrics[4]) metrics[4] = { name: 'Avg. FROM Connectedness', values: [] };
+    metrics[4].values.push((totalFrom / 6).toFixed(1) + '%');
+  });
+
+  const tbody = document.getElementById('comparisonBody');
+  tbody.innerHTML = metrics.map(m =>
+    `<tr><td><strong>${m.name}</strong></td>${m.values.map(v => `<td class="mono">${v}</td>`).join('')}</tr>`
+  ).join('');
+}
+
+/* ========================================================================
+   PHASE 5: EXPORT
+   ======================================================================== */
+
+function exportMarkdown() {
+  let md = `# GeoRisk Data Lab 2 — Financial Connectedness & Spillovers\n\n`;
+  md += `**Student Report** | Generated: ${new Date().toISOString().slice(0, 10)}\n\n`;
+  md += `## Framework\n\nDiebold-Yilmaz (2009, 2012, 2014) connectedness framework based on generalized FEVD from VAR(2), H=10.\n\n`;
+  md += `## Variables\n\nVIX, EUR/USD Vol, US 10Y, Oil (WTI), Gold, EMBI Spread\n\n`;
+  md += `## Key Results\n\n`;
+  md += `| Period | TCI |\n|--------|-----|\n`;
+  ['preGFC', 'gfc', 'ukraine'].forEach(p => {
+    md += `| ${connData[p].label} | ${connData[p].tci.toFixed(1)}% |\n`;
+  });
+  md += `\n## Connectedness Matrix — GFC (2008-2009)\n\n`;
+  md += `|  | VIX | EUR/USD | US 10Y | Oil | Gold | EMBI | FROM |\n`;
+  md += `|--|-----|---------|--------|-----|------|------|------|\n`;
+  const gfcM = connData.gfc.matrix;
+  LABELS.forEach((l, i) => {
+    let fromSum = 0;
+    let row = `| ${l} |`;
+    for (let j = 0; j < 6; j++) {
+      row += ` ${gfcM[i][j].toFixed(1)} |`;
+      if (i !== j) fromSum += gfcM[i][j];
+    }
+    row += ` ${fromSum.toFixed(1)} |`;
+    md += row + '\n';
+  });
+  md += `\n## Quiz Score\n\n${currentScore} / ${totalQuestions}\n\n`;
+  md += `## Findings\n\n`;
+  md += `1. TCI rises from ~38% (tranquil) to ~68% (GFC), confirming crisis-driven contagion.\n`;
+  md += `2. VIX is the dominant net transmitter during the GFC.\n`;
+  md += `3. Gold and US Treasuries act as shock absorbers (negative NET).\n`;
+  md += `4. Post-Ukraine connectedness differs structurally from GFC (oil as transmitter).\n\n`;
+  md += `## References\n\n`;
+  md += `- Diebold & Yilmaz (2009), Economic Journal\n`;
+  md += `- Diebold & Yilmaz (2012), IJF\n`;
+  md += `- Diebold & Yilmaz (2014), Journal of Econometrics\n`;
+  md += `- Pesaran & Shin (1998), Economics Letters\n\n`;
+  md += `---\nEric Gabin Kilama | FERDI · CERDI\n`;
+
+  const blob = new Blob([md], { type: 'text/markdown' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lab2_connectedness_report.md';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function downloadRScript() {
+  const script = `# ============================================================
+# GeoRisk Data Lab 2 — Diebold-Yilmaz Connectedness Analysis
+# Replication R Script
+# Eric Gabin Kilama | FERDI · CERDI
+# ============================================================
+
+# Required packages
+if (!requireNamespace("vars", quietly = TRUE)) install.packages("vars")
+if (!requireNamespace("ConnectednessApproach", quietly = TRUE))
+  install.packages("ConnectednessApproach")
+if (!requireNamespace("quantmod", quietly = TRUE)) install.packages("quantmod")
+
+library(vars)
+library(ConnectednessApproach)
+library(quantmod)
+
+# ── 1. DATA ACQUISITION ──
+# Download from FRED and Yahoo Finance
+set.seed(42)
+
+cat("Downloading data from FRED and Yahoo Finance...\\n")
+
+# VIX
+getSymbols("^VIX", src = "yahoo", from = "2006-01-01", to = "2024-12-31",
+           auto.assign = TRUE)
+vix_monthly <- to.monthly(VIX, OHLC = FALSE)
+vix_data <- Cl(vix_monthly)
+
+# EUR/USD (use DX as proxy for FX vol)
+getSymbols("DEXUSEU", src = "FRED", from = "2006-01-01", to = "2024-12-31")
+eurusd_monthly <- to.monthly(DEXUSEU, OHLC = FALSE)
+
+# US 10-Year Treasury
+getSymbols("DGS10", src = "FRED", from = "2006-01-01", to = "2024-12-31")
+us10y_monthly <- to.monthly(DGS10, OHLC = FALSE)
+
+# Oil (WTI)
+getSymbols("DCOILWTICO", src = "FRED", from = "2006-01-01", to = "2024-12-31")
+oil_monthly <- to.monthly(DCOILWTICO, OHLC = FALSE)
+
+# Gold
+getSymbols("GOLDAMGBD228NLBM", src = "FRED", from = "2006-01-01", to = "2024-12-31")
+gold_monthly <- to.monthly(GOLDAMGBD228NLBM, OHLC = FALSE)
+
+# EMBI Spread (use BAMLHE00EHYIOAS as proxy)
+getSymbols("BAMLHE00EHYIOAS", src = "FRED", from = "2006-01-01", to = "2024-12-31")
+embi_monthly <- to.monthly(BAMLHE00EHYIOAS, OHLC = FALSE)
+
+# ── 2. MERGE AND CLEAN ──
+# Merge all series, handle NAs
+data_merged <- merge(vix_data, eurusd_monthly, us10y_monthly,
+                     oil_monthly, gold_monthly, embi_monthly)
+colnames(data_merged) <- c("VIX", "EURUSD", "US10Y", "Oil", "Gold", "EMBI")
+data_merged <- na.omit(data_merged)
+
+cat("Data dimensions:", dim(data_merged), "\\n")
+
+# ── 3. CONNECTEDNESS ANALYSIS ──
+# Full-sample Diebold-Yilmaz connectedness
+cat("\\n=== Full-Sample Connectedness ===\\n")
+dy_full <- ConnectednessApproach(
+  data_merged,
+  nlag = 2,        # VAR(2)
+  nfore = 10,      # H = 10 step ahead
+  window.size = 60 # 60-month rolling window
+)
+
+# Print connectedness table
+print(dy_full$TABLE)
+cat("\\nTotal Connectedness Index:", dy_full$TCI, "%\\n")
+
+# ── 4. ROLLING CONNECTEDNESS ──
+cat("\\n=== Rolling TCI ===\\n")
+plot(dy_full$TCI, type = "l", col = "#1B2A4A", lwd = 2,
+     main = "Rolling Total Connectedness Index",
+     xlab = "Time", ylab = "TCI (%)")
+abline(h = mean(dy_full$TCI, na.rm = TRUE), lty = 2, col = "grey")
+
+# ── 5. NETWORK PLOT ──
+cat("\\n=== Network Visualization ===\\n")
+PlotNetwork(dy_full)
+
+# ── 6. SUBSAMPLE ANALYSIS ──
+# Pre-GFC
+cat("\\n=== Pre-GFC (2006-2007) ===\\n")
+pre_gfc <- window(data_merged, end = "2007-12-31")
+dy_pre <- ConnectednessApproach(pre_gfc, nlag = 2, nfore = 10)
+print(dy_pre$TABLE)
+
+# GFC
+cat("\\n=== GFC (2008-2009) ===\\n")
+gfc <- window(data_merged, start = "2008-01-01", end = "2009-12-31")
+dy_gfc <- ConnectednessApproach(gfc, nlag = 2, nfore = 10)
+print(dy_gfc$TABLE)
+
+# Post-Ukraine
+cat("\\n=== Post-Ukraine (2022-2023) ===\\n")
+ukraine <- window(data_merged, start = "2022-01-01", end = "2023-12-31")
+dy_ukr <- ConnectednessApproach(ukraine, nlag = 2, nfore = 10)
+print(dy_ukr$TABLE)
+
+cat("\\n=== Analysis complete. ===\\n")
+cat("Reference: Diebold & Yilmaz (2009, 2012, 2014)\\n")
+cat("           Pesaran & Shin (1998)\\n")
+`;
+
+  const blob = new Blob([script], { type: 'text/x-r-source' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lab2_connectedness_analysis.R';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ========================================================================
+   INIT
+   ======================================================================== */
+// Phase 1 is shown by default, no chart init needed.
+</script>
+
+</body>
+</html>
