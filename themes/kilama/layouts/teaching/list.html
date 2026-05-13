@@ -72,7 +72,7 @@
 
     <div style="background:rgba(212,160,23,0.1);border-left:3px solid var(--gold-caps,#D4A017);padding:1rem 1.5rem;margin:0 auto 2rem;max-width:1100px;border-radius:0 4px 4px 0;">
       <p style="margin:0;color:var(--color-text-secondary,#5A6068);font-size:0.9rem;font-family:var(--font-ui,Inter,sans-serif);">
-        <strong style="color:var(--gold-caps,#D4A017);">Section en construction</strong> — Les syllabus, supports de cours et dépôts de code seront progressivement mis en ligne. Cette version met en avant l'ossature pédagogique : cours, cas, simulations et outils reproductibles.
+        <strong style="color:var(--gold-caps,#D4A017);">Démonstrateurs pédagogiques en cours de mise en ligne</strong> — Les syllabi, data labs et grilles d'évaluation sont disponibles en téléchargement. Les simulateurs interactifs sont en construction.
       </p>
     </div>
 
@@ -195,42 +195,88 @@
     </section>
 
     <!-- ================================================================
-         GEOECONOMIC TEACHING LAB — outils pédagogiques
+         GEOECONOMIC TEACHING LAB — démonstrateurs pédagogiques
          ================================================================ -->
     <section class="catalog-group" id="teaching-lab">
       <h2 class="catalog-group-title">Kilama GeoEconomic Teaching Lab</h2>
-      <p class="catalog-subtitle">Un laboratoire pédagogique inspiré des meilleurs outils interactifs universitaires : chaque module part d'un problème réel, fournit un jeu de données, impose une méthode et se conclut par une note de décision.</p>
+      <p class="catalog-subtitle">Les habitudes d'apprentissage évoluent, mais l'exigence ne doit pas baisser. Le Teaching Lab fait travailler les étudiants sur des problèmes économiques réels, avec des données vérifiables, des hypothèses explicites et des livrables proches de ceux produits dans les institutions publiques et les organisations internationales.</p>
+      <p class="catalog-subtitle" style="margin-top:0.5rem;">Le principe : partir d'un choc, faire varier les leviers, observer les conséquences, puis rédiger une note de décision. Ces outils s'inspirent de formats éprouvés — simulations de décision publique, projets empiriques reproductibles, modules interactifs — adaptés à un objet spécifique : la transmission économique des chocs géopolitiques.</p>
 
       <div class="catalog-list">
 
-        <article class="card-note">
-          <span class="card-note-tag">Sandbox</span>
-          <h3 class="card-note-title">Banking Stress-Test Sandbox</h3>
-          <p class="card-note-summary">Simuler l'effet de sanctions, spreads souverains et chocs géopolitiques sur crédit bancaire, coût du capital et rationnement des PME.</p>
+        <article class="card-note card-note--featured">
+          <span class="card-note-tag card-note-tag--amber">Prototype</span>
+          <h3 class="card-note-title"><a href="/teaching/geosim/">GeoSim — Macro Shock Simulator</a></h3>
+          <p class="card-note-summary">Un simulateur de chocs géopolitiques pour tester la transmission d'une sanction, d'un embargo ou d'un flight-to-safety à l'inflation, au crédit, aux marges des entreprises et aux spreads souverains. Les étudiants choisissent un scénario, ajustent quelques leviers de réponse et comparent la trajectoire simulée avec une trajectoire de référence.</p>
+          <dl class="tool-spec">
+            <div><dt>Scénarios</dt><dd>Sanctions financières · Embargo énergétique · Flight-to-safety · Minerais critiques · Fragmentation commerciale</dd></div>
+            <div><dt>Leviers</dt><dd>Soutien budgétaire ciblé · Garantie de crédit PME · Diversification fournisseurs · Politique monétaire · Stockage stratégique</dd></div>
+            <div><dt>Indicateurs</dt><dd>Inflation importée · Marges PME · Crédit · Chômage sectoriel · Spread souverain · Score de résilience</dd></div>
+            <div><dt>Livrable</dt><dd>Note d'alerte en 2 pages</dd></div>
+          </dl>
+          <div class="tool-pipeline">
+            <span class="pipeline-step">Choc calibré</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Leviers de réponse</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Trajectoire simulée</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Comparaison référence</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Note de décision</span>
+          </div>
+        </article>
+
+        <article class="card-note card-note--featured">
+          <span class="card-note-tag card-note-tag--amber">Prototype</span>
+          <h3 class="card-note-title">GeoRisk Data Labs</h3>
+          <p class="card-note-summary">Des exercices reproductibles en R, Python ou tableur à partir de données réelles. Chaque lab associe une question, une méthode, un jeu de données et un livrable : graphique commenté, policy brief, note d'alerte ou rapport de scoring.</p>
+          <dl class="tool-spec">
+            <div><dt>Lab 1</dt><dd>GPR Index et réponses macro-financières</dd></div>
+            <div><dt>Lab 2</dt><dd>SAFE/BACH et transmission des chocs aux PME</dd></div>
+            <div><dt>Lab 3</dt><dd>AidData et compétition G7-Chine</dd></div>
+            <div><dt>Lab 4</dt><dd>BACI/Comtrade et dépendance aux minerais critiques</dd></div>
+          </dl>
+          <div class="tool-pipeline">
+            <span class="pipeline-step">Question</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Données réelles</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Méthode</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Graphique + interprétation</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Livrable étudiant</span>
+          </div>
+          <p class="card-note-proof"><a href="/teaching/TD1_Instructions.pdf">TD1 — GPR en Python</a> · <a href="/teaching/TD3_Instructions.pdf">TD3 — Effet ciseau SAFE</a> · <a href="/teaching/TD4_Instructions.pdf">TD4 — Exposition commerciale Bartik</a></p>
+        </article>
+
+        <article class="card-note card-note--featured">
+          <span class="card-note-tag card-note-tag--amber">Prototype</span>
+          <h3 class="card-note-title">Decision Brief Studio</h3>
+          <p class="card-note-summary">Un protocole d'usage encadré de l'intelligence artificielle : l'outil produit une première note volontairement discutable, que l'étudiant doit déconstruire à partir des données, des résultats économétriques et des limites de l'exercice. L'objectif est de former une véritable littératie IA, pas une délégation aveugle.</p>
+          <dl class="tool-spec">
+            <div><dt>Entrée</dt><dd>Note IA générée sur un sujet de cours (sanctions russes, aide chinoise, embargo Ormuz)</dd></div>
+            <div><dt>Tâche</dt><dd>Évaluer les biais · Identifier les erreurs factuelles · Corriger avec des sources primaires</dd></div>
+            <div><dt>Évaluation</dt><dd>Qualité de la critique, pas du brief</dd></div>
+            <div><dt>Livrable</dt><dd>Rapport de déconstruction structuré</dd></div>
+          </dl>
+          <div class="tool-pipeline">
+            <span class="pipeline-step">Brief IA généré</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Diagnostic des biais</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Correction par les données</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">Rapport critique</span>
+          </div>
         </article>
 
         <article class="card-note">
-          <span class="card-note-tag">Simulator</span>
-          <h3 class="card-note-title">Sanctions Simulator</h3>
-          <p class="card-note-summary">Comparer plusieurs régimes de sanctions, leurs délais de transmission et leurs effets de contournement par pays tiers.</p>
-        </article>
-
-        <article class="card-note">
-          <span class="card-note-tag">Explorer</span>
-          <h3 class="card-note-title">SME Geopolitical Risk Explorer</h3>
-          <p class="card-note-summary">Construire un score d'exposition PME à partir de chaînes de valeur, destinations export, dépendance fournisseur et pouvoir de fixation des prix.</p>
-        </article>
-
-        <article class="card-note">
-          <span class="card-note-tag">Atlas</span>
-          <h3 class="card-note-title">Development Finance Atlas</h3>
-          <p class="card-note-summary">Cartographier APD, dette, prêts chinois, blended finance et flux illicites pour distinguer financement annoncé et capacité réelle de développement.</p>
-        </article>
-
-        <article class="card-note">
-          <span class="card-note-tag">Mapper</span>
-          <h3 class="card-note-title">Critical Minerals Dependency Mapper</h3>
-          <p class="card-note-summary">Identifier les dépendances aux minerais critiques, tester des scénarios de substitution et relier la vulnérabilité industrielle aux choix de politique publique.</p>
+          <span class="card-note-tag">Simulation</span>
+          <h3 class="card-note-title">Simulation de restructuration de dette souveraine</h3>
+          <p class="card-note-summary">Scénario complet avec rôles (créanciers, débiteur, médiateur), paramètres de dette, arbitrages et négociation sous contrainte. Les étudiants produisent un accord structuré et un mémorandum de justification.</p>
+          <p class="card-note-proof"><a href="/teaching/SimD_Scenario.pdf">Scénario complet (PDF)</a></p>
         </article>
 
       </div>
@@ -285,36 +331,78 @@
     </section>
 
     <!-- ================================================================
-         RESSOURCES PÉDAGOGIQUES
+         RESSOURCES PÉDAGOGIQUES — Syllabi & supports
          ================================================================ -->
     <section class="catalog-group" id="ressources">
-      <h2 class="catalog-group-title">Ressources</h2>
-      <p class="catalog-subtitle">Supports de cours, jeux de données et outils mis à disposition des étudiants.</p>
+      <h2 class="catalog-group-title">Syllabi et ressources</h2>
+      <p class="catalog-subtitle">Syllabi détaillés, consignes de travaux dirigés, grilles d'évaluation et guides méthodologiques.</p>
 
       <div class="catalog-list">
 
         <article class="card-note">
-          <span class="card-note-tag">PDF</span>
-          <h3 class="card-note-title"><a href="#">Syllabus — Économie internationale et fragmentation géoéconomique</a></h3>
-          <p class="card-note-summary">Cours associé : Économie internationale et fragmentation géoéconomique &middot; Master 2</p>
+          <span class="card-note-tag">Syllabus</span>
+          <h3 class="card-note-title"><a href="/teaching/Syllabus_EcoBancaire_M1.pdf">Système bancaire européen et risque géopolitique</a></h3>
+          <p class="card-note-summary">Master 1 &middot; 36h CM + TD &middot; Intermédiation bancaire, sanctions financières, stress-tests géopolitiques, contraintes ESG/défense.</p>
         </article>
 
         <article class="card-note">
-          <span class="card-note-tag">PDF</span>
-          <h3 class="card-note-title"><a href="#">Syllabus — Économie bancaire et risque géopolitique</a></h3>
-          <p class="card-note-summary">Cours associé : Économie bancaire et risque géopolitique &middot; Master 1</p>
+          <span class="card-note-tag">Syllabus</span>
+          <h3 class="card-note-title"><a href="/teaching/Syllabus_GeoEco_M1M2.pdf">Géoéconomie et entreprises</a></h3>
+          <p class="card-note-summary">Master 1-2 &middot; Entreprises face aux reconfigurations géoéconomiques, scoring d'exposition, chaînes de valeur et friend-shoring.</p>
         </article>
 
         <article class="card-note">
-          <span class="card-note-tag">Repo</span>
-          <h3 class="card-note-title"><a href="#">Code R — Économétrie causale appliquée</a></h3>
-          <p class="card-note-summary">Cours associé : Économétrie causale appliquée &middot; Master 1 / Master 2</p>
+          <span class="card-note-tag">Syllabus</span>
+          <h3 class="card-note-title"><a href="/teaching/Syllabus_Sanctions_M2.pdf">Géoéconomie des sanctions et de la coercition</a></h3>
+          <p class="card-note-summary">Master 2 &middot; 24h séminaire &middot; Sanctions, contrôles export, canaux de transmission, évaluation empirique.</p>
         </article>
 
         <article class="card-note">
-          <span class="card-note-tag">PDF</span>
-          <h3 class="card-note-title"><a href="#">Syllabus — Économie du développement</a></h3>
-          <p class="card-note-summary">Cours associé : Économie du développement &middot; Licence 3 / Master 1</p>
+          <span class="card-note-tag">Syllabus</span>
+          <h3 class="card-note-title"><a href="/teaching/Syllabus_FinDev_M1M2.pdf">Géoéconomie du financement du développement</a></h3>
+          <p class="card-note-summary">Master 1-2 &middot; APD, dette souveraine, prêts chinois, blended finance, compétition G7-Chine.</p>
+        </article>
+
+      </div>
+
+      <h3 class="catalog-group-subtitle" style="margin-top:2rem;font-size:1.1rem;color:var(--color-navy,#1B2A4A);">Data Labs et évaluation</h3>
+
+      <div class="catalog-list">
+
+        <article class="card-note">
+          <span class="card-note-tag">TD</span>
+          <h3 class="card-note-title"><a href="/teaching/TD1_Instructions.pdf">TD1 — Exploration de l'indice GPR en Python</a></h3>
+          <p class="card-note-summary">Data Lab &middot; Analyse de l'indice de risque géopolitique, visualisation et interprétation.</p>
+        </article>
+
+        <article class="card-note">
+          <span class="card-note-tag">TD</span>
+          <h3 class="card-note-title"><a href="/teaching/TD3_Instructions.pdf">TD3 — Effet ciseau dans les microdonnées SAFE</a></h3>
+          <p class="card-note-summary">Data Lab &middot; Microdonnées BCE, scoring PME, transmission des chocs aux conditions de crédit.</p>
+        </article>
+
+        <article class="card-note">
+          <span class="card-note-tag">TD</span>
+          <h3 class="card-note-title"><a href="/teaching/TD4_Instructions.pdf">TD4 — Instrument d'exposition commerciale de type Bartik</a></h3>
+          <p class="card-note-summary">Data Lab &middot; Construction d'un instrument, estimation causale, données BACI/Comtrade.</p>
+        </article>
+
+        <article class="card-note">
+          <span class="card-note-tag">Guide</span>
+          <h3 class="card-note-title"><a href="/teaching/Student_Guide_PolicyBrief.pdf">Guide — Rédiger un policy brief analytique</a></h3>
+          <p class="card-note-summary">Méthodologie &middot; Structure, registre, standards CAPS/OCDE, exemples annotés.</p>
+        </article>
+
+        <article class="card-note">
+          <span class="card-note-tag">Grille</span>
+          <h3 class="card-note-title"><a href="/teaching/Rubric_Policy_Brief.pdf">Grille d'évaluation — Policy Brief</a></h3>
+          <p class="card-note-summary">Critères d'évaluation opérationnelle des policy briefs étudiants.</p>
+        </article>
+
+        <article class="card-note">
+          <span class="card-note-tag">Grille</span>
+          <h3 class="card-note-title"><a href="/teaching/Rubric_Research_Paper.pdf">Grille d'évaluation — Research Paper</a></h3>
+          <p class="card-note-summary">Critères d'évaluation pour les mémoires de recherche appliquée.</p>
         </article>
 
       </div>
