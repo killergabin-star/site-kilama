@@ -440,3 +440,352 @@
   font-family: var(--font-ui, 'Inter', sans-serif);
   font-weight: 500;
 }
+
+/* ---------- TEACHING LAB — section wrapper ---------- */
+
+.teaching-lab {
+  padding: 80px 40px;
+  background: var(--ivory, #F8F7F4);
+  border-top: 4px solid var(--brand-quaternary, #D4A017);
+}
+
+.teaching-lab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-lab .eyebrow {
+  margin-bottom: 0;
+}
+
+.teaching-lab .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  max-width: 30ch;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-lab-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.teaching-lab-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Teaching Lab tool card */
+
+.teaching-tool {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-tool:last-child {
+  border-bottom: none;
+}
+
+.teaching-tool--featured {
+  padding-left: 24px;
+  border-left: 3px solid var(--brand-quaternary, #D4A017);
+}
+
+.teaching-tool-tag {
+  display: inline-block;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.teaching-tool-tag--active {
+  color: #0d6c3a;
+  background: rgba(13, 108, 58, 0.08);
+}
+
+.teaching-tool-tag--coming {
+  color: var(--brand-quaternary, #D4A017);
+  background: rgba(212, 160, 23, 0.08);
+}
+
+.teaching-tool-tag--doc {
+  color: var(--blue-fpsq, #2C5F8A);
+  background: rgba(44, 95, 138, 0.08);
+}
+
+.teaching-tool-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-tool-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.teaching-tool-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+}
+
+.teaching-tool-summary {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 16px;
+}
+
+/* ---------- TEACHING RESOURCES section ---------- */
+
+.teaching-resources {
+  padding: 80px 40px;
+  background: var(--ivory-deep, #F0EDE8);
+}
+
+.teaching-resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-resources .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-resources-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.teaching-resources-subcategory {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--brand-quaternary, #D4A017);
+  margin: 48px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-resources-subcategory:first-of-type {
+  margin-top: 0;
+}
+
+.teaching-resource-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.teaching-resource-item:last-child {
+  border-bottom: none;
+}
+
+.teaching-resource-tag {
+  display: inline-block;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #5A6068);
+  margin-bottom: 6px;
+}
+
+.teaching-resource-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 17px;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-resource-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.teaching-resource-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+  border-bottom-color: var(--blue-fpsq, #2C5F8A);
+}
+
+.teaching-resource-desc {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary, #5A6068);
+  margin: 0;
+}
+
+/* ---------- SUPERVISION section ---------- */
+
+.teaching-supervision {
+  padding: 80px 40px;
+  background: var(--ivory, #F8F7F4);
+}
+
+.teaching-supervision-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-supervision .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-supervision-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.thesis-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.thesis-item:last-child {
+  border-bottom: none;
+}
+
+.thesis-level {
+  display: inline-block;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-quaternary, #D4A017);
+  margin-bottom: 8px;
+}
+
+.thesis-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  color: var(--navy, #1B2A4A);
+}
+
+.thesis-desc {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0;
+}
+
+/* ---------- PRESENTATIONS section ---------- */
+
+.teaching-presentations {
+  padding: 60px 40px;
+  background: var(--ivory-deep, #F0EDE8);
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-presentations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-presentations .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-presentations-intro {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  color: var(--text-secondary, #5A6068);
+  margin: 0 0 32px;
+}
+
+.presentation-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.presentation-item:last-child {
+  border-bottom: none;
+}
+
+.presentation-meta {
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary, #5A6068);
+  margin-bottom: 4px;
+}
+
+.presentation-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 17px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--navy, #1B2A4A);
+}
+
+.presentation-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.presentation-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+}
+
+/* ---------- TEACHING responsive additions ---------- */
+
+@media (max-width: 900px) {
+  .teaching-lab,
+  .teaching-resources,
+  .teaching-supervision,
+  .teaching-presentations {
+    padding: 48px 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .teaching-lab,
+  .teaching-resources,
+  .teaching-supervision,
+  .teaching-presentations {
+    padding: 40px 18px;
+  }
+}
