@@ -279,7 +279,7 @@
 
     .scenario-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 14px;
     }
 
@@ -822,7 +822,10 @@
         grid-template-columns: 1fr;
       }
 
-      .scenario-grid,
+      .scenario-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .learning-contract {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1204,6 +1207,33 @@ def* = 2.7 + 1.18·fiscalCost + interestCost
           </p>
         </div>
       </details>
+    </section>
+
+    <section style="max-width:1100px;margin:0 auto;padding:1rem 2rem 2.5rem;">
+      <div style="border-top:1px solid var(--border-light);padding-top:1.5rem;">
+        <div style="font-family:Inter,sans-serif;font-size:0.82rem;font-weight:600;color:var(--text-secondary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;">Syllabi et ressources associés</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.8rem;">
+          <a href="/teaching/Syllabus_GeoEco_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Géoéconomie et entreprises</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — Scoring d'exposition, chaînes de valeur, friend-shoring</span>
+          </a>
+          <a href="/teaching/Syllabus_Sanctions_M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Sanctions et coercition</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M2 — Sanctions, contrôles export, évaluation empirique</span>
+          </a>
+          <a href="/teaching/Syllabus_EcoBancaire_M1.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Système bancaire et risque géopolitique</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1 — Intermédiation, stress-tests, transmission aux bilans</span>
+          </a>
+          <a href="/teaching/Syllabus_FinDev_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Financement du développement</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — APD, dette, prêts chinois, compétition G7-Chine</span>
+          </a>
+        </div>
+        <div style="margin-top:1rem;text-align:center;">
+          <a href="/teaching/" style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--blue-fpsq);font-weight:600;">&larr; Tous les cours, Data Labs et outils pédagogiques</a>
+        </div>
+      </div>
     </section>
   </main>
 
