@@ -89,6 +89,11 @@
     "path": "/thumbnails/policy/notes-acceleration-reforme-afi.svg",
     "source": "editorial/thumbnails/categories/architecture-financiere.svg"
   },
+  "/policy/notes/africa-forward-nairobi-coherence-francaise/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-africa-forward-nairobi-coherence-francaise.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
   "/policy/notes/afrique-triangle-evian/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-afrique-triangle-evian.svg",
@@ -108,6 +113,16 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-apd-defense-reallocation.png",
     "source": "static/thumbnails/custom/dalle-original/notes-apd-defense-reallocation.png"
+  },
+  "/policy/notes/attentat-camara-fragilite-aes/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-attentat-camara-fragilite-aes.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/axe-resistance-mobilisation-communautaire/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-axe-resistance-mobilisation-communautaire.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
   },
   "/policy/notes/bilan-g7-mae/": {
     "strategy": "category",
@@ -139,6 +154,21 @@
     "path": "/thumbnails/policy/notes-crise-iranienne-finance-guerre-russe.svg",
     "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
   },
+  "/policy/notes/dedollarisation-africaine-yuan/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-dedollarisation-africaine-yuan.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/notes/defense-europeenne-gap-ile-longue/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-defense-europeenne-gap-ile-longue.svg",
+    "source": "editorial/thumbnails/categories/defense.svg"
+  },
+  "/policy/notes/double-contrainte-energetique-europe-lng-ormuz/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-double-contrainte-energetique-europe-lng-ormuz.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
+  },
   "/policy/notes/eu-trade-geopolitics-update-2026/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-eu-trade-geopolitics-update-2026.svg",
@@ -149,9 +179,29 @@
     "path": "/thumbnails/policy/notes-eu-trade-geopolitics.svg",
     "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
   },
+  "/policy/notes/europe-marginalisee-pekin-bercy/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-europe-marginalisee-pekin-bercy.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/fishman-guerre-economique-doctrine/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-fishman-guerre-economique-doctrine.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
   "/policy/notes/france-presidence-g7-contraintes/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-france-presidence-g7-contraintes.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/g7-commerce-architecture-sans-engagement/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-g7-commerce-architecture-sans-engagement.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/g7-environnement-climat-hors-consensus/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-g7-environnement-climat-hors-consensus.svg",
     "source": "editorial/thumbnails/categories/g7-multilateral.svg"
   },
   "/policy/notes/gopinath-pettis-deficit-courant/": {
@@ -173,6 +223,11 @@
     "strategy": "category",
     "path": "/thumbnails/policy/notes-hickel-ajustement-structurel-proces.svg",
     "source": "editorial/thumbnails/categories/developpement.svg"
+  },
+  "/policy/notes/hongrie-post-orban-bascule-ue/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-hongrie-post-orban-bascule-ue.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
   },
   "/policy/notes/ifi-allocation-geopolitique/": {
     "strategy": "category",
@@ -199,10 +254,25 @@
     "path": "/thumbnails/policy/notes-jetp-failing.svg",
     "source": "editorial/thumbnails/categories/energie.svg"
   },
+  "/policy/notes/liberation-day-protectionnisme-normalite/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-liberation-day-protectionnisme-normalite.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
   "/policy/notes/migration-cohesion-europe/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-migration-cohesion-europe.svg",
     "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/mission-navale-fr-uk-doctrine-anti-peage/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-mission-navale-fr-uk-doctrine-anti-peage.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/mou-14-points-iran-cessez-le-feu/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-mou-14-points-iran-cessez-le-feu.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
   },
   "/policy/notes/non-expedit-recours-souverain-vatican/": {
     "strategy": "custom",
@@ -219,10 +289,25 @@
     "path": "/thumbnails/policy/notes-northern-donor.svg",
     "source": "editorial/thumbnails/categories/developpement.svg"
   },
+  "/policy/notes/offre-iranienne-hormuz-nucleaire-bifurcation/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-offre-iranienne-hormuz-nucleaire-bifurcation.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
   "/policy/notes/ormuz-choc-petrolier-xxi/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-ormuz-choc-petrolier-xxi.png",
     "source": "static/thumbnails/custom/dalle-original/notes-ormuz-choc-petrolier-xxi.png"
+  },
+  "/policy/notes/ormuz-suez-xxie-siecle/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ormuz-suez-xxie-siecle.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
+  },
+  "/policy/notes/peage-ormuz-regime-maritime-parallele/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-peage-ormuz-regime-maritime-parallele.svg",
+    "source": "editorial/thumbnails/categories/iran-moyen-orient.svg"
   },
   "/policy/notes/polycrisis-transmission-asie/": {
     "strategy": "category",
@@ -254,6 +339,11 @@
     "path": "/thumbnails/policy/notes-safe-green-deal-dilemme-industriel.svg",
     "source": "editorial/thumbnails/categories/defense.svg"
   },
+  "/policy/notes/sahel-assassinat-camara-telegramme/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-sahel-assassinat-camara-telegramme.svg",
+    "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
   "/policy/notes/section122_chaos_tarifaire/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-section122-chaos-tarifaire.svg",
@@ -263,6 +353,11 @@
     "strategy": "category",
     "path": "/thumbnails/policy/notes-soudan-guerre-invisible.svg",
     "source": "editorial/thumbnails/categories/afrique-pma.svg"
+  },
+  "/policy/notes/spring-meetings-2026-verdict-fragmentation/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-spring-meetings-2026-verdict-fragmentation.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
   },
   "/policy/notes/transition-energetique-apres-ormuz/": {
     "strategy": "category",
@@ -284,6 +379,16 @@
     "path": "/thumbnails/policy/notes-trump-xi-enjeux.svg",
     "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
   },
+  "/policy/notes/trump-xi-pekin-rivalite-sommets/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-trump-xi-pekin-rivalite-sommets.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
+  "/policy/notes/trump-xi-pekin-thucydide-outil-diplomatique/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-trump-xi-pekin-thucydide-outil-diplomatique.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
+  },
   "/policy/notes/unleashing-development-banks-update-2026/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-unleashing-development-banks-update-2026.svg",
@@ -299,6 +404,11 @@
     "path": "/thumbnails/policy/notes-vulnerabilite-energetique-ormuz.svg",
     "source": "editorial/thumbnails/categories/energie.svg"
   },
+  "/policy/notes/weo-2026-cout-rearmement-defense/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-weo-2026-cout-rearmement-defense.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
+  },
   "/policy/notes/who-benefits-sanctions-update-2026/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-who-benefits-sanctions-update-2026.svg",
@@ -308,6 +418,11 @@
     "strategy": "category",
     "path": "/thumbnails/policy/notes-who-benefits-sanctions.svg",
     "source": "editorial/thumbnails/categories/geoeconomie.svg"
+  },
+  "/policy/notes/zero-tarif-chine-afrique-nairobi/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-zero-tarif-chine-afrique-nairobi.svg",
+    "source": "editorial/thumbnails/categories/commerce-sanctions.svg"
   },
   "/policy/reports/apd-g7-executive-summary-v4/": {
     "strategy": "category",

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225">
+  <rect width="400" height="225" fill="#0A0A0A" />
+  <line x1="200" y1="60" x2="200" y2="140" stroke="#A1A1AA" stroke-width="1.5"/>
+<line x1="100" y1="100" x2="300" y2="80" stroke="#A1A1AA" stroke-width="1.5"/>
+<line x1="100" y1="100" x2="100" y2="115" stroke="#A1A1AA" stroke-width="1"/>
+<line x1="80" y1="115" x2="120" y2="115" stroke="#22D3EE" stroke-width="3"/>
+<line x1="300" y1="80" x2="300" y2="125" stroke="#A1A1AA" stroke-width="1"/>
+<rect x="278" y="115" width="44" height="25" fill="#E6203A" opacity="0.85"/>
+<text x="300" y="132" font-family="JetBrains Mono, monospace" font-size="11" fill="#F4F4F5" font-weight="600" text-anchor="middle">13%</text>
+<polygon points="190,140 210,140 215,160 185,160" fill="#A1A1AA" opacity="0.6"/>
+<line x1="170" y1="160" x2="230" y2="160" stroke="#A1A1AA" stroke-width="2"/>
+  
+    <rect x="16" y="16" width="14" height="6" fill="#E6203A" />
+    <text x="36" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="600"
+          fill="#E6203A" letter-spacing="0.10em">COMMERCE · SANCTIONS</text>
+    
+  
+    <text x="16" y="208" font-family="Inter, sans-serif" font-size="7"
+          fill="#71717A" letter-spacing="0.04em">Section 301 · tarifs effectifs</text>
+    
+</svg>
