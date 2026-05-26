@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulation réelle cabinet | DSCG UE4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: oklch(29% 0.062 259);
+      --blue: oklch(45% 0.075 235);
+      --red: oklch(50% 0.15 32);
+      --gold: oklch(70% 0.12 82);
+      --green: oklch(50% 0.095 156);
+      --ink: oklch(25% 0.015 255);
+      --muted: oklch(48% 0.02 250);
+      --paper: oklch(98% 0.006 82);
+      --surface: oklch(95% 0.012 84);
+      --line: oklch(84% 0.02 248);
+      --white: oklch(99% 0.004 84);
+      --shadow: 0 18px 60px color-mix(in oklch, var(--navy), transparent 90%);
+      --radius: 8px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, color-mix(in oklch, var(--surface), var(--white) 42%) 0, var(--paper) 440px),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--navy), transparent 96%) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklch, var(--navy), transparent 96%) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .topbar {
+      align-items: center;
+      background: var(--navy);
+      border-bottom: 1px solid color-mix(in oklch, var(--gold), transparent 18%);
+      color: var(--white);
+      display: flex;
+      gap: var(--space-md);
+      justify-content: space-between;
+      padding: 16px clamp(18px, 4vw, 44px);
+    }
+
+    .brand {
+      align-items: center;
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    .brand-mark {
+      border: 1px solid color-mix(in oklch, var(--gold), transparent 32%);
+      color: var(--gold);
+      display: grid;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      height: 34px;
+      place-items: center;
+      width: 42px;
+    }
+
+    .brand strong {
+      display: block;
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .brand span:last-child {
+      color: color-mix(in oklch, var(--white), transparent 26%);
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .navlink {
+      border: 1px solid color-mix(in oklch, var(--white), transparent 74%);
+      color: color-mix(in oklch, var(--white), transparent 16%);
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 800;
+      min-height: 34px;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    .shell {
+      margin: 0 auto;
+      max-width: 1500px;
+      padding: clamp(18px, 3vw, 36px);
+    }
+
+    .hero {
+      background: var(--navy);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      color: var(--white);
+      display: grid;
+      gap: var(--space-lg);
+      grid-template-columns: minmax(0, 1fr) 420px;
+      overflow: hidden;
+      padding: var(--space-xl);
+      position: relative;
+    }
+
+    .hero::after {
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--gold), transparent 74%) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklch, var(--gold), transparent 82%) 1px, transparent 1px);
+      background-size: 24px 24px;
+      content: "";
+      inset: 0;
+      opacity: 0.12;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    .hero > * { position: relative; z-index: 1; }
+
+    .eyebrow {
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      color: var(--white);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: clamp(36px, 5vw, 72px);
+      letter-spacing: 0;
+      line-height: 0.94;
+      margin: 10px 0 18px;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      color: color-mix(in oklch, var(--white), transparent 18%);
+      font-size: 17px;
+      max-width: 70ch;
+    }
+
+    .brief-card {
+      background: color-mix(in oklch, var(--white), transparent 94%);
+      border: 1px solid color-mix(in oklch, var(--white), transparent 76%);
+      border-radius: 6px;
+      display: grid;
+      gap: var(--space-sm);
+      padding: var(--space-lg);
+    }
+
+    .brief-row {
+      border-bottom: 1px solid color-mix(in oklch, var(--white), transparent 84%);
+      display: grid;
+      gap: 3px;
+      padding-bottom: var(--space-sm);
+    }
+
+    .brief-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .brief-row span {
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brief-row strong {
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 390px;
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      align-items: start;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: space-between;
+      padding: var(--space-md);
+    }
+
+    .panel-head h2,
+    .panel-head h3 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 22px;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .panel-head small {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .doc-list,
+    .task-list {
+      display: grid;
+    }
+
+    .doc-button,
+    .task-button {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      display: grid;
+      gap: 4px;
+      padding: var(--space-md);
+      text-align: left;
+    }
+
+    .doc-button:hover,
+    .task-button:hover {
+      background: color-mix(in oklch, var(--surface), var(--blue) 4%);
+    }
+
+    .doc-button[aria-selected="true"],
+    .task-button[aria-selected="true"] {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .doc-button b,
+    .task-button b {
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .doc-button span,
+    .task-button span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .doc-button[aria-selected="true"] span,
+    .task-button[aria-selected="true"] span {
+      color: color-mix(in oklch, var(--white), transparent 24%);
+    }
+
+    .task-button.is-done b::after {
+      content: "  validé";
+      color: var(--green);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .document-view {
+      padding: var(--space-lg);
+    }
+
+    .document-paper {
+      background:
+        linear-gradient(180deg, var(--white), color-mix(in oklch, var(--surface), var(--white) 54%));
+      border: 1px solid color-mix(in oklch, var(--line), var(--navy) 12%);
+      border-radius: 4px;
+      display: grid;
+      gap: var(--space-md);
+      min-height: 430px;
+      padding: var(--space-lg);
+    }
+
+    .doc-title-row {
+      align-items: start;
+      display: flex;
+      gap: var(--space-md);
+      justify-content: space-between;
+    }
+
+    .doc-title-row h2 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .stamp {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 8px;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      white-space: nowrap;
+    }
+
+    .doc-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-sm);
+    }
+
+    .doc-meta div,
+    .doc-note {
+      background: color-mix(in oklch, var(--surface), var(--white) 46%);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      display: grid;
+      gap: 2px;
+      padding: var(--space-sm);
+    }
+
+    .doc-meta span,
+    .doc-note span {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .doc-meta strong,
+    .doc-note strong {
+      color: var(--navy);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .doc-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .doc-table th,
+    .doc-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-table th {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    .doc-table td:last-child,
+    .doc-table th:last-child {
+      text-align: right;
+    }
+
+    .workbench {
+      display: grid;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+    }
+
+    .task-current {
+      background: color-mix(in oklch, var(--blue), var(--white) 90%);
+      border: 1px solid color-mix(in oklch, var(--blue), var(--line) 48%);
+      border-radius: 6px;
+      display: grid;
+      gap: 4px;
+      padding: var(--space-md);
+    }
+
+    .task-current span {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .task-current strong {
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .entry-table {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .entry-row,
+    .entry-head {
+      display: grid;
+      grid-template-columns: 92px minmax(130px, 1fr) 104px 104px 42px;
+    }
+
+    .entry-head {
+      background: var(--surface);
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .entry-head div,
+    .entry-row div {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      min-width: 0;
+      padding: 7px;
+    }
+
+    .entry-head div:last-child,
+    .entry-row div:last-child {
+      border-right: 0;
+    }
+
+    .entry-row:last-child div {
+      border-bottom: 0;
+    }
+
+    .entry-row input {
+      background: var(--white);
+      border: 1px solid color-mix(in oklch, var(--line), var(--navy) 8%);
+      border-radius: 3px;
+      color: var(--ink);
+      min-height: 34px;
+      padding: 6px 8px;
+      width: 100%;
+    }
+
+    .remove-line {
+      align-items: center;
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: var(--muted);
+      display: inline-flex;
+      height: 34px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .justification {
+      display: grid;
+      gap: 6px;
+    }
+
+    .justification label {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    textarea {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      min-height: 92px;
+      padding: var(--space-sm);
+      resize: vertical;
+      width: 100%;
+    }
+
+    .command-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+      gap: var(--space-sm);
+    }
+
+    .primary,
+    .secondary {
+      border: 1px solid var(--navy);
+      border-radius: 4px;
+      display: inline-flex;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 12px;
+    }
+
+    .primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .secondary {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .feedback {
+      background: color-mix(in oklch, var(--surface), var(--white) 52%);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      display: grid;
+      gap: var(--space-xs);
+      padding: var(--space-md);
+    }
+
+    .feedback.good {
+      background: color-mix(in oklch, var(--green), var(--white) 88%);
+      border-color: color-mix(in oklch, var(--green), var(--line) 35%);
+    }
+
+    .feedback.bad {
+      background: color-mix(in oklch, var(--red), var(--white) 90%);
+      border-color: color-mix(in oklch, var(--red), var(--line) 42%);
+    }
+
+    .feedback pre {
+      color: var(--ink);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      margin: 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .score-panel {
+      display: grid;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+    }
+
+    .score-box {
+      background:
+        linear-gradient(135deg, var(--navy) 0 70%, color-mix(in oklch, var(--blue), var(--navy) 30%) 70% 100%);
+      border-radius: 6px;
+      color: var(--white);
+      padding: var(--space-lg);
+    }
+
+    .score-box span {
+      color: color-mix(in oklch, var(--white), transparent 24%);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .score-box output {
+      color: var(--gold);
+      display: block;
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 6px;
+    }
+
+    .metric {
+      display: grid;
+      gap: 5px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .bar {
+      background: color-mix(in oklch, var(--line), var(--white) 48%);
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .bar i {
+      background: var(--blue);
+      display: block;
+      height: 100%;
+      transition: width 220ms ease;
+      width: 0;
+    }
+
+    .bar.good i { background: var(--green); }
+    .bar.bad i { background: var(--red); }
+
+    .workpaper {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: grid;
+      overflow: hidden;
+    }
+
+    .workpaper-row {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 3px;
+      padding: var(--space-sm);
+    }
+
+    .workpaper-row:last-child { border-bottom: 0; }
+
+    .workpaper-row b {
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .workpaper-row span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .sim-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .entry-row,
+      .entry-head {
+        grid-template-columns: 1fr;
+      }
+
+      .entry-head {
+        display: none;
+      }
+
+      .entry-row div {
+        border-right: 0;
+      }
+
+      .command-row {
+        grid-template-columns: 1fr;
+      }
+
+      .doc-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/teaching/dscg-sim/">
+      <span class="brand-mark">UE4</span>
+      <span>
+        <strong>Simulation réelle cabinet</strong>
+        <span>Dossier de clôture, écritures, pièces, contrôle audit</span>
+      </span>
+    </a>
+    <a class="navlink" href="/teaching/dscg-sim/">Retour au lab</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Dossier grandeur nature</span>
+        <h1>Clôture cabinet sous contrainte</h1>
+        <p>Tu es collaborateur en cabinet. Le client Nova Conseil envoie ses pièces de clôture N. Tu dois traiter les factures, passer les écritures, justifier les arbitrages, puis préparer une note de travail exploitable par le chef de mission.</p>
+      </div>
+      <aside class="brief-card">
+        <div class="brief-row">
+          <span>Objectif métier</span>
+          <strong>Transformer des pièces brutes en écritures et conclusions de clôture.</strong>
+        </div>
+        <div class="brief-row">
+          <span>Objectif DSCG</span>
+          <strong>Rattachement, TVA, immobilisation, amortissement, FAE/PCA, provision, preuve.</strong>
+        </div>
+        <div class="brief-row">
+          <span>Règle</span>
+          <strong>La correction n'est pas un clic : elle compare tes lignes d'écriture et ta justification.</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sim-grid">
+      <aside class="panel">
+        <div class="panel-head">
+          <h2>Pièces reçues</h2>
+          <small>Inbox client</small>
+        </div>
+        <div class="doc-list" id="docList"></div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2 id="docPanelTitle">Document</h2>
+          <small id="docPanelType">Pièce</small>
+        </div>
+        <div class="document-view">
+          <article class="document-paper" id="documentPaper"></article>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head">
+          <h2>Avancement</h2>
+          <small>Dossier N</small>
+        </div>
+        <div class="score-panel">
+          <div class="score-box">
+            <span>Score dossier</span>
+            <output id="scoreOutput">0</output>
+          </div>
+          <div class="metric">
+            <div class="metric-row"><span>Écritures validées</span><output id="entriesMetric">0/6</output></div>
+            <div class="bar good"><i id="entriesBar"></i></div>
+          </div>
+          <div class="metric">
+            <div class="metric-row"><span>Risque résiduel</span><output id="riskMetric">100%</output></div>
+            <div class="bar bad"><i id="riskBar"></i></div>
+          </div>
+          <div class="workpaper" id="workpaper"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sim-grid">
+      <aside class="panel">
+        <div class="panel-head">
+          <h2>Travaux à faire</h2>
+          <small>Choisir une tâche</small>
+        </div>
+        <div class="task-list" id="taskList"></div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Saisie comptable</h2>
+          <small>Journal simulé</small>
+        </div>
+        <div class="workbench">
+          <div class="task-current">
+            <span>Tâche active</span>
+            <strong id="taskTitle"></strong>
+            <p id="taskInstruction"></p>
+          </div>
+
+          <div class="entry-table">
+            <div class="entry-head">
+              <div>Compte</div>
+              <div>Libellé</div>
+              <div>Débit</div>
+              <div>Crédit</div>
+              <div></div>
+            </div>
+            <div id="entryRows"></div>
+          </div>
+
+          <div class="justification">
+            <label for="justification">Justification professionnelle</label>
+            <textarea id="justification" placeholder="Explique le raisonnement : pièce utilisée, principe comptable, risque évité, traitement retenu."></textarea>
+          </div>
+
+          <div class="command-row">
+            <button class="secondary" id="addLine">Ajouter une ligne</button>
+            <button class="secondary" id="clearEntry">Effacer</button>
+            <button class="primary" id="validateTask">Valider la tâche</button>
+            <button class="secondary" id="exportProgress">Exporter bilan</button>
+            <button class="secondary" id="clearProgress">Remise à zéro</button>
+          </div>
+
+          <div class="feedback" id="feedbackBox">
+            <strong>Commence par choisir une tâche.</strong>
+            <span>Tu peux traiter les pièces dans l'ordre proposé ou naviguer comme dans un vrai dossier.</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head">
+          <h2>Référentiel</h2>
+          <small>Réflexes clés</small>
+        </div>
+        <div class="score-panel">
+          <div class="workpaper-row">
+            <b>Pièce avant écriture</b>
+            <span>Une ligne comptable doit renvoyer à une facture, un contrat, un mail probant ou une hypothèse formalisée.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Débit = Crédit</b>
+            <span>La simulation refuse une tâche déséquilibrée sauf tâche mémo sans écriture.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Examen DSCG</b>
+            <span>Écrire compte, sens, montant, justification. Pour l'audit : risque, assertion, procédure, preuve.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Cabinet</b>
+            <span>Si la pièce ne suffit pas, il faut demander un justificatif au lieu d'inventer une provision.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Goodwill</b>
+            <span>Terme DSCG pour l'écart d'acquisition : prix payé pour les titres moins part d'actif net acquis.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Marge interne</b>
+            <span>Profit réalisé entre deux sociétés du même groupe. Tant que le stock n'est pas vendu hors groupe, le profit est retiré.</span>
+          </div>
+          <div class="workpaper-row">
+            <b>Créance-dette réciproque</b>
+            <span>Une société du groupe dit "client", l'autre dit "fournisseur". En consolidation, les deux positions s'annulent.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const docs = [
+      {
+        id: "balance",
+        type: "Balance",
+        title: "Balance générale avant révision",
+        subtitle: "Nova Conseil - Extrait au 31/12/N",
+        stamp: "Reçu client",
+        meta: [
+          ["Périmètre", "Balance complète simplifiée, classes 1 à 7"],
+          ["Comptes sensibles", "164, 401, 404, 4181, 487, 512, 606, 6226, 661, 681, 706"],
+          ["Point d'attention", "Plusieurs opérations de cut-off, banque et emprunt non traitées"]
+        ],
+        rows: [
+          ["101000 Capital social", "Crédit", "50 000"],
+          ["164000 Emprunts auprès des établissements de crédit", "Crédit", "72 000"],
+          ["218300 Matériel informatique", "Débit", "0"],
+          ["281830 Amortissement matériel informatique", "Crédit", "0"],
+          ["401000 Fournisseurs", "Crédit", "18 400"],
+          ["706000 Prestations de services", "Crédit", "318 000"],
+          ["401DAT Datatech fournisseur", "Crédit", "0"],
+          ["404INF Fournisseurs d'immobilisations", "Crédit", "0"],
+          ["418100 Clients - factures à établir", "Débit", "0"],
+          ["487000 Produits constatés d'avance", "Crédit", "0"],
+          ["512000 Banque", "Débit", "42 380"],
+          ["606300 Fournitures d'entretien", "Débit", "9 800"],
+          ["616000 Assurances", "Débit", "4 200"],
+          ["622600 Honoraires", "Débit", "22 000"],
+          ["661100 Intérêts des emprunts", "Débit", "0"],
+          ["681120 Dotations aux amortissements", "Débit", "0"]
+        ],
+        note: "Cette balance est volontairement avant révision : les comptes 6 existent, mais certaines charges, intérêts et écritures de clôture ne sont pas encore correctement rattachés."
+      },
+      {
+        id: "bank",
+        type: "Relevé bancaire",
+        title: "Relevé bancaire - décembre N",
+        subtitle: "Compte 512 Banque - Nova Conseil",
+        stamp: "Banque",
+        meta: [
+          ["Solde au 01/12/N", "49 720 EUR"],
+          ["Solde au 31/12/N", "42 380 EUR"],
+          ["Pointage", "À rapprocher avec grand livre banque"]
+        ],
+        rows: [
+          ["05/12/N", "Encaissement Client Boréal", "+14 400"],
+          ["15/12/N", "Échéance emprunt Crédit Nord", "-2 120"],
+          ["20/12/N", "Loyer bureau", "-3 600"],
+          ["28/12/N", "Assurance responsabilité civile", "-1 020"],
+          ["31/12/N", "Frais bancaires", "-38"]
+        ],
+        note: "Le relevé permet de vérifier les flux réellement passés en banque, notamment l'échéance d'emprunt et les charges payées."
+      },
+      {
+        id: "loan",
+        type: "Tableau d'amortissement",
+        title: "Emprunt Crédit Nord - échéancier",
+        subtitle: "Prêt professionnel souscrit par Nova Conseil",
+        stamp: "Emprunt",
+        meta: [
+          ["Capital restant dû avant échéance 15/12/N", "72 000 EUR"],
+          ["Échéance mensuelle prélevée", "2 120 EUR"],
+          ["Compte bancaire", "512 Banque"]
+        ],
+        rows: [
+          ["Principal remboursé", "Compte 164", "2 000"],
+          ["Intérêts de l'échéance", "Compte 6611", "120"],
+          ["Décaissement total", "Banque 512", "2 120"],
+          ["Capital restant dû après échéance", "72 000 - 2 000", "70 000"]
+        ],
+        note: "Le remboursement de prêt n'est pas une charge pour la totalité du prélèvement : seuls les intérêts vont en classe 6."
+      },
+      {
+        id: "bank-jan",
+        type: "Relevé bancaire",
+        title: "Relevé bancaire - janvier N+1",
+        subtitle: "Compte 512 Banque - opérations post-clôture",
+        stamp: "Post-clôture",
+        meta: [
+          ["Période", "01/01/N+1 au 10/01/N+1"],
+          ["Utilité", "Vérifier les paiements et encaissements après clôture"],
+          ["Pointage", "À rapprocher avec fournisseurs et clients"]
+        ],
+        rows: [
+          ["03/01/N+1", "Paiement Datatech F-2412", "-7 200"],
+          ["05/01/N+1", "Encaissement mission Alpha", "+14 400"],
+          ["06/01/N+1", "Frais bancaires", "-42"],
+          ["10/01/N+1", "Paiement assurance RC", "-1 020"]
+        ],
+        note: "Le relevé post-clôture aide à confirmer l'existence d'une dette ou d'une créance, sans changer automatiquement le rattachement comptable."
+      },
+      {
+        id: "supplier",
+        type: "Facture fournisseur",
+        title: "Facture F-2412",
+        subtitle: "Datatech Services -> Nova Conseil",
+        stamp: "À comptabiliser",
+        meta: [
+          ["Date facture", "28/12/N"],
+          ["Échéance", "30 jours"],
+          ["Nature", "Prestation cloud et maintenance décembre"]
+        ],
+        rows: [
+          ["Prestation cloud décembre", "HT", "6 000"],
+          ["TVA 20 %", "TVA", "1 200"],
+          ["Total TTC", "TTC", "7 200"]
+        ],
+        note: "La facture concerne intégralement l'exercice N."
+      },
+      {
+        id: "client",
+        type: "Contrat client",
+        title: "Facture C-2026-018 + contrat annuel",
+        subtitle: "Nova Conseil -> Client Boréal",
+        stamp: "Cut-off",
+        meta: [
+          ["Date facture", "01/12/N"],
+          ["Période couverte", "01/12/N au 30/11/N+1"],
+          ["Montant facturé", "12 000 EUR HT, TVA déjà déclarée"]
+        ],
+        rows: [
+          ["Maintenance annuelle", "HT facturé", "12 000"],
+          ["Part acquise en N", "1 mois / 12", "1 000"],
+          ["Part à reporter", "11 mois / 12", "11 000"]
+        ],
+        note: "Le produit facturé d'avance doit être rattaché au bon exercice."
+      },
+      {
+        id: "server",
+        type: "Facture immobilisation",
+        title: "Facture INF-778",
+        subtitle: "Infogreen -> Nova Conseil",
+        stamp: "Immobilisation",
+        meta: [
+          ["Date facture", "01/04/N"],
+          ["Mise en service", "01/04/N"],
+          ["Durée d'utilisation", "4 ans linéaire"]
+        ],
+        rows: [
+          ["Serveur de production", "HT", "9 600"],
+          ["TVA 20 %", "TVA déductible sur immobilisations", "1 920"],
+          ["Total TTC", "Dette fournisseur immo", "11 520"],
+          ["Dotation N", "9 600 / 4 x 9/12", "1 800"]
+        ],
+        note: "Deux travaux sont attendus : acquisition puis dotation aux amortissements."
+      },
+      {
+        id: "production",
+        type: "Suivi de mission",
+        title: "Mission Alpha - avancement non facturé",
+        subtitle: "Point chef de projet au 31/12/N",
+        stamp: "FAE",
+        meta: [
+          ["Forfait total", "15 000 EUR HT"],
+          ["Avancement validé", "80 %"],
+          ["Facturation", "Aucune facture émise au 31/12/N"]
+        ],
+        rows: [
+          ["Produit à rattacher", "15 000 x 80 %", "12 000 HT"],
+          ["TVA à régulariser", "20 %", "2 400"],
+          ["Facture à établir", "TTC", "14 400"]
+        ],
+        note: "La prestation est acquise à l'exercice N même si la facture sera émise en N+1."
+      },
+      {
+        id: "litigation",
+        type: "Mail direction",
+        title: "Litige fournisseur Aquila",
+        subtitle: "Mail du dirigeant au cabinet",
+        stamp: "Preuve faible",
+        meta: [
+          ["Montant évoqué", "18 000 EUR"],
+          ["Probabilité", "Non documentée"],
+          ["Pièce externe", "Aucune confirmation avocat"]
+        ],
+        rows: [
+          ["Message direction", "Le fournisseur menace une action, mais nous pensons négocier."],
+          ["Demande client", "Pouvez-vous passer une provision pour prudence ?"]
+        ],
+        note: "La prudence ne dispense pas de documenter l'obligation, la probabilité et l'estimation."
+      },
+      {
+        id: "group-perimeter",
+        type: "Organigramme groupe",
+        title: "Groupe Atlas - périmètre N",
+        subtitle: "Mémo directeur financier au cabinet",
+        stamp: "Consolidation",
+        meta: [
+          ["Mère", "Atlas SA"],
+          ["Filiale Nova Tech", "80 % des droits de vote et du capital"],
+          ["Autre participation", "28 % sans pacte de contrôle"]
+        ],
+        rows: [
+          ["Nova Tech", "Contrôle exclusif", "Intégration globale"],
+          ["Participation minoritaire", "Influence à analyser", "Pas d'intégration globale sans contrôle"],
+          ["Point DSCG", "Distinguer contrôle et pourcentage d'intérêt", "Méthode avant écriture"]
+        ],
+        note: "La consolidation commence par le périmètre : méthode, pourcentage de contrôle et pourcentage d'intérêt."
+      },
+      {
+        id: "goodwill",
+        type: "Fiche acquisition",
+        title: "Acquisition Nova Tech",
+        subtitle: "Juste valeur des actifs nets identifiables",
+        stamp: "Goodwill",
+        meta: [
+          ["Coût d'acquisition des titres", "100 000 EUR"],
+          ["Pourcentage d'intérêt", "80 %"],
+          ["Actif net identifiable à juste valeur", "90 000 EUR"]
+        ],
+        rows: [
+          ["Quote-part acquise", "90 000 x 80 %", "72 000"],
+          ["Coût d'acquisition", "Titres Nova Tech", "100 000"],
+          ["Goodwill partiel", "100 000 - 72 000", "28 000"]
+        ],
+        note: "Le goodwill partiel se calcule sur la quote-part acquise de l'actif net identifiable."
+      },
+      {
+        id: "intragroup-stock",
+        type: "Élimination intragroupe",
+        title: "Marge interne en stock",
+        subtitle: "Ventes Atlas SA -> Nova Tech",
+        stamp: "Stock",
+        meta: [
+          ["Stock final provenant du groupe", "120 000 EUR"],
+          ["Marge incluse dans le prix de vente", "1/6 du stock"],
+          ["Taux d'impôt", "25 %"]
+        ],
+        rows: [
+          ["Marge interne brute", "120 000 / 6", "20 000"],
+          ["Effet résultat net d'impôt", "20 000 x 75 %", "15 000"],
+          ["Impôt différé actif", "20 000 x 25 %", "5 000"]
+        ],
+        note: "La marge non réalisée doit être éliminée du résultat consolidé et du stock, avec effet d'impôt différé."
+      },
+      {
+        id: "reciprocal",
+        type: "Réciproques groupe",
+        title: "Créance-dette intragroupe",
+        subtitle: "Balance auxiliaire Atlas / Nova Tech",
+        stamp: "Réciproques",
+        meta: [
+          ["Dette Nova Tech envers Atlas", "24 000 EUR"],
+          ["Créance Atlas sur Nova Tech", "24 000 EUR"],
+          ["Écart de rapprochement", "0 EUR"]
+        ],
+        rows: [
+          ["Compte fournisseur groupe", "Nova Tech", "24 000"],
+          ["Compte client groupe", "Atlas SA", "24 000"],
+          ["Incidence résultat", "Aucune", "Élimination bilancielle"]
+        ],
+        note: "Les comptes réciproques sans écart sont éliminés en consolidation sans incidence sur le résultat."
+      },
+      {
+        id: "fusion-parity",
+        type: "Projet de fusion",
+        title: "Fusion Alpha absorbée par Beta",
+        subtitle: "Traité de fusion - extrait de synthèse",
+        stamp: "Restructuration",
+        meta: [
+          ["Absorbante", "Beta SA"],
+          ["Absorbée", "Alpha SA"],
+          ["Parité", "35 actions Beta pour 32 actions Alpha"]
+        ],
+        rows: [
+          ["Actionnaires externes Alpha", "800 actions"],
+          ["Titres Beta à créer", "800 x 35 / 32", "875 actions"],
+          ["Valeur nominale Beta", "100 EUR", "Capital créé 87 500"],
+          ["Apport net correspondant aux externes", "350 000 x 40 %", "140 000"],
+          ["Prime de fusion", "140 000 - 87 500", "52 500"]
+        ],
+        note: "Le premier réflexe est de séparer la partie échange externe de la participation déjà détenue."
+      },
+      {
+        id: "fusion-boni",
+        type: "Annulation des titres",
+        title: "Participation préalable - boni",
+        subtitle: "Beta détient 60 % d'Alpha",
+        stamp: "Boni",
+        meta: [
+          ["Titres Alpha détenus par Beta", "60 %"],
+          ["VNC des titres Alpha chez Beta", "180 000 EUR"],
+          ["Quote-part d'actif net reçu", "350 000 x 60 % = 210 000 EUR"]
+        ],
+        rows: [
+          ["Boni de fusion", "210 000 - 180 000", "30 000"],
+          ["Résultats accumulés depuis acquisition", "Part financière", "20 000"],
+          ["Résiduel en prime de fusion", "30 000 - 20 000", "10 000"]
+        ],
+        note: "Le boni doit être ventilé entre résultat financier et prime de fusion quand l'information est disponible."
+      },
+      {
+        id: "fusion-mali",
+        type: "Annulation des titres",
+        title: "Variante - mali de fusion",
+        subtitle: "Même fusion, VNC des titres Alpha portée à 250 000 EUR",
+        stamp: "Mali",
+        meta: [
+          ["VNC des titres Alpha", "250 000 EUR"],
+          ["Quote-part d'actif net reçu", "210 000 EUR"],
+          ["Mali total", "40 000 EUR"]
+        ],
+        rows: [
+          ["PV latentes terrain", "40 000 x 60 %", "24 000"],
+          ["PV latentes matériel", "25 000 x 60 %", "15 000"],
+          ["Mali technique", "24 000 + 15 000", "39 000"],
+          ["Vrai mali", "40 000 - 39 000", "1 000"]
+        ],
+        note: "Le mali technique est affecté aux actifs sous-jacents ; le vrai mali traduit une perte économique."
+      }
+    ];
+
+    const tasks = [
+      {
+        id: "supplier-entry",
+        docId: "supplier",
+        title: "Comptabiliser la facture Datatech",
+        instruction: "Passe l'écriture fournisseur : prestation HT, TVA déductible, dette fournisseur.",
+        expected: [
+          { root: "6226", side: "debit", amount: 6000 },
+          { root: "44566", side: "debit", amount: 1200 },
+          { root: "401", side: "credit", amount: 7200 }
+        ],
+        keywords: ["facture", "tva", "fournisseur"],
+        success: "Bon réflexe : la facture est rattachée à N, avec TVA déductible et dette fournisseur.",
+        correction: "Attendu : 6226 au débit 6 000 ; 44566 au débit 1 200 ; 401 au crédit 7 200."
+      },
+      {
+        id: "loan-payment",
+        docId: "loan",
+        title: "Ventiler l'échéance de prêt",
+        instruction: "À partir du relevé bancaire et du tableau d'amortissement, sépare le remboursement de capital et la charge d'intérêts.",
+        expected: [
+          { root: "164", side: "debit", amount: 2000 },
+          { root: "661", side: "debit", amount: 120 },
+          { root: "512", side: "credit", amount: 2120 }
+        ],
+        keywords: ["emprunt", "intérêt", "interet", "banque", "capital"],
+        success: "Correct : le capital rembourse la dette 164, seuls les intérêts passent en charge 661, et la banque est créditée.",
+        correction: "Attendu : 164 au débit 2 000 ; 661 au débit 120 ; 512 au crédit 2 120."
+      },
+      {
+        id: "pca-entry",
+        docId: "client",
+        title: "Constater le produit constaté d'avance",
+        instruction: "La facture annuelle a été émise, mais 11 mois concernent N+1. Passe l'écriture de régularisation HT.",
+        expected: [
+          { root: "706", side: "debit", amount: 11000 },
+          { root: "487", side: "credit", amount: 11000 }
+        ],
+        keywords: ["pca", "rattachement", "produit", "avance"],
+        success: "Tu neutralises correctement le produit qui n'appartient pas à N.",
+        correction: "Attendu : 706 au débit 11 000 ; 487 au crédit 11 000."
+      },
+      {
+        id: "server-acquisition",
+        docId: "server",
+        title: "Enregistrer l'acquisition du serveur",
+        instruction: "Comptabilise l'immobilisation, la TVA sur immobilisation et la dette fournisseur d'immobilisation.",
+        expected: [
+          { root: "2183", side: "debit", amount: 9600 },
+          { root: "44562", side: "debit", amount: 1920 },
+          { root: "404", side: "credit", amount: 11520 }
+        ],
+        keywords: ["immobilisation", "serveur", "tva"],
+        success: "Bien : tu distingues fournisseur d'immobilisation et fournisseur d'exploitation.",
+        correction: "Attendu : 2183 au débit 9 600 ; 44562 au débit 1 920 ; 404 au crédit 11 520."
+      },
+      {
+        id: "server-depreciation",
+        docId: "server",
+        title: "Passer la dotation aux amortissements",
+        instruction: "Calcule et comptabilise la dotation N : serveur mis en service le 01/04/N, durée 4 ans.",
+        expected: [
+          { root: "68112", side: "debit", amount: 1800 },
+          { root: "28183", side: "credit", amount: 1800 }
+        ],
+        keywords: ["amortissement", "prorata", "dotation"],
+        success: "Correct : prorata temporis de 9 mois sur une durée de 4 ans.",
+        correction: "Attendu : 68112 au débit 1 800 ; 28183 au crédit 1 800."
+      },
+      {
+        id: "fae-entry",
+        docId: "production",
+        title: "Constater la facture à établir",
+        instruction: "La mission est réalisée à 80 % mais non facturée. Passe la FAE TTC avec produit HT et TVA à régulariser.",
+        expected: [
+          { root: "4181", side: "debit", amount: 14400 },
+          { root: "706", side: "credit", amount: 12000 },
+          { root: "44587", side: "credit", amount: 2400 }
+        ],
+        keywords: ["fae", "facture", "établir", "rattachement"],
+        success: "Très bon réflexe de cut-off : la prestation acquise est rattachée à N.",
+        correction: "Attendu : 4181 au débit 14 400 ; 706 au crédit 12 000 ; 44587 au crédit 2 400."
+      },
+      {
+        id: "litigation-memo",
+        docId: "litigation",
+        title: "Traiter la demande de provision",
+        instruction: "Ne passe une écriture que si la pièce permet de justifier l'obligation, la probabilité et le montant. Sinon, rédige la demande de justificatif.",
+        expected: [],
+        keywords: ["avocat", "preuve", "probable", "justificatif", "externe"],
+        success: "Bon jugement : sans élément externe, la priorité est la demande de preuve et la documentation.",
+        correction: "Attendu : pas d'écriture automatique. Demander confirmation avocat / éléments probants avant provision."
+      },
+      {
+        id: "perimeter-memo",
+        docId: "group-perimeter",
+        title: "Qualifier le périmètre de consolidation",
+        instruction: "Ne passe pas d'écriture. Rédige la conclusion de périmètre : méthode de consolidation applicable à Nova Tech et justification.",
+        expected: [],
+        keywords: ["intégration", "globale", "contrôle", "controle", "exclusif", "80"],
+        success: "Bonne séquence : tu qualifies d'abord le contrôle exclusif et l'intégration globale avant les retraitements.",
+        correction: "Attendu : Nova Tech est contrôlée exclusivement et relève de l'intégration globale ; la participation minoritaire n'est pas intégrée globalement sans contrôle."
+      },
+      {
+        id: "goodwill-partial",
+        docId: "goodwill",
+        title: "Calculer l'écart d'acquisition",
+        instruction: "Le goodwill est l'écart d'acquisition : coût des titres moins quote-part de l'actif net acquis. Utilise les codes pédagogiques GW et ECART.",
+        expected: [
+          { root: "gw", side: "debit", amount: 28000 },
+          { root: "ecart", side: "credit", amount: 28000 }
+        ],
+        keywords: ["goodwill", "écart", "ecart", "acquisition"],
+        success: "Correct : coût des titres 100 000 moins quote-part d'actif net 72 000, soit 28 000 d'écart d'acquisition.",
+        correction: "Attendu : GW au débit 28 000 ; ECART au crédit 28 000. Ici GW signifie goodwill, donc écart d'acquisition."
+      },
+      {
+        id: "stock-margin-elimination",
+        docId: "intragroup-stock",
+        title: "Retirer du résultat la marge non réalisée",
+        instruction: "Une marge faite entre deux sociétés du même groupe est encore dans le stock. En consolidation, le groupe ne peut pas se vendre à lui-même : retire cette marge du résultat et du stock.",
+        expected: [
+          { root: "rc", side: "debit", amount: 15000 },
+          { root: "ida", side: "debit", amount: 5000 },
+          { root: "stock", side: "credit", amount: 20000 }
+        ],
+        keywords: ["marge", "stock", "groupe", "impôt", "différé"],
+        success: "Très bon réflexe consolidation : la marge non réalisée est sortie du résultat et du stock avec impôt différé actif.",
+        correction: "Attendu : RC au débit 15 000 ; IDA au débit 5 000 ; STOCK au crédit 20 000. RC = résultat consolidé, IDA = impôt différé actif."
+      },
+      {
+        id: "reciprocal-elimination",
+        docId: "reciprocal",
+        title: "Annuler la dette et la créance entre sociétés du groupe",
+        instruction: "Atlas dit avoir une créance sur Nova Tech, et Nova Tech dit avoir une dette envers Atlas. Dans les comptes du groupe, cette relation interne disparaît.",
+        expected: [
+          { root: "frs", side: "debit", amount: 24000 },
+          { root: "clt", side: "credit", amount: 24000 }
+        ],
+        keywords: ["réciproque", "créance", "dette", "groupe"],
+        success: "Correct : la dette fournisseur groupe et la créance client groupe s'annulent sans incidence sur le résultat.",
+        correction: "Attendu : FRS au débit 24 000 ; CLT au crédit 24 000. FRS représente le fournisseur/dette groupe, CLT le client/créance groupe."
+      },
+      {
+        id: "fusion-exchange-entry",
+        docId: "fusion-parity",
+        title: "Comptabiliser la partie échange de la fusion",
+        instruction: "Utilise les codes de feuille de travail APPORT, 101 et 1042 pour constater l'apport net des actionnaires externes, le capital créé et la prime de fusion.",
+        expected: [
+          { root: "apport", side: "debit", amount: 140000 },
+          { root: "101", side: "credit", amount: 87500 },
+          { root: "1042", side: "credit", amount: 52500 }
+        ],
+        keywords: ["fusion", "apport", "capital", "prime"],
+        success: "Correct : la partie échange crée 87 500 de capital et 52 500 de prime de fusion.",
+        correction: "Attendu : APPORT au débit 140 000 ; 101 au crédit 87 500 ; 1042 au crédit 52 500."
+      },
+      {
+        id: "fusion-boni-entry",
+        docId: "fusion-boni",
+        title: "Traiter le boni de fusion",
+        instruction: "Annule la participation détenue avec les codes QPAN, 261, 761 et 1042. Ventile le boni entre résultat financier et prime.",
+        expected: [
+          { root: "qpan", side: "debit", amount: 210000 },
+          { root: "261", side: "credit", amount: 180000 },
+          { root: "761", side: "credit", amount: 20000 },
+          { root: "1042", side: "credit", amount: 10000 }
+        ],
+        keywords: ["boni", "fusion", "titres", "prime"],
+        success: "Bon traitement : la quote-part d'actif net annule les titres et le boni est ventilé entre résultat financier et prime de fusion.",
+        correction: "Attendu : QPAN au débit 210 000 ; 261 au crédit 180 000 ; 761 au crédit 20 000 ; 1042 au crédit 10 000."
+      },
+      {
+        id: "fusion-mali-entry",
+        docId: "fusion-mali",
+        title: "Ventiler le mali de fusion",
+        instruction: "Traite la variante mali : quote-part d'actif net reçue, mali technique affecté aux actifs, vrai mali en charge financière, annulation des titres.",
+        expected: [
+          { root: "qpan", side: "debit", amount: 210000 },
+          { root: "2187", side: "debit", amount: 39000 },
+          { root: "668", side: "debit", amount: 1000 },
+          { root: "261", side: "credit", amount: 250000 }
+        ],
+        keywords: ["mali", "technique", "fusion", "titres"],
+        success: "Très bon réflexe DSCG : tu distingues le mali technique affecté aux actifs et le vrai mali en charge.",
+        correction: "Attendu : QPAN au débit 210 000 ; 2187 au débit 39 000 ; 668 au débit 1 000 ; 261 au crédit 250 000."
+      }
+    ];
+
+    const state = {
+      docId: "supplier",
+      taskId: "supplier-entry",
+      solved: new Set(),
+      attempts: {}
+    };
+
+    const storageKey = "dscg-ue4-cabinet-real-progress-v1";
+
+    const docList = document.querySelector("#docList");
+    const taskList = document.querySelector("#taskList");
+    const documentPaper = document.querySelector("#documentPaper");
+    const entryRows = document.querySelector("#entryRows");
+    const feedbackBox = document.querySelector("#feedbackBox");
+    const justification = document.querySelector("#justification");
+
+    function activeDoc() {
+      return docs.find((doc) => doc.id === state.docId) || docs[0];
+    }
+
+    function activeTask() {
+      return tasks.find((task) => task.id === state.taskId) || tasks[0];
+    }
+
+    function euro(value) {
+      return Number(value).toLocaleString("fr-FR", { maximumFractionDigits: 0 });
+    }
+
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        if (saved.docId && docs.some((doc) => doc.id === saved.docId)) state.docId = saved.docId;
+        if (saved.taskId && tasks.some((task) => task.id === saved.taskId)) state.taskId = saved.taskId;
+        if (Array.isArray(saved.solved)) state.solved = new Set(saved.solved.filter((id) => tasks.some((task) => task.id === id)));
+        if (saved.attempts && typeof saved.attempts === "object") state.attempts = saved.attempts;
+      } catch (error) {
+        localStorage.removeItem(storageKey);
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem(storageKey, JSON.stringify({
+        docId: state.docId,
+        taskId: state.taskId,
+        solved: [...state.solved],
+        attempts: state.attempts,
+        updatedAt: new Date().toISOString()
+      }));
+    }
+
+    function buildProgressSummary() {
+      const solved = state.solved.size;
+      return [
+        `DSCG UE4 - cabinet-real - ${new Date().toLocaleString("fr-FR")}`,
+        `Progression: ${solved}/${tasks.length} tâches validées`,
+        "",
+        ...tasks.map((task, index) => {
+          const status = state.solved.has(task.id) ? "OK" : "À traiter";
+          const attempts = state.attempts[task.id] || 0;
+          return `${String(index + 1).padStart(2, "0")} - ${task.title}: ${status} (${attempts} tentative${attempts > 1 ? "s" : ""})`;
+        })
+      ].join("\n");
+    }
+
+    function renderDocs() {
+      docList.innerHTML = docs.map((doc) => `
+        <button class="doc-button" type="button" data-doc="${doc.id}" aria-selected="${doc.id === state.docId}">
+          <b>${doc.title}</b>
+          <span>${doc.type} - ${doc.stamp}</span>
+        </button>
+      `).join("");
+      docList.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.docId = button.dataset.doc;
+          saveProgress();
+          render();
+        });
+      });
+    }
+
+    function renderTasks() {
+      taskList.innerHTML = tasks.map((task, index) => `
+        <button class="task-button ${state.solved.has(task.id) ? "is-done" : ""}" type="button" data-task="${task.id}" aria-selected="${task.id === state.taskId}">
+          <b>${String(index + 1).padStart(2, "0")} - ${task.title}</b>
+          <span>${task.expected.length ? `${task.expected.length} ligne(s) attendue(s)` : "Mémo professionnel sans écriture automatique"}</span>
+        </button>
+      `).join("");
+      taskList.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.taskId = button.dataset.task;
+          state.docId = activeTask().docId;
+          saveProgress();
+          resetEntry();
+          render();
+        });
+      });
+    }
+
+    function renderDocument() {
+      const doc = activeDoc();
+      document.querySelector("#docPanelTitle").textContent = doc.title;
+      document.querySelector("#docPanelType").textContent = doc.type;
+      documentPaper.innerHTML = `
+        <div class="doc-title-row">
+          <div>
+            <span class="eyebrow">${doc.type}</span>
+            <h2>${doc.title}</h2>
+            <p>${doc.subtitle}</p>
+          </div>
+          <span class="stamp">${doc.stamp}</span>
+        </div>
+        <div class="doc-meta">
+          ${doc.meta.map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join("")}
+        </div>
+        <table class="doc-table">
+          <thead><tr><th>Élément</th><th>Base</th><th>Montant / info</th></tr></thead>
+          <tbody>
+            ${doc.rows.map((row) => `<tr><td>${row[0] || ""}</td><td>${row[1] || ""}</td><td>${row[2] || ""}</td></tr>`).join("")}
+          </tbody>
+        </table>
+        <div class="doc-note"><span>Note de dossier</span><strong>${doc.note}</strong></div>
+      `;
+    }
+
+    function blankLine() {
+      return { account: "", label: "", debit: "", credit: "" };
+    }
+
+    function readLines() {
+      return [...entryRows.querySelectorAll(".entry-row")].map((row) => ({
+        account: row.querySelector('[data-field="account"]').value.trim(),
+        label: row.querySelector('[data-field="label"]').value.trim(),
+        debit: Number(row.querySelector('[data-field="debit"]').value.replace(",", ".") || 0),
+        credit: Number(row.querySelector('[data-field="credit"]').value.replace(",", ".") || 0)
+      })).filter((line) => line.account || line.label || line.debit || line.credit);
+    }
+
+    function renderEntryLines(lines = [blankLine(), blankLine(), blankLine()]) {
+      entryRows.innerHTML = lines.map((line) => `
+        <div class="entry-row">
+          <div><input data-field="account" placeholder="ex. 6226" value="${line.account || ""}"></div>
+          <div><input data-field="label" placeholder="Libellé" value="${line.label || ""}"></div>
+          <div><input data-field="debit" inputmode="decimal" placeholder="0" value="${line.debit || ""}"></div>
+          <div><input data-field="credit" inputmode="decimal" placeholder="0" value="${line.credit || ""}"></div>
+          <div><button class="remove-line" type="button" aria-label="Supprimer la ligne">x</button></div>
+        </div>
+      `).join("");
+      entryRows.querySelectorAll(".remove-line").forEach((button) => {
+        button.addEventListener("click", () => {
+          const lines = readLines();
+          if (lines.length <= 1) {
+            renderEntryLines([blankLine()]);
+          } else {
+            button.closest(".entry-row").remove();
+          }
+        });
+      });
+    }
+
+    function resetEntry() {
+      const task = activeTask();
+      const count = Math.max(task.expected.length, 1);
+      renderEntryLines(Array.from({ length: count }, blankLine));
+      justification.value = "";
+      feedbackBox.className = "feedback";
+      feedbackBox.innerHTML = `<strong>${task.title}</strong><span>${task.instruction}</span>`;
+    }
+
+    function renderTaskCurrent() {
+      const task = activeTask();
+      document.querySelector("#taskTitle").textContent = task.title;
+      document.querySelector("#taskInstruction").textContent = task.instruction;
+    }
+
+    function normalizeAccount(account) {
+      return account.toLowerCase().replace(/[^a-z0-9]/g, "");
+    }
+
+    function lineMatches(line, expected) {
+      const account = normalizeAccount(line.account);
+      const value = expected.side === "debit" ? line.debit : line.credit;
+      const opposite = expected.side === "debit" ? line.credit : line.debit;
+      return account.startsWith(expected.root.toLowerCase())
+        && Math.abs(value - expected.amount) <= 1
+        && Math.abs(opposite) <= 1;
+    }
+
+    function validate() {
+      const task = activeTask();
+      const lines = readLines();
+      const totalDebit = lines.reduce((sum, line) => sum + line.debit, 0);
+      const totalCredit = lines.reduce((sum, line) => sum + line.credit, 0);
+      const text = justification.value.toLowerCase();
+      const keywordHits = task.keywords.filter((word) => text.includes(word)).length;
+      let ok = false;
+      let detail = "";
+
+      if (task.expected.length === 0) {
+        ok = lines.length === 0 && keywordHits >= 2;
+        detail = ok
+          ? task.success
+          : "Pour cette tâche, ne passe pas d'écriture automatique. Rédige plutôt une demande de justificatif avec la preuve attendue.";
+      } else if (Math.abs(totalDebit - totalCredit) > 1) {
+        detail = `L'écriture n'est pas équilibrée : débit ${euro(totalDebit)} / crédit ${euro(totalCredit)}.`;
+      } else {
+        const matched = task.expected.filter((expected) => lines.some((line) => lineMatches(line, expected)));
+        const extraLines = lines.length - matched.length;
+        ok = matched.length === task.expected.length && extraLines <= 0 && keywordHits >= 1;
+        if (ok) {
+          detail = task.success;
+        } else {
+          detail = `${task.correction} Ajoute aussi une justification reliée à la pièce.`;
+        }
+      }
+
+      state.attempts[task.id] = (state.attempts[task.id] || 0) + 1;
+      if (ok) state.solved.add(task.id);
+      saveProgress();
+
+      feedbackBox.className = `feedback ${ok ? "good" : "bad"}`;
+      feedbackBox.innerHTML = `
+        <strong>${ok ? "Tâche validée" : "À reprendre"}</strong>
+        <span>${detail}</span>
+        <span>Tentative ${state.attempts[task.id]} - ${task.expected.length ? `Débit ${euro(totalDebit)} / Crédit ${euro(totalCredit)}` : "mémo sans écriture"}</span>
+      `;
+
+      renderTasks();
+      renderScore();
+    }
+
+    function renderScore() {
+      const solved = state.solved.size;
+      const score = Math.round((solved / tasks.length) * 100);
+      const risk = Math.max(0, 100 - score);
+      document.querySelector("#scoreOutput").textContent = score;
+      document.querySelector("#entriesMetric").textContent = `${solved}/${tasks.length}`;
+      document.querySelector("#riskMetric").textContent = `${risk}%`;
+      document.querySelector("#entriesBar").style.width = `${score}%`;
+      document.querySelector("#riskBar").style.width = `${risk}%`;
+      document.querySelector("#workpaper").innerHTML = tasks.map((task, index) => `
+        <div class="workpaper-row">
+          <b>${String(index + 1).padStart(2, "0")} - ${task.title}</b>
+          <span>${state.solved.has(task.id) ? "Validé dans le dossier de travail." : "À traiter ou à reprendre."}</span>
+        </div>
+      `).join("");
+    }
+
+    function render() {
+      renderDocs();
+      renderTasks();
+      renderDocument();
+      renderTaskCurrent();
+      renderScore();
+    }
+
+    document.querySelector("#addLine").addEventListener("click", () => {
+      const lines = readLines();
+      lines.push(blankLine());
+      renderEntryLines(lines);
+    });
+
+    document.querySelector("#clearEntry").addEventListener("click", resetEntry);
+    document.querySelector("#validateTask").addEventListener("click", validate);
+    document.querySelector("#exportProgress").addEventListener("click", async () => {
+      const summary = buildProgressSummary();
+      try {
+        await navigator.clipboard.writeText(summary);
+      } catch (error) {
+        // Clipboard can be unavailable in local/headless contexts; the summary is still displayed.
+      }
+      feedbackBox.className = "feedback good";
+      feedbackBox.innerHTML = `<strong>Bilan de session prêt</strong><span><pre>${summary}</pre></span>`;
+    });
+    document.querySelector("#clearProgress").addEventListener("click", () => {
+      localStorage.removeItem(storageKey);
+      state.docId = "supplier";
+      state.taskId = "supplier-entry";
+      state.solved = new Set();
+      state.attempts = {};
+      resetEntry();
+      render();
+    });
+
+    loadProgress();
+    resetEntry();
+    render();
+  </script>
+</body>
+</html>

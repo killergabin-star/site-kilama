@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSCG UE4 Simulation Lab | Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: oklch(29% 0.062 259);
+      --blue: oklch(45% 0.075 235);
+      --red: oklch(50% 0.15 32);
+      --gold: oklch(70% 0.12 82);
+      --green: oklch(50% 0.095 156);
+      --ink: oklch(25% 0.015 255);
+      --muted: oklch(48% 0.02 250);
+      --paper: oklch(98% 0.006 82);
+      --surface: oklch(95% 0.012 84);
+      --surface-strong: oklch(91% 0.018 86);
+      --line: oklch(84% 0.02 248);
+      --line-strong: oklch(73% 0.028 250);
+      --white: oklch(99% 0.004 84);
+      --blue-soft: color-mix(in oklch, var(--blue), var(--white) 88%);
+      --gold-soft: color-mix(in oklch, var(--gold), var(--white) 82%);
+      --green-soft: color-mix(in oklch, var(--green), var(--white) 88%);
+      --shadow: 0 18px 60px color-mix(in oklch, var(--navy), transparent 89%);
+      --shadow-tight: 0 8px 26px color-mix(in oklch, var(--navy), transparent 91%);
+      --radius: 8px;
+      --space-2xs: 4px;
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, color-mix(in oklch, var(--surface), var(--white) 42%) 0, var(--paper) 380px),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--navy), transparent 96%) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklch, var(--navy), transparent 96%) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--md, 16px);
+      padding: 16px clamp(18px, 4vw, 44px);
+      border-bottom: 1px solid color-mix(in oklch, var(--gold), transparent 12%);
+      box-shadow: 0 10px 40px color-mix(in oklch, var(--navy), transparent 82%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid color-mix(in oklch, var(--gold), transparent 35%);
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 18px;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      color: color-mix(in oklch, var(--white), transparent 25%);
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .topbar-link,
+    .pill {
+      border: 1px solid color-mix(in oklch, var(--white), transparent 72%);
+      color: color-mix(in oklch, var(--white), transparent 18%);
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .topbar-link:hover {
+      background: color-mix(in oklch, var(--white), transparent 90%);
+      border-color: color-mix(in oklch, var(--white), transparent 56%);
+    }
+
+    .pill {
+      border-color: color-mix(in oklch, var(--gold), transparent 45%);
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      text-transform: uppercase;
+    }
+
+    .shell {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: clamp(18px, 3vw, 36px);
+    }
+
+    .launchpad {
+      background: var(--navy);
+      border: 1px solid color-mix(in oklch, var(--navy), transparent 18%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-lg);
+      overflow: hidden;
+      padding: var(--space-xl);
+      position: relative;
+    }
+
+    .launchpad::after {
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--gold), transparent 72%) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in oklch, var(--gold), transparent 78%) 1px, transparent 1px);
+      background-size: 22px 22px;
+      content: "";
+      inset: 0;
+      opacity: 0.12;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    .launch-copy,
+    .launch-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .launch-copy h2 {
+      color: var(--white);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      letter-spacing: 0;
+      line-height: 1;
+      margin: 8px 0 12px;
+      max-width: 11ch;
+    }
+
+    .launch-copy p {
+      color: color-mix(in oklch, var(--white), transparent 20%);
+      font-size: 16px;
+      margin: 0;
+      max-width: 64ch;
+    }
+
+    .launch-actions {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .start-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-sm);
+    }
+
+    .start-card {
+      background: color-mix(in oklch, var(--white), transparent 94%);
+      border: 1px solid color-mix(in oklch, var(--white), transparent 72%);
+      border-radius: 6px;
+      color: var(--white);
+      display: grid;
+      gap: 6px;
+      min-height: 112px;
+      padding: var(--space-md);
+      text-align: left;
+    }
+
+    .start-card:hover,
+    .start-card:focus-visible {
+      background: color-mix(in oklch, var(--white), transparent 88%);
+      border-color: color-mix(in oklch, var(--gold), transparent 20%);
+      outline: none;
+    }
+
+    .start-card span {
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .start-card strong {
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.1;
+    }
+
+    .start-card small {
+      color: color-mix(in oklch, var(--white), transparent 28%);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .start-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-xs);
+      margin: 0;
+      padding: 0;
+    }
+
+    .start-steps li {
+      background: color-mix(in oklch, var(--white), transparent 94%);
+      border: 1px solid color-mix(in oklch, var(--white), transparent 84%);
+      border-radius: 4px;
+      display: grid;
+      gap: 4px;
+      list-style: none;
+      padding: var(--space-sm);
+    }
+
+    .start-steps b {
+      color: var(--gold);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+    }
+
+    .start-steps span {
+      color: color-mix(in oklch, var(--white), transparent 20%);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr) 320px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    .rail,
+    .task-panel,
+    .brief,
+    .scoreboard,
+    .desk,
+    .decision-bank,
+    .professor-panel,
+    .ledger-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .rail {
+      position: sticky;
+      top: 18px;
+      overflow: hidden;
+    }
+
+    .rail-head {
+      padding: var(--space-md);
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rail-head span {
+      color: var(--blue);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .rail-head h1 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 28px;
+      line-height: 1.02;
+      margin: 6px 0 0;
+    }
+
+    .module-list {
+      display: grid;
+    }
+
+    .module-tab {
+      appearance: none;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: var(--space-sm);
+      min-height: 76px;
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+    }
+
+    .module-tab:hover {
+      background: color-mix(in oklch, var(--surface), var(--blue) 4%);
+    }
+
+    .module-tab[aria-selected="true"] {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--gold), transparent 62%);
+    }
+
+    .module-code {
+      align-items: center;
+      background: color-mix(in oklch, var(--blue), transparent 88%);
+      color: var(--blue);
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      height: 34px;
+      justify-content: center;
+      width: 38px;
+    }
+
+    .module-tab[aria-selected="true"] .module-code {
+      background: color-mix(in oklch, var(--gold), transparent 80%);
+      color: var(--gold);
+    }
+
+    .module-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .module-tagline {
+      color: var(--muted);
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .module-tab[aria-selected="true"] .module-tagline {
+      color: color-mix(in oklch, var(--white), transparent 24%);
+    }
+
+    .stage {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .task-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .task-cell {
+      display: grid;
+      gap: 6px;
+      padding: var(--space-lg);
+    }
+
+    .task-cell + .task-cell {
+      border-left: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .task-cell span {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .task-cell strong {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .task-cell p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .brief {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+      overflow: hidden;
+      box-shadow: var(--shadow-tight);
+    }
+
+    .brief-main {
+      padding: var(--space-xl);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brief h2 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      letter-spacing: 0;
+      line-height: 0.98;
+      margin: 9px 0 14px;
+      max-width: 12ch;
+    }
+
+    .brief p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+      max-width: 68ch;
+    }
+
+    .brief-meta {
+      align-content: stretch;
+      background: var(--surface);
+      border-left: 1px solid var(--line);
+      display: grid;
+    }
+
+    .meta-row {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 4px;
+      padding: var(--space-md);
+    }
+
+    .meta-row:last-child {
+      border-bottom: 0;
+    }
+
+    .meta-row span {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .meta-row strong {
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .desk {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      overflow: hidden;
+    }
+
+    .case-file,
+    .controls {
+      padding: var(--space-lg);
+    }
+
+    .case-file {
+      border-right: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .section-title h3 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 22px;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .section-title small {
+      color: var(--muted);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .document-stack {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .document {
+      background: color-mix(in oklch, var(--white), var(--surface) 24%);
+      border: 1px solid color-mix(in oklch, var(--line), var(--blue) 10%);
+      border-radius: 6px;
+      display: grid;
+      gap: 4px;
+      padding: var(--space-sm);
+    }
+
+    .document strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .document span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lever-stack {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .micro-case {
+      background: var(--white);
+      border: 1px solid color-mix(in oklch, var(--line), var(--blue) 14%);
+      border-radius: 6px;
+      display: grid;
+      gap: var(--space-md);
+      padding: var(--space-md);
+    }
+
+    .micro-case h4 {
+      color: var(--navy);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 18px;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .micro-case p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .micro-facts {
+      border-left: 3px solid var(--gold);
+      display: grid;
+      gap: 6px;
+      padding-left: var(--space-sm);
+    }
+
+    .micro-facts span {
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .answer-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-sm);
+    }
+
+    .answer-row input {
+      background: color-mix(in oklch, var(--white), var(--surface) 22%);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      min-height: 42px;
+      padding: 9px 10px;
+      width: 100%;
+    }
+
+    .answer-row input:focus {
+      border-color: var(--blue);
+      outline: 2px solid color-mix(in oklch, var(--blue), transparent 78%);
+      outline-offset: 1px;
+    }
+
+    .micro-result {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: var(--space-sm);
+    }
+
+    .micro-result strong {
+      color: var(--navy);
+    }
+
+    .lever {
+      background: var(--white);
+      border: 1px solid color-mix(in oklch, var(--line), var(--blue) 9%);
+      border-radius: 6px;
+      padding: var(--space-sm);
+    }
+
+    .lever-label {
+      align-items: baseline;
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: space-between;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lever-label strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .lever-label output {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    input[type="range"] {
+      accent-color: var(--blue);
+      width: 100%;
+    }
+
+    .decision-bank {
+      padding: var(--space-lg);
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-sm);
+    }
+
+    .action {
+      align-items: start;
+      background: color-mix(in oklch, var(--white), var(--surface) 18%);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      display: grid;
+      gap: 4px;
+      min-height: 96px;
+      padding: var(--space-sm);
+      position: relative;
+      text-align: left;
+    }
+
+    .action::after {
+      align-self: end;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      content: "Choisir";
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      justify-self: start;
+      margin-top: var(--space-xs);
+      padding: 3px 8px;
+      text-transform: uppercase;
+    }
+
+    .action:hover {
+      border-color: var(--line-strong);
+    }
+
+    .action[aria-pressed="true"] {
+      background: color-mix(in oklch, var(--blue), var(--white) 88%);
+      border-color: color-mix(in oklch, var(--blue), var(--line) 30%);
+      box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--blue), transparent 58%);
+    }
+
+    .action[aria-pressed="true"]::after {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+      content: "Sélectionné";
+    }
+
+    .action strong {
+      color: var(--navy);
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .action span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .side {
+      display: grid;
+      gap: var(--space-lg);
+      position: sticky;
+      top: 18px;
+    }
+
+    .scoreboard {
+      overflow: hidden;
+    }
+
+    .score-head {
+      background:
+        linear-gradient(135deg, var(--navy) 0 68%, color-mix(in oklch, var(--blue), var(--navy) 28%) 68% 100%);
+      color: var(--white);
+      padding: var(--space-lg);
+    }
+
+    .score-head span {
+      color: color-mix(in oklch, var(--white), transparent 25%);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .score {
+      color: var(--gold);
+      font-family: "Bricolage Grotesque", "Source Sans 3", sans-serif;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 0.95;
+      margin-top: 8px;
+    }
+
+    .score-body {
+      display: grid;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+    }
+
+    .meter {
+      display: grid;
+      gap: 6px;
+    }
+
+    .meter-top {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .bar {
+      background: var(--surface-strong);
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .bar > i {
+      background: var(--blue);
+      display: block;
+      height: 100%;
+      transition: width 220ms ease;
+      width: 0;
+    }
+
+    .bar.risk > i {
+      background: var(--red);
+    }
+
+    .bar.mastery > i {
+      background: var(--green);
+    }
+
+    .professor-panel,
+    .ledger-panel {
+      padding: var(--space-lg);
+    }
+
+    .feedback-text {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .feedback-text strong {
+      color: var(--navy);
+    }
+
+    .memo {
+      background:
+        linear-gradient(180deg, color-mix(in oklch, var(--gold-soft), var(--white) 58%) 0, var(--surface) 72px);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      margin: var(--space-md) 0 0;
+      min-height: 150px;
+      padding: var(--space-md);
+      white-space: pre-wrap;
+    }
+
+    .command-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .primary,
+    .secondary {
+      border: 1px solid var(--navy);
+      border-radius: 4px;
+      display: inline-flex;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 12px;
+      font-weight: 800;
+    }
+
+    .primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .secondary {
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .timeline {
+      display: grid;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .timeline-row {
+      border: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: var(--space-sm);
+      padding: var(--space-sm);
+    }
+
+    .timeline-row b {
+      color: var(--blue);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .timeline-row span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .status-line {
+      align-items: center;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      justify-content: space-between;
+      padding: var(--space-md) var(--space-xl);
+    }
+
+    .status-line strong {
+      color: var(--navy);
+    }
+
+    @media (max-width: 1180px) {
+      .workspace {
+        grid-template-columns: 220px minmax(0, 1fr);
+      }
+
+      .launchpad {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        grid-column: 1 / -1;
+        position: static;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .workspace,
+      .launchpad,
+      .brief,
+      .desk,
+      .task-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .rail {
+        position: static;
+      }
+
+      .module-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .module-tab {
+        border-right: 1px solid var(--line);
+      }
+
+      .brief-meta,
+      .task-cell + .task-cell,
+      .case-file {
+        border-left: 0;
+        border-right: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .start-grid,
+      .start-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .shell {
+        padding: var(--space-sm);
+      }
+
+      .brand-text strong {
+        white-space: normal;
+      }
+
+      .module-list,
+      .command-row {
+        grid-template-columns: 1fr;
+      }
+
+      .brief-main,
+      .case-file,
+      .controls,
+      .decision-bank,
+      .score-head,
+      .score-body,
+      .professor-panel,
+      .ledger-panel {
+        padding: var(--space-md);
+      }
+
+      .brief h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/teaching/">
+      <span class="brand-mark">UE4</span>
+      <span class="brand-text">
+        <strong>DSCG Simulation Lab</strong>
+        <span>Comptabilité, consolidation, audit, IA sous garde-fous</span>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <span class="pill">Boot-camp 10 jours</span>
+      <a class="topbar-link" href="/teaching/dscg-sim/cabinet-real/">Simulation réelle</a>
+      <a class="topbar-link" href="#mode-emploi">Mode d'emploi</a>
+      <a class="topbar-link" href="/teaching/">Retour enseignement</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="launchpad" id="mode-emploi" aria-labelledby="launchTitle">
+      <div class="launch-copy">
+        <span class="eyebrow">Prise en main</span>
+        <h2 id="launchTitle">Premier test en six minutes</h2>
+        <p>Pour lancer une simulation, choisis un parcours, lis les pièces, sélectionne deux ou trois décisions, puis regarde le retour prof et la note de travail. Le but est de juger un geste professionnel, pas de réciter un cours.</p>
+      </div>
+      <div class="launch-actions">
+        <div class="start-grid" aria-label="Parcours conseillés">
+          <a class="start-card" href="/teaching/dscg-sim/cabinet-real/">
+            <span>Vrai dossier</span>
+            <strong>Traiter des pièces et saisir les écritures</strong>
+            <small>Factures, FAE/PCA, immobilisation, amortissement, provision.</small>
+          </a>
+          <button class="start-card" type="button" data-preset="cabinet">
+            <span>Testeur comptable</span>
+            <strong>Commencer par le cabinet</strong>
+            <small>Clôture, pièces manquantes, écritures, note client.</small>
+          </button>
+          <button class="start-card" type="button" data-preset="consolidation">
+            <span>Boot-camp jour 1</span>
+            <strong>Aller vers la consolidation</strong>
+            <small>Périmètre, retraitements, éliminations, goodwill.</small>
+          </button>
+          <button class="start-card" type="button" data-preset="audit">
+            <span>Mission audit</span>
+            <strong>Tester le jugement d'audit</strong>
+            <small>Risques, assertions, procédures, éléments probants.</small>
+          </button>
+        </div>
+        <ol class="start-steps" aria-label="Marche à suivre">
+          <li><b>01</b><span>Choisir un parcours</span></li>
+          <li><b>02</b><span>Lire le dossier</span></li>
+          <li><b>03</b><span>Cocher les décisions</span></li>
+          <li><b>04</b><span>Lire le retour prof</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <aside class="rail" aria-label="Modules de simulation">
+        <div class="rail-head">
+          <span>Atelier</span>
+          <h1>Mode prof</h1>
+        </div>
+        <div class="module-list" id="moduleList"></div>
+      </aside>
+
+      <section class="stage" aria-live="polite">
+        <section class="task-panel" aria-label="Mission active">
+          <div class="task-cell">
+            <span>Geste à faire maintenant</span>
+            <strong id="firstMove"></strong>
+            <p id="firstMoveDetail"></p>
+          </div>
+          <div class="task-cell">
+            <span>Question pour le testeur</span>
+            <strong id="testerPrompt"></strong>
+            <p>S'il manque un réflexe métier, la simulation doit le rendre visible.</p>
+          </div>
+        </section>
+
+        <article class="brief">
+          <div class="brief-main">
+            <span class="eyebrow" id="moduleEyebrow">Module</span>
+            <h2 id="moduleTitle"></h2>
+            <p id="moduleIntro"></p>
+          </div>
+          <div class="brief-meta">
+            <div class="meta-row">
+              <span>Dossier</span>
+              <strong id="moduleCase"></strong>
+            </div>
+            <div class="meta-row">
+              <span>Sortie attendue</span>
+              <strong id="moduleOutput"></strong>
+            </div>
+            <div class="meta-row">
+              <span>Point de vigilance</span>
+              <strong id="moduleGuardrail"></strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="desk">
+          <section class="case-file">
+            <div class="section-title">
+              <h3>Pièces du dossier</h3>
+              <small id="documentCount"></small>
+            </div>
+            <div class="document-stack" id="documentStack"></div>
+          </section>
+
+          <section class="controls">
+            <div class="section-title">
+              <h3>Micro-cas chiffré</h3>
+              <small>Réponse obligatoire</small>
+            </div>
+            <div class="lever-stack" id="leverStack"></div>
+          </section>
+        </article>
+
+        <article class="decision-bank">
+          <div class="section-title">
+            <h3>Décisions professionnelles</h3>
+            <small>Choisir et justifier</small>
+          </div>
+          <div class="actions-grid" id="actionsGrid"></div>
+        </article>
+      </section>
+
+      <aside class="side">
+        <section class="scoreboard">
+          <div class="score-head">
+            <span>État de maîtrise</span>
+            <div class="score"><output id="scoreValue">0</output></div>
+          </div>
+          <div class="score-body">
+            <div class="meter">
+              <div class="meter-top"><span>Rigueur technique</span><output id="technicalValue">0%</output></div>
+              <div class="bar"><i id="technicalBar"></i></div>
+            </div>
+            <div class="meter">
+              <div class="meter-top"><span>Jugement professionnel</span><output id="judgmentValue">0%</output></div>
+              <div class="bar mastery"><i id="judgmentBar"></i></div>
+            </div>
+            <div class="meter">
+              <div class="meter-top"><span>Risque résiduel</span><output id="riskValue">0%</output></div>
+              <div class="bar risk"><i id="riskBar"></i></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="professor-panel">
+          <div class="section-title">
+            <h3>Retour prof</h3>
+            <small id="professorMode">Présentiel</small>
+          </div>
+          <p class="feedback-text" id="feedbackText"></p>
+          <div class="command-row">
+            <button class="primary" id="nextRound">Nouveau cas</button>
+            <button class="secondary" id="resetModule">Réinitialiser</button>
+            <button class="secondary" id="exportMainProgress">Exporter bilan</button>
+            <button class="secondary" id="clearMainProgress">Remise à zéro</button>
+          </div>
+        </section>
+
+        <section class="ledger-panel">
+          <div class="section-title">
+            <h3>Note de travail</h3>
+            <small>Auto-générée</small>
+          </div>
+          <div class="memo" id="memoOutput"></div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="status-line">
+    <span><strong>Source pédagogique :</strong> UE4 DSCG, boot-camp intensif, simulations Econland/Data Labs, IA sous garde-fous.</span>
+    <span><strong>Statut :</strong> MVP local opérationnel</span>
+  </footer>
+
+  <script>
+    const modules = [
+      {
+        id: "initiation",
+        code: "M0",
+        name: "Circuit d'initiation",
+        tagline: "Reprendre les bases sans ralentir le DSCG",
+        title: "De la pièce comptable aux états financiers",
+        intro: "Une petite société de services ferme son mois. Le candidat doit classer les pièces, passer les écritures, corriger la clôture et expliquer l'impact bilan-compte de résultat.",
+        caseName: "KLM Services, clôture mensuelle accélérée",
+        output: "Journal, grand livre simplifié, mini-bilan, note d'anomalies",
+        guardrail: "Pas de consolidation avant maîtrise débit-crédit et rattachement des charges.",
+        professor: "Professeur socle comptable",
+        firstMove: "Repérer les écritures de clôture",
+        firstMoveDetail: "Lis les quatre pièces, puis sélectionne les décisions qui créent une écriture justifiable.",
+        testerPrompt: "Les écritures proposées sont-elles plausibles pour une reprise des bases ?",
+        documents: [
+          ["Facture fournisseur", "Achat de prestation 6 000 EUR HT, TVA 20 %, paiement à 30 jours."],
+          ["Relevé bancaire", "Paiement client reçu avant émission de la facture finale."],
+          ["Tableau d'amortissement", "Serveur acquis le 1er avril, mise en service immédiate."],
+          ["Inventaire", "Prestation livrée à 80 %, facture à établir."]
+        ],
+        levers: [
+          ["Classement des pièces", 72],
+          ["Écritures débit-crédit", 58],
+          ["Rattachement clôture", 44]
+        ],
+        challenges: [
+          {
+            title: "Facture fournisseur à comptabiliser",
+            prompt: "Une prestation de décembre est facturée 6 000 EUR HT avec TVA à 20 %, paiement à 30 jours. Quel montant TTC crédite le compte fournisseur ?",
+            facts: ["Charge HT: 6 000 EUR", "TVA déductible: 20 %", "Compte fournisseur attendu au crédit"],
+            expected: 7200,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "6 000 + 1 200 de TVA = 7 200 EUR au crédit du fournisseur."
+          },
+          {
+            title: "Dotation prorata temporis",
+            prompt: "Un serveur de 9 600 EUR est mis en service le 1er avril et amorti linéairement sur 4 ans. Quelle dotation faut-il constater sur N ?",
+            facts: ["Base amortissable: 9 600 EUR", "Durée: 4 ans", "Utilisation sur N: 9 mois"],
+            expected: 1800,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "9 600 / 4 x 9/12 = 1 800 EUR."
+          }
+        ],
+        actions: [
+          ["Constater la facture à établir", "Produit acquis, facture non encore émise.", 14],
+          ["Passer la TVA sur encaissement partout", "Erreur si le régime et la nature ne sont pas vérifiés.", -12],
+          ["Calculer l'amortissement prorata temporis", "Le serveur est mis en service en cours d'exercice.", 12],
+          ["Pointer banque, tiers et grand livre", "Réduit les écarts avant synthèse.", 9]
+        ],
+        steps: ["Pièces", "Journal", "Grand livre", "États"]
+      },
+      {
+        id: "cabinet",
+        code: "M1",
+        name: "Cabinet case",
+        tagline: "Client, pièces incomplètes, note professionnelle",
+        title: "Mission de clôture en cabinet",
+        intro: "Un client transmet une balance, des factures manquantes et une justification fragile d'une provision. Le candidat doit sécuriser la clôture et produire une note exploitable.",
+        caseName: "Dossier client Nova Conseil",
+        output: "Feuille de travail, écritures correctives, note client",
+        guardrail: "Toute correction doit renvoyer à une pièce ou à une hypothèse explicitée.",
+        professor: "Chef de mission cabinet",
+        firstMove: "Sécuriser la clôture client",
+        firstMoveDetail: "Commence par les pièces manquantes et le rattachement des produits/charges.",
+        testerPrompt: "La note finale ressemble-t-elle à une vraie feuille de travail cabinet ?",
+        documents: [
+          ["Balance générale", "Comptes 401, 411, 486 et 487 avec soldes atypiques."],
+          ["Contrat client", "Prestation annuelle facturée d'avance, clause de résiliation."],
+          ["Mail direction", "Provision litige estimée sans pièce externe."],
+          ["Détail charges", "Plusieurs factures de décembre reçues en janvier."]
+        ],
+        levers: [
+          ["Exhaustivité des pièces", 52],
+          ["Qualité des écritures", 64],
+          ["Clarté note client", 48]
+        ],
+        challenges: [
+          {
+            title: "Produit constaté d'avance",
+            prompt: "Nova Conseil facture 44 000 EUR HT le 1er octobre N pour une prestation annuelle du 1er octobre N au 30 septembre N+1. Quel PCA HT faut-il constater au 31/12/N ?",
+            facts: ["Produit facturé: 44 000 EUR HT", "Période acquise sur N: 3 mois", "Période non acquise: 9 mois"],
+            expected: 33000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "44 000 x 9/12 = 33 000 EUR à porter en produits constatés d'avance."
+          },
+          {
+            title: "Facture reçue après clôture",
+            prompt: "Une facture Datatech datée de décembre arrive en janvier: 6 000 EUR HT, TVA 20 %. Quel montant de charge HT rattacher à N ?",
+            facts: ["Service rendu en décembre", "Facture reçue en janvier", "TVA: 20 %"],
+            expected: 6000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "La charge rattachée à N est le montant HT de 6 000 EUR; la TVA est traitée séparément."
+          }
+        ],
+        actions: [
+          ["Demander pièce externe sur litige", "La provision ne peut pas reposer sur un simple ressenti.", 12],
+          ["Reclasser produits constatés d'avance", "La prestation annuelle impose un rattachement temporel.", 14],
+          ["Ignorer les factures reçues après clôture", "Erreur de séparation des exercices.", -16],
+          ["Formuler une note courte avec pièces manquantes", "La note devient actionnable pour le client.", 10]
+        ],
+        steps: ["Intake", "Analyse", "Corrections", "Note"]
+      },
+      {
+        id: "consolidation",
+        code: "M2",
+        name: "Groupe reporting",
+        tagline: "Périmètre, retraitements, éliminations",
+        title: "Salle de consolidation",
+        intro: "Un groupe acquiert une filiale et clôture un reporting consolidé. Il faut choisir la méthode, retraiter les normes, éliminer l'intragroupe et surveiller le goodwill.",
+        caseName: "Groupe Atlas, acquisition et flux intragroupe",
+        output: "Tableau de consolidation, éliminations, note CFO",
+        guardrail: "Toujours distinguer contrôle, pourcentage d'intérêt et méthode de consolidation.",
+        professor: "Directeur consolidation",
+        firstMove: "Choisir la méthode de consolidation",
+        firstMoveDetail: "Commence par le périmètre, puis regarde les retraitements et éliminations qui changent le résultat.",
+        testerPrompt: "Le cas force-t-il bien la distinction contrôle / intérêt / méthode ?",
+        documents: [
+          ["Organigramme", "Mère 80 % de la filiale A, influence notable sur B."],
+          ["Prix d'acquisition", "Juste valeur des actifs identifiables supérieure à la valeur comptable."],
+          ["Balance intragroupe", "Ventes internes avec marge en stock à la clôture."],
+          ["Contrat de location", "Actif IFRS 16 non retraité dans les comptes sociaux."]
+        ],
+        levers: [
+          ["Analyse du périmètre", 60],
+          ["Retraitements IFRS", 46],
+          ["Éliminations intragroupe", 54]
+        ],
+        challenges: [
+          {
+            title: "Marge interne en stock",
+            prompt: "La filiale a vendu des marchandises à la mère avec 4 000 EUR de marge encore incluse dans le stock consolidé. Quel montant de marge brute faut-il éliminer avant effet d'impôt ?",
+            facts: ["Marge interne non réalisée: 4 000 EUR", "Stock toujours détenu par le groupe", "Question avant impôt différé"],
+            expected: 4000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "La marge interne non réalisée de 4 000 EUR doit être éliminée du résultat consolidé et du stock."
+          },
+          {
+            title: "Goodwill partiel simplifié",
+            prompt: "Le prix payé pour 80 % d'une filiale est 100 000 EUR. La quote-part acquise de l'actif net réévalué est 72 000 EUR. Quel goodwill partiel ressort ?",
+            facts: ["Prix d'acquisition: 100 000 EUR", "Quote-part d'actif net réévalué: 72 000 EUR", "Méthode: goodwill partiel"],
+            expected: 28000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "100 000 - 72 000 = 28 000 EUR de goodwill partiel."
+          }
+        ],
+        actions: [
+          ["Intégrer globalement la filiale contrôlée", "Le contrôle exclusif prime sur la simple lecture du pourcentage.", 13],
+          ["Éliminer la marge interne en stock", "Indispensable pour éviter un résultat consolidé surévalué.", 14],
+          ["Calculer goodwill avant identification des écarts", "Risque de surévaluer l'écart d'acquisition.", -14],
+          ["Documenter l'impôt différé lié aux retraitements", "La consolidation doit porter l'effet fiscal.", 11]
+        ],
+        steps: ["Périmètre", "Retraitements", "Éliminations", "Goodwill"]
+      },
+      {
+        id: "audit",
+        code: "M3",
+        name: "Mission d'audit",
+        tagline: "Risques, contrôles, procédures, opinion",
+        title: "Planification et opinion d'audit",
+        intro: "Le commissaire aux comptes prépare sa mission. Le candidat fixe le seuil, qualifie les risques, teste les contrôles et ajuste les procédures avant de proposer une opinion.",
+        caseName: "Société Helios, croissance rapide et contrôle interne faible",
+        output: "Mémo de planification, matrice risques-contrôles, procédures",
+        guardrail: "Ne jamais confondre anomalie, risque, assertion et procédure d'audit.",
+        professor: "Associé audit",
+        firstMove: "Transformer les signaux en procédures",
+        firstMoveDetail: "Relie les pièces aux risques, puis choisis les procédures qui produisent une preuve.",
+        testerPrompt: "Les décisions font-elles vraiment raisonner risque → assertion → procédure ?",
+        documents: [
+          ["Balance âgée clients", "Hausse forte des créances anciennes et litiges commerciaux."],
+          ["Processus ventes", "Validation manuelle, absence de séparation claire des fonctions."],
+          ["PV conseil", "Tension de trésorerie et discussion continuité d'exploitation."],
+          ["Projet rapport", "Direction demande une formulation sans réserve."]
+        ],
+        levers: [
+          ["Seuil et matérialité", 55],
+          ["Assertions couvertes", 50],
+          ["Suffisance des éléments probants", 42]
+        ],
+        challenges: [
+          {
+            title: "Seuil de signification",
+            prompt: "Helios affiche un résultat avant impôt de 1 200 000 EUR. Le seuil retenu est 5 % du résultat. Quel seuil de signification faut-il documenter ?",
+            facts: ["Résultat avant impôt: 1 200 000 EUR", "Pourcentage retenu: 5 %", "Arrondi à l'euro"],
+            expected: 60000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "1 200 000 x 5 % = 60 000 EUR."
+          },
+          {
+            title: "Anomalie supérieure au seuil",
+            prompt: "Un litige client non provisionné est estimé à 96 000 EUR alors que le seuil de signification est 60 000 EUR. De combien l'exposition dépasse-t-elle le seuil ?",
+            facts: ["Exposition estimée: 96 000 EUR", "Seuil: 60 000 EUR", "Décision attendue: renforcer les travaux"],
+            expected: 36000,
+            tolerance: 1,
+            unit: "EUR",
+            solution: "96 000 - 60 000 = 36 000 EUR au-dessus du seuil."
+          }
+        ],
+        actions: [
+          ["Relier créances aux assertions existence/évaluation", "Le risque doit guider les procédures.", 15],
+          ["Renforcer confirmations externes et tests post-clôture", "La preuve devient plus indépendante.", 13],
+          ["Baisser les travaux car la direction rassure", "Le scepticisme professionnel est abandonné.", -18],
+          ["Documenter le scénario continuité d'exploitation", "La formulation du rapport dépend de cette analyse.", 12]
+        ],
+        steps: ["Risques", "Contrôles", "Procédures", "Opinion"]
+      },
+      {
+        id: "ai",
+        code: "M5",
+        name: "IA sous garde-fous",
+        tagline: "Assistance, vérification, gouvernance",
+        title: "Assistant audit contrôlé",
+        intro: "Un assistant IA signale des anomalies dans le grand livre. Le candidat doit séparer aide utile, faux positif, hallucination et élément probant réellement vérifiable.",
+        caseName: "Anomaly triage, grand livre fournisseurs",
+        output: "Journal de vérification IA, matrice risques-contrôles, note de gouvernance",
+        guardrail: "Aucune conclusion IA n'est acceptée sans trace documentaire vérifiable.",
+        professor: "Référent audit et data",
+        firstMove: "Vérifier l'IA comme un tri, pas comme une preuve",
+        firstMoveDetail: "Sépare alerte utile, faux positif et élément probant vérifiable.",
+        testerPrompt: "L'outil empêche-t-il de traiter un score IA comme une preuve ?",
+        documents: [
+          ["Liste anomalies IA", "Doubles paiements possibles, libellés suspects, dates atypiques."],
+          ["Grand livre fournisseurs", "Écritures récurrentes, avoirs et extournes."],
+          ["Bons de commande", "Contrôles incomplets sur approbation et réception."],
+          ["Politique data", "Droits d'accès et logs insuffisamment documentés."]
+        ],
+        levers: [
+          ["Traçabilité documentaire", 50],
+          ["Détection faux positifs", 43],
+          ["Gouvernance IA", 38]
+        ],
+        challenges: [
+          {
+            title: "Tri IA documenté",
+            prompt: "L'assistant IA remonte 120 anomalies fournisseurs. 18 n'ont aucune pièce justificative dans le dossier. Combien d'alertes doivent passer en revue prioritaire ?",
+            facts: ["Alertes IA: 120", "Sans pièce disponible: 18", "Une alerte IA n'est pas une preuve"],
+            expected: 18,
+            tolerance: 0,
+            unit: "alertes",
+            solution: "Les 18 alertes sans pièce passent en revue prioritaire; le score IA seul ne conclut rien."
+          },
+          {
+            title: "Conclusion sans preuve",
+            prompt: "Une anomalie obtient un score IA de 87/100 mais aucune facture, bon de commande ou validation workflow n'est retrouvée. Combien de conclusions d'audit peut-on accepter comme probantes ?",
+            facts: ["Score IA: 87/100", "Pièces probantes retrouvées: 0", "Principe: preuve vérifiable obligatoire"],
+            expected: 0,
+            tolerance: 0,
+            unit: "conclusions",
+            solution: "Zéro conclusion probante: l'IA oriente les tests, elle ne remplace pas la preuve."
+          }
+        ],
+        actions: [
+          ["Vérifier chaque alerte contre pièce et workflow", "L'IA devient un tri, pas une preuve.", 15],
+          ["Conserver les faux positifs pour calibrage", "La boucle d'apprentissage devient auditable.", 11],
+          ["Citer le score IA comme élément probant suffisant", "Le score n'est pas une preuve d'audit.", -20],
+          ["Ajouter un contrôle d'accès et journalisation", "La gouvernance soutient la fiabilité du dispositif.", 12]
+        ],
+        steps: ["Signal IA", "Pièces", "Contrôle", "Conclusion"]
+      }
+    ];
+
+    const state = {
+      moduleId: "cabinet",
+      selected: new Set(),
+      round: 1,
+      leverShift: 0,
+      challengeAnswers: {}
+    };
+
+    const storageKey = "dscg-ue4-main-lab-progress-v1";
+
+    const moduleList = document.querySelector("#moduleList");
+    const leverStack = document.querySelector("#leverStack");
+    const actionsGrid = document.querySelector("#actionsGrid");
+
+    function activeModule() {
+      return modules.find((module) => module.id === state.moduleId) || modules[0];
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        if (saved.moduleId && modules.some((module) => module.id === saved.moduleId)) state.moduleId = saved.moduleId;
+        if (Number.isFinite(saved.round)) state.round = Math.max(1, saved.round);
+        if (saved.challengeAnswers && typeof saved.challengeAnswers === "object") state.challengeAnswers = saved.challengeAnswers;
+        if (Array.isArray(saved.selected)) state.selected = new Set(saved.selected.map(Number).filter((index) => Number.isInteger(index)));
+      } catch (error) {
+        localStorage.removeItem(storageKey);
+      }
+    }
+
+    function saveProgress() {
+      localStorage.setItem(storageKey, JSON.stringify({
+        moduleId: state.moduleId,
+        round: state.round,
+        selected: [...state.selected],
+        challengeAnswers: state.challengeAnswers,
+        updatedAt: new Date().toISOString()
+      }));
+    }
+
+    function buildProgressSummary() {
+      const model = scoreModel();
+      return [
+        `DSCG UE4 - lab principal - ${new Date().toLocaleString("fr-FR")}`,
+        `Module: ${model.module.code} ${model.module.name}`,
+        `Tour: ${state.round}`,
+        `Score: ${model.score}/100`,
+        `Micro-cas: ${model.challenge.challenge.title}`,
+        `Réponse: ${model.challenge.raw || "non renseignée"}`,
+        `Correction: ${model.challenge.message}`,
+        `Décisions: ${[...state.selected].map((index) => model.module.actions[index][0]).join("; ") || "aucune"}`
+      ].join("\n");
+    }
+
+    function renderModules() {
+      moduleList.innerHTML = modules.map((module) => `
+        <button class="module-tab" type="button" data-module="${module.id}" aria-selected="${module.id === state.moduleId}">
+          <span class="module-code">${module.code}</span>
+          <span>
+            <span class="module-name">${module.name}</span>
+            <span class="module-tagline">${module.tagline}</span>
+          </span>
+        </button>
+      `).join("");
+
+      moduleList.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.moduleId = button.dataset.module;
+          state.selected = new Set();
+          state.round = 1;
+          state.leverShift = 0;
+          saveProgress();
+          render();
+        });
+      });
+    }
+
+    function renderBrief(module) {
+      document.querySelector("#moduleEyebrow").textContent = `${module.code} - DSCG UE4`;
+      document.querySelector("#moduleTitle").textContent = module.title;
+      document.querySelector("#moduleIntro").textContent = module.intro;
+      document.querySelector("#moduleCase").textContent = module.caseName;
+      document.querySelector("#moduleOutput").textContent = module.output;
+      document.querySelector("#moduleGuardrail").textContent = module.guardrail;
+      document.querySelector("#professorMode").textContent = module.professor;
+    }
+
+    function renderTask(module) {
+      document.querySelector("#firstMove").textContent = module.firstMove;
+      document.querySelector("#firstMoveDetail").textContent = module.firstMoveDetail;
+      document.querySelector("#testerPrompt").textContent = module.testerPrompt;
+    }
+
+    function renderDocuments(module) {
+      document.querySelector("#documentCount").textContent = `${module.documents.length} pièces`;
+      document.querySelector("#documentStack").innerHTML = module.documents.map(([title, detail]) => `
+        <div class="document">
+          <strong>${title}</strong>
+          <span>${detail}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderLevers(module) {
+      const challenge = activeChallenge(module);
+      const key = answerKey(module);
+      const value = state.challengeAnswers[key] || "";
+      const evaluation = challengeEvaluation(module);
+      leverStack.innerHTML = `
+        <article class="micro-case">
+          <h4>${challenge.title}</h4>
+          <p>${challenge.prompt}</p>
+          <div class="micro-facts">
+            ${challenge.facts.map((fact) => `<span>${fact}</span>`).join("")}
+          </div>
+          <div class="answer-row">
+            <input id="challengeAnswer" inputmode="decimal" value="${String(value).replace(/"/g, "&quot;")}" aria-label="Réponse au micro-cas" placeholder="Saisir la réponse en ${challenge.unit}">
+            <button class="secondary" id="validateChallenge" type="button">Valider</button>
+          </div>
+          <div class="micro-result" id="challengeResult">${challengeFeedback(evaluation)}</div>
+        </article>
+      `;
+
+      const input = document.querySelector("#challengeAnswer");
+      input.addEventListener("input", () => {
+        state.challengeAnswers[key] = input.value;
+        saveProgress();
+        updateScores();
+      });
+      document.querySelector("#validateChallenge").addEventListener("click", () => {
+        state.challengeAnswers[key] = input.value;
+        saveProgress();
+        updateScores();
+      });
+    }
+
+    function activeChallenge(module) {
+      const challenges = module.challenges || [];
+      return challenges[(state.round - 1) % challenges.length] || {
+        title: "Micro-cas",
+        prompt: "Aucun micro-cas n'est encore défini.",
+        facts: [],
+        expected: 0,
+        tolerance: 0,
+        unit: "unité",
+        solution: ""
+      };
+    }
+
+    function answerKey(module) {
+      const length = Math.max(1, (module.challenges || []).length);
+      const index = (state.round - 1) % length;
+      return `${module.id}:${index}`;
+    }
+
+    function parseAnswer(raw) {
+      return Number(String(raw).replace(/\s/g, "").replace(",", "."));
+    }
+
+    function challengeEvaluation(module) {
+      const challenge = activeChallenge(module);
+      const raw = state.challengeAnswers[answerKey(module)] || "";
+      if (!String(raw).trim()) {
+        return { challenge, raw, score: 35, status: "pending", message: "Saisis une réponse pour que le score mesure un vrai calcul, pas une impression." };
+      }
+      const answer = parseAnswer(raw);
+      if (Number.isNaN(answer)) {
+        return { challenge, raw, score: 20, status: "invalid", message: "Réponse illisible: utilise un nombre, sans symbole monétaire." };
+      }
+      const diff = Math.abs(answer - challenge.expected);
+      if (diff <= challenge.tolerance) {
+        return { challenge, raw, score: 100, status: "correct", message: challenge.solution };
+      }
+      const denominator = Math.max(1, Math.abs(challenge.expected));
+      const relativeError = diff / denominator;
+      const score = relativeError <= 0.1 ? 70 : relativeError <= 0.25 ? 45 : 20;
+      return { challenge, raw, score, status: "wrong", message: `Correction: ${challenge.solution}` };
+    }
+
+    function challengeFeedback(evaluation) {
+      if (evaluation.status === "correct") {
+        return `<strong>Correct.</strong> ${evaluation.message}`;
+      }
+      if (evaluation.status === "pending") {
+        return `<strong>À traiter.</strong> ${evaluation.message}`;
+      }
+      if (evaluation.status === "invalid") {
+        return `<strong>Format à corriger.</strong> ${evaluation.message}`;
+      }
+      return `<strong>À reprendre.</strong> ${evaluation.message}`;
+    }
+
+    function renderActions(module) {
+      actionsGrid.innerHTML = module.actions.map(([title, detail], index) => `
+        <button class="action" type="button" aria-pressed="${state.selected.has(index)}" data-action="${index}">
+          <strong>${title}</strong>
+          <span>${detail}</span>
+        </button>
+      `).join("");
+
+      actionsGrid.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.action);
+          if (state.selected.has(index)) {
+            state.selected.delete(index);
+          } else {
+            state.selected.add(index);
+          }
+          saveProgress();
+          renderActions(activeModule());
+          updateScores();
+        });
+      });
+    }
+
+    function selectedImpact(module) {
+      return [...state.selected].reduce((sum, index) => sum + module.actions[index][2], 0);
+    }
+
+    function scoreModel() {
+      const module = activeModule();
+      const challenge = challengeEvaluation(module);
+      const actionImpact = selectedImpact(module);
+      const technical = clamp(Math.round(challenge.score * 0.72 + Math.max(actionImpact, 0) * 1.1 + Math.min(actionImpact, 0) * 1.4), 0, 100);
+      const judgment = clamp(Math.round((challenge.score >= 80 ? 58 : 42) + state.selected.size * 8 + actionImpact * 0.42), 0, 100);
+      const risk = clamp(Math.round(100 - (technical * 0.5 + judgment * 0.3) + (challenge.score < 70 ? 16 : 0) + Math.max(0, -actionImpact)), 0, 100);
+      const score = clamp(Math.round(technical * 0.48 + judgment * 0.4 + (100 - risk) * 0.12), 0, 100);
+      return { module, challenge, technical, judgment, risk, score, actionImpact };
+    }
+
+    function decisionFeedback(module) {
+      const selected = [...state.selected].map((index) => module.actions[index]);
+      const risky = selected.find((action) => action[2] < 0);
+      if (risky) {
+        return `<strong>Décision à corriger : ${risky[0]}.</strong> ${risky[1]} Reviens à la pièce, puis reformule le traitement défendable.`;
+      }
+      const strongestMissing = module.actions
+        .map((action, index) => ({ action, index }))
+        .filter(({ action, index }) => action[2] > 0 && !state.selected.has(index))
+        .sort((a, b) => b.action[2] - a.action[2])[0];
+      if (!selected.length) {
+        return `<strong>Choisis une décision métier.</strong> Le calcul seul ne suffit pas : transforme la réponse en écriture, procédure, note ou demande de pièce.`;
+      }
+      if (strongestMissing) {
+        return `<strong>Bonne base, réflexe manquant : ${strongestMissing.action[0]}.</strong> ${strongestMissing.action[1]}`;
+      }
+      return `<strong>Décisions cohérentes.</strong> Les choix sélectionnés couvrent le réflexe central du module; rédige maintenant une justification courte et traçable.`;
+    }
+
+    function feedback({ score, risk, module, challenge }) {
+      if (challenge.status === "pending") {
+        return `<strong>Commence par le micro-cas.</strong> Le module mesure maintenant un calcul ou une décision vérifiable avant les choix professionnels.`;
+      }
+      if (challenge.status === "wrong" || challenge.status === "invalid") {
+        return `<strong>Correction ciblée.</strong> ${challenge.message} Ensuite seulement, sélectionne les décisions qui sécurisent le dossier.`;
+      }
+      const decision = decisionFeedback(module);
+      if (risk > 58) return `${decision} <br>Risque encore élevé : il manque une preuve ou une procédure qui tue l'hypothèse fragile.`;
+      if (score >= 78) return `${decision} <br>Niveau suivant : rédiger la note finale sans perdre la trace documentaire.`;
+      return decision;
+    }
+
+    function renderMemo(model) {
+      const selected = [...state.selected].map((index) => model.module.actions[index][0]);
+      const choices = selected.length ? selected.join("; ") : "aucune décision validée";
+      const status = model.score >= 75 ? "prêt pour correction avancée" : model.score >= 55 ? "à consolider" : "à reprendre avec le professeur";
+      return [
+        `TOUR ${state.round} - ${model.module.code} ${model.module.name}`,
+        `Dossier: ${model.module.caseName}`,
+        `Micro-cas: ${model.challenge.challenge.title}. Réponse: ${model.challenge.raw || "non renseignée"}.`,
+        `Correction: ${model.challenge.message}`,
+        `Décisions: ${choices}.`,
+        `Rigueur technique: ${model.technical}%. Jugement: ${model.judgment}%. Risque résiduel: ${model.risk}%.`,
+        `Statut pédagogique: ${status}.`,
+        `Livrable attendu: ${model.module.output}.`
+      ].join("\n");
+    }
+
+    function renderTimeline(module) {
+      document.querySelector("#timeline").innerHTML = module.steps.map((step, index) => `
+        <div class="timeline-row">
+          <b>${String(index + 1).padStart(2, "0")}</b>
+          <span>${step}</span>
+        </div>
+      `).join("");
+    }
+
+    function updateScores() {
+      const model = scoreModel();
+      document.querySelector("#scoreValue").textContent = model.score;
+      document.querySelector("#technicalValue").textContent = `${model.technical}%`;
+      document.querySelector("#judgmentValue").textContent = `${model.judgment}%`;
+      document.querySelector("#riskValue").textContent = `${model.risk}%`;
+      document.querySelector("#technicalBar").style.width = `${model.technical}%`;
+      document.querySelector("#judgmentBar").style.width = `${model.judgment}%`;
+      document.querySelector("#riskBar").style.width = `${model.risk}%`;
+      document.querySelector("#feedbackText").innerHTML = feedback(model);
+      document.querySelector("#memoOutput").textContent = renderMemo(model);
+      const challengeResult = document.querySelector("#challengeResult");
+      if (challengeResult) {
+        challengeResult.innerHTML = challengeFeedback(model.challenge);
+      }
+    }
+
+    function render() {
+      const module = activeModule();
+      renderModules();
+      renderTask(module);
+      renderBrief(module);
+      renderDocuments(module);
+      renderLevers(module);
+      renderActions(module);
+      renderTimeline(module);
+      updateScores();
+    }
+
+    document.querySelector("#nextRound").addEventListener("click", () => {
+      state.round += 1;
+      state.selected = new Set();
+      saveProgress();
+      render();
+    });
+
+    document.querySelector("#resetModule").addEventListener("click", () => {
+      state.selected = new Set();
+      state.round = 1;
+      state.leverShift = 0;
+      saveProgress();
+      render();
+    });
+
+    document.querySelector("#exportMainProgress").addEventListener("click", async () => {
+      const summary = buildProgressSummary();
+      try {
+        await navigator.clipboard.writeText(summary);
+      } catch (error) {
+        // Clipboard can be unavailable in local/headless contexts; the memo still displays the export.
+      }
+      document.querySelector("#memoOutput").textContent = summary;
+      document.querySelector("#feedbackText").innerHTML = "<strong>Bilan de session prêt.</strong> Le résumé est affiché dans la note de travail.";
+    });
+
+    document.querySelector("#clearMainProgress").addEventListener("click", () => {
+      localStorage.removeItem(storageKey);
+      state.moduleId = "cabinet";
+      state.selected = new Set();
+      state.round = 1;
+      state.leverShift = 0;
+      state.challengeAnswers = {};
+      render();
+    });
+
+    document.querySelectorAll(".start-card").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.moduleId = button.dataset.preset;
+        state.selected = new Set();
+        state.round = 1;
+        state.leverShift = 0;
+        saveProgress();
+        render();
+        document.querySelector(".workspace").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    loadProgress();
+    render();
+  </script>
+</body>
+</html>
