@@ -61,7 +61,10 @@ For current content, `theme` is the most reliable field. Tags are numerous and s
 ## Promoting an article to custom
 
 1. Add the SVG or PNG to `custom/` or `static/thumbnails/custom/`.
-2. Set the article frontmatter to point to that custom asset once the resolver is installed.
+2. Prefer adding an entry to `dalle-original-mapping.json` for policy-wide
+   curated raster assets. The resolver reads this central mapping before it
+   falls back to chart or category assets, so each article does not need a
+   hand-edited `thumbnail.custom_path`.
 3. Keep the custom source stable so the thumbnail remains reproducible.
 
 Expected frontmatter shape:

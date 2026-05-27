@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copyFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { loadPolicyArticle, listPolicyMarkdownFiles } from './content-utils.mjs';
 import { resolveThumbnail } from './resolver.mjs';
@@ -11,6 +11,10 @@ const chartEngineDir = process.env.CHART_ENGINE_DIR ?? '/Volumes/T7 sharing/site
 
 mkdirSync(outputDir, { recursive: true });
 mkdirSync(dirname(dataPath), { recursive: true });
+
+for (const file of readdirSync(outputDir, { withFileTypes: true })) {
+  if (file.isFile()) rmSync(join(outputDir, file.name));
+}
 
 const articles = listPolicyMarkdownFiles().map(loadPolicyArticle);
 const manifest = {};

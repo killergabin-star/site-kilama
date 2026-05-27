@@ -7,6 +7,7 @@ import { tmpdir } from 'node:os';
 const DEFAULT_CHART_ENGINE_DIR = '/Volumes/T7 sharing/site-kilama-lab/tools/chart-engine';
 const DEFAULT_CATEGORY_MAPPING = 'editorial/thumbnails/category-mapping.json';
 const DEFAULT_CATEGORIES_DIR = 'editorial/thumbnails/categories';
+const DEFAULT_CUSTOM_MAPPING = 'editorial/thumbnails/dalle-original-mapping.json';
 
 export function resolveThumbnail(article = {}, options = {}) {
   const cwd = resolve(options.cwd ?? process.cwd());
@@ -32,6 +33,13 @@ export function resolveThumbnail(article = {}, options = {}) {
     }
     warning(`Custom thumbnail not found: ${customPath}`);
   }
+
+  const mappedCustom = resolveMappedCustomThumbnail(article, {
+    cwd,
+    mappingPath: options.customMappingPath,
+    warning,
+  });
+  if (mappedCustom) return mappedCustom;
 
   const chartPath = findChartBrief(article, { cwd, articleDir, warning });
   if (chartPath) {
@@ -239,6 +247,35 @@ function resolveCustomThumbnailPath(candidate, { articleDir, cwd }) {
   return hugoCandidates.find((path) => existsSync(path)) ?? null;
 }
 
+function resolveMappedCustomThumbnail(article, options = {}) {
+  const cwd = resolve(options.cwd ?? process.cwd());
+  const mappingPath = resolve(cwd, options.mappingPath ?? DEFAULT_CUSTOM_MAPPING);
+  const mapping = readCustomMapping(mappingPath);
+  if (!mapping) return null;
+
+  const slug = article.slug ?? slugFromArticle(article);
+  if (!slug) return null;
+
+  const entry = mapping.find((item) => item.slug === slug);
+  const customPath = entry?.custom_path ?? entry?.customPath;
+  if (!customPath) return null;
+
+  const resolvedCustom = resolveCustomThumbnailPath(customPath, {
+    articleDir: resolveArticleDir(article, cwd),
+    cwd,
+  });
+
+  if (!resolvedCustom) {
+    options.warning?.(`Mapped custom thumbnail not found: ${customPath}`);
+    return null;
+  }
+
+  return {
+    strategy: 'custom',
+    svgPath: toPortablePath(toRepoRelative(resolvedCustom, cwd)),
+  };
+}
+
 function resolveChartOutputPath(article, chartPath, cwd, options) {
   if (options.chartOutputPath) return resolve(cwd, options.chartOutputPath);
   const slug = article.slug ?? slugFromArticle(article) ?? basename(dirname(chartPath));
@@ -261,6 +298,15 @@ function resolveFallbackCategory(cwd, options) {
 
 function readMapping(mappingPath) {
   return JSON.parse(readFileSync(mappingPath, 'utf8'));
+}
+
+function readCustomMapping(mappingPath) {
+  try {
+    const parsed = JSON.parse(readFileSync(mappingPath, 'utf8'));
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
 }
 
 function lookupMapping(mapping, value) {

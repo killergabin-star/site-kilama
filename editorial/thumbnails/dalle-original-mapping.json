@@ -126,6 +126,13 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-acceleration-reforme-afi.png"
   },
   {
+    "slug": "notes-africa-forward-nairobi-coherence-francaise",
+    "title": "Africa Forward Nairobi : le test de cohérence française",
+    "image_index": 59,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_57_17.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-africa-forward-nairobi-coherence-francaise.png"
+  },
+  {
     "slug": "notes-afrique-triangle-evian",
     "title": "L''Afrique dans le triangle d''Évian : le continent perdant de la présidence française du G7",
     "image_index": 52,
@@ -152,6 +159,20 @@
     "image_index": 86,
     "source_file": "ChatGPT Image 30 avr. 2026 à 17_04_50.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-apd-defense-reallocation.png"
+  },
+  {
+    "slug": "notes-attentat-camara-fragilite-aes",
+    "title": "L'attentat Camara et la fragilité opérationnelle de l'AES",
+    "image_index": 38,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_54_26.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-attentat-camara-fragilite-aes.png"
+  },
+  {
+    "slug": "notes-axe-resistance-mobilisation-communautaire",
+    "title": "L''axe de la résistance 2.0 : la mobilisation communautaire remplace la coordination étatique",
+    "image_index": 30,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_53_10.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-axe-resistance-mobilisation-communautaire.png"
   },
   {
     "slug": "notes-bilan-g7-mae",
@@ -196,6 +217,27 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-crise-iranienne-finance-guerre-russe.png"
   },
   {
+    "slug": "notes-dedollarisation-africaine-yuan",
+    "title": "Dédollarisation africaine : quand Pékin restructure par la dette",
+    "image_index": 22,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_52_08.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-dedollarisation-africaine-yuan.png"
+  },
+  {
+    "slug": "notes-defense-europeenne-gap-ile-longue",
+    "title": "Défense européenne : le gap entre Île-Longue et les capacités réelles",
+    "image_index": 16,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_51_19.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-defense-europeenne-gap-ile-longue.png"
+  },
+  {
+    "slug": "notes-double-contrainte-energetique-europe-lng-ormuz",
+    "title": "Cessez-le-feu Iran : la double contrainte énergétique de l''Europe (LNG russe + Ormuz)",
+    "image_index": 65,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_57_56.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-double-contrainte-energetique-europe-lng-ormuz.png"
+  },
+  {
     "slug": "notes-eu-trade-geopolitics-update-2026",
     "title": "Politique commerciale de l''UE face à Trump II : la double pression — Mise à jour 2026",
     "image_index": 80,
@@ -210,11 +252,39 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-eu-trade-geopolitics.png"
   },
   {
+    "slug": "notes-europe-marginalisee-pekin-bercy",
+    "title": "L''Europe marginalisée après Pékin : que faire avant Bercy ?",
+    "image_index": 15,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_51_12.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-europe-marginalisee-pekin-bercy.png"
+  },
+  {
+    "slug": "notes-fishman-guerre-economique-doctrine",
+    "title": "How to Fight an Economic War : la doctrine Fishman et ses implications pour l''Europe",
+    "image_index": 56,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_56_52.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-fishman-guerre-economique-doctrine.png"
+  },
+  {
     "slug": "notes-france-presidence-g7-contraintes",
     "title": "La France au G7 : présider sous contrainte",
     "image_index": 82,
     "source_file": "ChatGPT Image 30 avr. 2026 à 17_03_35 (10).png",
     "custom_path": "thumbnails/custom/dalle-original/notes-france-presidence-g7-contraintes.png"
+  },
+  {
+    "slug": "notes-g7-commerce-architecture-sans-engagement",
+    "title": "G7 Commerce sous présidence française : architecture sans engagement",
+    "image_index": 33,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_53_40.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-g7-commerce-architecture-sans-engagement.png"
+  },
+  {
+    "slug": "notes-g7-environnement-climat-hors-consensus",
+    "title": "G7 Environnement : quand le climat sort du consensus sous pression américaine",
+    "image_index": 31,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_53_17.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-g7-environnement-climat-hors-consensus.png"
   },
   {
     "slug": "notes-gopinath-pettis-deficit-courant",
@@ -243,6 +313,13 @@
     "image_index": 62,
     "source_file": "ChatGPT Image 1 mai 2026 à 14_57_40.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-hickel-ajustement-structurel-proces.png"
+  },
+  {
+    "slug": "notes-hongrie-post-orban-bascule-ue",
+    "title": "La Hongrie après Orbán : bascule de bloc ou simple relâchement ?",
+    "image_index": 75,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_59_41.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-hongrie-post-orban-bascule-ue.png"
   },
   {
     "slug": "notes-ifi-allocation-geopolitique",
@@ -280,11 +357,32 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-jetp-failing.png"
   },
   {
+    "slug": "notes-liberation-day-protectionnisme-normalite",
+    "title": "Liberation Day +1 : le protectionnisme comme nouvelle normalité",
+    "image_index": 34,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_53_47.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-liberation-day-protectionnisme-normalite.png"
+  },
+  {
     "slug": "notes-migration-cohesion-europe",
     "title": "Migration et cohésion politique européenne : la boucle la plus dangereuse",
     "image_index": 42,
     "source_file": "ChatGPT Image 1 mai 2026 à 14_55_00.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-migration-cohesion-europe.png"
+  },
+  {
+    "slug": "notes-mission-navale-fr-uk-doctrine-anti-peage",
+    "title": "Mission navale franco-britannique et doctrine anti-péage : le droit de la mer comme arme diplomatique",
+    "image_index": 83,
+    "source_file": "ChatGPT Image 30 avr. 2026 à 17_03_35 (3).png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-mission-navale-fr-uk-doctrine-anti-peage.png"
+  },
+  {
+    "slug": "notes-mou-14-points-iran-cessez-le-feu",
+    "title": "MOU 14 points : l''Iran négocie un cessez-le-feu à ses conditions",
+    "image_index": 74,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_59_24.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-mou-14-points-iran-cessez-le-feu.png"
   },
   {
     "slug": "notes-non-expedit-recours-souverain-vatican",
@@ -308,11 +406,32 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-northern-donor.png"
   },
   {
+    "slug": "notes-offre-iranienne-hormuz-nucleaire-bifurcation",
+    "title": "L''offre iranienne : Hormuz contre report nucléaire, le piège de la bifurcation",
+    "image_index": 43,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_55_08.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-offre-iranienne-hormuz-nucleaire-bifurcation.png"
+  },
+  {
     "slug": "notes-ormuz-choc-petrolier-xxi",
     "title": "Ormuz fermé : anatomie du premier choc pétrolier du XXIe siècle",
     "image_index": 70,
     "source_file": "ChatGPT Image 1 mai 2026 à 14_58_46.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-ormuz-choc-petrolier-xxi.png"
+  },
+  {
+    "slug": "notes-ormuz-suez-xxie-siecle",
+    "title": "Ormuz 2026 : le moment Suez de la puissance américaine",
+    "image_index": 21,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_51_59.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-ormuz-suez-xxie-siecle.png"
+  },
+  {
+    "slug": "notes-peage-ormuz-regime-maritime-parallele",
+    "title": "Le péage d''Ormuz : quand l''Iran invente un régime maritime parallèle",
+    "image_index": 5,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_49_20.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-peage-ormuz-regime-maritime-parallele.png"
   },
   {
     "slug": "notes-polycrisis-transmission-asie",
@@ -357,6 +476,13 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-safe-green-deal-dilemme-industriel.png"
   },
   {
+    "slug": "notes-sahel-assassinat-camara-telegramme",
+    "title": "Le Sahel à feu et à sang : de l''assassinat Camara au télégramme diplomatique",
+    "image_index": 40,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_54_46.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-sahel-assassinat-camara-telegramme.png"
+  },
+  {
     "slug": "notes-section122-chaos-tarifaire",
     "title": "La Section 122 et le chaos tarifaire américain : implications pour la présidence française du G7",
     "image_index": 91,
@@ -369,6 +495,13 @@
     "image_index": 64,
     "source_file": "ChatGPT Image 1 mai 2026 à 14_57_50.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-soudan-guerre-invisible.png"
+  },
+  {
+    "slug": "notes-spring-meetings-2026-verdict-fragmentation",
+    "title": "Spring Meetings 2026 : le premier verdict macro de la fragmentation",
+    "image_index": 87,
+    "source_file": "ChatGPT Image 30 avr. 2026 à 17_04_58.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-spring-meetings-2026-verdict-fragmentation.png"
   },
   {
     "slug": "notes-transition-energetique-apres-ormuz",
@@ -399,6 +532,20 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-trump-xi-enjeux.png"
   },
   {
+    "slug": "notes-trump-xi-pekin-rivalite-sommets",
+    "title": "Trump à Pékin : la rivalité gérée par le sommet",
+    "image_index": 12,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_50_44.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-trump-xi-pekin-rivalite-sommets.png"
+  },
+  {
+    "slug": "notes-trump-xi-pekin-thucydide-outil-diplomatique",
+    "title": "Trump-Xi à Pékin : le piège de Thucydide comme outil diplomatique",
+    "image_index": 58,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_57_11.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-trump-xi-pekin-thucydide-outil-diplomatique.png"
+  },
+  {
     "slug": "notes-unleashing-development-banks-update-2026",
     "title": "Banques de développement en 2026 : l''optimisation ne suffit plus",
     "image_index": 49,
@@ -420,6 +567,13 @@
     "custom_path": "thumbnails/custom/dalle-original/notes-vulnerabilite-energetique-ormuz.png"
   },
   {
+    "slug": "notes-weo-2026-cout-rearmement-defense",
+    "title": "Le WEO 2026 et le coût budgétaire du réarmement : quand le FMI met la défense au centre",
+    "image_index": 61,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_57_33.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-weo-2026-cout-rearmement-defense.png"
+  },
+  {
     "slug": "notes-who-benefits-sanctions-update-2026",
     "title": "À qui profitent les sanctions ? Mise à jour 2026 — L'escalade iranienne et la fragmentation de l'ordre sanctionnatoire",
     "image_index": 18,
@@ -432,6 +586,13 @@
     "image_index": 39,
     "source_file": "ChatGPT Image 1 mai 2026 à 14_54_38.png",
     "custom_path": "thumbnails/custom/dalle-original/notes-who-benefits-sanctions.png"
+  },
+  {
+    "slug": "notes-zero-tarif-chine-afrique-nairobi",
+    "title": "Zéro-tarif chinois pour l''Afrique : compétition d''offres avant Nairobi",
+    "image_index": 8,
+    "source_file": "ChatGPT Image 1 mai 2026 à 14_50_06.png",
+    "custom_path": "thumbnails/custom/dalle-original/notes-zero-tarif-chine-afrique-nairobi.png"
   },
   {
     "slug": "reports-apd-g7-executive-summary-v4",

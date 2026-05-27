@@ -62,6 +62,31 @@ test('custom_path Hugo static -> strategy custom', () => {
   });
 });
 
+test('mapping custom central -> strategy custom', () => {
+  const fixture = createFixtureRepo();
+  mkdirSync(join(fixture.cwd, 'static', 'thumbnails', 'custom', 'dalle-original'), { recursive: true });
+  writeFileSync(join(fixture.cwd, 'static', 'thumbnails', 'custom', 'dalle-original', 'mapped.png'), 'png', 'utf8');
+  writeFileSync(join(fixture.cwd, 'editorial', 'thumbnails', 'dalle-original-mapping.json'), JSON.stringify([
+    {
+      slug: 'mapped-article',
+      custom_path: 'thumbnails/custom/dalle-original/mapped.png',
+    },
+  ]), 'utf8');
+
+  const result = resolveThumbnail({
+    filePath: 'content/policy/notes/mapped-article.md',
+    slug: 'mapped-article',
+    frontmatter: {
+      tags: ['polycrisis'],
+    },
+  }, { ...fixture, warn: false });
+
+  assert.deepEqual(result, {
+    strategy: 'custom',
+    svgPath: 'static/thumbnails/custom/dalle-original/mapped.png',
+  });
+});
+
 test('chart_brief frontmatter -> strategy chart and renderer invocation', () => {
   const fixture = createFixtureRepo();
   const articleDir = join(fixture.cwd, 'content', 'policy', 'notes', 'with-chart');
