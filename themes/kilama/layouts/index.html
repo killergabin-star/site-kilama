@@ -1,5 +1,6 @@
 {{ define "main" }}
 <main>
+  {{ $vigieSnapshot := .Site.Data.vigie_snapshot }}
 
   <!-- HERO EDITORIAL — DNA Variant-A, marqueur bleu -->
   <section class="hero-editorial hero-editorial--home">
@@ -61,73 +62,42 @@
   </section>
 
   <!-- TICKER — snapshot daté, pas live -->
-  <div class="ticker" aria-label="Snapshot indicateurs — 9 avril 2026">
+  {{ with $vigieSnapshot }}
+  <div class="ticker" aria-label="Snapshot indicateurs — {{ .meta.snapshot_label }}">
     <div class="ticker-inner">
-      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">9 avr. 2026</span></span>
-      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
-      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
-      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
-      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">▲ +0.04</span></span>
-      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
-      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
-      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">APD DAC</span><span class="value">−23.1%</span><span class="delta-bad">▼ −23.1%</span></span>
-      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">9 avr. 2026</span></span>
-      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">▲ +12.4%</span></span>
-      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">▲ +8.2%</span></span>
-      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">▼ −21bp</span></span>
-      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">▲ +0.04</span></span>
-      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">▼ −0.31</span></span>
-      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">▲ +1.8</span></span>
-      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">▲ +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">APD DAC</span><span class="value">−23.1%</span><span class="delta-bad">▼ −23.1%</span></span>
+      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">{{ .meta.snapshot_label }}</span></span>
+      {{ range .ticker.items }}
+      <span class="ticker-item"><span class="symbol">{{ .symbol }}</span><span class="value">{{ .value }}</span><span class="{{ .class }}">{{ .delta }}</span></span>
+      {{ end }}
+      <span class="ticker-item ticker-item--date"><span class="symbol">SNAPSHOT</span><span class="value">{{ .meta.snapshot_label }}</span></span>
+      {{ range .ticker.items }}
+      <span class="ticker-item"><span class="symbol">{{ .symbol }}</span><span class="value">{{ .value }}</span><span class="{{ .class }}">{{ .delta }}</span></span>
+      {{ end }}
     </div>
   </div>
+  {{ end }}
 
   <!-- KPI BAND -->
   <div class="container">
     <div class="kpi-band">
       <div class="kpi-band-header">
         <span class="eyebrow-text">Vigie &middot; Snapshot</span>
-        <span class="kpi-band-timestamp">9 avr. 2026 &middot; snapshot OCDE/FMI</span>
+        <span class="kpi-band-timestamp">{{ with $vigieSnapshot }}{{ .meta.snapshot_label }} &middot; sources publiques vérifiées{{ else }}Snapshot{{ end }}</span>
       </div>
       <div class="kpi-band-grid">
+        {{ with $vigieSnapshot }}
+        {{ range .kpis }}
         <div class="kpi">
-          <div class="kpi-label">GPR Index</div>
+          <div class="kpi-label">{{ .label }}</div>
           <div class="kpi-value-row">
-            <span class="kpi-value">187.3</span>
-            <span class="kpi-delta kpi-delta--bad">&#9650; +12,4%</span>
+            <span class="kpi-value">{{ .value }}</span>
+            <span class="kpi-delta kpi-delta--{{ .tone }}">{{ .delta }}</span>
           </div>
-          <div class="kpi-context">vs MA-12M (108.2)</div>
-          <div class="kpi-source">Caldara-Iacoviello</div>
+          <div class="kpi-context">{{ .context }}</div>
+          <div class="kpi-source">{{ .source }}</div>
         </div>
-        <div class="kpi">
-          <div class="kpi-label">Frag. Index</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">0.73</span>
-            <span class="kpi-delta kpi-delta--bad">&#9650; +0.04</span>
-          </div>
-          <div class="kpi-context">vs Q4 2025 (0.69)</div>
-          <div class="kpi-source">JPM Fragmentation</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Spread IT-DE 10Y</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">142</span>
-            <span class="kpi-delta kpi-delta--good">&#9660; -8 bps</span>
-          </div>
-          <div class="kpi-context">vs mois précédent (150)</div>
-          <div class="kpi-source">Bloomberg</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">APD DAC 2025</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">−23,1%</span>
-            <span class="kpi-delta kpi-delta--bad">&#9660; -23,1%</span>
-          </div>
-          <div class="kpi-context">vs 2024, données préliminaires</div>
-          <div class="kpi-source">OCDE-DAC</div>
-        </div>
+        {{ end }}
+        {{ end }}
       </div>
     </div>
   </div>

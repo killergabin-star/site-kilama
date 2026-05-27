@@ -3,6 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
+  {{ $vigieSnapshot := .Site.Data.vigie_snapshot }}
 
   <!-- PARTICLE FLOW FIELD BACKGROUND -->
   <div id="particle-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.15;"></div>
@@ -10,31 +11,23 @@
   <div class="foresight-grain"></div>
 
   <!-- TICKER -->
+  {{ with $vigieSnapshot }}
   <div class="ticker">
     <div class="ticker-inner">
-      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">&#9650; +12.4%</span></span>
-      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">&#9650; +8.2%</span></span>
-      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">&#9660; &minus;21bp</span></span>
-      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">&#9650; +0.04</span></span>
-      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">&#9660; &minus;0.31</span></span>
-      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">&#9650; +1.8</span></span>
-      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">&#9650; +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">&#9660; &minus;0.01</span></span>
-      <span class="ticker-item"><span class="symbol">GPR</span><span class="value">187.3</span><span class="delta-bad">&#9650; +12.4%</span></span>
-      <span class="ticker-item"><span class="symbol">BRENT</span><span class="value">$94.20</span><span class="delta-neutral">&#9650; +8.2%</span></span>
-      <span class="ticker-item"><span class="symbol">EMBI</span><span class="value">412</span><span class="delta-good">&#9660; &minus;21bp</span></span>
-      <span class="ticker-item"><span class="symbol">FRAG</span><span class="value">0.73</span><span class="delta-bad">&#9650; +0.04</span></span>
-      <span class="ticker-item"><span class="symbol">DXY</span><span class="value">104.82</span><span class="delta-neutral">&#9660; &minus;0.31</span></span>
-      <span class="ticker-item"><span class="symbol">VIX</span><span class="value">22.4</span><span class="delta-bad">&#9650; +1.8</span></span>
-      <span class="ticker-item"><span class="symbol">IT-DE 10Y</span><span class="value">142bp</span><span class="delta-bad">&#9650; +6bp</span></span>
-      <span class="ticker-item"><span class="symbol">ODA/RNB</span><span class="value">0.37%</span><span class="delta-bad">&#9660; &minus;0.01</span></span>
+      {{ range .ticker.items }}
+      <span class="ticker-item"><span class="symbol">{{ .symbol }}</span><span class="value">{{ .value }}</span><span class="{{ .class }}">{{ .delta }}</span></span>
+      {{ end }}
+      {{ range .ticker.items }}
+      <span class="ticker-item"><span class="symbol">{{ .symbol }}</span><span class="value">{{ .value }}</span><span class="{{ .class }}">{{ .delta }}</span></span>
+      {{ end }}
     </div>
   </div>
+  {{ end }}
 
   <main class="dashboard-page">
 
     <!-- HEADER -->
-    <section class="dashboard-header">
+    <section class="dashboard-header" id="overview">
       <div class="eyebrow">
         <span class="eyebrow-mark"></span>
         <span class="eyebrow-text live-dot">VIGIE &middot; LIVE</span>
@@ -45,7 +38,7 @@
           <span class="status-dot status-dot--live"></span>
           Actif
         </span>
-        <span>{{ now.Format "2 Jan. 2006" }} &middot; CET</span>
+        <span>{{ with $vigieSnapshot }}{{ .meta.snapshot_label }}{{ else }}{{ now.Format "2 Jan. 2006" }}{{ end }} &middot; CET</span>
       </div>
     </section>
 
@@ -53,45 +46,22 @@
     <div class="kpi-band">
       <div class="kpi-band-header">
         <span class="eyebrow-text live-dot">Indicateurs cl&eacute;s</span>
-        <span class="kpi-band-timestamp">Mise &agrave; jour : {{ now.Format "2 Jan. 2006" }}</span>
+        <span class="kpi-band-timestamp">Mise &agrave; jour : {{ with $vigieSnapshot }}{{ .meta.snapshot_label }}{{ else }}{{ now.Format "2 Jan. 2006" }}{{ end }}</span>
       </div>
       <div class="kpi-band-grid">
+        {{ with $vigieSnapshot }}
+        {{ range .kpis }}
         <div class="kpi">
-          <div class="kpi-label">GPR Index</div>
+          <div class="kpi-label">{{ .label }}</div>
           <div class="kpi-value-row">
-            <span class="kpi-value">187.3</span>
-            <span class="kpi-delta kpi-delta--bad">&#9650; +12,4%</span>
+            <span class="kpi-value">{{ .value }}</span>
+            <span class="kpi-delta kpi-delta--{{ .tone }}">{{ .delta }}</span>
           </div>
-          <div class="kpi-context">vs MA-12M (108.2)</div>
-          <div class="kpi-source">Caldara-Iacoviello</div>
+          <div class="kpi-context">{{ .context }}</div>
+          <div class="kpi-source">{{ .source }}</div>
         </div>
-        <div class="kpi">
-          <div class="kpi-label">Frag. Index</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">0.73</span>
-            <span class="kpi-delta kpi-delta--bad">&#9650; +0.04</span>
-          </div>
-          <div class="kpi-context">vs Q4 2025 (0.69)</div>
-          <div class="kpi-source">JPM Fragmentation</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">Spread IT-DE 10Y</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">142</span>
-            <span class="kpi-delta kpi-delta--good">&#9660; -8 bps</span>
-          </div>
-          <div class="kpi-context">vs mois pr&eacute;c&eacute;dent (150)</div>
-          <div class="kpi-source">Bloomberg</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-label">ODA/RNB DAC</div>
-          <div class="kpi-value-row">
-            <span class="kpi-value">0.37%</span>
-            <span class="kpi-delta kpi-delta--bad">&#9660; -0.01</span>
-          </div>
-          <div class="kpi-context">vs 2024 (0.38%)</div>
-          <div class="kpi-source">OCDE-DAC</div>
-        </div>
+        {{ end }}
+        {{ end }}
       </div>
     </div>
 
@@ -100,6 +70,7 @@
       <a href="#overview" class="is-active">Vue d&apos;ensemble</a>
       <a href="#dashboards">Dashboards th&eacute;matiques</a>
       <a href="#data">Data</a>
+      <a href="#institutional-watch">Veille</a>
       <a href="#analyses">Analyses</a>
       <a href="#methodologie">M&eacute;thodologie</a>
     </nav>
@@ -304,14 +275,14 @@
         <div class="fpsq-content">
           <figure class="chart chart--bnef">
             <header class="chart-header">
-              <h3 class="chart-title">Indicateurs fiscaux G7</h3>
-              <p class="chart-subtitle">Ratio dette/PIB et d&eacute;ficit primaire, projection 2026-2028</p>
+              <h3 class="chart-title">{{ with $vigieSnapshot }}{{ .fiscal_chart.title }}{{ else }}Indicateurs publics G7{{ end }}</h3>
+              <p class="chart-subtitle">{{ with $vigieSnapshot }}{{ .fiscal_chart.subtitle }}{{ else }}Derni&egrave;res observations disponibles{{ end }}</p>
             </header>
             <div class="chart-canvas">
               <div id="foresight-fpsq-fiscal" style="width:100%;height:350px;"></div>
             </div>
             <footer class="chart-footer">
-              <p class="chart-source">Source&nbsp;: FPSQ Vigie&nbsp;; FMI WEO.</p>
+              <p class="chart-source">Source&nbsp;: {{ with $vigieSnapshot }}{{ .fiscal_chart.source }}{{ else }}WDI/FPSQ Vigie{{ end }}.</p>
               <span class="chart-watermark">erickilama.com</span>
             </footer>
           </figure>
@@ -325,123 +296,49 @@
       <h2 class="dash-section-title">Data Room</h2>
       <p class="dash-section-subtitle">Indicateurs FPSQ et s&eacute;ries macro&eacute;conomiques. Mises &agrave; jour automatiques depuis les bases publiques (FRED, FAOSTAT, OCDE-DAC, EIA, BIS) et sources propri&eacute;taires.</p>
       <div class="data-room-grid">
+        {{ with $vigieSnapshot }}
+        {{ range .data_room }}
         <div class="data-room-card">
           <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ GEOPOLITICAL</div>
-            <div class="data-room-card-name">GPR mondial</div>
+            <div class="data-room-card-eyebrow">{{ .eyebrow }}</div>
+            <div class="data-room-card-name">{{ .name }}</div>
           </div>
           <div class="data-room-card-values">
-            <div class="data-room-card-value">187.3</div>
-            <div class="data-room-card-delta kpi-delta--bad">&#9650; +12,4%</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
+            <div class="data-room-card-value">{{ .value }}</div>
+            <div class="data-room-card-delta kpi-delta--{{ .tone }}">{{ .delta }}</div>
+            <div class="data-room-card-timestamp">{{ .timestamp }} &middot; {{ .source }}</div>
           </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,25 20,22 40,18 60,20 80,12 100,8 120,10"/>
-          </svg>
         </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ MARKET</div>
-            <div class="data-room-card-name">Fragmentation commerce</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">0.73</div>
-            <div class="data-room-card-delta kpi-delta--bad">&#9650; +0.04</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,28 20,25 40,22 60,20 80,16 100,12 120,10"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ FISCAL</div>
-            <div class="data-room-card-name">Spread IT-DE 10Y</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">142 bps</div>
-            <div class="data-room-card-delta kpi-delta--good">&#9660; -8 bps</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,10 20,8 40,12 60,15 80,18 100,16 120,14"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ ENERGY</div>
-            <div class="data-room-card-name">Brent</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">84.2 $/b</div>
-            <div class="data-room-card-delta kpi-delta--neutral">&#9660; -2,1%</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,15 20,12 40,18 60,22 80,17 100,14 120,16"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ MARKET</div>
-            <div class="data-room-card-name">DXY</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">103.8</div>
-            <div class="data-room-card-delta kpi-delta--neutral">&#9660; -0,6%</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,18 20,15 40,12 60,10 80,13 100,16 120,14"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ DEVELOPMENT</div>
-            <div class="data-room-card-name">ODA/RNB DAC</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">0.37%</div>
-            <div class="data-room-card-delta kpi-delta--bad">&#9660; -0.01</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,12 20,13 40,15 60,16 80,18 100,20 120,20"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ MARKET</div>
-            <div class="data-room-card-name">VIX</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">18.7</div>
-            <div class="data-room-card-delta kpi-delta--bad">&#9650; +3,2%</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,20 20,18 40,22 60,15 80,10 100,13 120,8"/>
-          </svg>
-        </div>
-        <div class="data-room-card">
-          <div class="data-room-card-info">
-            <div class="data-room-card-eyebrow">FPSQ FX</div>
-            <div class="data-room-card-name">EUR/USD</div>
-          </div>
-          <div class="data-room-card-values">
-            <div class="data-room-card-value">1.0842</div>
-            <div class="data-room-card-delta kpi-delta--neutral">&#9650; +0,3%</div>
-            <div class="data-room-card-timestamp">{{ now.Format "2 Jan. 2006" }}</div>
-          </div>
-          <svg class="data-room-sparkline" viewBox="0 0 120 30">
-            <polyline fill="none" stroke="var(--brand-primary)" stroke-width="1.5" points="0,22 20,20 40,18 60,16 80,14 100,15 120,12"/>
-          </svg>
-        </div>
+        {{ end }}
+        {{ end }}
       </div>
       <div style="margin-top: var(--space-4);">
         <a class="action" href="{{ "data/" | relURL }}">Accéder à la Data Room &rarr;</a>
       </div>
     </section>
+
+    {{ with $vigieSnapshot }}
+    <!-- INSTITUTIONAL WATCH -->
+    <section class="dash-section" id="institutional-watch">
+      <div class="dash-section-header">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-text">Avril-Mai 2026</span></div>
+          <h2 class="dash-section-title">Veille institutionnelle</h2>
+          <p class="dash-section-subtitle">Publications et données officielles intégrées au rafraîchissement Vigie : banques centrales, institutions financières internationales et développement.</p>
+        </div>
+      </div>
+      <div class="vigie-analyses-grid">
+        {{ range .publication_watch }}
+        <article class="card-note">
+          <span class="card-note-tag">{{ .institution }}</span>
+          <h3 class="card-note-title"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+          <p class="card-note-summary">{{ .signal }}</p>
+          <div class="card-note-meta">{{ .date }}<span class="card-note-sep">&middot;</span>source officielle</div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
 
     <!-- ANALYSES VIGIE -->
     <section class="dash-section" id="analyses">
@@ -486,6 +383,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+{{ $vigieSnapshot := .Site.Data.vigie_snapshot }}
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 <script src="{{ "js/vigie-data-engine.js" | relURL }}"></script>
 
@@ -495,14 +393,9 @@
   var plotBg = 'rgba(0,0,0,0)';
   var gridColor = 'rgba(255,255,255,0.08)';
   var textColor = '#9AA0A6';
+  var VIGIE_SITE_SNAPSHOT = {{ $vigieSnapshot | jsonify | safeJS }};
 
-  var SCENARIOS = [
-    { name: 'Reform', color: '#228833', prob: 18, gdp: '+1.0%', fan_base: 1.0, fan_trend: -0.01 },
-    { name: 'Cooperative', color: '#4477AA', prob: 28, gdp: '+0.8%', fan_base: 0.8, fan_trend: -0.03 },
-    { name: 'Status Quo', color: '#CCBB44', prob: 22, gdp: '+1.3%', fan_base: 1.3, fan_trend: 0.02 },
-    { name: 'Fragmentation', color: '#EE6677', prob: 18, gdp: '-0.8%', fan_base: -0.8, fan_trend: -0.19 },
-    { name: 'Crisis', color: '#AA3377', prob: 8, gdp: '-1.8%', fan_base: -1.8, fan_trend: -0.29 }
-  ];
+  var SCENARIOS = (VIGIE_SITE_SNAPSHOT.scenarios && VIGIE_SITE_SNAPSHOT.scenarios.items) || [];
 
   function renderScenarioChart() {
     var el = document.getElementById('foresight-scenario-chart');
@@ -546,26 +439,15 @@
   function renderFPSQFiscal() {
     var el = document.getElementById('foresight-fpsq-fiscal');
     if (!el) return;
-    var countries = ['France','Germany','Italy','Japan','United States','United Kingdom','Canada'];
-    var colors = ['#0073e6','#46AF61','#E86850','#E8A848','#C48A00','#9B6DC8','#4AAA6A'];
-    var months = [];
-    for (var y = 2024; y <= 2026; y++) {
-      for (var m = 1; m <= 12; m++) {
-        if (y === 2026 && m > 4) break;
-        months.push(y + '-' + (m < 10 ? '0' : '') + m + '-01');
-      }
-    }
-    var traces = countries.map(function(c, ci) {
-      var base = [42, 28, 68, 75, 48, 38, 25][ci];
-      var vals = months.map(function(_, mi) {
-        return base + Math.sin(mi * 0.3 + ci) * 8 + (Math.random() - 0.5) * 4 + mi * 0.3;
-      });
-      return { x: months, y: vals, mode: 'lines', name: c, line: { color: colors[ci], width: 2 } };
+    var fiscal = VIGIE_SITE_SNAPSHOT.fiscal_chart || { series: [], y_title: '' };
+    var traces = (fiscal.series || []).map(function(s) {
+      return { x: s.dates, y: s.values, mode: 'lines+markers', name: s.name, line: { color: s.color, width: 2 } };
     });
+    if (!traces.length) return;
     Plotly.newPlot(el, traces, {
       paper_bgcolor: plotBg, plot_bgcolor: plotBg, margin: { l: 50, r: 20, t: 10, b: 40 },
       xaxis: { color: textColor, gridcolor: gridColor },
-      yaxis: { color: textColor, gridcolor: gridColor, title: { text: 'Debt Sustainability Score', font: { size: 11, color: textColor } } },
+      yaxis: { color: textColor, gridcolor: gridColor, title: { text: fiscal.y_title || 'Value', font: { size: 11, color: textColor } } },
       legend: { font: { color: textColor, size: 10 }, bgcolor: 'rgba(0,0,0,0)', orientation: 'h', x: 0, y: -0.2 },
       font: { family: 'Inter, sans-serif' }
     }, plotCfg);

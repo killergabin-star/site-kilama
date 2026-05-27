@@ -408,12 +408,13 @@ function seededRandom(seed) {
 //   2. Set VIGIE_DATA_MODE = 'live' below
 //   3. Vigie loads JSON, skips synthetic generation for that indicator
 //
-var VIGIE_DATA_MODE = 'synthetic'; // 'synthetic' | 'live' | 'hybrid'
-var VIGIE_DATA_PATH = 'data/fpsq/'; // relative to vigie.html
+var VIGIE_DATA_MODE = 'hybrid'; // 'synthetic' | 'live' | 'hybrid'
+var VIGIE_DATA_PATH = '/data/fpsq/'; // absolute Hugo static data path
 var DATA_START = '2020-01-01';
 var DATA_DAYS = 2277; // 2020-01-01 to 2026-03-26
 
 var INDICATOR_DATA = {};
+var INDICATOR_DATA_MODE = {};
 
 // Attempt to load real data for an indicator
 function loadRealData(indId) {
@@ -447,32 +448,41 @@ function initAllData(callback) {
     // Pure synthetic — immediate
     FPSQ_INDICATORS.forEach(function(ind) {
       INDICATOR_DATA[ind.id] = generateIndicatorData(ind);
+      INDICATOR_DATA_MODE[ind.id] = 'synthetic';
     });
     if (callback) callback();
-    return;
+    return Promise.resolve();
   }
 
   // Live or hybrid: try to load real data first
   var promises = FPSQ_INDICATORS.map(function(ind) {
     return loadRealData(ind.id).then(function(realData) {
       if (realData && VIGIE_DATA_MODE !== 'synthetic') {
-        INDICATOR_DATA[ind.id] = realData;
+        var mergedData = generateIndicatorData(ind);
+        Object.keys(realData).forEach(function(country) {
+          if (realData[country] && realData[country].dates && realData[country].values) {
+            mergedData[country] = realData[country];
+          }
+        });
+        INDICATOR_DATA[ind.id] = mergedData;
+        INDICATOR_DATA_MODE[ind.id] = 'partial-live';
         console.log('[Vigie] Loaded real data: ' + ind.id + ' (' + Object.keys(realData).length + ' countries)');
       } else {
         INDICATOR_DATA[ind.id] = generateIndicatorData(ind);
+        INDICATOR_DATA_MODE[ind.id] = 'synthetic';
         console.log('[Vigie] Synthetic data: ' + ind.id);
       }
     });
   });
 
-  Promise.all(promises).then(function() {
+  return Promise.all(promises).then(function() {
     console.log('[Vigie] Data pipeline ready. Mode: ' + VIGIE_DATA_MODE);
     if (callback) callback();
   });
 }
 
 // Initialize data immediately (synthetic mode is synchronous)
-initAllData();
+var VIGIE_DATA_READY = initAllData();
 
 // ============================================================
 // INDICATOR CARD GRID
@@ -511,11 +521,13 @@ function buildIndicatorGrid() {
     var sparkData = INDICATOR_DATA[ind.id][ind.countries[0]];
     var last60 = sparkData.values.slice(-60);
     var sparkSVG = createMiniSpark(last60, ind.colors[0]);
+    var badge = INDICATOR_DATA_MODE[ind.id] === 'synthetic' ? 'prototype' : ind.badge;
+    var badgeLabel = INDICATOR_DATA_MODE[ind.id] === 'synthetic' ? 'prototype' : ind.badge;
 
     card.innerHTML =
       '<div class="data-ind-header">' +
         '<div class="data-ind-title">' + ind.name + '</div>' +
-        '<span class="data-ind-badge ' + ind.badge + '">' + ind.badge + '</span>' +
+        '<span class="data-ind-badge ' + badge + '">' + badgeLabel + '</span>' +
       '</div>' +
       '<div class="data-ind-desc">' + ind.desc.substring(0, 120) + (ind.desc.length > 120 ? '...' : '') + '</div>' +
       '<div class="data-ind-stats">' + statsHTML + '</div>' +
@@ -1171,6 +1183,14 @@ function renderCountryComparison() {
 // INIT DATA TAB
 // ============================================================
 function initDataTab() {
+  if (VIGIE_DATA_READY && typeof VIGIE_DATA_READY.then === 'function') {
+    VIGIE_DATA_READY.then(initDataTabReady);
+    return;
+  }
+  initDataTabReady();
+}
+
+function initDataTabReady() {
   buildIndicatorGrid();
   renderDetailChart();
   renderHeatmap();

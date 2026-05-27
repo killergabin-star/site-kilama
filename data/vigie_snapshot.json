@@ -1,0 +1,487 @@
+{
+  "meta": {
+    "last_update": "2026-05-26",
+    "generated_at": "2026-05-27T00:15:01",
+    "snapshot_label": "26 mai 2026",
+    "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
+    "mode": "public_verified_plus_guarded_internal",
+    "note": "Les séries publiques sont mises à jour; les séries propriétaires/internes restent explicitement marquées prototype ou gated."
+  },
+  "sources": {
+    "gpr": {
+      "name": "Caldara-Iacoviello Geopolitical Risk Index",
+      "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
+      "latest_date": "2026-04-01"
+    },
+    "fred": {
+      "name": "FRED, Federal Reserve Bank of St. Louis",
+      "url": "https://fred.stlouisfed.org/",
+      "series": {
+        "brent": "DCOILBRENTEU",
+        "vix": "VIXCLS",
+        "dollar": "DTWEXBGS",
+        "eur_usd": "DEXUSEU",
+        "us_10y": "DGS10",
+        "us_2y": "DGS2",
+        "us_curve": "T10Y2Y",
+        "us_hy_oas": "BAMLH0A0HYM2",
+        "euro_hy_oas": "BAMLHE00EHYIOAS",
+        "de_10y": "IRLTLT01DEM156N",
+        "it_10y": "IRLTLT01ITM156N",
+        "fr_10y": "IRLTLT01FRM156N",
+        "es_10y": "IRLTLT01ESM156N",
+        "gr_10y": "IRLTLT01GRM156N"
+      }
+    },
+    "wdi": {
+      "name": "World Development Indicators",
+      "url": "https://datatopics.worldbank.org/world-development-indicators/release-note/apr-2026.html",
+      "release": "WDI Quarterly Update, 8 April 2026"
+    },
+    "world_bank_cmo": {
+      "name": "World Bank Commodity Markets Outlook, April 2026",
+      "url": "https://www.worldbank.org/en/research/commodity-markets"
+    },
+    "oecd_oda": {
+      "name": "OECD preliminary 2025 ODA data",
+      "url": "https://www.oecd.org/en/data/insights/data-explainers/2026/04/a-historic-decline-in-foreign-aid-preliminary-2025-oda-data.html"
+    },
+    "ecb": {
+      "name": "ECB monetary policy decision and Economic Bulletin",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260430~81b7179e6f.en.html"
+    },
+    "bis": {
+      "name": "BIS Data Portal and April-May 2026 publications",
+      "url": "https://data.bis.org/"
+    }
+  },
+  "ticker": {
+    "items": [
+      {
+        "symbol": "GPR",
+        "value": "230,8",
+        "delta": "▼ -29,4% m/m",
+        "class": "delta-bad",
+        "source": "Caldara-Iacoviello",
+        "vintage": "avr. 2026"
+      },
+      {
+        "symbol": "BRENT",
+        "value": "$116.73",
+        "delta": "▲ +18,4%",
+        "class": "delta-bad",
+        "source": "FRED DCOILBRENTEU",
+        "vintage": "2026-05-18"
+      },
+      {
+        "symbol": "DXY broad",
+        "value": "119,3",
+        "delta": "▲ +0,6%",
+        "class": "delta-neutral",
+        "source": "FRED DTWEXBGS",
+        "vintage": "2026-05-22"
+      },
+      {
+        "symbol": "VIX",
+        "value": "16,6",
+        "delta": "▼ -11,3%",
+        "class": "delta-good",
+        "source": "FRED VIXCLS",
+        "vintage": "2026-05-25"
+      },
+      {
+        "symbol": "US 10Y",
+        "value": "4,56%",
+        "delta": "▲ +26 bp",
+        "class": "delta-bad",
+        "source": "FRED DGS10",
+        "vintage": "2026-05-22"
+      },
+      {
+        "symbol": "IT-DE 10Y",
+        "value": "82bp",
+        "delta": "common 2026-03",
+        "class": "delta-neutral",
+        "source": "FRED/OECD",
+        "vintage": "2026-03-01"
+      },
+      {
+        "symbol": "APD DAC",
+        "value": "-23,1%",
+        "delta": "2025 prélim.",
+        "class": "delta-bad",
+        "source": "OCDE-DAC",
+        "vintage": "9 avr. 2026"
+      }
+    ]
+  },
+  "kpis": [
+    {
+      "label": "GPR Index",
+      "value": "230,8",
+      "delta": "▼ 96,2 pts",
+      "tone": "bad",
+      "context": "vs MA-12M (168,6)",
+      "source": "Caldara-Iacoviello · avr. 2026"
+    },
+    {
+      "label": "Brent",
+      "value": "$116.73",
+      "delta": "▲ +18,4%",
+      "tone": "bad",
+      "context": "vs 30j; source FRED au 2026-05-18",
+      "source": "FRED DCOILBRENTEU"
+    },
+    {
+      "label": "Spread IT-DE 10Y",
+      "value": "82",
+      "delta": "2026-03",
+      "tone": "neutral",
+      "context": "dernier mois commun FRED/OECD",
+      "source": "FRED OECD LTR"
+    },
+    {
+      "label": "APD DAC 2025",
+      "value": "−23,1%",
+      "delta": "174,3 Md$",
+      "tone": "bad",
+      "context": "ratio APD/RNB 0,26%, préliminaire",
+      "source": "OCDE-DAC · 9 avr. 2026"
+    }
+  ],
+  "data_room": [
+    {
+      "eyebrow": "FPSQ GEOPOLITICAL",
+      "name": "GPR mondial",
+      "value": "230,8",
+      "delta": "MA12 168,6",
+      "tone": "bad",
+      "timestamp": "avr. 2026",
+      "source": "Caldara-Iacoviello"
+    },
+    {
+      "eyebrow": "FPSQ ENERGY",
+      "name": "Brent",
+      "value": "116.73 $/b",
+      "delta": "▲ +18,4%",
+      "tone": "bad",
+      "timestamp": "2026-05-18",
+      "source": "FRED"
+    },
+    {
+      "eyebrow": "FPSQ MARKET",
+      "name": "DXY broad",
+      "value": "119,3",
+      "delta": "▲ +0,6%",
+      "tone": "neutral",
+      "timestamp": "2026-05-22",
+      "source": "FRED"
+    },
+    {
+      "eyebrow": "FPSQ MARKET",
+      "name": "VIX",
+      "value": "16,6",
+      "delta": "▼ -11,3%",
+      "tone": "good",
+      "timestamp": "2026-05-25",
+      "source": "FRED"
+    },
+    {
+      "eyebrow": "FPSQ FISCAL",
+      "name": "IT-DE 10Y",
+      "value": "82,3 bp",
+      "delta": "mois commun 2026-03",
+      "tone": "neutral",
+      "timestamp": "2026-03-01",
+      "source": "FRED/OECD"
+    },
+    {
+      "eyebrow": "FPSQ FX",
+      "name": "EUR/USD",
+      "value": "1.1603",
+      "delta": "▼ -0,9%",
+      "tone": "neutral",
+      "timestamp": "2026-05-22",
+      "source": "FRED"
+    },
+    {
+      "eyebrow": "FPSQ DEVELOPMENT",
+      "name": "ODA/RNB DAC",
+      "value": "0,26%",
+      "delta": "−23,1% réel",
+      "tone": "bad",
+      "timestamp": "2025 prélim.",
+      "source": "OCDE-DAC"
+    },
+    {
+      "eyebrow": "FPSQ CREDIT",
+      "name": "US HY OAS",
+      "value": "2,74 pp",
+      "delta": "-12 bp",
+      "tone": "good",
+      "timestamp": "2026-05-25",
+      "source": "FRED"
+    }
+  ],
+  "scenarios": {
+    "items": [
+      {
+        "name": "Reform",
+        "color": "#228833",
+        "prob": 19,
+        "gdp": "+1.0%",
+        "fan_base": 1.0,
+        "fan_trend": -0.01
+      },
+      {
+        "name": "Cooperative",
+        "color": "#4477AA",
+        "prob": 30,
+        "gdp": "+0.8%",
+        "fan_base": 0.8,
+        "fan_trend": -0.03
+      },
+      {
+        "name": "Status Quo",
+        "color": "#CCBB44",
+        "prob": 24,
+        "gdp": "+1.3%",
+        "fan_base": 1.3,
+        "fan_trend": 0.02
+      },
+      {
+        "name": "Fragmentation",
+        "color": "#EE6677",
+        "prob": 19,
+        "gdp": "-0.8%",
+        "fan_base": -0.8,
+        "fan_trend": -0.19
+      },
+      {
+        "name": "Crisis",
+        "color": "#AA3377",
+        "prob": 8,
+        "gdp": "-1.8%",
+        "fan_base": -1.8,
+        "fan_trend": -0.29
+      }
+    ],
+    "meta": {
+      "status": "ok",
+      "path": "/Volumes/T7 sharing/local-mac-offload/Users/killergabin/Documents/Prospective Strategique/code/fpsq/output/polycrisis_quantification_results.json",
+      "raw_probability_sum": 0.925,
+      "normalized_probability_sum": 100
+    }
+  },
+  "fiscal_chart": {
+    "title": "Croissance réelle G7 — WDI",
+    "subtitle": "Dernières observations WDI disponibles après la mise à jour du 8 avril 2026",
+    "source": "World Development Indicators · 2020-2024",
+    "y_title": "GDP growth (%)",
+    "series": [
+      {
+        "name": "France",
+        "color": "#0073e6",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -7.44,
+          6.88,
+          2.72,
+          1.44,
+          1.19
+        ]
+      },
+      {
+        "name": "Germany",
+        "color": "#46AF61",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -4.13,
+          3.91,
+          1.81,
+          -0.87,
+          -0.5
+        ]
+      },
+      {
+        "name": "Italy",
+        "color": "#E86850",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -8.87,
+          8.93,
+          4.82,
+          0.98,
+          0.69
+        ]
+      },
+      {
+        "name": "Japan",
+        "color": "#E8A848",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -4.17,
+          2.7,
+          0.94,
+          1.48,
+          0.1
+        ]
+      },
+      {
+        "name": "United States",
+        "color": "#C48A00",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -2.16,
+          6.06,
+          2.51,
+          2.89,
+          2.79
+        ]
+      },
+      {
+        "name": "United Kingdom",
+        "color": "#9B6DC8",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -10.05,
+          8.54,
+          5.15,
+          0.27,
+          1.13
+        ]
+      },
+      {
+        "name": "Canada",
+        "color": "#4AAA6A",
+        "dates": [
+          "2020-01-01",
+          "2021-01-01",
+          "2022-01-01",
+          "2023-01-01",
+          "2024-01-01"
+        ],
+        "values": [
+          -5.04,
+          5.95,
+          4.19,
+          1.53,
+          1.55
+        ]
+      }
+    ]
+  },
+  "public_spreads": {
+    "it_de": {
+      "date": "2026-03-01",
+      "value_bp": 82.3
+    },
+    "fr_de": {
+      "date": "2026-04-01",
+      "value_bp": 67.9
+    },
+    "es_de": {
+      "date": "2026-04-01",
+      "value_bp": 44.7
+    },
+    "gr_de": {
+      "date": "2026-04-01",
+      "value_bp": 78.4
+    }
+  },
+  "publication_watch": [
+    {
+      "institution": "ECB",
+      "date": "2026-04-30",
+      "title": "Monetary policy decisions",
+      "signal": "taux inchangés; risques inflation en hausse et croissance en baisse",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260430~81b7179e6f.en.html"
+    },
+    {
+      "institution": "ECB",
+      "date": "2026-05-15",
+      "title": "Economic Bulletin Issue 3, 2026",
+      "signal": "inflation euro area 3,0% en avril; énergie +10,9%",
+      "url": "https://www.ecb.europa.eu/press/economic-bulletin/html/index.en.html"
+    },
+    {
+      "institution": "World Bank",
+      "date": "2026-04-28",
+      "title": "Commodity Markets Outlook, April 2026",
+      "signal": "Brent 2026 forecast 86$/b baseline; upside scenario 115$/b",
+      "url": "https://www.worldbank.org/en/research/commodity-markets"
+    },
+    {
+      "institution": "BIS",
+      "date": "2026-04-22",
+      "title": "Investment funds' de facto currency risk exposure",
+      "signal": "FX hedge ratios and currency risk exposures for asset managers",
+      "url": "https://www.bis.org/publ/bisbull123.htm"
+    },
+    {
+      "institution": "BIS",
+      "date": "2026-04-29",
+      "title": "Shifting forces behind RMB internationalization",
+      "signal": "2025 Triennial Survey; banking links dominate RMB internationalisation",
+      "url": "https://www.bis.org/publ/work1345.htm"
+    }
+  ],
+  "audit_flags": [
+    {
+      "severity": "P0",
+      "status": "fixed_by_this_refresh",
+      "item": "Foresight hardcoded public ticker/KPI values replaced by data/vigie_snapshot.json"
+    },
+    {
+      "severity": "P0",
+      "status": "fixed_by_this_refresh",
+      "item": "Polycrisis scenario probabilities normalized to 100 after FPSQ raw sum 0.925"
+    },
+    {
+      "severity": "P0",
+      "status": "fixed_by_this_refresh",
+      "item": "Iran-Hormuz chart dates/values length mismatch corrected with refreshed GPR series"
+    },
+    {
+      "severity": "P1",
+      "status": "guarded",
+      "item": "Fragmentation, CDS and proprietary Bloomberg/JPM series are not promoted as live public data"
+    }
+  ]
+}
