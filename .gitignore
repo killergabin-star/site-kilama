@@ -36,6 +36,7 @@ Thumbs.db
 output/
 prototypes/
 site-bridge/
+tmp/
 
 # Claude
 .claude/
