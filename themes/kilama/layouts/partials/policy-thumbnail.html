@@ -1,14 +1,7 @@
 {{- $page := . -}}
 {{- $thumbPath := "" -}}
 
-{{/* 1. Custom thumbnail via frontmatter */}}
-{{- with $page.Params.thumbnail -}}
-  {{- with .custom_path -}}
-    {{- $thumbPath = . -}}
-  {{- end -}}
-{{- end -}}
-
-{{/* 2. Generated thumbnail manifest from editorial/thumbnails/build-thumbnails.mjs */}}
+{{/* 1. Generated thumbnail manifest from editorial/thumbnails/build-thumbnails.mjs */}}
 {{- if not $thumbPath -}}
   {{- with $page.Params.thumbnail -}}
     {{- with .resolved_path -}}
@@ -23,6 +16,18 @@
 {{- if not $thumbPath -}}
   {{- with index site.Data.policy_thumbnails $page.RelPermalink -}}
     {{- with .path -}}
+      {{- $candidate := replaceRE "^/" "" . -}}
+      {{- if fileExists (printf "static/%s" $candidate) -}}
+        {{- $thumbPath = $candidate -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 2. Custom thumbnail via frontmatter, kept as fallback for one-off assets. */}}
+{{- if not $thumbPath -}}
+  {{- with $page.Params.thumbnail -}}
+    {{- with .custom_path -}}
       {{- $candidate := replaceRE "^/" "" . -}}
       {{- if fileExists (printf "static/%s" $candidate) -}}
         {{- $thumbPath = $candidate -}}
