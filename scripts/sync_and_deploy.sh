@@ -14,9 +14,9 @@ echo "[$(date '+%Y-%m-%d %H:%M')] Site sync starting..."
 echo "→ Ingesting staging documents..."
 python3 scripts/ingest_staging.py 2>&1 | tail -5
 
-# 2. Update Vigie data (GPR + FPSQ scenarios)
-echo "→ Updating Vigie data..."
-python3 scripts/update_vigie_data.py 2>&1 | tail -5
+# 2. Refresh Vigie public snapshot + FPSQ hybrid data
+echo "→ Refreshing Vigie site snapshot..."
+python3 scripts/refresh_vigie_site_snapshot.py 2>&1 | tail -8
 
 # 2b. Regenerate trust page with live TLS fingerprint
 echo "→ Regenerating trust page..."

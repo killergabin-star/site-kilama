@@ -1,7 +1,7 @@
 {
   "meta": {
     "last_update": "2026-05-26",
-    "generated_at": "2026-05-27T00:15:01",
+    "generated_at": "2026-05-27T16:22:37",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -83,11 +83,11 @@
       },
       {
         "symbol": "VIX",
-        "value": "16,6",
-        "delta": "▼ -11,3%",
+        "value": "17,0",
+        "delta": "▼ -9,1%",
         "class": "delta-good",
         "source": "FRED VIXCLS",
-        "vintage": "2026-05-25"
+        "vintage": "2026-05-26"
       },
       {
         "symbol": "US 10Y",
@@ -180,10 +180,10 @@
     {
       "eyebrow": "FPSQ MARKET",
       "name": "VIX",
-      "value": "16,6",
-      "delta": "▼ -11,3%",
+      "value": "17,0",
+      "delta": "▼ -9,1%",
       "tone": "good",
-      "timestamp": "2026-05-25",
+      "timestamp": "2026-05-26",
       "source": "FRED"
     },
     {
@@ -216,10 +216,10 @@
     {
       "eyebrow": "FPSQ CREDIT",
       "name": "US HY OAS",
-      "value": "2,74 pp",
-      "delta": "-12 bp",
+      "value": "2,72 pp",
+      "delta": "-14 bp",
       "tone": "good",
-      "timestamp": "2026-05-25",
+      "timestamp": "2026-05-26",
       "source": "FRED"
     }
   ],

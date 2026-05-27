@@ -4,7 +4,7 @@
     "title": "Polycrisis Monitor",
     "subtitle": "European fiscal stress × geopolitical risk × trade fragmentation",
     "status": "active",
-    "last_update": "2026-05-27",
+    "last_update": "2026-05-26",
     "data_mode": "hybrid",
     "source_vintage": "GPR Apr 2026; FRED May 2026; FPSQ scenarios normalized"
   },
@@ -15,7 +15,7 @@
     "threshold": 168.6,
     "threshold_label": "1-year moving average",
     "text": "GPR Index elevated at <strong>230.8</strong> — above 12-month average (168.6). Fragmentation scenario probability is calibrated after FPSQ normalization.",
-    "timestamp": "2026-05-27T06:03:47+01:00"
+    "timestamp": "2026-05-27T16:22:37+02:00"
   },
   "sparklines": {
     "header": "Key Indicators",
@@ -75,7 +75,7 @@
     {
       "name": "Reform",
       "color": "#228833",
-      "prob": 18,
+      "prob": 19,
       "gdp": "+1.0%",
       "fan_base": 1.0,
       "fan_trend": -0.01
@@ -83,7 +83,7 @@
     {
       "name": "Cooperative",
       "color": "#4477AA",
-      "prob": 28,
+      "prob": 30,
       "gdp": "+0.8%",
       "fan_base": 0.8,
       "fan_trend": -0.03
@@ -91,7 +91,7 @@
     {
       "name": "Status Quo",
       "color": "#CCBB44",
-      "prob": 22,
+      "prob": 24,
       "gdp": "+1.3%",
       "fan_base": 1.3,
       "fan_trend": 0.02
@@ -99,7 +99,7 @@
     {
       "name": "Fragmentation",
       "color": "#EE6677",
-      "prob": 18,
+      "prob": 19,
       "gdp": "-0.8%",
       "fan_base": -0.8,
       "fan_trend": -0.19
@@ -121,6 +121,18 @@
     "latest_value": 230.8,
     "latest_label": "Apr 2026",
     "dates": [
+      "2010-01-01",
+      "2010-02-01",
+      "2010-03-01",
+      "2010-04-01",
+      "2010-05-01",
+      "2010-06-01",
+      "2010-07-01",
+      "2010-08-01",
+      "2010-09-01",
+      "2010-10-01",
+      "2010-11-01",
+      "2010-12-01",
       "2011-01-01",
       "2011-02-01",
       "2011-03-01",
@@ -307,6 +319,18 @@
       "2026-04-01"
     ],
     "values": [
+      91.6,
+      80.7,
+      74.1,
+      88.8,
+      89.0,
+      96.5,
+      79.4,
+      81.0,
+      71.2,
+      66.0,
+      94.7,
+      97.2,
       79.4,
       90.0,
       136.9,
