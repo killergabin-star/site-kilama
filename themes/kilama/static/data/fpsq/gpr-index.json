@@ -1,7 +1,7 @@
 {
   "meta": {
     "indicator_id": "gpr-index",
-    "last_update": "2026-05-26",
+    "last_update": "2026-05-28",
     "source": "Caldara-Iacoviello GPR, monthly global index",
     "unit": "index",
     "frequency": "monthly",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_update": "2026-05-26",
-    "generated_at": "2026-05-27T16:22:37",
+    "last_update": "2026-05-28",
+    "generated_at": "2026-05-28T06:10:20",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -91,11 +91,11 @@
       },
       {
         "symbol": "US 10Y",
-        "value": "4,56%",
+        "value": "4,50%",
         "delta": "▲ +26 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-05-22"
+        "vintage": "2026-05-26"
       },
       {
         "symbol": "IT-DE 10Y",

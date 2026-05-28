@@ -1,0 +1,146 @@
+{
+  "polycrisis_channels_converge": {
+    "semantic_family": "polycrisis",
+    "style_register": "policy-dark",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Separate crisis channels converge into one systemic pressure point.",
+    "subject": "energy, trade and finance channels drawn as distinct pale routes converging into one red stress node",
+    "use_when": ["polycrisis", "convergence", "canaux", "stabilisateurs", "stabilizers", "crises séparées", "crisis channels"]
+  },
+  "chokepoint_to_macro_shock": {
+    "semantic_family": "energy-geopolitics",
+    "style_register": "policy-dark",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A maritime chokepoint becomes a transmission belt from energy risk to food, fiscal and financial stress.",
+    "subject": "a narrow strait blocked by a red gate, with pale tanker routes turning into a grain field and a price line",
+    "use_when": ["Ormuz", "Hormuz", "choc Ormuz", "sécurité alimentaire", "securite alimentaire", "oil", "Brent", "food security", "maritime chokepoint"]
+  },
+  "maritime_rulemaking_gate": {
+    "semantic_family": "maritime-law-geopolitics",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A chokepoint is no longer only blocked; it is turned into a parallel legal regime.",
+    "subject": "a narrow sea passage crossed by a red toll gate and a severe legal arch, with tanker silhouettes waiting outside",
+    "use_when": ["péage", "peage", "régime maritime", "regime maritime", "droit de la mer", "anti-péage", "anti-peage", "mission navale"]
+  },
+  "africa_policy_scaffold": {
+    "semantic_family": "africa-development-policy",
+    "style_register": "economist-light",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A development partnership is being staged, but the load-bearing structure remains incomplete.",
+    "subject": "an African continent silhouette held by scaffolding, one red missing support, and a small diplomatic table below",
+    "use_when": ["Africa Forward", "Nairobi", "cohérence française", "coherence francaise", "Macron", "Ruto"]
+  },
+  "institutional_coordination_table": {
+    "semantic_family": "g7-multilateral",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A coordination table is present, but the agenda is unstable and one seat is misaligned.",
+    "subject": "seven austere chairs around a round table, one displaced, with a red agenda disk at the centre",
+    "use_when": ["G7", "Évian", "multilateral", "coordination", "summit", "Spring Meetings", "Trump-Xi", "Pékin", "Beijing", "Thucydide"]
+  },
+  "structural_adjustment_trial": {
+    "semantic_family": "development-controversy",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Structural adjustment is put on trial, with evidence and counter-evidence weighing against each other.",
+    "subject": "a courtroom scale weighing a policy document against a data ledger, with one red unresolved verdict mark",
+    "use_when": ["Hickel", "ajustement structurel", "structural adjustment", "procès", "proces", "libertariens"]
+  },
+  "shrinking_public_good": {
+    "semantic_family": "development-finance",
+    "style_register": "economist-light",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Public-goods demand expands while official financing narrows.",
+    "subject": "public goods represented by a bridge, clinic or seedling while coins shrink along a red descending path",
+    "use_when": ["APD", "aid", "development finance", "donor", "MDB", "development banks", "banques de développement", "banques publiques de développement"]
+  },
+  "debt_architecture_imbalance": {
+    "semantic_family": "financial-architecture",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "The financial architecture still stands, but its columns carry unequal loads.",
+    "subject": "a severe institutional facade with columns under asymmetric weight and a red stress line at the base",
+    "use_when": ["debt", "borrower", "IFI", "architecture financière", "dollar", "yuan", "reserve currency", "Gopinath", "Pettis", "déficit courant", "deficit courant"]
+  },
+  "blocked_route_redirected_flow": {
+    "semantic_family": "trade-sanctions",
+    "style_register": "policy-dark",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A blocked official route creates shadow routes and redistributes costs.",
+    "subject": "a trade route stopped by a red barrier while pale bypass routes curve around ports and factories",
+    "use_when": ["sanctions", "sanctionnatoire", "tariffs", "trade war", "China shock", "commerce", "Section 122", "protectionnisme", "tarifaire"]
+  },
+  "sme_margin_squeeze": {
+    "semantic_family": "geoeconomic-firm-transmission",
+    "style_register": "ft-data-visual",
+    "visual_mode": "data-metaphor",
+    "visual_brief": "Small firms absorb geopolitical shocks in margins because prices and investment cannot adjust freely.",
+    "subject": "small factory blocks and margin bars squeezed by a red clamp, with input costs entering and investment blocked",
+    "use_when": ["PME", "SME", "fragilité par la base", "fragilite par la base", "marges", "margins", "entreprises", "firms"]
+  },
+  "fiscal_space_vs_security": {
+    "semantic_family": "defense-industrial-policy",
+    "style_register": "ft-data-visual",
+    "visual_mode": "data-metaphor",
+    "visual_brief": "Security spending rises faster than fiscal and industrial capacity.",
+    "subject": "a scale weighing defence bars against factory capacity and a narrow budget column",
+    "use_when": ["ReArm", "defence", "defense", "SAFE", "nuclear", "rearmament"]
+  },
+  "fragility_last_lever": {
+    "semantic_family": "state-fragility",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "An external actor has one remaining lever in a fragile system.",
+    "subject": "a thin red lever beside a fractured map or institutional object, with the rest of the scene almost still",
+    "use_when": ["Haïti", "Haiti", "Soudan", "Sahel", "AES", "Camara", "fragility"]
+  },
+  "migration_cohesion_pressure": {
+    "semantic_family": "europe-social-cohesion",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Migration pressure and political cohesion pull on the same European fabric.",
+    "subject": "a taut fabric map of Europe held by two opposing forces, with one red tear beginning at the centre",
+    "use_when": ["migration", "cohésion", "cohesion", "asile", "frontière", "frontiere"]
+  },
+  "infrastructure_corridor": {
+    "semantic_family": "africa-infrastructure",
+    "style_register": "economist-light",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A transport corridor becomes a geopolitical spine rather than a neutral infrastructure project.",
+    "subject": "a rail corridor crossing a simplified African map, with ports, one red bottleneck and a pale trade route",
+    "use_when": ["Lobito", "rail", "routes", "corridor", "ZLECAf", "transport"]
+  },
+  "transition_under_constraint": {
+    "semantic_family": "energy-transition",
+    "style_register": "economist-light",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Energy transition options are balanced on a constrained geopolitical base.",
+    "subject": "a wind turbine, fuel pipe and grid line balanced on a small red fulcrum",
+    "use_when": ["JETP", "energy transition", "climate", "green deal", "LNG", "nuclear", "transition énergétique"]
+  },
+  "imperial_overreach_myth": {
+    "semantic_family": "political-order",
+    "style_register": "policy-dark",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "Imperial ambition is built as architecture, but the structure is already unstable.",
+    "subject": "a severe ziggurat or monumental tower cracking along a red fault line",
+    "use_when": ["Babylon", "Babylone", "Nabuchodonosor", "Trump II", "démesure"]
+  },
+  "sovereign_recours_symbol": {
+    "semantic_family": "institutional-sovereignty",
+    "style_register": "foreign-affairs-symbolic",
+    "visual_mode": "conceptual-illustration",
+    "visual_brief": "A sovereign institution keeps one legal-religious lever in reserve.",
+    "subject": "a severe institutional doorway, a small key and a red thread connecting it to a distant public square",
+    "use_when": ["Non expedit", "Vatican", "recours souverain", "souverain", "Saint-Siège", "Saint-Siege"]
+  },
+  "macro_path_break": {
+    "semantic_family": "macro-fragmentation",
+    "style_register": "ft-data-visual",
+    "visual_mode": "data-metaphor",
+    "visual_brief": "A smooth baseline path breaks into a fragmented macro trajectory.",
+    "subject": "a pale expected growth line interrupted by a red fracture and branching lower paths",
+    "use_when": ["WEO", "soft landing", "Spring Meetings", "growth", "croissance"]
+  }
+}
