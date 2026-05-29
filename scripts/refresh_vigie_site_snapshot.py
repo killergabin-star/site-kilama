@@ -15,6 +15,8 @@ import json
 import math
 import os
 import ssl
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -35,9 +37,27 @@ WDI_URL = (
 SSL_CONTEXT = ssl._create_unverified_context()
 
 
-def fetch_bytes(url: str) -> bytes:
-    with urllib.request.urlopen(url, context=SSL_CONTEXT, timeout=45) as resp:
-        return resp.read()
+def fetch_bytes(url: str, retries: int = 4, backoff: float = 5.0) -> bytes:
+    """Fetch a URL, retrying on transient failures (timeouts, 5xx, conn errors).
+
+    External providers (FRED especially) intermittently return 502/timeout;
+    a single failure used to abort the whole snapshot refresh and let the
+    deploy proceed with stale data. Retry with linear backoff instead.
+    """
+    last_err: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(url, context=SSL_CONTEXT, timeout=45) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            last_err = exc
+            if exc.code < 500:  # 4xx is not transient — fail fast
+                raise
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            last_err = exc
+        if attempt < retries:
+            time.sleep(backoff * attempt)
+    raise RuntimeError(f"fetch failed after {retries} attempts: {url} ({last_err})")
 
 
 def fetch_json(url: str):
