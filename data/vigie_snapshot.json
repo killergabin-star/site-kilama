@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_update": "2026-05-28",
-    "generated_at": "2026-05-28T06:10:20",
+    "last_update": "2026-05-30",
+    "generated_at": "2026-05-30T06:03:25",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -67,11 +67,11 @@
       },
       {
         "symbol": "BRENT",
-        "value": "$116.73",
-        "delta": "▲ +18,4%",
+        "value": "$102.75",
+        "delta": "▼ -8,1%",
         "class": "delta-bad",
         "source": "FRED DCOILBRENTEU",
-        "vintage": "2026-05-18"
+        "vintage": "2026-05-26"
       },
       {
         "symbol": "DXY broad",
@@ -83,19 +83,19 @@
       },
       {
         "symbol": "VIX",
-        "value": "17,0",
-        "delta": "▼ -9,1%",
+        "value": "15,7",
+        "delta": "▼ -11,7%",
         "class": "delta-good",
         "source": "FRED VIXCLS",
-        "vintage": "2026-05-26"
+        "vintage": "2026-05-28"
       },
       {
         "symbol": "US 10Y",
-        "value": "4,50%",
+        "value": "4,45%",
         "delta": "▲ +26 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-05-26"
+        "vintage": "2026-05-28"
       },
       {
         "symbol": "IT-DE 10Y",
@@ -126,10 +126,10 @@
     },
     {
       "label": "Brent",
-      "value": "$116.73",
-      "delta": "▲ +18,4%",
+      "value": "$102.75",
+      "delta": "▼ -8,1%",
       "tone": "bad",
-      "context": "vs 30j; source FRED au 2026-05-18",
+      "context": "vs 30j; source FRED au 2026-05-26",
       "source": "FRED DCOILBRENTEU"
     },
     {
@@ -162,10 +162,10 @@
     {
       "eyebrow": "FPSQ ENERGY",
       "name": "Brent",
-      "value": "116.73 $/b",
-      "delta": "▲ +18,4%",
+      "value": "102.75 $/b",
+      "delta": "▼ -8,1%",
       "tone": "bad",
-      "timestamp": "2026-05-18",
+      "timestamp": "2026-05-26",
       "source": "FRED"
     },
     {
@@ -180,10 +180,10 @@
     {
       "eyebrow": "FPSQ MARKET",
       "name": "VIX",
-      "value": "17,0",
-      "delta": "▼ -9,1%",
+      "value": "15,7",
+      "delta": "▼ -11,7%",
       "tone": "good",
-      "timestamp": "2026-05-26",
+      "timestamp": "2026-05-28",
       "source": "FRED"
     },
     {
@@ -217,9 +217,9 @@
       "eyebrow": "FPSQ CREDIT",
       "name": "US HY OAS",
       "value": "2,72 pp",
-      "delta": "-14 bp",
+      "delta": "-13 bp",
       "tone": "good",
-      "timestamp": "2026-05-26",
+      "timestamp": "2026-05-28",
       "source": "FRED"
     }
   ],
