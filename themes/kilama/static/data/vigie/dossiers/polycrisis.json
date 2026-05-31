@@ -4,7 +4,7 @@
     "title": "Polycrisis Monitor",
     "subtitle": "European fiscal stress × geopolitical risk × trade fragmentation",
     "status": "active",
-    "last_update": "2026-05-30",
+    "last_update": "2026-05-31",
     "data_mode": "hybrid",
     "source_vintage": "GPR Apr 2026; FRED May 2026; FPSQ scenarios normalized"
   },
@@ -15,7 +15,7 @@
     "threshold": 168.6,
     "threshold_label": "1-year moving average",
     "text": "GPR Index elevated at <strong>230.8</strong> — above 12-month average (168.6). Fragmentation scenario probability is calibrated after FPSQ normalization.",
-    "timestamp": "2026-05-30T06:03:25+02:00"
+    "timestamp": "2026-05-31T06:04:14+02:00"
   },
   "sparklines": {
     "header": "Key Indicators",
