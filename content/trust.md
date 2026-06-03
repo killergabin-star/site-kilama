@@ -21,16 +21,16 @@ Cette vérification est indépendante du navigateur et de l'appareil utilisés.
 |---|---|
 | Nom commun | `erickilama.com` |
 | Noms alternatifs | `erickilama.com`, `www.erickilama.com` |
-| Autorité émettrice | C=US, O=Let's Encrypt, CN=R13 |
+| Autorité émettrice | C=US, O=Let's Encrypt, CN=YR2 |
 | Racine de confiance | ISRG Root X1 (Internet Security Research Group) |
-| Valide du | Apr  3 04:45:32 2026 GMT |
-| Valide jusqu'au | Jul  2 04:45:31 2026 GMT |
-| Numéro de série | `061D58388DDA11E6DE1D58FD9979A5DB156A` |
-| Empreinte SHA-256 | `E4:D4:6D:AA:AF:0C:DA:49:C0:8C:57:6D:5D:11:71:5D:BD:0E:3D:D8:D5:80:17:15:4F:E0:BD:0C:8E:80:D6:64` |
-| Empreinte SHA-1 | `7C:4B:36:DB:FD:10:72:D6:9A:90:6E:A4:D2:A4:DB:8D:67:63:3D:97` |
+| Valide du | Jun  2 05:11:52 2026 GMT |
+| Valide jusqu'au | Aug 31 05:11:51 2026 GMT |
+| Numéro de série | `0693B34CB93028D839C7E8A5EC128D0EB582` |
+| Empreinte SHA-256 | `63:40:0A:80:20:73:04:31:D7:AE:C0:96:EF:09:0A:22:C3:DC:C1:77:F7:61:23:CB:A7:1B:3E:2E:01:A5:EC:EF` |
+| Empreinte SHA-1 | `91:E7:E7:C7:3E:E9:35:9B:12:27:D3:6C:1C:15:0C:02:DC:7B:88:CA` |
 | Pin SPKI (SHA-256, base64) | `DQc7m3O0sO4W4/WA5SHHtseqIKSKdkp1jhsx3/UEPZA=` |
 
-**Généré automatiquement le** : 2026-06-01 04:06 UTC
+**Généré automatiquement le** : 2026-06-03 04:20 UTC
 
 Le certificat est renouvelé par l'infrastructure GitHub Pages tous les 60 à 90 jours ; les empreintes changent à chaque renouvellement. Pour une vérification en temps réel et indépendante, consultez les journaux publics de Certificate Transparency :
 
