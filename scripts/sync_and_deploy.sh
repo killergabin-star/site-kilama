@@ -13,10 +13,24 @@ echo "[$(date '+%Y-%m-%d %H:%M')] Site sync starting..."
 # 1. Ingest new staging documents
 echo "→ Ingesting staging documents..."
 python3 scripts/ingest_staging.py 2>&1 | tail -5
+INGEST_RC=${PIPESTATUS[0]}
+if [ "$INGEST_RC" -ne 0 ]; then
+    echo "  ⚠ STAGING INGEST FAILED (exit $INGEST_RC) — new staging docs may be missing from this deploy."
+fi
 
 # 2. Refresh Vigie public snapshot + FPSQ hybrid data
+# Non-fatal but LOUD: an external-source outage (e.g. FRED fredgraph.csv timing
+# out) must not silently ship a stale snapshot under a "complete" banner.
+# tail masks the python exit code, so read it from PIPESTATUS, not $?.
 echo "→ Refreshing Vigie site snapshot..."
 python3 scripts/refresh_vigie_site_snapshot.py 2>&1 | tail -8
+VIGIE_RC=${PIPESTATUS[0]}
+if [ "$VIGIE_RC" -ne 0 ]; then
+    VIGIE_STALE=1
+    PREV_SNAP=$(date -r data/vigie_snapshot.json '+%Y-%m-%d %H:%M' 2>/dev/null || echo "unknown")
+    echo "  ⚠ VIGIE REFRESH FAILED (exit $VIGIE_RC) — external data source unreachable."
+    echo "  ⚠ Deploying PREVIOUS snapshot from ${PREV_SNAP}. Re-run when the source is back."
+fi
 
 # 2b. Regenerate trust page with live TLS fingerprint
 echo "→ Regenerating trust page..."
@@ -63,4 +77,8 @@ git remote add origin https://github.com/killergabin-star/site-kilama.git
 git push -f origin gh-pages 2>&1 | tail -3
 rm -rf "$TMPDIR"
 
-echo "[$(date '+%Y-%m-%d %H:%M')] Site sync complete. Live at: https://erickilama.com/"
+if [ "${VIGIE_STALE:-0}" -eq 1 ]; then
+    echo "[$(date '+%Y-%m-%d %H:%M')] Site deployed, but ⚠ VIGIE DATA WAS NOT REFRESHED (external source down). Live snapshot is from a previous run — re-run this script when the source is reachable. Live at: https://erickilama.com/"
+else
+    echo "[$(date '+%Y-%m-%d %H:%M')] Site sync complete. Live at: https://erickilama.com/"
+fi
