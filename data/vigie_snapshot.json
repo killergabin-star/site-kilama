@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_update": "2026-06-01",
-    "generated_at": "2026-06-01T06:06:35",
+    "last_update": "2026-06-15",
+    "generated_at": "2026-06-15T17:02:52",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -11,7 +11,7 @@
     "gpr": {
       "name": "Caldara-Iacoviello Geopolitical Risk Index",
       "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
-      "latest_date": "2026-04-01"
+      "latest_date": "2026-05-01"
     },
     "fred": {
       "name": "FRED, Federal Reserve Bank of St. Louis",
@@ -59,35 +59,35 @@
     "items": [
       {
         "symbol": "GPR",
-        "value": "230,8",
-        "delta": "▼ -29,4% m/m",
+        "value": "184,2",
+        "delta": "▼ -44,1% m/m",
         "class": "delta-bad",
         "source": "Caldara-Iacoviello",
         "vintage": "avr. 2026"
       },
       {
         "symbol": "BRENT",
-        "value": "$102.75",
-        "delta": "▼ -8,1%",
+        "value": "$97.46",
+        "delta": "▼ -5,8%",
         "class": "delta-bad",
         "source": "FRED DCOILBRENTEU",
-        "vintage": "2026-05-26"
+        "vintage": "2026-06-08"
       },
       {
         "symbol": "DXY broad",
-        "value": "119,3",
-        "delta": "▲ +0,6%",
+        "value": "120,1",
+        "delta": "▲ +1,7%",
         "class": "delta-neutral",
         "source": "FRED DTWEXBGS",
-        "vintage": "2026-05-22"
+        "vintage": "2026-06-05"
       },
       {
         "symbol": "VIX",
-        "value": "15,7",
-        "delta": "▼ -11,7%",
+        "value": "17,7",
+        "delta": "▼ -1,1%",
         "class": "delta-good",
         "source": "FRED VIXCLS",
-        "vintage": "2026-05-28"
+        "vintage": "2026-06-12"
       },
       {
         "symbol": "US 10Y",
@@ -95,7 +95,7 @@
         "delta": "▲ +26 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-05-28"
+        "vintage": "2026-06-11"
       },
       {
         "symbol": "IT-DE 10Y",
@@ -118,18 +118,18 @@
   "kpis": [
     {
       "label": "GPR Index",
-      "value": "230,8",
-      "delta": "▼ 96,2 pts",
+      "value": "184,2",
+      "delta": "▼ 145,5 pts",
       "tone": "bad",
-      "context": "vs MA-12M (168,6)",
+      "context": "vs MA-12M (172,0)",
       "source": "Caldara-Iacoviello · avr. 2026"
     },
     {
       "label": "Brent",
-      "value": "$102.75",
-      "delta": "▼ -8,1%",
+      "value": "$97.46",
+      "delta": "▼ -5,8%",
       "tone": "bad",
-      "context": "vs 30j; source FRED au 2026-05-26",
+      "context": "vs 30j; source FRED au 2026-06-08",
       "source": "FRED DCOILBRENTEU"
     },
     {
@@ -153,8 +153,8 @@
     {
       "eyebrow": "FPSQ GEOPOLITICAL",
       "name": "GPR mondial",
-      "value": "230,8",
-      "delta": "MA12 168,6",
+      "value": "184,2",
+      "delta": "MA12 172,0",
       "tone": "bad",
       "timestamp": "avr. 2026",
       "source": "Caldara-Iacoviello"
@@ -162,28 +162,28 @@
     {
       "eyebrow": "FPSQ ENERGY",
       "name": "Brent",
-      "value": "102.75 $/b",
-      "delta": "▼ -8,1%",
+      "value": "97.46 $/b",
+      "delta": "▼ -5,8%",
       "tone": "bad",
-      "timestamp": "2026-05-26",
+      "timestamp": "2026-06-08",
       "source": "FRED"
     },
     {
       "eyebrow": "FPSQ MARKET",
       "name": "DXY broad",
-      "value": "119,3",
-      "delta": "▲ +0,6%",
+      "value": "120,1",
+      "delta": "▲ +1,7%",
       "tone": "neutral",
-      "timestamp": "2026-05-22",
+      "timestamp": "2026-06-05",
       "source": "FRED"
     },
     {
       "eyebrow": "FPSQ MARKET",
       "name": "VIX",
-      "value": "15,7",
-      "delta": "▼ -11,7%",
+      "value": "17,7",
+      "delta": "▼ -1,1%",
       "tone": "good",
-      "timestamp": "2026-05-28",
+      "timestamp": "2026-06-12",
       "source": "FRED"
     },
     {
@@ -198,10 +198,10 @@
     {
       "eyebrow": "FPSQ FX",
       "name": "EUR/USD",
-      "value": "1.1603",
-      "delta": "▼ -0,9%",
+      "value": "1.1533",
+      "delta": "▼ -1,9%",
       "tone": "neutral",
-      "timestamp": "2026-05-22",
+      "timestamp": "2026-06-05",
       "source": "FRED"
     },
     {
@@ -216,10 +216,10 @@
     {
       "eyebrow": "FPSQ CREDIT",
       "name": "US HY OAS",
-      "value": "2,72 pp",
-      "delta": "-13 bp",
+      "value": "2,71 pp",
+      "delta": "-11 bp",
       "tone": "good",
-      "timestamp": "2026-05-28",
+      "timestamp": "2026-06-12",
       "source": "FRED"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "meta": {
     "indicator_id": "sovereign-spreads",
-    "last_update": "2026-06-01",
+    "last_update": "2026-06-15",
     "source": "FRED/OECD long-term government bond yields, spread vs Germany",
     "unit": "bp",
     "frequency": "monthly",
