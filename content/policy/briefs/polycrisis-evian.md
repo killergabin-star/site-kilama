@@ -149,6 +149,10 @@ La présidence française dispose de trois atouts. La crédibilité diplomatique
 
 La trajectoire optimale est celle des résultats limités mais réels. Un mécanisme de seuils automatiques, un moratoire tarifaire conditionnel, un paquet humanitaire pour le Soudan — trois décisions concrètes, calibrées sur ce qui est politiquement atteignable, suffisantes pour réduire la probabilité de l'Embrasement sans prétendre déclencher le Sursaut. Le rapport intégrateur fournit le cadre analytique et les seuils quantifiés. La décision politique reste entière. Mais la fenêtre se ferme : entre Évian et le *cliff* du 24 juillet, il reste six semaines.
 
+## Actualisation — juin 2026
+
+Le cadrage de ce brief — une crise dont la spécificité tient à la *weaponisation* intentionnelle de l'interdépendance depuis un nœud causal unique — trouve une confirmation directe dans les travaux qui structurent désormais le débat d'Évian. Le mémo des économistes du G7 remis à la présidence française (Chong-En Bai, Gita Gopinath, Hélène Rey, Axel Weber, mars 2026) range la concurrence prédatrice, la dérégulation et les tendances protectionnistes parmi les sept déséquilibres qui menacent la stabilité mondiale, et conclut qu'aucun ne se corrige par l'unilatéralisme. En parallèle, Brad Setser a consacré une analyse explicite à la « weaponisation de l'interdépendance » (mai 2026). La lecture systémique proposée ici n'est donc plus marginale : elle est devenue un cadre de référence du sommet. Les scénarios chiffrés de ce brief relèvent, eux, d'un exercice de quantification probabiliste propre : ils éclairent les ordres de grandeur, ils ne se substituent pas aux faits.
+
 ---
 
 ### Notes
