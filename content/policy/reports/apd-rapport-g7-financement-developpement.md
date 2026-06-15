@@ -12,6 +12,9 @@ summary: "Rapport long de référence pour la présidence française du G7 2026.
 status: ready
 draft: false
 theme: development
+cover_image: /thumbnails/policy/covers/reports-apd-rapport-g7-financement-developpement.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/reports-apd-rapport-g7-financement-developpement.png
 ---
 
 **Rapport long de référence — Présidence française du G7 2026, filière Finances (deuxième priorité : « Redéfinir les partenariats avec les pays en développement »).**

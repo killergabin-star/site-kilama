@@ -14,6 +14,9 @@ status: ready
 draft: false
 theme: g7
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-ce-que-la-france-peut-porter-a-evian.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-ce-que-la-france-peut-porter-a-evian.png
 ---
 
 Le sommet d'Évian s'est ouvert sur un paradoxe : la présidence française inscrit la refonte des partenariats de développement comme deuxième priorité de sa filière Finances, au moment où l'aide publique au développement vient de subir sa plus forte chute jamais enregistrée. Une fois ce constat posé, reste la question que la France ne pourra pas esquiver : que peut-elle porter qui ne soit pas un communiqué de plus ? Ce qui suit propose quatre réponses, soumises à un test unique — non pas « combien le G7 promet-il ? », mais « ce qu'il annonce sera-t-il, dans six mois, vérifiable qu'il a été tenu ? ». Ce test élimine d'emblée la déclaration sans suite ; il favorise le mécanisme, l'engagement contractuel, la responsabilité nommée.

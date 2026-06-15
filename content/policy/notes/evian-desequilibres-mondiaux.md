@@ -14,6 +14,9 @@ status: ready
 draft: false
 theme: g7
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-evian-desequilibres-mondiaux.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-evian-desequilibres-mondiaux.png
 ---
 
 # Évian et les déséquilibres mondiaux : le diagnostic juste, la cible à ne pas manquer

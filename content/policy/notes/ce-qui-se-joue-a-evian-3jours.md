@@ -14,6 +14,9 @@ status: ready
 draft: false
 theme: g7
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-ce-qui-se-joue-a-evian-3jours.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-ce-qui-se-joue-a-evian-3jours.png
 ---
 
 Le sommet du G7 s'ouvre à Évian pour trois jours, sans communiqué unique — et ce n'est pas un accident. Pour la deuxième année consécutive — après Kananaskis en 2025 — les Sept renoncent à un texte commun au profit de déclarations thématiques. Le format n'est pas un détail de procédure : il dit l'état d'un club qui peine à parler d'une seule voix, et il déplace la question. On ne jugera pas Évian à un communiqué global, mais à ce que chaque déclaration engage réellement — et à ce que la présidence française parvient à y inscrire.

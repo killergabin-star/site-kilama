@@ -14,6 +14,9 @@ status: ready
 draft: false
 theme: g7
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-ce-qui-se-joue-a-evian.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-ce-qui-se-joue-a-evian.png
 ---
 
 Le sommet du G7 d'Évian s'ouvre le 15 juin sur un paradoxe que trois faits suffisent à poser. La présidence française a inscrit la **réforme des partenariats de développement** comme deuxième priorité de sa filière Finances — l'ambition affichée d'un passage « de l'assistance au partenariat ». Au même moment, l'aide publique au développement vient de subir **sa plus forte chute jamais enregistrée**. Et les propres économistes mandatés par la présidence rangent le « retrait de la solidarité internationale » parmi les déséquilibres qui menacent la stabilité mondiale. Ces trois faits ne se contredisent pas : ils dessinent le vrai enjeu d'Évian. Le débat n'y portera pas sur les volumes d'aide. Il portera sur la crédibilité d'un système de financement du développement que ni les volumes ni les annonces ne stabilisent plus.

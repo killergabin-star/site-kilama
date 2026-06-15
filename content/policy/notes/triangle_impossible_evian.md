@@ -17,8 +17,9 @@ summary: 'La présidence française du G7 repose sur trois piliers affichés par
 status: ready
 draft: false
 theme: g7
+cover_image: /thumbnails/policy/covers/notes-triangle-impossible-evian.png
 thumbnail:
-  resolved_path: /thumbnails/categories/g7-multilateral.svg
+  resolved_path: /thumbnails/policy/covers/notes-triangle-impossible-evian.png
 ---
 
 ### Contexte
