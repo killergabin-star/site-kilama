@@ -699,6 +699,45 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
+         DOSSIER SPÉCIAL — G7 Évian 2026 (semaine du sommet, 15-17 juin)
+         ══════════════════════════════════════════════════════ -->
+    <div class="container">
+      {{ $evianPages := where (where .Site.RegularPages "Section" "policy") ".Params.theme" "g7" }}
+      {{ if gt (len $evianPages) 0 }}
+      <section id="dossier-evian" class="policy-dossier dossier-banner" data-watermark="ÉVIAN">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">DOSSIER SPÉCIAL &middot; G7 ÉVIAN &middot; 15-17 JUIN</span>
+        </div>
+        <h2>G7 d'Évian 2026 : de l'aide au partenariat, ce qui se joue</h2>
+        <p class="article-subtitle">Le sommet du G7 d'Évian (15-17 juin 2026) s'ouvre sur un paradoxe : la présidence française érige la réforme des partenariats de développement en priorité au moment précis où l'aide publique au développement subit sa plus forte chute jamais enregistrée. Ce dossier rassemble les analyses de cadrage — déséquilibres mondiaux, finance du développement, ce que la France peut porter — pour offrir aux décideurs une grille de lecture du sommet, déclaration thématique par déclaration thématique.</p>
+
+        <div class="policy-catalog">
+          {{ range first 6 $evianPages }}
+          <article class="card-note card-note--with-thumbnail">
+            <div class="card-note-thumbnail" aria-hidden="true">
+              {{ partial "policy-thumbnail.html" . }}
+            </div>
+            <div>
+              <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}G7 ÉVIAN{{ end }}</span>
+              <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+              <div class="card-note-meta">
+                <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                <span class="card-note-sep">&middot;</span>
+                <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+
+        <a class="action action--secondary" href="{{ "policy/reports/apd-rapport-g7-financement-developpement/" | relURL }}">Lire le rapport de référence &rarr;</a>
+      </section>
+      {{ end }}
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
          TABS — type filter (Bruegel-style)
          ══════════════════════════════════════════════════════ -->
     <div class="container">
@@ -727,21 +766,20 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
-         DOSSIER SPÉCIAL — G7 Évian 2026
+         DOSSIER SPÉCIAL — Polycrisis 2026
          ══════════════════════════════════════════════════════ -->
     <div class="container">
-      {{ $evianPages := where (where .Site.RegularPages "Section" "policy") ".Params.theme" "g7" }}
-      <section id="dossier" class="policy-dossier dossier-banner" data-watermark="ÉVIAN">
+      <section id="dossier" class="policy-dossier dossier-banner" data-watermark="POLYCRISIS">
         <div class="eyebrow">
           <span class="eyebrow-mark"></span>
-          <span class="eyebrow-text">DOSSIER SPÉCIAL &middot; G7 ÉVIAN &middot; 15-17 JUIN</span>
+          <span class="eyebrow-text">DOSSIER SPÉCIAL &middot; EN COURS</span>
         </div>
-        <h2>G7 d'Évian 2026 : de l'aide au partenariat, ce qui se joue</h2>
-        <p class="article-subtitle">Le sommet du G7 d'Évian (15-17 juin 2026) s'ouvre sur un paradoxe : la présidence française érige la réforme des partenariats de développement en priorité au moment précis où l'aide publique au développement subit sa plus forte chute jamais enregistrée. Ce dossier rassemble les analyses de cadrage — déséquilibres mondiaux, finance du développement, ce que la France peut porter — pour offrir aux décideurs une grille de lecture du sommet, déclaration thématique par déclaration thématique.</p>
+        <h2>Polycrisis 2026 : la convergence des crises</h2>
+        <p class="article-subtitle">Ce dossier rassemble six analyses complémentaires sur la polycrisis contemporaine. Choc géopolitique, fragmentation des chaînes de valeur, contagion financière, souveraineté énergétique et capacités de résilience sont traités séparément puis croisés dans une grille de scénarios intégrée. L'objectif est de fournir aux décideurs une lecture unifiée des risques systémiques auxquels font face les économies du G7.</p>
 
         <div class="policy-catalog">
-          {{ if gt (len $evianPages) 0 }}
-            {{ range first 6 $evianPages }}
+          {{ if gt (len $dossierPages) 0 }}
+            {{ range first 6 $dossierPages }}
             <article class="card-note card-note--with-thumbnail">
               <div class="card-note-thumbnail" aria-hidden="true">
                 {{ partial "policy-thumbnail.html" . }}
@@ -823,7 +861,7 @@
           {{ end }}
         </div>
 
-        <a class="action action--secondary" href="{{ "policy/reports/apd-rapport-g7-financement-developpement/" | relURL }}">Lire le rapport de référence &rarr;</a>
+        <a class="action action--secondary" href="{{ "policy/" | relURL }}">Voir le dossier complet &rarr;</a>
       </section>
     </div>
 

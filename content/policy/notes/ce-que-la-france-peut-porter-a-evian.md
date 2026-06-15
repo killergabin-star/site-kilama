@@ -1,6 +1,6 @@
 ---
 title: "Ce que la France peut porter à Évian"
-date: 2026-06-16
+date: 2026-06-15
 doc_type: note
 tags:
 - G7
