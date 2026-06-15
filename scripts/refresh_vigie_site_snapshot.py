@@ -99,15 +99,17 @@ def _parse_fred_api(series_id: str) -> list[tuple[str, float]]:
 
 
 def parse_fred(series_id: str) -> list[tuple[str, float]]:
-    try:
-        text = fetch_bytes(FRED_URL.format(series_id=series_id)).decode("utf-8")
-        return _parse_fred_csv(text)
-    except Exception:
-        # Direct graph host unreachable — fall back to the FRED API if a key is
-        # configured; otherwise re-raise so the caller marks the snapshot stale.
-        if not FRED_API_KEY:
-            raise
-        return _parse_fred_api(series_id)
+    # Prefer the API when a key is configured: the public graph host
+    # (fred.stlouisfed.org) is unreachable from some networks, and each failed
+    # attempt there costs ~30s of retry backoff. Fall back to the direct CSV
+    # host if the API errors, or when no key is set (unchanged legacy path).
+    if FRED_API_KEY:
+        try:
+            return _parse_fred_api(series_id)
+        except Exception:
+            pass  # API hiccup — try the direct CSV host below
+    text = fetch_bytes(FRED_URL.format(series_id=series_id)).decode("utf-8")
+    return _parse_fred_csv(text)
 
 
 def ref_delta(rows: list[tuple[str, float]], days: int = 30) -> tuple[float, float, str, float]:

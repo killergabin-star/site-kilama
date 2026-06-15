@@ -8,6 +8,10 @@ cd "$SITE_DIR"
 
 export PATH="/opt/homebrew/bin:$PATH"
 
+# Secrets (FRED_API_KEY for the Vigie refresh fallback) — stored outside this
+# public repo, 600 perms. Absent secret = no-op (refresh degrades gracefully).
+[ -f "$HOME/.config/macrodata/secrets/fred.env" ] && . "$HOME/.config/macrodata/secrets/fred.env"
+
 echo "[$(date '+%Y-%m-%d %H:%M')] Site sync starting..."
 
 # 1. Ingest new staging documents
