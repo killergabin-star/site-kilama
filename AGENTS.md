@@ -83,6 +83,22 @@ bash scripts/sync_and_deploy.sh
 
 Le script est **idempotent** : si aucun diff n'est détecté après ingest, il skip le déploiement.
 
+### Covers C26 — articles Tier-1 / dossiers (HABITUDE DE PUBLICATION)
+
+Tout article **Tier-1 ou pièce de dossier** (rapport phare, note de cadrage de sommet, dossier
+thématique) reçoit une **cover C26** — identité maison institutionnelle, palette par thème.
+Procédure complète + garde-fous : `editorial/covers/README.md`.
+
+1. Ajouter l'entrée dans `editorial/covers/covers.json` (slug, theme, eyebrow, title, meta).
+2. `python3 editorial/covers/generate_c26_cover.py [<slug>]` → rend la PNG dans `static/thumbnails/policy/covers/<slug>.png` (Chrome headless).
+3. Front-matter de l'article : `cover_image` **et** `thumbnail.resolved_path` = `/thumbnails/policy/covers/<slug>.png`.
+4. Déployer (`sync_and_deploy.sh`, ou deploy manuel gh-pages si changement template-only — `public/` est gitignoré).
+
+**Règles dures** : JAMAIS de raster DALL-E pour les articles (dénature le site, correction Eric 15/06) ;
+JAMAIS `background-size: cover` sur une cover (rogne wordmark/tag/footer) → toujours conteneur **16:9 +
+`contain`** ; VALIDER un sample avant un rollout multi-covers. Palettes : `geopol`=violet (G7, géopo,
+commerce), `economie`=bleu (finance dév., SMI, dette, APD), `strategie`=noir, `climat`=teal.
+
 ### Régénérer uniquement la page /trust/
 
 ```bash

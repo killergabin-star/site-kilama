@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "notes-evian-desequilibres-mondiaux",
+    "theme": "economie",
+    "eyebrow": "Dossier G7 Évian · Déséquilibres mondiaux",
+    "title": "Évian et les déséquilibres mondiaux : le diagnostic juste, la cible à ne pas manquer",
+    "meta": "Note de fond<span class=\"sep\">·</span>Système monétaire international<span class=\"sep\">·</span>15-17 juin 2026",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 55
+  },
+  {
+    "slug": "reports-apd-rapport-g7-financement-developpement",
+    "theme": "economie",
+    "eyebrow": "Rapport de référence · Financement du développement",
+    "title": "Aide ou partenariat ? Refonder la finance du développement",
+    "meta": "Rapport long<span class=\"sep\">·</span>42 pages<span class=\"sep\">·</span>3 engagements vérifiables",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 56
+  },
+  {
+    "slug": "notes-ce-qui-se-joue-a-evian-3jours",
+    "theme": "geopol",
+    "eyebrow": "Dossier G7 Évian · Ce qui se joue",
+    "title": "Ce qui se joue à Évian",
+    "meta": "Note<span class=\"sep\">·</span>Minéraux critiques · sécurité économique<span class=\"sep\">·</span>15-17 juin 2026",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 66
+  },
+  {
+    "slug": "notes-ce-qui-se-joue-a-evian",
+    "theme": "geopol",
+    "eyebrow": "Dossier G7 Évian · Aide & partenariat",
+    "title": "À Évian, le partenariat à l'épreuve de l'effondrement de l'aide",
+    "meta": "Note de cadrage<span class=\"sep\">·</span>APD · partenariats<span class=\"sep\">·</span>13 juin 2026",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 58
+  },
+  {
+    "slug": "notes-ce-que-la-france-peut-porter-a-evian",
+    "theme": "geopol",
+    "eyebrow": "Dossier G7 Évian · Ce que la France peut porter",
+    "title": "Ce que la France peut porter à Évian",
+    "meta": "Note<span class=\"sep\">·</span>4 propositions vérifiables<span class=\"sep\">·</span>15-17 juin 2026",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 64
+  },
+  {
+    "slug": "notes-triangle-impossible-evian",
+    "theme": "geopol",
+    "eyebrow": "Dossier G7 Évian · Triangle impossible",
+    "title": "Le triangle impossible d'Évian : Ukraine, réarmement et Afrique",
+    "meta": "Note<span class=\"sep\">·</span>Ukraine · réarmement · Afrique<span class=\"sep\">·</span>présidence française",
+    "tagline": "Dossier G7 Évian · Juin 2026",
+    "titlesize": 56
+  }
+]
