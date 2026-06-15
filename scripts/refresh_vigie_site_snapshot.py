@@ -34,6 +34,18 @@ WDI_URL = (
     "?format=json&per_page=20000&date=2020:2026"
 )
 
+# FRED fallback: the public graph host (fred.stlouisfed.org / Akamai edge) is
+# intermittently unreachable from some networks (observed HTTP 000 / refused
+# connections, 2026-06). The FRED *API* host (api.stlouisfed.org) stays
+# reachable but needs a free API key. If FRED_API_KEY is set in the environment,
+# parse_fred() falls back to the API when the direct CSV fetch fails. With no
+# key, behaviour is unchanged (direct fetch only → VIGIE_STALE on failure).
+FRED_API_KEY = os.environ.get("FRED_API_KEY", "").strip()
+FRED_API_URL = (
+    "https://api.stlouisfed.org/fred/series/observations"
+    "?series_id={series_id}&api_key={key}&file_type=json"
+)
+
 SSL_CONTEXT = ssl._create_unverified_context()
 
 
@@ -64,8 +76,7 @@ def fetch_json(url: str):
     return json.loads(fetch_bytes(url).decode("utf-8"))
 
 
-def parse_fred(series_id: str) -> list[tuple[str, float]]:
-    text = fetch_bytes(FRED_URL.format(series_id=series_id)).decode("utf-8")
+def _parse_fred_csv(text: str) -> list[tuple[str, float]]:
     rows: list[tuple[str, float]] = []
     for row in csv.reader(io.StringIO(text)):
         if not row or row[0] == "observation_date":
@@ -74,6 +85,29 @@ def parse_fred(series_id: str) -> list[tuple[str, float]]:
             continue
         rows.append((row[0], float(row[1])))
     return rows
+
+
+def _parse_fred_api(series_id: str) -> list[tuple[str, float]]:
+    data = fetch_json(FRED_API_URL.format(series_id=series_id, key=FRED_API_KEY))
+    rows: list[tuple[str, float]] = []
+    for obs in data.get("observations", []):
+        value = obs.get("value")
+        if value in ("", ".", None):
+            continue
+        rows.append((obs["date"], float(value)))
+    return rows
+
+
+def parse_fred(series_id: str) -> list[tuple[str, float]]:
+    try:
+        text = fetch_bytes(FRED_URL.format(series_id=series_id)).decode("utf-8")
+        return _parse_fred_csv(text)
+    except Exception:
+        # Direct graph host unreachable — fall back to the FRED API if a key is
+        # configured; otherwise re-raise so the caller marks the snapshot stale.
+        if not FRED_API_KEY:
+            raise
+        return _parse_fred_api(series_id)
 
 
 def ref_delta(rows: list[tuple[str, float]], days: int = 30) -> tuple[float, float, str, float]:
