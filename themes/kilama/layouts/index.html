@@ -26,6 +26,51 @@
     </div>
   </section>
 
+  <!-- DOSSIER G7 ÉVIAN — Déséquilibres mondiaux (semaine du sommet, 15-17 juin) -->
+  {{ $g7 := where (where .Site.RegularPages "Section" "policy") ".Params.theme" "g7" }}
+  {{ if gt (len $g7) 0 }}
+  <div class="container">
+    <section class="section home-evian" id="g7-evian">
+      <div class="section-header">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">Dossier spécial &middot; G7 Évian &middot; 15-17 juin</span>
+        </div>
+        <h2 class="section-title">G7 d'Évian &amp; déséquilibres mondiaux</h2>
+        <p class="section-subtitle">Le sommet s'ouvre sur un paradoxe : la France érige la réforme des partenariats de développement en priorité au moment précis où l'aide publique au développement subit sa plus forte chute jamais enregistrée. Lecture de cadrage du sommet — déséquilibres mondiaux, finance du développement, et ce que la France peut réellement porter.</p>
+      </div>
+      {{ $imbalances := where $g7 ".File.BaseFileName" "evian-desequilibres-mondiaux" }}
+      {{ with index $imbalances 0 }}
+      <div class="featured-pub">
+        <span class="card-note-tag">Déséquilibres mondiaux</span>
+        <h2 class="featured-pub-title">{{ .Title }}</h2>
+        <p class="featured-pub-summary">{{ with .Params.summary }}{{ . | truncate 300 }}{{ else }}{{ .Summary | truncate 300 }}{{ end }}</p>
+        <a class="action" href="{{ .Permalink }}">Lire la note &rarr;</a>
+      </div>
+      {{ end }}
+      <div class="analyses-grid">
+        {{ $rest := where $g7 ".File.BaseFileName" "!=" "evian-desequilibres-mondiaux" }}
+        {{ range first 4 $rest }}
+        <article class="card-note">
+          {{ with .Params.tags }}<span class="card-note-tag">{{ index . 0 }}</span>{{ end }}
+          <h3 class="card-note-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 160 }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}</p>
+          <div class="card-note-meta">
+            <span class="card-note-date">{{ .Date.Format "January 2006" }}</span>
+            <span class="card-note-sep">&middot;</span>
+            <span class="card-note-type">{{ .Params.doc_type | default "note" }}</span>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+      <div class="hero-editorial-actions" style="margin-top:1.5rem">
+        <a class="action" href="{{ "policy/#dossier-evian" | relURL }}">Voir le dossier complet &rarr;</a>
+        <a class="action action--muted" href="{{ "policy/reports/apd-rapport-g7-financement-developpement/" | relURL }}">Lire le rapport de référence &rarr;</a>
+      </div>
+    </section>
+  </div>
+  {{ end }}
+
   <!-- RESEARCH TEASE — 3 thématiques + 1 transversal -->
   <section class="home-research-tease">
     <div class="home-research-inner">
