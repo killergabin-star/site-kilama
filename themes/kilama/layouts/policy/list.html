@@ -136,14 +136,15 @@
   border-top: 3px solid var(--brand-accent, #E6203A);
   padding: 40px;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: minmax(300px, 380px) 1fr;
   gap: 40px;
   align-items: start;
   margin: 40px 0;
 }
 .policy-featured-image {
   background: linear-gradient(145deg, #1a1a2e 0%, #0d2840 100%);
-  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  align-self: start;
   border-radius: 2px;
 }
 .policy-featured h2 {
@@ -662,7 +663,7 @@
       {{ if $featured }}
       <section class="policy-featured">
         <div class="policy-featured-image"
-          {{ with $featured.Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+          {{ with $featured.Params.cover_image }}style="background: url('{{ . }}') center/contain no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
           {{ if not $featured.Params.cover_image }}{{ partial "policy-thumbnail.html" $featured }}{{ end }}
         </div>
         <div>
@@ -963,7 +964,7 @@
               data-theme="{{ with .Params.theme }}{{ . }}{{ end }}{{ with .Params.tags }} {{ delimit . " " }}{{ end }}"
               data-doctype="{{ with .Params.doc_type }}{{ . }}{{ end }}">
               <div class="policy-entry-thumb"
-                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/contain no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
                 {{ if not .Params.cover_image }}{{ partial "policy-thumbnail.html" . }}{{ end }}
               </div>
               <div class="policy-entry-body">
@@ -1114,7 +1115,7 @@
             {{ range $commissioned }}
             <article class="policy-entry">
               <div class="policy-entry-thumb"
-                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/cover no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
+                {{ with .Params.cover_image }}style="background: url('{{ . }}') center/contain no-repeat, linear-gradient(145deg, #1B2A4A 0%, #0d2840 100%);"{{ end }}>
                 {{ if not .Params.cover_image }}{{ partial "policy-thumbnail.html" . }}{{ end }}
               </div>
               <div class="policy-entry-body">
