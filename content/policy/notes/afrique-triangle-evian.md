@@ -75,7 +75,7 @@ Les pays africains ne subissent pas passivement le triangle d'Évian. Plusieurs 
 
 ## Enjeux pour la France
 
-La France est confrontée à un paradoxe structurel : elle préside le G7 au moment où sa propre APD est menacée de contraction. L'APD française, à 0,48 % du RNB en 2024, est loin de l'objectif de 0,7 % affiché dans la loi de programmation du développement de 2021. Les contributions aux reconstitutions de l'IDA et au Fonds vert pour le climat absorbent une part croissante de l'enveloppe, réduisant les marges de manoeuvre pour les programmes bilatéraux en Afrique francophone. La séquence Nairobi-Évian est un test de cohérence : la France ne peut pas coprésident un sommet sur le partenariat Afrique-France tout en réduisant ses engagements financiers vis-à-vis du continent. Ce qui n'est pas livré en mai ne sera pas cru en juin.
+La France est confrontée à un paradoxe structurel : elle préside le G7 au moment où sa propre APD est menacée de contraction. L'APD française, à 0,55 % du RNB en 2024, est loin de l'objectif de 0,7 % affiché dans la loi de programmation du développement de 2021. Les contributions aux reconstitutions de l'IDA et au Fonds vert pour le climat absorbent une part croissante de l'enveloppe, réduisant les marges de manoeuvre pour les programmes bilatéraux en Afrique francophone. La séquence Nairobi-Évian est un test de cohérence : la France ne peut pas coprésident un sommet sur le partenariat Afrique-France tout en réduisant ses engagements financiers vis-à-vis du continent. Ce qui n'est pas livré en mai ne sera pas cru en juin.
 
 ## Recommandations
 
@@ -92,10 +92,6 @@ Quatrième levier : porter une initiative Soudan au G7. La guerre civile soudana
 ## Limites de l'analyse
 
 Cette analyse repose sur l'hypothèse que l'espace budgétaire existe dans les pays du G7 et que le problème est un problème de volonté politique plutôt que d'arithmétique. Si les taux souverains européens devaient remonter durablement au-dessus de la croissance nominale, le triangle deviendrait un problème de rareté réelle[^27]. Par ailleurs, la compétition entre donateurs bénéficie aux pays à revenu intermédiaire capables de naviguer entre partenaires, mais les PMA et les États fragiles -- Soudan, Somalie, Niger -- n'intéressent ni la Chine ni les fonds souverains du Golfe. Pour ces pays, la marginalisation de l'APD du G7 se traduit par un vide plutôt que par une substitution.
-
-## Actualisation — juin 2026
-
-Les projections mobilisées dans cette note (mars 2026) sont désormais confirmées et dépassées. L'OCDE-CAD a publié en avril 2026 les données préliminaires 2025 : l'aide publique au développement mondiale a chuté de **23,1 % en termes réels, à 174,3 milliards de dollars** — la plus forte baisse jamais enregistrée — les États-Unis en portant les trois quarts après le démantèlement de l'USAID. La contribution française s'établit à **0,43 % du RNB en 2025** (−10,7 %), et la mission Aide publique au développement perd encore **704 millions d'euros (−16 %) en 2026**, troisième coupe en deux ans. La thèse de la marginalisation africaine en sort renforcée : la Chine, devenue premier créancier officiel, encaisse désormais plus qu'elle ne prête (~35 milliards de dollars de remboursements dus en 2025), confirmant que le retrait du G7 ouvre un vide, non une substitution.
 
 ---
 

@@ -46,7 +46,7 @@ Trois faits, un seul test. C'est à cela que se résume l'enjeu du sommet pour l
 
 Reste la question que la présidence française ne pourra pas esquiver : que vaut une promesse de partenariat quand l'aide qui la finançait s'effondre ? Le menu de réforme existe déjà — le Compromis de Séville issu de la conférence de juillet 2025 a reconnu un déficit de financement des objectifs de développement d'environ **4 000 milliards de dollars par an** et lancé plus de cent trente initiatives ; les travaux du G20 montrent que la seule optimisation des bilans des banques de développement pourrait dégager de l'ordre de **80 milliards de dollars par an** de capacité de prêt supplémentaire[^9]. La contrainte n'est donc pas, d'abord, budgétaire. Elle est de **crédibilité** : la capacité du G7 à prouver que ses annonces deviennent des règles, des mécanismes et des responsabilités nommées, plutôt qu'un communiqué de plus.
 
-C'est à cette aune qu'il faudra lire les déclarations d'Évian. Non pas « combien le G7 promet-il ? », mais « ce qu'il annonce est-il vérifiable, opposable, et conçu pour survivre à la prochaine séquence budgétaire ? ». Sur le développement, le passage « de l'assistance au partenariat » ne se jugera pas aux mots employés, mais à un test simple : la France obtient-elle des engagements que l'on pourra, dans six mois, vérifier qu'ils ont été tenus. C'est la thèse d'un rapport de référence — *Aide ou partenariat ? Refonder la finance du développement à l'épreuve des faits* — qui documente le bilan net du système d'aide, les mécanismes de son échec et l'architecture de crédibilité que la présidence française peut porter. C'est cela qui se joue à Évian.
+C'est à cette aune qu'il faudra lire les déclarations d'Évian. Non pas « combien le G7 promet-il ? », mais « ce qu'il annonce est-il vérifiable, opposable, et conçu pour survivre à la prochaine séquence budgétaire ? ». Sur le développement, le passage « de l'assistance au partenariat » ne se jugera pas aux mots employés, mais à un test simple : la France obtient-elle des engagements que l'on pourra, dans six mois, vérifier qu'ils ont été tenus. C'est la thèse d'un rapport de référence — [*Aide ou partenariat ? Refonder la finance du développement à l'épreuve des faits*](/policy/reports/apd-rapport-g7-financement-developpement/) — qui documente le bilan net du système d'aide, les mécanismes de son échec et l'architecture de crédibilité que la présidence française peut porter. C'est cela qui se joue à Évian.
 
 ---
 
@@ -64,6 +64,6 @@ C'est à cette aune qu'il faudra lire les déclarations d'Évian. Non pas « com
 
 [^7]: Mémo des économistes du G7 sur les déséquilibres mondiaux, remis le 28 mars 2026 (Bai, Gopinath, Rey, Weber), publié dans le cadre de la présidence française.
 
-[^8]: Brad Setser, *Follow the Money* (Council on Foreign Relations), série d'analyses d'avril à juin 2026.
+[^8]: Brad Setser, *Follow the Money* (Council on Foreign Relations), série d'analyses d'avril à juin 2026 ; notamment « China's 'Fake' De-Dollarization », 30 avril 2026.
 
 [^9]: Nations unies, Compromis de Séville, quatrième conférence sur le financement du développement (juillet 2025) ; groupe d'experts indépendant du G20 sur les banques multilatérales de développement.

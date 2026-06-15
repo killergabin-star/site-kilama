@@ -16,9 +16,9 @@ theme: g7
 author: Eric Gabin Kilama
 ---
 
-Le sommet du G7 s'ouvre à Évian pour trois jours, sans communiqué unique — et ce n'est pas un accident. Pour la deuxième année consécutive, les Sept renoncent à un texte commun au profit de déclarations thématiques. Le format n'est pas un détail de procédure : il dit l'état d'un club qui peine à parler d'une seule voix, et il déplace la question. On ne jugera pas Évian à un communiqué global, mais à ce que chaque déclaration engage réellement — et à ce que la présidence française parvient à y inscrire.
+Le sommet du G7 s'ouvre à Évian pour trois jours, sans communiqué unique — et ce n'est pas un accident. Pour la deuxième année consécutive — après Kananaskis en 2025 — les Sept renoncent à un texte commun au profit de déclarations thématiques. Le format n'est pas un détail de procédure : il dit l'état d'un club qui peine à parler d'une seule voix, et il déplace la question. On ne jugera pas Évian à un communiqué global, mais à ce que chaque déclaration engage réellement — et à ce que la présidence française parvient à y inscrire.
 
-Trois lignes de force structurent ces trois jours.
+Trois lignes de force — les trois priorités de la filière Finances de la présidence française — structurent ces trois jours.
 
 ## Réduire les déséquilibres, sécuriser l'économie
 
@@ -34,7 +34,7 @@ La troisième priorité — la croissance soutenable — agrège la fiscalité i
 
 ## Ce que la France peut en faire
 
-Pour la présidence, le fil n'est pas de l'emporter sur tous les fronts, mais de choisir là où elle peut livrer. Sur les trois lignes, son avantage est le même : porter une position cohérente quand le club peine à s'accorder, et proposer des engagements opposables plutôt que des déclarations. C'est vrai du développement, où elle peut porter une architecture de crédibilité fondée sur des engagements vérifiables. C'est vrai de la sécurité économique, où l'autonomie stratégique — monétaire comprise — gagne à devenir une doctrine. C'est vrai des minéraux et de l'énergie, où l'atout français est réel à condition d'être rendu opérationnel.
+Pour la présidence, le fil n'est pas de l'emporter sur tous les fronts, mais de choisir là où elle peut livrer. Sur les trois lignes, son avantage est le même : porter une position cohérente quand le club peine à s'accorder, et proposer des engagements opposables plutôt que des déclarations. C'est vrai du développement, où elle peut porter une architecture de crédibilité fondée sur des engagements vérifiables. C'est vrai de la sécurité économique, où l'autonomie stratégique — y compris monétaire, c'est-à-dire la maîtrise de notre exposition au collatéral en dollars — gagne à devenir une doctrine. C'est vrai des minéraux et de l'énergie, où l'atout français est réel à condition d'être rendu opérationnel.
 
 ## Perspectives
 

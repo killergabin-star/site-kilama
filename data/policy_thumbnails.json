@@ -144,6 +144,21 @@
     "path": "/thumbnails/policy/notes-borrowers-platform-spring-meetings-2026.png",
     "source": "static/thumbnails/custom/dalle-original/notes-borrowers-platform-spring-meetings-2026.png"
   },
+  "/policy/notes/ce-que-la-france-peut-porter-a-evian/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ce-que-la-france-peut-porter-a-evian.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/ce-qui-se-joue-a-evian-3jours/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ce-qui-se-joue-a-evian-3jours.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
+  "/policy/notes/ce-qui-se-joue-a-evian/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ce-qui-se-joue-a-evian.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
+  },
   "/policy/notes/choc-ormuz-securite-alimentaire-afrique/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-choc-ormuz-securite-alimentaire-afrique.png",
@@ -183,6 +198,11 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-europe-marginalisee-pekin-bercy.png",
     "source": "static/thumbnails/custom/dalle-original/notes-europe-marginalisee-pekin-bercy.png"
+  },
+  "/policy/notes/evian-desequilibres-mondiaux/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-evian-desequilibres-mondiaux.svg",
+    "source": "editorial/thumbnails/categories/g7-multilateral.svg"
   },
   "/policy/notes/fishman-guerre-economique-doctrine/": {
     "strategy": "custom",
@@ -228,6 +248,11 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-hongrie-post-orban-bascule-ue.png",
     "source": "static/thumbnails/custom/dalle-original/notes-hongrie-post-orban-bascule-ue.png"
+  },
+  "/policy/notes/ia-contrainte-electricite/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-ia-contrainte-electricite.svg",
+    "source": "editorial/thumbnails/categories/energie.svg"
   },
   "/policy/notes/ifi-allocation-geopolitique/": {
     "strategy": "custom",
@@ -313,6 +338,11 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-polycrisis-transmission-asie.png",
     "source": "static/thumbnails/custom/dalle-original/notes-polycrisis-transmission-asie.png"
+  },
+  "/policy/notes/privilege-dollar-regime-confiance/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-privilege-dollar-regime-confiance.svg",
+    "source": "editorial/thumbnails/categories/architecture-financiere.svg"
   },
   "/policy/notes/rearm-europe-autonomie-defense/": {
     "strategy": "custom",
@@ -428,6 +458,11 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/reports-apd-g7-executive-summary-v4.png",
     "source": "static/thumbnails/custom/dalle-original/reports-apd-g7-executive-summary-v4.png"
+  },
+  "/policy/reports/apd-rapport-g7-financement-developpement/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-apd-rapport-g7-financement-developpement.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
   },
   "/policy/reports/convergence-polycrisis/": {
     "strategy": "custom",
