@@ -3,11 +3,11 @@ title: "Aide ou partenariat ? Refonder la finance du développement à l'épreuv
 date: 2026-06-15
 doc_type: report
 tags:
-- apd
-- g7
-- financement-développement
-- partenariats
-- évian
+- G7
+- Évian
+- APD
+- Partenariats
+- Financement-développement
 summary: "Rapport long de référence pour la présidence française du G7 2026. En 2025, l'aide publique au développement a subi sa plus forte chute jamais enregistrée (−23,1 %). Le débat d'Évian ne peut rester un débat de volumes : ce rapport propose une architecture de crédibilité en trois engagements vérifiables — vérité des flux, enveloppe réservée aux PMA, contrats-pays co-gouvernés."
 status: ready
 draft: false
