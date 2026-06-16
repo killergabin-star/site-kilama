@@ -19,7 +19,7 @@ thumbnail:
 
 **Rapport long de référence — Présidence française du G7 2026, filière Finances (deuxième priorité : « Redéfinir les partenariats avec les pays en développement »).**
 
-[**📄 Télécharger le rapport complet (PDF, 46 pages)**](/files/apd_rapport_g7_long_reference_2026-06-16.pdf)
+[**📄 Télécharger le rapport complet (PDF, 41 pages)**](/files/apd_rapport_g7_long_reference_2026-06-16.pdf)
 
 ---
 
@@ -41,4 +41,4 @@ Quatre réformes de règles (dette et créanciers privés, flux financiers illic
 
 Le coût additionnel du dispositif est estimé entre 18 et 31 milliards de dollars par an — concentré sur la protection sociale des PMA, et partiellement compensable par des ressources déjà disponibles (DTS recyclés, réorientation d'une partie de l'APD existante). Les réformes de règles, elles, coûtent peu. La contrainte n'est donc pas budgétaire. Elle est politique : aligner sept stratégies nationales divergentes avant que la fenêtre de crédibilité ne se referme. La question d'Évian n'est plus *« le G7 veut-il encore aider ? »*, mais *« veut-il encore être pris au sérieux ? »*.
 
-[**📄 Télécharger le rapport complet (PDF, 46 pages)**](/files/apd_rapport_g7_long_reference_2026-06-16.pdf)
+[**📄 Télécharger le rapport complet (PDF, 41 pages)**](/files/apd_rapport_g7_long_reference_2026-06-16.pdf)
