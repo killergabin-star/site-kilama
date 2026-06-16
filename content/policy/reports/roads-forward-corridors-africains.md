@@ -18,7 +18,7 @@ thumbnail:
   resolved_path: /thumbnails/policy/covers/reports-roads-forward-corridors-africains.png
 ---
 
-**Rapport flagship — Cadre orienté-mission, présidence française du G7 2026.**
+**Rapport de référence — Cadre orienté-mission, présidence française du G7 2026.**
 
 [**📄 Télécharger le rapport complet (PDF, 36 pages)**](/files/roads_forward_corridors_africains_2026-06.pdf)
 
