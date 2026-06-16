@@ -184,6 +184,11 @@
     "path": "/thumbnails/policy/notes-double-contrainte-energetique-europe-lng-ormuz.png",
     "source": "static/thumbnails/custom/dalle-original/notes-double-contrainte-energetique-europe-lng-ormuz.png"
   },
+  "/policy/notes/economie-developpement-debat-banque-mondiale/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-economie-developpement-debat-banque-mondiale.svg",
+    "source": "editorial/thumbnails/categories/developpement.svg"
+  },
   "/policy/notes/eu-trade-geopolitics-update-2026/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-eu-trade-geopolitics-update-2026.png",
@@ -478,5 +483,10 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/reports-iran-crise-analyse-strategique.png",
     "source": "static/thumbnails/custom/dalle-original/reports-iran-crise-analyse-strategique.png"
+  },
+  "/policy/reports/roads-forward-corridors-africains/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/reports-roads-forward-corridors-africains.svg",
+    "source": "editorial/thumbnails/categories/geoeconomie.svg"
   }
 }

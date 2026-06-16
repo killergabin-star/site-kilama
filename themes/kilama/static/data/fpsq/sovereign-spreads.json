@@ -1,7 +1,7 @@
 {
   "meta": {
     "indicator_id": "sovereign-spreads",
-    "last_update": "2026-06-15",
+    "last_update": "2026-06-16",
     "source": "FRED/OECD long-term government bond yields, spread vs Germany",
     "unit": "bp",
     "frequency": "monthly",
@@ -10,34 +10,34 @@
   "countries": {
     "France": {
       "dates": [
-        "2026-04-01"
+        "2026-05-01"
       ],
       "values": [
-        67.9
+        69.5
       ]
     },
     "Italy": {
       "dates": [
-        "2026-03-01"
+        "2026-04-01"
       ],
       "values": [
-        82.3
+        81.7
       ]
     },
     "Spain": {
       "dates": [
-        "2026-04-01"
+        "2026-05-01"
       ],
       "values": [
-        44.7
+        43.6
       ]
     },
     "Greece": {
       "dates": [
-        "2026-04-01"
+        "2026-05-01"
       ],
       "values": [
-        78.4
+        70.3
       ]
     }
   }

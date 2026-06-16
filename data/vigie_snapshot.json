@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_update": "2026-06-15",
-    "generated_at": "2026-06-15T17:02:52",
+    "last_update": "2026-06-16",
+    "generated_at": "2026-06-16T07:42:09",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -75,11 +75,11 @@
       },
       {
         "symbol": "DXY broad",
-        "value": "120,1",
-        "delta": "▲ +1,7%",
+        "value": "119,5",
+        "delta": "▲ +0,9%",
         "class": "delta-neutral",
         "source": "FRED DTWEXBGS",
-        "vintage": "2026-06-05"
+        "vintage": "2026-06-12"
       },
       {
         "symbol": "VIX",
@@ -91,19 +91,19 @@
       },
       {
         "symbol": "US 10Y",
-        "value": "4,45%",
+        "value": "4,48%",
         "delta": "▲ +26 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-06-11"
+        "vintage": "2026-06-12"
       },
       {
         "symbol": "IT-DE 10Y",
         "value": "82bp",
-        "delta": "common 2026-03",
+        "delta": "common 2026-04",
         "class": "delta-neutral",
         "source": "FRED/OECD",
-        "vintage": "2026-03-01"
+        "vintage": "2026-04-01"
       },
       {
         "symbol": "APD DAC",
@@ -135,7 +135,7 @@
     {
       "label": "Spread IT-DE 10Y",
       "value": "82",
-      "delta": "2026-03",
+      "delta": "2026-04",
       "tone": "neutral",
       "context": "dernier mois commun FRED/OECD",
       "source": "FRED OECD LTR"
@@ -171,10 +171,10 @@
     {
       "eyebrow": "FPSQ MARKET",
       "name": "DXY broad",
-      "value": "120,1",
-      "delta": "▲ +1,7%",
+      "value": "119,5",
+      "delta": "▲ +0,9%",
       "tone": "neutral",
-      "timestamp": "2026-06-05",
+      "timestamp": "2026-06-12",
       "source": "FRED"
     },
     {
@@ -189,19 +189,19 @@
     {
       "eyebrow": "FPSQ FISCAL",
       "name": "IT-DE 10Y",
-      "value": "82,3 bp",
-      "delta": "mois commun 2026-03",
+      "value": "81,7 bp",
+      "delta": "mois commun 2026-04",
       "tone": "neutral",
-      "timestamp": "2026-03-01",
+      "timestamp": "2026-04-01",
       "source": "FRED/OECD"
     },
     {
       "eyebrow": "FPSQ FX",
       "name": "EUR/USD",
-      "value": "1.1533",
-      "delta": "▼ -1,9%",
+      "value": "1.1573",
+      "delta": "▼ -1,2%",
       "tone": "neutral",
-      "timestamp": "2026-06-05",
+      "timestamp": "2026-06-12",
       "source": "FRED"
     },
     {
@@ -409,20 +409,20 @@
   },
   "public_spreads": {
     "it_de": {
-      "date": "2026-03-01",
-      "value_bp": 82.3
+      "date": "2026-04-01",
+      "value_bp": 81.7
     },
     "fr_de": {
-      "date": "2026-04-01",
-      "value_bp": 67.9
+      "date": "2026-05-01",
+      "value_bp": 69.5
     },
     "es_de": {
-      "date": "2026-04-01",
-      "value_bp": 44.7
+      "date": "2026-05-01",
+      "value_bp": 43.6
     },
     "gr_de": {
-      "date": "2026-04-01",
-      "value_bp": 78.4
+      "date": "2026-05-01",
+      "value_bp": 70.3
     }
   },
   "publication_watch": [
