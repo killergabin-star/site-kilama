@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_update": "2026-06-16",
-    "generated_at": "2026-06-16T16:02:04",
+    "last_update": "2026-07-02",
+    "generated_at": "2026-07-02T09:12:19",
     "snapshot_label": "26 mai 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
@@ -11,7 +11,7 @@
     "gpr": {
       "name": "Caldara-Iacoviello Geopolitical Risk Index",
       "url": "https://www.matteoiacoviello.com/gpr_files/data_gpr_export.xls",
-      "latest_date": "2026-05-01"
+      "latest_date": "2026-06-01"
     },
     "fred": {
       "name": "FRED, Federal Reserve Bank of St. Louis",
@@ -59,43 +59,43 @@
     "items": [
       {
         "symbol": "GPR",
-        "value": "184,2",
-        "delta": "▼ -44,1% m/m",
+        "value": "173,6",
+        "delta": "▼ -14,7% m/m",
         "class": "delta-bad",
         "source": "Caldara-Iacoviello",
         "vintage": "avr. 2026"
       },
       {
         "symbol": "BRENT",
-        "value": "$97.46",
-        "delta": "▼ -5,8%",
+        "value": "$71.59",
+        "delta": "▼ -22,9%",
         "class": "delta-bad",
         "source": "FRED DCOILBRENTEU",
-        "vintage": "2026-06-08"
+        "vintage": "2026-06-29"
       },
       {
         "symbol": "DXY broad",
-        "value": "119,5",
-        "delta": "▲ +0,9%",
+        "value": "120,9",
+        "delta": "▲ +1,4%",
         "class": "delta-neutral",
         "source": "FRED DTWEXBGS",
-        "vintage": "2026-06-12"
+        "vintage": "2026-06-26"
       },
       {
         "symbol": "VIX",
-        "value": "16,2",
-        "delta": "▼ -12,1%",
+        "value": "16,4",
+        "delta": "▲ +7,4%",
         "class": "delta-good",
         "source": "FRED VIXCLS",
-        "vintage": "2026-06-15"
+        "vintage": "2026-06-30"
       },
       {
         "symbol": "US 10Y",
-        "value": "4,48%",
+        "value": "4,44%",
         "delta": "▲ +26 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-06-12"
+        "vintage": "2026-06-30"
       },
       {
         "symbol": "IT-DE 10Y",
@@ -118,18 +118,18 @@
   "kpis": [
     {
       "label": "GPR Index",
-      "value": "184,2",
-      "delta": "▼ 145,5 pts",
+      "value": "173,6",
+      "delta": "▼ 30,0 pts",
       "tone": "bad",
-      "context": "vs MA-12M (172,0)",
+      "context": "vs MA-12M (170,2)",
       "source": "Caldara-Iacoviello · avr. 2026"
     },
     {
       "label": "Brent",
-      "value": "$97.46",
-      "delta": "▼ -5,8%",
+      "value": "$71.59",
+      "delta": "▼ -22,9%",
       "tone": "bad",
-      "context": "vs 30j; source FRED au 2026-06-08",
+      "context": "vs 30j; source FRED au 2026-06-29",
       "source": "FRED DCOILBRENTEU"
     },
     {
@@ -153,8 +153,8 @@
     {
       "eyebrow": "FPSQ GEOPOLITICAL",
       "name": "GPR mondial",
-      "value": "184,2",
-      "delta": "MA12 172,0",
+      "value": "173,6",
+      "delta": "MA12 170,2",
       "tone": "bad",
       "timestamp": "avr. 2026",
       "source": "Caldara-Iacoviello"
@@ -162,28 +162,28 @@
     {
       "eyebrow": "FPSQ ENERGY",
       "name": "Brent",
-      "value": "97.46 $/b",
-      "delta": "▼ -5,8%",
+      "value": "71.59 $/b",
+      "delta": "▼ -22,9%",
       "tone": "bad",
-      "timestamp": "2026-06-08",
+      "timestamp": "2026-06-29",
       "source": "FRED"
     },
     {
       "eyebrow": "FPSQ MARKET",
       "name": "DXY broad",
-      "value": "119,5",
-      "delta": "▲ +0,9%",
+      "value": "120,9",
+      "delta": "▲ +1,4%",
       "tone": "neutral",
-      "timestamp": "2026-06-12",
+      "timestamp": "2026-06-26",
       "source": "FRED"
     },
     {
       "eyebrow": "FPSQ MARKET",
       "name": "VIX",
-      "value": "16,2",
-      "delta": "▼ -12,1%",
+      "value": "16,4",
+      "delta": "▲ +7,4%",
       "tone": "good",
-      "timestamp": "2026-06-15",
+      "timestamp": "2026-06-30",
       "source": "FRED"
     },
     {
@@ -198,10 +198,10 @@
     {
       "eyebrow": "FPSQ FX",
       "name": "EUR/USD",
-      "value": "1.1573",
-      "delta": "▼ -1,2%",
+      "value": "1.1403",
+      "delta": "▼ -2,0%",
       "tone": "neutral",
-      "timestamp": "2026-06-12",
+      "timestamp": "2026-06-26",
       "source": "FRED"
     },
     {
@@ -216,10 +216,10 @@
     {
       "eyebrow": "FPSQ CREDIT",
       "name": "US HY OAS",
-      "value": "2,66 pp",
-      "delta": "-14 bp",
+      "value": "2,75 pp",
+      "delta": "1 bp",
       "tone": "good",
-      "timestamp": "2026-06-15",
+      "timestamp": "2026-06-30",
       "source": "FRED"
     }
   ],
@@ -287,14 +287,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
           -7.44,
           6.88,
           2.72,
           1.44,
-          1.19
+          1.19,
+          0.84
         ]
       },
       {
@@ -305,14 +307,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
           -4.13,
           3.91,
           1.81,
           -0.87,
-          -0.5
+          -0.5,
+          0.24
         ]
       },
       {
@@ -323,14 +327,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
           -8.87,
           8.93,
           4.82,
-          0.98,
-          0.69
+          0.92,
+          0.78,
+          0.54
         ]
       },
       {
@@ -341,14 +347,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
-          -4.17,
-          2.7,
-          0.94,
-          1.48,
-          0.1
+          -4.28,
+          3.56,
+          1.33,
+          0.72,
+          -0.24,
+          1.19
         ]
       },
       {
@@ -359,14 +367,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
-          -2.16,
-          6.06,
-          2.51,
-          2.89,
-          2.79
+          -2.08,
+          6.15,
+          2.52,
+          2.93,
+          2.79,
+          2.16
         ]
       },
       {
@@ -377,14 +387,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
           -10.05,
           8.54,
           5.15,
           0.27,
-          1.13
+          1.08,
+          1.39
         ]
       },
       {
@@ -395,14 +407,16 @@
           "2021-01-01",
           "2022-01-01",
           "2023-01-01",
-          "2024-01-01"
+          "2024-01-01",
+          "2025-01-01"
         ],
         "values": [
           -5.04,
           5.95,
-          4.19,
-          1.53,
-          1.55
+          4.7,
+          1.95,
+          2.05,
+          1.74
         ]
       }
     ]
