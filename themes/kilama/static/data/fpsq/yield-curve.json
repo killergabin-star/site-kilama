@@ -1,7 +1,7 @@
 {
   "meta": {
     "indicator_id": "yield-curve",
-    "last_update": "2026-07-11",
+    "last_update": "2026-07-12",
     "source": "FRED T10Y2Y",
     "unit": "pp",
     "frequency": "daily",

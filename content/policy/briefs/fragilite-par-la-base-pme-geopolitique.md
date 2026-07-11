@@ -12,6 +12,8 @@ tags:
 - pricing-passthrough
 - résilience
 - rearm-europe
+- business
+- entreprise
 summary: 'Les PME industrielles européennes absorbent les chocs géopolitiques dans leurs marges. Ce policy brief quantifie le mécanisme sur 337 000 entreprises dans 12 pays et formule sept recommandations opérationnelles pour la base industrielle et technologique de défense.'
 status: ready
 draft: false

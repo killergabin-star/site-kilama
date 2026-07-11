@@ -14,6 +14,16 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 echo "[$(date '+%Y-%m-%d %H:%M')] Site sync starting..."
 
+# 0. Site-lane gate (GO Eric 2026-07-11 — DELEGATED_SITE_VALIDATION, fail-closed).
+# Vérifie les notes de staging marquées "delegated" (sidecar .lane.json) : allowlist signée,
+# gates PASS, n-draw >=3, quota, kill-switch, autorisation Eric en phase pilote.
+# Toute violation interrompt le deploy AVANT ingestion. Les notes du circuit humain
+# classique (sans sidecar) ne sont pas concernées.
+if ! python3 "$HOME/.config/macrodata/scripts/site_lane_gate.py" preflight; then
+    echo "  ✖ SITE_LANE_GATE BLOCK — deploy interrompu (voir violations ci-dessus)."
+    exit 2
+fi
+
 # 1. Ingest new staging documents
 echo "→ Ingesting staging documents..."
 python3 scripts/ingest_staging.py 2>&1 | tail -5

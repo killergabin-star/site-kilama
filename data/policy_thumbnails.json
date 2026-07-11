@@ -109,6 +109,11 @@
     "path": "/thumbnails/policy/notes-aide-crise-identite.png",
     "source": "static/thumbnails/custom/dalle-original/notes-aide-crise-identite.png"
   },
+  "/policy/notes/anatomie-d-un-choc-industrie-europeenne-metaux-critiques/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-anatomie-d-un-choc-industrie-europeenne-metaux-critiques.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
   "/policy/notes/apd-defense-reallocation/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-apd-defense-reallocation.png",
@@ -118,6 +123,21 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-attentat-camara-fragilite-aes.png",
     "source": "static/thumbnails/custom/dalle-original/notes-attentat-camara-fragilite-aes.png"
+  },
+  "/policy/notes/avenir-audit-assurance-csrd-durabilite/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-avenir-audit-assurance-csrd-durabilite.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
+  "/policy/notes/avenir-conseil-de-l-expertise-lineaire-a-la-traduction-du-risque/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-avenir-conseil-de-l-expertise-lineaire-a-la-traduction-du-risque.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
+  "/policy/notes/avenir-expertise-comptable-donnee-analyse-valeur/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-avenir-expertise-comptable-donnee-analyse-valeur.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
   },
   "/policy/notes/axe-resistance-mobilisation-communautaire/": {
     "strategy": "custom",
@@ -209,6 +229,11 @@
     "path": "/thumbnails/policy/notes-evian-desequilibres-mondiaux.svg",
     "source": "editorial/thumbnails/categories/g7-multilateral.svg"
   },
+  "/policy/notes/exposition-sanctions-de-la-norme-au-risque-firme/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-exposition-sanctions-de-la-norme-au-risque-firme.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
   "/policy/notes/fishman-guerre-economique-doctrine/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-fishman-guerre-economique-doctrine.png",
@@ -228,6 +253,16 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-g7-environnement-climat-hors-consensus.png",
     "source": "static/thumbnails/custom/dalle-original/notes-g7-environnement-climat-hors-consensus.png"
+  },
+  "/policy/notes/geopolitique-compte-de-resultat-incidence-taille-secteur/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-geopolitique-compte-de-resultat-incidence-taille-secteur.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
+  "/policy/notes/geopolitique-entre-dans-le-boardroom-fonction-traduction/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-geopolitique-entre-dans-le-boardroom-fonction-traduction.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
   },
   "/policy/notes/gopinath-pettis-deficit-courant/": {
     "strategy": "custom",
@@ -338,6 +373,16 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-peage-ormuz-regime-maritime-parallele.png",
     "source": "static/thumbnails/custom/dalle-original/notes-peage-ormuz-regime-maritime-parallele.png"
+  },
+  "/policy/notes/points-etranglement-metaux-critiques-chaine-de-valeur/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-points-etranglement-metaux-critiques-chaine-de-valeur.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
+  },
+  "/policy/notes/polycrise-dans-le-bilan-geopolitique-climat-cyber-commerce/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-polycrise-dans-le-bilan-geopolitique-climat-cyber-commerce.svg",
+    "source": "editorial/thumbnails/categories/_fallback.svg"
   },
   "/policy/notes/polycrisis-transmission-asie/": {
     "strategy": "custom",

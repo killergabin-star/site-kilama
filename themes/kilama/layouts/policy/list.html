@@ -489,6 +489,7 @@
 .tag--risque-geo { background: rgba(80,120,220,0.12); color: #7BA3E8; }
 .tag--finance-dev { background: rgba(78,192,130,0.12); color: #4FC082; }
 .tag--energie    { background: rgba(224,163,65,0.12); color: #E0A341; }
+.tag--business   { background: rgba(43,74,110,0.15); color: #6E92C4; }
 .tag--brand      { background: rgba(246,244,240,0.08); color: var(--color-text-primary, #F6F4F0); }
 
 /* ── Debate cards ── */
@@ -630,6 +631,7 @@
   {{ $devPages   := where $allPages ".Params.theme" "in" (slice "développement" "development" "architecture-financière" "g7") }}
   {{ $energyPages := where $allPages ".Params.theme" "in" (slice "énergie" "energy") }}
   {{ $afriquePages := where $allPages ".Params.theme" "in" (slice "afrique" "africa") }}
+  {{ $businessPages := where $allPages ".Params.theme" "in" (slice "business" "entreprise") }}
 
   <div class="page-body" data-palette="vivid-editorial">
 
@@ -763,6 +765,7 @@
         <button class="chip" data-filter="findev">Finance du développement</button>
         <button class="chip" data-filter="energie">Énergie &amp; Climat</button>
         <button class="chip" data-filter="polycrisis">Polycrisis</button>
+        <button class="chip" data-filter="business">Business</button>
       </div>
     </div>
 
@@ -1220,7 +1223,8 @@
         (chipVal === 'commerce'   && (theme.indexOf('commerce') !== -1 || theme.indexOf('trade') !== -1 || theme.indexOf('geoeconomics') !== -1 || theme.indexOf('sanctions') !== -1 || theme.indexOf('tarif') !== -1 || theme.indexOf('dédollarisation') !== -1)) ||
         (chipVal === 'findev'     && (theme.indexOf('développement') !== -1 || theme.indexOf('development') !== -1 || theme.indexOf('g7') !== -1 || theme.indexOf('aide') !== -1 || theme.indexOf('apd') !== -1 || theme.indexOf('donateur') !== -1)) ||
         (chipVal === 'energie'    && (theme.indexOf('énergie') !== -1 || theme.indexOf('energy') !== -1 || theme.indexOf('transition') !== -1 || theme.indexOf('jetp') !== -1 || theme.indexOf('fossile') !== -1)) ||
-        (chipVal === 'polycrisis' && (theme.indexOf('polycrisis') !== -1 || theme.indexOf('convergence') !== -1 || theme.indexOf('stabilisateur') !== -1));
+        (chipVal === 'polycrisis' && (theme.indexOf('polycrisis') !== -1 || theme.indexOf('convergence') !== -1 || theme.indexOf('stabilisateur') !== -1)) ||
+        (chipVal === 'business'   && (theme.indexOf('business') !== -1 || theme.indexOf('entreprise') !== -1));
 
       el.style.display = (tabMatch && chipMatch) ? '' : 'none';
     });
