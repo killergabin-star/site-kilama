@@ -4,7 +4,7 @@
     "title": "Iran & Strait of Hormuz",
     "subtitle": "Energy transit disruption × sovereign spreads contagion",
     "status": "active",
-    "last_update": "2026-07-10",
+    "last_update": "2026-07-11",
     "data_mode": "hybrid",
     "source_vintage": "GPR Apr 2026; Brent FRED May 2026; World Bank CMO Apr 2026"
   },
@@ -15,7 +15,7 @@
     "threshold": 170.2,
     "threshold_label": "1-year moving average",
     "text": "Global GPR remains elevated at <strong>173.6</strong>; Brent reached <strong>69.56 $/b</strong> in the latest FRED observation.",
-    "timestamp": "2026-07-10T09:12:33+02:00"
+    "timestamp": "2026-07-11T06:08:02+02:00"
   },
   "sparklines": {
     "header": "Key Indicators — Hormuz Focus",
