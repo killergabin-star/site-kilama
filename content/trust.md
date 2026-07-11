@@ -30,7 +30,7 @@ Cette vérification est indépendante du navigateur et de l'appareil utilisés.
 | Empreinte SHA-1 | `91:E7:E7:C7:3E:E9:35:9B:12:27:D3:6C:1C:15:0C:02:DC:7B:88:CA` |
 | Pin SPKI (SHA-256, base64) | `DQc7m3O0sO4W4/WA5SHHtseqIKSKdkp1jhsx3/UEPZA=` |
 
-**Généré automatiquement le** : 2026-07-11 23:15 UTC
+**Généré automatiquement le** : 2026-07-11 23:31 UTC
 
 Le certificat est renouvelé par l'infrastructure GitHub Pages tous les 60 à 90 jours ; les empreintes changent à chaque renouvellement. Pour une vérification en temps réel et indépendante, consultez les journaux publics de Certificate Transparency :
 

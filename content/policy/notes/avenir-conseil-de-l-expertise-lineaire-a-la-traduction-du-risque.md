@@ -39,7 +39,7 @@ L'angle mort commence en dessous : un tissu d'entreprises de taille intermédiai
 
 C'est ici que l'automatisation change la donne dans un sens favorable. En abaissant le coût de la couche linéaire, l'IA rend soudain viable un conseil de proximité — **augmenté** — pour des clients qui n'auraient jamais pu financer une mission de dimension mondiale. Le conseiller outillé par la machine peut servir une entreprise de taille intermédiaire avec une profondeur analytique jadis réservée aux grands comptes, parce que la partie coûteuse du travail — l'assemblage documentaire — ne mobilise plus une équipe. Le même mouvement qui déprécie le conseil générique solvabilise le conseil de proximité. C'est vraisemblablement ce segment intermédiaire, longtemps mal servi par les deux extrémités du marché — le grand cabinet trop cher, l'expert isolé trop étroit —, qui concentrera le gisement de valeur des prochaines années.
 
-<!-- FIGURE — barres comparant l'exposition des entreprises manufacturières à des intrants critiques importés par pays (Allemagne > 33 %, Espagne 20 %, Italie 17 %) ; titre « Une exposition partagée, une instrumentation absente » | source : Centre for Economic and Policy Research, « European Firms Facing Geopolitical Risk : Evidence from Recent Eurosystem Surveys », mai 2024 -->
+![Exposition des entreprises manufacturières aux intrants critiques importés, par pays](/uploads/charts/business_exposition_pays_intrants_fr.png)
 
 ---
 

@@ -46,7 +46,7 @@ Notre cartographie de l'intensité minérale traduit cette concentration en vuln
 
 Cette concentration appelle une lecture qui dépasse l'analyse commerciale classique. Celui qui contrôle le raffinage contrôle une norme technique, un calendrier de livraison et, de plus en plus, un levier diplomatique : les métaux critiques sont devenus un instrument de la weaponisation de l'interdépendance, au même titre que les tarifs ou les sanctions. Le règlement européen sur les matières premières critiques (Critical Raw Materials Act) fixe pour 2030 des objectifs de diversification — plafonner à 65 % la part d'un pays tiers unique pour tout métal stratégique — qui donnent la mesure de la distance à parcourir, et donc du risque résiduel des prochaines années.
 
-<!-- FIGURE — barres horizontales du score de vulnérabilité minérale par secteur industriel (top 8 : équipements électriques 96,8 ; automobile 88,0 ; électronique 82,2 ; autres transports 64,4 ; énergie/eau 64,4 ; métallurgie 50,5 ; chimie 43,4 ; machines 40,3), scénario neutralité carbone 2050 | source : nos estimations -->
+![Score de dépendance aux métaux critiques par secteur industriel](/uploads/charts/business_expo_metaux_secteur_fr.png)
 
 ---
 
@@ -58,7 +58,7 @@ Nos estimations sur données d'entreprises européennes (enquête SAFE) font app
 
 Cette asymétrie explique un paradoxe de gouvernance que les enquêtes documentent. L'enquête semestrielle des directeurs financiers en France (printemps 2025) situe le risque géopolitique parmi les toutes premières préoccupations — cité par **63 %** des CFO comme une préoccupation majeure, au deuxième rang derrière l'inflation (~68 %) — et environ 90 % des directeurs financiers européens le classent dans leur trio de tête.[^5] Pourtant, seules **11 %** des entreprises françaises disposent d'une fonction dédiée à ce risque, et près de neuf sur dix n'ont pas les outils pour traduire un diagnostic géopolitique en impact chiffré sur leur compte de résultat.[^5] Le risque est perçu ; il n'est pas instrumenté. C'est cette jonction — du diagnostic pays au chiffre firme — qui décide de la résilience réelle.
 
-<!-- FIGURE — barres comparées de la part des entreprises qui répercutent une hausse de coûts sur leurs prix, selon la taille de firme (grandes 40,0 % ; micro et petites 17,6 %) | source : nos estimations sur données d'entreprises européennes (enquête SAFE) -->
+![Part des entreprises qui répercutent une hausse de coûts sur leurs prix, par taille](/uploads/charts/business_passthrough_taille_fr.png)
 
 ---
 
