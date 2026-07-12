@@ -7,6 +7,9 @@ theme: business
 summary: "Les baromètres de risque géopolitique disent que le risque monte, jamais combien il pèse sur une entreprise donnée ni à qui il pèse le plus. Ce rapport propose une méthode reproductible pour noter l'exposition géo-économique d'une firme : un premier filtre de double géographie (siège × opérations), cinq canaux mesurables — intrants critiques, points d'étranglement logistiques, sanctions et conformité, sensibilité change-énergie, capacité de répercussion —, une règle de composition en un score, et une traduction ligne à ligne dans le bilan. Le score n'est pas une prévision de la décision d'une puissance ; c'est une carte de ce qui est en jeu avant qu'elle ne tombe."
 status: staging
 draft: false
+cover_image: /thumbnails/policy/covers/notes-noter-exposition-geoeconomique-entreprise-methode.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-noter-exposition-geoeconomique-entreprise-methode.png
 ---
 
 *Rapport de méthode — 12 juillet 2026*

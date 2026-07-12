@@ -7,6 +7,9 @@ theme: business
 summary: "Les chocs géopolitiques ne frappent pas les entreprises de façon homogène ; parmi les entreprises confrontées à une hausse de coûts, nos estimations sur données d'entreprises européennes (enquête SAFE) montrent que 17,6 % seulement des micro et petites structures répercutent cette hausse sur leurs prix, contre 40,0 % des grandes — une part de firmes qui relèvent leurs prix bien plus faible en bas du tissu productif, corrélée à la concentration de la compression de marge et de la tension de BFR sur les PME et ETI, avec des implications directes pour le risque de crédit d'un portefeuille."
 status: staging
 draft: false
+cover_image: /thumbnails/policy/covers/notes-geopolitique-compte-de-resultat-incidence-taille-secteur.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-geopolitique-compte-de-resultat-incidence-taille-secteur.png
 ---
 
 *Brief d'analyse risque, 11 juillet 2026*

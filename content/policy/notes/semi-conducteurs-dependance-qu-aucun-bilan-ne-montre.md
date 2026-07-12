@@ -15,6 +15,9 @@ summary: 'Un semi-conducteur représente quelques centimes dans le coût d''un v
 status: staging
 draft: false
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-semi-conducteurs-dependance-qu-aucun-bilan-ne-montre.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-semi-conducteurs-dependance-qu-aucun-bilan-ne-montre.png
 ---
 
 ## Résumé exécutif

@@ -7,6 +7,9 @@ theme: business
 summary: "Anatomie d'une contrainte sur les métaux critiques — mécanisme du choc, carte d'exposition sectorielle, transmission différenciée aux marges et à la trésorerie selon la taille, signaux avancés et recommandations traçables pour le décideur."
 status: staging
 draft: false
+cover_image: /thumbnails/policy/covers/notes-anatomie-d-un-choc-industrie-europeenne-metaux-critiques.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-anatomie-d-un-choc-industrie-europeenne-metaux-critiques.png
 ---
 
 *Note d'analyse — risque industriel, 11 juillet 2026*

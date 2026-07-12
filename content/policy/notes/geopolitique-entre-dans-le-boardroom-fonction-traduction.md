@@ -7,6 +7,9 @@ theme: business
 summary: "La géopolitique est redevenue une variable structurelle de la décision d'entreprise ; il manque aux organisations une fonction de traduction entre le choc géo-macro et l'indicateur de gestion."
 status: staging
 draft: false
+cover_image: /thumbnails/policy/covers/notes-geopolitique-entre-dans-le-boardroom-fonction-traduction.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-geopolitique-entre-dans-le-boardroom-fonction-traduction.png
 ---
 
 Note de vision, 11 juillet 2026

@@ -15,6 +15,9 @@ summary: "Un blocage sur Ormuz et la bascule vers un GNL rare ne sont pas un év
 status: staging
 draft: false
 author: Eric Gabin Kilama
+cover_image: /thumbnails/policy/covers/notes-entreprise-europeenne-choc-energetique-ormuz-gnl.png
+thumbnail:
+  resolved_path: /thumbnails/policy/covers/notes-entreprise-europeenne-choc-energetique-ormuz-gnl.png
 ---
 
 ## Résumé exécutif

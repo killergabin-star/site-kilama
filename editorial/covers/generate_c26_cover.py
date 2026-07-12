@@ -32,6 +32,7 @@ THEMES = {
  "economie": {"bg":"#003D5C","tint":"#005577","num":"02","collection":"Économie &amp; Finance"},
  "strategie":{"bg":"#0E0E10","tint":"#232328","num":"01","collection":"Stratégie"},
  "climat":   {"bg":"#00524E","tint":"#006963","num":"04","collection":"Climat &amp; Transitions"},
+ "business":{"bg":"#16283C","tint":"#274563","num":"05","collection":"Entreprises &amp; Risques"},
 }
 FILIGRANE = {
  "geopol": '''<g stroke="rgba(246,244,240,0.10)" stroke-width="1.1" fill="none">
@@ -52,6 +53,11 @@ FILIGRANE = {
    <path d="M 540 130 C 660 110, 780 160, 900 130 S 1140 150, 1260 120"/><path d="M 540 180 C 660 160, 780 210, 900 180 S 1140 200, 1260 170"/>
    <path d="M 540 240 C 680 220, 800 270, 920 240 S 1160 260, 1260 230"/><path d="M 540 320 C 700 300, 820 350, 940 320 S 1180 340, 1260 310"/></g>
  <g stroke="rgba(0,229,196,0.20)" stroke-width="1.4" fill="none"><path d="M 540 270 C 700 250, 820 300, 940 270 S 1180 290, 1260 260"/></g>''',
+ "business": '''<g stroke="rgba(246,244,240,0.09)" stroke-width="1.2" fill="none">
+   <path d="M 600 470 L 1250 130"/><path d="M 600 470 L 1250 245"/><path d="M 600 470 L 1250 360"/><path d="M 600 470 L 1250 455"/>
+   <line x1="1250" y1="130" x2="1250" y2="455" stroke-dasharray="5,5"/></g>
+ <g stroke="rgba(224,138,60,0.22)" stroke-width="1.6" fill="none"><path d="M 600 470 L 1250 130"/></g>
+ <g fill="rgba(246,244,240,0.30)"><circle cx="1250" cy="130" r="3.4"/><circle cx="1250" cy="455" r="3.4"/><circle cx="600" cy="470" r="3"/></g>''',
 }
 
 TPL = '''<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">

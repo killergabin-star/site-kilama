@@ -52,5 +52,59 @@
     "meta": "Note<span class=\"sep\">·</span>Ukraine · réarmement · Afrique<span class=\"sep\">·</span>présidence française",
     "tagline": "Dossier G7 Évian · Juin 2026",
     "titlesize": 56
+  },
+  {
+    "slug": "notes-anatomie-d-un-choc-industrie-europeenne-metaux-critiques",
+    "theme": "business",
+    "eyebrow": "Dossier sectoriel · Métaux critiques",
+    "title": "Anatomie d'un choc : l'industrie européenne face aux métaux critiques",
+    "meta": "Dossier<span class=\"sep\">·</span>Chaînes de valeur · exposition firme<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 52
+  },
+  {
+    "slug": "notes-noter-exposition-geoeconomique-entreprise-methode",
+    "theme": "business",
+    "eyebrow": "Méthode · Notation de l'exposition",
+    "title": "Noter l'exposition géo-économique d'une entreprise",
+    "meta": "Rapport de méthode<span class=\"sep\">·</span>5 canaux · score · bilan<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 56
+  },
+  {
+    "slug": "notes-geopolitique-entre-dans-le-boardroom-fonction-traduction",
+    "theme": "business",
+    "eyebrow": "Vision · Gouvernance du risque",
+    "title": "La géopolitique entre dans le boardroom",
+    "meta": "Note<span class=\"sep\">·</span>Fonction de traduction géo-économique<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 62
+  },
+  {
+    "slug": "notes-entreprise-europeenne-choc-energetique-ormuz-gnl",
+    "theme": "business",
+    "eyebrow": "Dossier sectoriel · Énergie",
+    "title": "L'entreprise européenne face au choc énergétique",
+    "meta": "Dossier<span class=\"sep\">·</span>Ormuz · GNL · compte de résultat<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 56
+  },
+  {
+    "slug": "notes-semi-conducteurs-dependance-qu-aucun-bilan-ne-montre",
+    "theme": "business",
+    "eyebrow": "Dossier sectoriel · Semi-conducteurs",
+    "title": "Semi-conducteurs : la dépendance qu'aucun bilan ne montre",
+    "meta": "Dossier<span class=\"sep\">·</span>Taïwan · contrôles export · rang 2-3<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 54
+  },
+  {
+    "slug": "notes-geopolitique-compte-de-resultat-incidence-taille-secteur",
+    "theme": "business",
+    "eyebrow": "Brief · Incidence par la taille",
+    "title": "Quand la géopolitique entre dans le compte de résultat",
+    "meta": "Brief<span class=\"sep\">·</span>Incidence par taille et secteur<span class=\"sep\">·</span>Juillet 2026",
+    "tagline": "Analyse de risque · Juillet 2026",
+    "titlesize": 54
   }
 ]
