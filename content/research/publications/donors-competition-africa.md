@@ -5,7 +5,7 @@ authors:
 date: "2016-05-01"
 hugoblox:
   ids:
-    doi: "10.1002/jid.3163"
+    doi: "10.1002/jid.3198"
 publication_types: ["article-journal"]
 publication: "*Journal of International Development*, 28, pp. 528-551"
 publication_short: "JID"

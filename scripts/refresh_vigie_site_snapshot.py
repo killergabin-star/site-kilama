@@ -161,6 +161,39 @@ def fetch_wdi(indicator: str, countries: str) -> dict:
     return {"latest": latest, "series": series}
 
 
+FR_MONTHS = [
+    "janvier", "février", "mars", "avril", "mai", "juin",
+    "juillet", "août", "septembre", "octobre", "novembre", "décembre",
+]
+FR_MONTHS_ABBR = [
+    "janv.", "févr.", "mars", "avr.", "mai", "juin",
+    "juil.", "août", "sept.", "oct.", "nov.", "déc.",
+]
+EN_MONTHS_ABBR = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+]
+
+
+def fr_date_label(iso_date: str) -> str:
+    """'2026-07-12' -> '12 juillet 2026' (displayed snapshot label)."""
+    d = dt.date.fromisoformat(iso_date)
+    day = "1er" if d.day == 1 else str(d.day)
+    return f"{day} {FR_MONTHS[d.month - 1]} {d.year}"
+
+
+def fr_month_label(iso_date: str) -> str:
+    """'2026-06-01' -> 'juin 2026' (French vintage tag)."""
+    d = dt.date.fromisoformat(iso_date)
+    return f"{FR_MONTHS_ABBR[d.month - 1]} {d.year}"
+
+
+def en_month_label(iso_date: str) -> str:
+    """'2026-06-01' -> 'Jun 2026' (English vintage tag, dossiers)."""
+    d = dt.date.fromisoformat(iso_date)
+    return f"{EN_MONTHS_ABBR[d.month - 1]} {d.year}"
+
+
 def fmt_num(value: float, decimals: int = 1, comma: bool = True) -> str:
     text = f"{value:.{decimals}f}"
     if comma:
@@ -273,7 +306,9 @@ def build_snapshot() -> dict:
     scenarios, scenario_meta = load_fpsq_scenarios()
 
     gpr_delta, gpr_pct, gpr_ref_date, gpr_ref_value = ref_delta(gpr, days=31)
+    gpr_vintage_fr = fr_month_label(gpr[-1][0])
     brent_delta, brent_pct, _, _ = ref_delta(fred["brent"])
+    us10_delta, _, _, _ = ref_delta(fred["us_10y"])
     vix_delta, vix_pct, _, _ = ref_delta(fred["vix"])
     dollar_delta, dollar_pct, _, _ = ref_delta(fred["dollar"])
     eur_delta, eur_pct, _, _ = ref_delta(fred["eur_usd"])
@@ -323,10 +358,10 @@ def build_snapshot() -> dict:
         {
             "symbol": "GPR",
             "value": fmt_num(gpr[-1][1], 1),
-            "delta": f"▼ -{fmt_num(abs(gpr_pct), 1)}% m/m",
+            "delta": f"{fmt_pct_delta(gpr_pct)} m/m",
             "class": "delta-bad",
             "source": "Caldara-Iacoviello",
-            "vintage": "avr. 2026",
+            "vintage": gpr_vintage_fr,
         },
         {
             "symbol": "BRENT",
@@ -355,7 +390,7 @@ def build_snapshot() -> dict:
         {
             "symbol": "US 10Y",
             "value": f"{fmt_num(fred['us_10y'][-1][1], 2)}%",
-            "delta": "▲ +26 bp",
+            "delta": f"{'▲' if us10_delta >= 0 else '▼'} {'+' if us10_delta >= 0 else '−'}{fmt_num(abs(us10_delta) * 100, 0)} bp",
             "class": "delta-bad",
             "source": "FRED DGS10",
             "vintage": fred["us_10y"][-1][0],
@@ -382,10 +417,10 @@ def build_snapshot() -> dict:
         {
             "label": "GPR Index",
             "value": fmt_num(gpr[-1][1], 1),
-            "delta": f"▼ {fmt_num(abs(gpr_delta), 1)} pts",
+            "delta": f"{'▲' if gpr_delta >= 0 else '▼'} {fmt_num(abs(gpr_delta), 1)} pts",
             "tone": "bad",
             "context": f"vs MA-12M ({fmt_num(sum(v for _, v in gpr[-12:]) / 12, 1)})",
-            "source": "Caldara-Iacoviello · avr. 2026",
+            "source": f"Caldara-Iacoviello · {gpr_vintage_fr}",
         },
         {
             "label": "Brent",
@@ -420,7 +455,7 @@ def build_snapshot() -> dict:
             "value": fmt_num(gpr[-1][1], 1),
             "delta": f"MA12 {fmt_num(sum(v for _, v in gpr[-12:]) / 12, 1)}",
             "tone": "bad",
-            "timestamp": "avr. 2026",
+            "timestamp": gpr_vintage_fr,
             "source": "Caldara-Iacoviello",
         },
         {
@@ -522,7 +557,7 @@ def build_snapshot() -> dict:
         "meta": {
             "last_update": TODAY,
             "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
-            "snapshot_label": "26 mai 2026",
+            "snapshot_label": fr_date_label(TODAY),
             "cache_root": str(T7_CACHE_ROOT),
             "mode": "public_verified_plus_guarded_internal",
             "note": "Les séries publiques sont mises à jour; les séries propriétaires/internes restent explicitement marquées prototype ou gated.",
@@ -631,12 +666,17 @@ def update_vigie_dossiers(snapshot: dict) -> None:
     gpr_values = [value for _, value in gpr_series]
     gpr_latest = gpr_values[-1]
     gpr_ma12 = round(sum(gpr_values[-12:]) / 12, 1)
+    gpr_label_en = en_month_label(gpr_dates[-1])
+    brent_latest = source_cache["fred"]["brent"]["latest"]  # [date, value]
+    brent_label_en = en_month_label(brent_latest[0])
+    brent_tail = [(date, value) for date, value in source_cache["fred"]["brent"]["tail"]]
+    brent_tail_delta, brent_tail_pct, _, _ = ref_delta(brent_tail)
     now_iso = dt.datetime.now().replace(microsecond=0).isoformat() + "+02:00"
 
     poly_path = dossier_dir / "polycrisis.json"
     poly = json.loads(poly_path.read_text())
     poly["meta"]["last_update"] = TODAY
-    poly["meta"]["source_vintage"] = "GPR Apr 2026; FRED May 2026; FPSQ scenarios normalized"
+    poly["meta"]["source_vintage"] = f"GPR {gpr_label_en}; FRED {brent_label_en}; FPSQ scenarios normalized"
     poly["alert"]["value"] = gpr_latest
     poly["alert"]["threshold"] = gpr_ma12
     poly["alert"]["timestamp"] = now_iso
@@ -652,14 +692,14 @@ def update_vigie_dossiers(snapshot: dict) -> None:
     poly["featured_chart"]["dates"] = gpr_dates
     poly["featured_chart"]["values"] = gpr_values
     poly["featured_chart"]["latest_value"] = gpr_latest
-    poly["featured_chart"]["latest_label"] = "Apr 2026"
+    poly["featured_chart"]["latest_label"] = gpr_label_en
     poly["scenarios"] = snapshot["scenarios"]["items"] or poly["scenarios"]
     write_json(poly_path, poly)
 
     hormuz_path = dossier_dir / "iran-hormuz.json"
     hormuz = json.loads(hormuz_path.read_text())
     hormuz["meta"]["last_update"] = TODAY
-    hormuz["meta"]["source_vintage"] = "GPR Apr 2026; Brent FRED May 2026; World Bank CMO Apr 2026"
+    hormuz["meta"]["source_vintage"] = f"GPR {gpr_label_en}; Brent FRED {brent_label_en}; World Bank CMO Apr 2026"
     hormuz["alert"]["value"] = gpr_latest
     hormuz["alert"]["threshold"] = gpr_ma12
     hormuz["alert"]["timestamp"] = now_iso
@@ -674,12 +714,12 @@ def update_vigie_dossiers(snapshot: dict) -> None:
             card["pct"] = round((gpr_values[-1] - gpr_values[-2]) / gpr_values[-2] * 100, 1)
         if card["ticker"] == "BRENT:OIL":
             card["value"] = float(snapshot["data_room"][1]["value"].split()[0])
-            card["change"] = 18.1
-            card["pct"] = 18.35
+            card["change"] = round(brent_tail_delta, 1)
+            card["pct"] = round(brent_tail_pct, 2)
     hormuz["featured_chart"]["dates"] = gpr_dates
     hormuz["featured_chart"]["values"] = gpr_values
     hormuz["featured_chart"]["latest_value"] = gpr_latest
-    hormuz["featured_chart"]["latest_label"] = "Apr 2026"
+    hormuz["featured_chart"]["latest_label"] = gpr_label_en
     write_json(hormuz_path, hormuz)
 
     apd_path = dossier_dir / "apd-future.json"

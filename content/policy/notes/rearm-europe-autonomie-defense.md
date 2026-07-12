@@ -27,7 +27,7 @@ thumbnail:
 17 mars 2026
 
 
-[^1]: Les vues exprimées dans cette note sont celles de l'auteur et ne représentent pas une position institutionnelle. Contact : eric.kilama@protonmail.com.
+[^1]: Les vues exprimées dans cette note sont celles de l'auteur et ne représentent pas une position institutionnelle. Contact : kilamaericgabin@yahoo.fr.
 
 ---
 

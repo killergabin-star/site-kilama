@@ -1,11 +1,11 @@
 ---
-title: "China and Emerging donors influence in the aid landscape: A recipient perspective"
+title: "The influence of China and emerging donors aid allocation: A recipient perspective"
 authors:
   - "Eric Gabin Kilama"
 date: "2016-08-01"
 hugoblox:
   ids:
-    doi: "10.1016/j.chieco.2015.12.014"
+    doi: "10.1016/j.chieco.2015.11.010"
 publication_types: ["article-journal"]
 publication: "*China Economic Review*, 38, pp. 76-91"
 publication_short: "CER"

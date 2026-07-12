@@ -1,8 +1,8 @@
 ---
 title: "Inflation targeting: Genuine effects or publication selection bias?"
 authors:
+  - "Hippolyte W. Balima"
   - "Eric Gabin Kilama"
-  - "Hippolyte Balima"
   - "René Tapsoba"
 date: "2020-09-01"
 hugoblox:

@@ -265,7 +265,8 @@
       <div class="pub-entry-authors">{{ delimit . ", " }}</div>
       {{ end }}
       <div class="pub-entry-links">
-        {{ with .Params.hugoblox }}{{ with .ids }}{{ with .doi }}<a href="https://doi.org/{{ . }}" class="action" target="_blank" rel="noopener">DOI</a>{{ end }}{{ end }}{{ end }}
+        {{ with .Params.hugoblox }}{{ with .ids }}{{ with .doi }}<a href="https://doi.org/{{ . }}" class="action" target="_blank" rel="noopener">DOI / texte intégral</a>{{ end }}{{ end }}{{ end }}
+        {{ with .Params.publication }}<span class="pub-entry-authors">{{ . | markdownify }}</span>{{ end }}
       </div>
     </div>
       {{ end }}
@@ -296,7 +297,8 @@
       <div class="pub-entry-authors">{{ delimit . ", " }}</div>
       {{ end }}
       <div class="pub-entry-links">
-        {{ with .Params.hugoblox }}{{ with .ids }}{{ with .doi }}<a href="https://doi.org/{{ . }}" class="action" target="_blank" rel="noopener">DOI</a>{{ end }}{{ end }}{{ end }}
+        {{ $doi := "" }}{{ with .Params.hugoblox }}{{ with .ids }}{{ with .doi }}{{ $doi = . }}{{ end }}{{ end }}{{ end }}
+        {{ if $doi }}<a href="https://doi.org/{{ $doi }}" class="action" target="_blank" rel="noopener">DOI / texte intégral</a>{{ else }}<a href="mailto:kilamaericgabin@yahoo.fr?subject={{ printf "Demande de manuscrit — %s" .Title }}" class="action">Manuscrit disponible sur demande</a>{{ end }}
         <span class="tag">{{ .Params.publication_short }}</span>
       </div>
     </div>
@@ -305,12 +307,6 @@
 
   </section>
 
-
-  <div style="background:rgba(44,95,138,0.08);border-left:3px solid var(--blue-fpsq,#2C5F8A);padding:1rem 1.5rem;margin:0 auto 2rem;max-width:1100px;border-radius:0 4px 4px 0;">
-    <p style="margin:0;color:var(--color-text-secondary,#5A6068);font-size:0.9rem;font-family:var(--font-ui,Inter,sans-serif);">
-      <strong style="color:var(--blue-fpsq,#2C5F8A);">Section en construction</strong> — Les bases de données, packages de réplication et documentation technique seront progressivement mis en ligne. Les descriptions des axes de recherche et la liste de publications sont définitives.
-    </p>
-  </div>
 
   <!-- ============================================================
        DONNÉES & RÉPLICATION
@@ -334,8 +330,7 @@
       <h3>FPSQ Indicators Database</h3>
       <p>Base d'indicateurs Flux, Prix, Stocks, Qualitatif pour suivre les canaux de transmission des chocs géopolitiques. Variables normalisées, fréquence mensuelle ou trimestrielle selon les sources, couverture G7 + économies émergentes.</p>
       <div class="pub-entry-links">
-        <a href="#" class="action">Télécharger</a>
-        <a href="#" class="action">Documentation</a>
+        <a href="mailto:kilamaericgabin@yahoo.fr?subject=FPSQ%20Indicators%20Database%20%E2%80%94%20demande%20d%27acc%C3%A8s" class="action">Accès sur demande</a>
       </div>
     </div>
 
@@ -344,8 +339,7 @@
       <h3>GPR Theatre Decomposition</h3>
       <p>Décomposition du risque géopolitique par théâtre, type d'événement et intensité : menaces, actes, sanctions, restrictions commerciales et ruptures logistiques. L'objectif est de documenter la mesure avant de l'utiliser comme variable de traitement.</p>
       <div class="pub-entry-links">
-        <a href="#" class="action">Télécharger</a>
-        <a href="#" class="action">Codebook</a>
+        <a href="mailto:kilamaericgabin@yahoo.fr?subject=GPR%20Theatre%20Decomposition%20%E2%80%94%20demande%20d%27acc%C3%A8s" class="action">Accès sur demande</a>
       </div>
     </div>
 
@@ -354,8 +348,7 @@
       <h3>Development Finance Panel — Replication Package</h3>
       <p>Package de réplication : scripts d'estimation R/Stata, codebook, versions nettoyées des sources ouvertes et documentation des restrictions d'accès pour les données sous licence. Reproductibilité maximale, sans promettre l'impossible lorsque les données ne sont pas publiques.</p>
       <div class="pub-entry-links">
-        <a href="#" class="action">Accéder au dépôt</a>
-        <a href="#" class="action">README</a>
+        <a href="mailto:kilamaericgabin@yahoo.fr?subject=Development%20Finance%20Panel%20%E2%80%94%20demande%20du%20package%20de%20r%C3%A9plication" class="action">Package sur demande</a>
       </div>
     </div>
 

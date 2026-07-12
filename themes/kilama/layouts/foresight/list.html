@@ -4,6 +4,9 @@
 
 {{ define "main" }}
   {{ $vigieSnapshot := .Site.Data.vigie_snapshot }}
+  {{/* Honesty guard: only claim LIVE when the snapshot was refreshed within 7 days of the build. */}}
+  {{ $snapshotFresh := false }}
+  {{ with $vigieSnapshot }}{{ with .meta.last_update }}{{ $snapshotFresh = lt (sub now.Unix (time .).Unix) 604800 }}{{ end }}{{ end }}
 
   <!-- PARTICLE FLOW FIELD BACKGROUND -->
   <div id="particle-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.15;"></div>
@@ -30,15 +33,19 @@
     <section class="dashboard-header" id="overview">
       <div class="eyebrow">
         <span class="eyebrow-mark"></span>
-        <span class="eyebrow-text live-dot">VIGIE &middot; LIVE</span>
+        <span class="eyebrow-text live-dot">VIGIE &middot; {{ if $snapshotFresh }}LIVE{{ else }}SNAPSHOT{{ end }}</span>
       </div>
       <h1 class="dashboard-title">Foresight</h1>
       <div class="dashboard-meta">
+        {{ if $snapshotFresh }}
         <span class="status">
           <span class="status-dot status-dot--live"></span>
           Actif
         </span>
         <span>{{ with $vigieSnapshot }}{{ .meta.snapshot_label }}{{ else }}{{ now.Format "2 Jan. 2006" }}{{ end }} &middot; CET</span>
+        {{ else }}
+        <span>Derni&egrave;re mise &agrave; jour : {{ with $vigieSnapshot }}{{ .meta.snapshot_label }}{{ else }}{{ now.Format "2 Jan. 2006" }}{{ end }}</span>
+        {{ end }}
       </div>
     </section>
 

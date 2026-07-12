@@ -6,7 +6,7 @@
     "status": "active",
     "last_update": "2026-07-12",
     "data_mode": "hybrid",
-    "source_vintage": "GPR Apr 2026; Brent FRED May 2026; World Bank CMO Apr 2026"
+    "source_vintage": "GPR Jun 2026; Brent FRED Jul 2026; World Bank CMO Apr 2026"
   },
   "alert": {
     "indicator_id": "gpr-index",
@@ -15,7 +15,7 @@
     "threshold": 170.2,
     "threshold_label": "1-year moving average",
     "text": "Global GPR remains elevated at <strong>173.6</strong>; Brent reached <strong>69.56 $/b</strong> in the latest FRED observation.",
-    "timestamp": "2026-07-12T06:40:48+02:00"
+    "timestamp": "2026-07-12T21:51:45+02:00"
   },
   "sparklines": {
     "header": "Key Indicators — Hormuz Focus",
@@ -25,8 +25,8 @@
         "ticker": "BRENT:OIL",
         "label": "Brent Crude",
         "value": 69.56,
-        "change": 18.1,
-        "pct": 18.35
+        "change": -27.7,
+        "pct": -28.5
       },
       {
         "ticker": "GPR:IND",
@@ -121,7 +121,7 @@
     "meta": "Caldara & Iacoviello · Monthly",
     "source": "matteoiacoviello.com/gpr.htm · CC BY",
     "latest_value": 173.6,
-    "latest_label": "Apr 2026",
+    "latest_label": "Jun 2026",
     "dates": [
       "2010-01-01",
       "2010-02-01",

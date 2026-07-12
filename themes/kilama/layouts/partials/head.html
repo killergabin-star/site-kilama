@@ -1,15 +1,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ .Site.Title }} — Intelligence Géopolitique Quantifiée{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.marketing.seo.description }}{{ end }}">
+{{- /* Meta description chain: description → summary → content summary → site default */ -}}
+{{- $desc := "" -}}
+{{- with .Params.description }}{{ $desc = . }}{{ end -}}
+{{- if not $desc }}{{ with .Params.summary }}{{ $desc = . }}{{ end }}{{ end -}}
+{{- if not $desc }}{{ if .IsPage }}{{ with .Summary }}{{ $desc = . }}{{ end }}{{ end }}{{ end -}}
+{{- if not $desc }}{{ $desc = .Site.Params.marketing.seo.description }}{{ end -}}
+{{- $desc = $desc | plainify | replaceRE `\s+` " " | truncate 160 }}
+<meta name="description" content="{{ $desc }}">
 <meta name="author" content="Eric Gabin Kilama">
+
+{{- /* og:image resolution chain: cover_image (C26 covers) → thumbnail.resolved_path →
+       policy_thumbnails manifest (mirrors partials/policy-thumbnail.html step 2) → avatar.
+       SVG candidates are skipped: most crawlers ignore SVG og:images. */ -}}
+{{- $ogImage := "" -}}
+{{- $candidates := slice -}}
+{{- with .Params.cover_image }}{{ $candidates = $candidates | append . }}{{ end -}}
+{{- with .Params.thumbnail }}{{ with .resolved_path }}{{ $candidates = $candidates | append . }}{{ end }}{{ end -}}
+{{- with index site.Data.policy_thumbnails .RelPermalink }}{{ with .path }}{{ $candidates = $candidates | append . }}{{ end }}{{ end -}}
+{{- range $candidates -}}
+  {{- if not $ogImage -}}
+    {{- $candidate := replaceRE "^/" "" . -}}
+    {{- if and (fileExists (printf "static/%s" $candidate)) (not (strings.HasSuffix (lower $candidate) ".svg")) -}}
+      {{- $ogImage = $candidate -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $hasPageImage := ne $ogImage "" -}}
+{{- if not $ogImage }}{{ $ogImage = "images/avatar_kilama.png" }}{{ end -}}
+{{- $isArticle := and .IsPage (in (slice "policy" "research" "foresight") .Section) }}
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.marketing.seo.description }}{{ end }}">
-<meta property="og:type" content="website">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:image" content="{{ "images/avatar_kilama.webp" | absURL }}">
+<meta property="og:image" content="{{ $ogImage | absURL }}">
+{{- if $isArticle }}{{ with .Date }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="{{ if $hasPageImage }}summary_large_image{{ else }}summary{{ end }}">
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="Eric Gabin Kilama — flux" href="{{ "index.xml" | absURL }}">
 
 <!-- Fonts — try-06 typography system -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

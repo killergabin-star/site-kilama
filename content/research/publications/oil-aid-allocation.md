@@ -1,14 +1,14 @@
 ---
-title: "The Importance of Oil in the Allocation of Foreign Aid: The Case of G7 donors"
+title: "The role of oil in the allocation of foreign aid: The case of the G7 donors"
 authors:
-  - "Eric Gabin Kilama"
   - "Cécile Couharde"
   - "Fatih Karanfil"
-  - "Luc-Désiré Omgba"
+  - "Eric Gabin Kilama"
+  - "Luc Désiré Omgba"
 date: "2020-04-01"
 hugoblox:
   ids:
-    doi: "10.1016/j.jce.2019.11.004"
+    doi: "10.1016/j.jce.2019.10.001"
 publication_types: ["article-journal"]
 publication: "*Journal of Comparative Economics*, 48(2), pp. 363-383"
 publication_short: "JCE"

@@ -1,8 +1,8 @@
 {
   "meta": {
     "last_update": "2026-07-12",
-    "generated_at": "2026-07-12T06:40:48",
-    "snapshot_label": "26 mai 2026",
+    "generated_at": "2026-07-12T21:51:45",
+    "snapshot_label": "12 juillet 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
     "note": "Les séries publiques sont mises à jour; les séries propriétaires/internes restent explicitement marquées prototype ou gated."
@@ -63,7 +63,7 @@
         "delta": "▼ -14,7% m/m",
         "class": "delta-bad",
         "source": "Caldara-Iacoviello",
-        "vintage": "avr. 2026"
+        "vintage": "juin 2026"
       },
       {
         "symbol": "BRENT",
@@ -92,7 +92,7 @@
       {
         "symbol": "US 10Y",
         "value": "4,54%",
-        "delta": "▲ +26 bp",
+        "delta": "▲ +1 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
         "vintage": "2026-07-09"
@@ -122,7 +122,7 @@
       "delta": "▼ 30,0 pts",
       "tone": "bad",
       "context": "vs MA-12M (170,2)",
-      "source": "Caldara-Iacoviello · avr. 2026"
+      "source": "Caldara-Iacoviello · juin 2026"
     },
     {
       "label": "Brent",
@@ -156,7 +156,7 @@
       "value": "173,6",
       "delta": "MA12 170,2",
       "tone": "bad",
-      "timestamp": "avr. 2026",
+      "timestamp": "juin 2026",
       "source": "Caldara-Iacoviello"
     },
     {
