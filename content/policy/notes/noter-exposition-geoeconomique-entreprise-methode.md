@@ -123,6 +123,8 @@ Appliquée aux vingt-huit secteurs de notre cartographie, la composition produit
 
 La lecture verticale de la grille — un canal à la fois — n'est que la moitié de l'exercice. La lecture horizontale — la décomposition d'un score par canal pour une firme donnée — est ce qui rend la note actionnable. Une entreprise peut afficher un score composite modéré tout en concentrant l'essentiel de son exposition sur un seul canal ; c'est ce canal, et non le score agrégé, qui commande la décision. Le profil canal par canal d'une firme se lit comme un radar : il indique par où le choc entrera, donc quel levier de résilience prioriser.
 
+![Radar : le profil d'exposition d'une entreprise, décomposé sur les cinq canaux (ETI industrielle type vs moyenne de son secteur)](/uploads/figures/business/methode_radar.svg)
+
 Agrégés, les vingt-huit secteurs se rangent enfin sur un score d'exposition composite. Les équipements électriques et l'électronique dominent le classement, suivis de la métallurgie et de l'automobile ; à l'autre extrémité, la finance et le commerce présentent les scores composites les plus faibles — non parce qu'ils sont à l'abri, mais parce que leur exposition transite par des canaux différents (le canal réglementaire plutôt que le canal physique), que le composite pondère à leur juste poids.
 
 ### Du score au poste de bilan
