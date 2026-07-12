@@ -4,9 +4,9 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, sanctions, conformite, compliance, commerce]
 theme: business
-summary: Comment traduire un régime de sanctions — un texte juridique — en une mesure d'exposition au niveau de la firme, et pourquoi les discontinuités de couverture créent l'essentiel du risque de contournement et de conformité.
+summary: "Comment traduire un régime de sanctions — un texte juridique — en une mesure d'exposition au niveau de la firme, et pourquoi les discontinuités de couverture créent l'essentiel du risque de contournement et de conformité."
 status: staging
-draft: true
+draft: false
 ---
 
 Note analytique, 11 juillet 2026
@@ -36,8 +36,6 @@ C'est pourquoi la première grandeur à construire n'est pas binaire — *sancti
 La conséquence pratique de cette gradation, c'est que la carte d'exposition n'est pas continue. Elle est faite de sauts. Certains produits, certaines positions douanières, certains flux basculent dans la contrainte, tandis que leurs voisins immédiats — un code SH adjacent, un dérivé transformé, un service accessoire — restent hors champ.
 
 Nos travaux de cartographie sectorielle rendent ces discontinuités mesurables. En construisant, secteur par secteur, un indice d'exposition aux sanctions sous trois scénarios de rupture — terres rares et matériaux critiques, aggravation du régime russe, crise autour de Taïwan et des semi-conducteurs —, on observe une concentration frappante. Sous un scénario « matériaux critiques », l'exposition se loge dans l'automobile, les équipements électriques, la métallurgie et les machines ; elle est d'un ordre de grandeur plus faible dans les services, la finance ou la construction. Mais sous un scénario « Taïwan », la hiérarchie se déplace : l'électronique et les télécommunications remontent, l'automobile recule. La leçon n'est pas seulement que l'exposition est concentrée ; c'est qu'elle est **contingente au scénario**. Le secteur qui bascule dépend de la nature du choc, et une cartographie construite pour un régime peut être aveugle au suivant.
-
-<!-- FIGURE — heatmap secteur × scénario : lignes = 15 secteurs (C29 automobile, C27 équipements électriques, C26 électronique, C24 métallurgie, C28 machines, K finance, M_N services aux entreprises, F construction, etc.), colonnes = 3 scénarios de sanctions (matériaux critiques, Russie, Taïwan/semi-conducteurs), couleur = indice d'exposition (0-100) ; montre que la couverture est discontinue et contingente au scénario | source : cartographie sectorielle, nos travaux -->
 
 Ces discontinuités sont exactement l'espace du contournement. Là où un produit couvert jouxte un produit non couvert, trois portes s'ouvrent. La première est la **transformation** : un intrant sanctionné incorporé dans un bien transformé change de position douanière et sort du champ. La deuxième est la **réexportation par pays tiers** : le flux emprunte un intermédiaire non sanctionnant — la Turquie, les Émirats, l'Asie centrale — qui réétiquette l'origine. La troisième est le **réacheminement logistique**, dont la « flotte fantôme » de pétroliers échappant à l'assurance occidentale est devenue l'emblème. Aucune de ces trois portes ne suppose de fraude au sens pénal : elles exploitent des interstices juridiques réels, et c'est précisément ce qui les rend difficiles à provisionner.
 

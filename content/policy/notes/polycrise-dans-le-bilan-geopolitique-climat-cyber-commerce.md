@@ -4,9 +4,9 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, polycrisis, climat, cyber, commerce, csrd]
 theme: business
-summary: Les baromètres de risque disent aux dirigeants que la polycrise s'aggrave ; ils ne leur disent pas combien de points de marge, de BFR ou de provisions elle coûte. Cette note propose une fonction de traduction — du risque au poste comptable.
+summary: "Les baromètres de risque disent aux dirigeants que la polycrise s'aggrave ; ils ne leur disent pas combien de points de marge, de BFR ou de provisions elle coûte. Cette note propose une fonction de traduction — du risque au poste comptable."
 status: staging
-draft: true
+draft: false
 ---
 
 Les dirigeants d'entreprise ne manquent plus d'avertissements. Ils manquent de traductions. Chaque année, l'Allianz Risk Barometer, le Global Risks Report du Forum économique mondial et le Future Risks Report du groupe Axa convergent vers un même message : le risque géopolitique, climatique, numérique et commercial s'installe durablement au sommet de la hiérarchie des préoccupations.[^1] Le conseil d'administration lit « risque géopolitique, première inquiétude », l'inscrit à l'ordre du jour, mandate une veille — et se retrouve démuni devant les seules questions qui engagent réellement sa responsabilité fiduciaire : combien de points de marge brute ? quel effet sur le besoin en fonds de roulement ? quelle provision inscrire, quel actif déprécier, quelle ligne du reporting extra-financier documenter ?
@@ -20,8 +20,6 @@ Il existe désormais un marché du discours sur le risque géopolitique, structu
 Les classements eux-mêmes ne sont d'ailleurs pas alignés, ce qui devrait alerter tout dirigeant tenté de piloter sur un seul baromètre. L'Allianz Risk Barometer place, depuis plusieurs éditions, les incidents cyber en tête des préoccupations des entreprises, immédiatement suivis de l'interruption d'activité — les deux étant, du reste, largement le même risque saisi par deux bouts. Le changement climatique et les risques politiques et de violence y progressent régulièrement.[^3] Le Future Risks Report d'Axa, lui, classe l'instabilité géopolitique en deuxième position, derrière le changement climatique et devant le risque de cybersécurité.[^4] Le Global Risks Report du Forum économique mondial, enfin, distingue horizons : à deux ans, la désinformation et les conflits armés interétatiques dominent ; à dix ans, ce sont les risques environnementaux — événements climatiques extrêmes, perte de biodiversité, rupture d'approvisionnement en ressources naturelles — qui occupent les premiers rangs.[^5]
 
 Ces divergences ne sont pas des erreurs de mesure. Elles reflètent le fait que chaque baromètre agrège des expositions hétérogènes en une hiérarchie moyenne, alors que l'exposition réelle d'une entreprise est déterminée par la géographie de ses propres flux — ses fournisseurs, ses débouchés, ses actifs physiques, ses systèmes d'information. Le classement moyen n'a de valeur opérationnelle que replié sur cette géographie singulière. C'est précisément le travail de traduction que les baromètres délèguent, sans l'outiller, aux directions financières.
-
-<!-- FIGURE — tableau comparatif du classement des cinq premiers risques 2024-2025 selon trois baromètres (Allianz Risk Barometer, Axa Future Risks Report, WEF Global Risks Report), colonnes = baromètres, lignes = rang 1-5 | source : publications respectives -->
 
 ## La convergence n'est pas une addition
 
@@ -41,8 +39,6 @@ La proposition centrale de cette note tient en une matrice. À chaque risque cor
 | **Climat / CSRD** — aléas physiques, transition, obligation de reporting | Dommages aux actifs, actifs échoués, coût de mise en conformité de la double matérialité | Dépréciations d'actifs (IAS 36), provisions, capex de décarbonation, annexes et reporting extra-financier |
 | **Cyber** — interruption, atteinte aux données et à la propriété intellectuelle | Arrêt d'exploitation, remédiation, perte d'actifs immatériels | Immobilisations incorporelles, provisions pour litiges, prime d'assurance cyber, continuité d'exploitation |
 | **Commerce / sanctions** — droits de douane, gels d'avoirs, extraterritorialité | Perte de débouchés, gel de créances, conformité (screening, sanctions secondaires) | Chiffre d'affaires, créances clients (dépréciation), coûts de conformité, engagements hors bilan |
-
-<!-- FIGURE — diagramme de flux (Sankey ou arbre) reliant les 4 risques-sources (colonne gauche) à leurs canaux de transmission (colonne centrale) puis aux postes du bilan/compte de résultat impactés (colonne droite) | source : élaboration de l'auteur -->
 
 Cette matrice ne se lit pas partout de la même façon, car un même risque n'emprunte pas partout les mêmes canaux. L'analyse des rapports annuels des cent premières capitalisations boursières mondiales — sections *Risk Factors*, *Management Discussion & Analysis* et lettres aux actionnaires passées au crible d'outils d'intelligence artificielle — met en évidence une véritable « nature sectorielle du risque » : la géopolitique ne frappe pas les entreprises de la même manière selon leur secteur.[^ifri] Dans l'énergie, elle vise les infrastructures et les points de passage — sabotage de pipelines, perturbations en mer Rouge, blocage du détroit d'Ormuz, expropriations et surtaxes sur les rentes exceptionnelles — et se loge directement dans les actifs, les coûts opérationnels et la volatilité des prix. Dans la finance, elle prend la forme du *lawfare*, où l'extraterritorialité des sanctions américaines devient la menace centrale et où les systèmes de paiement se muent en terrain de confrontation entre puissances. Dans la pharmacie, elle passe par la dépendance aux principes actifs asiatiques, qui contraint à reconfigurer les chaînes d'approvisionnement. Dans la technologie, elle est celle de la fragmentation, dont la seule inconnue n'est plus le principe mais la vitesse.
 

@@ -702,6 +702,42 @@
     </div>
 
     <!-- ══════════════════════════════════════════════════════
+         BUSINESS — Entreprises & Risques (verticale firme-niveau)
+         ══════════════════════════════════════════════════════ -->
+    {{ if gt (len $businessPages) 0 }}
+    <div class="container">
+      <section id="business" class="policy-dossier dossier-banner" data-watermark="BUSINESS">
+        <div class="eyebrow">
+          <span class="eyebrow-mark"></span>
+          <span class="eyebrow-text">BUSINESS &middot; ENTREPRISES &amp; RISQUES</span>
+        </div>
+        <h2>Le risque géopolitique dans le bilan de l'entreprise</h2>
+        <p class="article-subtitle">Des analyses de risque à destination des décideurs d'entreprise — comme celles que produirait la direction des risques d'une banque ou d'un assureur : traduire les chocs géopolitiques, climatiques, numériques et commerciaux en indicateurs concrets — marges, trésorerie, exposition, chaînes de valeur, conformité — sur lesquels se décide la résilience réelle.</p>
+        <div class="policy-catalog">
+          {{ range first 6 $businessPages }}
+          <article class="card-note card-note--with-thumbnail">
+            <div class="card-note-thumbnail" aria-hidden="true">
+              {{ partial "policy-thumbnail.html" . }}
+            </div>
+            <div>
+              <span class="card-note-tag">{{ with .Params.fly_title }}{{ . | upper }}{{ else }}BUSINESS{{ end }}</span>
+              <h3 class="card-note-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p class="card-note-summary">{{ with .Params.summary }}{{ . | truncate 120 }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}</p>
+              <div class="card-note-meta">
+                <span class="card-note-date">{{ index $months (.Date.Format "01") }} {{ .Date.Format "2006" }}</span>
+                <span class="card-note-sep">&middot;</span>
+                <span class="card-note-type">{{ with .Params.doc_type }}{{ . }}{{ else }}note{{ end }}</span>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+        <a class="action action--secondary" href="{{ "policy/" | relURL }}#catalogue">Toutes les analyses Business &rarr;</a>
+      </section>
+    </div>
+    {{ end }}
+
+    <!-- ══════════════════════════════════════════════════════
          DOSSIER SPÉCIAL — G7 Évian 2026 (semaine du sommet, 15-17 juin)
          ══════════════════════════════════════════════════════ -->
     <div class="container">

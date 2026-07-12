@@ -4,9 +4,9 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, metiers, audit, csrd, durabilite, dscg]
 theme: business
-summary: La CSRD et la montée des données non financières déplacent le métier de l'audit — de l'assurance sur l'information financière vers une assurance élargie couvrant durabilité, cyber et résilience.
+summary: "La CSRD et la montée des données non financières déplacent le métier de l'audit — de l'assurance sur l'information financière vers une assurance élargie couvrant durabilité, cyber et résilience."
 status: staging
-draft: true
+draft: false
 ---
 
 Note d'analyse, 11 juillet 2026
@@ -32,8 +32,6 @@ La bascule décisive tient au niveau d'assurance exigé. La CSRD impose, dans un
 Cette trajectoire n'est toutefois pas linéaire. Le paquet de simplification « Omnibus », présenté par la Commission européenne le 26 février 2025, a rebattu les cartes : report de deux ans de l'entrée en vigueur pour les entreprises des vagues suivantes (directive dite « stop-the-clock » adoptée au printemps 2025), relèvement envisagé des seuils d'assujettissement, et — point crucial pour la profession — remise en cause de la trajectoire vers l'assurance raisonnable au profit d'un maintien durable de l'assurance limitée. Le signal est double : le champ d'application se rétracte politiquement, mais l'objet nouveau, lui, est installé. L'assurance sur la durabilité ne relève plus du débat sur son existence, seulement de son calibrage.
 
 Au niveau mondial, cet objet a désormais une grammaire commune. L'International Auditing and Assurance Standards Board (IAASB) a approuvé en septembre 2024, et publié en novembre 2024, la norme **ISSA 5000** — première norme internationale globale d'assurance de durabilité. Neutre à l'égard du référentiel de reporting (ESRS, normes ISSB, autres) et ouverte aux différents profils de prestataires, elle couvre à la fois l'assurance limitée et l'assurance raisonnable, et devient la référence sur laquelle s'aligneront les cadres nationaux. Là où l'audit financier s'était doté au fil des décennies d'un corpus international mature (normes ISA), l'assurance de durabilité vient, en quelques années, de se doter du sien.
-
-<!-- FIGURE — chronologie à deux niveaux : (haut) vagues d'application de la CSRD (grandes entités d'intérêt public exercice 2024, autres grandes entreprises exercice 2025, PME cotées exercice 2026, décalées par le paquet Omnibus) ; (bas) trajectoire du niveau d'assurance (assurance limitée dès l'origine → évaluation d'un passage à l'assurance raisonnable à l'horizon 2028) ; titre « L'assurance de durabilité s'installe, son calibrage se négocie » | source : directive CSRD (UE) 2022/2464 et paquet Omnibus de simplification, Commission européenne, février 2025 -->
 
 ---
 
@@ -64,8 +62,6 @@ Le troisième moteur est l'apparition d'objets d'assurance qui n'existaient pas,
 **Les engagements climatiques.** La norme ESRS consacrée au climat (E1) impose de publier un **plan de transition** compatible avec la limitation du réchauffement — trajectoire de réduction des émissions, jalons, moyens engagés. Faire assurer un tel plan, c'est faire porter l'assurance sur une **promesse** autant que sur un état : non plus « les comptes sont-ils fidèles ? » mais « l'engagement de neutralité est-il crédible, étayé, cohérent avec les moyens ? ». C'est le rempart le plus tangible contre l'écoblanchiment (*greenwashing*), et l'un des terrains les plus exigeants pour l'auditeur, car il mêle données historiques, projections et hypothèses.
 
 Ces trois objets ont un point commun : ils sont moins mûrs, moins normalisés et moins traçables que l'information financière. L'assurance élargie s'exerce sur un terrain où la donnée est encore en construction — ce qui accroît la valeur de l'attestation autant que le risque qu'elle fait courir à celui qui la délivre.
-
-<!-- FIGURE — schéma en cercles concentriques du périmètre de l'assurance : noyau « information financière » (audit légal, assurance raisonnable), puis anneaux successifs « durabilité / ESRS » (assurance limitée → raisonnable), « chaînes de valeur / devoir de vigilance », « cyber-résilience », « engagements climatiques / plans de transition » ; gradient de maturité et de traçabilité décroissantes du centre vers la périphérie ; titre « L'assurance change d'objet » | source : analyse de l'auteur d'après la directive CSRD, la directive CSDDD (UE) 2024/1760 et la norme ISSA 5000 (IAASB) -->
 
 ---
 

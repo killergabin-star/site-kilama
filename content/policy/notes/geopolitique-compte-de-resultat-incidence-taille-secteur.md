@@ -4,7 +4,7 @@ date: '2026-07-11'
 doc_type: brief
 tags: [business, entreprise, risque-geopolitique, credit, pme, marges]
 theme: business
-summary: Les chocs géopolitiques ne frappent pas les entreprises de façon homogène ; parmi les entreprises confrontées à une hausse de coûts, nos estimations sur données d'entreprises européennes (enquête SAFE) montrent que 17,6 % seulement des micro et petites structures répercutent cette hausse sur leurs prix, contre 40,0 % des grandes — une part de firmes qui relèvent leurs prix bien plus faible en bas du tissu productif, corrélée à la concentration de la compression de marge et de la tension de BFR sur les PME et ETI, avec des implications directes pour le risque de crédit d'un portefeuille.
+summary: "Les chocs géopolitiques ne frappent pas les entreprises de façon homogène ; parmi les entreprises confrontées à une hausse de coûts, nos estimations sur données d'entreprises européennes (enquête SAFE) montrent que 17,6 % seulement des micro et petites structures répercutent cette hausse sur leurs prix, contre 40,0 % des grandes — une part de firmes qui relèvent leurs prix bien plus faible en bas du tissu productif, corrélée à la concentration de la compression de marge et de la tension de BFR sur les PME et ETI, avec des implications directes pour le risque de crédit d'un portefeuille."
 status: staging
 draft: false
 ---
@@ -53,8 +53,6 @@ Chez les grandes entreprises, où 40,0 % des firmes relèvent leurs prix, la hau
 - **Trésorerie et charges financières** : le BFR élargi doit être financé. Pour une PME dont la dette est majoritairement à court terme et à taux variable, cela signifie un tirage accru sur les lignes court terme et une hausse des charges financières — au moment précis où la marge se contracte.
 - **Résultat net** : la conjonction d'une marge comprimée et de charges financières en hausse comprime le résultat par les deux bouts.
 
-<!-- FIGURE — bar chart à deux colonnes comparant, par classe de taille, la part des entreprises qui répercutent une hausse de coûts sur leurs prix (grandes 40,0 %, PME 17,6 %) ; en regard, pour une entreprise qui n'ajuste pas ses prix, cheminement du coût non répercuté le long du compte de résultat, avec sur-couche du canal BFR (stocks +, dettes fournisseurs -, créances clients +) | source : nos estimations sur données d'entreprises européennes (enquête SAFE) -->
-
 La grande entreprise et la PME ne vivent donc pas le même événement. La première subit une érosion de marge qu'elle peut piloter ; la seconde subit une double contrainte marge-liquidité qui, répétée sur deux ou trois exercices, dégrade sa structure financière. Le choc géopolitique n'est pas un événement de compte de résultat isolé : c'est une détérioration de bilan à effet différé.
 
 ---
@@ -64,8 +62,6 @@ La grande entreprise et la PME ne vivent donc pas le même événement. La premi
 La taille conditionne la capacité d'absorption ; le secteur conditionne l'intensité du choc. L'exposition la plus forte se concentre là où deux propriétés se rencontrent : une **intensité d'importation** élevée et une **concentration des intrants** sur un petit nombre de fournisseurs ou de corridors.
 
 Trois familles de secteurs cumulent ces deux propriétés. Les **industries de transformation** — automobile, électronique, chimie, métallurgie — dépendent d'intrants dont la production est géographiquement concentrée. Les **secteurs à intrants critiques** sont exposés à des dépendances que les indices géopolitiques classiques ne capturent pas : selon les données publiques de l'US Geological Survey et de l'Agence internationale de l'énergie, la République démocratique du Congo concentre environ 76 % de la production mondiale de cobalt, la Chine près de 60 % de l'extraction et 90 % du raffinage des terres rares ; le prix de l'antimoine a bondi de plus de 250 % en 2024 à la suite de l'embargo chinois.[^5] D'après les travaux du CEPR et de la Commission européenne, plusieurs centaines de produits européens se trouvent en forte dépendance externe, pour un impact potentiel de plusieurs points de PIB en cas de rupture d'approvisionnement.[^6] Enfin, les **secteurs sensibles aux goulets logistiques** — transport, agroalimentaire, énergie — voient leur coût marginal fixé par des points de passage (détroits, corridors) dont la vulnérabilité est elle-même géopolitique.
-
-<!-- FIGURE — matrice/scatter secteurs, axe X = intensité d'importation des intrants, axe Y = concentration fournisseurs (part du premier pays d'origine ou indice type Herfindahl), taille des points = poids du secteur dans un portefeuille PME type ; quadrant haut-droit = zone d'exposition maximale (transformation, intrants critiques, logistique) | source : nos calculs d'après données publiques USGS/AIE/CEPR -->
 
 La grille se complique d'un effet de recomposition. Sous pression géopolitique, les chaînes d'approvisionnement se réacheminent via des pays intermédiaires. L'exposition d'une entreprise ne change alors pas seulement de degré mais de nature : un fournisseur nominalement « diversifié » peut demeurer dépendant, en amont, d'un unique goulet. La cartographie doit donc remonter au-delà du fournisseur de rang 1.
 

@@ -195,5 +195,13 @@
   "coopération": "g7-multilateral",
   "triangle impossible": "g7-multilateral",
 
+  "business": "business",
+  "entreprise": "business",
+  "metiers": "business",
+  "expertise-comptable": "business",
+  "csrd": "business",
+  "scoring": "business",
+  "methode": "business",
+
   "_default": "_fallback"
 }

@@ -4,9 +4,9 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, metiers, conseil, risque, ia, dscg]
 theme: business
-summary: L'intelligence artificielle banalise le conseil linéaire — benchmarks, synthèses, cadrages génériques — et déplace la valeur vers la traduction d'un risque spécifique à la firme, à l'intersection des chocs convergents.
+summary: "L'intelligence artificielle banalise le conseil linéaire — benchmarks, synthèses, cadrages génériques — et déplace la valeur vers la traduction d'un risque spécifique à la firme, à l'intersection des chocs convergents."
 status: staging
-draft: true
+draft: false
 ---
 
 Note d'analyse, 11 juillet 2026
@@ -52,8 +52,6 @@ Reste à dire ce que ce conseil de proximité doit produire. La réponse tient d
 Ces risques, en outre, ne se présentent plus en silos : ils convergent. La même étude relève une asymétrie temporelle révélatrice — le risque géopolitique absorbe le présent quand la menace climatique balise l'horizon, majoritairement renvoyée à des scénarios de moyen et long terme. Cette différenciation est elle-même un risque, exposant les organisations à des ajustements brutaux. S'y ajoutent le risque cyber, décrit par plusieurs groupes comme en augmentation constante et de complexité croissante, et une densification réglementaire — encadrement de l'intelligence artificielle, résilience opérationnelle numérique, devoir de vigilance — qui traverse tous les secteurs. Pour l'entreprise européenne, ces contraintes se referment en tenaille : elle se trouve prise dans une double contrainte, à la fois climatique et géopolitique, qu'aucune cartographie de risque organisée par catégories séparées ne relie.
 
 Nous avons esquissé ailleurs ce que serait, à l'intérieur de l'entreprise, une fonction de traduction géo-économique — un chaînon reliant le choc géo-macro à l'indicateur de gestion. La présente note en tire la conséquence pour le marché du conseil lui-même : la valeur ne se trouve plus dans le diagnostic, abondant, mais dans cette traduction, rare. Le rôle du conseiller n'est plus de dire *que* le risque monte — les indices publics, du baromètre des risques d'Allianz à l'indice de Caldara et Iacoviello (*American Economic Review*, 2022), le disent déjà — mais de dire *comment* et *combien* il affecte cette firme-ci, dans son secteur, avec sa structure de coûts et sa géographie propres. C'est exactement ce que l'automatisation ne sait pas produire et ce que le conseil générique promet sans le tenir.
-
-<!-- FIGURE — schéma des quatre grammaires du risque selon la géographie du siège (États-Unis : sécurité et hégémonie ; Europe : état de droit et norme ; Chine : conformité idéologique ; Inde : opportunité et multi-alignement), croisées avec la forme sectorielle du risque (énergie, finance, pharmacie, technologie) | source : Thomas Gomart et Lucie Mielle, Ifri, mai 2026 -->
 
 ---
 

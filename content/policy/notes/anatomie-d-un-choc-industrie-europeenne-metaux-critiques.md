@@ -4,7 +4,7 @@ date: '2026-07-11'
 doc_type: report
 tags: [business, entreprise, flagship, metaux-critiques, industrie, stress-test, chaines-de-valeur]
 theme: business
-summary: Anatomie d'une contrainte sur les métaux critiques — mécanisme du choc, carte d'exposition sectorielle, transmission différenciée aux marges et à la trésorerie selon la taille, signaux avancés et recommandations traçables pour le décideur.
+summary: "Anatomie d'une contrainte sur les métaux critiques — mécanisme du choc, carte d'exposition sectorielle, transmission différenciée aux marges et à la trésorerie selon la taille, signaux avancés et recommandations traçables pour le décideur."
 status: staging
 draft: false
 ---

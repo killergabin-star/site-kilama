@@ -4,13 +4,12 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, chaines-de-valeur, metaux-critiques, chokepoints, industrie]
 theme: business
-summary: La chaîne de valeur est devenue une surface de risque mesurable — détroits, métaux critiques, concentration du raffinage — dont l'incidence pèse d'abord sur les ETI industrielles.
+summary: "La chaîne de valeur est devenue une surface de risque mesurable — détroits, métaux critiques, concentration du raffinage — dont l'incidence pèse d'abord sur les ETI industrielles."
 status: staging
-draft: true
+draft: false
 ---
 
 Note analytique, 11 juillet 2026
-
 
 ---
 
@@ -31,8 +30,6 @@ Que cette exposition soit devenue une préoccupation de premier plan n'est plus 
 L'année écoulée en a fourni la démonstration. Le reroutage massif des porte-conteneurs par le cap de Bonne-Espérance, en réponse aux attaques des Houthis en mer Rouge, a ajouté dix à quatorze jours de transit et renchéri le fret sur l'axe Asie-Europe[^7] ; les restrictions de tirant d'eau imposées par la sécheresse au canal de Panama ont réduit le nombre de passages quotidiens. Aucun de ces événements n'était une rupture d'approvisionnement au sens classique — les marchandises sont arrivées. Mais chacun a déplacé simultanément trois variables que l'entreprise croyait indépendantes : le délai, le coût du transport et le niveau de stock nécessaire pour tenir. C'est précisément la définition d'une surface de risque : un choc localisé qui se propage à plusieurs marges de la firme en même temps.
 
 Le point analytique décisif est que cette exposition n'est pas lisible au niveau du fournisseur direct. Une entreprise peut sourcer un composant auprès d'un fabricant européen parfaitement fiable dont l'ensemble des intrants transite, deux rangs plus loin, par un unique détroit. La cartographie de la dépendance logistique doit donc être conduite **au niveau du flux physique, pas du contrat commercial** — ce que la plupart des systèmes d'information d'achat ne permettent pas encore.
-
-<!-- FIGURE — carte-réseau des principaux points d'étranglement maritimes (Ormuz, Malacca, Suez/Bab-el-Mandeb, Panama, Taïwan) avec, pour chacun, part estimée des flux physiques mondiaux (pétrole, conteneurs) | source : EIA, UNCTAD Review of Maritime Transport ; nos estimations -->
 
 ---
 

@@ -4,7 +4,7 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, gouvernance, strategie, risque-geopolitique, boardroom]
 theme: business
-summary: La géopolitique est redevenue une variable structurelle de la décision d'entreprise ; il manque aux organisations une fonction de traduction entre le choc géo-macro et l'indicateur de gestion.
+summary: "La géopolitique est redevenue une variable structurelle de la décision d'entreprise ; il manque aux organisations une fonction de traduction entre le choc géo-macro et l'indicateur de gestion."
 status: staging
 draft: false
 ---
@@ -86,8 +86,6 @@ La valeur d'une fonction de traduction ne se démontre pas dans l'abstrait mais 
 **Contrôle interne et cartographie des risques.** Enfin, la traduction géo-économique a vocation à s'intégrer au dispositif de contrôle interne, non à vivre à côté de lui. Une cartographie des risques qui ignore les canaux géopolitiques, ou qui les traite par une couleur sur une carte, est incomplète par construction. L'enjeu est de faire entrer la variable géopolitique dans le langage du risque d'entreprise — probabilité, magnitude, signaux, plan d'action — et non de la laisser dans le registre du commentaire.
 
 **Horizon et arbitrage.** Un même choc ne se lit pas de la même façon selon l'horizon. À court terme — zéro à six mois — il pèse sur la trésorerie et le fret ; à moyen terme — six mois à trois ans — il redessine les contrats et les approvisionnements ; à long terme, il peut justifier une relocalisation ou un changement de modèle. Confondre ces horizons est l'erreur la plus commune des lectures de risque : une menace de long terme traitée comme une urgence provoque un surinvestissement défensif ; une urgence traitée comme un enjeu de long terme laisse la trésorerie se vider. La fonction de traduction sépare ces temporalités, les arbitre, et les rend au conseil sous une forme décidable.
-
-<!-- FIGURE — carte de chaleur ou barres classant les branches manufacturières européennes par score d'exposition géo-économique composite, top 6 (équipements électriques, électronique, métallurgie, automobile, machines, chimie) avec décomposition par canal (logistique, matériaux critiques, sanctions) ; titre « L'exposition se concentre » | source : nos travaux de cartographie sectorielle de l'exposition géo-économique de l'industrie européenne -->
 
 ---
 

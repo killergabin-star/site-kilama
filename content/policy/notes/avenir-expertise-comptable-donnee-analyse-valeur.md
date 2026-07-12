@@ -4,9 +4,9 @@ date: '2026-07-11'
 doc_type: note
 tags: [business, entreprise, metiers, expertise-comptable, ia, dscg]
 theme: business
-summary: L'automatisation et l'intelligence artificielle absorbent la production comptable ; la valeur de l'expert se déplace vers l'analyse, le pilotage et le conseil à forte valeur ajoutée.
+summary: "L'automatisation et l'intelligence artificielle absorbent la production comptable ; la valeur de l'expert se déplace vers l'analyse, le pilotage et le conseil à forte valeur ajoutée."
 status: staging
-draft: true
+draft: false
 ---
 
 Note d'analyse, 11 juillet 2026
@@ -27,8 +27,6 @@ Il faut d'abord nommer précisément ce qui bascule. L'automatisation de la comp
 
 En France, un accélérateur réglementaire précipite le mouvement : la généralisation de la facturation électronique entre entreprises, dont le déploiement s'échelonne sur 2026-2027 sous l'égide de l'administration fiscale (DGFiP). En rendant la facture structurée et transmise par voie électronique, la réforme supprime mécaniquement une part substantielle de la saisie — la donnée arrive déjà normalisée, prête à être comptabilisée. Ce que la réforme organise à l'échelle de l'économie, l'intelligence artificielle l'organise à l'échelle du dossier : la production comptable de routine tend vers un coût marginal proche de zéro.
 
-<!-- FIGURE — barres appariées : probabilité d'automatisation des tâches de production comptable (tenue de comptes, saisie, rapprochement, déclaratif de routine, ~98 %) vs tâches d'analyse et de conseil (interprétation, arbitrage, relation client, faiblement automatisables) ; titre « La production se commoditise, l'analyse résiste » | source : Frey et Osborne, Oxford, 2013 -->
-
 Encore faut-il distinguer ce que l'IA absorbe de ce qu'elle ne peut pas absorber, car la frontière est le lieu même où se reconstruit la valeur. L'automatisation excelle sur les tâches à règles stables, à volume élevé et à vérité vérifiable : elle catégorise mieux et plus vite qu'un humain une écriture dont la nature est déterminée. Elle bute, en revanche, sur quatre registres que la profession sous-estime encore.
 
 Le premier est le **jugement en situation d'ambiguïté** : qualifier une charge à la frontière de l'immobilisation, arbitrer un traitement fiscal dans une zone grise, apprécier une provision — autant de décisions où la règle ne détermine pas la réponse et où la responsabilité engage. Le deuxième est la **responsabilité attestée** : la valeur d'une signature d'expert-comptable ne tient pas au calcul, que la machine reproduit, mais à l'engagement d'une personne identifiable qui répond de son avis devant un tiers — un banquier, un investisseur, l'administration. Le troisième est la **traduction pour la décision** : convertir un jeu de comptes en recommandation datée pour un dirigeant suppose de comprendre son entreprise, son marché et ses contraintes — un travail contextuel que l'IA assiste sans le remplacer. Le quatrième est la **relation de confiance** : le comptable est, pour l'immense majorité des dirigeants de PME, le premier et souvent le seul conseiller économique du quotidien ; cette position ne se code pas.
@@ -46,8 +44,6 @@ C'est ici que se joue la requalification de l'expert-comptable en analyste. Acco
 Cette fonction analytique a une grammaire précise, et elle est de traduction. Un dirigeant ne subit pas des « comptes » ; il subit des chocs — une hausse d'un intrant, un allongement des délais de paiement d'un client, un renchérissement du crédit, une rupture d'approvisionnement — et ce qui l'intéresse est de savoir où ces chocs atterrissent dans ses indicateurs. L'expert-comptable devient celui qui opère ce passage : du signal externe à la ligne de gestion. Un choc d'intrant se lit d'abord dans la marge, puis, s'il allonge les cycles logistiques, dans le besoin en fonds de roulement, avant de se déplacer vers la trésorerie. Cette chaîne — source, canal, résultat — n'est pas l'apanage de l'analyse macro-financière : elle est le service que le comptable, seul détenteur de la donnée fine de l'entreprise, est le mieux placé pour rendre.
 
 La différence entre un chiffre constaté et un chiffre piloté tient à trois ajouts que l'analyse apporte et que la seule production ignore : la **projection** — traduire la position actuelle en trésorerie prévisionnelle sous plusieurs scénarios ; la **magnitude** — dire non seulement qu'un poste se dégrade, mais de combien et à quel horizon ; et la **recommandation** — une action datée et conditionnée à un signal, non un simple constat. C'est cette montée en gamme, du constat vers la prévision, qui distingue le cabinet qui se contente de tenir les comptes de celui qui pilote la valeur de ses clients.
-
-<!-- FIGURE — courbes ou barres empilées : bascule de la répartition du temps et du chiffre d'affaires des cabinets, de la production (tenue, déclaratif) vers le conseil et l'analyse, entre aujourd'hui et l'horizon 2030 ; titre « La valeur remonte la chaîne » | source : nos estimations, à partir des études prospectives de branche de la profession comptable -->
 
 ---
 

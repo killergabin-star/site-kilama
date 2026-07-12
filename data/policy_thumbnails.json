@@ -112,7 +112,7 @@
   "/policy/notes/anatomie-d-un-choc-industrie-europeenne-metaux-critiques/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-anatomie-d-un-choc-industrie-europeenne-metaux-critiques.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/apd-defense-reallocation/": {
     "strategy": "custom",
@@ -127,17 +127,17 @@
   "/policy/notes/avenir-audit-assurance-csrd-durabilite/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-avenir-audit-assurance-csrd-durabilite.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/avenir-conseil-de-l-expertise-lineaire-a-la-traduction-du-risque/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-avenir-conseil-de-l-expertise-lineaire-a-la-traduction-du-risque.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/avenir-expertise-comptable-donnee-analyse-valeur/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-avenir-expertise-comptable-donnee-analyse-valeur.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/axe-resistance-mobilisation-communautaire/": {
     "strategy": "custom",
@@ -209,6 +209,11 @@
     "path": "/thumbnails/policy/notes-economie-developpement-debat-banque-mondiale.svg",
     "source": "editorial/thumbnails/categories/developpement.svg"
   },
+  "/policy/notes/entreprise-europeenne-choc-energetique-ormuz-gnl/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-entreprise-europeenne-choc-energetique-ormuz-gnl.svg",
+    "source": "editorial/thumbnails/categories/business.svg"
+  },
   "/policy/notes/eu-trade-geopolitics-update-2026/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-eu-trade-geopolitics-update-2026.png",
@@ -232,7 +237,7 @@
   "/policy/notes/exposition-sanctions-de-la-norme-au-risque-firme/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-exposition-sanctions-de-la-norme-au-risque-firme.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/fishman-guerre-economique-doctrine/": {
     "strategy": "custom",
@@ -257,12 +262,12 @@
   "/policy/notes/geopolitique-compte-de-resultat-incidence-taille-secteur/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-geopolitique-compte-de-resultat-incidence-taille-secteur.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/geopolitique-entre-dans-le-boardroom-fonction-traduction/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-geopolitique-entre-dans-le-boardroom-fonction-traduction.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/gopinath-pettis-deficit-courant/": {
     "strategy": "custom",
@@ -354,6 +359,11 @@
     "path": "/thumbnails/policy/notes-northern-donor.png",
     "source": "static/thumbnails/custom/dalle-original/notes-northern-donor.png"
   },
+  "/policy/notes/noter-exposition-geoeconomique-entreprise-methode/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-noter-exposition-geoeconomique-entreprise-methode.svg",
+    "source": "editorial/thumbnails/categories/business.svg"
+  },
   "/policy/notes/offre-iranienne-hormuz-nucleaire-bifurcation/": {
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-offre-iranienne-hormuz-nucleaire-bifurcation.png",
@@ -377,12 +387,12 @@
   "/policy/notes/points-etranglement-metaux-critiques-chaine-de-valeur/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-points-etranglement-metaux-critiques-chaine-de-valeur.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/polycrise-dans-le-bilan-geopolitique-climat-cyber-commerce/": {
     "strategy": "category",
     "path": "/thumbnails/policy/notes-polycrise-dans-le-bilan-geopolitique-climat-cyber-commerce.svg",
-    "source": "editorial/thumbnails/categories/_fallback.svg"
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/polycrisis-transmission-asie/": {
     "strategy": "custom",
@@ -428,6 +438,11 @@
     "strategy": "custom",
     "path": "/thumbnails/policy/notes-section122-chaos-tarifaire.png",
     "source": "static/thumbnails/custom/dalle-original/notes-section122-chaos-tarifaire.png"
+  },
+  "/policy/notes/semi-conducteurs-dependance-qu-aucun-bilan-ne-montre/": {
+    "strategy": "category",
+    "path": "/thumbnails/policy/notes-semi-conducteurs-dependance-qu-aucun-bilan-ne-montre.svg",
+    "source": "editorial/thumbnails/categories/business.svg"
   },
   "/policy/notes/soudan-guerre-invisible/": {
     "strategy": "custom",
