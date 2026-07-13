@@ -43,7 +43,7 @@ Le theme Hugo (`kilama.yaml`) utilise encore `#003366` comme primaire — une tr
   --navy: #1B2A4A;
   --blue-fpsq: #2C5F8A;
   --red-analytical: #C0392B;
-  --gold-caps: #D4A017;
+  --gold-accent: #D4A017;
   --ivory: #F8F7F4;
   --anthracite: #2D2D2D;
   --text-secondary: #5A6068;
@@ -347,7 +347,7 @@ Inspire de Bruegel, PIIE, CEPR — pas de Flash, pas d'animation, pas d'effets. 
 | Primaire | `#1B2A4A` | Navy profond | Titres H1-H2, header, footer, CTAs principaux |
 | Secondaire | `#2C5F8A` | Bleu FPSQ | Liens, elements interactifs, hover states |
 | Accent | `#C0392B` | Rouge analytique | Alertes, elements de mise en evidence, tags "nouveau" |
-| Support | `#D4A017` | Or CAPS | Highlights, citations, badges |
+| Support | `#D4A017` | Or accent | Highlights, citations, badges |
 | Fond | `#F8F7F4` | Ivoire chaud | Background global (remplace le blanc froid) |
 | Fond alt | `#F0EDE8` | Ivoire profond | Sections alternees |
 | Texte | `#2D2D2D` | Anthracite | Corps de texte |
@@ -423,8 +423,8 @@ Inspire de Bruegel, PIIE, CEPR — pas de Flash, pas d'animation, pas d'effets. 
 ├─────────────────────────────────────────────────────────────────┤
 │  SECTION 5 : CITATION + CREDENTIALS (au lieu de bio)           │
 │  ┌────────────────────────────┬─────────────────────────┐       │
-│  │ Citation Playfair italic   │ CAPS/MEAE 2018-2023     │       │
-│  │ "L'enjeu pour l'Europe..." │ BETA + FERDI            │       │
+│  │ Citation Playfair italic   │ Vigie géoéconomique     │       │
+│  │ "L'enjeu pour l'Europe..." │ FERDI + EconomiX         │       │
 │  │                             │ 4 publications rang A   │       │
 │  │        — E. Kilama, 2026   │ Cert. FMI Climate 2024  │       │
 │  └────────────────────────────┴─────────────────────────┘       │
@@ -469,7 +469,7 @@ L'analyse geopolitique reste qualitative. L'economie quantitative ignore les cho
 Qui produit une intelligence geopolitique rigoureusement quantifiee ?
 
 **Answer** (le site entier, mais concentree dans le hero) :
-Eric Kilama — econometrie causale, prospective quantitative, conseil decideurs G7/OCDE. 12 ans a l'intersection recherche-strategie-action publique. Ancien conseiller CAPS/Quai d'Orsay.
+Eric Kilama — économétrie causale, prospective quantitative, conseil aux décideurs. Un programme à l'intersection recherche-stratégie-action publique.
 
 #### Titre hero recommande
 
@@ -490,7 +490,7 @@ Eric Kilama — econometrie causale, prospective quantitative, conseil decideurs
 |---|---------------------|-------------------------------|
 | 1 | "Bienvenue sur mon site personnel" | Pas de bienvenue. Le contenu parle. |
 | 2 | "Publications rang A" | "Publie dans European Economic Review, Journal of Comparative Economics" |
-| 3 | "12+ annees d'experience" | "Ancien conseiller CAPS/Quai d'Orsay (2018-2023)" |
+| 3 | "12+ années d'expérience" | "Vigie géoéconomique : scénarios et stress tests" |
 | 4 | "Domaines d'expertise" | "Programmes de recherche" |
 | 5 | "A propos de moi" (sur homepage) | Pas de bio en homepage. Lien "About" dans le menu suffit. |
 
@@ -594,7 +594,7 @@ Ce workflow remplace Figma. La boucle de feedback est plus lente (~30s vs instan
 ### Ce qui est HORS SCOPE weekend
 
 - Pipeline `publish.py` (Phase 2, avril)
-- Contenu CAPS allege (necessite selection + anonymisation)
+- Corpus institutionnel interne (jamais cité ni exposé publiquement)
 - Newsletter Substack
 - Dashboard FPSQ interactif
 - Pages Teaching detaillees

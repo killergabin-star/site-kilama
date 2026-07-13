@@ -115,7 +115,7 @@ Trois scénarios se dessinent pour le second semestre : stabilisation par commer
 
 **28.** La France, en tant que présidente du G7, se trouve à un point de basculement. **Les pourparlers préparatoires de Paris du 15 mars ont démontré que la diplomatie française pouvait jouer un rôle de facilitateur dans la relation sino-américaine.** Ce capital diplomatique est un actif, mais un actif qui se déprécie rapidement si la France ne le convertit pas en influence structurelle.
 
-**29.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que la géopolitique est redevenue une variable structurelle de l'économie mondiale. **Le sommet de Pékin en est la démonstration la plus récente : les prix du soja, les chaînes d'approvisionnement en terres rares, le coût de l'assurance maritime dans le détroit d'Ormuz -- chacun de ces paramètres économiques est désormais déterminé par des décisions politiques prises dans des formats bilatéraux exclusifs.**
+**29.** La géopolitique est redevenue une variable structurelle de l'économie mondiale. **Le sommet de Pékin en est la démonstration la plus récente : les prix du soja, les chaînes d'approvisionnement en terres rares, le coût de l'assurance maritime dans le détroit d'Ormuz -- chacun de ces paramètres économiques est désormais déterminé par des décisions politiques prises dans des formats bilatéraux exclusifs.**
 
 **30.** Pour le G7 d'Évian (15-17 juin), quatre axes d'action se dessinent.
 

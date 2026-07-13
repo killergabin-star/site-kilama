@@ -74,12 +74,15 @@ bash scripts/sync_and_deploy.sh
 ```
 
 Étapes effectuées :
-1. `python3 scripts/ingest_staging.py` — ingère le staging cross-session
-2. `python3 scripts/update_vigie_data.py` — rafraîchit données vigie
-3. `bash scripts/generate_trust_page.sh` — régénère empreintes TLS dans `content/trust.md`
-4. `hugo --gc --minify --baseURL "https://erickilama.com/"` — build
-5. `git add/commit/push` sur branche `main`
-6. Deploy vers `gh-pages` branch (force push du contenu `public/` + `CNAME`)
+1. `python3 scripts/public_attribution_gate.py staging/for-site` — bloque tout artefact interne mal placé
+2. `python3 scripts/ingest_staging.py` — ingère le staging cross-session
+3. `python3 scripts/refresh_vigie_site_snapshot.py` — rafraîchit les données Vigie
+4. `bash scripts/generate_trust_page.sh` — régénère les empreintes TLS dans `content/trust.md`
+5. `python3 scripts/public_attribution_gate.py` — contrôle les sources publiques après génération
+6. `hugo --gc --minify --baseURL "https://erickilama.com/"` — build
+7. `python3 scripts/public_attribution_gate.py public` — contrôle le rendu avant commit ou déploiement
+8. `git add/commit/push` sur branche `main`
+9. Deploy vers `gh-pages` branch (force push du contenu `public/` + `CNAME`)
 
 Le script est **idempotent** : si aucun diff n'est détecté après ingest, il skip le déploiement.
 
@@ -159,15 +162,19 @@ Ces règles sont appliquées par `institutional-format` agent (Claude) et
   "consultation", numéro de version d'outil).
 - Les agents sont des outils invisibles ; leur trace éditoriale est nulle.
 
-### 4.2. MEAE / CAPS — formulation obligatoire
+### 4.2. Firewall d'attribution publique
 
-- **Interdit** : "il a été", "ancien", "ex-", tout passé composé concernant le
-  CAPS ou le MEAE.
-- **Autorisé** :
-  - *"Son expérience au CAPS du Quai d'Orsay a forgé sa conviction que la
-    géopolitique est redevenue une variable structurelle de l'économie mondiale."*
-  - *"Macroéconomiste de formation, analyste stratégique par expérience."*
-  - Badges : *"CAPS-MEAE"* ou *"CAPS — Quai d'Orsay"* (sans verbe, neutre)
+- Le corpus CAPS est `internal_restricted` : **zéro mention** du CAPS dans le
+  contenu, les templates, métadonnées, bios, badges, footers, attributions,
+  références et noms de produits publics.
+- **Zéro formulation** associant l'expérience, l'affiliation, le poste, le titre
+  ou l'autorité personnelle d'Eric au MEAE ou au Quai d'Orsay.
+- Le MEAE et le Quai d'Orsay restent citables comme acteurs ou sources publiques
+  si la référence est pertinente et vérifiée.
+- Toute assertion informée par un corpus interne doit disposer d'une source
+  publique indépendante ou rester hors publication.
+- `python3 scripts/public_attribution_gate.py` doit passer avant tout build ou
+  déploiement.
 
 ### 4.3. BETA / Université de Lorraine — interdiction totale
 
@@ -189,6 +196,12 @@ Ces règles sont appliquées par `institutional-format` agent (Claude) et
 Le répertoire `staging/for-site/` est un **symlink** vers
 `~/.config/macrodata/staging/for-site/`. Tout agent qui produit du contenu
 site-worthy doit déposer un signal dans ce répertoire au format :
+
+Ce répertoire est une voie publique : il ne doit contenir aucun corpus, registre,
+monitoring ou avis interne. Ces artefacts vont dans
+`~/.config/macrodata/staging/internal-restricted/`. Les anciens chemins peuvent
+conserver un pointeur générique sans contenu interne, sans `type` routable et
+avec `public_eligible: false`.
 
 ```markdown
 # Signal Site-Bridge

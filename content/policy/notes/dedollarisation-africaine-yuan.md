@@ -92,7 +92,7 @@ Trois leviers pour Évian : lignes de swap euro-africaines via la BCE, mécanism
 
 **21.** **Scénario 3 : la fragmentation monétaire régionale.** La sinisation monétaire de l'Afrique se combine avec d'autres dynamiques — le e-naira au Nigeria, les projets de monnaie numérique de la BCEAO, le pan-African Payment and Settlement System (PAPSS) — pour produire une mosaïque monétaire où ni le dollar ni le yuan ne dominent, mais où le dollar perd son rôle de numéraire par défaut. Ce scénario, le plus déstabilisant, est aussi celui que le G7 est le moins bien équipé pour gérer.
 
-**22.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que les enjeux monétaires en Afrique ne relèvent pas de la technique financière mais de la géoéconomie. Trois axes d'action se dégagent pour Évian.
+**22.** Les enjeux monétaires en Afrique ne relèvent pas de la seule technique financière mais de la géoéconomie. Trois axes d'action se dégagent pour Évian.
 
 **23.** **Premièrement, la France devrait porter au G7 une initiative de « lignes de swap euro-africaines » via la Banque centrale européenne, offrant aux banques centrales du continent une alternative de liquidité qui ne passe ni par le dollar ni par le yuan.** La BCE dispose de l'outil technique ; ce qui manque est la volonté politique. Le précédent des swaps d'urgence de la Fed en 2020 montre que l'instrument est déployable rapidement lorsque la volonté existe.
 

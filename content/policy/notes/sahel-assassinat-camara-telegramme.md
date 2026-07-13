@@ -134,7 +134,7 @@ L'assassinat du général Sadio Camara, ministre de la Défense du Mali (25 avri
 
 **32.** **Le Sahel de mai 2026 est un théâtre où trois dynamiques convergent vers l'instabilité** : une Alliance des États du Sahel politiquement consolidée mais sécuritairement défaillante ; un partenaire russe dont le modèle économique et opérationnel atteint ses limites ; et un mouvement jihadiste en expansion géographique vers des zones jusqu'ici épargnées. L'assassinat de Camara n'est pas la cause de cette convergence -- il en est le symptôme le plus brutal.
 
-**33.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que les crises sahéliennes ne peuvent être traitées comme des urgences sécuritaires isolées. Elles sont l'expression de défaillances structurelles -- gouvernance, développement, intégration régionale -- que les solutions militaires, qu'elles soient françaises, russes ou confédérales, ne peuvent résoudre seules. **Le G7 d'Évian, s'il intègre cette dimension dans son volet africain, peut contribuer à un changement de paradigme ; s'il se contente de l'ignorer, il rejoindra la longue liste des rendez-vous manqués de la communauté internationale au Sahel.**
+**33.** Les crises sahéliennes ne peuvent être traitées comme des urgences sécuritaires isolées. Elles sont l'expression de défaillances structurelles -- gouvernance, développement, intégration régionale -- que les solutions militaires, qu'elles soient françaises, russes ou confédérales, ne peuvent résoudre seules. **Le G7 d'Évian, s'il intègre cette dimension dans son volet africain, peut contribuer à un changement de paradigme ; s'il se contente de l'ignorer, il rejoindra la longue liste des rendez-vous manqués de la communauté internationale au Sahel.**
 
 ---
 

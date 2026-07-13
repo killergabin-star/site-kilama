@@ -40,7 +40,7 @@ Le sommet d'Évian (15-17 juin) offre l'occasion de transformer cette initiative
 
 **2.** L'initiative intervient dans un contexte où l'Iran a imposé un système de péage de facto sur le trafic maritime transitant par Ormuz. **Depuis mars 2026, les navires doivent obtenir une autorisation préalable auprès de la nouvellement créée « Autorité du détroit du golfe Persique » et s'acquitter d'une redevance estimée entre 1 et 2 millions de dollars par passage pour les pétroliers[^2].** Certains navires ont effectué le paiement en yuan ou en crypto-monnaies pour contourner les sanctions internationales[^3]. Oman a rejeté le dispositif[^4].
 
-**3.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que les crises maritimes constituent des moments de cristallisation juridique : ce qui est toléré comme fait accompli provisoire devient, en l'absence de contestation formelle, un précédent normatif. **C'est cette dimension — le droit de la mer comme arme diplomatique, et non comme ornement juridique — que cette note analyse.**
+**3.** Les crises maritimes constituent des moments de cristallisation juridique : ce qui est toléré comme fait accompli provisoire devient, en l'absence de contestation formelle, un précédent normatif. **C'est cette dimension — le droit de la mer comme arme diplomatique, et non comme ornement juridique — que cette note analyse.**
 
 ---
 

@@ -15,15 +15,6 @@ interests:
   - Économétrie appliquée
 
 work:
-  - position: "Économiste-Conseiller"
-    company_name: "CAPS — Ministère de l'Europe et des Affaires étrangères"
-    company_url: ""
-    date_start: "2018-01-01"
-    date_end: "2023-01-01"
-    summary: |
-      Conseil au cabinet du Ministre. Préparation des sommets G7
-      (Biarritz, Elmau, Hiroshima). Présidence française de l'UE.
-      Coordination FMI, Banque mondiale, OCDE.
   - position: "Chargé de recherche"
     company_name: "EconomiX — Université Paris Nanterre"
     company_url: ""
@@ -87,9 +78,7 @@ superuser: true
 highlight_name: true
 ---
 
-Macroéconomiste avec 12 ans d'expérience entre recherche académique, conseil stratégique au plus haut niveau de l'État et coopération internationale.
-
-Mon expérience au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay — analyses économiques et géopolitiques pour le cabinet du Ministre, préparation des sommets G7 (Biarritz, Elmau, Hiroshima), présidence française de l'UE, coordination avec le FMI, la Banque mondiale et l'OCDE — a forgé ma conviction que la géopolitique est redevenue une variable structurelle de l'économie mondiale.
+Macroéconomiste avec 12 ans d'expérience entre recherche académique, conseil stratégique et coopération internationale. Mes travaux étudient la géopolitique comme une variable structurelle de l'économie mondiale et traduisent ses effets en expositions mesurables pour les décideurs publics et privés.
 
 Chercheur associé à la FERDI, je publie dans des revues internationales de premier plan — *European Economic Review*, *Journal of Comparative Economics*, *China Economic Review*. Un article est en évaluation à l'*American Economic Journal: Economic Policy*.
 

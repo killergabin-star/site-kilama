@@ -18,7 +18,7 @@ draft: false
 theme: trade
 ---
 
-*Centre d'analyse, de prévision et de stratégie — Note rapide*
+*Note rapide*
 *29 mars 2026*
 
 

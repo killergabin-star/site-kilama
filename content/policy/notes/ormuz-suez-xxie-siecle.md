@@ -96,7 +96,7 @@ Pour la France, Évian offre quatre leviers : nommer le paradoxe stratégique (l
 
 **26.** La France préside le G7 avec un sommet des chefs d'État à Évian du 15 au 17 juin. **L'agenda initial -- centré sur les déséquilibres macroéconomiques mondiaux -- est désormais inséparable de la crise d'Ormuz.** Les déséquilibres macroéconomiques sont devenus des déséquilibres géopolitiques ; le choc pétrolier et le choc tarifaire américain se combinent pour produire une configuration que les institutions de Bretton Woods n'ont pas été conçues pour traiter simultanément.
 
-**27.** Son expérience au CAPS du Quai d'Orsay a forgé une conviction que cette note tente de formaliser : **les crises de détroit -- Suez 1956, Ormuz 2026 -- ne sont pas des événements de marché, ce sont des moments de vérité sur la distribution réelle de la puissance.** Et la réponse ne peut pas être seulement énergétique ou seulement diplomatique ; elle doit articuler les deux.
+**27.** Cette note formalise une conviction : **les crises de détroit -- Suez 1956, Ormuz 2026 -- ne sont pas des événements de marché, ce sont des moments de vérité sur la distribution réelle de la puissance.** La réponse ne peut pas être seulement énergétique ou seulement diplomatique ; elle doit articuler les deux.
 
 **28.** La présidence française dispose de quatre leviers à Évian.
 
@@ -128,7 +128,7 @@ Pour la France, Évian offre quatre leviers : nommer le paradoxe stratégique (l
 
 [^3]: Al Jazeera, « The Iran war has exposed the limits of neutrality », 17 avril 2026 ; Middle East Council on Global Affairs, « The GCC Will Not Unify on Iran », avril 2026.
 
-[^4]: Le Grand Continent, Observatoire du détroit d'Ormuz, données actualisées mars-avril 2026 ; CR CAPS, veille hebdomadaire du 1er avril 2026.
+[^4]: Le Grand Continent, Observatoire du détroit d'Ormuz, données actualisées mars-avril 2026.
 
 [^5]: Rystad Energy, estimations des dommages : 25 milliards de dollars, avril 2026.
 
@@ -192,6 +192,6 @@ Pour la France, Évian offre quatre leviers : nommer le paradoxe stratégique (l
 
 [^35]: IEA, G7 France 2026, « About », documentation de la présidence française.
 
-[^36]: Parlement européen, vote sur l'accord de Turnberry, 26 mars 2026 ; CR CAPS, réunion du 2 avril 2026.
+[^36]: Parlement européen, vote sur l'accord de Turnberry, 26 mars 2026.
 
 [^37]: Songwe, Stern et Bhattacharya, « Finance for climate action: scaling up investment for climate and development », London School of Economics, Independent High-Level Expert Group on Climate Finance (IHLEG), novembre 2022. Chiffres : 1 600 milliards de dollars pour l'énergie et la transition, 300 milliards pour le capital naturel.

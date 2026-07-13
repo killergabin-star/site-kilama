@@ -18,7 +18,7 @@ draft: false
 theme: trade
 ---
 
-*Centre d'analyse, de prévision et de stratégie — Étude*
+*Étude*
 *29 mars 2026*
 
 

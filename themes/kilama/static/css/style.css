@@ -11,8 +11,8 @@
   --blue-fpsq: #2251FF;
   --blue-fpsq-light: #4A6FFF;
   --red-analytical: #C0392B;
-  --gold-caps: #D4A017;
-  --gold-caps-light: #E8BD3A;
+  --gold-accent: #D4A017;
+  --gold-accent-light: #E8BD3A;
   --ivory: #F8F7F4;
   --ivory-deep: #F0EDE8;
   --anthracite: #333333;
@@ -217,7 +217,7 @@ img { max-width: 100%; display: block; }
   transition: color 0.15s;
 }
 .dropdown-links a:hover {
-  color: var(--gold-caps);
+  color: var(--gold-accent);
 }
 
 /* Language toggle */
@@ -242,8 +242,8 @@ img { max-width: 100%; display: block; }
 .site-nav--home .wordmark .first-name { color: var(--white); }
 .site-nav--home .wordmark .last-name { color: rgba(255,255,255,0.8); }
 .site-nav--home .nav-item > a { color: var(--white); }
-.site-nav--home .nav-item:hover > a { color: var(--gold-caps); }
-.site-nav--home .nav-item.active > a { color: var(--gold-caps); }
+.site-nav--home .nav-item:hover > a { color: var(--gold-accent); }
+.site-nav--home .nav-item.active > a { color: var(--gold-accent); }
 .site-nav--home .nav-lang a { color: rgba(255,255,255,0.6); }
 .site-nav--home .nav-lang a:hover { color: var(--white); }
 .site-nav--home .nav-lang .active { color: var(--white); }
@@ -965,7 +965,7 @@ body.page-research .page-header h1 { color: var(--blue-fpsq); }
 
 .paper-status--review {
   background: rgba(212, 160, 23, 0.12);
-  color: var(--gold-caps);
+  color: var(--gold-accent);
 }
 
 .paper-status--wp {
@@ -1006,8 +1006,8 @@ body.page-policy {
 }
 
 .theme-tag[data-theme="energie"]:hover, .theme-tag[data-theme="energie"].active {
-  background: var(--gold-caps);
-  border-color: var(--gold-caps);
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
 }
 
 .theme-tag[data-theme="commerce"]:hover, .theme-tag[data-theme="commerce"].active {
@@ -1090,7 +1090,7 @@ body.page-policy {
   letter-spacing: 0.04em;
 }
 
-.note-theme-tag--energie { background: rgba(212,160,23,0.12); color: var(--gold-caps); }
+.note-theme-tag--energie { background: rgba(212,160,23,0.12); color: var(--gold-accent); }
 .note-theme-tag--commerce { background: rgba(34,81,255,0.1); color: var(--blue-fpsq); }
 .note-theme-tag--defense { background: rgba(27,42,74,0.1); color: var(--navy); }
 .note-theme-tag--developpement { background: rgba(46,125,50,0.1); color: var(--vert-dev); }
@@ -1317,7 +1317,7 @@ body.page-teaching {
   background: var(--ivory-deep);
 }
 
-body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
+body.page-teaching .page-header .page-verb { color: var(--gold-accent); }
 
 .teaching-section {
   margin-bottom: var(--space-xl);
@@ -1329,7 +1329,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
   font-weight: 700;
   color: var(--navy);
   padding-bottom: var(--space-xs);
-  border-bottom: 2px solid var(--gold-caps);
+  border-bottom: 2px solid var(--gold-accent);
   margin-bottom: var(--space-md);
 }
 
@@ -1348,7 +1348,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
 }
 
 .course-card:hover {
-  border-color: var(--gold-caps);
+  border-color: var(--gold-accent);
   box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 
@@ -1357,7 +1357,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-caps);
+  color: var(--gold-accent);
   margin-bottom: var(--space-xs);
 }
 
@@ -1426,7 +1426,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
 .geo-module-num {
   font-family: var(--font-data);
   font-size: 0.6875rem;
-  color: var(--gold-caps-light);
+  color: var(--gold-accent-light);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.25rem;
@@ -1450,7 +1450,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--navy);
-  background: var(--gold-caps-light);
+  background: var(--gold-accent-light);
   padding: 0.75rem 1.75rem;
   border-radius: 6px;
   display: inline-flex;
@@ -1460,7 +1460,7 @@ body.page-teaching .page-header .page-verb { color: var(--gold-caps); }
 }
 
 .geo-officer-cta:hover {
-  background: var(--gold-caps);
+  background: var(--gold-accent);
   color: var(--navy);
   transform: translateY(-1px);
 }
@@ -1639,7 +1639,7 @@ body.page-about {
   margin-bottom: 8px;
   text-decoration: none;
 }
-.footer-col a:hover { color: var(--gold-caps); }
+.footer-col a:hover { color: var(--gold-accent); }
 .footer-bottom {
   max-width: var(--max-width);
   margin: 0 auto;

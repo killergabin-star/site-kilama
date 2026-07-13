@@ -124,7 +124,7 @@ La politique tarifaire américaine opère dans un vide juridique : la Cour supr�
 
 **31.** **Elle n'a pas produit de calendrier d'exécution, de budget d'opérationnalisation, ni de position commune sur la menace tarifaire américaine ou la crise d'Ormuz.** Le communiqué est un texte d'architecture — il décrit les murs, les fenêtres et les portes d'un édifice dont les fondations budgétaires restent à couler.
 
-**32.** Son expérience au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay a forgé la conviction que les textes de cadrage du G7 ne sont pas anodins : ils structurent le champ du possible pour les négociations ultérieures. **L'architecture de Paris délimite un espace dans lequel les engagements d'Évian devront s'inscrire.** La question n'est plus de savoir si le G7 dispose des concepts pour répondre à la fragmentation commerciale — il les a. La question est de savoir s'il dispose de la volonté politique pour les financer.
+**32.** Les textes de cadrage du G7 ne sont pas anodins : ils structurent le champ du possible pour les négociations ultérieures. **L'architecture de Paris délimite un espace dans lequel les engagements d'Évian devront s'inscrire.** La question n'est plus de savoir si le G7 dispose des concepts pour répondre à la fragmentation commerciale — il les a. La question est de savoir s'il dispose de la volonté politique pour les financer.
 
 ---
 

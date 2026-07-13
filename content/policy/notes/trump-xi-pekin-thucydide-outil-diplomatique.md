@@ -100,7 +100,7 @@ La « stabilité stratégique constructive » convenue pour trois ans recouvre d
 
 **24.** Pour l'Europe, et singulièrement pour la France qui préside le G7, la leçon est double. **Le piège de Thucydide, dans sa version chinoise, est un outil de bipolarisation du système international qui marginalise par construction les acteurs qui ne sont ni la puissance montante ni la puissance établie.** Et la « stabilité stratégique constructive » convenue à Pékin est un cadre bilatéral qui ne produit pas de bien public multilatéral. À Bercy, puis à Évian, la France doit rappeler que la stabilité du commerce mondial ne peut pas être le sous-produit d'un accord entre deux puissances : elle exige des règles, des institutions et un engagement collectif que le sommet de Pékin n'a produit à aucun titre.
 
-**25.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que la géopolitique est redevenue une variable structurelle de l'économie mondiale. **Le sommet de Pékin en offre une illustration saisissante : un concept académique américain, importé et retourné par la diplomatie chinoise, qui redéfinit les termes du débat stratégique mondial.** La France, si elle veut peser à Évian, ne peut se contenter d'observer ce jeu de miroirs intellectuels. Elle doit proposer son propre cadre.
+**25.** La géopolitique est redevenue une variable structurelle de l'économie mondiale. **Le sommet de Pékin en offre une illustration saisissante : un concept académique américain, importé et retourné par la diplomatie chinoise, qui redéfinit les termes du débat stratégique mondial.** La France, si elle veut peser à Évian, ne peut se contenter d'observer ce jeu de miroirs intellectuels. Elle doit proposer son propre cadre.
 
 ---
 

@@ -72,7 +72,7 @@ Implications pour la France et le G7 d'Évian : fonder la position sur l'UNCLOS 
 
 **13.** **Le risque d'un deal bilatéral américano-iranien est qu'il rende cette architecture juridique inopérante.** Si Washington accepte la réouverture d'Ormuz en échange d'un report nucléaire, le message envoyé est que la liberté de navigation n'est pas un droit mais une concession négociable bilatéralement entre la puissance riveraine et la puissance navale dominante. Les cinquante États signataires de l'Initiative franco-britannique se retrouveraient alors dans la position d'avoir construit un cadre multilatéral que les deux belligérants contournent.
 
-**14.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que **la position française doit s'ancrer dans le droit international, non dans la conjoncture pétrolière**. L'argument économique -- la nécessité urgente de rouvrir Ormuz pour contenir les prix -- est compréhensible mais stratégiquement dangereux s'il est dissocié de l'argument juridique. La France doit défendre simultanément la réouverture du détroit et le maintien du cadre de non-prolifération, sans accepter que l'un soit sacrifié au bénéfice de l'autre.
+**14.** **La position française doit s'ancrer dans le droit international, non dans la conjoncture pétrolière.** L'argument économique -- la nécessité urgente de rouvrir Ormuz pour contenir les prix -- est compréhensible mais stratégiquement dangereux s'il est dissocié de l'argument juridique. La France doit défendre simultanément la réouverture du détroit et le maintien du cadre de non-prolifération, sans accepter que l'un soit sacrifié au bénéfice de l'autre.
 
 ---
 

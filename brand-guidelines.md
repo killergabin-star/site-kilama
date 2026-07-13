@@ -33,7 +33,7 @@ Elle a 90 secondes. En 5 secondes elle doit comprendre :
 | Primaire | #1B2A4A | Navy profond | Titres, header, CTAs |
 | Secondaire | #2C5F8A | Bleu FPSQ | Liens, hover, interactifs |
 | Accent alerte | #C0392B | Rouge analytique | Tags d'attention (max 5%) |
-| Accent premium | #D4A017 | Or CAPS | Citations, badges |
+| Accent premium | #D4A017 | Or accent | Citations, badges |
 | Fond principal | #F8F7F4 | Ivoire | Background par défaut |
 | Fond alterné | #F0EDE8 | Ivoire profond | Sections alternées |
 | Texte principal | #2D2D2D | Anthracite | Corps de texte |

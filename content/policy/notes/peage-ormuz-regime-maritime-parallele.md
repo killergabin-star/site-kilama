@@ -110,7 +110,7 @@ Trois scénarios se dessinent pour le G7 d'Évian : normalisation par l'usure (l
 
 **26.** **Scénario 3 : l'escalade et la rupture — un incident majeur relance les hostilités, le Brent dépasse 140 dollars, l'économie mondiale entre en récession.** Ce scénario n'est pas le plus probable, mais sa probabilité est non négligeable — et ses conséquences sont asymétriquement destructrices.
 
-**27.** **Recommandations pour la France et le G7.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que les crises maritimes sont des révélateurs de l'ordre international plus que des accidents géographiques. Trois actions se dégagent pour Évian.
+**27.** **Recommandations pour la France et le G7.** Les crises maritimes sont des révélateurs de l'ordre international plus que des accidents géographiques. Trois actions se dégagent pour Évian.
 
 **28.** **Premièrement, la France devrait proposer un cadre G7 de « non-reconnaissance active » du péage d'Ormuz et du protocole Iran-Oman, sur le modèle de la non-reconnaissance de l'annexion de la Crimée.** Refus de reconnaître le régime juridiquement, tout en maintenant des canaux de communication opérationnels pour le transit des navires. Cette posture permet de ne pas créer de précédent tout en préservant la marge de manœuvre nécessaire aux armateurs.
 

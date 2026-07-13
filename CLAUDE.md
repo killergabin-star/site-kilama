@@ -32,7 +32,7 @@ Respecter STRICTEMENT ces couleurs (ne jamais inventer d'autres teintes dominant
 - `--navy:        #1B2A4A;`   (primaire, titres, header/footer, CTAs principaux)
 - `--blue-fpsq:   #2C5F8A;`   (liens, hover, etats actifs, elements interactifs)
 - `--red-analytical: #C0392B;` (alertes, scenarios adverses, tags d'attention — max 5 % de la surface)
-- `--gold-caps:   #D4A017;`   (elements premium, citations, badges, references CAPS)
+- `--gold-accent: #D4A017;`   (elements premium et citations)
 - `--ivory:       #F8F7F4;`   (fond principal)
 - `--ivory-deep:  #F0EDE8;`   (fond alterne pour certaines sections)
 - `--anthracite:  #2D2D2D;`   (texte principal)
@@ -70,7 +70,7 @@ La page d'accueil doit suivre l'ordre suivant :
 3. **Section 2 – Derniere publication** (policy brief / rapport APD).
 4. **Section 3 – Programmes de recherche** (4 cards avec bandeau gauche 3px bleu-fpsq).
 5. **Section 4 – Analyses recentes** (liste editoriale VoxEU : date + tag + titre + chapeau).
-6. **Section 5 – Citation & credentials** (Playfair, badges CAPS/FERDI/CERDI).
+6. **Section 5 – Citation & travaux** (Playfair, programmes et affiliations publiques autorisees).
 
 La bio complete n'apparait que sur la page **About**, pas en homepage.
 
@@ -108,7 +108,8 @@ Considere **erickilama.com** comme la **marque principale** :
 
 ## Regles bio strictes
 
-- **MEAE/CAPS** : JAMAIS "il a ete", "ancien", "ex-" ou toute formulation au passe. Utiliser : "son experience au CAPS du Quai d'Orsay a forge sa conviction que la geopolitique est redevenue une variable structurelle de l'economie mondiale." Ou "CAPS-MEAE" / "CAPS — Quai d'Orsay" comme badge (sans verbe).
+- **Firewall d'attribution** : le corpus CAPS reste strictement interne. ZERO mention du CAPS dans les contenus, templates, metadata, bios, badges, footers, attributions ou noms de produits publics. Ne jamais relier l'experience, l'affiliation, le poste, le titre ou l'autorite personnelle d'Eric au MEAE ou au Quai d'Orsay. Ces institutions restent citables comme acteurs ou sources publiques pertinentes et verifiees.
+- **Séparation physique** : `staging/for-site/` est une voie publique et doit passer le gate dans son intégralité avant ingestion. Les corpus, registres et monitorings internes vont dans `~/.config/macrodata/staging/internal-restricted/`; un fichier non routable n'est pas une exception.
 - **BETA / Universite de Lorraine** : ZERO mention sur le site. Remplacer par FERDI, CERDI, ou omettre.
 - Ces regles s'appliquent a : templates, contenu, metadata, bios, badges, footers, attributions.
 

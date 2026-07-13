@@ -10,11 +10,13 @@ Usage:
     python3 scripts/ingest_staging.py [--dry-run]
 """
 
-import os
+import argparse
 import re
 import sys
 import yaml
 from pathlib import Path
+
+from public_attribution_gate import scan_text
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -422,6 +424,16 @@ def ingest_file(filepath: Path, dry_run: bool = False) -> dict | None:
 
     output = f"---\n{hugo_yaml}\n---\n\n{clean_body}"
 
+    violations = scan_text(output, str(out_path))
+    if violations:
+        rules = ", ".join(sorted({item.rule for item in violations}))
+        return {
+            "file": filename,
+            "status": "blocked",
+            "reason": f"public attribution gate: {rules}",
+            "violations": len(violations),
+        }
+
     if not dry_run:
         out_dir.mkdir(parents=True, exist_ok=True)
         out_path.write_text(output, encoding="utf-8")
@@ -437,12 +449,19 @@ def ingest_file(filepath: Path, dry_run: bool = False) -> dict | None:
     }
 
 
-def main():
-    dry_run = "--dry-run" in sys.argv
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate and report eligible files without writing to content/.",
+    )
+    args = parser.parse_args(argv)
+    dry_run = args.dry_run
 
     if not STAGING_DIR.is_dir():
         print(f"ERROR: staging directory not found: {STAGING_DIR}")
-        sys.exit(1)
+        return 1
 
     # Collect markdown files (not in subdirectories)
     files = sorted(
@@ -452,7 +471,7 @@ def main():
 
     if not files:
         print("No eligible files found in staging directory.")
-        return
+        return 0
 
     results = []
     for f in files:
@@ -463,6 +482,7 @@ def main():
     # Summary
     ingested = [r for r in results if r["status"] == "ingested"]
     skipped = [r for r in results if r["status"] == "skipped"]
+    blocked = [r for r in results if r["status"] == "blocked"]
 
     mode_label = "[DRY RUN] " if dry_run else ""
 
@@ -471,6 +491,7 @@ def main():
     print(f"  Files scanned:  {len(files)}")
     print(f"  Ingested:       {len(ingested)}")
     print(f"  Skipped:        {len(skipped)}")
+    print(f"  Blocked:        {len(blocked)}")
     print()
 
     if ingested:
@@ -493,11 +514,19 @@ def main():
             print(f"    {r['file']}: {r['reason']}")
         print()
 
+    if blocked:
+        print("  Blocked:")
+        for r in blocked:
+            print(f"    {r['file']}: {r['reason']} ({r['violations']} violation(s))")
+        print()
+
     if dry_run:
         print("  (No files written — dry run mode)")
     else:
         print(f"  Done. {len(ingested)} files written to content/.")
 
+    return 2 if blocked else 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

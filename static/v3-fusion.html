@@ -14,7 +14,7 @@
     --navy: #1B2A4A;
     --blue-fpsq: #2C5F8A;
     --red-analytical: #C0392B;
-    --gold-caps: #D4A017;
+    --gold-accent: #D4A017;
     --ivory: #F8F7F4;
     --ivory-deep: #F0EDE8;
     --anthracite: #2D2D2D;
@@ -284,7 +284,7 @@
     border: none; border-radius: 2px; text-decoration: none;
     letter-spacing: 0.02em; transition: all 0.25s;
   }
-  .btn-primary:hover { background: var(--gold-caps); color: var(--navy); text-decoration: none; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .btn-primary:hover { background: var(--gold-accent); color: var(--navy); text-decoration: none; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
   .btn-secondary {
     font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
     color: rgba(255,255,255,0.7); text-decoration: none; padding: 13px 0;
@@ -381,7 +381,7 @@
   }
   .featured-cover-tag {
     font-family: var(--font-mono); font-size: 0.65rem;
-    color: var(--gold-caps); letter-spacing: 0.12em;
+    color: var(--gold-accent); letter-spacing: 0.12em;
     text-transform: uppercase; margin-bottom: 0.5rem;
   }
   .featured-cover-title {
@@ -497,7 +497,7 @@
   .programme-block:hover::before { height: 5px; }
   .programme-block[data-color="red"]::before { background: var(--red-analytical); }
   .programme-block[data-color="blue"]::before { background: var(--blue-fpsq); }
-  .programme-block[data-color="gold"]::before { background: var(--gold-caps); }
+  .programme-block[data-color="gold"]::before { background: var(--gold-accent); }
   .programme-block[data-color="navy"]::before { background: var(--navy); }
 
   .programme-block-num {
@@ -520,7 +520,7 @@
     color: var(--blue-fpsq);
   }
   .programme-block[data-color="red"] .programme-block-status { color: var(--red-analytical); }
-  .programme-block[data-color="gold"] .programme-block-status { color: var(--gold-caps); }
+  .programme-block[data-color="gold"] .programme-block-status { color: var(--gold-accent); }
 
   /* Bottom question — Playfair italic, centered */
   .programmes-question {
@@ -578,7 +578,7 @@
   }
   .analysis-tag.tag-policy { background: var(--navy); }
   .analysis-tag.tag-research { background: var(--red-analytical); }
-  .analysis-tag.tag-foresight { background: var(--gold-caps); color: var(--navy); }
+  .analysis-tag.tag-foresight { background: var(--gold-accent); color: var(--navy); }
   .analysis-title {
     font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
     color: var(--navy); line-height: 1.35; margin-bottom: 0.25rem;
@@ -610,7 +610,7 @@
     overflow: hidden;
   }
   .vigie .section-label { color: rgba(255,255,255,0.4); }
-  .vigie .section-label::before { background: var(--gold-caps); }
+  .vigie .section-label::before { background: var(--gold-accent); }
   .vigie .section-label::after { background: rgba(255,255,255,0.08); }
   .vigie-header {
     display: grid; grid-template-columns: 1fr auto;
@@ -628,7 +628,7 @@
   .vigie-kpi { text-align: center; }
   .vigie-kpi-number {
     font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700;
-    color: var(--gold-caps); line-height: 1; letter-spacing: -0.02em;
+    color: var(--gold-accent); line-height: 1; letter-spacing: -0.02em;
   }
   .vigie-kpi-label {
     font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600;
@@ -681,7 +681,7 @@
     box-shadow: 0 0 8px currentColor;
   }
   .vigie-panel-dot.active { background: #2E7D32; color: #2E7D32; }
-  .vigie-panel-dot.watch { background: var(--gold-caps); color: var(--gold-caps); }
+  .vigie-panel-dot.watch { background: var(--gold-accent); color: var(--gold-accent); }
   .vigie-panel-dot.alert { background: var(--red-analytical); color: var(--red-analytical); }
   .vigie-panel-label {
     font-family: var(--font-mono); font-size: 0.68rem;
@@ -722,7 +722,7 @@
     transition: width 0.5s;
   }
   .vigie-panel-bar-fill.active { background: #2E7D32; }
-  .vigie-panel-bar-fill.watch { background: var(--gold-caps); }
+  .vigie-panel-bar-fill.watch { background: var(--gold-accent); }
   .vigie-panel-bar-fill.alert { background: var(--red-analytical); }
   .vigie-panel-meta {
     font-family: var(--font-heading); font-size: 0.68rem;
@@ -735,7 +735,7 @@
   }
   .vigie-cta a {
     font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600;
-    color: var(--gold-caps); padding: 14px 36px;
+    color: var(--gold-accent); padding: 14px 36px;
     border: 1px solid rgba(212,160,23,0.3);
     border-radius: 2px;
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -825,7 +825,7 @@
   }
   .credentials-quote-mark {
     font-family: var(--font-accent); font-size: 4.5rem;
-    color: var(--gold-caps); opacity: 0.3;
+    color: var(--gold-accent); opacity: 0.3;
     line-height: 0.5; margin-bottom: 0.5rem;
   }
   .credentials blockquote {
@@ -844,7 +844,7 @@
     content: '';
     display: block;
     width: 50px; height: 2px;
-    background: var(--gold-caps); opacity: 0.4;
+    background: var(--gold-accent); opacity: 0.4;
     margin: 0 auto 1rem;
   }
   /* 3 badge cards — React-style */
@@ -867,7 +867,7 @@
     content: '';
     position: absolute; top: 0; left: 50%; transform: translateX(-50%);
     width: 40px; height: 2.5px;
-    background: var(--gold-caps); opacity: 0.5;
+    background: var(--gold-accent); opacity: 0.5;
     transition: width 0.3s, opacity 0.3s;
   }
   .credential-badge:hover {
@@ -880,7 +880,7 @@
     font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700;
     color: #fff; margin-bottom: 0.35rem;
   }
-  .credential-badge-value a { color: var(--gold-caps); }
+  .credential-badge-value a { color: var(--gold-accent); }
   .credential-badge-value a:hover { color: #fff; text-decoration: none; }
   .credential-badge-label {
     font-family: var(--font-heading); font-size: 0.62rem; font-weight: 600;
@@ -898,13 +898,13 @@
     margin: 0 1rem;
     transition: color 0.2s;
   }
-  .credentials-links-row a:hover { color: var(--gold-caps); text-decoration: none; }
+  .credentials-links-row a:hover { color: var(--gold-accent); text-decoration: none; }
   .credentials-link {
     margin-top: 1.5rem; text-align: center;
   }
   .credentials-link a {
     font-family: var(--font-heading); font-size: 0.82rem; font-weight: 600;
-    color: var(--gold-caps);
+    color: var(--gold-accent);
     display: inline-flex; align-items: center; gap: 0.4rem;
   }
   .credentials-link a:hover { gap: 0.6rem; text-decoration: none; color: #fff; }
@@ -928,7 +928,7 @@
     font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;
     color: #fff; letter-spacing: 0.04em; margin-bottom: 1rem;
     padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--gold-caps);
+    border-bottom: 2px solid var(--gold-accent);
     display: inline-block;
   }
   .footer-brand-desc {
@@ -1109,7 +1109,7 @@
           </div>
           <div class="nav-dropdown-section">
             <div class="nav-dropdown-label">Institutions</div>
-            <a href="#">CAPS — Quai d'Orsay</a>
+            <a href="#">Vigie géoéconomique</a>
             <a href="#">G7 / OCDE</a>
           </div>
         </div>
@@ -1143,7 +1143,7 @@
   <a href="#policy">Policy</a>
   <div class="nav-mobile-sub">
     <a href="#">Notes &amp; Policy Briefs</a>
-    <a href="#">CAPS — Quai d'Orsay</a>
+    <a href="#">Vigie géoéconomique</a>
   </div>
   <a href="#foresight">Foresight</a>
   <div class="nav-mobile-sub">
@@ -1695,7 +1695,7 @@
         <div class="credential-badge-label">Chercheur associé</div>
       </div>
       <div class="credential-badge">
-        <div class="credential-badge-value">CAPS / MEAE</div>
+        <div class="credential-badge-value">Vigie géoéconomique</div>
         <div class="credential-badge-label">2018–2023</div>
       </div>
       <div class="credential-badge">

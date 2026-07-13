@@ -14,7 +14,7 @@
       --navy: #1B2A4A;
       --blue-fpsq: #2C5F8A;
       --red-analytical: #C0392B;
-      --gold-caps: #D4A017;
+      --gold-accent: #D4A017;
       --ivory: #F8F7F4;
       --ivory-deep: #F0EDE8;
       --anthracite: #2D2D2D;
@@ -50,7 +50,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      border-bottom: 3px solid var(--gold-caps);
+      border-bottom: 3px solid var(--gold-accent);
     }
 
     .lab-brand {
@@ -61,7 +61,7 @@
     }
 
     .lab-logo {
-      color: var(--gold-caps);
+      color: var(--gold-accent);
       font-family: "JetBrains Mono", monospace;
       font-size: 13px;
       font-weight: 700;
@@ -76,7 +76,7 @@
 
     .lab-tag {
       border: 1px solid rgba(212, 160, 23, 0.45);
-      color: var(--gold-caps);
+      color: var(--gold-accent);
       font-family: "JetBrains Mono", monospace;
       font-size: 10px;
       font-weight: 700;
@@ -152,7 +152,7 @@
     .panel-padded { padding: 28px 32px; }
 
     .panel-gold-left {
-      border-left: 4px solid var(--gold-caps);
+      border-left: 4px solid var(--gold-accent);
     }
 
     .panel-blue-left {
@@ -229,7 +229,7 @@
     /* ── CITATION ── */
     .citation-block {
       background: var(--ivory);
-      border-left: 3px solid var(--gold-caps);
+      border-left: 3px solid var(--gold-accent);
       padding: 20px 24px;
       margin: 20px 0;
     }
@@ -310,8 +310,8 @@
     }
 
     .btn-gold {
-      background: var(--gold-caps);
-      border: 1px solid var(--gold-caps);
+      background: var(--gold-accent);
+      border: 1px solid var(--gold-accent);
       color: #fff;
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
@@ -1811,7 +1811,7 @@ function renderConnMatrix() {
   for (let j = 0; j < N; j++) {
     html += `<td class="to-col">${toArr[j].toFixed(1)}</td>`;
   }
-  html += `<td style="background: var(--gold-caps); color: #fff; font-weight: 700;">${data.tci.toFixed(1)}</td></tr></tfoot>`;
+  html += `<td style="background: var(--gold-accent); color: #fff; font-weight: 700;">${data.tci.toFixed(1)}</td></tr></tfoot>`;
   document.getElementById('connMatrix').innerHTML = html;
 
   // Update NET chart

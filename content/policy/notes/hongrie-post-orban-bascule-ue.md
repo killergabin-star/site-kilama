@@ -134,6 +134,6 @@ Trois scénarios : réintégration accélérée (30 %), pragmatisme sélectif (5
 
 **26.** **Pour le G7, le déblocage hongrois permet à l'Union européenne d'arriver au sommet d'Évian avec une crédibilité restaurée sur le dossier ukrainien.** Les 90 milliards de prêt et le vingtième paquet de sanctions constituent des « livrables » concrets que la présidence française du G7 peut présenter comme preuves de la cohésion occidentale — à condition que la mise en œuvre suive le rythme des annonces.
 
-**27.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que les transitions politiques dans les États membres de l'UE ne se lisent pas uniquement à travers le prisme de la politique intérieure : elles reconfigurent les équilibres institutionnels à l'échelle de l'Union entière. **L'élection hongroise du 12 avril 2026 est un test grandeur nature de la résilience — ou de la fragilité — d'une architecture européenne construite sur l'unanimité.**
+**27.** Les transitions politiques dans les États membres de l'UE ne se lisent pas uniquement à travers le prisme de la politique intérieure : elles reconfigurent les équilibres institutionnels à l'échelle de l'Union entière. **L'élection hongroise du 12 avril 2026 est un test grandeur nature de la résilience — ou de la fragilité — d'une architecture européenne construite sur l'unanimité.**
 
 [^11]: Le sommet du G7 sous présidence française est prévu à Évian du 15 au 17 juin 2026.

@@ -24,12 +24,22 @@ if ! python3 "$HOME/.config/macrodata/scripts/site_lane_gate.py" preflight; then
     exit 2
 fi
 
+# 0b. Scan the complete public staging lane, including non-routable files. An
+# internal artifact misplaced here must be quarantined, not merely skipped by
+# the ingestion router.
+echo "→ Checking public staging attribution..."
+if ! python3 scripts/public_attribution_gate.py staging/for-site; then
+    echo "  ✖ PUBLIC STAGING ATTRIBUTION BLOCK — deploy interrompu."
+    exit 2
+fi
+
 # 1. Ingest new staging documents
 echo "→ Ingesting staging documents..."
 python3 scripts/ingest_staging.py 2>&1 | tail -5
 INGEST_RC=${PIPESTATUS[0]}
 if [ "$INGEST_RC" -ne 0 ]; then
-    echo "  ⚠ STAGING INGEST FAILED (exit $INGEST_RC) — new staging docs may be missing from this deploy."
+    echo "  ✖ STAGING INGEST FAILED (exit $INGEST_RC) — deploy interrompu."
+    exit 2
 fi
 
 # 2. Refresh Vigie public snapshot + FPSQ hybrid data
@@ -56,6 +66,14 @@ if [ -f editorial/thumbnails/build-thumbnails.mjs ]; then
     node editorial/thumbnails/build-thumbnails.mjs 2>&1 | tail -8
 fi
 
+# 2d. Public-attribution firewall. This must run after every content generator
+# and before any build, commit, push, or deploy action.
+echo "→ Checking public attribution firewall..."
+if ! python3 scripts/public_attribution_gate.py; then
+    echo "  ✖ PUBLIC ATTRIBUTION BLOCK — deploy interrompu."
+    exit 2
+fi
+
 # 3. Check if anything changed
 if git diff --quiet && git diff --cached --quiet; then
     echo "[$(date '+%Y-%m-%d %H:%M')] No changes detected. Skipping deploy."
@@ -65,6 +83,12 @@ fi
 # 4. Build Hugo for GitHub Pages
 echo "→ Building site..."
 hugo --gc --minify --baseURL "https://erickilama.com/" 2>&1 | tail -3
+
+echo "→ Checking rendered public attribution..."
+if ! python3 scripts/public_attribution_gate.py public; then
+    echo "  ✖ RENDERED PUBLIC ATTRIBUTION BLOCK — deploy interrompu."
+    exit 2
+fi
 
 # 5. Commit and push source to main
 echo "→ Committing changes..."

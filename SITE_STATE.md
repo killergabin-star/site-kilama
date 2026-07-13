@@ -84,7 +84,7 @@ Sortir des primitives Canvas/p5.js. Chercher des moteurs next-gen (WebGL shaders
 | Primaire | #1B2A4A | Navy profond |
 | Secondaire | #2C5F8A | Bleu FPSQ |
 | Accent alerte | #C0392B | Rouge analytique |
-| Accent premium | #D4A017 | Or CAPS |
+| Accent premium | #D4A017 | Or accent |
 | Fond | #F8F7F4 | Ivoire |
 | Fond alterne | #F0EDE8 | Ivoire profond |
 | Texte | #2D2D2D | Anthracite |

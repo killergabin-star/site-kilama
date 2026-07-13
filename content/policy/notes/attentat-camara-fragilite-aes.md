@@ -101,7 +101,7 @@ Le JNIM s'étend désormais vers le golfe de Guinée (Côte d'Ivoire, Bénin, To
 
 **21.** La seconde dynamique est la tenue du sommet Africa Forward à Nairobi les 11 et 12 mai 2026, coprésidé par Macron et le président kenyan Ruto. Le sommet a réuni près de quatre mille participants, dont une trentaine de chefs d'État, et a abouti à des annonces d'investissement de vingt-trois milliards d'euros[^20]. **La cohérence du message français est scrutée : comment réconcilier vingt-trois milliards d'investissements annoncés à Nairobi avec l'absence de stratégie opérationnelle pour le Sahel, où la France n'a plus de présence militaire et où ses anciens alliés sont en difficulté ?**
 
-**22.** Son expérience au CAPS du Quai d'Orsay a forgé la conviction que la France ne peut pas traiter le Sahel comme un dossier fermé. **Le retrait de Barkhane et de la force Sabre, la fermeture des ambassades, le départ des coopérants : tout cela a créé un vide dont les juntes portent la responsabilité première, mais dont les conséquences -- expansion terroriste vers les pays côtiers alliés, routes migratoires déstabilisées, influence russe croissante -- affectent directement les intérêts européens et français.**
+**22.** La France ne peut pas traiter le Sahel comme un dossier fermé. **Le retrait de Barkhane et de la force Sabre, la fermeture des ambassades, le départ des coopérants : tout cela a créé un vide dont les juntes portent la responsabilité première, mais dont les conséquences -- expansion terroriste vers les pays côtiers alliés, routes migratoires déstabilisées, influence russe croissante -- affectent directement les intérêts européens et français.**
 
 ---
 

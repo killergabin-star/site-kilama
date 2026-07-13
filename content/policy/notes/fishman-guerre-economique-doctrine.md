@@ -37,7 +37,7 @@ L'UE dispose d'un embryon de doctrine propre : Stratégie de sécurité économi
 
 **2.** **L'article de Fishman n'est pas une contribution académique de plus sur les sanctions — c'est un manuel opérationnel qui fournit un cadre conceptuel, la « fragmentation coordonnée », pour organiser la guerre économique entre alliés occidentaux[^4].** La question pour l'Europe, et singulièrement pour la France en tant que présidente du G7, est celle-ci : cette doctrine constitue-t-elle une opportunité de convergence transatlantique ou un piège doctrinal qui enfermerait les Européens dans une architecture américaine ?
 
-**3.** Son expérience au Centre d'analyse, de prévision et de stratégie (CAPS) du Quai d'Orsay a forgé la conviction que les cadres conceptuels américains en matière de politique étrangère économique doivent être évalués non seulement pour leur cohérence interne, mais aussi pour les asymétries qu'ils créent entre ceux qui les produisent et ceux qui les adoptent. **C'est cette grille de lecture — production de normes versus adoption de normes — que cette note applique à la doctrine Fishman.**
+**3.** Les cadres conceptuels américains en matière de politique étrangère économique doivent être évalués non seulement pour leur cohérence interne, mais aussi pour les asymétries qu'ils créent entre ceux qui les produisent et ceux qui les adoptent. **C'est cette grille de lecture — production de normes versus adoption de normes — que cette note applique à la doctrine Fishman.**
 
 ---
 
