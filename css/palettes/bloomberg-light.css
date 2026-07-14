@@ -1,0 +1,57 @@
+/* ============================================================================
+   palettes/bloomberg-light.css
+   Variante B — light : Bloomberg-style, multi-couleur sur fond clair
+   Mockup pour validation Eric (29 avril 2026) — pas encore mergé sur prod
+   ============================================================================ */
+
+[data-palette="bloomberg-light"] {
+  /* Fond et texte : registre gris bleuté très léger, pas blanc pur */
+  --color-background-primary:   #FFFFFF;     /* blanc — terminal Bloomberg light */
+  --color-background-secondary: #F5F7FA;     /* gris bleuté très clair pour blocs data */
+  --color-background-tertiary:  #EEF2F7;     /* plus marqué pour KPI */
+  --color-background-cream:     #FFFFFF;
+  --color-text-primary:         #1A1A1A;     /* presque-noir neutre */
+  --color-text-secondary:       #5A5A5A;
+  --color-text-tertiary:        #888780;
+  --color-text-muted:           #B8B4AC;
+
+  /* Couleurs Bloomberg adaptées au fond clair :
+     les saturées du dark sont impropres sur clair — on désature légèrement
+     et on assombrit pour préserver le contraste */
+  --brand-primary:              #0080CC;     /* cyan désaturé vs #00BFFF dark */
+  --brand-primary-soft:         #4DA8E0;
+  --brand-primary-deep:         #005A8F;
+  --brand-secondary:            #7E3FE0;     /* violet désaturé vs #B062FF */
+  --brand-tertiary:             #00A88B;     /* mint désaturé vs #00E5C4 */
+  --brand-quaternary:           #D89000;     /* amber désaturé vs #FFC633 */
+
+  /* Accent : coral plus profond pour rester visible sur clair */
+  --brand-accent:               #D14820;     /* corail, désaturé vs #FF4757 */
+  --brand-accent-deep:          #A8351A;
+  --brand-accent-soft:          #E26C45;
+  --brand-flag:                 #0080CC;
+  --brand-blue:                 #0066CC;
+
+  /* États */
+  --state-good:                 #00A88B;
+  --state-bad:                  #D14820;
+  --state-warn:                 #D89000;
+  --state-neutral:              #5A5A5A;
+
+  /* Bordures */
+  --color-border-primary:       rgba(26, 26, 26, 0.20);
+  --color-border-secondary:     rgba(26, 26, 26, 0.10);
+  --color-border-tertiary:      rgba(26, 26, 26, 0.05);
+
+  /* Palette data : couleurs Bloomberg désaturées pour fond clair */
+  --brand-data-1:               #0080CC;     /* cyan désaturé */
+  --brand-data-2:               #7E3FE0;     /* violet désaturé */
+  --brand-data-3:               #00A88B;     /* mint désaturé */
+  --brand-data-4:               #D89000;     /* amber désaturé */
+  --brand-data-5:               #D14820;     /* coral désaturé */
+  --brand-data-6:               #C73680;     /* magenta désaturé vs #FF50B5 */
+  --brand-data-7:               #5A5A5A;
+
+  /* Surfaces accent */
+  --color-background-brand-soft: rgba(0, 128, 204, 0.08);
+}

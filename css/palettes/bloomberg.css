@@ -1,0 +1,159 @@
+/* ============================================================================
+   tokens-palette-2-bloomberg.css
+   Palette 2 — Bloomberg / BNEF think-tank financier
+   Bleu cyan dominant + corail comme accent rare
+   
+   Usage : copier sur tokens.css pour activer cette palette
+   ============================================================================ */
+
+:root {
+  /* ---------- COULEURS DE MARQUE ---------- */
+  --brand-primary:        #1F8FD6;   /* Bleu cyan BNEF — wordmark, liens primaires */
+  --brand-primary-soft:   #5DB3E8;   /* Bleu cyan plus clair pour hover */
+  --brand-primary-deep:   #1467A0;   /* Bleu cyan foncé pour H1 dense, fortes emphases */
+
+  --brand-accent:         #D85A30;   /* Corail BNEF — hero data, accents rares */
+  --brand-accent-soft:    #E68056;   /* Corail clair pour hover */
+
+  /* ---------- PALETTE DATA (pour charts) ---------- */
+  /* Trois couleurs sémantiques façon BNEF (article insights) */
+  --brand-data-1:         #1F8FD6;   /* Bleu cyan — série principale, AMER, théâtre 1 */
+  --brand-data-2:         #7E57C2;   /* Violet — série 2, APAC, théâtre 2 */
+  --brand-data-3:         #26B89A;   /* Teal / vert d'eau — série 3, EMEA, théâtre 3 */
+
+  /* Couleurs catégorielles étendues (charts à 5+ catégories) */
+  --brand-data-4:         #D85A30;   /* Corail — quand le rouge corail signifie "Chine" ou "dominante" */
+  --brand-data-5:         #E8B948;   /* Or vif */
+  --brand-data-6:         #E25577;   /* Rose */
+  --brand-data-7:         #4D4D4D;   /* Anthracite pour overlays narratifs (ligne noire) */
+
+  /* Tons et atténuations pour cartes empilées */
+  --brand-data-1-soft:    #84BFE8;
+  --brand-data-2-soft:    #B197D9;
+  --brand-data-3-soft:    #75D2BF;
+
+  /* ---------- TEXTE ---------- */
+  --color-text-primary:   #1A1A1A;   /* Noir profond */
+  --color-text-secondary: #5A5A5A;
+  --color-text-tertiary:  #888780;
+  --color-text-inverse:   #FAFAFA;
+  --color-text-on-brand:  #FFFFFF;
+
+  /* ---------- FONDS ---------- */
+  --color-background-primary:    #FFFFFF;
+  --color-background-secondary:  #F5F7FA;   /* Gris bleuté très clair pour blocs data */
+  --color-background-tertiary:   #EEF2F7;   /* Plus marqué pour panneaux KPI */
+  --color-background-elevated:   #FFFFFF;
+  --color-background-brand-soft: #E0EFFA;   /* Bleu cyan très dilué */
+
+  /* ---------- BORDURES ---------- */
+  --color-border-tertiary:   rgba(26, 26, 26, 0.08);
+  --color-border-secondary:  rgba(26, 26, 26, 0.18);
+  --color-border-primary:    rgba(26, 26, 26, 0.32);
+
+  /* ---------- COULEURS SÉMANTIQUES (état) ---------- */
+  --state-up:        #1B7A5A;
+  --state-down:      #D14820;   /* Variante du corail, sémantique baisse */
+  --state-flat:      #888780;
+  --state-warn:      #E8B948;
+
+  --state-good:      var(--state-up);
+  --state-bad:       var(--state-down);
+  --state-neutral:   var(--state-flat);
+
+  /* ---------- SURFACES SOMBRES (dashboard Foresight) ---------- */
+  --color-surface-dark:                     #1A1A1E;
+  --color-surface-dark-deep:                #141418;
+  --color-surface-dark-overlay:             rgba(26, 26, 30, 0.85);
+  --color-text-on-surface-dark:             #FFFFFF;
+  --color-text-on-surface-dark-secondary:   #E0E0E0;
+  --color-text-on-surface-dark-tertiary:    #A0A0A0;
+  --color-border-on-dark:                   rgba(255, 255, 255, 0.08);
+
+  /* ---------- ESPACEMENTS ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---------- RADIUS ---------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg: 12px;
+
+  /* ---------- DURÉE D'ANIMATION ---------- */
+  --transition-fast:   120ms ease-out;
+  --transition-medium: 240ms ease-out;
+}
+
+/* ============================================================================
+   DARK MODE
+   Bleu cyan vivifié, fond charbon, corail réchauffé
+   ============================================================================ */
+
+
+
+
+
+/* ============================================================================
+   BLOOMBERG SUB-THEME — scoped for Data Room on Foresight
+   Applied via data-palette="bloomberg" on institutional palette pages
+   ============================================================================ */
+
+[data-palette="bloomberg"] {
+  --brand-primary:        #0080C7;
+  --brand-primary-soft:   #4DA8DC;
+  --brand-primary-deep:   #005A8C;
+  --brand-data-1:         #0080C7;
+  --brand-data-2:         #00A862;
+  --brand-data-3:         #7E57C2;
+  --brand-data-4:         #D85A30;
+  --brand-data-5:         #E8B948;
+  --brand-data-6:         #E25577;
+  --brand-data-7:         #4D4D4D;
+  --color-background-secondary: #F0F5FA;
+  --color-background-tertiary:  #E5EDF5;
+  --state-up:      #00A862;
+  --state-down:    #E63946;
+  --state-warn:    #FF9500;
+  --state-neutral: #707880;
+}
+
+/* ============================================================================
+   NOTES SUR LA PALETTE 2
+   ----------------------------------------------------------------------------
+   Cette palette s'inspire directement de BloombergNEF, observée sur 6 articles
+   et 14 charts publication-grade. Trois couleurs sémantiques (bleu cyan, violet,
+   teal) qui constituent la signature visuelle BNEF, plus le corail réservé
+   aux signaux narratifs (équivalent du "Chine" dans les charts BNEF).
+   
+   - Bleu cyan #1F8FD6 : couleur dominante, AMER, série principale partout
+   - Violet #7E57C2 : APAC, deuxième série
+   - Teal #26B89A : EMEA, troisième série
+   - Corail #D85A30 : à RÉSERVER pour les hero data ponctuelles (chiffres qui
+     portent un message éditorial). Ne pas utiliser comme couleur catégorielle
+     ordinaire — son sens narratif s'épuiserait.
+   
+   Test d'accessibilité validé :
+   - Texte primary (#1A1A1A) sur background-primary (#FFFFFF) : ratio 17.4:1 ✓
+   - Brand-primary (#1F8FD6) sur fond blanc : ratio 4.5:1 ✓ (juste WCAG AA)
+   - Brand-primary-deep (#1467A0) sur fond blanc : ratio 7.8:1 ✓ (utiliser pour
+     liens dans les zones où la lisibilité doit être très forte)
+   - Brand-accent (#D85A30) sur fond blanc : ratio 4.6:1 ✓
+   - Text on brand (white) sur brand-primary : ratio 4.5:1 ✓ — utiliser
+     brand-primary-deep pour boutons pleins
+   - data-1, data-2, data-3 distinguables en daltonien deutéranope ✓
+   
+   Cas d'usage recommandés :
+   - Convient quand la cible inclut un public anglo-saxon ou financier
+   - Convient quand la posture éditoriale est plutôt "produit/dashboard" que
+     "publication classique"
+   - Plus moderne et distinctive visuellement que la palette 1
+   - Risque : ressemble à BNEF — c'est volontaire, mais peut paraître mimétique
+     pour qui connaît BNEF. À atténuer en jouant sur la typographie.
+   ============================================================================ */

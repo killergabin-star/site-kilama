@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision Brief Studio — Littératie IA | Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue-fpsq: #2C5F8A;
+      --red-analytical: #C0392B;
+      --gold-accent: #D4A017;
+      --ivory: #F8F7F4;
+      --ivory-deep: #F0EDE8;
+      --anthracite: #2D2D2D;
+      --text-secondary: #5A6068;
+      --border-light: rgba(27, 42, 74, 0.08);
+      --border-strong: rgba(27, 42, 74, 0.16);
+      --green: #2E7D5B;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: var(--blue-fpsq); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .dbs-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid var(--gold-accent);
+    }
+
+    .dbs-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .dbs-logo {
+      color: var(--gold-accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .dbs-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .dbs-tag {
+      background: rgba(212, 160, 23, 0.18);
+      border-radius: 2px;
+      color: var(--gold-accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      text-transform: uppercase;
+    }
+
+    .dbs-back {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .dbs-back:hover { color: #fff; text-decoration: none; }
+
+    .dbs-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 2rem 60px;
+    }
+
+    .eyebrow {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin: 0 0 16px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .standfirst {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      margin: 0 0 24px;
+      max-width: 680px;
+    }
+
+    /* Phase sections */
+    .phase-section {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      margin-bottom: 20px;
+      padding: 24px 28px;
+    }
+
+    .phase-section.hidden { display: none; }
+
+    .phase-badge {
+      background: var(--ivory-deep);
+      border-radius: 2px;
+      color: var(--navy);
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    .phase-badge.active {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* Brief selector */
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .brief-card {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      display: block;
+      padding: 14px 16px;
+      text-align: left;
+      transition: border-color 0.16s ease, transform 0.16s ease;
+      width: 100%;
+    }
+
+    .brief-card:hover {
+      border-color: rgba(44, 95, 138, 0.42);
+      transform: translateY(-1px);
+    }
+
+    .brief-card.active {
+      background: #fff;
+      border-color: var(--navy);
+      box-shadow: inset 0 3px 0 var(--gold-accent);
+    }
+
+    .brief-card strong {
+      color: var(--navy);
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+
+    .brief-card span {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .brief-card small {
+      color: var(--blue-fpsq);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-top: 8px;
+    }
+
+    /* Brief display */
+    .brief-document {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--red-analytical);
+      font-family: "Source Serif 4", serif;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      margin: 16px 0;
+      max-height: 520px;
+      overflow-y: auto;
+      padding: 20px 24px;
+    }
+
+    .brief-document h4 {
+      color: var(--navy);
+      font-family: Inter, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    .brief-document .brief-meta {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+
+    .brief-document p {
+      margin: 0 0 10px;
+    }
+
+    .brief-document .brief-warning {
+      background: rgba(192, 57, 43, 0.06);
+      border-left: 3px solid var(--red-analytical);
+      color: var(--anthracite);
+      font-family: Inter, sans-serif;
+      font-size: 0.82rem;
+      margin: 16px 0 0;
+      padding: 10px 14px;
+    }
+
+    /* Annotation form */
+    .annotation-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .annotation-item {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      padding: 14px 16px;
+    }
+
+    .annotation-item label {
+      color: var(--navy);
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .annotation-item .hint {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 8px;
+    }
+
+    .annotation-item textarea {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      color: var(--anthracite);
+      display: block;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      min-height: 72px;
+      padding: 10px 12px;
+      resize: vertical;
+      width: 100%;
+    }
+
+    .annotation-item textarea:focus {
+      border-color: var(--blue-fpsq);
+      outline: none;
+    }
+
+    .annotation-item .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag-btn {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      transition: all 0.15s;
+    }
+
+    .tag-btn:hover { border-color: var(--blue-fpsq); color: var(--blue-fpsq); }
+
+    .tag-btn.selected {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    /* Buttons */
+    .primary-btn {
+      background: var(--navy);
+      border: none;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 11px 28px;
+      transition: background 0.2s;
+    }
+
+    .primary-btn:hover { background: #243a60; }
+    .primary-btn:disabled { background: #a0a6ae; cursor: not-allowed; }
+
+    .secondary-btn {
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      border-radius: 2px;
+      color: var(--navy);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 24px;
+    }
+
+    .ghost-btn {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      padding: 8px 14px;
+      text-decoration: underline;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* Results */
+    .result-card {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      margin-bottom: 12px;
+      padding: 14px 16px;
+    }
+
+    .result-card h4 {
+      font-size: 0.88rem;
+      margin: 0 0 6px;
+    }
+
+    .result-card p {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", serif;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .result-match {
+      border-left: 3px solid var(--green);
+    }
+
+    .result-miss {
+      border-left: 3px solid var(--red-analytical);
+    }
+
+    .result-partial {
+      border-left: 3px solid var(--gold-accent);
+    }
+
+    .score-display {
+      align-items: center;
+      display: flex;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .score-number {
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .score-label {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .score-label strong {
+      color: var(--navy);
+      display: block;
+      font-size: 1rem;
+    }
+
+    /* Progress rail */
+    .progress-rail {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .progress-step {
+      background: var(--ivory-deep);
+      border-radius: 2px;
+      color: var(--text-secondary);
+      flex: 1;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 8px 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .progress-step.active {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .progress-step.done {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* Guide */
+    .guide-box {
+      background: var(--ivory-deep);
+      border-left: 3px solid var(--blue-fpsq);
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      padding: 14px 18px;
+    }
+
+    .guide-box p { margin: 0; }
+
+    .brief-document p[data-para] {
+      border-left: 2px solid transparent;
+      cursor: pointer;
+      padding: 6px 8px 6px 38px;
+      position: relative;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .brief-document p[data-para]::before {
+      color: var(--blue-fpsq);
+      content: attr(data-para);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      left: 8px;
+      letter-spacing: 0.06em;
+      position: absolute;
+      top: 8px;
+    }
+
+    .brief-document p[data-para]:hover,
+    .brief-document p.paragraph-selected {
+      background: rgba(44, 95, 138, 0.06);
+      border-left-color: var(--blue-fpsq);
+    }
+
+    .brief-document p.paragraph-flagged {
+      background: rgba(212, 160, 23, 0.12);
+      border-left-color: var(--gold-accent);
+    }
+
+    .annotator-layout {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      margin-top: 14px;
+    }
+
+    .annotate-brief-panel {
+      min-width: 0;
+    }
+
+    .brief-document--compact {
+      max-height: 760px;
+      position: sticky;
+      top: 16px;
+    }
+
+    .annotation-tools {
+      border-top: 1px solid var(--border-light);
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+
+    .annotation-tools label {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .annotation-tools select,
+    .annotation-item .source-field {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-radius: 2px;
+      color: var(--anthracite);
+      font-size: 0.82rem;
+      padding: 8px 9px;
+      width: 100%;
+    }
+
+    .annotation-item .source-field {
+      grid-column: 1 / -1;
+      min-height: 58px;
+      resize: vertical;
+    }
+
+    .annotation-item .source-field:focus,
+    .annotation-tools select:focus {
+      border-color: var(--blue-fpsq);
+      outline: none;
+    }
+
+    .adaptive-feedback {
+      background: var(--navy);
+      border-left: 3px solid var(--gold-accent);
+      color: #fff;
+      margin: 0 0 18px;
+      padding: 16px 18px;
+    }
+
+    .adaptive-feedback strong {
+      color: var(--gold-accent);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .adaptive-feedback p {
+      color: rgba(255,255,255,0.82);
+      font-family: "Source Serif 4", serif;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .category-score-grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      margin-bottom: 16px;
+    }
+
+    .category-score {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      border-top: 2px solid var(--blue-fpsq);
+      padding: 10px 12px;
+    }
+
+    .category-score span {
+      color: var(--text-secondary);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .category-score strong {
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1.1rem;
+    }
+
+    .review-panel {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+      margin-top: 18px;
+      padding: 18px;
+    }
+
+    .review-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      margin-top: 12px;
+    }
+
+    .difficulty-badge {
+      border-radius: 3px;
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+      padding: 1px 6px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .difficulty-badge--high { background: rgba(192,57,43,0.12); color: var(--red-analytical); }
+    .difficulty-badge--medium { background: rgba(212,160,23,0.14); color: #9a7b0a; }
+    .difficulty-badge--low { background: rgba(44,95,138,0.10); color: var(--blue-fpsq); }
+
+    .review-note {
+      background: var(--ivory);
+      border-left: 3px solid var(--blue-fpsq);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      line-height: 1.45;
+      margin-bottom: 8px;
+      padding: 10px 12px;
+    }
+
+    .export-status {
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      margin-left: 8px;
+    }
+
+    /* Quote */
+    .ai-label {
+      align-items: center;
+      color: var(--red-analytical);
+      display: flex;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      gap: 6px;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .ai-label::before {
+      background: var(--red-analytical);
+      border-radius: 50%;
+      content: "";
+      display: inline-block;
+      height: 6px;
+      width: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      .dbs-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 20px;
+      }
+
+      .dbs-main { padding: 20px 18px 48px; }
+
+      .phase-section { padding: 18px; }
+
+      .brief-document {
+        max-height: 400px;
+        padding: 16px;
+      }
+
+      .brief-grid { grid-template-columns: 1fr; }
+
+      .annotator-layout,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brief-document--compact {
+        max-height: 360px;
+        position: static;
+      }
+
+      .annotation-tools {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="dbs-header">
+    <div class="dbs-brand">
+      <span class="dbs-logo">DBS</span>
+      <span class="dbs-title">Decision Brief Studio</span>
+      <span class="dbs-tag">Littératie IA</span>
+    </div>
+    <a class="dbs-back" href="/teaching/">&larr; Teaching Lab</a>
+  </header>
+
+  <main class="dbs-main">
+
+    <div class="eyebrow">Lire · Annoter · Critiquer · Réécrire</div>
+    <h1>Déconstruire une note générée par intelligence artificielle</h1>
+    <p class="standfirst">
+      L'outil produit une note de décision volontairement imparfaite sur un sujet géoéconomique. L'étudiant doit identifier les erreurs factuelles, les biais de raisonnement, les affirmations non sourcées et les angles morts — puis produire un rapport de déconstruction structuré.
+    </p>
+
+    <div class="progress-rail" id="progress-rail">
+      <span class="progress-step active" data-step="select">1. Sujet</span>
+      <span class="progress-step" data-step="read">2. Lecture</span>
+      <span class="progress-step" data-step="annotate">3. Annotation</span>
+      <span class="progress-step" data-step="result">4. Résultat</span>
+    </div>
+
+    <!-- PHASE 1: Select brief -->
+    <section class="phase-section" id="phase-select">
+      <span class="phase-badge active">Phase 1</span>
+      <h2>Choisir un sujet de note</h2>
+      <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:4px;">Chaque note contient des erreurs et biais délibérés. Votre mission : les trouver.</p>
+      <div class="brief-grid" id="brief-grid"></div>
+      <div class="action-row">
+        <button class="primary-btn" id="start-btn" disabled>Lire la note →</button>
+      </div>
+    </section>
+
+    <!-- PHASE 2: Read brief -->
+    <section class="phase-section hidden" id="phase-read">
+      <span class="phase-badge active">Phase 2</span>
+      <h2>Lire la note IA</h2>
+      <div class="guide-box">
+        <p><strong>Consigne :</strong> Lisez la note ci-dessous avec un regard critique. Elle a été générée par une IA et contient des erreurs factuelles, des biais de raisonnement, des affirmations non sourcées et des angles morts. Prenez des notes mentales avant de passer à l'annotation.</p>
+      </div>
+      <div class="ai-label">Note générée par IA — à évaluer</div>
+      <div class="brief-document" id="brief-content"></div>
+      <div class="action-row">
+        <button class="primary-btn" id="annotate-btn">Passer à l'annotation →</button>
+        <button class="ghost-btn" id="back-select-btn">← Changer de sujet</button>
+      </div>
+    </section>
+
+    <!-- PHASE 3: Annotate -->
+    <section class="phase-section hidden" id="phase-annotate">
+      <span class="phase-badge active">Phase 3</span>
+      <h2>Annoter et critiquer</h2>
+      <div class="guide-box">
+        <p><strong>Consigne :</strong> Pour chaque catégorie, identifiez les problèmes que vous avez repérés dans la note. Soyez précis : citez le passage, expliquez pourquoi il est problématique, et proposez une correction si possible. Utilisez les tags pour classifier chaque annotation.</p>
+      </div>
+      <div class="annotator-layout">
+        <aside class="annotate-brief-panel">
+          <div class="eyebrow">Note à annoter</div>
+          <div class="guide-box">
+            <p>Cliquez sur un paragraphe pour l'associer à la catégorie active. Les paragraphes sélectionnés seront repris dans la relecture annotée.</p>
+          </div>
+          <div class="ai-label">Note générée par IA — paragraphes numérotés</div>
+          <div class="brief-document brief-document--compact" id="annotate-brief"></div>
+        </aside>
+
+        <div class="annotation-grid" id="annotation-grid">
+          <div class="annotation-item" data-cat="factual">
+            <label>1. Erreurs factuelles</label>
+            <span class="hint">Données fausses, dates incorrectes, chiffres inventés, attributions erronées, institutions mal nommées.</span>
+            <textarea id="ann-factual" placeholder="Ex: « P1 affirme que les sanctions SWIFT ont été imposées en 2021, alors qu'elles datent de février 2022. »"></textarea>
+            <div class="tag-row">
+              <button class="tag-btn" data-cat="factual" data-tag="chiffre">Chiffre faux</button>
+              <button class="tag-btn" data-cat="factual" data-tag="date">Date incorrecte</button>
+              <button class="tag-btn" data-cat="factual" data-tag="attribution">Mauvaise attribution</button>
+              <button class="tag-btn" data-cat="factual" data-tag="institution">Institution erronée</button>
+            </div>
+          </div>
+
+          <div class="annotation-item" data-cat="bias">
+            <label>2. Biais de raisonnement</label>
+            <span class="hint">Corrélation présentée comme causalité, généralisation abusive, biais de confirmation, raisonnement circulaire, faux dilemme.</span>
+            <textarea id="ann-bias" placeholder="Ex: « P2 conclut que les sanctions ont causé la récession, mais ne contrôle pas pour le choc pétrolier simultané — corrélation ≠ causalité. »"></textarea>
+            <div class="tag-row">
+              <button class="tag-btn" data-cat="bias" data-tag="correlation">Corrélation/causalité</button>
+              <button class="tag-btn" data-cat="bias" data-tag="generalization">Généralisation</button>
+              <button class="tag-btn" data-cat="bias" data-tag="confirmation">Biais de confirmation</button>
+              <button class="tag-btn" data-cat="bias" data-tag="false-dilemma">Faux dilemme</button>
+            </div>
+          </div>
+
+          <div class="annotation-item" data-cat="unsourced">
+            <label>3. Affirmations non sourcées</label>
+            <span class="hint">Affirmations présentées comme des faits sans source, estimations sans méthodologie, « selon les experts » sans nommer personne.</span>
+            <textarea id="ann-unsourced" placeholder="Ex: « P2 dit “selon les analystes” — quels analystes ? Quelle méthodologie ? Le FMI estime une valeur différente. »"></textarea>
+            <div class="tag-row">
+              <button class="tag-btn" data-cat="unsourced" data-tag="no-source">Pas de source</button>
+              <button class="tag-btn" data-cat="unsourced" data-tag="vague">Source vague</button>
+              <button class="tag-btn" data-cat="unsourced" data-tag="methodology">Méthodologie absente</button>
+            </div>
+          </div>
+
+          <div class="annotation-item" data-cat="blind">
+            <label>4. Angles morts et omissions</label>
+            <span class="hint">Perspectives ignorées, acteurs absents, effets de second tour non mentionnés, contre-arguments escamotés.</span>
+            <textarea id="ann-blind" placeholder="Ex: « P3 ne mentionne pas l'impact sur les pays tiers qui réorganisent les flux et réduisent l'efficacité des sanctions. »"></textarea>
+            <div class="tag-row">
+              <button class="tag-btn" data-cat="blind" data-tag="actor">Acteur absent</button>
+              <button class="tag-btn" data-cat="blind" data-tag="second-order">Effet de second tour</button>
+              <button class="tag-btn" data-cat="blind" data-tag="counter">Contre-argument ignoré</button>
+            </div>
+          </div>
+
+          <div class="annotation-item" data-cat="reco">
+            <label>5. Recommandations non fondées</label>
+            <span class="hint">Préconisations qui ne découlent pas de l'analyse, solutions simplistes, absence de considération des trade-offs.</span>
+            <textarea id="ann-reco" placeholder="Ex: « P5 recommande de renforcer les sanctions mais ignore le dilemme efficacité/coût et l'absence de coalition mondiale. »"></textarea>
+            <div class="tag-row">
+              <button class="tag-btn" data-cat="reco" data-tag="non-sequitur">Non sequitur</button>
+              <button class="tag-btn" data-cat="reco" data-tag="simplistic">Simpliste</button>
+              <button class="tag-btn" data-cat="reco" data-tag="no-tradeoff">Pas de trade-off</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="action-row">
+        <button class="primary-btn" id="submit-btn">Soumettre l'évaluation →</button>
+        <button class="ghost-btn" id="back-read-btn">← Relire la note</button>
+      </div>
+    </section>
+
+    <!-- PHASE 4: Results -->
+    <section class="phase-section hidden" id="phase-result">
+      <span class="phase-badge active">Phase 4</span>
+      <h2>Résultat de l'évaluation</h2>
+      <div class="score-display" id="score-display">
+        <span class="score-number" id="score-value">—</span>
+        <div class="score-label">
+          <strong id="score-grade">—</strong>
+          <span id="score-desc">—</span>
+        </div>
+      </div>
+      <div class="adaptive-feedback" id="adaptive-feedback"></div>
+      <div class="category-score-grid" id="category-score-grid"></div>
+      <div id="results-container"></div>
+      <div style="margin-top:20px;padding:16px;background:var(--ivory-deep);border-radius:2px;">
+        <h3 style="margin-bottom:8px;">Pour aller plus loin</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin:0 0 8px;">Rédigez un rapport de déconstruction structuré (1-2 pages) comprenant :</p>
+        <ol style="font-size:0.85rem;color:var(--anthracite);margin:0;padding-left:1.2rem;">
+          <li>Un diagnostic synthétique des faiblesses de la note IA (3-4 lignes)</li>
+          <li>Un tableau erreurs/corrections avec sources primaires</li>
+          <li>Une évaluation de la fiabilité globale de la note pour un décideur</li>
+          <li>Une version corrigée du paragraphe le plus problématique</li>
+        </ol>
+      </div>
+      <div class="action-row">
+        <button class="primary-btn" id="retry-btn">Essayer un autre sujet</button>
+        <button class="secondary-btn" id="review-btn">Revoir mes annotations</button>
+        <button class="secondary-btn" id="export-btn">Exporter Markdown</button>
+        <span class="export-status" id="export-status"></span>
+      </div>
+      <div class="review-panel" id="review-panel"></div>
+    </section>
+
+    <!-- Guide section -->
+    <section style="margin-top:12px;">
+      <details>
+        <summary style="cursor:pointer;padding:0.85rem 1.2rem;font-family:Inter,sans-serif;font-weight:600;font-size:0.92rem;color:var(--navy);background:var(--ivory-deep);border:1px solid var(--border-light);border-radius:3px;">
+          <span style="font-size:1.1rem;">&#9432;</span> Mode d'emploi et critères d'évaluation
+        </summary>
+        <div style="padding:1.2rem;border:1px solid var(--border-light);border-top:none;font-family:'Source Serif 4',serif;font-size:0.9rem;line-height:1.6;color:var(--anthracite);">
+          <p style="margin:0 0 1rem;"><strong style="color:var(--navy);">Objectif.</strong> Former une littératie IA critique : savoir lire un texte généré par IA, identifier ses faiblesses structurelles, et produire une évaluation fondée sur des sources primaires — pas sur l'intuition.</p>
+
+          <div style="border-top:1px solid var(--border-light);padding-top:0.9rem;margin-top:0.5rem;">
+            <strong style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);">Critères d'évaluation</strong>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;margin-top:0.5rem;font-size:0.84rem;">
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">1. Exhaustivité</span> — L'étudiant a-t-il identifié la majorité des erreurs délibérées ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">2. Précision</span> — Les annotations citent-elles le passage exact et expliquent-elles pourquoi il est faux ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">3. Sources</span> — L'étudiant propose-t-il des corrections sourcées (données primaires, articles, rapports institutionnels) ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">4. Synthèse</span> — Le diagnostic final est-il hiérarchisé (erreur critique vs biais mineur) ?</div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--border-light);padding-top:0.9rem;margin-top:0.9rem;">
+            <strong style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);">Pourquoi cet exercice</strong>
+            <p style="margin:0.4rem 0 0;font-size:0.84rem;">Les outils d'IA générative produisent du texte fluide mais souvent faux. Un décideur qui utilise une note IA sans la vérifier prend un risque opérationnel. Cet exercice entraîne la compétence critique : distinguer l'apparence de rigueur de la rigueur réelle. Les erreurs sont calibrées sur les faiblesses connues des LLM : hallucinations factuelles, corrélations abusives, sources inventées, biais de confirmation, et absence de nuance dans les recommandations.</p>
+          </div>
+
+          <p style="margin:0.9rem 0 0;font-size:0.82rem;color:var(--text-secondary);font-style:italic;">Durée indicative : 30-45 min. Format : individuel ou binôme. Livrable : rapport de déconstruction (1-2 pages).</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Syllabi -->
+    <section style="margin-top:16px;border-top:1px solid var(--border-light);padding-top:1.5rem;">
+      <div style="font-family:Inter,sans-serif;font-size:0.82rem;font-weight:600;color:var(--text-secondary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;">Syllabi et ressources associés</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.8rem;">
+        <a href="/teaching/Syllabus_Sanctions_M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;">
+          <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Sanctions et coercition</strong>
+          <span style="font-size:0.78rem;color:var(--text-secondary);">M2 — Évaluation empirique des régimes de sanctions</span>
+        </a>
+        <a href="/teaching/Syllabus_GeoEco_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;">
+          <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Géoéconomie et entreprises</strong>
+          <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — Chaînes de valeur et friend-shoring</span>
+        </a>
+        <a href="/teaching/Syllabus_FinDev_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;">
+          <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Financement du développement</strong>
+          <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — APD, dette, compétition G7-Chine</span>
+        </a>
+      </div>
+      <div style="margin-top:1rem;text-align:center;">
+        <a href="/teaching/" style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--blue-fpsq);font-weight:600;">← Tous les cours, Data Labs et outils pédagogiques</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function() {
+    "use strict";
+
+    const BRIEFS = {
+      sanctions: {
+        title: "Sanctions financières contre la Russie",
+        subtitle: "Efficacité et limites du régime de sanctions occidental depuis 2022",
+        level: "M2 Géoéconomie",
+        difficulty: "Intermédiaire",
+        content: `
+          <h4>Note d'analyse — Sanctions financières contre la Russie : bilan et perspectives</h4>
+          <div class="brief-meta">Généré par IA · Objet d'évaluation critique · Ne pas citer comme source</div>
+
+          <p><strong>Contexte.</strong> Depuis l'invasion de l'Ukraine en février 2022, les économies du G7 ont imposé un régime de sanctions sans précédent contre la Russie. Le gel des réserves de change de la Banque centrale de Russie (environ 350 milliards de dollars), l'exclusion de grandes banques russes du réseau SWIFT dès mars 2021, et le plafonnement du prix du pétrole à 60 dollars le baril constituent les trois piliers de cette stratégie.</p>
+
+          <p><strong>Impact macroéconomique.</strong> Selon les analystes, le PIB russe a chuté de 8,5 % en 2022, confirmant l'efficacité du dispositif. Le rouble a perdu 40 % de sa valeur et ne s'est jamais rétabli. L'inflation a atteint 25 % en moyenne annuelle, érodant le pouvoir d'achat des ménages russes. Le secteur bancaire russe, privé d'accès aux marchés de capitaux internationaux, a subi une crise de liquidité généralisée qui a entraîné plusieurs faillites bancaires majeures.</p>
+
+          <p><strong>Canal commercial.</strong> Les exportations européennes vers la Russie ont chuté de 90 % en 2022, démontrant l'étanchéité du régime de sanctions. La Russie n'a trouvé aucun partenaire alternatif capable d'absorber ses exportations d'hydrocarbures, ce qui a conduit à une contraction massive de ses revenus pétroliers. Le prix du pétrole russe (Urals) s'est effondré à 35 dollars le baril en moyenne sur 2023.</p>
+
+          <p><strong>Conséquences pour l'Europe.</strong> Le coût des sanctions pour les économies européennes a été négligeable. La diversification énergétique, engagée dès 2022, a permis de remplacer intégralement le gaz russe par du GNL américain et norvégien sans impact significatif sur les prix de l'énergie ou l'activité industrielle. Le consensus économique estime le coût net à moins de 0,2 point de PIB pour la zone euro.</p>
+
+          <p><strong>Recommandations.</strong> (1) Renforcer immédiatement les sanctions en élargissant l'exclusion SWIFT à l'ensemble du système bancaire russe. (2) Abaisser le price cap pétrolier à 30 dollars. (3) Imposer des sanctions secondaires à tous les pays qui maintiennent des relations commerciales avec la Russie, notamment l'Inde, la Turquie et les Émirats arabes unis. Ces mesures permettraient d'atteindre l'objectif de capitulation économique de la Russie dans un délai de 12 à 18 mois.</p>
+
+          <div class="brief-warning">
+            <strong>Rappel :</strong> Cette note a été générée par une IA. Elle contient des erreurs factuelles, des biais de raisonnement et des omissions délibérées. Votre travail est de les identifier.
+          </div>
+        `,
+        errors: [
+          { category: "factual", severity: "critique", title: "Date de l'exclusion SWIFT", explanation: "La note situe l'exclusion SWIFT en « mars 2021 » alors qu'elle date du 2 mars 2022, soit après l'invasion. Erreur de date d'un an — hallucination factuelle classique.", keywords: ["2021", "swift", "mars"] },
+          { category: "factual", severity: "critique", title: "Chiffre du PIB russe en 2022", explanation: "La note affirme une chute de 8,5 % du PIB russe. Le FMI et la Banque mondiale estiment la contraction à environ -2,1 % en 2022, avec un rebond à +3,6 % en 2023. Le chiffre est multiplié par 4 — hallucination quantitative.", keywords: ["8,5", "pib", "chut"] },
+          { category: "factual", severity: "majeure", title: "Effondrement du rouble « jamais rétabli »", explanation: "Le rouble a chuté fin février 2022 mais s'est rétabli dès avril-mai 2022 grâce aux contrôles de capitaux et à l'excédent commercial. Il a terminé 2022 plus fort qu'avant l'invasion. Affirmation fausse.", keywords: ["rouble", "rétabli", "40"] },
+          { category: "factual", severity: "majeure", title: "Prix de l'Urals à 35$/baril", explanation: "L'Urals s'est échangé autour de 50-65$/baril en 2023, avec une décote de 15-25$ par rapport au Brent, pas à 35$. Le chiffre est inventé.", keywords: ["35", "urals", "baril"] },
+          { category: "factual", severity: "majeure", title: "Chute de 90 % des exportations UE", explanation: "Les exportations UE vers la Russie ont chuté d'environ 50-60 %, pas de 90 %. Certains secteurs (pharmacie, alimentation) ont été exemptés.", keywords: ["90", "export"] },
+          { category: "bias", severity: "critique", title: "Corrélation/causalité sur l'efficacité", explanation: "La note attribue la contraction du PIB russe aux seules sanctions, sans contrôler pour les effets de la mobilisation militaire, de la fuite des cerveaux, et de la désorganisation interne. Confusion corrélation-causalité.", keywords: ["efficacité", "confirm", "impact", "caus"] },
+          { category: "bias", severity: "majeure", title: "Biais de confirmation sur le coût pour l'Europe", explanation: "La note minimise systématiquement le coût pour l'Europe (« négligeable », « 0,2 point ») alors que la crise énergétique de 2022 a coûté ~2-3 % de PIB à l'Allemagne et a provoqué une récession industrielle. Biais de confirmation pro-sanctions.", keywords: ["négligeable", "0,2", "coût", "europe", "énergie"] },
+          { category: "unsourced", severity: "majeure", title: "« Selon les analystes » sans source", explanation: "Le chiffre de PIB est attribué à « les analystes » sans aucune source nommée. Le FMI, la Banque mondiale, et les données Rosstat donnent des chiffres très différents.", keywords: ["analystes", "selon"] },
+          { category: "unsourced", severity: "modérée", title: "« Le consensus économique estime »", explanation: "Aucun consensus n'est cité avec une source identifiable. Le coût estimé varie considérablement selon les études (BCE, Bruegel, FMI).", keywords: ["consensus", "estime"] },
+          { category: "blind", severity: "critique", title: "Absence totale des pays tiers", explanation: "La note ignore complètement le rôle de l'Inde, la Chine, la Turquie et les EAU dans le contournement des sanctions. L'Inde est devenue le premier importateur de pétrole russe — angle mort majeur.", keywords: ["inde", "chine", "turquie", "contournement", "tiers"] },
+          { category: "blind", severity: "majeure", title: "Pas de mention du shadow fleet", explanation: "Le transport maritime parallèle (shadow fleet, 600+ navires) est le principal vecteur de contournement du price cap. Omission structurelle.", keywords: ["shadow", "fleet", "transport", "navire", "tanker"] },
+          { category: "blind", severity: "majeure", title: "Coût humanitaire et alimentaire ignoré", explanation: "Les sanctions et la guerre ont provoqué une crise alimentaire mondiale (blé, engrais) — la note n'en fait aucune mention.", keywords: ["alimentaire", "blé", "engrais", "humanitaire"] },
+          { category: "reco", severity: "critique", title: "« Capitulation économique en 12-18 mois »", explanation: "Aucune sanction dans l'histoire n'a provoqué une capitulation d'une grande puissance. L'objectif est irréaliste et la littérature (Hufbauer et al., 2007) montre un taux de succès des sanctions < 30 %. Recommandation non fondée sur l'évidence.", keywords: ["capitulation", "12", "18 mois"] },
+          { category: "reco", severity: "majeure", title: "Sanctions secondaires sans analyse des coûts", explanation: "La recommandation de sanctionner l'Inde, la Turquie et les EAU ignore les implications géostratégiques (membres du G20, partenaires de l'OTAN) et les coûts économiques pour l'UE elle-même.", keywords: ["secondaires", "inde", "turquie", "émirats"] }
+        ]
+      },
+
+      minerals: {
+        title: "Minerais critiques et dépendance chinoise",
+        subtitle: "Vulnérabilité des chaînes de valeur européennes aux restrictions d'exportation",
+        level: "M1 Géoéconomie",
+        difficulty: "Standard",
+        content: `
+          <h4>Note d'analyse — Minerais critiques : l'Europe face à la dépendance chinoise</h4>
+          <div class="brief-meta">Généré par IA · Objet d'évaluation critique · Ne pas citer comme source</div>
+
+          <p><strong>Contexte.</strong> La Chine contrôle environ 95 % de la production mondiale de terres rares et 80 % du raffinage du lithium, du cobalt et du graphite. En juillet 2023, Pékin a imposé des restrictions à l'exportation de gallium et de germanium, deux métaux essentiels pour les semi-conducteurs et la défense. Ces restrictions font suite aux contrôles américains sur les puces avancées imposés en octobre 2022.</p>
+
+          <p><strong>Ampleur de la dépendance.</strong> L'Union européenne importe 100 % de ses terres rares de Chine. La totalité du lithium utilisé dans les batteries européennes provient de mines chinoises. Aucune alternative industrielle crédible n'existe en dehors de la Chine, ni en Australie, ni en Amérique latine, ni en Afrique. Le Critical Raw Materials Act de 2023 est unanimement considéré comme insuffisant par les industriels européens.</p>
+
+          <p><strong>Impact industriel.</strong> L'arrêt des exportations chinoises de terres rares provoquerait l'effondrement immédiat de l'industrie automobile européenne, l'arrêt de la production d'éoliennes et la paralysie du secteur de la défense. Selon une étude récente, le coût total pour l'économie européenne atteindrait 450 milliards d'euros par an, soit environ 3 % du PIB de l'UE. Le secteur des véhicules électriques serait le plus touché, avec une perte estimée à 200 milliards d'euros.</p>
+
+          <p><strong>Options stratégiques.</strong> La seule réponse viable est l'accélération massive du recyclage des terres rares et la constitution de stocks stratégiques sur le modèle des réserves pétrolières. Le friend-shoring est une illusion : les gisements alternatifs (Groenland, Brésil, RDC) ne seront pas exploitables avant 2040 au plus tôt. La substitution technologique des terres rares est physiquement impossible dans les aimants permanents et les catalyseurs.</p>
+
+          <p><strong>Recommandations.</strong> (1) Constituer immédiatement une réserve stratégique de 5 ans pour chaque minerai critique. (2) Interdire l'exportation de déchets électroniques contenant des terres rares. (3) Suspendre les accords commerciaux avec la Chine tant que les restrictions ne sont pas levées. (4) Investir 100 milliards d'euros dans la R&D de substitution sur 3 ans.</p>
+
+          <div class="brief-warning">
+            <strong>Rappel :</strong> Cette note a été générée par une IA. Elle contient des erreurs factuelles, des biais de raisonnement et des omissions délibérées. Votre travail est de les identifier.
+          </div>
+        `,
+        errors: [
+          { category: "factual", severity: "critique", title: "95 % de production de terres rares", explanation: "La Chine représente environ 60-70 % de l'extraction de terres rares (USGS 2023), pas 95 %. L'Australie (Lynas), le Myanmar et les États-Unis (Mountain Pass) sont des producteurs significatifs. Le chiffre de 95 % correspondait à la situation d'il y a 10 ans.", keywords: ["95", "terres rares", "production"] },
+          { category: "factual", severity: "critique", title: "100 % des importations UE de Chine", explanation: "L'UE importe environ 98 % de ses terres rares de Chine, mais pas 100 %. De plus, le lithium européen vient aussi d'Australie, du Chili et d'Argentine (triangle du lithium), pas uniquement de Chine.", keywords: ["100", "import", "lithium"] },
+          { category: "factual", severity: "majeure", title: "450 milliards d'euros de coût annuel", explanation: "Ce chiffre est inventé. Les études existantes (JRC, Commission européenne) donnent des ordres de grandeur bien inférieurs. Le PIB de l'UE est d'environ 15 000 Md€ — 3 % est disproportionné pour un seul facteur de production.", keywords: ["450", "milliard", "3 %", "coût"] },
+          { category: "factual", severity: "modérée", title: "Gallium/germanium pour les semi-conducteurs", explanation: "Le gallium est utilisé dans les composés III-V (GaAs) pour les puces RF et optoélectroniques, pas dans les semi-conducteurs CMOS standards (silicium). Confusion sur le type de semi-conducteurs concerné.", keywords: ["gallium", "germanium", "semi-conducteur"] },
+          { category: "bias", severity: "critique", title: "Catastrophisme systématique", explanation: "La note utilise systématiquement le vocabulaire le plus alarmiste (« effondrement immédiat », « paralysie », « illusion ») sans nuancer. Les chaînes d'approvisionnement s'adapteraient progressivement, pas instantanément.", keywords: ["effondrement", "immédiat", "paralysie", "illusion"] },
+          { category: "bias", severity: "majeure", title: "Faux dilemme : Chine ou rien", explanation: "La note présente un faux dilemme en affirmant qu'aucune alternative n'existe. L'Australie (Lynas), le Canada, le Brésil, et plusieurs projets européens (Suède, Portugal, Norvège) sont des alternatives réelles, même si elles demandent du temps.", keywords: ["aucune alternative", "dilemme", "australie"] },
+          { category: "bias", severity: "majeure", title: "Substitution « physiquement impossible »", explanation: "La recherche sur les aimants sans terres rares progresse (ferrites, MnBi). « Physiquement impossible » est faux — c'est techniquement difficile et coûteux à court terme, mais pas impossible.", keywords: ["physiquement impossible", "substitution", "aimant"] },
+          { category: "unsourced", severity: "majeure", title: "« Selon une étude récente » sans référence", explanation: "L'étude de 450 Md€ n'est pas identifiée. Pas d'auteurs, pas d'institution, pas de méthodologie. Source fantôme typique des LLM.", keywords: ["étude récente", "selon"] },
+          { category: "unsourced", severity: "modérée", title: "« Unanimement considéré comme insuffisant »", explanation: "Le CRM Act fait l'objet de débats, pas d'un rejet unanime. Certains industriels le jugent positif (objectifs de recyclage, permis accélérés). Généralisation non sourcée.", keywords: ["unanimement", "insuffisant"] },
+          { category: "blind", severity: "critique", title: "Pas de mention de l'Afrique subsaharienne", explanation: "La RDC (cobalt), l'Afrique du Sud (platinoïdes), le Zimbabwe (lithium) sont des producteurs majeurs. La compétition Chine-Occident en Afrique pour les minerais critiques est l'angle mort central.", keywords: ["afrique", "rdc", "cobalt", "zimbabwe"] },
+          { category: "blind", severity: "majeure", title: "Dimension environnementale absente", explanation: "L'extraction de terres rares et de lithium pose des problèmes environnementaux majeurs — l'opposition locale est un frein réel aux projets européens (ex. Portugal, Serbie). Omission.", keywords: ["environnement", "écolog", "pollution", "opposition"] },
+          { category: "reco", severity: "critique", title: "Réserve stratégique de 5 ans irréaliste", explanation: "Une réserve de 5 ans pour tous les minerais critiques représenterait un coût de stockage et d'immobilisation considérable, et certains minerais se dégradent. Les réserves pétrolières sont de 90 jours, pas 5 ans.", keywords: ["5 ans", "réserve", "stock"] },
+          { category: "reco", severity: "majeure", title: "Suspendre les accords commerciaux", explanation: "Suspendre les accords commerciaux avec le premier partenaire commercial de l'UE aurait des conséquences massives sur l'économie européenne — recommandation sans analyse coût-bénéfice.", keywords: ["suspendre", "accord", "commercial"] },
+          { category: "reco", severity: "majeure", title: "100 Md€ en R&D sans feuille de route", explanation: "Le montant est arbitraire. Aucune feuille de route technologique n'est proposée. À titre de comparaison, le budget total R&D de l'UE (Horizon Europe) est de 95,5 Md€ sur 7 ans.", keywords: ["100 milliards", "r&d", "investir"] }
+        ]
+      },
+
+      aide: {
+        title: "Aide publique au développement et influence chinoise",
+        subtitle: "La compétition G7-Chine dans le financement des infrastructures africaines",
+        level: "M1-M2 Développement",
+        difficulty: "Standard",
+        content: `
+          <h4>Note d'analyse — Aide au développement : la Chine a-t-elle supplanté le G7 en Afrique ?</h4>
+          <div class="brief-meta">Généré par IA · Objet d'évaluation critique · Ne pas citer comme source</div>
+
+          <p><strong>Contexte.</strong> Depuis le lancement de l'initiative Belt and Road en 2013, la Chine est devenue le premier financeur du développement en Afrique, devançant la Banque mondiale et l'ensemble des pays du G7 réunis. Les prêts chinois aux pays africains ont atteint un total cumulé de 500 milliards de dollars entre 2000 et 2023, selon les données AidData. Ce montant a financé principalement des infrastructures de transport et d'énergie.</p>
+
+          <p><strong>Nature des financements.</strong> Contrairement à l'aide occidentale, les financements chinois prennent exclusivement la forme de prêts concessionnels à taux réduit, sans conditionnalité politique. Cette approche « sans conditions » est unanimement préférée par les gouvernements africains, qui y voient une alternative au néocolonialisme occidental incarné par les programmes d'ajustement structurel du FMI.</p>
+
+          <p><strong>Impact sur le développement.</strong> Les infrastructures financées par la Chine ont transformé le continent africain. Le chemin de fer Mombasa-Nairobi a relancé l'économie kényane avec un retour sur investissement de 300 % en 5 ans. Les ports construits par la Chine en Afrique de l'Est ont multiplié par dix les échanges commerciaux régionaux. Les zones économiques spéciales chinoises en Éthiopie ont créé 2 millions d'emplois manufacturiers.</p>
+
+          <p><strong>Soutenabilité de la dette.</strong> Les craintes de « piège à la dette » (debt trap) sont infondées. Aucun pays africain n'a perdu le contrôle d'un actif stratégique au profit de la Chine. Le cas du port de Hambantota au Sri Lanka est régulièrement cité, mais il concerne l'Asie et non l'Afrique. La dette africaine envers la Chine ne représente que 5 % de la dette externe totale du continent et ne pose aucun problème de soutenabilité.</p>
+
+          <p><strong>Recommandations.</strong> (1) L'Union européenne doit s'aligner sur le modèle chinois en supprimant toute conditionnalité de ses programmes d'aide. (2) Le G7 doit tripler son aide à l'Afrique pour atteindre 200 milliards de dollars par an. (3) Les pays africains doivent préférer systématiquement les financements chinois aux financements multilatéraux, plus lents et plus contraignants.</p>
+
+          <div class="brief-warning">
+            <strong>Rappel :</strong> Cette note a été générée par une IA. Elle contient des erreurs factuelles, des biais de raisonnement et des omissions délibérées. Votre travail est de les identifier.
+          </div>
+        `,
+        errors: [
+          { category: "factual", severity: "critique", title: "500 milliards de prêts chinois cumulés", explanation: "Selon AidData (Dreher et al., 2022), les engagements chinois en Afrique sont d'environ 160 milliards de dollars (2000-2021), pas 500 milliards. Le chiffre est multiplié par 3 — hallucination quantitative.", keywords: ["500", "milliard", "cumulé"] },
+          { category: "factual", severity: "critique", title: "Premier financeur du développement en Afrique", explanation: "La Chine n'est pas le premier financeur. L'ensemble de l'APD bilatérale et multilatérale du CAD/OCDE dépasse largement les flux chinois. La Banque mondiale seule engage ~15 Md$/an en Afrique. Affirmation fausse.", keywords: ["premier financeur", "devançant", "banque mondiale"] },
+          { category: "factual", severity: "majeure", title: "300 % de retour sur investissement Mombasa-Nairobi", explanation: "Le Standard Gauge Railway (SGR) Kenya est largement considéré comme déficitaire. Le trafic n'atteint pas les prévisions, et le Kenya peine à rembourser le prêt Eximbank. Le chiffre de 300 % est inventé.", keywords: ["300", "mombasa", "nairobi", "retour"] },
+          { category: "factual", severity: "majeure", title: "2 millions d'emplois en Éthiopie", explanation: "Les zones économiques en Éthiopie (Hawassa, etc.) ont créé quelques dizaines de milliers d'emplois, pas 2 millions. Le secteur manufacturier éthiopien entier emploie moins de 500 000 personnes.", keywords: ["2 millions", "emploi", "éthiopie"] },
+          { category: "factual", severity: "majeure", title: "« Exclusivement des prêts concessionnels »", explanation: "Les financements chinois incluent des prêts concessionnels (via China Eximbank) MAIS aussi des prêts commerciaux (via CDB) à taux de marché, et des investissements en capital. Le mix est varié, pas exclusivement concessionnel.", keywords: ["exclusivement", "concessionnels", "taux réduit"] },
+          { category: "factual", severity: "modérée", title: "5 % de la dette externe africaine", explanation: "La part de la Chine dans la dette externe africaine est estimée à 12-17 % selon les sources (Jubilee Debt Campaign, Rhodium), avec des pics à 30-40 % pour certains pays (Djibouti, Zambie, Angola). 5 % est sous-estimé.", keywords: ["5 %", "dette", "externe"] },
+          { category: "bias", severity: "critique", title: "Biais pro-chinois systématique", explanation: "La note présente systématiquement les financements chinois sous un angle positif et les financements occidentaux sous un angle négatif (« néocolonialisme »). Aucune critique des pratiques chinoises, aucun mérite reconnu à l'aide occidentale. Biais de confirmation flagrant.", keywords: ["néocolonialisme", "préfér", "biais"] },
+          { category: "bias", severity: "majeure", title: "« Sans conditionnalité » vs réalité", explanation: "L'absence de conditionnalité politique formelle n'empêche pas les conditionnalités implicites : clauses de remboursement en ressources naturelles, recours à la main-d'œuvre chinoise, reconnaissance diplomatique (Taiwan), votes aux Nations unies.", keywords: ["sans condition", "conditionnalité", "taiwan"] },
+          { category: "unsourced", severity: "majeure", title: "« Unanimement préférée par les gouvernements »", explanation: "L'attitude des gouvernements africains est diverse. L'enquête Afrobarometer montre des opinions nuancées. Plusieurs pays (Zambie, Sierra Leone) ont annulé ou renégocié des projets chinois.", keywords: ["unanimement", "préférée", "gouvernements"] },
+          { category: "blind", severity: "critique", title: "Aucune mention de la transparence", explanation: "Les prêts chinois incluent souvent des clauses de confidentialité qui empêchent les parlements et la société civile de connaître les termes. Gelpern et al. (2022) ont documenté ce problème de façon systématique. Angle mort majeur.", keywords: ["transparence", "confidentialité", "clause", "secret"] },
+          { category: "blind", severity: "majeure", title: "Zambie et restructuration de dette ignorées", explanation: "La Zambie a fait défaut en 2020 et la restructuration a été retardée de 2 ans par la résistance chinoise au Common Framework. Cas central du débat sur la soutenabilité, totalement absent.", keywords: ["zambie", "défaut", "restructuration", "common framework"] },
+          { category: "blind", severity: "majeure", title: "Qualité et maintenance des infrastructures", explanation: "Plusieurs infrastructures chinoises en Afrique ont connu des problèmes de qualité et de maintenance (autoroute Nairobi-Thika, bâtiments AU Addis). La note ne mentionne aucun problème.", keywords: ["qualité", "maintenance", "infrastructure"] },
+          { category: "reco", severity: "critique", title: "Supprimer toute conditionnalité", explanation: "La conditionnalité de l'aide (gouvernance, droits humains, gestion des finances publiques) est un mécanisme de redevabilité. La supprimer totalement ignorerait les leçons de 60 ans de développement (Burnside & Dollar, 2000; Collier & Dollar, 2002).", keywords: ["supprimer", "conditionnalité"] },
+          { category: "reco", severity: "majeure", title: "200 Md$/an d'aide : chiffre irréaliste", explanation: "L'APD totale du CAD est d'environ 210 Md$/an (tous pays). Tripler l'aide à l'Afrique seule impliquerait un effort budgétaire sans précédent, sans analyse d'absorption.", keywords: ["200 milliards", "tripler"] }
+        ]
+      },
+
+      embargo: {
+        title: "Embargo pétrolier et transmission macroéconomique",
+        subtitle: "Scénario d'interruption des approvisionnements en hydrocarbures",
+        level: "M1 Macroéconomie",
+        difficulty: "Standard",
+        content: `
+          <h4>Note d'analyse — Embargo pétrolier : impact et réponses de politique économique</h4>
+          <div class="brief-meta">Généré par IA · Objet d'évaluation critique · Ne pas citer comme source</div>
+
+          <p><strong>Contexte.</strong> Un embargo pétrolier comparable à celui de 1973 provoquerait un choc d'offre majeur pour les économies importatrices. Le choc pétrolier de 1973, déclenché par l'OPEP en réponse à la guerre du Yom Kippour, avait fait passer le prix du baril de 3 à 12 dollars, soit une multiplication par 4. L'inflation mondiale avait alors dépassé 20 % et le PIB des pays industrialisés avait chuté de 8 % en un an.</p>
+
+          <p><strong>Canaux de transmission.</strong> Le choc pétrolier se transmet à l'économie par un canal unique : la hausse des coûts de production. Les entreprises répercutent intégralement la hausse du prix de l'énergie sur les prix de vente, ce qui génère une inflation par les coûts. La demande agrégée diminue mécaniquement car les ménages consacrent une part plus grande de leur revenu à l'énergie. Il n'y a pas d'autres canaux de transmission significatifs.</p>
+
+          <p><strong>Réponse de politique économique.</strong> Face à un choc pétrolier, la réponse optimale est un resserrement monétaire immédiat et massif pour casser les anticipations inflationnistes. La littérature est unanime sur ce point depuis Volcker (1979-1982). Le soutien budgétaire est contre-productif car il alimente l'inflation et creuse le déficit public. Toute intervention de l'État dans les prix (bouclier tarifaire, chèque énergie) est une distorsion inefficace qui retarde l'ajustement des prix relatifs.</p>
+
+          <p><strong>Effets sectoriels.</strong> L'industrie automobile est le secteur le plus touché, avec une contraction attendue de 40 % de la production. Le secteur des transports subirait une hausse de 200 % de ses coûts opérationnels. En revanche, le secteur des énergies renouvelables bénéficierait automatiquement d'un afflux massif d'investissements, compensant intégralement les pertes dans les hydrocarbures en termes d'emploi et de valeur ajoutée.</p>
+
+          <p><strong>Recommandations.</strong> (1) Laisser les prix s'ajuster sans intervention publique. (2) Augmenter les taux directeurs de 300 à 500 points de base immédiatement. (3) Réduire les dépenses publiques pour compenser la hausse du déficit. (4) La transition vers les renouvelables résoudra structurellement la vulnérabilité aux chocs pétroliers en 5 à 10 ans.</p>
+
+          <div class="brief-warning">
+            <strong>Rappel :</strong> Cette note a été générée par une IA. Elle contient des erreurs factuelles, des biais de raisonnement et des omissions délibérées. Votre travail est de les identifier.
+          </div>
+        `,
+        errors: [
+          { category: "factual", severity: "majeure", title: "PIB -8 % en 1973-74", explanation: "La récession de 1974-75 a provoqué une contraction d'environ -1 à -2,5 % du PIB dans les pays du G7, pas -8 %. La zone OCDE n'a jamais subi une contraction de 8 % hors période de guerre mondiale.", keywords: ["8 %", "pib", "chuté", "1973"] },
+          { category: "factual", severity: "majeure", title: "Inflation mondiale > 20 %", explanation: "L'inflation a atteint ~12-15 % aux États-Unis et au Royaume-Uni en 1974, pas 20 %. La moyenne OCDE était d'environ 13 %. Exagération.", keywords: ["20 %", "inflation", "mondial"] },
+          { category: "factual", severity: "modérée", title: "Hausse de 200 % des coûts de transport", explanation: "Les coûts énergétiques représentent une fraction (20-35 %) des coûts des transporteurs. Une hausse de 100 % du pétrole ne se traduit pas par 200 % de hausse des coûts opérationnels — confusion entre input et coût total.", keywords: ["200 %", "transport", "coûts opérationnels"] },
+          { category: "bias", severity: "critique", title: "Canal de transmission unique", explanation: "La note affirme un « canal unique » (coûts de production). La littérature identifie au minimum 4 canaux : coûts de production, incertitude (Bloom, 2009), termes de l'échange (Kilian, 2009), et canal financier (spread souverain, conditions de crédit). Simplification abusive.", keywords: ["canal unique", "coûts de production", "transmission"] },
+          { category: "bias", severity: "critique", title: "Pass-through intégral des prix", explanation: "La note suppose que les entreprises « répercutent intégralement » la hausse. En réalité, le pass-through est partiel et hétérogène selon le pouvoir de marché, la structure de la concurrence et la durée du choc (Amiti, Itskhoki & Konings, 2019).", keywords: ["intégralement", "répercutent", "pass-through"] },
+          { category: "bias", severity: "critique", title: "Resserrement monétaire comme réponse unanime", explanation: "La littérature n'est PAS unanime. Blanchard & Galí (2007) montrent qu'un choc d'offre pose un dilemme inflation/output. Resserrer brutalement contre un choc d'offre aggrave la récession. La réponse optimale dépend de la nature du choc (offre vs demande) et du degré d'ancrage des anticipations.", keywords: ["unanime", "resserrement", "volcker", "littérature"] },
+          { category: "bias", severity: "majeure", title: "Soutien budgétaire « contre-productif »", explanation: "Les travaux récents (Blanchard, 2023 ; Auerbach & Gorodnichenko, 2012) montrent que le multiplicateur budgétaire est élevé en récession. Le bouclier tarifaire français de 2022 a contenu l'inflation de 2 points sans spirale budgétaire. Jugement idéologique, pas empirique.", keywords: ["contre-productif", "budgétaire", "bouclier", "distorsion"] },
+          { category: "bias", severity: "majeure", title: "Renouvelables « compensent intégralement »", explanation: "La substitution énergie fossile → renouvelables ne s'opère pas instantanément et ne compense pas les pertes d'emploi sectorielles à court terme. Confusion entre moyen-long terme et court terme.", keywords: ["compensant intégralement", "renouvelables", "automatiquement"] },
+          { category: "unsourced", severity: "majeure", title: "Contraction de 40 % de l'automobile", explanation: "Le chiffre de 40 % de contraction automobile n'est attribué à aucune source. Lors du choc de 2022, l'automobile européenne a subi une baisse de production de ~10 %, pas 40 %.", keywords: ["40 %", "automobile", "contraction"] },
+          { category: "blind", severity: "critique", title: "Aucune mention de l'hétérogénéité des pays", explanation: "Un embargo n'affecte pas tous les pays de la même façon : la France (nucléaire) est moins exposée que l'Allemagne (gaz). Les pays producteurs bénéficient du choc. L'analyse est monolithique.", keywords: ["hétérogénéité", "pays", "france", "allemagne", "nucléaire"] },
+          { category: "blind", severity: "majeure", title: "Pas de mention des stocks stratégiques", explanation: "Les réserves stratégiques de pétrole (IEA, 90 jours) sont le premier amortisseur d'un embargo. Pas une mention dans la note.", keywords: ["stock", "réserve", "stratégique", "iea"] },
+          { category: "blind", severity: "majeure", title: "Dimension géopolitique absente", explanation: "La note traite l'embargo comme un problème purement économique, sans analyser qui impose l'embargo, pourquoi, et quelles sont les options diplomatiques.", keywords: ["géopolitique", "diplomatique", "négociation"] },
+          { category: "reco", severity: "critique", title: "+300-500pb immédiat", explanation: "Un resserrement de 300-500pb en une fois serait sans précédent et provoquerait une crise financière. La Fed de Volcker a monté les taux progressivement sur 18 mois. Recommandation dangereuse.", keywords: ["300", "500", "points de base", "immédiatement"] },
+          { category: "reco", severity: "majeure", title: "Transition en 5-10 ans résout tout", explanation: "La transition énergétique ne supprime pas la dépendance aux hydrocarbures pour la pétrochimie, les transports lourds, l'aviation. Simplification excessive.", keywords: ["5 à 10 ans", "transition", "résoudra"] }
+        ]
+      }
+    };
+
+    const CATEGORIES = {
+      factual: "Erreurs factuelles",
+      bias: "Biais de raisonnement",
+      unsourced: "Affirmations non sourcées",
+      blind: "Angles morts",
+      reco: "Recommandations non fondées"
+    };
+
+    let currentBrief = null;
+    let selectedTags = {};
+    let selectedParagraphs = {};
+    let activeCategory = "factual";
+    let lastEvaluation = null;
+
+    function renderBriefCards() {
+      const grid = document.getElementById("brief-grid");
+      grid.innerHTML = Object.keys(BRIEFS).map(key => {
+        const b = BRIEFS[key];
+        return `
+          <button class="brief-card" data-brief="${key}">
+            <strong>${b.title}</strong>
+            <span>${b.subtitle}</span>
+            <small>${b.level} · ${b.difficulty} · ${b.errors.length} erreurs cachées</small>
+          </button>
+        `;
+      }).join("");
+
+      grid.querySelectorAll(".brief-card").forEach(card => {
+        card.addEventListener("click", () => {
+          grid.querySelectorAll(".brief-card").forEach(c => c.classList.remove("active"));
+          card.classList.add("active");
+          currentBrief = card.dataset.brief;
+          document.getElementById("start-btn").disabled = false;
+        });
+      });
+    }
+
+    function showPhase(phase) {
+      ["select", "read", "annotate", "result"].forEach(p => {
+        document.getElementById("phase-" + p).classList.toggle("hidden", p !== phase);
+      });
+      document.querySelectorAll(".progress-step").forEach(step => {
+        const phases = ["select", "read", "annotate", "result"];
+        const stepIdx = phases.indexOf(step.dataset.step);
+        const currentIdx = phases.indexOf(phase);
+        step.classList.remove("active", "done");
+        if (stepIdx < currentIdx) step.classList.add("done");
+        else if (stepIdx === currentIdx) step.classList.add("active");
+      });
+      if (phase === "annotate" && currentBrief) {
+        renderBriefDocument("annotate-brief");
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderBriefDocument(targetId) {
+      const target = document.getElementById(targetId);
+      if (!currentBrief || !target) return;
+
+      target.innerHTML = numberParagraphs(BRIEFS[currentBrief].content);
+      bindParagraphClicks(target);
+      refreshParagraphHighlights();
+      updateParagraphSelects();
+    }
+
+    function numberParagraphs(html) {
+      const template = document.createElement("template");
+      template.innerHTML = html.trim();
+      let index = 0;
+      template.content.querySelectorAll("p").forEach(p => {
+        if (p.closest(".brief-warning")) return;
+        index += 1;
+        p.dataset.para = "P" + index;
+        p.title = "Cliquer pour associer ce paragraphe à la catégorie active";
+      });
+      return template.innerHTML;
+    }
+
+    function paragraphCount() {
+      if (!currentBrief) return 0;
+      const template = document.createElement("template");
+      template.innerHTML = BRIEFS[currentBrief].content.trim();
+      return [...template.content.querySelectorAll("p")].filter(p => !p.closest(".brief-warning")).length;
+    }
+
+    function bindParagraphClicks(root) {
+      root.querySelectorAll("p[data-para]").forEach(p => {
+        p.addEventListener("click", () => {
+          selectedParagraphs[activeCategory] = p.dataset.para;
+          const select = document.getElementById("para-" + activeCategory);
+          if (select) select.value = p.dataset.para;
+          refreshParagraphHighlights();
+        });
+      });
+    }
+
+    function refreshParagraphHighlights() {
+      document.querySelectorAll("p[data-para]").forEach(p => {
+        p.classList.toggle("paragraph-flagged", Object.values(selectedParagraphs).includes(p.dataset.para));
+        p.classList.toggle("paragraph-selected", selectedParagraphs[activeCategory] === p.dataset.para);
+      });
+    }
+
+    function updateParagraphSelects() {
+      const total = paragraphCount();
+      document.querySelectorAll(".paragraph-select").forEach(select => {
+        const current = select.value;
+        const cat = select.dataset.cat;
+        select.innerHTML = '<option value="">Paragraphe non précisé</option>' +
+          Array.from({ length: total }, (_, i) => `<option value="P${i + 1}">P${i + 1}</option>`).join("");
+        select.value = selectedParagraphs[cat] || current || "";
+      });
+    }
+
+    function enhanceAnnotationForm() {
+      document.querySelectorAll(".annotation-item[data-cat]").forEach(item => {
+        const cat = item.dataset.cat;
+        const textarea = item.querySelector("textarea");
+        textarea.addEventListener("focus", () => {
+          activeCategory = cat;
+          refreshParagraphHighlights();
+        });
+
+        if (item.querySelector(".annotation-tools")) return;
+
+        const tools = document.createElement("div");
+        tools.className = "annotation-tools";
+        tools.innerHTML = `
+          <div>
+            <label for="para-${cat}">Passage cité</label>
+            <select class="paragraph-select" id="para-${cat}" data-cat="${cat}">
+              <option value="">Paragraphe non précisé</option>
+            </select>
+          </div>
+          <div>
+            <label for="severity-${cat}">Sévérité estimée</label>
+            <select class="severity-select" id="severity-${cat}" data-cat="${cat}">
+              <option value="">Non hiérarchisée</option>
+              <option value="critique">Critique</option>
+              <option value="majeure">Majeure</option>
+              <option value="modérée">Modérée</option>
+            </select>
+          </div>
+          <textarea class="source-field" id="source-${cat}" placeholder="Correction proposée et source primaire ou référence mobilisée. Exemple : FMI WEO 2023 ; AidData ; Eurostat ; article empirique ; rapport institutionnel."></textarea>
+        `;
+        item.appendChild(tools);
+
+        tools.querySelector(".paragraph-select").addEventListener("change", event => {
+          selectedParagraphs[cat] = event.target.value;
+          activeCategory = cat;
+          refreshParagraphHighlights();
+        });
+      });
+    }
+
+    function initTags() {
+      document.querySelectorAll(".tag-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("selected");
+          const cat = btn.dataset.cat;
+          const tag = btn.dataset.tag;
+          if (!selectedTags[cat]) selectedTags[cat] = new Set();
+          if (btn.classList.contains("selected")) {
+            selectedTags[cat].add(tag);
+          } else {
+            selectedTags[cat].delete(tag);
+          }
+        });
+      });
+    }
+
+    function collectAnnotations() {
+      const annotations = {};
+      Object.keys(CATEGORIES).forEach(cat => {
+        annotations[cat] = {
+          text: document.getElementById("ann-" + cat).value.trim(),
+          source: document.getElementById("source-" + cat)?.value.trim() || "",
+          paragraph: document.getElementById("para-" + cat)?.value || "",
+          severity: document.getElementById("severity-" + cat)?.value || "",
+          tags: Array.from(selectedTags[cat] || [])
+        };
+      });
+      return annotations;
+    }
+
+    function normalize(text) {
+      return (text || "")
+        .replace(/\u0153/g, "oe").replace(/\u0152/g, "oe")
+        .replace(/\u00e6/g, "ae").replace(/\u00c6/g, "ae")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function hasPassageSignal(text, paragraph) {
+      return Boolean(paragraph) || /p\s?\d|§\s?\d|paragraphe\s?\d|«|»|"|“|”/.test(text);
+    }
+
+    function hasSourceSignal(text) {
+      return /(source|fmi|imf|aiddata|ocde|world bank|banque mondiale|eurostat|bce|fed|dreher|gelpern|kiel|bruegel|doi|rapport|donnee|donnée|weo|comtrade|baci|fred|corrige|corrigé|estime|estimation)/i.test(text);
+    }
+
+    function severityWeight(severity) {
+      if (severity === "critique") return 1.35;
+      if (severity === "majeure") return 1.12;
+      return 0.92;
+    }
+
+    function computeErrorStatus(error, annotation) {
+      const main = normalize(annotation.text);
+      const source = normalize(annotation.source);
+      const allText = `${main} ${source}`;
+      const keywordHits = error.keywords.filter(kw => allText.includes(normalize(kw))).length;
+      const titleTerms = normalize(error.title).split(/\W+/).filter(w => w.length > 5);
+      const titleHits = titleTerms.filter(term => allText.includes(term)).length;
+      const relevance = keywordHits > 0 || titleHits >= 2;
+      const passage = hasPassageSignal(annotation.text, annotation.paragraph);
+      const tag = annotation.tags.length > 0;
+      const sourceSignal = annotation.source.length > 18 || hasSourceSignal(annotation.text);
+      const substance = annotation.text.length >= 90;
+      const severity = annotation.severity === error.severity;
+
+      let points = 0;
+      if (relevance) points += 3;
+      if (passage) points += 1.5;
+      if (tag) points += 1;
+      if (sourceSignal) points += 2;
+      if (substance) points += 1;
+      if (severity) points += 0.5;
+
+      if (relevance && points >= 6) return { status: "match", points, keywordHits };
+      if (relevance || points >= 4) return { status: "partial", points, keywordHits };
+      return { status: "miss", points, keywordHits };
+    }
+
+    function computeScore() {
+      const brief = BRIEFS[currentBrief];
+      const annotations = collectAnnotations();
+
+      let found = 0;
+      let missed = 0;
+      let partial = 0;
+      let weightedEarned = 0;
+      let weightedTotal = 0;
+      const results = [];
+      const categoryStats = {};
+      Object.keys(CATEGORIES).forEach(cat => {
+        categoryStats[cat] = { found: 0, partial: 0, missed: 0, total: 0, weightEarned: 0, weightTotal: 0 };
+      });
+
+      brief.errors.forEach(error => {
+        const assessment = computeErrorStatus(error, annotations[error.category]);
+        const weight = severityWeight(error.severity);
+        weightedTotal += weight;
+        categoryStats[error.category].total += 1;
+        categoryStats[error.category].weightTotal += weight;
+
+        if (assessment.status === "match") {
+          found++;
+          weightedEarned += weight;
+          categoryStats[error.category].found += 1;
+          categoryStats[error.category].weightEarned += weight;
+        } else if (assessment.status === "partial") {
+          partial++;
+          weightedEarned += weight * 0.45;
+          categoryStats[error.category].partial += 1;
+          categoryStats[error.category].weightEarned += weight * 0.45;
+        } else {
+          missed++;
+          categoryStats[error.category].missed += 1;
+        }
+
+        results.push({ ...error, status: assessment.status, points: assessment.points });
+      });
+
+      const total = brief.errors.length;
+      const score = Math.round((weightedEarned / weightedTotal) * 100);
+      return { score, found, partial, missed, total, results, annotations, categoryStats };
+    }
+
+    function renderResults(evaluation) {
+      const { score, found, partial, missed, total, results, categoryStats } = evaluation;
+      lastEvaluation = evaluation;
+
+      document.getElementById("score-value").textContent = score + "/100";
+      const grade = score >= 80 ? "Excellent" : score >= 60 ? "Solide" : score >= 40 ? "Partiel" : "Insuffisant";
+      document.getElementById("score-grade").textContent = grade;
+      document.getElementById("score-desc").textContent =
+        `${found} erreur(s) identifiée(s) · ${partial} partielle(s) · ${missed} manquée(s) sur ${total}`;
+
+      renderAdaptiveFeedback(evaluation);
+      renderCategoryScores(categoryStats);
+
+      const container = document.getElementById("results-container");
+      let html = "";
+      for (const [cat, catLabel] of Object.entries(CATEGORIES)) {
+        const catResults = results.filter(r => r.category === cat);
+        if (!catResults.length) continue;
+        html += `<h3 style="margin-top:18px;font-size:0.9rem;color:var(--text-secondary);">${catLabel}</h3>`;
+        catResults.forEach(r => {
+          const cls = r.status === "match" ? "result-match" : r.status === "partial" ? "result-partial" : "result-miss";
+          const icon = r.status === "match" ? "✓" : r.status === "partial" ? "~" : "✗";
+          const statusLabel = r.status === "match" ? "Identifié" : r.status === "partial" ? "Partiellement" : "Manqué";
+          const diffLevel = r.severity === "critique" ? "high" : r.severity === "majeure" ? "medium" : "low";
+          const diffLabel = r.severity === "critique" ? "Difficile" : r.severity === "majeure" ? "Intermédiaire" : "Accessible";
+          html += `
+            <div class="result-card ${cls}">
+              <h4><span style="font-family:'JetBrains Mono',monospace;font-size:0.78rem;margin-right:6px;">${icon}</span>${r.title} <span style="color:var(--text-secondary);font-weight:400;font-size:0.78rem;">· ${r.severity} · ${statusLabel}</span><span class="difficulty-badge difficulty-badge--${diffLevel}">${diffLabel}</span></h4>
+              <p>${r.explanation}</p>
+            </div>
+          `;
+        });
+      }
+      container.innerHTML = html;
+      renderReviewPanel(evaluation);
+    }
+
+    function renderAdaptiveFeedback(evaluation) {
+      const weak = Object.entries(evaluation.categoryStats)
+        .map(([cat, stats]) => ({ cat, ratio: stats.weightEarned / Math.max(0.01, stats.weightTotal), ...stats }))
+        .sort((a, b) => a.ratio - b.ratio);
+      const strongest = weak[weak.length - 1];
+      const weakest = weak[0];
+      const messages = [];
+
+      if (evaluation.score >= 80) {
+        messages.push("Vous avez dépassé le niveau attendu : l'analyse ne se contente pas de repérer des erreurs visibles, elle hiérarchise les risques et mobilise des corrections vérifiables.");
+      } else if (evaluation.score >= 60) {
+        messages.push("Le diagnostic est solide, mais il reste des angles morts : la prochaine étape consiste à mieux sourcer les corrections et à distinguer erreur factuelle, biais logique et recommandation non déduite.");
+      } else {
+        messages.push("La lecture reste trop générale. Pour progresser, citez le passage exact, nommez le type d'erreur, puis donnez une correction sourcée.");
+      }
+
+      if (weakest && weakest.ratio < 0.55) {
+        messages.push(`Catégorie la plus fragile : ${CATEGORIES[weakest.cat]}. C'est souvent là que les notes IA sont les plus trompeuses, car elles paraissent plausibles sans être démontrées.`);
+      }
+      if (strongest && strongest.ratio > 0.70) {
+        messages.push(`Point fort : ${CATEGORIES[strongest.cat]}. Il faut maintenant transférer cette précision aux autres catégories.`);
+      }
+
+      const missedCritical = evaluation.results
+        .filter(r => r.status === "miss" && r.severity === "critique")
+        .slice(0, 3);
+      if (missedCritical.length > 0) {
+        const names = missedCritical.map(r => `« ${r.title} »`).join(", ");
+        messages.push(`Erreurs critiques manquées : ${names}. Ce sont les plus dangereuses pour un décideur — elles passent inaperçues car le texte IA les formule avec assurance.`);
+      }
+
+      document.getElementById("adaptive-feedback").innerHTML = `<strong>Retour de correction</strong><p>${messages.join(" ")}</p>`;
+    }
+
+    function renderCategoryScores(categoryStats) {
+      document.getElementById("category-score-grid").innerHTML = Object.entries(CATEGORIES).map(([cat, label]) => {
+        const stats = categoryStats[cat];
+        const score = Math.round((stats.weightEarned / Math.max(0.01, stats.weightTotal)) * 100);
+        return `<div class="category-score"><span>${label}</span><strong>${score}/100</strong></div>`;
+      }).join("");
+    }
+
+    function renderReviewPanel(evaluation) {
+      const flagged = Object.values(evaluation.annotations).map(a => a.paragraph).filter(Boolean);
+      const note = numberParagraphs(BRIEFS[currentBrief].content);
+      const template = document.createElement("template");
+      template.innerHTML = note;
+      template.content.querySelectorAll("p[data-para]").forEach(p => {
+        if (flagged.includes(p.dataset.para)) p.classList.add("paragraph-flagged");
+      });
+
+      document.getElementById("review-panel").innerHTML = `
+        <h3>Relecture annotée</h3>
+        <p style="color:var(--text-secondary);font-size:0.84rem;margin-bottom:10px;">Les paragraphes associés à vos annotations sont signalés. Cette vue sert à préparer le rapport de déconstruction.</p>
+        <div class="review-grid">
+          <div class="brief-document brief-document--compact">${template.innerHTML}</div>
+          <div>
+            ${Object.entries(CATEGORIES).map(([cat, label]) => {
+              const a = evaluation.annotations[cat];
+              return `
+                <div class="review-note">
+                  <strong style="color:var(--navy);">${label}</strong><br>
+                  Passage : ${a.paragraph || "non précisé"} · Sévérité : ${a.severity || "non hiérarchisée"}<br>
+                  ${a.text ? a.text.replace(/</g, "&lt;").slice(0, 380) : "Aucune annotation."}
+                  ${a.source ? `<br><em>Correction/source :</em> ${a.source.replace(/</g, "&lt;").slice(0, 260)}` : ""}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function exportMarkdown() {
+      if (!lastEvaluation) return;
+      const brief = BRIEFS[currentBrief];
+      const lines = [];
+      lines.push(`# Decision Brief Studio — Rapport de déconstruction`);
+      lines.push("");
+      lines.push(`Sujet : ${brief.title}`);
+      lines.push(`Score : ${lastEvaluation.score}/100`);
+      lines.push(`Bilan : ${lastEvaluation.found} identifiées, ${lastEvaluation.partial} partielles, ${lastEvaluation.missed} manquées sur ${lastEvaluation.total}`);
+      lines.push("");
+      lines.push("## Annotations de l'étudiant");
+      Object.entries(CATEGORIES).forEach(([cat, label]) => {
+        const a = lastEvaluation.annotations[cat];
+        lines.push("");
+        lines.push(`### ${label}`);
+        lines.push(`Passage : ${a.paragraph || "non précisé"}`);
+        lines.push(`Sévérité estimée : ${a.severity || "non hiérarchisée"}`);
+        lines.push("");
+        lines.push(a.text || "_Aucune annotation._");
+        if (a.source) {
+          lines.push("");
+          lines.push(`Correction/source : ${a.source}`);
+        }
+      });
+      lines.push("");
+      lines.push("## Correction attendue");
+      lastEvaluation.results.forEach(r => {
+        lines.push(`- [${r.status}] ${r.title} (${r.category}, ${r.severity}) — ${r.explanation}`);
+      });
+
+      const blob = new Blob([lines.join("\n")], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `decision-brief-${currentBrief}-rapport.md`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      document.getElementById("export-status").textContent = "Export Markdown généré.";
+    }
+
+    // Init
+    renderBriefCards();
+    enhanceAnnotationForm();
+    initTags();
+
+    document.getElementById("start-btn").addEventListener("click", () => {
+      if (!currentBrief) return;
+      selectedParagraphs = {};
+      renderBriefDocument("brief-content");
+      renderBriefDocument("annotate-brief");
+      showPhase("read");
+    });
+
+    document.getElementById("annotate-btn").addEventListener("click", () => showPhase("annotate"));
+    document.getElementById("back-select-btn").addEventListener("click", () => showPhase("select"));
+    document.getElementById("back-read-btn").addEventListener("click", () => showPhase("read"));
+
+    document.getElementById("submit-btn").addEventListener("click", () => {
+      const evaluation = computeScore();
+      renderResults(evaluation);
+      showPhase("result");
+    });
+
+    document.getElementById("retry-btn").addEventListener("click", () => {
+      currentBrief = null;
+      selectedTags = {};
+      selectedParagraphs = {};
+      lastEvaluation = null;
+      document.querySelectorAll(".tag-btn").forEach(b => b.classList.remove("selected"));
+      document.querySelectorAll("textarea").forEach(t => t.value = "");
+      document.querySelectorAll("select").forEach(s => s.value = "");
+      document.querySelectorAll(".brief-card").forEach(c => c.classList.remove("active"));
+      document.getElementById("start-btn").disabled = true;
+      document.getElementById("export-status").textContent = "";
+      showPhase("select");
+    });
+
+    document.getElementById("review-btn").addEventListener("click", () => {
+      document.getElementById("review-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    document.getElementById("export-btn").addEventListener("click", exportMarkdown);
+
+  })();
+  </script>
+</body>
+</html>

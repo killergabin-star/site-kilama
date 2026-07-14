@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoSim — Macro Shock Simulator | Eric Kilama Teaching Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --blue-fpsq: #2C5F8A;
+      --red-analytical: #C0392B;
+      --gold-accent: #D4A017;
+      --ivory: #F8F7F4;
+      --ivory-deep: #F0EDE8;
+      --anthracite: #2D2D2D;
+      --text-secondary: #5A6068;
+      --border-light: rgba(27, 42, 74, 0.08);
+      --border-strong: rgba(27, 42, 74, 0.16);
+      --green: #2E7D5B;
+      --paper: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--anthracite);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: var(--blue-fpsq);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .geosim-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border-bottom: 3px solid var(--gold-accent);
+    }
+
+    .geosim-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .geosim-logo {
+      color: var(--gold-accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .geosim-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .geosim-tag {
+      border: 1px solid rgba(212, 160, 23, 0.45);
+      color: var(--gold-accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+
+    .geosim-back {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .geosim-back:hover {
+      color: #fff;
+    }
+
+    .geosim-main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 34px 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .intro-panel,
+    .status-panel,
+    .scenario-panel,
+    .decision-panel,
+    .dashboard-panel,
+    .chart-card,
+    .debrief-panel,
+    .method-panel {
+      background: var(--paper);
+      border: 1px solid var(--border-light);
+    }
+
+    .intro-panel {
+      padding: 30px 34px;
+      border-left: 4px solid var(--gold-accent);
+    }
+
+    .eyebrow {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      margin-bottom: 16px;
+    }
+
+    .standfirst {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.62;
+      max-width: 74ch;
+    }
+
+    .learning-contract {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .contract-step {
+      background: var(--ivory);
+      border-top: 2px solid var(--blue-fpsq);
+      padding: 12px;
+    }
+
+    .contract-step span {
+      display: block;
+      color: var(--navy);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .contract-step small {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .status-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .status-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .status-item {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 12px;
+    }
+
+    .status-label {
+      color: var(--text-secondary);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .status-value {
+      color: var(--navy);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .status-copy {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 18px 0 0;
+    }
+
+    .scenario-panel {
+      margin-bottom: 26px;
+      padding: 24px;
+    }
+
+    .scenario-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .scenario-header h2,
+    .simulation-header h2,
+    .charts-header h2,
+    .method-panel h2 {
+      color: var(--navy);
+      font-size: 21px;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+
+    .scenario-note {
+      color: var(--text-secondary);
+      font-size: 13px;
+      max-width: 54ch;
+      margin: 0;
+      text-align: right;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .scenario-card {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      color: inherit;
+      display: block;
+      min-height: 150px;
+      padding: 16px;
+      text-align: left;
+      transition: border-color 0.16s ease, transform 0.16s ease, background 0.16s ease;
+      width: 100%;
+    }
+
+    .scenario-card:hover {
+      border-color: rgba(44, 95, 138, 0.42);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .scenario-card.active {
+      background: #fff;
+      border-color: var(--navy);
+      box-shadow: inset 0 3px 0 var(--gold-accent);
+    }
+
+    .scenario-card strong {
+      color: var(--navy);
+      display: block;
+      font-size: 14px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .scenario-card span {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .scenario-card small {
+      color: var(--blue-fpsq);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+
+    .simulation-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 28px 0 16px;
+    }
+
+    .phase-rail {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .phase-step {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 9px;
+      text-transform: uppercase;
+    }
+
+    .phase-step.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .simulation-grid {
+      display: grid;
+      grid-template-columns: minmax(330px, 0.9fr) minmax(0, 1.35fr);
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .decision-panel,
+    .dashboard-panel {
+      padding: 24px;
+    }
+
+    .briefing-box {
+      background: var(--ivory);
+      border-left: 3px solid var(--gold-accent);
+      margin-bottom: 20px;
+      padding: 16px 18px;
+    }
+
+    .briefing-box h3 {
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .briefing-box p {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    .decision-group {
+      border-top: 1px solid var(--border-light);
+      padding: 17px 0;
+    }
+
+    .decision-group:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .decision-label {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .decision-label strong {
+      color: var(--navy);
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .decision-label span {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .choice-btn {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      color: var(--anthracite);
+      min-height: 48px;
+      padding: 9px 10px;
+      text-align: left;
+      transition: border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .choice-btn:hover {
+      border-color: rgba(44, 95, 138, 0.45);
+    }
+
+    .choice-btn.active {
+      background: rgba(44, 95, 138, 0.08);
+      border-color: var(--blue-fpsq);
+      box-shadow: inset 3px 0 0 var(--blue-fpsq);
+    }
+
+    .choice-btn b {
+      color: var(--navy);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .choice-btn small {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .decision-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .ghost-btn {
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 14px;
+      transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+
+    .primary-btn {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .primary-btn:hover {
+      background: #25375d;
+    }
+
+    .secondary-btn {
+      background: #fff;
+      border-color: var(--border-strong);
+      color: var(--navy);
+    }
+
+    .secondary-btn:hover {
+      border-color: var(--blue-fpsq);
+      color: var(--blue-fpsq);
+    }
+
+    .ghost-btn {
+      background: transparent;
+      color: var(--text-secondary);
+      padding-left: 0;
+    }
+
+    .ghost-btn:hover {
+      color: var(--navy);
+    }
+
+    .primary-btn:disabled,
+    .secondary-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .kpi-card {
+      background: var(--ivory);
+      border: 1px solid var(--border-light);
+      padding: 12px;
+    }
+
+    .kpi-card span {
+      color: var(--text-secondary);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+
+    .kpi-card strong {
+      color: var(--navy);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .kpi-card small {
+      color: var(--text-secondary);
+      display: block;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .feedback-box {
+      border: 1px solid var(--border-light);
+      margin-bottom: 18px;
+    }
+
+    .feedback-head {
+      align-items: center;
+      background: var(--navy);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 14px;
+    }
+
+    .feedback-head span {
+      color: var(--gold-accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .feedback-head strong {
+      font-size: 13px;
+    }
+
+    .feedback-body {
+      background: #fff;
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 15px 16px;
+    }
+
+    .history-title {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+
+    .history-table {
+      border-collapse: collapse;
+      font-size: 12px;
+      width: 100%;
+    }
+
+    .history-table th,
+    .history-table td {
+      border-top: 1px solid var(--border-light);
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .history-table th {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .history-table td {
+      color: var(--anthracite);
+    }
+
+    .charts-header {
+      align-items: flex-end;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .legend {
+      color: var(--text-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12px;
+      justify-content: flex-end;
+    }
+
+    .legend-item {
+      align-items: center;
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .legend-line {
+      display: inline-block;
+      height: 2px;
+      width: 24px;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .chart-card {
+      padding: 18px;
+    }
+
+    .chart-card-header {
+      align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .chart-card h3 {
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .chart-card span {
+      color: var(--text-secondary);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .chart-card canvas {
+      height: 220px !important;
+      width: 100% !important;
+    }
+
+    .debrief-panel {
+      display: none;
+      margin-bottom: 28px;
+      padding: 26px;
+    }
+
+    .debrief-panel.visible {
+      display: block;
+    }
+
+    .debrief-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 22px;
+      margin-top: 16px;
+    }
+
+    .score-tile {
+      background: var(--navy);
+      color: #fff;
+      padding: 22px;
+    }
+
+    .score-tile span {
+      color: var(--gold-accent);
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .score-tile strong {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .score-tile small {
+      color: rgba(255, 255, 255, 0.72);
+      display: block;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .debrief-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .debrief-list li {
+      background: var(--ivory);
+      border-left: 3px solid var(--blue-fpsq);
+      color: var(--text-secondary);
+      list-style: none;
+      padding: 12px 14px;
+    }
+
+    .method-panel {
+      padding: 26px;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .method-item {
+      background: var(--ivory);
+      border-top: 2px solid var(--gold-accent);
+      padding: 14px;
+    }
+
+    .method-item strong {
+      color: var(--navy);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .method-item p {
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .empty-history {
+      color: var(--text-secondary);
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 14px;
+      padding: 12px 0;
+    }
+
+    .danger {
+      color: var(--red-analytical) !important;
+    }
+
+    .good {
+      color: var(--green) !important;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .simulation-grid,
+      .debrief-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scenario-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .learning-contract {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .geosim-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 20px;
+      }
+
+      .geosim-main {
+        padding: 22px 18px 54px;
+      }
+
+      .intro-panel,
+      .status-panel,
+      .scenario-panel,
+      .decision-panel,
+      .dashboard-panel,
+      .chart-card,
+      .debrief-panel,
+      .method-panel {
+        padding: 18px;
+      }
+
+      .scenario-header,
+      .simulation-header,
+      .charts-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .scenario-note {
+        text-align: left;
+      }
+
+      .scenario-grid,
+      .learning-contract,
+      .charts-grid,
+      .kpi-grid,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="geosim-header">
+    <div class="geosim-brand">
+      <span class="geosim-logo">GeoSim</span>
+      <span class="geosim-title">Macro Shock Simulator</span>
+      <span class="geosim-tag">Démonstrateur pédagogique</span>
+    </div>
+    <a class="geosim-back" href="/teaching/">&larr; Teaching Lab</a>
+  </header>
+
+  <main class="geosim-main">
+    <section class="hero-grid">
+      <div class="intro-panel">
+        <div class="eyebrow">Décider · Observer · Réviser · Débriefer</div>
+        <h1>Simuler la transmission économique d'un choc géopolitique</h1>
+        <p class="standfirst">
+          Ce démonstrateur transforme un scénario géopolitique en exercice de politique économique. L'étudiant prend des décisions trimestre après trimestre, observe leurs effets sur l'inflation, les marges des PME, le crédit et les spreads, puis produit une note de décision.
+        </p>
+        <div class="learning-contract" aria-label="Contrat pédagogique">
+          <div class="contract-step">
+            <span>1. Briefing</span>
+            <small>Lire le choc, les canaux et l'objectif du tour.</small>
+          </div>
+          <div class="contract-step">
+            <span>2. Décision</span>
+            <small>Choisir des leviers concrets avec coûts et délais.</small>
+          </div>
+          <div class="contract-step">
+            <span>3. Dashboard</span>
+            <small>Comparer la trajectoire jouée à une référence passive.</small>
+          </div>
+          <div class="contract-step">
+            <span>4. Débrief</span>
+            <small>Identifier les arbitrages et rédiger une note.</small>
+          </div>
+        </div>
+      </div>
+
+      <aside class="status-panel">
+        <div class="status-grid">
+          <div class="status-item">
+            <span class="status-label">Tour courant</span>
+            <span class="status-value" id="status-quarter">T1/8</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Scénario actif</span>
+            <span class="status-value" id="status-scenario">Embargo</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Runs comparés</span>
+            <span class="status-value" id="status-runs">0</span>
+          </div>
+        </div>
+        <p class="status-copy">
+          Modèle stylisé, non prédictif : il sert à faire apparaître les mécanismes et les arbitrages, pas à produire une prévision macroéconomique.
+        </p>
+      </aside>
+    </section>
+
+    <section style="max-width:1100px;margin:0 auto;padding:1.5rem 2rem 2rem;">
+      <details open style="border:1px solid var(--border-light);border-radius:3px;background:var(--paper);">
+        <summary style="cursor:pointer;padding:0.9rem 1.2rem;font-family:Inter,sans-serif;font-weight:700;font-size:1rem;color:var(--navy);background:var(--ivory-deep);border-radius:3px;display:flex;align-items:center;gap:0.6rem;">
+          <span style="font-size:1.15rem;">&#9432;</span> Comment utiliser ce simulateur
+        </summary>
+        <div style="padding:1.2rem 1.4rem;font-family:'Source Serif 4',serif;font-size:0.93rem;line-height:1.65;color:var(--anthracite);">
+
+          <p style="margin:0 0 1rem;"><strong style="color:var(--navy);">Objectif.</strong> Vous êtes membre d'un comité de politique économique. Un choc géopolitique frappe l'économie : vous devez décider, trimestre après trimestre, de la réponse à apporter — puis évaluer la cohérence de votre stratégie.</p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.2rem;">
+            <div style="border-left:3px solid var(--blue-fpsq);padding:0.6rem 0.8rem;background:var(--ivory-deep);border-radius:0 2px 2px 0;">
+              <strong style="font-family:Inter,sans-serif;font-size:0.82rem;color:var(--navy);">Étape 1 — Choisir un scénario</strong>
+              <p style="margin:0.3rem 0 0;font-size:0.85rem;">Chaque scénario active des canaux de transmission différents (coûts, incertitude, crédit, demande). Lisez le briefing avant de commencer.</p>
+            </div>
+            <div style="border-left:3px solid var(--blue-fpsq);padding:0.6rem 0.8rem;background:var(--ivory-deep);border-radius:0 2px 2px 0;">
+              <strong style="font-family:Inter,sans-serif;font-size:0.82rem;color:var(--navy);">Étape 2 — Décider (×8 trimestres)</strong>
+              <p style="margin:0.3rem 0 0;font-size:0.85rem;">À chaque tour, choisissez vos 4 leviers (taux, garantie, budget, approvisionnement), puis cliquez « Simuler le trimestre ». Observez le feedback et les KPIs avant le tour suivant.</p>
+            </div>
+            <div style="border-left:3px solid var(--blue-fpsq);padding:0.6rem 0.8rem;background:var(--ivory-deep);border-radius:0 2px 2px 0;">
+              <strong style="font-family:Inter,sans-serif;font-size:0.82rem;color:var(--navy);">Étape 3 — Analyser le débrief</strong>
+              <p style="margin:0.3rem 0 0;font-size:0.85rem;">Après 8 tours, un score de résilience et des observations identifient votre « doctrine ». Enregistrez le run, rejouez avec une autre stratégie, comparez.</p>
+            </div>
+            <div style="border-left:3px solid var(--blue-fpsq);padding:0.6rem 0.8rem;background:var(--ivory-deep);border-radius:0 2px 2px 0;">
+              <strong style="font-family:Inter,sans-serif;font-size:0.82rem;color:var(--navy);">Étape 4 — Rédiger la note</strong>
+              <p style="margin:0.3rem 0 0;font-size:0.85rem;">Produisez une note de décision (1-2 pages) : diagnostic du choc, justification de votre stratégie, arbitrages assumés, recommandation pour la suite.</p>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--border-light);padding-top:0.9rem;margin-top:0.5rem;">
+            <strong style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);">Critères d'évaluation</strong>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.6rem;margin-top:0.5rem;font-size:0.84rem;">
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">1. Cohérence de la doctrine</span> — Les décisions suivent-elles une logique identifiable (stabilisation monétaire, bouclier budgétaire, résilience structurelle) ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">2. Maîtrise des arbitrages</span> — L'étudiant identifie-t-il que protéger les marges coûte du déficit, que le taux freine le crédit, que la diversification est lente ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">3. Lecture des boucles</span> — La note mentionne-t-elle les rétroactions (dette → spread → crédit, inflation → marges, charge d'intérêts → déficit) ?</div>
+              <div><span style="color:var(--blue-fpsq);font-weight:600;">4. Qualité de la note</span> — Diagnostic structuré, pas de narration chronologique tour par tour ; capacité à hiérarchiser les enjeux.</div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--border-light);padding-top:0.9rem;margin-top:0.9rem;">
+            <strong style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);">Ancrage théorique et empirique</strong>
+            <p style="margin:0.4rem 0 0;font-size:0.84rem;">Le modèle stylise les mécanismes de transmission étudiés dans la littérature macro récente. Les canaux s'appuient sur : la transmission des chocs d'offre aux prix (Kilian, 2009 ; Blanchard & Galí, 2007), les multiplicateurs budgétaires en situation de stress (Blanchard & Leigh, 2013 ; Auerbach & Gorodnichenko, 2012), la boucle dette-spread souverain (Corsetti et al., 2013 ; Bocola, 2016), et l'impact du rationnement de crédit sur les PME (Bernanke, Gertler & Gilchrist, 1999 — accélérateur financier). Les ordres de grandeur sont calibrés sur la crise énergétique européenne de 2022-2023 et les sanctions financières post-février 2022.</p>
+          </div>
+
+          <p style="margin:0.9rem 0 0;font-size:0.82rem;color:var(--text-secondary);font-style:italic;">Durée indicative : 45-60 min (10 min briefing, 25-30 min simulation, 15-20 min note). L'exercice peut être réalisé en individuel ou en groupe (comité de 3-4 étudiants).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="scenario-panel" aria-label="Sélection du scénario">
+      <div class="scenario-header">
+        <div>
+          <div class="eyebrow">Scénarios</div>
+          <h2>Choisir le choc à jouer</h2>
+        </div>
+        <p class="scenario-note">Chaque scénario modifie les canaux dominants : coûts importés, incertitude financière, crédit, demande externe ou dépendance fournisseur.</p>
+      </div>
+      <div class="scenario-grid" id="scenario-grid"></div>
+    </section>
+
+    <div class="simulation-header">
+      <div>
+        <div class="eyebrow">Simulation séquentielle</div>
+        <h2>Prendre une décision par trimestre</h2>
+      </div>
+      <div class="phase-rail" aria-label="Phases pédagogiques">
+        <span class="phase-step active">Briefing</span>
+        <span class="phase-step active">Décision</span>
+        <span class="phase-step">Observation</span>
+        <span class="phase-step">Révision</span>
+        <span class="phase-step">Débrief</span>
+      </div>
+    </div>
+
+    <section class="simulation-grid">
+      <div class="decision-panel">
+        <div class="briefing-box">
+          <h3 id="round-title">T1 — Le choc arrive dans les prix importés</h3>
+          <p id="round-briefing">Choisissez une réponse initiale. Les effets de diversification sont lents ; les garanties de crédit protègent plus vite les PME, mais elles n'annulent pas le choc de coût.</p>
+        </div>
+
+        <div id="decision-controls"></div>
+
+        <div class="decision-actions">
+          <button class="primary-btn" id="advance-btn">Simuler le trimestre</button>
+          <button class="secondary-btn" id="save-run-btn" disabled>Enregistrer le run</button>
+          <button class="ghost-btn" id="reset-btn">Réinitialiser</button>
+        </div>
+      </div>
+
+      <div class="dashboard-panel">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span>Inflation</span>
+            <strong id="kpi-inflation">2,1%</strong>
+            <small id="kpi-inflation-note">point de départ</small>
+          </div>
+          <div class="kpi-card">
+            <span>Marge PME</span>
+            <strong id="kpi-margin">11,5%</strong>
+            <small id="kpi-margin-note">marge nette</small>
+          </div>
+          <div class="kpi-card">
+            <span>Crédit</span>
+            <strong id="kpi-credit">100</strong>
+            <small id="kpi-credit-note">indice conditions</small>
+          </div>
+          <div class="kpi-card">
+            <span>Spread</span>
+            <strong id="kpi-spread">80 pb</strong>
+            <small id="kpi-spread-note">vs Bund</small>
+          </div>
+          <div class="kpi-card">
+            <span>Dette</span>
+            <strong id="kpi-debt">92%</strong>
+            <small id="kpi-debt-note">PIB</small>
+          </div>
+          <div class="kpi-card">
+            <span>Résilience</span>
+            <strong id="kpi-resilience">82</strong>
+            <small id="kpi-resilience-note">indice 0-100</small>
+          </div>
+        </div>
+
+        <div class="feedback-box">
+          <div class="feedback-head">
+            <span>Feedback adaptatif</span>
+            <strong id="feedback-status">Avant décision</strong>
+          </div>
+          <div class="feedback-body" id="feedback-body">
+            Le premier tour sert à fixer votre doctrine de réponse. Une réaction trop faible protège les finances publiques mais laisse le choc se transmettre aux marges ; une réaction trop forte soutient l'activité mais peut peser sur le spread.
+          </div>
+        </div>
+
+        <h3 class="history-title">Historique des décisions</h3>
+        <div id="history-wrap">
+          <div class="empty-history">Aucun trimestre joué pour le moment.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="debrief-panel" id="debrief-panel" aria-live="polite">
+      <div class="eyebrow">Débrief final</div>
+      <h2>Lecture pédagogique du run</h2>
+      <div class="debrief-grid">
+        <div class="score-tile">
+          <span>Score de résilience</span>
+          <strong id="final-score">—</strong>
+          <small id="final-score-note">Décomposition à partir des trois derniers trimestres.</small>
+        </div>
+        <ul class="debrief-list" id="debrief-list"></ul>
+      </div>
+    </section>
+
+    <section aria-label="Graphiques de simulation">
+      <div class="charts-header">
+        <div>
+          <div class="eyebrow">Dashboard</div>
+          <h2>Trajectoires simulées et référence passive</h2>
+        </div>
+        <div class="legend">
+          <span class="legend-item"><i class="legend-line" style="background:#999;border-top:2px dashed #999;"></i> Référence passive</span>
+          <span class="legend-item"><i class="legend-line" style="background:#1B2A4A;"></i> Run courant</span>
+          <span class="legend-item"><i class="legend-line" style="background:#D4A017;"></i> Runs enregistrés</span>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <article class="chart-card">
+          <div class="chart-card-header">
+            <h3>Inflation importée</h3>
+            <span>Zone danger &gt; 6%</span>
+          </div>
+          <canvas id="chart-inflation"></canvas>
+        </article>
+        <article class="chart-card">
+          <div class="chart-card-header">
+            <h3>Marge nette PME</h3>
+            <span>Zone danger &lt; 6%</span>
+          </div>
+          <canvas id="chart-margin"></canvas>
+        </article>
+        <article class="chart-card">
+          <div class="chart-card-header">
+            <h3>Spread souverain</h3>
+            <span>Zone danger &gt; 200 pb</span>
+          </div>
+          <canvas id="chart-spread"></canvas>
+        </article>
+        <article class="chart-card">
+          <div class="chart-card-header">
+            <h3>Score de résilience</h3>
+            <span>Zone danger &lt; 55</span>
+          </div>
+          <canvas id="chart-resilience"></canvas>
+        </article>
+      </div>
+    </section>
+
+    <section class="method-panel">
+      <div class="eyebrow">Hypothèses pédagogiques</div>
+      <h2>Un modèle stylisé avec rétroactions, pas une prévision</h2>
+      <p style="max-width:720px;margin:0 auto 1.5rem;color:var(--text-secondary);font-family:'Source Serif 4',serif;font-size:0.97rem;line-height:1.55;">
+        Le simulateur repose sur un système d'équations couplées à ajustement partiel. Chaque variable converge vers une cible déterminée par les autres variables et les décisions de politique, avec une inertie calibrée. Le modèle n'est pas prédictif : il rend visibles les mécanismes de transmission et les arbitrages.
+      </p>
+      <div class="method-grid">
+        <div class="method-item">
+          <strong>Canal coûts → inflation → marges</strong>
+          <p>Le choc de coûts nourrit l'inflation importée ; l'inflation et le pouvoir de pass-through déterminent la compression des marges.</p>
+        </div>
+        <div class="method-item">
+          <strong>Canal spread → crédit → PME</strong>
+          <p>L'incertitude et le déficit alimentent le spread ; le spread et le taux directeur durcissent les conditions de crédit.</p>
+        </div>
+        <div class="method-item">
+          <strong>Canal politique → arbitrages</strong>
+          <p>Le soutien budgétaire protège l'activité à court terme mais pèse sur le déficit ; la diversification agit plus lentement mais réduit le choc.</p>
+        </div>
+      </div>
+
+      <details style="max-width:820px;margin:1.5rem auto 0;border:1px solid var(--border-light);border-radius:3px;padding:0;">
+        <summary style="cursor:pointer;padding:0.85rem 1.2rem;font-family:Inter,sans-serif;font-weight:600;font-size:0.92rem;color:var(--navy);background:var(--ivory-deep);border-radius:3px;">
+          Équations du modèle et calibration
+        </summary>
+        <div style="padding:1rem 1.2rem;font-family:'JetBrains Mono',monospace;font-size:0.78rem;line-height:1.7;color:var(--anthracite);">
+          <p style="font-family:'Source Serif 4',serif;font-size:0.88rem;margin-bottom:1rem;color:var(--text-secondary);">
+            Chaque variable suit un ajustement partiel : <code>x(t) = α·x(t-1) + (1-α)·x*(t)</code>, où x* est la cible et α l'inertie. Les canaux de transmission créent des boucles de rétroaction non triviales.
+          </p>
+
+          <p><strong style="color:var(--navy);">Inflation (α = 0.58)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">π* = 2.0 + 2.05·costPressure + 0.22·max(0, spread−90)/100
+    + 0.18·fiscal − 0.62·max(0, rate) + 0.16·max(0, −rate)</code>
+
+          <p><strong style="color:var(--navy);">Déficit (α = 0.62)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">interestCost = max(0, spread−80) · debt · 0.00012
+def* = 2.7 + 1.18·fiscalCost + interestCost
+     + 0.22·max(0, −output) − 0.12·max(0, output) + 0.10·max(0, rate)</code>
+
+          <p><strong style="color:var(--navy);">Dette</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">debt(t) = debt(t-1) + 0.22·deficit + 0.006·max(0, spread−100)
+         − 0.05·max(0, output)     [bornes: 70–135]</code>
+
+          <p><strong style="color:var(--navy);">Spread souverain (α = 0.48)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">s* = 80 + 112·uncertainty + 44·financialStress + 7.5·max(0, π−3)
+   + 3.2·max(0, debt−92) + 0.06·max(0, debt−110)²
+   + 12·max(0, fiscalCost−1.25) − 22·max(0, rate) − 16·guarantee</code>
+
+          <p><strong style="color:var(--navy);">Conditions de crédit (α = 0.52)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">c* = 100 − 0.068·max(0, spread−80) − 3.2·max(0, rate)
+   − 9.5·financialStress + 8.5·guarantee + 2.2·fiscalSupport</code>
+
+          <p><strong style="color:var(--navy);">Marge nette PME (α = 0.45)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">m* = 11.5 − 2.35·costPressure − 0.045·max(0, 100−credit)
+   − 0.34·max(0, π−3) + 0.92·fiscalSupport
+   + 0.82·guarantee + 0.46·supplyRelief</code>
+
+          <p><strong style="color:var(--navy);">Output gap (α = 0.55)</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">y* = −1.0·costPressure − 0.036·max(0, 100−credit)
+   − 0.36·max(0, rate) + 0.54·fiscalSupport
+   + 0.17·supplyRelief − 0.22·financialStress</code>
+
+          <p><strong style="color:var(--navy);">Score de résilience</strong></p>
+          <code style="display:block;background:var(--ivory-deep);padding:0.6rem;border-radius:2px;margin:0.3rem 0 0.8rem;white-space:pre-wrap;">R = 100 − 5.8·max(0, π−3) − 4.8·max(0, 8−margin)
+  − 0.075·max(0, spread−100) − 0.62·max(0, 95−credit)
+  − 0.45·max(0, debt−95)</code>
+
+          <p style="font-family:'Source Serif 4',serif;font-size:0.85rem;margin-top:1.2rem;color:var(--text-secondary);border-top:1px solid var(--border-light);padding-top:0.8rem;">
+            <strong>Boucles de rétroaction clés :</strong> (1) fiscal → déficit → dette → spread → crédit → marges ; (2) inflation → spread → crédit → output ; (3) dette × spread → charge d'intérêts → déficit (contrainte budgétaire intertemporelle). Les coefficients sont calibrés sur des ordres de grandeur zone euro (2022-2023), pas sur une estimation économétrique.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section style="max-width:1100px;margin:0 auto;padding:1rem 2rem 2.5rem;">
+      <div style="border-top:1px solid var(--border-light);padding-top:1.5rem;">
+        <div style="font-family:Inter,sans-serif;font-size:0.82rem;font-weight:600;color:var(--text-secondary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.8rem;">Syllabi et ressources associés</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0.8rem;">
+          <a href="/teaching/Syllabus_GeoEco_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Géoéconomie et entreprises</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — Scoring d'exposition, chaînes de valeur, friend-shoring</span>
+          </a>
+          <a href="/teaching/Syllabus_Sanctions_M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Sanctions et coercition</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M2 — Sanctions, contrôles export, évaluation empirique</span>
+          </a>
+          <a href="/teaching/Syllabus_EcoBancaire_M1.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Système bancaire et risque géopolitique</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1 — Intermédiation, stress-tests, transmission aux bilans</span>
+          </a>
+          <a href="/teaching/Syllabus_FinDev_M1M2.pdf" style="display:block;padding:0.7rem 0.9rem;border:1px solid var(--border-light);border-radius:2px;background:var(--paper);text-decoration:none;transition:border-color 0.15s;">
+            <strong style="display:block;font-family:Inter,sans-serif;font-size:0.85rem;color:var(--navy);margin-bottom:0.2rem;">Financement du développement</strong>
+            <span style="font-size:0.78rem;color:var(--text-secondary);">M1-M2 — APD, dette, prêts chinois, compétition G7-Chine</span>
+          </a>
+        </div>
+        <div style="margin-top:1rem;text-align:center;">
+          <a href="/teaching/" style="font-family:Inter,sans-serif;font-size:0.85rem;color:var(--blue-fpsq);font-weight:600;">&larr; Tous les cours, Data Labs et outils pédagogiques</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function() {
+    "use strict";
+
+    const LABELS = ["T0", "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"];
+    const START = {
+      inflation: 2.1,
+      margin: 11.5,
+      credit: 100,
+      spread: 80,
+      debt: 92,
+      deficit: 3.0,
+      output: 0.0,
+      resilience: 82
+    };
+
+    const SCENARIOS = {
+      embargo: {
+        short: "Embargo",
+        title: "Embargo énergétique",
+        description: "Prix de l'énergie, coûts importés, marges et inflation. Réf. empirique : crise énergétique UE 2022.",
+        badge: "Canal réel",
+        briefing: [
+          "Le prix de l'énergie se transmet aux coûts intermédiaires. La priorité est de limiter la compression des marges sans déclencher une spirale budgétaire.",
+          "Le choc de coût est encore visible. Les mesures de diversification commencent à produire des effets, mais le crédit devient plus sensible au spread.",
+          "Le risque n'est plus seulement l'inflation : les marges fragiles et le crédit peuvent amplifier le choc initial.",
+          "Le comité doit arbitrer entre stabilisation immédiate et crédibilité financière.",
+          "Le choc se normalise, mais les effets de second tour demeurent dans les bilans des entreprises.",
+          "Les marchés observent le coût cumulé des mesures et la capacité de sortie.",
+          "Le dernier tiers du run mesure la qualité de la stratégie : a-t-elle protégé les PME sans épuiser la marge budgétaire ?",
+          "Dernière décision : consolider ou soutenir encore. Le débrief comparera votre doctrine à la trajectoire passive."
+        ],
+        channels: { cost: 1.15, uncertainty: 0.62, financial: 0.22, demand: 0.18 },
+        shockPath: [1.05, 1.12, 1.08, 1.02, 0.90, 0.68, 0.46, 0.30]
+      },
+      sanctions: {
+        short: "Sanctions",
+        title: "Sanctions financières",
+        description: "Pertes bancaires, crédit, risque de contagion et activité. Réf. empirique : sanctions anti-Russie 2022, SWIFT.",
+        badge: "Canal financier",
+        briefing: [
+          "Un paquet de sanctions financières perturbe les transactions et révèle des expositions bancaires. Le crédit devient le canal critique.",
+          "Les banques révisent leurs lignes de crédit. Les garanties peuvent protéger les PME, mais elles créent une exposition publique contingente.",
+          "Le choc financier se propage aux marges via le rationnement du crédit plus que via l'inflation.",
+          "La crédibilité de la réponse dépend de la capacité à cibler les garanties sans signaler une fragilité systémique.",
+          "La transmission se stabilise si le crédit reste ouvert ; sinon l'effet devient réel et durable.",
+          "Le coût budgétaire implicite des garanties est désormais visible dans le spread.",
+          "Le comité doit choisir entre retrait progressif et maintien d'une assurance publique.",
+          "Dernier tour : la note finale devra expliquer pourquoi le canal crédit a été contenu ou non."
+        ],
+        channels: { cost: 0.45, uncertainty: 0.85, financial: 1.08, demand: 0.38 },
+        shockPath: [0.92, 1.05, 1.15, 0.98, 0.78, 0.60, 0.43, 0.32]
+      },
+      flight: {
+        short: "Flight",
+        title: "Flight-to-safety",
+        description: "Fuite vers actifs sûrs, spread, taux et conditions financières. Réf. empirique : épisodes Crimée 2014, tensions Taïwan.",
+        badge: "Macro-finance",
+        briefing: [
+          "Une escalade géopolitique déclenche une fuite vers les actifs sûrs. Le spread devient le premier signal de stress.",
+          "Le choc financier se transmet aux conditions de crédit. La politique monétaire peut rassurer ou amplifier la contraction.",
+          "Le risque est une réponse trop restrictive qui stabilise les prix au prix d'une détérioration du crédit.",
+          "Le marché distingue les réponses ciblées des réponses budgétaires perçues comme permanentes.",
+          "La trajectoire dépend maintenant de l'ancrage des anticipations et de la qualité du soutien aux entreprises.",
+          "Les spreads commencent à refluer si la doctrine est lisible ; sinon le crédit reste dégradé.",
+          "Le comité doit éviter de gagner sur l'inflation en perdant la transmission bancaire.",
+          "Dernier tour : le débrief évaluera l'équilibre entre crédibilité financière et protection du tissu productif."
+        ],
+        channels: { cost: 0.32, uncertainty: 1.08, financial: 0.92, demand: 0.28 },
+        shockPath: [0.80, 1.25, 1.05, 0.82, 0.66, 0.50, 0.36, 0.26]
+      },
+      minerals: {
+        short: "Minerais",
+        title: "Restrictions sur minerais critiques",
+        description: "Dépendance fournisseur, délais de substitution, industrie aval. Réf. empirique : restrictions chinoises terres rares, gallium 2023.",
+        badge: "Supply chain",
+        briefing: [
+          "Une restriction d'exportation sur des minerais critiques frappe des chaînes de valeur étroites mais stratégiques.",
+          "Le choc est peu visible en agrégat mais très puissant pour les secteurs dépendants. La diversification a un délai.",
+          "Les marges sont comprimées par la rareté des intrants ; l'inflation globale reste contenue mais l'industrie aval souffre.",
+          "Le comité doit décider si le soutien vise l'urgence ou l'investissement de substitution.",
+          "Les accords d'approvisionnement commencent à réduire le choc si l'effort a été engagé tôt.",
+          "Les arbitrages deviennent intertemporels : payer aujourd'hui pour réduire la vulnérabilité demain.",
+          "La résilience dépend moins du taux que de la vitesse de réorganisation des intrants.",
+          "Dernier tour : la note devra distinguer vulnérabilité sectorielle et risque macro agrégé."
+        ],
+        channels: { cost: 0.82, uncertainty: 0.55, financial: 0.30, demand: 0.22 },
+        shockPath: [0.75, 0.95, 1.10, 1.08, 1.00, 0.82, 0.58, 0.38]
+      },
+      fragmentation: {
+        short: "Fragmentation",
+        title: "Fragmentation commerciale",
+        description: "Tarifs croisés, relocalisation, désintégration des chaînes de valeur. Réf. empirique : guerre tarifaire US-Chine 2018-2025.",
+        badge: "Géoéconomie",
+        briefing: [
+          "Un cycle de représailles tarifaires fragmente les chaînes de valeur. Le choc n'est pas un pic puis un reflux : il s'installe.",
+          "Les coûts d'intrants augmentent structurellement. La diversification est lente car les alternatives sont elles aussi fragmentées.",
+          "Le choc atteint son plateau. Les marges sont comprimées et les relocalisations ne produiront d'effets qu'à moyen terme.",
+          "La question n'est plus l'intensité du choc mais sa durée : le comité doit arbitrer entre protection immédiate et réorganisation.",
+          "Le choc reste élevé. Les mesures de court terme s'épuisent ; seules les actions structurelles réduisent la vulnérabilité.",
+          "Le coût cumulé du soutien budgétaire devient la principale contrainte de décision.",
+          "Le plateau tarifaire commence à s'éroder, mais la structure des échanges est durablement modifiée.",
+          "Dernier tour : la note devra distinguer les coûts de la fragmentation et les bénéfices éventuels de la résilience acquise."
+        ],
+        channels: { cost: 0.72, uncertainty: 0.68, financial: 0.35, demand: 0.55 },
+        shockPath: [0.55, 0.78, 0.95, 1.05, 1.08, 1.00, 0.90, 0.80]
+      }
+    };
+
+    const LEVERS = {
+      rate: {
+        title: "Taux directeur",
+        unit: "pb",
+        options: [
+          { id: "m50", label: "-50 pb", desc: "Soutien à l'activité", value: -0.50 },
+          { id: "hold", label: "Maintien", desc: "Doctrine attentiste", value: 0.00 },
+          { id: "p50", label: "+50 pb", desc: "Ancrage modéré", value: 0.50 },
+          { id: "p100", label: "+100 pb", desc: "Signal anti-inflation", value: 1.00 }
+        ]
+      },
+      guarantee: {
+        title: "Garantie crédit PME",
+        unit: "Md€",
+        options: [
+          { id: "g0", label: "0 Md€", desc: "Pas de filet public", value: 0 },
+          { id: "g5", label: "5 Md€", desc: "Ciblage léger", value: 5 },
+          { id: "g15", label: "15 Md€", desc: "Filet central", value: 15 },
+          { id: "g30", label: "30 Md€", desc: "Assurance forte", value: 30 }
+        ]
+      },
+      fiscal: {
+        title: "Soutien budgétaire ciblé",
+        unit: "% PIB",
+        options: [
+          { id: "f0", label: "0%", desc: "Aucune impulsion", value: 0.0 },
+          { id: "f05", label: "0,5%", desc: "Mesure ciblée", value: 0.5 },
+          { id: "f10", label: "1,0%", desc: "Soutien marqué", value: 1.0 },
+          { id: "f20", label: "2,0%", desc: "Bouclier massif", value: 2.0 }
+        ]
+      },
+      supply: {
+        title: "Réponse d'approvisionnement",
+        unit: "délai",
+        options: [
+          { id: "s0", label: "Aucune", desc: "Réponse court terme", value: 0.00, cost: 0.00 },
+          { id: "s30", label: "30 jours", desc: "Réserves libérées", value: 0.25, cost: 0.12 },
+          { id: "s60", label: "Accords bilatéraux", desc: "Substitution partielle", value: 0.52, cost: 0.32 },
+          { id: "s90", label: "Substitution accélérée", desc: "Effet structurel", value: 0.78, cost: 0.60 }
+        ]
+      }
+    };
+
+    const DEFAULT_DECISION = {
+      rate: "hold",
+      guarantee: "g15",
+      fiscal: "f05",
+      supply: "s30"
+    };
+
+    const charts = {};
+    let currentScenarioKey = "embargo";
+    let run;
+    let savedRuns = [];
+    let referenceCache = {};
+
+    const dangerBandPlugin = {
+      id: "dangerBand",
+      beforeDatasetsDraw(chart, args, pluginOptions) {
+        if (!pluginOptions || pluginOptions.value === undefined || !chart.chartArea) return;
+        const { ctx, chartArea, scales } = chart;
+        const y = scales.y;
+        if (!y) return;
+        const threshold = y.getPixelForValue(pluginOptions.value);
+        ctx.save();
+        ctx.fillStyle = pluginOptions.color || "rgba(192, 57, 43, 0.07)";
+        if (pluginOptions.mode === "above") {
+          ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, Math.max(0, threshold - chartArea.top));
+        } else {
+          ctx.fillRect(chartArea.left, threshold, chartArea.right - chartArea.left, Math.max(0, chartArea.bottom - threshold));
+        }
+        ctx.restore();
+      }
+    };
+
+    Chart.register(dangerBandPlugin);
+
+    function cloneStart() {
+      return { ...START };
+    }
+
+    function getOption(group, id) {
+      return LEVERS[group].options.find(option => option.id === id);
+    }
+
+    function activeDecision() {
+      const decision = {};
+      Object.keys(LEVERS).forEach(group => {
+        const active = document.querySelector(`.choice-btn.active[data-group="${group}"]`);
+        decision[group] = active ? active.dataset.option : DEFAULT_DECISION[group];
+      });
+      return decision;
+    }
+
+    function decisionValues(decision) {
+      return {
+        rate: getOption("rate", decision.rate),
+        guarantee: getOption("guarantee", decision.guarantee),
+        fiscal: getOption("fiscal", decision.fiscal),
+        supply: getOption("supply", decision.supply)
+      };
+    }
+
+    function round(value, digits = 1) {
+      const factor = Math.pow(10, digits);
+      return Math.round(value * factor) / factor;
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function computeStep(prev, scenario, decision, t) {
+      const selected = decisionValues(decision);
+      const shock = scenario.shockPath[t] || scenario.shockPath[scenario.shockPath.length - 1];
+
+      const rate = selected.rate.value;
+      const guaranteeBn = selected.guarantee.value;
+      const fiscalPct = selected.fiscal.value;
+      const supplyAction = selected.supply.value;
+      const supplyCost = selected.supply.cost || 0;
+
+      const lag = t < 2 ? 0.30 + 0.12 * t : 0.64 + 0.06 * Math.min(t - 2, 4);
+      const supplyRelief = clamp(supplyAction * lag, 0, 0.86);
+      const guaranteeShield = clamp(guaranteeBn / 30, 0, 1);
+      const fiscalSupport = clamp(fiscalPct / 2, 0, 1);
+
+      const costPressure = scenario.channels.cost * shock * (1 - 0.58 * supplyRelief);
+      const uncertainty = scenario.channels.uncertainty * shock + Math.max(0, prev.inflation - 4) * 0.055;
+      const financialStress = scenario.channels.financial * shock + Math.max(0, prev.spread - 120) / 280;
+      const fiscalCost = fiscalPct + guaranteeBn * 0.018 + supplyCost;
+
+      const inflationTarget =
+        2.0 +
+        2.05 * costPressure +
+        0.22 * Math.max(0, prev.spread - 90) / 100 +
+        0.18 * fiscalPct -
+        0.62 * Math.max(0, rate) +
+        0.16 * Math.max(0, -rate);
+      const inflation = clamp(0.58 * prev.inflation + 0.42 * inflationTarget, 0.6, 12);
+
+      const interestCost = Math.max(0, prev.spread - 80) * prev.debt * 0.00012;
+      const deficitTarget =
+        2.7 +
+        1.18 * fiscalCost +
+        interestCost +
+        0.22 * Math.max(0, -prev.output) -
+        0.12 * Math.max(0, prev.output) +
+        0.10 * Math.max(0, rate);
+      const deficit = clamp(0.62 * prev.deficit + 0.38 * deficitTarget, 1.0, 9.5);
+
+      const debt = clamp(
+        prev.debt + deficit * 0.22 + Math.max(0, prev.spread - 100) * 0.006 - Math.max(0, prev.output) * 0.05,
+        70,
+        135
+      );
+
+      const spreadTarget =
+        80 +
+        112 * uncertainty +
+        44 * financialStress +
+        7.5 * Math.max(0, inflation - 3) +
+        3.2 * Math.max(0, debt - 92) + 0.06 * Math.pow(Math.max(0, debt - 110), 2) +
+        12 * Math.max(0, fiscalCost - 1.25) -
+        22 * Math.max(0, rate) -
+        16 * guaranteeShield;
+      const spread = clamp(0.48 * prev.spread + 0.52 * spreadTarget, 45, 540);
+
+      const creditTarget =
+        100 -
+        0.068 * Math.max(0, spread - 80) -
+        3.2 * Math.max(0, rate) -
+        9.5 * financialStress +
+        8.5 * guaranteeShield +
+        2.2 * fiscalSupport;
+      const credit = clamp(0.52 * prev.credit + 0.48 * creditTarget, 58, 110);
+
+      const marginTarget =
+        11.5 -
+        2.35 * costPressure -
+        0.045 * Math.max(0, 100 - credit) -
+        0.34 * Math.max(0, inflation - 3) +
+        0.92 * fiscalSupport +
+        0.82 * guaranteeShield +
+        0.46 * supplyRelief;
+      const margin = clamp(0.45 * prev.margin + 0.55 * marginTarget, 0, 14);
+
+      const outputTarget =
+        -1.0 * costPressure -
+        0.036 * Math.max(0, 100 - credit) -
+        0.36 * Math.max(0, rate) +
+        0.54 * fiscalSupport +
+        0.17 * supplyRelief -
+        0.22 * financialStress;
+      const output = clamp(0.55 * prev.output + 0.45 * outputTarget, -8, 3);
+
+      const resilience = clamp(
+        100 -
+        5.8 * Math.max(0, inflation - 3) -
+        4.8 * Math.max(0, 8 - margin) -
+        0.075 * Math.max(0, spread - 100) -
+        0.62 * Math.max(0, 95 - credit) -
+        0.45 * Math.max(0, debt - 95),
+        0,
+        100
+      );
+
+      return {
+        inflation: round(inflation, 2),
+        margin: round(margin, 2),
+        credit: round(credit, 1),
+        spread: Math.round(spread),
+        debt: round(debt, 1),
+        deficit: round(deficit, 1),
+        output: round(output, 2),
+        resilience: Math.round(resilience),
+        cost: round(fiscalCost, 2)
+      };
+    }
+
+    function createRun() {
+      return {
+        scenarioKey: currentScenarioKey,
+        states: [cloneStart()],
+        decisions: [],
+        feedback: [],
+        completed: false
+      };
+    }
+
+    function simulateReference(scenarioKey) {
+      if (referenceCache[scenarioKey]) return referenceCache[scenarioKey];
+      const scenario = SCENARIOS[scenarioKey];
+      const passive = { rate: "hold", guarantee: "g0", fiscal: "f0", supply: "s0" };
+      const states = [cloneStart()];
+      for (let t = 0; t < 8; t += 1) {
+        states.push(computeStep(states[states.length - 1], scenario, passive, t));
+      }
+      referenceCache[scenarioKey] = states;
+      return states;
+    }
+
+    function generateFeedback(prev, next, decision, t) {
+      const d = decisionValues(decision);
+      const signals = [];
+
+      if (next.inflation > 6 && d.rate.value <= 0) {
+        signals.push("L'inflation franchit la zone de danger alors que le signal monétaire reste faible : l'ancrage des anticipations devient fragile.");
+      } else if (next.inflation > 6) {
+        signals.push("Le resserrement monétaire limite l'inflation, mais le choc de coûts reste dominant à court terme.");
+      } else if (next.inflation < 3.5 && t > 2) {
+        signals.push("La pression inflationniste reflue : le risque se déplace vers le crédit, les marges et la soutenabilité du soutien public.");
+      }
+
+      if (next.margin < 6.5 && d.guarantee.value < 15) {
+        signals.push("Les marges PME passent sous le seuil critique ; sans filet de crédit suffisant, le choc réel risque de se transformer en défauts d'entreprises.");
+      } else if (next.margin >= prev.margin && d.guarantee.value >= 15) {
+        signals.push("La garantie de crédit amortit la compression des marges, mais elle ne remplace pas une stratégie de réduction du choc d'intrants.");
+      }
+
+      if (next.spread > 200 && d.fiscal.value >= 1) {
+        signals.push("Le spread signale une tension de crédibilité : le soutien protège l'activité, mais le marché commence à intégrer son coût budgétaire.");
+      } else if (next.spread > 200) {
+        signals.push("La hausse du spread durcit le crédit même sans relance massive : l'incertitude géopolitique se transmet par la prime de risque.");
+      }
+
+      if (next.credit < 88) {
+        signals.push("Le canal crédit devient contraignant. La prochaine décision doit arbitrer entre soutien aux PME et signal de discipline financière.");
+      }
+
+      if (d.supply.value >= 0.52 && t >= 2) {
+        signals.push("Les mesures d'approvisionnement commencent à réduire le choc de coûts : c'est lent, mais plus durable qu'un simple bouclier budgétaire.");
+      }
+
+      const interestCharge = Math.max(0, next.spread - 80) * next.debt * 0.00012;
+      if (interestCharge > 0.5 && next.debt > 100) {
+        signals.push(`La charge d'intérêts implicite atteint ${round(interestCharge, 1)} pt de PIB : la dette et le spread s'alimentent mutuellement. Toute relance supplémentaire accélère cette boucle.`);
+      } else if (next.debt > 105 && next.spread > 150) {
+        signals.push("La trajectoire dette-spread s'approche d'un seuil d'auto-renforcement : une hausse du spread renchérit la dette, qui elle-même alimente le spread.");
+      }
+
+      if (!signals.length) {
+        signals.push("La trajectoire reste contrôlée, mais aucun indicateur ne doit être lu isolément : la qualité du run dépend de l'équilibre entre prix, crédit, marges et spread.");
+      }
+
+      return signals.slice(0, 3).join(" ");
+    }
+
+    function generateDebrief() {
+      const states = run.states;
+      const tail = states.slice(-3);
+      const score = Math.round(tail.reduce((sum, s) => sum + s.resilience, 0) / tail.length);
+      const final = states[states.length - 1];
+      const totalCost = run.states.slice(1).reduce((sum, s) => sum + (s.cost || 0), 0);
+      const decisions = run.decisions.map(decisionValues);
+      const avgFiscal = decisions.reduce((sum, d) => sum + d.fiscal.value, 0) / decisions.length;
+      const avgGuarantee = decisions.reduce((sum, d) => sum + d.guarantee.value, 0) / decisions.length;
+      const avgRate = decisions.reduce((sum, d) => sum + d.rate.value, 0) / decisions.length;
+      const avgSupply = decisions.reduce((sum, d) => sum + d.supply.value, 0) / decisions.length;
+
+      const notes = [];
+      notes.push(`Coût public cumulé indicatif : ${round(totalCost, 1)} points de PIB, garanties incluses en équivalent risque stylisé.`);
+
+      if (final.inflation > 5.5) {
+        notes.push("La stratégie a laissé l'inflation trop haut : la note de décision doit expliquer pourquoi la stabilisation des prix n'a pas été prioritaire.");
+      } else {
+        notes.push("L'inflation est contenue dans le dernier tiers du run : le point à discuter devient le coût de cette stabilisation.");
+      }
+
+      if (final.margin < 7) {
+        notes.push("Les marges PME restent fragiles : le canal réel n'a pas été suffisamment amorti, même si les indicateurs macro semblent stabilisés.");
+      } else {
+        notes.push("Le tissu PME ressort relativement protégé : l'étudiant doit identifier les leviers qui ont évité la compression durable des marges.");
+      }
+
+      if (final.spread > 200) {
+        notes.push("Le spread final indique que la crédibilité financière reste sous tension ; c'est le principal risque de second tour.");
+      } else {
+        notes.push("Le spread revient dans un corridor soutenable, signal que la réponse est lisible pour les marchés.");
+      }
+
+      if (avgFiscal >= 1.1 && avgGuarantee >= 15) {
+        notes.push("Doctrine dominante : protection forte de l'activité. Solide socialement, mais exige une justification budgétaire.");
+      } else if (avgRate >= 0.45 && avgFiscal <= 0.6) {
+        notes.push("Doctrine dominante : crédibilité monétaire et discipline budgétaire. Solide contre l'inflation, plus risquée pour les PME.");
+      } else if (avgSupply >= 0.45) {
+        notes.push("Doctrine dominante : résilience structurelle par l'approvisionnement. Moins spectaculaire au début, plus robuste en sortie de choc.");
+      } else {
+        notes.push("Doctrine dominante : réponse graduelle. Défendable si elle s'accompagne d'une surveillance serrée des seuils de danger.");
+      }
+
+      const cumulInterest = run.states.slice(1).reduce((sum, s) => sum + Math.max(0, s.spread - 80) * s.debt * 0.00012, 0);
+      if (cumulInterest > 2.5) {
+        notes.push(`Charge d'intérêts cumulée : ${round(cumulInterest, 1)} pts de PIB sur 8 trimestres. La boucle dette-spread a significativement alourdi le coût de la crise au-delà des mesures directes.`);
+      } else if (cumulInterest > 1.2) {
+        notes.push(`Charge d'intérêts cumulée : ${round(cumulInterest, 1)} pts de PIB. Le coût indirect reste contenu grâce à la maîtrise du spread.`);
+      }
+
+      return { score, notes };
+    }
+
+    function formatPercent(value) {
+      return `${String(round(value, 1)).replace(".", ",")}%`;
+    }
+
+    function formatDecision(decision) {
+      const d = decisionValues(decision);
+      return `${d.rate.label}; garantie ${d.guarantee.label}; soutien ${d.fiscal.label}; ${d.supply.label}`;
+    }
+
+    function renderScenarioCards() {
+      const grid = document.getElementById("scenario-grid");
+      grid.innerHTML = Object.keys(SCENARIOS).map(key => {
+        const scenario = SCENARIOS[key];
+        return `
+          <button class="scenario-card ${key === currentScenarioKey ? "active" : ""}" data-scenario="${key}">
+            <strong>${scenario.title}</strong>
+            <span>${scenario.description}</span>
+            <small>${scenario.badge}</small>
+          </button>
+        `;
+      }).join("");
+
+      grid.querySelectorAll(".scenario-card").forEach(card => {
+        card.addEventListener("click", () => {
+          currentScenarioKey = card.dataset.scenario;
+          run = createRun();
+          renderScenarioCards();
+          renderAll();
+        });
+      });
+    }
+
+    function renderDecisionControls() {
+      const container = document.getElementById("decision-controls");
+      container.innerHTML = Object.keys(LEVERS).map(group => {
+        const lever = LEVERS[group];
+        return `
+          <div class="decision-group">
+            <div class="decision-label">
+              <strong>${lever.title}</strong>
+              <span>${lever.unit}</span>
+            </div>
+            <div class="choice-grid">
+              ${lever.options.map(option => `
+                <button class="choice-btn ${DEFAULT_DECISION[group] === option.id ? "active" : ""}" data-group="${group}" data-option="${option.id}">
+                  <b>${option.label}</b>
+                  <small>${option.desc}</small>
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      container.querySelectorAll(".choice-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          const group = button.dataset.group;
+          container.querySelectorAll(`.choice-btn[data-group="${group}"]`).forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+        });
+      });
+    }
+
+    function initCharts() {
+      const specs = [
+        { id: "chart-inflation", metric: "inflation", color: "#C0392B", danger: { mode: "above", value: 6 }, unit: "%" },
+        { id: "chart-margin", metric: "margin", color: "#2C5F8A", danger: { mode: "below", value: 6 }, unit: "%" },
+        { id: "chart-spread", metric: "spread", color: "#D4A017", danger: { mode: "above", value: 200 }, unit: " pb" },
+        { id: "chart-resilience", metric: "resilience", color: "#1B2A4A", danger: { mode: "below", value: 55 }, unit: "" }
+      ];
+
+      specs.forEach(spec => {
+        const ctx = document.getElementById(spec.id);
+        charts[spec.metric] = new Chart(ctx, {
+          type: "line",
+          data: { labels: LABELS, datasets: [] },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: { duration: 240 },
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+              legend: { display: false },
+              dangerBand: {
+                mode: spec.danger.mode,
+                value: spec.danger.value,
+                color: "rgba(192, 57, 43, 0.065)"
+              },
+              tooltip: {
+                backgroundColor: "#1B2A4A",
+                borderColor: "rgba(212, 160, 23, 0.42)",
+                borderWidth: 1,
+                cornerRadius: 2,
+                padding: 11,
+                titleFont: { family: "JetBrains Mono", size: 11, weight: "700" },
+                bodyFont: { family: "JetBrains Mono", size: 12 },
+                callbacks: {
+                  label(context) {
+                    const value = context.raw;
+                    const label = context.dataset.label || "";
+                    return `${label}: ${value}${spec.unit}`;
+                  },
+                  afterBody(context) {
+                    const value = context[0].raw;
+                    if (spec.metric === "inflation" && value > 6) return "Signal: inflation au-dessus du corridor de vigilance.";
+                    if (spec.metric === "margin" && value < 6) return "Signal: marges PME en zone de fragilité.";
+                    if (spec.metric === "spread" && value > 180) return "Signal: prime de risque élevée.";
+                    if (spec.metric === "resilience" && value < 55) return "Signal: résilience insuffisante.";
+                    return "Lecture: comparer au scénario passif et aux décisions prises.";
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: { color: "#5A6068", font: { family: "JetBrains Mono", size: 10 } }
+              },
+              y: {
+                grid: { color: "rgba(27, 42, 74, 0.06)" },
+                ticks: { color: "#5A6068", font: { family: "JetBrains Mono", size: 10 } }
+              }
+            }
+          }
+        });
+      });
+    }
+
+    function datasetForStates(label, states, metric, color, options = {}) {
+      return {
+        label,
+        data: LABELS.map((_, i) => states[i] ? states[i][metric] : null),
+        borderColor: color,
+        backgroundColor: color,
+        borderDash: options.dash || [],
+        borderWidth: options.width || 2,
+        pointRadius: options.points ? 3 : 0,
+        pointHoverRadius: 4,
+        tension: 0.28,
+        spanGaps: false
+      };
+    }
+
+    function updateCharts() {
+      const reference = simulateReference(currentScenarioKey);
+      const metricColors = {
+        inflation: "#C0392B",
+        margin: "#2C5F8A",
+        spread: "#D4A017",
+        resilience: "#1B2A4A"
+      };
+
+      Object.keys(charts).forEach(metric => {
+        const saved = savedRuns
+          .filter(item => item.scenarioKey === currentScenarioKey)
+          .slice(-3)
+          .map((item, index) => datasetForStates(`Run ${index + 1}`, item.states, metric, ["#8A6B12", "#6E7E8E", "#7B4B4B"][index] || "#D4A017", { width: 1.7, dash: [2, 3] }));
+
+        charts[metric].data.datasets = [
+          datasetForStates("Référence passive", reference, metric, "#999999", { dash: [6, 4], width: 1.5 }),
+          ...saved,
+          datasetForStates("Run courant", run.states, metric, metricColors[metric], { width: 2.6, points: true })
+        ];
+        charts[metric].update();
+      });
+    }
+
+    function updateKpis() {
+      const state = run.states[run.states.length - 1];
+      document.getElementById("kpi-inflation").textContent = formatPercent(state.inflation);
+      document.getElementById("kpi-margin").textContent = formatPercent(state.margin);
+      document.getElementById("kpi-credit").textContent = Math.round(state.credit);
+      document.getElementById("kpi-spread").textContent = `${state.spread} pb`;
+      document.getElementById("kpi-debt").textContent = formatPercent(state.debt);
+      document.getElementById("kpi-resilience").textContent = Math.round(state.resilience);
+
+      document.getElementById("kpi-inflation").className = state.inflation > 6 ? "danger" : "";
+      document.getElementById("kpi-margin").className = state.margin < 6 ? "danger" : "";
+      document.getElementById("kpi-credit").className = state.credit < 88 ? "danger" : "";
+      document.getElementById("kpi-spread").className = state.spread > 180 ? "danger" : "";
+      document.getElementById("kpi-resilience").className = state.resilience < 55 ? "danger" : "good";
+    }
+
+    function updateBriefing() {
+      const scenario = SCENARIOS[currentScenarioKey];
+      const t = Math.min(run.states.length, 8);
+      document.getElementById("status-quarter").textContent = run.completed ? "Terminé" : `T${t}/8`;
+      document.getElementById("status-scenario").textContent = scenario.short;
+      document.getElementById("status-runs").textContent = savedRuns.filter(item => item.scenarioKey === currentScenarioKey).length;
+      document.getElementById("round-title").textContent = run.completed ? "Run terminé — passer au débrief" : `T${t} — ${scenario.title}`;
+      document.getElementById("round-briefing").textContent = run.completed ? "La trajectoire est complète. Enregistrez ce run pour le comparer à une autre doctrine de réponse." : scenario.briefing[t - 1];
+      document.getElementById("advance-btn").disabled = run.completed;
+      document.getElementById("save-run-btn").disabled = run.states.length <= 1;
+    }
+
+    function updateFeedback() {
+      const status = document.getElementById("feedback-status");
+      const body = document.getElementById("feedback-body");
+      if (run.feedback.length === 0) {
+        status.textContent = "Avant décision";
+        body.textContent = "Le premier tour sert à fixer votre doctrine de réponse. Une réaction trop faible protège les finances publiques mais laisse le choc se transmettre aux marges ; une réaction trop forte soutient l'activité mais peut peser sur le spread.";
+        return;
+      }
+      status.textContent = `Après T${run.feedback.length}`;
+      body.textContent = run.feedback[run.feedback.length - 1];
+    }
+
+    function updateHistory() {
+      const wrap = document.getElementById("history-wrap");
+      if (run.decisions.length === 0) {
+        wrap.innerHTML = '<div class="empty-history">Aucun trimestre joué pour le moment.</div>';
+        return;
+      }
+
+      wrap.innerHTML = `
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Tour</th>
+              <th>Décision</th>
+              <th>Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${run.decisions.map((decision, i) => {
+              const state = run.states[i + 1];
+              return `
+                <tr>
+                  <td>T${i + 1}</td>
+                  <td>${formatDecision(decision)}</td>
+                  <td>Infl. ${formatPercent(state.inflation)} · marge ${formatPercent(state.margin)} · spread ${state.spread} pb · résilience ${state.resilience}</td>
+                </tr>
+              `;
+            }).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function updateDebrief() {
+      const panel = document.getElementById("debrief-panel");
+      if (!run.completed) {
+        panel.classList.remove("visible");
+        return;
+      }
+
+      const debrief = generateDebrief();
+      document.getElementById("final-score").textContent = debrief.score;
+      document.getElementById("debrief-list").innerHTML = debrief.notes.map(note => `<li>${note}</li>`).join("");
+      panel.classList.add("visible");
+    }
+
+    function renderAll() {
+      updateBriefing();
+      updateKpis();
+      updateFeedback();
+      updateHistory();
+      updateCharts();
+      updateDebrief();
+    }
+
+    function advanceQuarter() {
+      if (run.completed) return;
+      const t = run.states.length - 1;
+      const scenario = SCENARIOS[currentScenarioKey];
+      const decision = activeDecision();
+      const prev = run.states[run.states.length - 1];
+      const next = computeStep(prev, scenario, decision, t);
+      run.decisions.push(decision);
+      run.states.push(next);
+      run.feedback.push(generateFeedback(prev, next, decision, t));
+      run.completed = run.states.length === 9;
+      renderAll();
+      if (run.completed) {
+        document.getElementById("debrief-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function resetRun() {
+      run = createRun();
+      renderDecisionControls();
+      renderAll();
+      document.querySelector(".simulation-header").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function saveRun() {
+      if (run.states.length <= 1) return;
+      savedRuns.push({
+        scenarioKey: currentScenarioKey,
+        states: run.states.map(state => ({ ...state })),
+        decisions: run.decisions.map(decision => ({ ...decision }))
+      });
+      if (savedRuns.length > 6) savedRuns = savedRuns.slice(-6);
+      document.getElementById("save-run-btn").textContent = "Run enregistré";
+      setTimeout(() => {
+        document.getElementById("save-run-btn").textContent = "Enregistrer le run";
+      }, 1200);
+      updateCharts();
+      updateBriefing();
+    }
+
+    function bindActions() {
+      document.getElementById("advance-btn").addEventListener("click", advanceQuarter);
+      document.getElementById("reset-btn").addEventListener("click", resetRun);
+      document.getElementById("save-run-btn").addEventListener("click", saveRun);
+    }
+
+    renderScenarioCards();
+    renderDecisionControls();
+    initCharts();
+    bindActions();
+    run = createRun();
+    renderAll();
+  })();
+  </script>
+</body>
+</html>

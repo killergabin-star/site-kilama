@@ -1,0 +1,424 @@
+/* ============================================================================
+   brand-layer.css — Couche de marque erickilama.com
+   Invariante sur toutes les pages. Ne doit contenir aucun hex hardcode.
+   Spec: 01_BRAND_LAYER.md
+   ============================================================================ */
+
+/* ---------- RESET MINIMAL ---------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-primary);
+  background: var(--color-background-primary);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- LAYOUT CONTAINERS ---------- */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.container--narrow {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-background-primary) 88%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  margin-bottom: 0;
+}
+
+.site-header.scrolled {
+  border-bottom-color: var(--color-border-secondary);
+}
+
+.site-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-data);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+.wordmark-mark {
+  color: var(--brand-flag, #00A8E8);
+  font-size: 14px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0;
+}
+
+/* Nav items with dropdowns */
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 20px 11px;
+  display: block;
+  transition: color var(--transition-fast);
+}
+
+.nav-item > a:hover {
+  color: var(--color-text-primary);
+}
+
+.nav-item.active > a {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* Dropdown panel */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+  z-index: 50;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-links a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 8px var(--space-4);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-links a:hover {
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+}
+
+/* Fallback for simple nav links (no dropdown) */
+.main-nav > a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 20px 11px;
+  transition: color var(--transition-fast);
+}
+
+.main-nav > a:hover {
+  color: var(--color-text-primary);
+}
+
+.main-nav > a.active {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+.lang-switch {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.lang-switch a {
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+}
+
+.lang-switch a.active {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* Mobile burger */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.burger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text-primary);
+  margin: 4px 0;
+  transition: transform var(--transition-medium);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-background-primary);
+  z-index: 100;
+  padding: var(--space-6) var(--space-5);
+  overflow-y: auto;
+}
+
+.mobile-menu.is-open { display: block; }
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 99;
+}
+
+.mobile-nav-overlay.is-open { display: block; }
+
+.mobile-menu .mobile-nav-item > a {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: var(--space-3) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.mobile-menu .mobile-nav-item.active > a {
+  color: var(--brand-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* Mobile accordion dropdowns */
+.mobile-menu .mobile-dropdown {
+  display: none;
+  padding: 0 0 var(--space-3) var(--space-4);
+}
+
+.mobile-menu .mobile-nav-item.expanded .mobile-dropdown {
+  display: block;
+}
+
+.mobile-menu .mobile-dropdown a {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+}
+
+.mobile-menu .mobile-dropdown a:hover {
+  color: var(--brand-primary);
+}
+
+@media (max-width: 760px) {
+  .main-nav { display: none; }
+  .burger { display: block; }
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--brand-primary-soft);
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  margin-top: var(--space-9);
+  padding: var(--space-7) 0 var(--space-5);
+  border-top: 0.5px solid var(--color-border-tertiary);
+  font-family: var(--font-ui);
+}
+
+.site-footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.site-footer-brand strong {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.site-footer-brand p {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  max-width: 320px;
+  margin: 0;
+}
+
+.site-footer-col h4 {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px;
+}
+
+.site-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer-col li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.site-footer-col a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.site-footer-col a:hover {
+  color: var(--brand-primary);
+  text-decoration: underline;
+}
+
+.site-footer-baseline {
+  padding-top: var(--space-4);
+  border-top: 0.5px solid var(--color-border-tertiary);
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.site-footer-baseline a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.site-footer-baseline a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* ---------- SELECTION ---------- */
+
+::selection {
+  background: var(--color-background-brand-soft);
+  color: var(--color-text-primary);
+}
+
+/* ---------- FOCUS VISIBLE (accessibilité clavier) ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- TICKER ---------- */
+
+.ticker {
+  background: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border-secondary);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  font-family: var(--font-data);
+  font-size: 12px;
+  display: inline-block;
+  animation: ticker-scroll 60s linear infinite;
+}
+.ticker-item { display: inline-block; margin: 0 32px; color: var(--color-text-secondary); letter-spacing: 0.04em; }
+.ticker-item .symbol { color: var(--brand-primary); margin-right: 8px; }
+.ticker-item .value  { color: var(--color-text-primary); margin-right: 6px; }
+.ticker-item .delta-good     { color: var(--state-good); }
+.ticker-item .delta-bad      { color: var(--state-bad); }
+.ticker-item .delta-neutral  { color: var(--state-neutral); }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- SMOOTH SCROLL ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

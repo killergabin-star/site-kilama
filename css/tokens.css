@@ -1,0 +1,16 @@
+/* ============================================================================
+   tokens.css — Active token set
+   ----------------------------------------------------------------------------
+   Imports all palette files. The active palette is selected via
+   data-palette="..." on <html>. Default v9 prod is dark (vivid-*).
+   v9.1 adds light variants (editorial-light, bloomberg-light) accessible
+   via theme toggle.
+   ============================================================================ */
+
+@import url('palettes/institutional.css');
+@import url('palettes/bloomberg.css');
+@import url('palettes/vivid-editorial.css');
+@import url('palettes/vivid-bloomberg.css');
+@import url('palettes/editorial-light.css');
+@import url('palettes/bloomberg-light.css');
+@import url('typography/hybrid.css');

@@ -1,0 +1,37 @@
+/* Variante B : dark + multi-couleur terminal (registre Bloomberg) */
+[data-palette="vivid-bloomberg"] {
+  --color-background-primary:   #000000;
+  --color-background-secondary: #0E0F12;
+  --color-background-tertiary:  #1A1C20;
+  --color-background-cream:     #16181C;
+  --color-text-primary:         #E8E9EA;
+  --color-text-secondary:       #9AA0A6;
+  --color-text-tertiary:        #5F6368;
+  --color-text-muted:           #3C4043;
+  --brand-primary:              #00BFFF;
+  --brand-primary-soft:         #5DD3FF;
+  --brand-primary-deep:         #0095CC;
+  --brand-secondary:            #B062FF;
+  --brand-tertiary:             #00E5C4;
+  --brand-quaternary:           #FFC633;
+  --brand-accent:               #FF4757;     /* coral / état bad — accent rare */
+  --brand-accent-deep:          #CC3947;
+  --brand-accent-soft:          #FF6B7A;
+  --brand-flag:                 #00BFFF;
+  --state-good:                 #00E5C4;
+  --state-bad:                  #FF4757;
+  --state-warn:                 #FFC633;
+  --state-neutral:              #9AA0A6;
+  --color-border-primary:       rgba(232, 233, 234, 0.20);
+  --color-border-secondary:     rgba(232, 233, 234, 0.10);
+  --color-border-tertiary:      rgba(232, 233, 234, 0.05);
+  --brand-data-1:               #00BFFF;
+  --brand-data-2:               #B062FF;
+  --brand-data-3:               #00E5C4;
+  --brand-data-4:               #FFC633;
+  --brand-data-5:               #FF4757;
+  --brand-data-6:               #FF50B5;
+  --brand-data-7:               #5F6368;
+  --brand-blue:                 #2D6BFF;
+  --color-background-brand-soft: rgba(0, 191, 255, 0.10);
+}

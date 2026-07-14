@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "id": "DOSSIER-ID",
+    "title": "Dossier Title",
+    "subtitle": "Short description of the analytical focus",
+    "status": "draft",
+    "last_update": "2026-01-01",
+    "data_mode": "hybrid"
+  },
+
+  "alert": {
+    "indicator_id": "gpr-index",
+    "label": "Indicator Name",
+    "value": 100,
+    "threshold": 90,
+    "threshold_label": "1-year moving average",
+    "text": "Alert message with <strong>{value}</strong> and {threshold_label} ({threshold})",
+    "timestamp": "2026-01-01T10:00:00+01:00"
+  },
+
+  "sparklines": {
+    "header": "Key Indicators",
+    "subtitle": "Dashboard subtitle",
+    "cards": [
+      { "ticker": "TICK:1", "label": "Indicator 1", "value": 0, "change": 0, "pct": 0 },
+      { "ticker": "TICK:2", "label": "Indicator 2", "value": 0, "change": 0, "pct": 0 },
+      { "ticker": "TICK:3", "label": "Indicator 3", "value": 0, "change": 0, "pct": 0 },
+      { "ticker": "TICK:4", "label": "Indicator 4", "value": 0, "change": 0, "pct": 0 },
+      { "ticker": "TICK:5", "label": "Indicator 5", "value": 0, "change": 0, "pct": 0 },
+      { "ticker": "TICK:6", "label": "Indicator 6", "value": 0, "change": 0, "pct": 0 }
+    ]
+  },
+
+  "scenarios": [
+    { "name": "Best Case",   "color": "#228833", "prob": 20, "gdp": "+2.0%", "fan_base": 2.0, "fan_trend": 0.10 },
+    { "name": "Baseline",    "color": "#4477AA", "prob": 40, "gdp": "+1.0%", "fan_base": 1.0, "fan_trend": 0.0 },
+    { "name": "Downside",    "color": "#EE6677", "prob": 30, "gdp": "+0.2%", "fan_base": 0.2, "fan_trend": -0.10 },
+    { "name": "Tail Risk",   "color": "#AA3377", "prob": 10, "gdp": "-1.5%", "fan_base": -1.5, "fan_trend": -0.25 }
+  ],
+
+  "featured_chart": {
+    "indicator_id": "gpr-index",
+    "title": "Chart Title",
+    "meta": "Source \u00b7 Frequency",
+    "source": "data source attribution",
+    "latest_value": 100,
+    "latest_label": "Jan 2026",
+    "dates": [],
+    "values": []
+  },
+
+  "fan_chart": {
+    "title": "GDP Growth Projections",
+    "meta": "N scenarios \u00b7 p10\u2013p90 bands",
+    "source": "FPSQ Lab",
+    "years": [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028],
+    "historical": [-7.5, 6.4, 2.5, 0.9, 0.8]
+  },
+
+  "spreads": {
+    "title": "Sovereign Spreads vs. Germany",
+    "meta": "10Y Government Bonds \u00b7 Basis points",
+    "countries": [
+      { "name": "France",  "base": 40,  "color": "#5BA8E6", "chg": 0, "m1": 0, "y1": 0 },
+      { "name": "Italy",   "base": 160, "color": "#E86850", "chg": 0, "m1": 0, "y1": 0 }
+    ]
+  },
+
+  "comparison_table": {
+    "title": "Scenario Comparison",
+    "subtitle": "Key macro variables by scenario",
+    "variables": ["GDP Growth (%)", "Inflation (%)", "Spread vs Bund (bp)", "Debt/GDP (%)"],
+    "data": {
+      "Best Case":  ["+2.0", "1.8", "30", "108"],
+      "Baseline":   ["+1.0", "2.4", "65", "112"],
+      "Downside":   ["+0.2", "3.5", "140", "118"],
+      "Tail Risk":  ["-1.5", "5.0", "300", "125"]
+    }
+  },
+
+  "analysis_notes": {
+    "section_label": "Analyses & Notes",
+    "title": "Notes d'analyse Vigie",
+    "notes": [
+      {
+        "tag": "Analyse",
+        "title": "Note title",
+        "summary": "Brief summary of the analysis."
+      }
+    ]
+  },
+
+  "outreach": [
+    {
+      "icon": "\ud83d\udcca",
+      "label": "Donn\u00e9es",
+      "title": "T\u00e9l\u00e9charger les donn\u00e9es (CSV/JSON)",
+      "desc": "Description"
+    },
+    {
+      "icon": "\ud83d\udcc4",
+      "label": "Documentation",
+      "title": "Rapport technique",
+      "desc": "Description"
+    }
+  ]
+}

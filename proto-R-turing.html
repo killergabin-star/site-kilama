@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Proto R — Reaction-Diffusion (Turing Patterns)</title>
+<style>
+*{margin:0;padding:0}
+body{background:#060a12;overflow:hidden;cursor:crosshair}
+canvas{display:block}
+#info{position:fixed;top:20px;left:20px;color:rgba(255,255,255,.3);font:11px/1.6 'SF Mono',monospace;z-index:10;pointer-events:none}
+#info span{color:rgba(255,255,255,.6)}
+.ctrl{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.ctrl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5);font:10px/1 'SF Mono',monospace;padding:8px 16px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;transition:all .2s}
+.ctrl button:hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)}
+.zones{position:fixed;top:20px;right:20px;color:rgba(255,255,255,.25);font:9px/1.8 'SF Mono',monospace;text-align:right;pointer-events:none}
+.zones div{display:flex;align-items:center;justify-content:flex-end;gap:6px}
+.zones .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+</style>
+</head>
+<body>
+<div id="info">
+  PROTO R — TURING PATTERNS<br>
+  Moteur : reaction-diffusion Gray-Scott<br>
+  Rendu : motifs organiques emergents<br>
+  Iteration <span id="iter">0</span> · <span id="fps">0</span> fps
+</div>
+<div class="zones">
+  <div><span>MITOSIS (chocs)</span><span class="dot" style="background:#c03525"></span></div>
+  <div><span>WORMS (transmission)</span><span class="dot" style="background:#3070e0"></span></div>
+  <div><span>CORAL (mesure)</span><span class="dot" style="background:#d0a020"></span></div>
+  <div><span>SPOTS (impact)</span><span class="dot" style="background:#a0a8b0"></span></div>
+</div>
+<div class="ctrl">
+  <button onclick="seed()">Ensemencer</button>
+  <button onclick="shock()">Perturbation !</button>
+  <button onclick="reset()">Reset</button>
+  <button onclick="togglePause()">Pause</button>
+</div>
+<canvas id="c"></canvas>
+<script>
+'use strict';
+
+const canvas = document.getElementById('c');
+const ctx2 = canvas.getContext('2d');
+const N = 256;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// ===== GRAY-SCOTT MODEL =====
+// du/dt = Du * laplacian(u) - u*v^2 + f*(1-u)
+// dv/dt = Dv * laplacian(v) + u*v^2 - (f+k)*v
+
+const Du = 0.21;
+const Dv = 0.105;
+
+let u = new Float32Array(N * N);
+let v = new Float32Array(N * N);
+let nu = new Float32Array(N * N);
+let nv = new Float32Array(N * N);
+let iteration = 0;
+let paused = false;
+
+// Zone-dependent parameters
+// Each zone produces different Turing patterns
+const ZONE_PARAMS = [
+  { f: 0.0367, k: 0.0649 }, // Mitosis (dividing blobs)
+  { f: 0.078,  k: 0.061  }, // Worms (connected strands)
+  { f: 0.0545, k: 0.062  }, // Coral (branching)
+  { f: 0.035,  k: 0.065  }  // Spots (regular dots)
+];
+
+// Zone centers (normalized)
+const ZONE_CENTERS = [
+  { x: 0.2, y: 0.3 },
+  { x: 0.75, y: 0.25 },
+  { x: 0.55, y: 0.72 },
+  { x: 0.28, y: 0.78 }
+];
+
+// Precompute f, k map
+const fMap = new Float32Array(N * N);
+const kMap = new Float32Array(N * N);
+
+function computeFKMap() {
+  for (let y = 0; y < N; y++) {
+    for (let x = 0; x < N; x++) {
+      let nx = x / N, ny = y / N;
+      let tw = 0, f = 0, k = 0;
+      for (let z = 0; z < 4; z++) {
+        let dx = nx - ZONE_CENTERS[z].x;
+        let dy = ny - ZONE_CENTERS[z].y;
+        let w = 1 / (dx*dx + dy*dy + 0.02);
+        f += ZONE_PARAMS[z].f * w;
+        k += ZONE_PARAMS[z].k * w;
+        tw += w;
+      }
+      let i = y * N + x;
+      fMap[i] = f / tw;
+      kMap[i] = k / tw;
+    }
+  }
+}
+computeFKMap();
+
+// Initialize: u=1 everywhere, v=0 with random seeds
+function initState() {
+  u.fill(1.0);
+  v.fill(0.0);
+  iteration = 0;
+
+  // Seed v at random locations near zone centers
+  for (let z = 0; z < 4; z++) {
+    for (let s = 0; s < 6; s++) {
+      let cx = (ZONE_CENTERS[z].x + (Math.random()-0.5)*0.15) * N;
+      let cy = (ZONE_CENTERS[z].y + (Math.random()-0.5)*0.15) * N;
+      let r = 3 + Math.random() * 4;
+      for (let dy = -r; dy <= r; dy++) {
+        for (let dx = -r; dx <= r; dx++) {
+          if (dx*dx + dy*dy > r*r) continue;
+          let ix = Math.floor(cx + dx);
+          let iy = Math.floor(cy + dy);
+          if (ix < 0 || ix >= N || iy < 0 || iy >= N) continue;
+          v[iy * N + ix] = Math.random() * 0.25 + 0.2;
+          u[iy * N + ix] = 0.5 + Math.random() * 0.1;
+        }
+      }
+    }
+  }
+}
+initState();
+
+// ===== SIMULATION STEP =====
+function step() {
+  for (let y = 1; y < N-1; y++) {
+    for (let x = 1; x < N-1; x++) {
+      let i = y * N + x;
+      let uv = u[i], vv = v[i];
+
+      // Laplacian (5-point stencil)
+      let Lu = u[i-1] + u[i+1] + u[i-N] + u[i+N] - 4*uv;
+      let Lv = v[i-1] + v[i+1] + v[i-N] + v[i+N] - 4*vv;
+
+      let uvv = uv * vv * vv;
+      let f = fMap[i], k = kMap[i];
+
+      nu[i] = uv + Du * Lu - uvv + f * (1.0 - uv);
+      nv[i] = vv + Dv * Lv + uvv - (f + k) * vv;
+
+      // Clamp
+      if (nu[i] < 0) nu[i] = 0;
+      if (nu[i] > 1) nu[i] = 1;
+      if (nv[i] < 0) nv[i] = 0;
+      if (nv[i] > 1) nv[i] = 1;
+    }
+  }
+
+  // Boundary: Neumann (zero gradient)
+  for (let x = 0; x < N; x++) {
+    nu[x] = nu[N + x]; nv[x] = nv[N + x]; // top
+    nu[(N-1)*N + x] = nu[(N-2)*N + x]; nv[(N-1)*N + x] = nv[(N-2)*N + x]; // bottom
+  }
+  for (let y = 0; y < N; y++) {
+    nu[y*N] = nu[y*N+1]; nv[y*N] = nv[y*N+1]; // left
+    nu[y*N+N-1] = nu[y*N+N-2]; nv[y*N+N-1] = nv[y*N+N-2]; // right
+  }
+
+  // Swap
+  [u, nu] = [nu, u];
+  [v, nv] = [nv, v];
+  iteration++;
+}
+
+// ===== COLOR MAP =====
+// Organic warm palette based on v concentration
+const PALETTE = [];
+function buildPalette() {
+  // 256 color entries
+  const stops = [
+    {t:0,    r:7,   g:11,  b:20},   // dark navy
+    {t:0.05, r:25,  g:10,  b:35},   // deep purple
+    {t:0.12, r:100, g:20,  b:45},   // dark red
+    {t:0.20, r:180, g:45,  b:30},   // red-orange
+    {t:0.30, r:210, g:140, b:25},   // amber
+    {t:0.40, r:220, g:195, b:60},   // gold
+    {t:0.55, r:240, g:230, b:180},  // warm white
+    {t:1.0,  r:255, g:250, b:230}   // bright white
+  ];
+
+  for (let i = 0; i < 256; i++) {
+    let t = i / 255;
+    let s0 = stops[0], s1 = stops[stops.length-1];
+    for (let j = 0; j < stops.length - 1; j++) {
+      if (t >= stops[j].t && t <= stops[j+1].t) {
+        s0 = stops[j]; s1 = stops[j+1]; break;
+      }
+    }
+    let p = (t - s0.t) / (s1.t - s0.t);
+    p = Math.max(0, Math.min(1, p));
+    // Smooth interpolation
+    p = p * p * (3 - 2 * p);
+    PALETTE.push([
+      s0.r + (s1.r - s0.r) * p,
+      s0.g + (s1.g - s0.g) * p,
+      s0.b + (s1.b - s0.b) * p
+    ]);
+  }
+}
+buildPalette();
+
+// ===== RENDER =====
+const offCanvas = document.createElement('canvas');
+offCanvas.width = N;
+offCanvas.height = N;
+const offCtx = offCanvas.getContext('2d');
+const imgData = offCtx.createImageData(N, N);
+
+function render() {
+  const data = imgData.data;
+  for (let i = 0; i < N * N; i++) {
+    // Map v to color (v ranges ~0 to 0.5)
+    let val = v[i] * 4.5; // scale to fill palette
+    val = Math.max(0, Math.min(1, val));
+    let ci = Math.floor(val * 255);
+    let c = PALETTE[ci];
+
+    // Subtle u modulation (adds depth)
+    let umod = 0.7 + 0.3 * u[i];
+
+    let pi = i * 4;
+    data[pi]     = c[0] * umod;
+    data[pi + 1] = c[1] * umod;
+    data[pi + 2] = c[2] * umod;
+    data[pi + 3] = 255;
+  }
+  offCtx.putImageData(imgData, 0, 0);
+
+  // Draw to screen with smooth upscaling
+  ctx2.imageSmoothingEnabled = true;
+  ctx2.imageSmoothingQuality = 'high';
+  // Aspect-fill the canvas
+  let scale = Math.max(canvas.width / N, canvas.height / N);
+  let dw = N * scale, dh = N * scale;
+  let dx = (canvas.width - dw) / 2, dy = (canvas.height - dh) / 2;
+  ctx2.fillStyle = '#060a12';
+  ctx2.fillRect(0, 0, canvas.width, canvas.height);
+  ctx2.drawImage(offCanvas, dx, dy, dw, dh);
+
+  // Subtle vignette
+  let grad = ctx2.createRadialGradient(
+    canvas.width/2, canvas.height/2, canvas.width*0.2,
+    canvas.width/2, canvas.height/2, canvas.width*0.7
+  );
+  grad.addColorStop(0, 'rgba(6,10,18,0)');
+  grad.addColorStop(1, 'rgba(6,10,18,0.5)');
+  ctx2.fillStyle = grad;
+  ctx2.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+// ===== INTERACTION =====
+function seed() {
+  // Add v seeds at random locations
+  for (let s = 0; s < 10; s++) {
+    let cx = Math.random() * N;
+    let cy = Math.random() * N;
+    let r = 3 + Math.random() * 5;
+    for (let dy = -r; dy <= r; dy++) {
+      for (let dx = -r; dx <= r; dx++) {
+        if (dx*dx + dy*dy > r*r) continue;
+        let ix = Math.floor(cx + dx), iy = Math.floor(cy + dy);
+        if (ix < 0 || ix >= N || iy < 0 || iy >= N) continue;
+        v[iy*N + ix] = Math.random() * 0.25 + 0.2;
+        u[iy*N + ix] = 0.5;
+      }
+    }
+  }
+}
+
+function shock() {
+  // Large perturbation: ring of v
+  let cx = N * (0.2 + Math.random() * 0.6);
+  let cy = N * (0.2 + Math.random() * 0.6);
+  let r = 20 + Math.random() * 30;
+  for (let dy = -r-5; dy <= r+5; dy++) {
+    for (let dx = -r-5; dx <= r+5; dx++) {
+      let d = Math.sqrt(dx*dx + dy*dy);
+      if (Math.abs(d - r) < 5) {
+        let ix = Math.floor(cx + dx), iy = Math.floor(cy + dy);
+        if (ix < 0 || ix >= N || iy < 0 || iy >= N) continue;
+        v[iy*N + ix] = 0.25;
+        u[iy*N + ix] = 0.5;
+      }
+    }
+  }
+}
+
+function reset() {
+  initState();
+}
+
+function togglePause() {
+  paused = !paused;
+}
+
+// Mouse: inject v at cursor
+canvas.addEventListener('mousemove', e => {
+  if (e.buttons === 0 && !e.shiftKey) return;
+  let scale = Math.max(canvas.width / N, canvas.height / N);
+  let dx = (canvas.width - N * scale) / 2;
+  let dy = (canvas.height - N * scale) / 2;
+  let cx = Math.floor((e.clientX - dx) / scale);
+  let cy = Math.floor((e.clientY - dy) / scale);
+  let r = 4;
+  for (let ddy = -r; ddy <= r; ddy++) {
+    for (let ddx = -r; ddx <= r; ddx++) {
+      if (ddx*ddx + ddy*ddy > r*r) continue;
+      let ix = cx + ddx, iy = cy + ddy;
+      if (ix < 0 || ix >= N || iy < 0 || iy >= N) continue;
+      v[iy*N + ix] = 0.25;
+      u[iy*N + ix] = 0.5;
+    }
+  }
+});
+
+canvas.addEventListener('mousedown', e => {
+  let scale = Math.max(canvas.width / N, canvas.height / N);
+  let dx = (canvas.width - N * scale) / 2;
+  let dy = (canvas.height - N * scale) / 2;
+  let cx = Math.floor((e.clientX - dx) / scale);
+  let cy = Math.floor((e.clientY - dy) / scale);
+  let r = 8;
+  for (let ddy = -r; ddy <= r; ddy++) {
+    for (let ddx = -r; ddx <= r; ddx++) {
+      if (ddx*ddx + ddy*ddy > r*r) continue;
+      let ix = cx + ddx, iy = cy + ddy;
+      if (ix < 0 || ix >= N || iy < 0 || iy >= N) continue;
+      v[iy*N + ix] = 0.25;
+      u[iy*N + ix] = 0.5;
+    }
+  }
+});
+
+// ===== MAIN LOOP =====
+let lastTime = performance.now();
+let fpsCounter = 0, lastFps = 0;
+
+function loop() {
+  requestAnimationFrame(loop);
+
+  if (!paused) {
+    // Multiple iterations per frame for faster evolution
+    for (let i = 0; i < 12; i++) step();
+  }
+
+  render();
+
+  // FPS
+  fpsCounter++;
+  let now = performance.now();
+  if (now - lastTime > 1000) {
+    lastFps = fpsCounter;
+    fpsCounter = 0;
+    lastTime = now;
+    document.getElementById('fps').textContent = lastFps;
+    document.getElementById('iter').textContent = iteration;
+  }
+}
+
+// Initial seed injection after short delay
+setTimeout(() => { seed(); seed(); }, 100);
+
+loop();
+</script>
+</body>
+</html>

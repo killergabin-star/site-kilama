@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" width="400" height="225" role="img" aria-labelledby="business-title business-desc">
+  <title id="business-title">Business · Entreprises &amp; Risques</title>
+  <desc id="business-desc">Couverture vectorielle pour une analyse de risque d'entreprise : ciseau de marge (coûts contre prix).</desc>
+  <rect width="400" height="225" fill="#0A0A0A"/>
+  <rect x="16" y="16" width="14" height="6" fill="#E6203A"/>
+  <text x="36" y="22" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#E6203A" letter-spacing="0.10em">BUSINESS · ENTREPRISES &amp; RISQUES</text>
+  <line x1="16" y1="55" x2="360" y2="55" stroke="#E6203A" stroke-width="0.8" opacity="0.75"/>
+  <!-- Ciseau de marge : coûts qui montent, prix qui suivent à peine ; l'aire = compression de marge -->
+  <polygon points="48,148 340,80 340,126 48,148" fill="#E07A2F" opacity="0.12"/>
+  <path d="M 48 148 L 340 80" fill="none" stroke="#E07A2F" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 48 148 L 340 126" fill="none" stroke="#3E6DA3" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="340" cy="80" r="3.4" fill="#E07A2F"/>
+  <circle cx="340" cy="126" r="3.4" fill="#3E6DA3"/>
+  <text x="300" y="74" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#E07A2F" font-weight="600">coûts</text>
+  <text x="300" y="139" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#3E6DA3" font-weight="600">prix</text>
+  <line x1="16" y1="118" x2="360" y2="118" stroke="#E6203A" stroke-width="0.5" opacity="0.18" stroke-dasharray="3 5"/>
+  <text x="16" y="196" font-family="Source Serif 4, Georgia, serif" font-size="18" font-weight="500" fill="#F4F4F5">Le risque dans le bilan</text>
+  <text x="16" y="211" font-family="Inter, sans-serif" font-size="7" fill="#71717A" letter-spacing="0.04em">Marges · trésorerie · exposition · décision</text>
+</svg>

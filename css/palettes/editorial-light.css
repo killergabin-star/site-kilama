@@ -1,0 +1,53 @@
+/* ============================================================================
+   palettes/editorial-light.css
+   Variante A — light : Economist-style, mono-accent rouge éditorial
+   Mockup pour validation Eric (29 avril 2026) — pas encore mergé sur prod
+   ============================================================================ */
+
+[data-palette="editorial-light"] {
+  /* Fond et texte : registre cream-ivory, pas blanc clinique */
+  --color-background-primary:   #FAF8F3;     /* cream très clair, pas blanc */
+  --color-background-secondary: #F2EDE6;     /* cream un cran plus chaud */
+  --color-background-tertiary:  #E8E2D6;     /* beige institutionnel pour panneaux */
+  --color-background-cream:     #FAF8F3;
+  --color-text-primary:         #1A1815;     /* presque-noir chaud, pas pur */
+  --color-text-secondary:       #4A4742;     /* warm grey foncé */
+  --color-text-tertiary:        #76726B;     /* warm grey moyen */
+  --color-text-muted:           #B8B4AC;     /* warm grey clair */
+
+  /* Accent rouge éditorial — légèrement désaturé vs dark pour fond clair */
+  --brand-primary:              #B81628;     /* rouge éditorial profond, plus sobre que #E6203A */
+  --brand-primary-soft:         #D63B4A;
+  --brand-primary-deep:         #8E0F1D;
+  --brand-secondary:            #B81628;     /* identique pour neutraliser tout fallback */
+  --brand-tertiary:             #76726B;     /* warm grey moyen pour graduation */
+  --brand-quaternary:           #A0701F;     /* ambre éditorial — réservé Teaching */
+  --brand-accent:               #B81628;
+  --brand-accent-deep:          #8E0F1D;
+  --brand-accent-soft:          #D63B4A;
+  --brand-flag:                 #B81628;
+  --brand-blue:                 #B81628;     /* tout "bleu" hérité devient rouge en Variant-A light */
+
+  /* États : adaptés fond clair */
+  --state-good:                 #2D7A50;
+  --state-bad:                  #B81628;
+  --state-warn:                 #A0701F;
+  --state-neutral:              #76726B;
+
+  /* Bordures pour fond clair (sombres atténuées au lieu de claires atténuées) */
+  --color-border-primary:       rgba(26, 24, 21, 0.18);
+  --color-border-secondary:     rgba(26, 24, 21, 0.10);
+  --color-border-tertiary:      rgba(26, 24, 21, 0.05);
+
+  /* Palette data : mono-accent rouge + warm greys */
+  --brand-data-1:               #B81628;     /* rouge éditorial */
+  --brand-data-2:               #76726B;     /* warm grey moyen */
+  --brand-data-3:               #4A4742;     /* warm grey foncé */
+  --brand-data-4:               #B8B4AC;     /* warm grey clair */
+  --brand-data-5:               #8E0F1D;     /* rouge profond — series 5 */
+  --brand-data-6:               #58524B;     /* warm grey alt */
+  --brand-data-7:               #1A1815;
+
+  /* Surfaces accent */
+  --color-background-brand-soft: rgba(184, 22, 40, 0.06);
+}

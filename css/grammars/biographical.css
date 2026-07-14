@@ -1,0 +1,305 @@
+/* ============================================================================
+   biographical.css — Grammaire 4 : Biographical
+   Pages: /about/
+   Inspiration: Mariana Mazzucato (Academic / Advisor / Communicator)
+   Spec: 07_PAGE_GRAMMARS.md — Grammaire 4
+   ============================================================================ */
+
+/* ---------- PAGE LAYOUT ---------- */
+
+.bio-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- IDENTITY SECTION ---------- */
+
+.bio-identity {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  padding-bottom: var(--space-7);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.bio-portrait {
+  width: 320px;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.bio-intro h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+  margin: 0 0 var(--space-2);
+}
+
+.bio-tagline {
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-5);
+}
+
+.bio-links {
+  display: flex;
+  gap: var(--space-4);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+}
+
+.bio-links a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+
+.bio-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .bio-identity {
+    grid-template-columns: 1fr;
+  }
+  .bio-portrait {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+  }
+}
+
+/* ---------- PARCOURS SECTION ---------- */
+
+.bio-parcours {
+  padding: var(--space-6) 0;
+}
+
+.bio-parcours p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-primary);
+  max-width: 640px;
+}
+
+.bio-affiliations {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-4);
+}
+
+.bio-affiliations span {
+  margin: 0 var(--space-2);
+}
+
+/* ---------- THREE ROLES (Mazzucato) ---------- */
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+}
+
+.role-card {
+  padding: var(--space-5);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.role-card-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--brand-primary);
+  margin-bottom: var(--space-3);
+}
+
+.role-card h3 {
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-3);
+}
+
+.role-card p {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+@media (max-width: 760px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- PUBLICATIONS ---------- */
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+}
+
+.pub-card {
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pub-card-cover {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  background: var(--color-background-secondary);
+}
+
+.pub-card-body {
+  padding: var(--space-4);
+}
+
+.pub-card-body h4 {
+  font-size: var(--fs-h4);
+  margin: 0 0 var(--space-2);
+}
+
+.pub-card-body .pub-authors {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 760px) {
+  .publications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- PRESS QUOTES ---------- */
+
+.press-quotes {
+  padding: var(--space-6) 0;
+}
+
+.press-quote {
+  margin-bottom: var(--space-5);
+}
+
+/* ---------- CONTACT SECTION ---------- */
+
+.contact-section {
+  padding: var(--space-6) 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+
+.contact-section h2 {
+  margin-bottom: var(--space-4);
+}
+
+.contact-links {
+  display: flex;
+  gap: var(--space-5);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body);
+}
+
+/* ---------- BIO DEFAULT H2 ---------- */
+
+.bio-page h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  margin: var(--space-3) 0 var(--space-5);
+}
+
+/* ---------- PORTRAIT PLACEHOLDER ---------- */
+
+.bio-portrait--placeholder {
+  background: var(--color-background-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-portrait-label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- PUBLICATIONS ---------- */
+
+.bio-publications {
+  padding: var(--space-6) 0;
+}
+
+/* ---------- CONFERENCES ---------- */
+
+.bio-conferences {
+  padding: var(--space-6) 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+
+.bio-conferences-intro {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.bio-conferences-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bio-conferences-list li {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  font-size: var(--fs-body-sm);
+  align-items: baseline;
+}
+
+.bio-conf-date {
+  font-family: var(--font-data);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+.bio-conf-title {
+  font-weight: var(--weight-medium);
+}
+
+.bio-conf-venue {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-caption);
+}
+
+@media (max-width: 600px) {
+  .bio-conferences-list li {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+/* ---------- BIO PHOTO (real portrait) ---------- */
+
+.bio-photo .portrait-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+  border: none;
+}

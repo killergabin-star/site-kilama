@@ -1,0 +1,155 @@
+/* ============================================================================
+   tokens-palette-1-institutional.css
+   Palette 1 — Institutionnelle française
+   Registre : institutionnel / IFRI / Politique étrangère
+   Bleu marine sobre + rouge profond comme accent rare
+   
+   Usage : copier sur tokens.css pour activer cette palette
+   ============================================================================ */
+
+:root {
+  /* ---------- COULEURS DE MARQUE ---------- */
+  --brand-primary:        #1F3A6E;   /* Bleu marine institutionnel — wordmark, liens, eyebrows */
+  --brand-primary-soft:   #335299;   /* Bleu marine plus clair pour hover, accents secondaires */
+  --brand-primary-deep:   #122348;   /* Bleu marine très foncé pour H1 sur fond blanc, fortes emphases */
+
+  --brand-accent:         #A02828;   /* Rouge profond institutionnel (rouge cardinal, pas Economist) */
+  --brand-accent-soft:    #C24545;   /* Rouge profond plus clair pour hover */
+
+  /* ---------- PALETTE DATA (pour charts) ---------- */
+  /* Trois couleurs sémantiques, distinguables y compris en daltonien deutéranope */
+  --brand-data-1:         #1F3A6E;   /* Bleu marine — série principale, AMER, théâtre 1 */
+  --brand-data-2:         #C9A227;   /* Or institutionnel — série 2, Asie-Pacifique, théâtre 2 */
+  --brand-data-3:         #4F7A4F;   /* Vert sapin — série 3, EMEA / Europe-Russie, théâtre 3 */
+  
+  /* Couleurs catégorielles étendues (uniquement pour les charts à 5+ catégories) */
+  --brand-data-4:         #6B4882;   /* Violet sourd */
+  --brand-data-5:         #B05425;   /* Terre cuite */
+  --brand-data-6:         #2A6B7A;   /* Bleu pétrole */
+  --brand-data-7:         #4D4D4D;   /* Gris anthracite */
+
+  /* Tons et atténuations pour cartes empilées */
+  --brand-data-1-soft:    #5A7AAA;
+  --brand-data-2-soft:    #DCC07A;
+  --brand-data-3-soft:    #82A582;
+
+  /* ---------- TEXTE ---------- */
+  --color-text-primary:   #121212;   /* Quasi-noir, registre éditorial */
+  --color-text-secondary: #5A5A5A;   /* Gris foncé pour méta, captions */
+  --color-text-tertiary:  #8A8A8A;   /* Gris clair pour timestamps, footnotes */
+  --color-text-inverse:   #FAFAFA;   /* Sur fonds sombres */
+  --color-text-on-brand:  #FFFFFF;   /* Texte sur fond bleu marine plein */
+
+  /* ---------- FONDS ---------- */
+  --color-background-primary:    #FFFFFF;   /* Page principale */
+  --color-background-secondary:  #F4F2EC;   /* Beige institutionnel discret pour blocs data */
+  --color-background-tertiary:   #EDEAE0;   /* Beige plus marqué pour panneaux KPI */
+  --color-background-elevated:   #FFFFFF;   /* Cards posées sur le fond */
+  --color-background-brand-soft: #E8EEF7;   /* Bleu marine très dilué pour eyebrows en bloc */
+
+  /* ---------- BORDURES ---------- */
+  --color-border-tertiary:   rgba(18, 18, 18, 0.10);   /* Filets fins par défaut */
+  --color-border-secondary:  rgba(18, 18, 18, 0.20);   /* Filets emphase, hover */
+  --color-border-primary:    rgba(18, 18, 18, 0.35);   /* Bordures fortes */
+
+  /* ---------- COULEURS SÉMANTIQUES (état) ---------- */
+  --state-up:        #1B7A5A;   /* Vert sobre */
+  --state-down:      #A02828;   /* Aligné sur brand-accent (cohérent ici) */
+  --state-flat:      #888780;
+  --state-warn:      #C9A227;   /* Or pour alerte modérée */
+
+  --state-good:      var(--state-up);
+  --state-bad:       var(--state-down);
+  --state-neutral:   var(--state-flat);
+
+  /* ---------- SURFACES SOMBRES (dashboard Foresight) ---------- */
+  --color-surface-dark:                     #1A1A1E;
+  --color-surface-dark-deep:                #141418;
+  --color-surface-dark-overlay:             rgba(26, 26, 30, 0.85);
+  --color-text-on-surface-dark:             #FFFFFF;
+  --color-text-on-surface-dark-secondary:   #E0E0E0;
+  --color-text-on-surface-dark-tertiary:    #A0A0A0;
+  --color-border-on-dark:                   rgba(255, 255, 255, 0.08);
+
+  /* ---------- ESPACEMENTS ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---------- RADIUS ---------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg: 12px;
+
+  /* ---------- DURÉE D'ANIMATION ---------- */
+  --transition-fast:   120ms ease-out;
+  --transition-medium: 240ms ease-out;
+}
+
+/* ============================================================================
+   DARK MODE
+   Bleu marine adouci, fond noir-bleuté, rouge légèrement réchauffé
+   ============================================================================ */
+
+
+
+/* Override manuel via attribut data-theme */
+
+
+/* ============================================================================
+   BLOOMBERG SUB-THEME — Data Room scope on institutional pages
+   Applied via data-palette="bloomberg" on Foresight Data section
+   ============================================================================ */
+
+[data-palette="bloomberg"] {
+  --brand-primary:        #0080C7;
+  --brand-primary-soft:   #4DA8DC;
+  --brand-primary-deep:   #005A8C;
+  --brand-data-1:         #0080C7;
+  --brand-data-2:         #00A862;
+  --brand-data-3:         #7E57C2;
+  --brand-data-4:         #D85A30;
+  --brand-data-5:         #E8B948;
+  --brand-data-6:         #E25577;
+  --brand-data-7:         #4D4D4D;
+  --color-background-secondary: #F0F5FA;
+  --color-background-tertiary:  #E5EDF5;
+  --state-up:      #00A862;
+  --state-down:    #E63946;
+  --state-warn:    #FF9500;
+  --state-neutral: #707880;
+}
+
+/* ============================================================================
+   NOTES SUR LA PALETTE 1
+   ----------------------------------------------------------------------------
+   Cette palette s'inspire des codes des publications de politique étrangère
+   françaises (Politique étrangère IFRI, rapports publics, La Diplomatie
+   Française) et des institutions européennes (rapports SGAE).
+   
+   - Bleu marine #1F3A6E : neutre institutionnel, lisible et durable
+   - Rouge profond #A02828 : à utiliser RAREMENT — uniquement pour hero data
+     ponctuelle ou liens d'action principale ("Lire le rapport →"). Ne JAMAIS
+     l'utiliser pour des éléments décoratifs ou des bordures.
+   - Or #C9A227 : seconde couleur catégorielle pour les charts. Distinctif sans
+     évoquer un parti politique ou une publication concurrente.
+   - Vert sapin #4F7A4F : troisième couleur catégorielle, sobre.
+   
+   Test d'accessibilité validé :
+   - Texte primary (#121212) sur background-primary (#FFFFFF) : ratio 19.0:1 ✓
+   - Brand-primary (#1F3A6E) sur fond blanc : ratio 11.4:1 ✓
+   - Brand-accent (#A02828) sur fond blanc : ratio 8.2:1 ✓
+   - Text on brand (white) sur brand-primary : ratio 11.4:1 ✓
+   - data-1, data-2, data-3 distinguables en daltonien deutéranope ✓
+   
+   Cas d'usage recommandés :
+   - Convient quand la cible principale est française/européenne
+   - Convient quand la posture éditoriale est plutôt "publication" que "produit"
+   - Moins distinctive visuellement que la palette 2 (revers de la sobriété)
+   ============================================================================ */

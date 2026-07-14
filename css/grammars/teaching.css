@@ -1,0 +1,791 @@
+/* ============================================================================
+   teaching.css — Grammaire Teaching
+   Pages: /teaching/
+   Hero ambre + 3 piliers + cours structurés + Geopolitical Officer
+   ============================================================================ */
+
+/* ---------- HERO TEACHING (amber marker) ---------- */
+
+.hero-editorial--teaching .h-display em {
+  font-style: italic;
+  color: var(--brand-quaternary);
+  font-weight: 400;
+}
+
+.teaching-hero-proof {
+  border-top: 3px solid var(--brand-quaternary);
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.12), rgba(14, 15, 18, 0.78));
+  border-left: 1px solid rgba(212, 160, 23, 0.18);
+  padding: 28px;
+  align-self: end;
+}
+
+.teaching-proof-kicker {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-quaternary);
+  margin-bottom: 20px;
+}
+
+.teaching-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.teaching-proof-item {
+  border-top: 1px solid rgba(212, 160, 23, 0.24);
+  padding-top: 14px;
+}
+
+.teaching-proof-item span {
+  display: block;
+  font-family: var(--font-data, monospace);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+.teaching-proof-item small {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-ui, Inter, sans-serif);
+  font-size: 11px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+}
+
+.teaching-hero-proof p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .teaching-hero-proof {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .teaching-hero-proof {
+    padding: 22px;
+  }
+
+  .teaching-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- APPROCHE PÉDAGOGIQUE ---------- */
+
+.teaching-approach {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-approach-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-approach .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 56px;
+  max-width: 24ch;
+}
+
+.teaching-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.teaching-pillar {
+  padding-left: 24px;
+  border-left: 3px solid var(--brand-quaternary);
+}
+
+.pillar-num {
+  font-family: var(--font-data, monospace);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+}
+
+.teaching-pillar h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 0 0 16px;
+}
+
+.teaching-pillar p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .teaching-approach {
+    padding: 48px 24px;
+  }
+  .teaching-approach-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- COURS & SÉMINAIRES ---------- */
+
+.teaching-courses {
+  padding: 80px 40px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-courses .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 64px;
+  max-width: 30ch;
+}
+
+.teaching-category {
+  margin-bottom: 64px;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: var(--brand-quaternary);
+  margin: 0 0 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+
+.teaching-item {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border-tertiary);
+}
+
+.teaching-item:last-child {
+  border-bottom: none;
+}
+
+.teaching-item-meta {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+}
+
+.teaching-item h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.teaching-item p {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 75ch;
+  margin: 0 0 16px;
+}
+
+.teaching-item-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag--amber {
+  color: var(--brand-quaternary);
+  border-color: var(--brand-quaternary);
+}
+
+@media (max-width: 900px) {
+  .teaching-courses {
+    padding: 48px 24px;
+  }
+}
+
+/* ---------- GEOPOLITICAL OFFICER ---------- */
+
+.geopolitical-officer {
+  padding: 120px 40px;
+  background: var(--color-background-secondary);
+  border-top: 4px solid var(--brand-quaternary);
+}
+
+.geopolitical-officer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.h-display-medium {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  margin: 24px 0 32px;
+  max-width: 22ch;
+  color: var(--color-text-primary);
+}
+
+.h-display-medium em {
+  font-style: italic;
+  color: var(--brand-quaternary);
+  font-weight: 400;
+}
+
+.geopolitical-officer .standfirst {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 70ch;
+  margin: 0 0 64px;
+}
+
+.officer-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.officer-module {
+  padding: 24px;
+  background: var(--color-background-tertiary);
+  border-top: 2px solid var(--brand-quaternary);
+}
+
+.module-num {
+  font-family: var(--font-data, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-quaternary);
+  margin-bottom: 12px;
+}
+
+.officer-module h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.officer-module p {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.officer-cta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.officer-formats {
+  font-family: var(--font-data, monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .officer-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .geopolitical-officer {
+    padding: 64px 24px;
+  }
+  .officer-modules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- TEACHING LAB — démonstrateurs ---------- */
+
+.card-note--featured {
+  border-left: 3px solid var(--brand-quaternary, #D4A017);
+  padding-left: 24px;
+}
+
+.card-note-tag--amber {
+  color: var(--brand-quaternary, #D4A017);
+  border-color: var(--brand-quaternary, #D4A017);
+}
+
+.tool-spec {
+  margin: 16px 0;
+  padding: 0;
+}
+
+.tool-spec div {
+  display: flex;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border-tertiary, rgba(27, 42, 74, 0.06));
+  align-items: baseline;
+}
+
+.tool-spec div:last-child {
+  border-bottom: none;
+}
+
+.tool-spec dt {
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary, #5A6068);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.tool-spec dd {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #5A6068);
+  margin: 0;
+}
+
+.tool-pipeline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border-tertiary, rgba(27, 42, 74, 0.06));
+}
+
+.pipeline-step {
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary, #0E0F12);
+  background: var(--color-background-secondary, rgba(27, 42, 74, 0.04));
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.pipeline-arrow {
+  font-family: var(--font-data, monospace);
+  font-size: 14px;
+  color: var(--brand-quaternary, #D4A017);
+  font-weight: 700;
+}
+
+.card-note-proof {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 13px;
+  color: var(--color-text-secondary, #5A6068);
+  margin-top: 8px;
+}
+
+.card-note-proof a {
+  color: var(--brand-secondary, #2C5F8A);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.card-note-proof a:hover {
+  border-bottom-color: var(--brand-secondary, #2C5F8A);
+}
+
+.catalog-group-subtitle {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-weight: 500;
+}
+
+/* ---------- TEACHING LAB — section wrapper ---------- */
+
+.teaching-lab {
+  padding: 80px 40px;
+  background: var(--ivory, #F8F7F4);
+  border-top: 4px solid var(--brand-quaternary, #D4A017);
+}
+
+.teaching-lab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-lab .eyebrow {
+  margin-bottom: 0;
+}
+
+.teaching-lab .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  max-width: 30ch;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-lab-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.teaching-lab-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Teaching Lab tool card */
+
+.teaching-tool {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-tool:last-child {
+  border-bottom: none;
+}
+
+.teaching-tool--featured {
+  padding-left: 24px;
+  border-left: 3px solid var(--brand-quaternary, #D4A017);
+}
+
+.teaching-tool-tag {
+  display: inline-block;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.teaching-tool-tag--active {
+  color: #0d6c3a;
+  background: rgba(13, 108, 58, 0.08);
+}
+
+.teaching-tool-tag--coming {
+  color: var(--brand-quaternary, #D4A017);
+  background: rgba(212, 160, 23, 0.08);
+}
+
+.teaching-tool-tag--doc {
+  color: var(--blue-fpsq, #2C5F8A);
+  background: rgba(44, 95, 138, 0.08);
+}
+
+.teaching-tool-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-tool-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.teaching-tool-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+}
+
+.teaching-tool-summary {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 16px;
+}
+
+/* ---------- TEACHING RESOURCES section ---------- */
+
+.teaching-resources {
+  padding: 80px 40px;
+  background: var(--ivory-deep, #F0EDE8);
+}
+
+.teaching-resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-resources .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-resources-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.teaching-resources-subcategory {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--brand-quaternary, #D4A017);
+  margin: 48px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-resources-subcategory:first-of-type {
+  margin-top: 0;
+}
+
+.teaching-resource-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.teaching-resource-item:last-child {
+  border-bottom: none;
+}
+
+.teaching-resource-tag {
+  display: inline-block;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary, #5A6068);
+  margin-bottom: 6px;
+}
+
+.teaching-resource-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 17px;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-resource-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.teaching-resource-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+  border-bottom-color: var(--blue-fpsq, #2C5F8A);
+}
+
+.teaching-resource-desc {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary, #5A6068);
+  margin: 0;
+}
+
+/* ---------- SUPERVISION section ---------- */
+
+.teaching-supervision {
+  padding: 80px 40px;
+  background: var(--ivory, #F8F7F4);
+}
+
+.teaching-supervision-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-supervision .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-supervision-intro {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0 0 48px;
+}
+
+.thesis-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.thesis-item:last-child {
+  border-bottom: none;
+}
+
+.thesis-level {
+  display: inline-block;
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-quaternary, #D4A017);
+  margin-bottom: 8px;
+}
+
+.thesis-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  color: var(--navy, #1B2A4A);
+}
+
+.thesis-desc {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary, #5A6068);
+  max-width: 75ch;
+  margin: 0;
+}
+
+/* ---------- PRESENTATIONS section ---------- */
+
+.teaching-presentations {
+  padding: 60px 40px;
+  background: var(--ivory-deep, #F0EDE8);
+  border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+}
+
+.teaching-presentations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teaching-presentations .h2 {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.15;
+  margin: 16px 0 20px;
+  color: var(--navy, #1B2A4A);
+}
+
+.teaching-presentations-intro {
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  font-size: 14px;
+  color: var(--text-secondary, #5A6068);
+  margin: 0 0 32px;
+}
+
+.presentation-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+.presentation-item:last-child {
+  border-bottom: none;
+}
+
+.presentation-meta {
+  font-family: var(--font-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary, #5A6068);
+  margin-bottom: 4px;
+}
+
+.presentation-title {
+  font-family: var(--font-display, 'Source Serif 4', serif);
+  font-size: 17px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--navy, #1B2A4A);
+}
+
+.presentation-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.presentation-title a:hover {
+  color: var(--blue-fpsq, #2C5F8A);
+}
+
+/* ---------- TEACHING responsive additions ---------- */
+
+@media (max-width: 900px) {
+  .teaching-lab,
+  .teaching-resources,
+  .teaching-supervision,
+  .teaching-presentations {
+    padding: 48px 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .teaching-lab,
+  .teaching-resources,
+  .teaching-supervision,
+  .teaching-presentations {
+    padding: 40px 18px;
+  }
+}

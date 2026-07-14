@@ -1,0 +1,352 @@
+/* ============================================================================
+   dashboard.css — Grammaire 2 : Dashboard / Live
+   Pages: /foresight/, FPSQ Indicators
+   Inspiration: BloombergNEF / Bloomberg Terminal
+   Spec: 07_PAGE_GRAMMARS.md — Grammaire 2
+   ============================================================================ */
+
+/* ---------- PAGE LAYOUT ---------- */
+
+.dashboard-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* ---------- DASHBOARD HEADER ---------- */
+
+.dashboard-header {
+  margin-bottom: var(--space-5);
+}
+
+.dashboard-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--weight-medium);
+  line-height: var(--lh-h1);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.dashboard-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- ALERT BANNER ---------- */
+
+.alert-banner {
+  background: var(--color-background-brand-soft);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ---------- DASHBOARD SECTIONS ---------- */
+
+.dash-section {
+  padding: var(--space-6) 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+}
+
+.dash-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-4);
+}
+
+.dash-section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-medium);
+  margin: 0;
+}
+
+.dash-section-subtitle {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  margin: var(--space-2) 0 0;
+}
+
+/* ---------- SCENARIO SECTION ---------- */
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- SPREAD MONITOR ---------- */
+
+.spread-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+}
+
+.spread-table thead th {
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  padding: var(--space-3);
+  border-bottom: 0.5px solid var(--color-border-secondary);
+}
+
+.spread-table tbody td {
+  padding: var(--space-3);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.spread-table tbody tr:nth-child(even) {
+  background: var(--color-background-secondary);
+}
+
+.spread-table .num {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums lining-nums;
+  text-align: right;
+}
+
+/* ---------- SCENARIO COMPARISON TABLE ---------- */
+
+.scenario-table {
+  width: 100%;
+  overflow-x: auto;
+  margin: var(--space-4) 0;
+}
+
+.scenario-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body-sm);
+  min-width: 600px;
+}
+
+.scenario-table thead th {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-secondary);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 0.5px solid var(--color-border-secondary);
+  background: var(--color-background-secondary);
+  position: sticky;
+  top: 0;
+}
+
+.scenario-table tbody td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+
+.scenario-table tbody td:first-child {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-medium);
+}
+
+/* ---------- FPSQ INDICATORS SECTION ---------- */
+
+.fpsq-section {
+  padding: var(--space-6) 0;
+}
+
+.fpsq-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-5);
+}
+
+.fpsq-sidebar .tabs {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 0.5px solid var(--color-border-tertiary);
+  padding-right: var(--space-4);
+}
+
+.fpsq-sidebar .tab {
+  text-align: left;
+  border-bottom: none;
+  border-left: 2px solid transparent;
+  padding: var(--space-2) var(--space-3);
+}
+
+.fpsq-sidebar .tab--active {
+  border-left-color: var(--brand-primary);
+  border-bottom: none;
+}
+
+@media (max-width: 760px) {
+  .fpsq-layout {
+    grid-template-columns: 1fr;
+  }
+  .fpsq-sidebar .tabs {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    padding-right: 0;
+    overflow-x: auto;
+  }
+  .fpsq-sidebar .tab {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .fpsq-sidebar .tab--active {
+    border-left: none;
+    border-bottom-color: var(--brand-primary);
+  }
+}
+
+/* ---------- METHODOLOGY SECTION ---------- */
+
+.methodology {
+  padding: var(--space-5) 0;
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-body-sm);
+}
+
+.methodology h3 {
+  font-size: var(--fs-h4);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+/* ---------- VIGIE DASHBOARD CARDS ---------- */
+
+.vigie-dashboards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-5);
+}
+
+.vigie-card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  transition: border-color var(--transition-fast);
+}
+
+.vigie-card:hover {
+  border-color: var(--brand-primary);
+}
+
+.vigie-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--weight-medium);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.vigie-card p {
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+
+.vigie-card-vars {
+  font-family: var(--font-data);
+  font-size: var(--fs-caption);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+/* ---------- DATA SERIES LIST ---------- */
+
+.data-series-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+
+.data-series-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+.data-series-name {
+  font-family: var(--font-ui);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--weight-medium);
+}
+
+.data-series-value {
+  font-family: var(--font-data);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-secondary);
+}
+
+.data-series-sparkline {
+  width: 60px;
+  height: 20px;
+}
+
+/* ---------- ANALYSES VIGIE ---------- */
+
+.vigie-analyses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ---------- PAGE-LEVEL TABS (sub-nav anchors) ---------- */
+
+.tabs--page-level {
+  display: flex;
+  gap: 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  margin-bottom: var(--space-6);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs--page-level a {
+  font-family: var(--font-ui);
+  font-size: var(--fs-caption);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-3) var(--space-4);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tabs--page-level a:hover {
+  color: var(--color-text-primary);
+}
+
+.tabs--page-level a.is-active {
+  color: var(--brand-primary);
+  border-bottom-color: var(--brand-primary);
+}
