@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_update": "2026-07-13",
-    "generated_at": "2026-07-13T06:05:08",
-    "snapshot_label": "13 juillet 2026",
+    "last_update": "2026-07-14",
+    "generated_at": "2026-07-14T06:22:15",
+    "snapshot_label": "14 juillet 2026",
     "cache_root": "/Volumes/T7 sharing/macrodata/vigie_site_refresh_20260526",
     "mode": "public_verified_plus_guarded_internal",
     "note": "Les séries publiques sont mises à jour; les séries propriétaires/internes restent explicitement marquées prototype ou gated."
@@ -75,27 +75,27 @@
       },
       {
         "symbol": "DXY broad",
-        "value": "120,7",
-        "delta": "▲ +1,4%",
+        "value": "120,5",
+        "delta": "▲ +0,5%",
         "class": "delta-neutral",
         "source": "FRED DTWEXBGS",
-        "vintage": "2026-07-02"
+        "vintage": "2026-07-10"
       },
       {
         "symbol": "VIX",
-        "value": "15,8",
-        "delta": "▼ -20,3%",
+        "value": "15,0",
+        "delta": "▼ -32,4%",
         "class": "delta-good",
         "source": "FRED VIXCLS",
-        "vintage": "2026-07-09"
+        "vintage": "2026-07-10"
       },
       {
         "symbol": "US 10Y",
-        "value": "4,54%",
+        "value": "4,56%",
         "delta": "▲ +1 bp",
         "class": "delta-bad",
         "source": "FRED DGS10",
-        "vintage": "2026-07-09"
+        "vintage": "2026-07-10"
       },
       {
         "symbol": "IT-DE 10Y",
@@ -171,19 +171,19 @@
     {
       "eyebrow": "FPSQ MARKET",
       "name": "DXY broad",
-      "value": "120,7",
-      "delta": "▲ +1,4%",
+      "value": "120,5",
+      "delta": "▲ +0,5%",
       "tone": "neutral",
-      "timestamp": "2026-07-02",
+      "timestamp": "2026-07-10",
       "source": "FRED"
     },
     {
       "eyebrow": "FPSQ MARKET",
       "name": "VIX",
-      "value": "15,8",
-      "delta": "▼ -20,3%",
+      "value": "15,0",
+      "delta": "▼ -32,4%",
       "tone": "good",
-      "timestamp": "2026-07-09",
+      "timestamp": "2026-07-10",
       "source": "FRED"
     },
     {
@@ -198,10 +198,10 @@
     {
       "eyebrow": "FPSQ FX",
       "name": "EUR/USD",
-      "value": "1.1448",
-      "delta": "▼ -1,7%",
+      "value": "1.1438",
+      "delta": "▼ -1,0%",
       "tone": "neutral",
-      "timestamp": "2026-07-02",
+      "timestamp": "2026-07-10",
       "source": "FRED"
     },
     {
@@ -216,10 +216,10 @@
     {
       "eyebrow": "FPSQ CREDIT",
       "name": "US HY OAS",
-      "value": "2,70 pp",
-      "delta": "-8 bp",
+      "value": "2,69 pp",
+      "delta": "-11 bp",
       "tone": "good",
-      "timestamp": "2026-07-09",
+      "timestamp": "2026-07-10",
       "source": "FRED"
     }
   ],
